@@ -1,0 +1,33 @@
+session_name: sphinx
+
+windows:
+- layout: 7cf4,179x56,0,0[179x33,0,0,0,179x22,0,34{89x22,0,34,2,89x22,90,34,3}]
+  options:
+    automatic-rename: 'off'
+  shell_command_before: source .env/bin/activate
+  panes:
+  - vim
+  - pane
+  - pane
+  start_directory: /home/tony/study/python/sphinx
+  window_name: sphinx
+- layout: ec71,179x56,0,0[179x34,0,0,1,179x21,0,35{89x21,0,35,15,89x21,90,35,16}]
+  shell_command_before: source ../.env/bin/activate
+  options:
+    automatic-rename: 'off'
+  panes:
+  - pane
+  - pane
+  - pane
+  start_directory: /home/tony/study/python/sphinx/tests
+  window_name: sphinx-tests
+- layout: b570,179x56,0,0[179x33,0,0,17,179x22,0,34{89x22,0,34,18,89x22,90,34,19}]
+  shell_command_before: source ../.env/bin/activate
+  options:
+    automatic-rename: 'off'
+  panes:
+  - pane
+  - pane
+  - pane
+  start_directory: /home/tony/study/python/sphinx/doc
+  window_name: sphinx-docs
