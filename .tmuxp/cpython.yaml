@@ -2,81 +2,71 @@ session_name: cpython
 start_directory: ~/study/c/cpython
 windows:
 - layout: 6f46,239x56,0,0[239x35,0,0,33,239x20,0,36{119x20,0,36,34,119x20,120,36,35}]
-  options:
-    automatic-rename: 'off'
+  focus: true
   panes:
-  - vim
+  - shell_command:
+    - vim
+    - :Ex
+    focus: True
   - pane
   - pane
   window_name: cpython
 - layout: 6f46,239x56,0,0[239x35,0,0,33,239x20,0,36{119x20,0,36,34,119x20,120,36,35}]
   start_directory: Lib
-  options:
-    automatic-rename: 'off'
   panes:
-  - vim ./csv.py
+  - shell_command:
+    - vim ./csv.py
+    focus: true
   - pane
   - pane
   window_name: csv
-- layout: e526,239x56,0,0,46
-  start_directory: Lib/logging
-  options:
-    automatic-rename: 'off'
+- start_directory: Lib/logging
   panes:
   - shell_command:
     - vim
     - :Ex
+    focus: True
   window_name: logger
-- layout: e527,239x56,0,0,47
-  start_directory: Lib
-  options:
-    automatic-rename: 'off'
+- start_directory: Lib
   panes:
-  - vim ./re.py
+  - shell_command:
+    - vim ./re.py
+    focus: true
   window_name: re
 - layout: ab82,239x56,0,0{119x56,0,0,48,119x56,120,0,49}
   start_directory: Lib
-  options:
-    automatic-rename: 'off'
   panes:
-  - vim ./fnmatch.py
+  - shell_command:
+    - vim ./fnmatch.py
+    focus: true
   - vim ./glob.py
   start_directory: /home/tony/study/c/cpython/Lib
   window_name: glob/fnmatch
 - layout: 6f46,239x56,0,0[239x35,0,0,33,239x20,0,36{119x20,0,36,34,119x20,120,36,35}]
   start_directory: Lib/unittest
-  options:
-    automatic-rename: 'off'
   panes:
   - shell_command:
     - vim
     - :Ex
+    focus: true
   - pane
   - pane
   start_directory: /home/tony/study/c/cpython/Lib/unittest
   window_name: unittest
-- layout: 6522,239x56,0,0,51
-  options:
-    automatic-rename: 'off'
-  panes:
+- panes:
   - vim ./pdb.py
   start_directory: Lib
   window_name: pdb
-- layout: 6523,239x56,0,0,52
-  options:
-    automatic-rename: 'off'
-  panes:
+- panes:
   - shell_command:
     - vim
     - :Ex
   start_directory: Lib/multiprocessing
   window_name: multiprocessing
-- layout: 6524,239x56,0,0,53
-  options:
-    automatic-rename: 'off'
-  panes:
+- panes:
   - shell_command:
     - vim
     - :Ex
+    focus: true
   start_directory: Lib/curses
   window_name: curses
