@@ -1,0 +1,29 @@
+session_name: sqlalchemy
+start_directory: ~/study/python/sqlalchemy
+windows:
+- layout: a061,239x56,0,0[239x35,0,0,0,239x20,0,36{119x20,0,36,1,119x20,120,36,2}]
+  panes:
+  - shell_command:
+    - vim
+    - :Ex
+  - pane
+  - pane
+  window_name: sqlalchemy
+- layout: e593,239x56,0,0[239x31,0,0,101,239x24,0,32{119x24,0,32,102,119x24,120,32,103}]
+  panes:
+  - shell_command:
+    - vim
+    - :Ex
+  - pane
+  - pane
+  start_directory: lib/sqlalchemy/testing
+  window_name: test-utils
+- layout: 15e8,239x56,0,0[239x34,0,0,104,239x21,0,35{119x21,0,35,105,119x21,120,35,106}]
+  panes:
+  - shell_command:
+    - vim
+    - :Ex
+  - pane
+  - pane
+  start_directory: test
+  window_name: tests
