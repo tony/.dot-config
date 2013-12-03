@@ -181,6 +181,8 @@
   pystache: 'git+https://github.com/defunkt/pystache.git'
   pandas: 'git+https://github.com/pydata/pandas'
   numpy: 'git+https://github.com/numpy/numpy.git'
+  pytables: 'git+https://github.com/PyTables/PyTables.git'
+
   ncmpy: 'git+https://github.com/cykerway/ncmpy.git'
 
   gevent: 'git+https://github.com/surfly/gevent.git'
