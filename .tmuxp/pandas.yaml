@@ -3,10 +3,12 @@ start_directory: ~/study/python
 windows:
 - layout: 197a,239x56,0,0[239x39,0,0,36,239x16,0,40{119x16,0,40,37,119x16,120,40,38}]
   start_directory: pandas
+  focus: true
   panes:
   - shell_command:
     - vim
     - :Ex
+    focus: true
   - pane
   - pane
   window_name: pandas
@@ -16,6 +18,7 @@ windows:
   - shell_command:
     - vim
     - :Ex
+    focus: true
   - pane
   - pane
   window_name: numpy
