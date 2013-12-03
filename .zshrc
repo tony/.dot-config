@@ -63,8 +63,10 @@ fixssh() {
 
 export NODE_PATH=/usr/local/share/npm/lib/node_modules
 export PATH=/usr/local/share/npm/bin:$PATH
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if [ -d ~/.rbenv ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
 
 #if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
 #    . /usr/local/bin/virtualenvwrapper.sh
