@@ -1,0 +1,33 @@
+session_name: tornado
+start_directory: ~/study/python/tornado
+windows:
+- layout: a503,155x56,0,0[155x37,0,0,40,155x18,0,38{77x18,0,38,47,77x18,78,38,48}]
+  focus: true
+  panes:
+  - shell_command:
+    - vim
+    - :Ex
+    focus: true
+  - pane
+  - pane
+  window_name: tornado
+- layout: a520,155x56,0,0[155x37,0,0,41,155x18,0,38{77x18,0,38,43,77x18,78,38,44}]
+  panes:
+  - shell_command:
+    - vim
+    - :Ex
+    focus: true
+  - pane
+  - pane
+  start_directory: demos
+  window_name: demos
+- layout: 6ca4,155x56,0,0[155x38,0,0,42,155x17,0,39{77x17,0,39,45,77x17,78,39,46}]
+  panes:
+  - shell_command:
+    - vim
+    - :Ex
+    focus: true
+  - pane
+  - pane
+  start_directory: tornado/test
+  window_name: tests
