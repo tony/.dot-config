@@ -1,20 +1,16 @@
 session_name: logbook
 windows:
 - layout: 67d3,239x56,0,0[239x37,0,0,15,239x18,0,38{119x18,0,38,17,119x18,120,38,16}]
-  options:
-    automatic-rename: 'off'
   panes:
   - shell_command: vim
   - pane
   - pane
-  shell_command_before: /home/tony/study/python/logbook
+  shell_command_before: ~/study/python/logbook
   window_name: logbook
 - layout: fbd5,239x56,0,0[239x33,0,0,18,239x22,0,34{119x22,0,34,20,119x22,120,34,19}]
-  options:
-    automatic-rename: 'off'
   panes:
   - pane
   - pane
   - pane
-  shell_command_before: /home/tony/study/python/logbook/docs
+  shell_command_before: ~/study/python/logbook/docs
   window_name: logbook doc

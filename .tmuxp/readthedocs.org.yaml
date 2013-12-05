@@ -1,18 +1,24 @@
 session_name: readthedocs.org
+start_directory: ~/workspace/checkouts/readthedocs.org
 windows:
 - layout: 587a,239x60,0,0[239x42,0,0,354,239x17,0,43{120x17,0,43,357,118x17,121,43,358}]
-  options:
-    automatic-rename: 'off'
-  start_directory: /home/tony/workspace/checkouts/readthedocs.org/readthedocs
   shell_command_before: . ../.env/bin/activate
+  focus: true
   panes:
-  - vim
+  - shell_command:
+    - vim
+    - :Ex
+    focus: true
   - pane
   - pane
+  start_directory: readthedocs
   window_name: rtfd
 - window_name: docs
-  start_directory: /home/tony/workspace/checkouts/readthedocs.org/docs
+  start_directory: docs
   panes:
-    - pane
+    - shell_command:
+      - vim
+      - :Ex
+      focus: true
     - pane
     - pane

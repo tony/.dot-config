@@ -1,33 +1,46 @@
 session_name: sphinx
-
+start_directory: ~/study/python/sphinx
 windows:
 - layout: 7cf4,179x56,0,0[179x33,0,0,0,179x22,0,34{89x22,0,34,2,89x22,90,34,3}]
-  options:
-    automatic-rename: 'off'
   shell_command_before: source .env/bin/activate
+  focus: true
   panes:
-  - vim
+  - shell_command:
+    - vim
+    - :Ex
+    focus: true
   - pane
   - pane
-  start_directory: /home/tony/study/python/sphinx
   window_name: sphinx
 - layout: ec71,179x56,0,0[179x34,0,0,1,179x21,0,35{89x21,0,35,15,89x21,90,35,16}]
   shell_command_before: source ../.env/bin/activate
-  options:
-    automatic-rename: 'off'
   panes:
+  - shell_command:
+    - vim
+    - :Ex
+    focus: true
   - pane
   - pane
-  - pane
-  start_directory: /home/tony/study/python/sphinx/tests
+  start_directory: tests
   window_name: sphinx-tests
 - layout: b570,179x56,0,0[179x33,0,0,17,179x22,0,34{89x22,0,34,18,89x22,90,34,19}]
   shell_command_before: source ../.env/bin/activate
-  options:
-    automatic-rename: 'off'
   panes:
+  - shell_command:
+    - vim
+    - :Ex
+    focus: true
   - pane
   - pane
-  - pane
-  start_directory: /home/tony/study/python/sphinx/doc
+  start_directory: doc
   window_name: sphinx-docs
+- layout: b570,179x56,0,0[179x33,0,0,17,179x22,0,34{89x22,0,34,18,89x22,90,34,19}]
+  panes:
+  - shell_command:
+    - vim
+    - :Ex
+    focus: true
+  - pane
+  - pane
+  start_directory: ~/study/python/docutils
+  window_name: docutils
