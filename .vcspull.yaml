@@ -150,6 +150,7 @@
   werkzeug: 'git+https://github.com/mitsuhiko/werkzeug.git'
   logbook: 'git+https://github.com/mitsuhiko/logbook.git'
   cjklib: 'git+https://github.com/cburgmer/cjklib.git'
+  ltchinese: 'hg+http://bitbucket.org/lost_theory/ltchinese/'
   pudb: 'git+http://git.tiker.net/trees/pudb.git'
   ipython: 'git+https://github.com/ipython/ipython.git'
   blessing: 'git+https://github.com/erikrose/blessings.git'
