@@ -1,0 +1,79 @@
+URxvt.font:             xft:Sauce Code Powerline-10:hint=True;antialias:True,xft:WenQuanYi Bitmap Song:medium;antialias=False,xft:WenQuanYi Zen Hei:medium;antialias=False,
+URxvt.boldFont:             xft:Sauce Code Powerline-10:bold;hint=True;antialias:True,xft:WenQuanYi Bitmap Song:bold;antialias=False,xft:WenQuanYi Zen Hei:bold;antialias=False
+URxvt.letterSpace:      -1
+
+
+URxvt.fading: 0
+URxvt.background: rgba:0000/0000/0000/efef
+URxvt.foreground: 15
+
+!!URxvt.meta8: true
+URxvt.depth: 32
+!! --- URxvt ---
+URxvt*intensityStyles: false
+URxvt*internalBorder: 1
+URxvt.keysym.C-plus: command:\033]710;xft:monospace:size=9\007\033]711;xft:monospace:size=9\007
+URxvt.keysym.C-minus: command:\033]710;xft:monospace:size=8\007\033]711;xft:monospace:size=8\007
+!!URxvt*transparent: true
+!!URxvt*.shading:  25
+
+URxvt.inputMethod: fcitx
+!!URxvt.preeditType: OnTheSpot,None
+URxvt.preeditType: OverTheSpot
+
+URxvt*scrollBar_right: false
+URxvt*scrollBar: false
+
+URxvt.perl-ext-common: default,matcher,tabbed
+URxvt.tabbed.tabbar-bg: -1
+URxvt.scrollBar:        false
+URxvt.urgentOnBell:     true
+URxvt.imLocale:         en_US.UTF-8
+URxvt.cursorBlink:      true
+URxvt.cursorColor:      #ff9900
+URxvt.cursorColor2:     #000000
+URxvt.colorBD:          #ffffff
+URxvt.colorIT:          #bbbbbb
+URxvt.colorUL:          #ff9900
+URxvt.underlineColor:   #999999
+URxvt.borderless:       true
+URxvt*perl-ext-common:  default,matcher
+URxvt*urlLauncher:      x-www-browser
+URxvt*matcher.button:   1
+URxvt.searchable-scrollback: CM-s
+
+! babilen colour
+!
+! black
+!
+*color0:    #262729
+*color8:    #554444
+
+!red
+*color1:    #F92672
+*color9:    #FF669D
+
+!green
+*color2:    #A6E22E
+*color10:   #BEED5F
+
+!yellow
+*color3:    #FD971F
+*color11:   #FD971F
+
+!blue
+*color4:    #4682B4
+*color12:   #4682B4
+
+!!magenta
+*color5:    #AE81FF
+*color13:   #AE81FF
+
+! cyan
+*color6:    #89b6e2
+*color14:   #46a4ff
+
+! white
+*color7:    #FFFFFF
+*color15:   #FFFFFF
+
