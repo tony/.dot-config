@@ -1,5 +1,5 @@
-URxvt.font:             xft:Sauce Code Powerline-10:hint=True;antialias:True,xft:WenQuanYi Bitmap Song:medium;antialias=False,xft:WenQuanYi Zen Hei:medium;antialias=False,
-URxvt.boldFont:             xft:Sauce Code Powerline-10:bold;hint=True;antialias:True,xft:WenQuanYi Bitmap Song:bold;antialias=False,xft:WenQuanYi Zen Hei:bold;antialias=False
+URxvt.font:             xft:Sauce Code Powerline-10:hint=True;antialias:True,xft:WenQuanYi Bitmap Song-12:medium;antialias=False,xft:WenQuanYi Zen Hei-12:medium;antialias=True
+URxvt.boldFont:             xft:Sauce Code Powerline-10:bold;hint=True;antialias:True,xft:WenQuanYi Bitmap Song-12:bold;antialias=False,xft:WenQuanYi Zen Hei-12:bold;antialias=True
 URxvt.letterSpace:      -1
 
 
