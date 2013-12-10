@@ -145,6 +145,7 @@
   virtualenv: 'git+https://github.com/pypa/virtualenv.git'
   jinja2: 'git+https://github.com/mitsuhiko/jinja2.git'
   flask: 'git+https://github.com/mitsuhiko/flask.git'
+  babel: 'git+https://github.com/mitsuhiko/babel.git'
   flask-script: 'git+https://github.com/techniq/flask-script.git'
   frozen-flask: 'git+https://github.com/SimonSapin/Frozen-Flask.git'
   werkzeug: 'git+https://github.com/mitsuhiko/werkzeug.git'
@@ -252,3 +253,6 @@
   pexpect-u: 'hg+https://bitbucket.org/takluyver/pexpect'
   pygments: 'hg+http://bitbucket.org/birkenfeld/pygments-main'
   docutils: 'svn+http://svn.code.sf.net/p/docutils/code/trunk'
+
+  python-unicodecsv: 'git+https://github.com/jdunck/python-unicodecsv.git'
+  ftfy: 'git+https://github.com/LuminosoInsight/python-ftfy.git'
