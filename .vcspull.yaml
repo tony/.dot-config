@@ -37,6 +37,7 @@
   clementine: 'git+https://code.google.com/p/clementine-player/'
   amarok: 'git+git://anongit.kde.org/amarok.git'
 ~/study/node:
+  hanzi: 'git+https://github.com/nieldlr/Hanzi.git',
   async: 'git+http://github.com/caolan/async.git'
   request: 'git+git://github.com/mikeal/request.git'
   express: 'git+https://github.com/visionmedia/express.git'
