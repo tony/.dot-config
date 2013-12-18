@@ -262,7 +262,7 @@
   ftfy: 'git+https://github.com/LuminosoInsight/python-ftfy.git'
 
   bpython: 'hg+https://bitbucket.org/bobf/bpython/'
-  voltron: 'hg+https://github.com/snarez/voltron.git'
+  voltron: 'git+https://github.com/snarez/voltron.git'
   urwid: 'hg+https://excess.org/hg/urwid/'
   understate: 'git+https://github.com/L3V3L9/understate.git'
   vy: 'git+https://github.com/odkq/vy.git'
