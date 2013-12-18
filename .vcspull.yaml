@@ -18,7 +18,7 @@
   postgres: 'git+https://github.com/postgres/postgres.git'
   pgadmin3: 'git+git://git.postgresql.org/git/pgadmin3.git'
 #  sandy: 'git+http://git.suckless.org/sandy'
-  understate: 'git+https://github.com/L3V3L9/understate.git'
+
   util-cursor: 'git+git://anongit.freedesktop.org/xcb/util-cursor'
   zsh: 'git+git://git.code.sf.net/p/zsh/code'
   cpython: 'hg+http://hg.python.org/cpython/'
@@ -252,8 +252,6 @@
   readthedocs: 'git+https://github.com/rtfd/readthedocs.org.git'
   django: 'git+https://github.com/django/django.git'
   norman: 'hg+https://bitbucket.org/aquavitae/norman/src'
-  bpython: 'hg+https://bitbucket.org/bobf/bpython/'
-  urwid: 'hg+https://excess.org/hg/urwid/'
   sphinx: 'hg+https://bitbucket.org/birkenfeld/sphinx'
   sphinx-contrib: 'hg+https://bitbucket.org/birkenfeld/sphinx-contrib'
   pexpect-u: 'hg+https://bitbucket.org/takluyver/pexpect'
@@ -262,3 +260,13 @@
 
   python-unicodecsv: 'git+https://github.com/jdunck/python-unicodecsv.git'
   ftfy: 'git+https://github.com/LuminosoInsight/python-ftfy.git'
+
+  bpython: 'hg+https://bitbucket.org/bobf/bpython/'
+  voltron: 'hg+https://github.com/snarez/voltron.git'
+  urwid: 'hg+https://excess.org/hg/urwid/'
+  understate: 'git+https://github.com/L3V3L9/understate.git'
+  vy: 'git+https://github.com/odkq/vy.git'
+  py_curses_editor: 'git+https://github.com/firecat53/py_curses_editor.git'
+  python-curses-scrolling-example: 'git+https://github.com/LyleScott/Python-curses-Scrolling-Example.git'
+  pygcurse: 'git+https://github.com/asweigart/pygcurse.git'
+  npyscreen: 'hg+https://code.google.com/p/npyscreen/'
