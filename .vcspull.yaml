@@ -277,6 +277,9 @@
   line_profile: 'hg+https://bitbucket.org/robertkern/line_profiler'
 
   kaa: 'git+https://github.com/kaaedit/kaa.git'
+  kdb: 'git+https://github.com/kaaedit/kaadbg.git'
+  curses_ex: 'git+https://github.com/atsuoishimoto/python.curses_ex.git'
+  pyjf3: 'git+https://github.com/atsuoishimoto/pyjf3.git'
 
   alembic: 'git+https://github.com/zzzeek/alembic.git'
   nose: 'git+https://github.com/nose-devs/nose.git'
