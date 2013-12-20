@@ -272,3 +272,13 @@
   python-curses-scrolling-example: 'git+https://github.com/LyleScott/Python-curses-Scrolling-Example.git'
   pygcurse: 'git+https://github.com/asweigart/pygcurse.git'
   npyscreen: 'hg+https://code.google.com/p/npyscreen/'
+
+  profilehooks: 'git+https://github.com/mgedmin/profilehooks'
+  line_profile: 'hg+https://bitbucket.org/robertkern/line_profiler'
+
+  kaa: 'git+https://github.com/kaaedit/kaa.git'
+
+  alembic: 'git+https://github.com/zzzeek/alembic.git'
+  nose: 'git+https://github.com/nose-devs/nose.git'
+  pytest: 'hg+https://bitbucket.org/hpk42/pytest'
+  mock: 'hg+https://code.google.com/p/mock/'
