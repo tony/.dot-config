@@ -17,6 +17,7 @@
   git: 'git+https://github.com/git/git.git'
   postgres: 'git+https://github.com/postgres/postgres.git'
   pgadmin3: 'git+git://git.postgresql.org/git/pgadmin3.git'
+  textadept: 'hg+http://foicica.com/hg/textadept'
 #  sandy: 'git+http://git.suckless.org/sandy'
 
   util-cursor: 'git+git://anongit.freedesktop.org/xcb/util-cursor'
@@ -137,6 +138,7 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  asv: 'git+https://github.com/spacetelescope/asv.git'
   camelot: 'hg+https://bitbucket.org/conceptive/camelot'
   jmespath: 'git+https://github.com/boto/jmespath.git'
   anyvcs: 'git+https://github.com/ScottDuckworth/python-anyvcs.git'
