@@ -91,6 +91,6 @@ fi
 # export PYENV_ROOT="$HOME/.pyenv"
 # PATH="$PYENV_ROOT/bin:$PATH"
 
-# eval "$(pyenv init -)"
+#eval "$(pyenv init -)"
 
 source tmuxp.zsh
