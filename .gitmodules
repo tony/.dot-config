@@ -7,3 +7,6 @@
 [submodule ".tmux"]
 	path = .tmux
 	url = git@github.com:tony/tmux-config.git
+[submodule ".fonts"]
+	path = .fonts
+	url = git@github.com:tony/dot-fonts.git
