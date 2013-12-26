@@ -6,7 +6,11 @@
       marksteve: git+https://github.com/marksteve/kaptan.git
       tony: git+git@github.com:tony/kaptan.git
 
+~/study/java:
+  elasticsearch: 'git+https://github.com/elasticsearch/elasticsearch.git'
 ~/study/c:
+  redis: 'git+https://github.com/antirez/redis.git'
+  cython: 'git+https://github.com/cython/cython.git'
   awesome: 'git+git://git.naquadah.org/awesome.git'
   weechat: 'git+git://git.sv.gnu.org/weechat.git'
   retroarch: 'git+https://github.com/Themaister/RetroArch.git'
@@ -26,6 +30,9 @@
   vim: 'hg+https://vim.googlecode.com/hg/'
   nginx: 'hg+http://hg.nginx.org/nginx'
 ~/study/c++:
+  wxPython: 'git+https://github.com/wxWidgets/wxPython.git'
+  wxWidgets: 'git+https://github.com/wxWidgets/wxWidgets.git'
+  openttd: 'git+git://git.openttd.org/openttd/trunk.git'
   vimpc: 'git+https://github.com/boysetsfrog/vimpc'
   mpd: 'git+git://git.musicpd.org/master/mpd.git'
   libmpd: 'git+git://git.musicpd.org/master/libmpd.git'
@@ -138,6 +145,7 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  pypy: 'hg+https://bitbucket.org/pypy/pypy'
   asv: 'git+https://github.com/spacetelescope/asv.git'
   camelot: 'hg+https://bitbucket.org/conceptive/camelot'
   jmespath: 'git+https://github.com/boto/jmespath.git'
@@ -146,7 +154,6 @@
   setuptools: 'hg+https://bitbucket.org/pypa/setuptools'
   ipdb: 'git+http://github.com/gotcha/ipdb.git'
   otrace: 'git+https://github.com/mitotic/otrace.git'
-  virtualenv: 'git+https://github.com/pypa/virtualenv.git'
   jinja2: 'git+https://github.com/mitsuhiko/jinja2.git'
   flask: 'git+https://github.com/mitsuhiko/flask.git'
   flask-sqlalchemy: 'git+https://github.com/mitsuhiko/flask-sqlalchemy.git'
@@ -285,3 +292,9 @@
   nose: 'git+https://github.com/nose-devs/nose.git'
   pytest: 'hg+https://bitbucket.org/hpk42/pytest'
   mock: 'hg+https://code.google.com/p/mock/'
+
+  virtualenv: 'git+https://github.com/pypa/virtualenv.git'
+
+  pyenv: 'git+https://github.com/yyuu/pyenv'
+  pyenv-virtualenv: 'git+https://github.com/yyuu/pyenv-virtualenv.git'
+  pyenv-virtualenvwrapper: 'git+https://github.com/yyuu/pyenv-virtualenvwrapper.git'
