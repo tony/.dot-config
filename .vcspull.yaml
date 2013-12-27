@@ -22,7 +22,6 @@
   postgres: 'git+https://github.com/postgres/postgres.git'
   pgadmin3: 'git+git://git.postgresql.org/git/pgadmin3.git'
   textadept: 'hg+http://foicica.com/hg/textadept'
-#  sandy: 'git+http://git.suckless.org/sandy'
 
   util-cursor: 'git+git://anongit.freedesktop.org/xcb/util-cursor'
   zsh: 'git+git://git.code.sf.net/p/zsh/code'
