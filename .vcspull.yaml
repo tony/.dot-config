@@ -273,11 +273,10 @@
   voltron: 'git+https://github.com/snarez/voltron.git'
   urwid: 'hg+https://excess.org/hg/urwid/'
   understate: 'git+https://github.com/L3V3L9/understate.git'
-  vy: 'git+https://github.com/odkq/vy.git'
-  py_curses_editor: 'git+https://github.com/firecat53/py_curses_editor.git'
-  python-curses-scrolling-example: 'git+https://github.com/LyleScott/Python-curses-Scrolling-Example.git'
   pygcurse: 'git+https://github.com/asweigart/pygcurse.git'
   npyscreen: 'hg+https://code.google.com/p/npyscreen/'
+
+  cython-book: 'git+https://github.com/redbrain/cython-book.git'
 
   profilehooks: 'git+https://github.com/mgedmin/profilehooks'
   line_profile: 'hg+https://bitbucket.org/robertkern/line_profiler'
