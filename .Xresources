@@ -38,63 +38,87 @@ URxvt*urlLauncher:      x-www-browser
 URxvt*matcher.button:   1
 URxvt.searchable-scrollback: CM-s
 
-! Solarized color scheme for the X Window System
-!
-! http://ethanschoonover.com/solarized
+
+!! from https://github.com/sjbarag/dotfiles/blob/master/.Xresources
+!! Molokai colors from Paul Roget
+*.color0:  black
+*.color1:  #cc0000
+*.color2:  #8ae234
+*.color3:  #c4a000
+*.color4:  #3465a4
+*.color5:  #75507b
+*.color6:  #34e2e2
+*.color7:  #d3d7cf
+*.color8:  #555753
+*.color9:  #ef2929
+*.color10: #8ae234
+*.color11: #fce94f
+*.color12: #729fcf
+*.color13: #ad7fa8
+*.color14: #34e2e2
+*.color15: #d4d4d4
+*.background:   #121212
+*.foreground:   #F3F3F3
+*.cursorColor:  #F3F3F3
 
 
-! Common
-
-#define S_yellow        #b58900
-#define S_orange        #cb4b16
-#define S_red           #dc322f
-#define S_magenta       #d33682
-#define S_violet        #6c71c4
-#define S_blue          #268bd2
-#define S_cyan          #2aa198
-#define S_green         #859900
+! ! Solarized color scheme for the X Window System
+! !
+! ! http://ethanschoonover.com/solarized
 
 
-! Dark
+! ! Common
 
-#define S_base03        #002b36
-#define S_base02        #073642
-#define S_base01        #586e75
-#define S_base00        #657b83
-#define S_base0         #839496
-#define S_base1         #93a1a1
-#define S_base2         #eee8d5
-#define S_base3         #fdf6e3
+! #define S_yellow        #b58900
+! #define S_orange        #cb4b16
+! #define S_red           #dc322f
+! #define S_magenta       #d33682
+! #define S_violet        #6c71c4
+! #define S_blue          #268bd2
+! #define S_cyan          #2aa198
+! #define S_green         #859900
 
-! To only apply colors to your terminal, for example, prefix
-! the color assignment statement with its name. Example:
-!
-! URxvt*background:            S_base03
 
-URxvt.background:              S_base03
-URxvt.foreground:              S_base0
-URxvt.fading:                  40
-URxvt.fadeColor:               S_base03
-URxvt.cursorColor:             S_base1
-URxvt.pointerColorBackground:  S_base01
-URxvt.pointerColorForeground:  S_base1
+! ! Dark
 
-URxvt.color0:                  S_base02
-URxvt.color1:                  S_red
-URxvt.color2:                  S_green
-URxvt.color3:                  S_yellow
-URxvt.color4:                  S_blue
-URxvt.color5:                  S_magenta
-URxvt.color6:                  S_cyan
-URxvt.color7:                  S_base2
-URxvt.color8:                  S_base03
-URxvt.color9:                  S_orange
-URxvt.color10:                 S_base01
-URxvt.color11:                 S_base00
-URxvt.color12:                 S_base0
-URxvt.color13:                 S_violet
-URxvt.color14:                 S_base1
-URxvt.color15:                 S_base3
+! #define S_base03        #002b36
+! #define S_base02        #073642
+! #define S_base01        #586e75
+! #define S_base00        #657b83
+! #define S_base0         #839496
+! #define S_base1         #93a1a1
+! #define S_base2         #eee8d5
+! #define S_base3         #fdf6e3
+
+! ! To only apply colors to your terminal, for example, prefix
+! ! the color assignment statement with its name. Example:
+! !
+! ! URxvt*background:            S_base03
+
+! URxvt.background:              S_base03
+! URxvt.foreground:              S_base0
+! URxvt.fading:                  40
+! URxvt.fadeColor:               S_base03
+! URxvt.cursorColor:             S_base1
+! URxvt.pointerColorBackground:  S_base01
+! URxvt.pointerColorForeground:  S_base1
+
+! URxvt.color0:                  S_base02
+! URxvt.color1:                  S_red
+! URxvt.color2:                  S_green
+! URxvt.color3:                  S_yellow
+! URxvt.color4:                  S_blue
+! URxvt.color5:                  S_magenta
+! URxvt.color6:                  S_cyan
+! URxvt.color7:                  S_base2
+! URxvt.color8:                  S_base03
+! URxvt.color9:                  S_orange
+! URxvt.color10:                 S_base01
+! URxvt.color11:                 S_base00
+! URxvt.color12:                 S_base0
+! URxvt.color13:                 S_violet
+! URxvt.color14:                 S_base1
+! URxvt.color15:                 S_base3
 
 ! URxvt.cursorColor:      #ff9900
 ! URxvt.cursorColor2:     #000000
