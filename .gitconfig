@@ -1,0 +1,20 @@
+[user]
+  email = tony@git-pull.com
+  name = Tony Narlock
+[color]
+  diff = auto
+  branch = auto
+  status = auto
+  ui = always
+[diff]
+  tool = vimdiff
+[difftool]
+  prompt = false
+[push]
+  default = matching
+[core]
+  editor = vim
+  whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  excludesfile = ~/.gitignore
+[web]
+  browser = google-chrome
