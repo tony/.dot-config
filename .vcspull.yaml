@@ -45,6 +45,7 @@
   clementine: 'git+https://code.google.com/p/clementine-player/'
   amarok: 'git+git://anongit.kde.org/amarok.git'
 ~/study/node:
+  nconf: 'git+https://github.com/flatiron/nconf.git'
   hanzi: 'git+https://github.com/nieldlr/Hanzi.git'
   async: 'git+http://github.com/caolan/async.git'
   request: 'git+git://github.com/mikeal/request.git'
@@ -145,6 +146,7 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  unittest2: 'hg+http://hg.python.org/unittest2'
   pypy: 'hg+https://bitbucket.org/pypy/pypy'
   asv: 'git+https://github.com/spacetelescope/asv.git'
   camelot: 'hg+https://bitbucket.org/conceptive/camelot'
