@@ -1,42 +1,56 @@
 session_name: ocaml
 windows:
-- layout: 6458,155x56,0,0,57
+- window_name: sys 
   panes:
   - pane
   start_directory: ~/study/ocaml
-  window_name: ocaml
-- layout: 6459,155x56,0,0,58
+  window_index: 0
+- window_name: ocaml
+  focus: true
+  panes:
+  - pane
+  start_directory: ~/study/ocaml/ocaml
+- window_name: core
   panes:
   - pane
   start_directory: ~/study/ocaml/core
-  window_name: core
-- layout: 645a,155x56,0,0,59
-  panes:
-  - pane
-  start_directory: ~/study/ocaml/opam
-  window_name: opam
-- layout: e451,155x56,0,0,60
-  panes:
-  - pane
-  start_directory: ~/study/ocaml/core
-  window_name: core
-- layout: e522,239x56,0,0,61
-  panes:
-  - pane
-  start_directory: ~/study/ocaml/camlp4
-  window_name: ocamlp4
-- layout: e523,239x56,0,0,62
-  panes:
-  - pane
-  start_directory: ~/study/ocaml/opam-repository/packages
-  window_name: opam-repository
-- layout: e454,155x56,0,0,63
+- window_name: core_extended
   panes:
   - pane
   start_directory: ~/study/ocaml/core_extended
-  window_name: core_extended
-- layout: e455,155x56,0,0,64
+- window_name: core_kernel
+  panes:
+  - pane
+  start_directory: ~/study/ocaml/core_kernel
+- window_name: opam
+  panes:
+  - pane
+  start_directory: ~/study/ocaml/opam
+- window_name: async
+  panes:
+  - pane
+  start_directory: ~/study/ocaml/async
+- window_name: async_unix
+  panes:
+  - pane
+  start_directory: ~/study/ocaml/async_unix
+- window_name: ocaml-re
+  panes:
+  - pane
+  start_directory: ~/study/ocaml/ocaml-re
+- window_name: opam-repository
+  panes:
+  - pane
+  start_directory: ~/study/ocaml/opam-repository
+- window_name: pfff
+  panes:
+  - pane
+  start_directory: ~/study/ocaml/pfff
+- window_name: utop
+  panes:
+  - pane
+  start_directory: ~/study/ocaml/utop
+- window_name: batteries-included
   panes:
   - vim
   start_directory: ~/study/ocaml/batteries-included
-  window_name: batteries-included
