@@ -35,7 +35,9 @@
   ocp-build: 'git+https://github.com/OCamlPro/ocp-build.git'
   ocp-indent: 'git+https://github.com/OCamlPro/ocp-indent.git'
   ocp-index: 'git+https://github.com/OCamlPro/ocp-index.git'
-
+  camlp4: 'git+https://github.com/ocaml/camlp4'
+  opam-repository: 'git+https://github.com/ocaml/opam-repository.git'
+  ocaml-re: 'git+https://github.com/ocaml/ocaml-re.git'
 ~/study/java:
   elasticsearch: 'git+https://github.com/elasticsearch/elasticsearch.git'
 ~/study/c:
