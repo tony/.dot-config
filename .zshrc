@@ -87,6 +87,11 @@ if [ -f /usr/games/fortune ] && [ -f /usr/games/cowsay ]; then
     fortune | cowsay -n
 fi
 
+if [ -f ~/.opam/opam-init/init.zsh ]; then
+    # OPAM configuration
+    . /home/tony/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+fi
+
 # PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # export PYENV_ROOT="$HOME/.pyenv"
 # PATH="$PYENV_ROOT/bin:$PATH"
