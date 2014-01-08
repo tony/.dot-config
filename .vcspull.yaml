@@ -7,6 +7,7 @@
       tony: git+git@github.com:tony/kaptan.git
 
 ~/study/ocaml:
+  ipython-ocaml-kernel: 'git+https://github.com/jpraher/ipython-ocaml-kernel.git'
   ocaml: 'git+https://github.com/ocaml/ocaml.git'
   core: 'git+https://github.com/janestreet/core.git'
   async_kernel: 'git+https://github.com/janestreet/async_kernel.git'
@@ -36,8 +37,12 @@
   ocp-indent: 'git+https://github.com/OCamlPro/ocp-indent.git'
   ocp-index: 'git+https://github.com/OCamlPro/ocp-index.git'
   camlp4: 'git+https://github.com/ocaml/camlp4'
-  opam-repository: 'git+https://github.com/ocaml/opam-repository.git'
+  opam-repository:
+    repo: 'git+https://github.com/ocaml/opam-repository.git'
+    remotes:
+      janestreet: 'git+https://github.com/janestreet/opam-repository.git'
   ocaml-re: 'git+https://github.com/ocaml/ocaml-re.git'
+  ocaml-book: 'git+https://github.com/bobzhang/ocaml-book.git'
 ~/study/java:
   elasticsearch: 'git+https://github.com/elasticsearch/elasticsearch.git'
 ~/study/c:
