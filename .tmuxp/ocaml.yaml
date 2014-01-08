@@ -1,0 +1,42 @@
+session_name: ocaml
+windows:
+- layout: 6458,155x56,0,0,57
+  panes:
+  - pane
+  start_directory: ~/study/ocaml
+  window_name: ocaml
+- layout: 6459,155x56,0,0,58
+  panes:
+  - pane
+  start_directory: ~/study/ocaml/core
+  window_name: core
+- layout: 645a,155x56,0,0,59
+  panes:
+  - pane
+  start_directory: ~/study/ocaml/opam
+  window_name: opam
+- layout: e451,155x56,0,0,60
+  panes:
+  - pane
+  start_directory: ~/study/ocaml/core
+  window_name: core
+- layout: e522,239x56,0,0,61
+  panes:
+  - pane
+  start_directory: ~/study/ocaml/camlp4
+  window_name: ocamlp4
+- layout: e523,239x56,0,0,62
+  panes:
+  - pane
+  start_directory: ~/study/ocaml/opam-repository/packages
+  window_name: opam-repository
+- layout: e454,155x56,0,0,63
+  panes:
+  - pane
+  start_directory: ~/study/ocaml/core_extended
+  window_name: core_extended
+- layout: e455,155x56,0,0,64
+  panes:
+  - vim
+  start_directory: ~/study/ocaml/batteries-included
+  window_name: batteries-included
