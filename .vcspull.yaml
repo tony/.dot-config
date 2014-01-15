@@ -7,6 +7,7 @@
       tony: git+git@github.com:tony/kaptan.git
 
 ~/study/ocaml:
+  cmdliner: 'git+http://erratique.ch/repos/cmdliner.git'
   ipython-ocaml-kernel: 'git+https://github.com/jpraher/ipython-ocaml-kernel.git'
   ocaml: 'git+https://github.com/ocaml/ocaml.git'
   core: 'git+https://github.com/janestreet/core.git'
@@ -42,7 +43,20 @@
     remotes:
       janestreet: 'git+https://github.com/janestreet/opam-repository.git'
   ocaml-re: 'git+https://github.com/ocaml/ocaml-re.git'
-  ocaml-book: 'git+https://github.com/bobzhang/ocaml-book.git'
+  realworldocaml-examples: 'git+https://github.com/realworldocaml/examples.git'
+  ocaml-cohttp: 'git+https://github.com/avsm/ocaml-cohttp.git'
+  ocaml-github: 'git+https://github.com/avsm/ocaml-github.git'
+  ocaml-uri: 'git+https://github.com/avsm/ocaml-uri.git'
+  mirage: 'git+https://github.com/mirage/mirage.git'
+  mirage-types: 'git+https://github.com/mirage/mirage-types.git'
+  mirage-platform: 'git+https://github.com/mirage/mirage-platform.git'
+  orm: 'git+https://github.com/mirage/orm.git'
+  ocaml-sqlexpr: 'git+https://github.com/mfp/ocaml-sqlexpr.git'
+  jingoo: 'git+https://github.com/tategakibunko/jingoo.git'
+  ucorelib: 'git+https://github.com/yoriyuki/ucorelib.git'
+  yojson: 'git+https://github.com/mjambon/yojson.git'
+  99-problems-ocaml: 'git+https://github.com/VictorNicollet/99-Problems-OCaml.git'
+  ocaml-from-very-beginning-exercises: 'git+https://github.com/johnwhitington/ocaml-from-very-beginning-exercises.git'
 ~/study/java:
   elasticsearch: 'git+https://github.com/elasticsearch/elasticsearch.git'
 ~/study/c:
