@@ -68,9 +68,10 @@ if [ -d ~/.rbenv ]; then
     eval "$(rbenv init -)"
 fi
 
-#if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-#    . /usr/local/bin/virtualenvwrapper.sh
-#fi
+
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    . /usr/local/bin/virtualenvwrapper.sh
+fi
 
 if [ -f /usr/local/rvm/scripts/rvm ]; then
     . /usr/local/rvm/scripts/rvm
