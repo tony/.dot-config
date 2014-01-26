@@ -5,7 +5,16 @@
       upstream: git+https://github.com/emre/kaptan
       marksteve: git+https://github.com/marksteve/kaptan.git
       tony: git+git@github.com:tony/kaptan.git
-
+~/study/merchant:
+  braintree.js: 'git+https://github.com/braintree/braintree.js.git'
+  braintree_node: 'git+https://github.com/braintree/braintree_node.git'
+  braintree_python: 'git+https://github.com/braintree/braintree_python.git'
+  braintree_node_guide: 'git+https://github.com/braintree/braintree_node_guide.git'
+  braintree_python_guide: 'git+https://github.com/braintree/braintree_python_guide.git'
+  balanced-js: 'git+https://github.com/balanced/balanced-js.git'
+  balanced-python: 'git+https://github.com/balanced/balanced-python.git'
+  stripe-node: 'git+https://github.com/stripe/stripe-node.git'
+  stripe-python: 'git+https://github.com/stripe/stripe-python.git'
 ~/study/ocaml:
   cmdliner: 'git+http://erratique.ch/repos/cmdliner.git'
   ipython-ocaml-kernel: 'git+https://github.com/jpraher/ipython-ocaml-kernel.git'
