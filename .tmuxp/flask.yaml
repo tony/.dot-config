@@ -1,0 +1,34 @@
+session_name: flask
+start_directory: ~/study/python
+windows:
+- window_name: flask
+  layout: 7cf4,179x56,0,0[179x33,0,0,0,179x22,0,34{89x22,0,34,2,89x22,90,34,3}]
+  shell_command_before: source .env/bin/activate
+  start_directory: ~/study/python/flask
+  focus: true
+  panes:
+  - shell_command:
+    - pane
+    focus: true
+  - pane
+  - pane
+- window_name: werkzeug
+  layout: 7cf4,179x56,0,0[179x33,0,0,0,179x22,0,34{89x22,0,34,2,89x22,90,34,3}]
+  shell_command_before: source .env/bin/activate
+  start_directory: ~/study/python/werkzeug
+  panes:
+  - shell_command:
+    - pane
+    focus: true
+  - pane
+  - pane
+- window_name: jinja2
+  layout: 7cf4,179x56,0,0[179x33,0,0,0,179x22,0,34{89x22,0,34,2,89x22,90,34,3}]
+  shell_command_before: source .env/bin/activate
+  start_directory: ~/study/python/jinja2
+  panes:
+  - shell_command:
+    - pane
+    focus: true
+  - pane
+  - pane
