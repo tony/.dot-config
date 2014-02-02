@@ -209,6 +209,11 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  cookiecutter-pypackage:
+    repo: git+https://github.com/audreyr/cookiecutter-pypackage.git
+    remotes:
+      tony: git+https://github.com/audreyr/cookiecutter-pypackage.git
+  cookiecutter: git+https://github.com/audreyr/cookiecutter-pypackage.git
   unittest2: 'hg+http://hg.python.org/unittest2'
   pypy: 'hg+https://bitbucket.org/pypy/pypy'
   asv: 'git+https://github.com/spacetelescope/asv.git'
@@ -216,6 +221,7 @@
   jmespath: 'git+https://github.com/boto/jmespath.git'
   anyvcs: 'git+https://github.com/ScottDuckworth/python-anyvcs.git'
   pip: 'git+git://github.com/pypa/pip.git'
+  warehouse: 'git+git://github.com/pypa/warehouse.git'
   setuptools: 'hg+https://bitbucket.org/pypa/setuptools'
   ipdb: 'git+http://github.com/gotcha/ipdb.git'
   otrace: 'git+https://github.com/mitotic/otrace.git'
