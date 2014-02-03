@@ -213,7 +213,7 @@
     repo: git+https://github.com/audreyr/cookiecutter-pypackage.git
     remotes:
       tony: git+https://github.com/audreyr/cookiecutter-pypackage.git
-  cookiecutter: git+https://github.com/audreyr/cookiecutter-pypackage.git
+  cookiecutter: git+https://github.com/audreyr/cookiecutter.git
   unittest2: 'hg+http://hg.python.org/unittest2'
   pypy: 'hg+https://bitbucket.org/pypy/pypy'
   asv: 'git+https://github.com/spacetelescope/asv.git'
