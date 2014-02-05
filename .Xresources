@@ -7,7 +7,7 @@ URxvt.letterSpace:      -1
 ! URxvt.background: rgba:0000/0000/0000/efef
 ! URxvt.foreground: 15
 
-!!URxvt.meta8: true
+URxvt.meta8: true
 URxvt.depth: 32
 !! --- URxvt ---
 URxvt*intensityStyles: false
