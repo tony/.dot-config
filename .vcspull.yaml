@@ -229,6 +229,8 @@
   jinja2: 'git+https://github.com/mitsuhiko/jinja2.git'
   flask: 'git+https://github.com/mitsuhiko/flask.git'
   flask-sqlalchemy: 'git+https://github.com/mitsuhiko/flask-sqlalchemy.git'
+  flask-admin: 'git+https://github.com/mrjoes/flask-admin.git'
+  flask-script: 'git+https://github.com/techniq/flask-script.git'
   beaker: 'git+https://github.com/bbangert/beaker.git'
   babel: 'git+https://github.com/mitsuhiko/babel.git'
   flask-script: 'git+https://github.com/techniq/flask-script.git'
