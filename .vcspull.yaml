@@ -18,6 +18,7 @@
   authorize-sauce: 'git+https://github.com/jeffschenck/authorizesauce'
   pyauthorize: 'git+https://github.com/vcatalano/py-authorize.git'
   billy: 'git+https://github.com/balanced/billy.git'
+  merchant: 'git+https://github.com/agiliq/merchant.git'
 ~/study/ocaml:
   cmdliner: 'git+http://erratique.ch/repos/cmdliner.git'
   ipython-ocaml-kernel: 'git+https://github.com/jpraher/ipython-ocaml-kernel.git'
@@ -210,9 +211,9 @@
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
   cookiecutter-pypackage:
-    repo: git+https://github.com/audreyr/cookiecutter-pypackage.git
+    repo: git+https://github.com/tony/cookiecutter-pypackage.git
     remotes:
-      tony: git+https://github.com/audreyr/cookiecutter-pypackage.git
+      upstream: git+https://github.com/audreyr/cookiecutter-pypackage.git
   cookiecutter: git+https://github.com/audreyr/cookiecutter.git
   unittest2: 'hg+http://hg.python.org/unittest2'
   pypy: 'hg+https://bitbucket.org/pypy/pypy'
