@@ -210,6 +210,7 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  celery: 'git+https://github.com/celery/celery.git'
   python-social-auth: 'git+https://github.com/omab/python-social-auth.git'
   Flexget: 'git+https://github.com/Flexget/Flexget.git'
   cookiecutter-pypackage:
