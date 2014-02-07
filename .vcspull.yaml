@@ -210,6 +210,8 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  RootTheBox: 'git+https://github.com/moloch--/RootTheBox.git'
+  flask-app-template: 'git+https://github.com/nprapps/app-template.git'
   celery: 'git+https://github.com/celery/celery.git'
   python-social-auth: 'git+https://github.com/omab/python-social-auth.git'
   Flexget: 'git+https://github.com/Flexget/Flexget.git'
