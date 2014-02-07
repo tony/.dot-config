@@ -1,7 +1,10 @@
 session_name: logbook
 start_directory: ~/study/python/logbook
 windows:
-- layout: 67d3,239x56,0,0[239x37,0,0,15,239x18,0,38{119x18,0,38,17,119x18,120,38,16}]
+- window_name: logbook
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
   focus: true
   panes:
   - shell_command:
@@ -9,8 +12,10 @@ windows:
     focus: true
   - pane
   - pane
-  window_name: logbook
-- layout: fbd5,239x56,0,0[239x33,0,0,18,239x22,0,34{119x22,0,34,20,119x22,120,34,19}]
+- window_name: docs
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
   panes:
   - shell_command: vim
     focus: true

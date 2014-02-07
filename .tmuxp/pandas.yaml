@@ -1,7 +1,10 @@
 session_name: pandas-numpy
 start_directory: ~/study/python
 windows:
-- layout: 197a,239x56,0,0[239x39,0,0,36,239x16,0,40{119x16,0,40,37,119x16,120,40,38}]
+- window_name: pandas
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
   start_directory: pandas
   focus: true
   panes:
@@ -12,7 +15,7 @@ windows:
   - pane
   - pane
   window_name: pandas
-- layout: 3374,239x56,0,0[239x34,0,0,44,239x21,0,35{119x21,0,35,107,119x21,120,35,108}]
+- window_name: numpy
   start_directory: numpy
   panes:
   - shell_command:
@@ -21,4 +24,7 @@ windows:
     focus: true
   - pane
   - pane
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
   window_name: numpy

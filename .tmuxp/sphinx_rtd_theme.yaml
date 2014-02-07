@@ -1,12 +1,12 @@
 session_name: sphinx_rtd_theme
 windows:
-- layout: f8f1,239x60,0,0[239x37,0,0,355,239x22,0,38{120x22,0,38,359,118x22,121,38,360}]
-  options:
-    automatic-rename: 'off'
+- window_name: sphinx_rtd_theme
   start_directory: ~/workspace/sphinx_rtd_theme 
   shell_command_before: '. .env/bin/activate'
   panes:
   - vim
   - pane
   - grunt
-  window_name: sphinx_rtd_theme
+  options:
+    main-pane-height: 35
+  layout: main-horizontal

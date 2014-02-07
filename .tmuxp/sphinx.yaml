@@ -1,7 +1,7 @@
 session_name: sphinx
 start_directory: ~/study/python/sphinx
 windows:
-- layout: 7cf4,179x56,0,0[179x33,0,0,0,179x22,0,34{89x22,0,34,2,89x22,90,34,3}]
+- window_name: sphinx
   shell_command_before: source .env/bin/activate
   focus: true
   panes:
@@ -11,8 +11,10 @@ windows:
     focus: true
   - pane
   - pane
-  window_name: sphinx
-- layout: ec71,179x56,0,0[179x34,0,0,1,179x21,0,35{89x21,0,35,15,89x21,90,35,16}]
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
+- window_name: sphinx-tests
   shell_command_before: source ../.env/bin/activate
   panes:
   - shell_command:
@@ -22,8 +24,10 @@ windows:
   - pane
   - pane
   start_directory: tests
-  window_name: sphinx-tests
-- layout: b570,179x56,0,0[179x33,0,0,17,179x22,0,34{89x22,0,34,18,89x22,90,34,19}]
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
+- window_name: sphinx-docs
   shell_command_before: source ../.env/bin/activate
   panes:
   - shell_command:
@@ -33,8 +37,10 @@ windows:
   - pane
   - pane
   start_directory: doc
-  window_name: sphinx-docs
-- layout: b570,179x56,0,0[179x33,0,0,17,179x22,0,34{89x22,0,34,18,89x22,90,34,19}]
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
+- window_name: docutils
   panes:
   - shell_command:
     - vim
@@ -43,4 +49,6 @@ windows:
   - pane
   - pane
   start_directory: ~/study/python/docutils
-  window_name: docutils
+  options:
+    main-pane-height: 35
+  layout: main-horizontal

@@ -1,0 +1,48 @@
+session_name: npr-flexget
+windows:
+- window_name: flexget
+  layout: main-horizontal
+  options:
+    main-pane-height: 35
+  start_directory: ~/study/python/Flexget
+  shell_command_before:
+    - command -v virtualenv >/dev/null 2>&1 || { pip install virtualenv; }
+    - '[ -d .env -a -f .env/bin/activate ] && source .env/bin/activate || virtualenv .env'
+    - '[ ! -d .env/build ] || rm -rf .env/build'
+  panes:
+  - shell_command:
+    - pane
+    focus: true
+  - pane
+  - pane
+  focus: true
+- window_name: nprapp
+  layout: main-horizontal
+  start_directory: ~/study/python/flask-app-template
+  shell_command_before:
+    - command -v virtualenv >/dev/null 2>&1 || { pip install virtualenv; }
+    - '[ -d .env -a -f .env/bin/activate ] && source .env/bin/activate || virtualenv .env'
+    - '[ ! -d .env/build ] || rm -rf .env/build'
+  options:
+    main-pane-height: 35
+  panes:
+  - shell_command:
+    - pane
+    focus: true
+  - pane
+  - pane
+- window_name: RootTheBox
+  layout: main-horizontal
+  start_directory: ~/study/python/RootTheBox
+  shell_command_before:
+    - command -v virtualenv >/dev/null 2>&1 || { pip install virtualenv; }
+    - '[ -d .env -a -f .env/bin/activate ] && source .env/bin/activate || virtualenv .env'
+    - '[ ! -d .env/build ] || rm -rf .env/build'
+  options:
+    main-pane-height: 35
+  panes:
+  - shell_command:
+    - pane
+    focus: true
+  - pane
+  - pane

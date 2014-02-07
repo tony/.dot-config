@@ -1,7 +1,8 @@
 session_name: cpython
 start_directory: ~/study/c/cpython
 windows:
-- layout: 6f46,239x56,0,0[239x35,0,0,33,239x20,0,36{119x20,0,36,34,119x20,120,36,35}]
+- window_name: cpython
+  layout: main-horizontal
   focus: true
   panes:
   - shell_command:
@@ -10,8 +11,10 @@ windows:
     focus: True
   - pane
   - pane
-  window_name: cpython
-- layout: 6f46,239x56,0,0[239x35,0,0,33,239x20,0,36{119x20,0,36,34,119x20,120,36,35}]
+  options:
+    main-pane-height: 35
+- window_name: csv
+  layout: main-horizontal
   start_directory: Lib
   panes:
   - shell_command:
@@ -19,30 +22,39 @@ windows:
     focus: true
   - pane
   - pane
-  window_name: csv
-- start_directory: Lib/logging
+  options:
+    main-pane-height: 35
+- window_name: logging
+  layout: main-horizontal
+  start_directory: Lib/logging
   panes:
   - shell_command:
     - vim
     - :Ex
     focus: True
-  window_name: logger
-- start_directory: Lib
+  options:
+    main-pane-height: 35
+- window_name: re
+  start_directory: Lib
   panes:
   - shell_command:
     - vim ./re.py
     focus: true
-  window_name: re
-- layout: ab82,239x56,0,0{119x56,0,0,48,119x56,120,0,49}
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
+- window_name: glob/fnmatch
   start_directory: Lib
   panes:
   - shell_command:
     - vim ./fnmatch.py
     focus: true
   - vim ./glob.py
-  start_directory: /home/tony/study/c/cpython/Lib
-  window_name: glob/fnmatch
-- layout: 6f46,239x56,0,0[239x35,0,0,33,239x20,0,36{119x20,0,36,34,119x20,120,36,35}]
+  start_directory: ~/study/c/cpython/Lib
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
+- window_name: unittest
   start_directory: Lib/unittest
   panes:
   - shell_command:
@@ -51,22 +63,32 @@ windows:
     focus: true
   - pane
   - pane
-  start_directory: /home/tony/study/c/cpython/Lib/unittest
-  window_name: unittest
-- panes:
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
+- window_name: pdb
+  panes:
   - vim ./pdb.py
   start_directory: Lib
-  window_name: pdb
-- panes:
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
+- window_name: multiprocessing
+  panes:
   - shell_command:
     - vim
     - :Ex
   start_directory: Lib/multiprocessing
-  window_name: multiprocessing
-- panes:
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
+- window_name: curses
+  panes:
   - shell_command:
     - vim
     - :Ex
     focus: true
   start_directory: Lib/curses
-  window_name: curses
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
