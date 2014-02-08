@@ -212,8 +212,9 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
-  rdflib-sqlalchemy: 'git+https://github.com/RDFLib/rdflib-sqlalchemy.git'
   rdflib: 'git+https://github.com/RDFLib/rdflib.git'
+  rdflib-sqlalchemy: 'git+https://github.com/RDFLib/rdflib-sqlalchemy.git'
+  rdfalchemy: 'git+https://github.com/gjhiggins/RDFAlchemy.git'
   RootTheBox: 'git+https://github.com/moloch--/RootTheBox.git'
   celery: 'git+https://github.com/celery/celery.git'
   python-social-auth: 'git+https://github.com/omab/python-social-auth.git'
