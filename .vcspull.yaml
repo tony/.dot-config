@@ -192,6 +192,8 @@
   highlight.js: 'git+https://github.com/isagalaev/highlight.js.git'
 ~/study/javascript:
   backbone.deepmodel: 'git+https://github.com/powmedia/backbone-deep-model.git'
+  create: 'git+https://github.com/bergie/create'
+  vie: 'git+https://github.com/bergie/VIE.git'
   underscore: 'git+https://github.com/documentcloud/underscore.git'
   lodash: 'git+https://github.com/bestiejs/lodash.git'
   backbone: 'git+https://github.com/documentcloud/backbone.git'
@@ -210,6 +212,8 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  rdflib-sqlalchemy: 'git+https://github.com/RDFLib/rdflib-sqlalchemy.git'
+  rdflib: 'git+https://github.com/RDFLib/rdflib.git'
   RootTheBox: 'git+https://github.com/moloch--/RootTheBox.git'
   celery: 'git+https://github.com/celery/celery.git'
   python-social-auth: 'git+https://github.com/omab/python-social-auth.git'
@@ -371,14 +375,30 @@
   pyenv-virtualenv: 'git+https://github.com/yyuu/pyenv-virtualenv.git'
   pyenv-virtualenvwrapper: 'git+https://github.com/yyuu/pyenv-virtualenvwrapper.git'
 
+  weasyprint: 'git+https://github.com/Kozea/WeasyPrint.git'
+
 ~/study/flask:
   book-explore-flask: 'git+https://github.com/rpicard/explore-flask.git'
+
   example-kit: 'git+https://github.com/semirook/flask-kit.git'
   example-simple: 'git+https://github.com/orf/simple.git'
   example-overholt: 'git+https://github.com/mattupstate/overholt.git'
   example-app-template: 'git+https://github.com/nprapps/app-template.git'
   example-foundation: 'git+https://github.com/JackStouffer/Flask-Foundation.git'
+  example-instant-feedback: 'git+https://github.com/adewes/instant-feedback.git'
+  example-bigapp-template: 'git+https://github.com/rahulkmr/flask-bigapp-template.git'
+  example-emeraldbox: 'git+https://github.com/femmerling/EmeraldBox.git'
+  example-websockets: 'git+https://github.com/tzangms/python-websocket-example'
+
   flask: 'git+https://github.com/mitsuhiko/flask.git'
+
+  flask-bb: 'git+https://github.com/sh4nks/flaskbb.git'
+  flask-split: 'git+https://github.com/jpvanhal/flask-split.git'
+
+  flask-goblet: 'git+https://github.com/seveas/goblet.git'
+  flask-migrate: 'git+https://github.com/miguelgrinberg/Flask-Migrate.git'
+  flask-weasyprint: 'git+https://github.com/SimonSapin/Flask-WeasyPrint.git'
+  flask-flamaster: 'git+https://github.com/MediaSapiens/flamaster.git'
   flask-sqlalchemy: 'git+https://github.com/mitsuhiko/flask-sqlalchemy.git'
   flask-admin: 'git+https://github.com/mrjoes/flask-admin.git'
   flask-script: 'git+https://github.com/techniq/flask-script.git'
