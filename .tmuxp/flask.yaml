@@ -1,12 +1,12 @@
 session_name: flask
-start_directory: ~/study/python
+start_directory: ~/study/flask
 windows:
 - window_name: flask
   options:
     main-pane-height: 35
   layout: main-horizontal
   shell_command_before: source .env/bin/activate
-  start_directory: ~/study/python/flask
+  start_directory: ~/study/flask/flask
   focus: true
   panes:
   - shell_command:
