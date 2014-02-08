@@ -18,7 +18,7 @@ windows:
   focus: true
 - window_name: nprapp
   layout: main-horizontal
-  start_directory: ~/study/python/example-npr-template
+  start_directory: ~/study/flask/example-npr-template
   shell_command_before:
     - command -v virtualenv >/dev/null 2>&1 || { pip install virtualenv; }
     - '[ -d .env -a -f .env/bin/activate ] && source .env/bin/activate || virtualenv .env'
