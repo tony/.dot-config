@@ -212,6 +212,7 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  jsonschema: 'git+https://github.com/Julian/jsonschema.git'
   rdflib: 'git+https://github.com/RDFLib/rdflib.git'
   rdflib-sqlalchemy: 'git+https://github.com/RDFLib/rdflib-sqlalchemy.git'
   rdfalchemy: 'git+https://github.com/gjhiggins/RDFAlchemy.git'
