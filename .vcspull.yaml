@@ -73,6 +73,7 @@
 ~/study/java:
   elasticsearch: 'git+https://github.com/elasticsearch/elasticsearch.git'
 ~/study/c:
+  libimobiledevice: 'git+https://github.com/libimobiledevice/libimobiledevice.git'
   redis: 'git+https://github.com/antirez/redis.git'
   cython: 'git+https://github.com/cython/cython.git'
   awesome: 'git+git://git.naquadah.org/awesome.git'
@@ -312,7 +313,6 @@
   twisted: 'git+https://github.com/twisted/twisted.git'
 
   ckan: 'git+https://github.com/okfn/ckan.git'
-  hackthebox: 'git+https://github.com/moloch--/RootTheBox.git'
   mediagoblin: 'git+git://gitorious.org/mediagoblin/mediagoblin.git'
   ckan: 'git+https://github.com/okfn/ckan.git'
   reddit: 'git+https://github.com/reddit/reddit.git'
