@@ -110,6 +110,7 @@
   clementine: 'git+https://code.google.com/p/clementine-player/'
   amarok: 'git+git://anongit.kde.org/amarok.git'
 ~/study/node:
+  fabric.js: 'git+https://github.com/kangax/fabric.js.git'
   nconf: 'git+https://github.com/flatiron/nconf.git'
   hanzi: 'git+https://github.com/nieldlr/Hanzi.git'
   async: 'git+http://github.com/caolan/async.git'
@@ -213,6 +214,7 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  nova: 'git+https://github.com/openstack/nova.git'
   jsonschema: 'git+https://github.com/Julian/jsonschema.git'
   rdflib: 'git+https://github.com/RDFLib/rdflib.git'
   rdflib-sqlalchemy: 'git+https://github.com/RDFLib/rdflib-sqlalchemy.git'
