@@ -5,6 +5,10 @@
       upstream: git+https://github.com/emre/kaptan
       marksteve: git+https://github.com/marksteve/kaptan.git
       tony: git+git@github.com:tony/kaptan.git
+~/study/sqlalchemy:
+  sqlalchemy_traversal: 'git+https://github.com/sontek/sqlalchemy_traversal.git'
+  sqlamp: 'git+https://github.com/tony/sqlamp.git'
+  sqlalchemy-orm-tree: 'git+https://github.com/monetizeio/sqlalchemy-orm-tree.git'
 ~/study/merchant:
   braintree.js: 'git+https://github.com/braintree/braintree.js.git'
   braintree_node: 'git+https://github.com/braintree/braintree_node.git'
@@ -73,6 +77,11 @@
 ~/study/java:
   elasticsearch: 'git+https://github.com/elasticsearch/elasticsearch.git'
 ~/study/c:
+  neovim:
+    repo: 'git+https://github.com/neovim/neovim.git'
+    remotes:
+      tony: 'git+https://github.com/audreyr/cookiecutter-pypackage.git'
+  libuv: 'git+https://github.com/joyent/libuv.git'
   libimobiledevice: 'git+https://github.com/libimobiledevice/libimobiledevice.git'
   redis: 'git+https://github.com/antirez/redis.git'
   cython: 'git+https://github.com/cython/cython.git'
