@@ -4,11 +4,13 @@ URxvt.letterSpace:      -1
 
 
 ! URxvt.fading: 0
-URxvt.background: rgba:0000/0000/0000/efef
-URxvt.foreground: 15
+!!URxvt.background: rgba:0000/0000/0000/efef
+URxvt.background: #121212
+!!URxvt.foreground: 15
+URxvt.foreground: #F3F3F3
 
 !! URxvt.meta8: true
-URxvt.depth: 32
+!!URxvt.depth: 32
 !! --- URxvt ---
 URxvt*intensityStyles: false
 URxvt*internalBorder: 1
