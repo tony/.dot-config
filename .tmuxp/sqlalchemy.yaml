@@ -1,12 +1,11 @@
 session_name: sqlalchemy
-start_directory: ~/study/python/sqlalchemy
+start_directory: ~/study/sqlalchemy/sqlalchemy
 windows:
 - window_name: sqlalchemy
   focus: true
   panes:
   - shell_command:
-    - vim
-    - :Ex
+    - pane
     focus: true
   - pane
   - pane
@@ -17,8 +16,7 @@ windows:
 - window_name: test-utils
   panes:
   - shell_command:
-    - vim
-    - :Ex
+    - pane
     focus: true
   - pane
   - pane
@@ -29,12 +27,44 @@ windows:
 - window_name: tests
   panes:
   - shell_command:
-    - vim
-    - :Ex
+    - pane
     focus: true
   - pane
   - pane
   start_directory: test
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
+- window_name: sqlamp
+  start_directory: ~/study/sqlalchemy/sqlamp
+  panes:
+  - shell_command:
+    - pane
+    focus: true
+  - pane
+  - pane
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
+- window_name: sqlalchemy_traversal
+  start_directory: ~/study/sqlalchemy/sqlalchemy_traversal
+  panes:
+  - shell_command:
+    - pane
+    focus: true
+  - pane
+  - pane
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
+- window_name: sqlalchemy-orm-tree
+  start_directory: ~/study/sqlalchemy/sqlalchemy-orm-tree
+  panes:
+  - shell_command:
+    - pane
+    focus: true
+  - pane
+  - pane
   options:
     main-pane-height: 35
   layout: main-horizontal
