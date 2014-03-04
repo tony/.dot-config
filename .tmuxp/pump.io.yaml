@@ -1,0 +1,12 @@
+session_name: pump.io
+windows:
+- window_name: pump.io
+  start_directory: ~/workspace/pump.io
+  panes:
+  - shell_command: pane
+    focus: true
+  - pane
+  - pane
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
