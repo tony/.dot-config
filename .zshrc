@@ -110,6 +110,10 @@ if [ -d /opt/local/Library/Frameworks/Python.framework/Versions/Current/bin ]; t
     export PATH=$PATH:/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin
 fi
 
+if [ -d /opt/local/lib/postgresql93/bin ]; then
+    export PATH=$PATH:/opt/local/lib/postgresql93/bin
+fi
+
 
 # PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # export PYENV_ROOT="$HOME/.pyenv"
