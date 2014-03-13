@@ -46,7 +46,6 @@ source $ZSH/oh-my-zsh.sh
 
 
 
-eval `dircolors ~/.dircolors-solarized/dircolors.256dark`
 
 export EDITOR=vim
 # Customize to your needs...
@@ -90,8 +89,27 @@ fi
 
 if [ -f ~/.opam/opam-init/init.zsh ]; then
     # OPAM configuration
-    . /home/tony/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+    . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 fi
+
+if [ -f ~/.profile ]; then
+    # OS X
+    . ~/.profile
+fi
+
+if [ -f /opt/local/usr/bin/gdircolors ]; then
+    eval `gdircolors ~/.dircolors-solarized/dircolors.256dark`
+fi
+
+if [ -f dircolors ]; then
+    eval `dircolors ~/.dircolors-solarized/dircolors.256dark`
+fi
+
+
+if [ -d /opt/local/Library/Frameworks/Python.framework/Versions/Current/bin ]; then
+    export PATH=$PATH:/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin
+fi
+
 
 # PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # export PYENV_ROOT="$HOME/.pyenv"
@@ -100,3 +118,5 @@ fi
 #eval "$(pyenv init -)"
 
 source tmuxp.zsh
+
+export PYTHONSTARTUP=~/.pythonrc

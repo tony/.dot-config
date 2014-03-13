@@ -244,7 +244,11 @@
   jasmine-node: 'git+https://github.com/mhevery/jasmine-node.git'
   node-querystring: 'git+https://github.com/visionmedia/node-querystring.git'
   highlight.js: 'git+https://github.com/isagalaev/highlight.js.git'
+  bookshelf: 'git+https://github.com/tgriesser/bookshelf.git'
+  knex: 'git+https://github.com/tgriesser/knex.git'
+
 ~/study/javascript:
+  bluebird: 'git+https://github.com/petkaantonov/bluebird.git'
   backbone.deepmodel: 'git+https://github.com/powmedia/backbone-deep-model.git'
   create: 'git+https://github.com/bergie/create'
   vie: 'git+https://github.com/bergie/VIE.git'
