@@ -250,6 +250,7 @@
   knex: 'git+https://github.com/tgriesser/knex.git'
 
 ~/study/javascript:
+  skeuocard: 'git+https://github.com/kenkeiter/skeuocard.git'
   bluebird: 'git+https://github.com/petkaantonov/bluebird.git'
   backbone.deepmodel: 'git+https://github.com/powmedia/backbone-deep-model.git'
   create: 'git+https://github.com/bergie/create'
