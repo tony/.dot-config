@@ -40,7 +40,7 @@ export DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git docker npm node)
+plugins=(git docker npm node brew)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -49,7 +49,7 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR=vim
 # Customize to your needs...
-export PATH=$PATH:$HOME/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+export PATH=$HOME/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH
 
 fixssh() {
     for key in SSH_AUTH_SOCK SSH_CONNECTION SSH_CLIENT; do
@@ -124,3 +124,9 @@ fi
 source tmuxp.zsh
 
 export PYTHONSTARTUP=~/.pythonrc
+
+# To enable shims and autocompletion add to your profile:
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# To use Homebrew's directories rather than ~/.pyenv add to your profile:
+# export PYENV_ROOT=/usr/local/opt/pyenv
