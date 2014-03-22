@@ -1,0 +1,70 @@
+session_name: braintree
+start_directory: ~/study/merchant
+windows:
+- window_name: braintree.js
+  start_directory: braintree.js
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
+  focus: true
+  panes:
+  - shell_command:
+    - pane
+    focus: true
+  - pane
+  - pane
+- window_name: braintree_node
+  start_directory: braintree_node
+  panes:
+  - shell_command:
+    - pane
+    focus: true
+  - pane
+  - pane
+  layout: main-horizontal
+  options:
+    main-pane-height: 35
+- window_name: braintree_python
+  start_directory: braintree_python
+  panes:
+  - shell_command:
+    - pane
+    focus: true
+  - pane
+  - pane
+  layout: main-horizontal
+  options:
+    main-pane-height: 35
+- window_name: braintree_node_guide
+  start_directory: braintree_node_guide
+  panes:
+  - shell_command:
+    - pane
+    focus: true
+  - pane
+  - pane
+  layout: main-horizontal
+  options:
+    main-pane-height: 35
+- window_name: braintree_python_guide
+  start_directory: braintree_python_guide
+  panes:
+  - shell_command:
+    - pane
+    focus: true
+  - pane
+  - pane
+  layout: main-horizontal
+  options:
+    main-pane-height: 35
+- window_name: skeuocard
+  start_directory: ../javascript/skeuocard
+  panes:
+  - shell_command:
+    - pane
+    focus: true
+  - pane
+  - pane
+  layout: main-horizontal
+  options:
+    main-pane-height: 35
