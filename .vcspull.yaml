@@ -273,6 +273,8 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  psycopg2: 'git+git://github.com/psycopg/psycopg2.git'
+  momoko: 'git+git@github.com:FSX/momoko.git'
   nova: 'git+https://github.com/openstack/nova.git'
   jsonschema: 'git+https://github.com/Julian/jsonschema.git'
   rdflib: 'git+https://github.com/RDFLib/rdflib.git'
