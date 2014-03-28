@@ -148,6 +148,7 @@
   vim: 'hg+https://vim.googlecode.com/hg/'
   nginx: 'hg+http://hg.nginx.org/nginx'
 ~/study/c++:
+  phantomjs: 'git+https://github.com/ariya/phantomjs.git'
   tudu: 'git+git://gitorious.org/tudu/tudu.git'
   wxPython: 'git+https://github.com/wxWidgets/wxPython.git'
   wxWidgets: 'git+https://github.com/wxWidgets/wxWidgets.git'
@@ -164,6 +165,11 @@
   clementine: 'git+https://code.google.com/p/clementine-player/'
   amarok: 'git+git://anongit.kde.org/amarok.git'
 ~/study/node:
+  gulp: 'git+https://github.com/gulpjs/gulp.git'
+  gulp-util: 'git+https://github.com/gulpjs/gulp-util.git'
+  gulp-mocha: 'git+https://github.com/sindresorhus/gulp-mocha.git'
+  grunt: 'git+https://github.com/gruntjs/grunt.git'
+  grunt-mocha: 'git+https://github.com/kmiyashiro/grunt-mocha.git'
   fabric.js: 'git+https://github.com/kangax/fabric.js.git'
   nconf: 'git+https://github.com/flatiron/nconf.git'
   hanzi: 'git+https://github.com/nieldlr/Hanzi.git'
@@ -243,13 +249,54 @@
   chai: 'git+https://github.com/chaijs/chai.git'
   grunt-lib-contrib: 'git+https://github.com/gruntjs/grunt-lib-contrib.git'
   node-irc: 'git+https://github.com/martynsmith/node-irc.git'
-  jasmine-node: 'git+https://github.com/mhevery/jasmine-node.git'
   node-querystring: 'git+https://github.com/visionmedia/node-querystring.git'
   highlight.js: 'git+https://github.com/isagalaev/highlight.js.git'
   bookshelf: 'git+https://github.com/tgriesser/bookshelf.git'
   knex: 'git+https://github.com/tgriesser/knex.git'
 
+
+~/study/javascript-testing:
+  mocha: 'git+https://github.com/visionmedia/mocha.git'
+  mocha-phantomjs: 'git+https://github.com/metaskills/mocha-phantomjs.git'
+  sinon: 'git+https://github.com/cjohansen/Sinon.JS.git'
+  sinon-chai: 'git+https://github.com/domenic/sinon-chai.git'
+  chai: 'git+https://github.com/chaijs/chai.git'
+  chai-jquery: 'git+https://github.com/chaijs/chai-jquery.git'
+  chai-http: 'git+https://github.com/chaijs/chai-http.git'
+  chai-spies: 'git+https://github.com/chaijs/chai-spies.git'
+
+~/study/javascript-testing-karma:
+  karma-chrome-launcher: 'git+https://github.com/karma-runner/karma-chrome-launcher.git'
+  karma-ie-launcher: 'git+https://github.com/karma-runner/karma-ie-launcher.git'
+  karma-script-launcher: 'git+https://github.com/karma-runner/karma-script-launcher.git'
+  karma-phantomjs-launcher: 'git+https://github.com/karma-runner/karma-phantomjs-launcher.git'
+  karma-opera-launcher: 'git+https://github.com/karma-runner/karma-opera-launcher.git'
+  karma-safari-launcher: 'git+https://github.com/karma-runner/karma-safari-launcher.git'
+  karma-growl-reporter: 'git+https://github.com/karma-runner/karma-growl-reporter.git'
+  karma-sauce-launcher: 'git+https://github.com/karma-runner/karma-sauce-launcher.git'
+  karma-firefox-launcher: 'git+https://github.com/karma-runner/karma-firefox-launcher.git'
+  karma-browserstack-launcher: 'git+https://github.com/karma-runner/karma-browserstack-launcher.git'
+  karma-webdriver-launcher: 'git+https://github.com/karma-runner/karma-webdriver-launcher.git'
+
+  karma-requirejs: 'git+https://github.com/karma-runner/karma-requirejs.git'
+  karma-commonjs: 'git+https://github.com/karma-runner/karma-commonjs.git'
+
+  karma: 'git+https://github.com/karma-runner/karma.git'
+  karma-cli: 'git+https://github.com/karma-runner/karma-cli.git'
+
+  karma-coffee-preprocessor: 'git+https://github.com/karma-runner/karma-coffee-preprocessor.git'
+  karma-ember-preprocessor: 'git+https://github.com/karma-runner/karma-ember-preprocessor.git'
+  karma-html2js-preprocessor: 'git+https://github.com/karma-runner/karma-html2js-preprocessor.git'
+
+  karma-test-device-manager: 'git+https://github.com/karma-runner/test-device-manager.git'
+
+  karma-mocha: 'git+https://github.com/karma-runner/karma-mocha.git'
+  grunt-karma: 'git+https://github.com/karma-runner/grunt-karma.git'
+  karma-coverage: 'git+https://github.com/karma-runner/karma-coverage.git'
+  karma-jasmine: 'git+https://github.com/karma-runner/karma-jasmine.git'
+
 ~/study/javascript:
+  aura: 'git+https://github.com/aurajs/aura.git'
   skeuocard: 'git+https://github.com/kenkeiter/skeuocard.git'
   bluebird: 'git+https://github.com/petkaantonov/bluebird.git'
   backbone.deepmodel: 'git+https://github.com/powmedia/backbone-deep-model.git'
