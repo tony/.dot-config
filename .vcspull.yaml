@@ -165,6 +165,8 @@
   clementine: 'git+https://code.google.com/p/clementine-player/'
   amarok: 'git+git://anongit.kde.org/amarok.git'
 ~/study/node:
+  orchestrator: 'git+https://github.com/orchestrator/orchestrator.git'
+  vinyl-fs: 'git+https://github.com/wearefractal/vinyl-fs.git'
   gulp: 'git+https://github.com/gulpjs/gulp.git'
   gulp-util: 'git+https://github.com/gulpjs/gulp-util.git'
   gulp-mocha: 'git+https://github.com/sindresorhus/gulp-mocha.git'
