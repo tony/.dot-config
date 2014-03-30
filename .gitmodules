@@ -10,3 +10,6 @@
 [submodule ".fonts"]
 	path = .fonts
 	url = git@github.com:tony/dot-fonts.git
+[submodule ".urxvt-perls"]
+	path = .urxvt-perls
+	url = git@github.com:muennich/urxvt-perls.git
