@@ -62,18 +62,18 @@ fixssh() {
 
 export NODE_PATH=/usr/local/share/npm/lib/node_modules
 export PATH=/usr/local/share/npm/bin:$PATH
-if [ -d ~/.rbenv ]; then
+
+if [ -f $HOME/.rbenv/bin ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+elif [ -f /usr/lib/rbenv/libexec/rbenv ]; then
+    export PATH="/usr/lib/rbenv/libexec/:$PATH"
     eval "$(rbenv init -)"
 fi
 
 
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     . /usr/local/bin/virtualenvwrapper.sh
-fi
-
-if [ -f /usr/local/rvm/scripts/rvm ]; then
-    . /usr/local/rvm/scripts/rvm
 fi
 
 export PERLBREW_ROOT=$HOME/.perl5/perlbrew
