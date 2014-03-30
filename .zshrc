@@ -63,12 +63,25 @@ fixssh() {
 export NODE_PATH=/usr/local/share/npm/lib/node_modules
 export PATH=/usr/local/share/npm/bin:$PATH
 
+# rbenv
 if [ -f $HOME/.rbenv/bin ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
 elif [ -f /usr/lib/rbenv/libexec/rbenv ]; then
     export PATH="/usr/lib/rbenv/libexec/:$PATH"
     eval "$(rbenv init -)"
+fi
+
+## pyenv paths
+if [ -d "${HOME}/.pyenv" ]; then
+    export PYENV_ROOT="${HOME}/.pyenv"
+elif [ -d /usr/local/opt/pyenv ]; then
+    export PYENV_ROOT=/usr/local/opt/pyenv
+fi
+
+if [ -d "${PYENV_ROOT}" ]; then
+    export PATH="${PYENV_ROOT}/bin:${PATH}"
+    eval "$(pyenv init -)"
 fi
 
 
@@ -92,34 +105,30 @@ if [ -f ~/.opam/opam-init/init.zsh ]; then
     . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 fi
 
+# OSX
 if [ -f ~/.profile ]; then
-    # OS X
     . ~/.profile
 fi
 
-if [ -f /opt/local/usr/bin/gdircolors ]; then
+# dircolors
+if [ -f dircolors ]; then
+    eval `dircolors ~/.dircolors-solarized/dircolors.256dark`
+elif [ -f /opt/local/usr/bin/gdircolors ]; then  # macports gdircolors
     eval `gdircolors ~/.dircolors-solarized/dircolors.256dark`
 fi
 
-if [ -f dircolors ]; then
-    eval `dircolors ~/.dircolors-solarized/dircolors.256dark`
-fi
-
-
+# python path for macports framework
 if [ -d /opt/local/Library/Frameworks/Python.framework/Versions/Current/bin ]; then
     export PATH=$PATH:/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin
 fi
 
-if [ -d /opt/local/lib/postgresql93/bin ]; then
+
+## postgres paths
+if [ -d /opt/local/lib/postgresql93/bin ]; then  # macports
     export PATH=$PATH:/opt/local/lib/postgresql93/bin
 fi
 
 
-# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-# export PYENV_ROOT="$HOME/.pyenv"
-# PATH="$PYENV_ROOT/bin:$PATH"
-
-#eval "$(pyenv init -)"
 
 source tmuxp.zsh
 
