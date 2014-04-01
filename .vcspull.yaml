@@ -305,6 +305,7 @@
   create: 'git+https://github.com/bergie/create'
   vie: 'git+https://github.com/bergie/VIE.git'
   underscore: 'git+https://github.com/documentcloud/underscore.git'
+  underscore-contrib: 'git+https://github.com/documentcloud/underscore-contrib.git'
   lodash: 'git+https://github.com/bestiejs/lodash.git'
   backbone: 'git+https://github.com/documentcloud/backbone.git'
   requirejs: 'git+https://github.com/jrburke/requirejs.git'
