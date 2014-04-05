@@ -13,3 +13,6 @@
 [submodule ".urxvt-perls"]
 	path = .urxvt-perls
 	url = git@github.com:muennich/urxvt-perls.git
+[submodule ".i3"]
+	path = .i3
+	url = https://github.com/tony/i3-config.git
