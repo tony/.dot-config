@@ -45,10 +45,10 @@ Features / Usage
 ``.vim/``                 See <https://github.com/tony/vim-config>.
 ``.tmux/``                See <https://github.com/tony/tmux-config>.
 ``.i3/``                  See <https://github.com/tony/i3-config>.
-``.config/awesome``       See <https://github.com/tony/.config/awesome>
+``.config/awesome/``      See <https://github.com/tony/.config/awesome>
 ``.fonts/``               See <https://github.com/tony/dot-fonts>.
 ``.tmuxp/``               `tmuxp`_ sessions for common processes.
-``.vcspull``              Study and stay up to date with great programming
+``.vcspull.yaml``         Study and stay up to date with great programming
                           code.
 ``.pythonrc``             Autocompletion (requires `readline`_, if your
                           system doesn't support it (OSX) try the
