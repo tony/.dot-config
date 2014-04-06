@@ -8,15 +8,18 @@ settings of CLI based up.
 
 Configurations for:
 
-- Window managers: `awesome`_, `i3`_
-- Terminal multiplexers: `tmux`_ (and `tmuxp`_ for tmux sessions)
-- Linux xresources: ``.xprofile``, ``.Xresources``, ``.xsessionrc``
-- Shell: `zsh`_
-- Editors: `vim`_
-- Development: `ctags`_, `python cli`_, `git`_, `vcspull`_
-- Media: `ncmpcpp`_
+========================  ================================================
 
-- This package: `dotfiles`_ (for this repo), ``.tmuxp.yaml``
+Window manager            `awesome`_, `i3`_
+Terminal multiplexer      `tmux`_ (and `tmuxp`_ for tmux sessions)
+Linux Xsession            ``.xprofile``, ``.Xresources``, ``.xsessionrc``
+Shell                     `zsh`_
+Editor                    `vim`_
+Development               `ctags`_, `python cli`_, `git`_, `vcspull`_
+Media                     `ncmpcpp`_
+This package              `dotfiles`_ (for this repo), ``.tmuxp.yaml``
+
+========================  ================================================
 
 .. _awesome: http://awesome.naquadah.org/
 .. _i3: http://i3wm.org/
