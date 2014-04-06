@@ -1,0 +1,66 @@
+session_name: dot-configs
+start_directory: ./
+windows:
+- window_name: dot-configs
+  layout: main-horizontal
+  focus: true
+  panes:
+  - focus: True
+  - pane
+  - pane
+  options:
+    main-pane-height: 35
+# - window_name: awesome
+#   layout: main-horizontal
+#   start_directory: .config/awesome
+#   panes:
+#   - focus: True
+#   - pane
+#   - pane
+#   options:
+#     main-pane-height: 35
+- window_name: .fonts
+  layout: main-horizontal
+  start_directory: .fonts/
+  panes:
+  - focus: True
+  - pane
+  - pane
+  options:
+    main-pane-height: 35
+- window_name: .i3
+  layout: main-horizontal
+  start_directory: .i3/
+  panes:
+  - focus: True
+  - pane
+  - pane
+  options:
+    main-pane-height: 35
+- window_name: .tmux
+  layout: main-horizontal
+  start_directory: .tmux/
+  panes:
+  - focus: True
+  - pane
+  - pane
+  options:
+    main-pane-height: 35
+- window_name: .tmuxp
+  layout: main-horizontal
+  start_directory: .tmuxp/
+  panes:
+  - focus: True
+  - pane
+  - pane
+  options:
+    main-pane-height: 35
+- window_name: .vim
+  layout: main-horizontal
+  start_directory: .vim/
+  panes:
+  - focus: True
+  - pane
+  - pane
+  options:
+    main-pane-height: 35
