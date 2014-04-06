@@ -6,7 +6,8 @@ System: Debian Jessie
 This dot configuration can serve as example of a central repository for
 settings of CLI based up.
 
-Configurations for:
+Configurations
+--------------
 
 ========================  ================================================
 
@@ -47,7 +48,11 @@ Synchronizing dot files
 
 Install via `pip`_ (`pip installation instructions`_)
 
-
 .. _pip: http://www.pip-installer.org/en/latest/
 .. _pip installation instructions: http://www.pip-installer.org/en/latest/installing.html
 .. _dotfiles: https://github.com/jbernard/dotfiles
+
+License
+-------
+
+`MIT License <http://opensource.org/licenses/MIT>`_
