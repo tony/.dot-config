@@ -1,10 +1,13 @@
-dot-config files
-================
+Example dot-config files
+========================
 
 System: Debian Jessie
 
-This dot configuration can serve as example of a central repository for
-settings of CLI based up.
+Example of a central repository for maintaining your dot-configs, and a
+compilation of configs developed over the years for various apps I use
+daily.
+
+Configuration within is MIT unless stated otherwise.
 
 Configurations
 --------------
@@ -33,6 +36,58 @@ This package              `dotfiles`_ (for this repo), ``.tmuxp.yaml``
 .. _git: http://git-scm.com/
 .. _vcspull: https://github.com/tony/vcspull
 .. _ncmpcpp: http://ncmpcpp.rybczak.net/
+
+Features / Usage
+----------------
+
+========================  ================================================
+
+``.vim/``                 See <https://github.com/tony/vim-config>.
+``.tmux/``                See <https://github.com/tony/tmux-config>.
+``.i3/``                  See <https://github.com/tony/i3-config>.
+``.config/awesome``       See <https://github.com/tony/.config/awesome>
+``.fonts/``               See <https://github.com/tony/dot-fonts>.
+``.tmuxp/``               `tmuxp`_ sessions for common processes.
+``.vcspull``              Study and stay up to date with great programming
+                          code.
+``.pythonrc``             Autocompletion (requires `readline`_, if your
+                          system doesn't support it (OSX) try the
+                          `stand-alone readline module`_)
+``.zshrc``                - `oh-my-zsh`_.
+                          - if exists, prepares shell for: `pyenv`_,
+                            `rbenv`_, `perlbrew`_, `virtualenv`_,
+                            `virtualenvwrapper`_ and prepares shell for
+                            it.
+                          - checks for ``.profile`` and sources it.
+                          - add npm, node to path (``/usr/local/``
+                            installation)
+                          - add ``$HOME/bin`` to front of path
+``.Xresources``           - `rxvt-unicode` settings:
+
+                            - `fcitx`_ input
+                            - `molokai`_ colorscheme
+                            - programmer + CJK fonts (see ``.fonts``)
+``.xsessionrc``           `Thinkpad Trackpoint config`_
+``.ctags``
+``.ncmpcpp``              FIFO Visualizer
+``.dotfilesrc``           Ignores ``git(1)``-related dotfiles in this
+                          project.
+========================  ================================================
+
+
+.. _oh-my-zsh: https://github.com/robbyrussell/oh-my-zsh
+.. _pyenv: https://github.com/yyuu/pyenv
+.. _rbenv: https://github.com/sstephenson/rbenv
+.. _virtualenv: http://www.virtualenv.org/en/latest/
+.. _virtualenvwrapper: http://virtualenvwrapper.readthedocs.org/en/latest/
+.. _perlbrew: http://perlbrew.pl/
+.. _rxvt-unicode: http://software.schmorp.de/pkg/rxvt-unicode.html
+.. _fcitx: https://fcitx-im.org/wiki/Fcitx
+.. _molokai: https://github.com/tomasr/molokai
+.. _CJK: http://en.wikipedia.org/wiki/CJK_characters
+.. _readline: https://docs.python.org/2/library/readline.html
+.. _stand-alone readline module: https://pypi.python.org/pypi/readline
+.. _Thinkpad Trackpoint config: http://www.thinkwiki.org/wiki/How_to_configure_the_TrackPoint
 
 Cloning
 -------
