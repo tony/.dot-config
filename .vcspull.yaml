@@ -11,6 +11,20 @@
   sqlamp: 'git+https://github.com/tony/sqlamp.git'
   sqlalchemy-orm-tree: 'git+https://github.com/monetizeio/sqlalchemy-orm-tree.git'
   sqlalchemy-bitcoin: 'git+https://github.com/monetizeio/sqlalchemy-bitcoin.git'
+~/study/js-books:
+  backbone-fundamentals: 'git+https://github.com/addyosmani/backbone-fundamentals'
+  essential-js-design-patterns: 'git+https://github.com/addyosmani/essential-js-design-patterns.git'
+  you-dont-know-js: 'git+https://github.com/getify/You-Dont-Know-JS.git'
+  eloquent-js:  'git+https://github.com/marijnh/Eloquent-JavaScript.git'
+  jqfundamentals: 'git+https://github.com/rmurphey/jqfundamentals.git'
+~/study/koans:
+  backbone: 'git+https://github.com/addyosmani/backbone-koans-qunit.git'
+~/study/python-books:
+  pydata-book: 'git+https://github.com/pydata/pydata-book.git'
+  byte-of-python: 'git+https://github.com/swaroopch/byte_of_python.git'
+  python-for-signal-processing: 'git+https://github.com/unpingco/Python-for-Signal-Processing.git'
+  probabilistic-programming-and-bayesian-methods: 'git+https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers.git'
+  python-guide: 'git+https://github.com/kennethreitz/python-guide.git'
 ~/study/angular:
 
   docs.angulardart.org: 'git+https://github.com/angular/docs.angulardart.org.git'
@@ -148,6 +162,7 @@
   vim: 'hg+https://vim.googlecode.com/hg/'
   nginx: 'hg+http://hg.nginx.org/nginx'
 ~/study/c++:
+  zeal: 'git+https://github.com/jkozera/zeal.git'
   phantomjs: 'git+https://github.com/ariya/phantomjs.git'
   tudu: 'git+git://gitorious.org/tudu/tudu.git'
   wxPython: 'git+https://github.com/wxWidgets/wxPython.git'
