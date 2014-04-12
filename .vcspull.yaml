@@ -312,6 +312,68 @@
   karma-coverage: 'git+https://github.com/karma-runner/karma-coverage.git'
   karma-jasmine: 'git+https://github.com/karma-runner/karma-jasmine.git'
 
+~/study/polymer:
+  polymer: 'git+https://github.com/polymer/polymer.git'
+  TemplatingBind: 'git+https://github.com/polymer/polymer'
+
+  platform: 'git+https://github.com/Polymer/platform.git'
+  HTMLImports: 'git+https://github.com/Polymer/HTMLImports.git'
+  ShadowDOM: 'git+https://github.com/Polymer/ShadowDOM.git'
+
+  core-input: 'git+https://github.com/Polymer/core-input.git'
+  core-meta: 'git+https://github.com/Polymer/core-meta.git'
+  core-menu: 'git+https://github.com/Polymer/core-menu.git'
+  core-item: 'git+https://github.com/Polymer/core-item.git'
+  core-media-query: 'git+https://github.com/Polymer/core-media-query.git'
+  core-toolbar: 'git+https://github.com/Polymer/core-toolbar.git'
+  core-ajax: 'git+https://github.com/Polymer/core-ajax.git'
+  core-layout: 'git+https://github.com/Polymer/core-layout.git'
+  core-overlay: 'git+https://github.com/Polymer/core-overlay.git'
+  core-doc-viewer: 'git+https://github.com/Polymer/core-doc-viewer.git'
+  core-component-page: 'git+https://github.com/Polymer/core-component-page.git'
+  core-elements: 'git+https://github.com/Polymer/core-elements.git'
+  core-drawer-panel: 'git+https://github.com/Polymer/core-drawer-panel.git'
+  core-header-panel: 'git+https://github.com/Polymer/core-header-panel.git'
+  core-firebase: 'git+https://github.com/Polymer/core-firebase.git'
+  core-selector: 'git+https://github.com/Polymer/core-selector.git'
+  core-theme-aware: 'git+https://github.com/Polymer/core-theme-aware.git'
+  core-selection: 'git+https://github.com/Polymer/core-selection.git'
+  core-layout-trbl: 'git+https://github.com/Polymer/core-layout-trbl.git'
+  core-layout-grid: 'git+https://github.com/Polymer/core-layout-grid.git'
+  core-icon-button: 'git+https://github.com/Polymer/core-icon-button.git'
+  core-action-icons: 'git+https://github.com/Polymer/core-action-icons.git'
+  core-collapse: 'git+https://github.com/Polymer/core-collapse.git'
+  core-pages: 'git+https://github.com/Polymer/core-pages.git'
+  core-iconset: 'git+https://github.com/Polymer/core-iconset.git'
+  core-iconset-svg: 'git+https://github.com/Polymer/core-iconset-svg.git'
+  core-docs: 'git+https://github.com/Polymer/core-docs.git'
+  core-tests: 'git+https://github.com/Polymer/core-tests.git'
+  core-range: 'git+https://github.com/Polymer/core-range.git'
+  core-component-page-dev: 'git+https://github.com/Polymer/core-component-page-dev.git'
+
+  observe-js: 'git+https://github.com/Polymer/observe-js.git'
+
+  jquery2-import: 'git+https://github.com/Polymer/jquery2-import.git'
+
+
+
+
+  vulcanize: 'git+https://github.com/Polymer/vulcanize.git'
+  todomvc: 'git+https://github.com/Polymer/todomvc.git'
+  WeakMap: 'git+https://github.com/Polymer/WeakMap.git'
+  URL: 'git+https://github.com/Polymer/URL.git'
+  PointerGestures: 'git+https://github.com/Polymer/PointerGestures.git'
+  PointerEvents: 'git+https://github.com/Polymer/PointerEvents.git'
+  NodeBind: 'git+https://github.com/Polymer/NodeBind.git'
+  MutationObservers: 'git+https://github.com/Polymer/MutationObservers.git'
+  CustomElements: 'git+https://github.com/Polymer/CustomElements.git'
+
+  polymer-gestures: 'git+https://github.com/Polymer/polymer-gestures.git'
+  polymer-dev: 'git+https://github.com/Polymer/polymer-dev.git'
+  polymer-expression: 'git+https://github.com/Polymer/polymer-expressions.git'
+
+  karma-browserstack-launcher: 'git+https://github.com/Polymer/karma-browserstack-launcher.git'
+
 ~/study/javascript:
   aura: 'git+https://github.com/aurajs/aura.git'
   skeuocard: 'git+https://github.com/kenkeiter/skeuocard.git'
