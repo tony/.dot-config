@@ -386,6 +386,7 @@
   karma-browserstack-launcher: 'git+https://github.com/Polymer/karma-browserstack-launcher.git'
 
 ~/study/javascript:
+  sizzle: 'git+https://github.com/jquery/sizzle.git'
   easyXDM: 'git+https://github.com/oyvindkinsey/easyXDM.git'
   aura: 'git+https://github.com/aurajs/aura.git'
   skeuocard: 'git+https://github.com/kenkeiter/skeuocard.git'
