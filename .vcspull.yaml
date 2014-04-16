@@ -11,6 +11,8 @@
   semantic-ui: 'git+https://github.com/Semantic-Org/Semantic-UI.git'
   isobar-frontend: 'git+https://github.com/isobar-idev/code-standards/'
 
+~/study/devops-books:
+  github-cheat-sheet: 'git+https://github.com/tiimgreen/github-cheat-sheet.git'
 ~/study/standards-and-practices/php:
   php-fig: 'git+https://github.com/php-fig/fig-standards.git'
 ~/study/standards-and-practices/js:
@@ -173,6 +175,8 @@
   vim: 'hg+https://vim.googlecode.com/hg/'
   nginx: 'hg+http://hg.nginx.org/nginx'
 ~/study/c++:
+  blink: 'git+https://chromium.googlesource.com/chromium/blink'
+  v8: 'git+git://github.com/v8/v8.git'
   zeal: 'git+https://github.com/jkozera/zeal.git'
   phantomjs: 'git+https://github.com/ariya/phantomjs.git'
   tudu: 'git+git://gitorious.org/tudu/tudu.git'
