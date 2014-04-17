@@ -461,7 +461,11 @@
   pudb: 'git+http://git.tiker.net/trees/pudb.git'
   ipython: 'git+https://github.com/ipython/ipython.git'
   blessing: 'git+https://github.com/erikrose/blessings.git'
-  salt: 'git+https://github.com/saltstack/salt.git'
+  salt:
+    repo: 'git+https://github.com/saltstack/salt.git'
+    remotes:
+      tony: 'git+git@github.com:tony/salt.git'
+
   salt-ui: 'git+https://github.com/saltstack/salt-ui.git'
   salt-formulae: 'git+https://github.com/saltstack/formulae'
   salt-api: 'git+https://github.com/saltstack/salt-api.git'
