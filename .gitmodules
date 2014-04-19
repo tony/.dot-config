@@ -1,5 +1,5 @@
-[submodule ".config/awesome"]
-	path = .config/awesome
+[submodule "config/awesome"]
+	path = config/awesome
 	url = git@github.com:tony/awesome-config.git
 [submodule ".vim"]
 	path = .vim
