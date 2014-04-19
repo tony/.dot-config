@@ -148,6 +148,7 @@
 ~/study/java:
   elasticsearch: 'git+https://github.com/elasticsearch/elasticsearch.git'
 ~/study/c:
+  lua: 'git+https://github.com/LuaDist/lua.git'
   i3: 'git+git://code.i3wm.org/i3'
   neovim:
     repo: 'git+https://github.com/neovim/neovim.git'
@@ -421,6 +422,7 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  pulseaudio-mixer-cli: 'git+https://github.com/mk-fg/pulseaudio-mixer-cli.git'
   psycopg2: 'git+git://github.com/psycopg/psycopg2.git'
   momoko: 'git+git://github.com/FSX/momoko.git'
   nova: 'git+https://github.com/openstack/nova.git'
