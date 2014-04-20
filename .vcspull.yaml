@@ -37,6 +37,9 @@
   python-for-signal-processing: 'git+https://github.com/unpingco/Python-for-Signal-Processing.git'
   probabilistic-programming-and-bayesian-methods: 'git+https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers.git'
   python-guide: 'git+https://github.com/kennethreitz/python-guide.git'
+
+~/study/compsci-books:
+  bottomupcs: 'git+https://github.com/ianw/bottomupcs.git'
 ~/study/angular:
 
   docs.angulardart.org: 'git+https://github.com/angular/docs.angulardart.org.git'
