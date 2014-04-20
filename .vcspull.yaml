@@ -160,6 +160,7 @@
     repo: 'git+https://github.com/neovim/neovim.git'
     remotes:
       tony: 'git+https://github.com/audreyr/cookiecutter-pypackage.git'
+  vim: 'hg+https://vim.googlecode.com/hg/'
   libuv: 'git+https://github.com/joyent/libuv.git'
   libimobiledevice: 'git+https://github.com/libimobiledevice/libimobiledevice.git'
   redis: 'git+https://github.com/antirez/redis.git'
@@ -179,7 +180,6 @@
   util-cursor: 'git+git://anongit.freedesktop.org/xcb/util-cursor'
   zsh: 'git+git://git.code.sf.net/p/zsh/code'
   cpython: 'hg+http://hg.python.org/cpython/'
-  vim: 'hg+https://vim.googlecode.com/hg/'
   nginx: 'hg+http://hg.nginx.org/nginx'
 ~/study/c++:
   blink: 'git+https://chromium.googlesource.com/chromium/blink'
