@@ -23,6 +23,8 @@
   sqlamp: 'git+https://github.com/tony/sqlamp.git'
   sqlalchemy-orm-tree: 'git+https://github.com/monetizeio/sqlalchemy-orm-tree.git'
   sqlalchemy-bitcoin: 'git+https://github.com/monetizeio/sqlalchemy-bitcoin.git'
+  cubes: 'git+https://github.com/Stiivi/cubes.git'
+  bubbles: 'git+https://github.com/Stiivi/bubbles.git'
 ~/study/js-books:
   backbone-fundamentals: 'git+https://github.com/addyosmani/backbone-fundamentals'
   essential-js-design-patterns: 'git+https://github.com/addyosmani/essential-js-design-patterns.git'
