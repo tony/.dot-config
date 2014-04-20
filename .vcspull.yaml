@@ -154,6 +154,7 @@
   elasticsearch: 'git+https://github.com/elasticsearch/elasticsearch.git'
 ~/study/c:
   lua: 'git+https://github.com/LuaDist/lua.git'
+  luajit: 'git+https://github.com/LuaDist/luajit.git'
   i3: 'git+git://code.i3wm.org/i3'
   neovim:
     repo: 'git+https://github.com/neovim/neovim.git'
