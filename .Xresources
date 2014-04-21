@@ -17,19 +17,13 @@ URxvt.boldFont:             xft:Source Code Pro for Powerline-10:bold;hinting=Tr
 URxvt.letterSpace:      0
 
 
-! URxvt.fading: 0
-!!URxvt.background: rgba:0000/0000/0000/efef
-URxvt.background: #121212
-!!URxvt.foreground: 15
-URxvt.foreground: #F3F3F3
+
 
 !! URxvt.meta8: true
 !!URxvt.depth: 32
 !! --- URxvt ---
 URxvt*intensityStyles: false
 URxvt*internalBorder: 1
-! URxvt.keysym.C-plus: command:\033]710;xft:monospace:size=9\007\033]711;xft:monospace:size=9\007
-! URxvt.keysym.C-minus: command:\033]710;xft:monospace:size=8\007\033]711;xft:monospace:size=8\007
 !!URxvt*transparent: true
 !!URxvt*.shading:  25
 
@@ -55,126 +49,41 @@ URxvt*matcher.button:   1
 URxvt.searchable-scrollback: CM-s
 
 
-!! from https://github.com/sjbarag/dotfiles/blob/master/.Xresources
-!! Molokai colors from Paul Roget
-*.color0:  black
-*.color1:  #cc0000
-*.color2:  #8ae234
-*.color3:  #c4a000
-*.color4:  #3465a4
-*.color5:  #75507b
-*.color6:  #34e2e2
-*.color7:  #d3d7cf
-*.color8:  #555753
-*.color9:  #ef2929
-*.color10: #8ae234
-*.color11: #fce94f
-*.color12: #729fcf
-*.color13: #ad7fa8
-*.color14: #34e2e2
-*.color15: #d4d4d4
-*.background:   #121212
-*.foreground:   #F3F3F3
-*.cursorColor:  #F3F3F3
+!! colors from base16
 
+#define base00 #151515
+#define base01 #202020
+#define base02 #303030
+#define base03 #505050
+#define base04 #b0b0b0
+#define base05 #d0d0d0
+#define base06 #e0e0e0
+#define base07 #f5f5f5
+#define base08 #ac4142
+#define base09 #d28445
+#define base0A #f4bf75
+#define base0B #90a959
+#define base0C #75b5aa
+#define base0D #6a9fb5
+#define base0E #aa759f
+#define base0F #8f5536
 
-! ! Solarized color scheme for the X Window System
-! !
-! ! http://ethanschoonover.com/solarized
-
-
-! ! Common
-
-! #define S_yellow        #b58900
-! #define S_orange        #cb4b16
-! #define S_red           #dc322f
-! #define S_magenta       #d33682
-! #define S_violet        #6c71c4
-! #define S_blue          #268bd2
-! #define S_cyan          #2aa198
-! #define S_green         #859900
-
-
-! ! Dark
-
-! #define S_base03        #002b36
-! #define S_base02        #073642
-! #define S_base01        #586e75
-! #define S_base00        #657b83
-! #define S_base0         #839496
-! #define S_base1         #93a1a1
-! #define S_base2         #eee8d5
-! #define S_base3         #fdf6e3
-
-! ! To only apply colors to your terminal, for example, prefix
-! ! the color assignment statement with its name. Example:
-! !
-! ! URxvt*background:            S_base03
-
-! URxvt.background:              S_base03
-! URxvt.foreground:              S_base0
-! URxvt.fading:                  40
-! URxvt.fadeColor:               S_base03
-! URxvt.cursorColor:             S_base1
-! URxvt.pointerColorBackground:  S_base01
-! URxvt.pointerColorForeground:  S_base1
-
-! URxvt.color0:                  S_base02
-! URxvt.color1:                  S_red
-! URxvt.color2:                  S_green
-! URxvt.color3:                  S_yellow
-! URxvt.color4:                  S_blue
-! URxvt.color5:                  S_magenta
-! URxvt.color6:                  S_cyan
-! URxvt.color7:                  S_base2
-! URxvt.color8:                  S_base03
-! URxvt.color9:                  S_orange
-! URxvt.color10:                 S_base01
-! URxvt.color11:                 S_base00
-! URxvt.color12:                 S_base0
-! URxvt.color13:                 S_violet
-! URxvt.color14:                 S_base1
-! URxvt.color15:                 S_base3
-
-! URxvt.cursorColor:      #ff9900
-! URxvt.cursorColor2:     #000000
-! URxvt.colorBD:          #ffffff
-! URxvt.colorIT:          #bbbbbb
-! URxvt.colorUL:          #ff9900
-! URxvt.underlineColor:   #999999
-
-! ! babilen colour
-! !
-! ! black
-! !
-! *color0:    #262729
-! *color8:    #554444
-
-! !red
-! *color1:    #F92672
-! *color9:    #FF669D
-
-! !green
-! *color2:    #A6E22E
-! *color10:   #BEED5F
-
-! !yellow
-! *color3:    #FD971F
-! *color11:   #FD971F
-
-! !blue
-! *color4:    #4682B4
-! *color12:   #4682B4
-
-! !!magenta
-! *color5:    #AE81FF
-! *color13:   #AE81FF
-
-! ! cyan
-! *color6:    #89b6e2
-! *color14:   #46a4ff
-
-! ! white
-! *color7:    #FFFFFF
-! *color15:   #FFFFFF
-
+*.foreground:   base05
+*.background:   base00
+*.cursorColor:  base05
+*.color0:       base00
+*.color1:       base08
+*.color2:       base0B
+*.color3:       base0A
+*.color4:       base0D
+*.color5:       base0E
+*.color6:       base0C
+*.color7:       base05
+*.color8:       base03
+*.color9:       base09
+*.color10:      base01
+*.color11:      base02
+*.color12:      base04
+*.color13:      base06
+*.color14:      base0F
+*.color15:      base07
