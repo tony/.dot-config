@@ -5,7 +5,9 @@
       upstream: git+https://github.com/emre/kaptan
       marksteve: git+https://github.com/marksteve/kaptan.git
       tony: git+git@github.com:tony/kaptan.git
-
+~/study/android:
+  android-menudrawer: 'git+https://github.com/SimonVT/android-menudrawer.git'
+  android-bootstrap: 'git+https://github.com/AndroidBootstrap/android-bootstrap.git'
 ~/study/standards-and-practices/html:
   north: 'git+https://github.com/Snugug/north.git'
   semantic-ui: 'git+https://github.com/Semantic-Org/Semantic-UI.git'
@@ -202,6 +204,7 @@
   clementine: 'git+https://code.google.com/p/clementine-player/'
   amarok: 'git+git://anongit.kde.org/amarok.git'
 ~/study/node:
+  gitbook: 'git+https://github.com/GitbookIO/gitbook.git'
   orchestrator: 'git+https://github.com/orchestrator/orchestrator.git'
   vinyl-fs: 'git+https://github.com/wearefractal/vinyl-fs.git'
   gulp: 'git+https://github.com/gulpjs/gulp.git'
