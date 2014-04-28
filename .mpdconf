@@ -24,7 +24,7 @@ user                            "tony"
 #
 # The address and port to listen on.
 #
-bind_to_address                 "localhost"
+#bind_to_address                 "localhost"
 port                            "6600"
 #
 # Controls the amount of information that is logged.  Can be
