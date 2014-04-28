@@ -645,3 +645,5 @@
   flask-assets: 'git+https://github.com/miracle2k/flask-assets.git'
   flask-oauthlib: 'git+https://github.com/lepture/flask-oauthlib.git'
   flask-babel: 'git+https://github.com/mitsuhiko/flask-babel.git'
+~/study/php/:
+  laravel: 'git+https://github.com/laravel/laravel.git'
