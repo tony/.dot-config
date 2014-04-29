@@ -399,7 +399,12 @@
 
   karma-browserstack-launcher: 'git+https://github.com/Polymer/karma-browserstack-launcher.git'
 
+~/study/javascript-visuals:
+  rickshaw: 'git+https://github.com/shutterstock/rickshaw.git'
+  d3: 'git+https://github.com/mbostock/d3.git'
+  timelinejs: 'git+https://github.com/NUKnightLab/TimelineJS.git'
 ~/study/javascript:
+  list: 'git+https://github.com/javve/list.js.git'
   sizzle: 'git+https://github.com/jquery/sizzle.git'
   easyXDM: 'git+https://github.com/oyvindkinsey/easyXDM.git'
   aura: 'git+https://github.com/aurajs/aura.git'
@@ -645,5 +650,6 @@
   flask-assets: 'git+https://github.com/miracle2k/flask-assets.git'
   flask-oauthlib: 'git+https://github.com/lepture/flask-oauthlib.git'
   flask-babel: 'git+https://github.com/mitsuhiko/flask-babel.git'
-~/study/php/:
+~/study/php:
   laravel: 'git+https://github.com/laravel/laravel.git'
+  laravel-framework: 'git+https://github.com/laravel/framework.git'
