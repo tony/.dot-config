@@ -631,7 +631,6 @@
   flask-goblet: 'git+https://github.com/seveas/goblet.git'
   flask-migrate: 'git+https://github.com/miguelgrinberg/Flask-Migrate.git'
   flask-weasyprint: 'git+https://github.com/SimonSapin/Flask-WeasyPrint.git'
-  flask-flamaster: 'git+https://github.com/MediaSapiens/flamaster.git'
   flask-sqlalchemy: 'git+https://github.com/mitsuhiko/flask-sqlalchemy.git'
   flask-admin: 'git+https://github.com/mrjoes/flask-admin.git'
   flask-script: 'git+https://github.com/techniq/flask-script.git'
