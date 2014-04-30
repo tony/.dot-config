@@ -49,7 +49,7 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR=vim
 # Customize to your needs...
-export PATH=$HOME/.local/bin:$HOME/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH
+export PATH=$HOME/.local/bin:./node_modules/.bin:$HOME/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH
 
 fixssh() {
     for key in SSH_AUTH_SOCK SSH_CONNECTION SSH_CLIENT; do
