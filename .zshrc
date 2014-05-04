@@ -139,3 +139,11 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # To use Homebrew's directories rather than ~/.pyenv add to your profile:
 # export PYENV_ROOT=/usr/local/opt/pyenv
+
+if [ -f ~/.base16-shell/base16-monokai.dark.sh ]; then
+    . ~/.base16-shell/base16-monokai.dark.sh
+fi
+
+if command -v cowsay >/dev/null 2>&1 && command -v fortune >/dev/null 2>&1; then
+    fortune | cowsay -n
+fi
