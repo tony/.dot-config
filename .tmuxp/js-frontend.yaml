@@ -1,0 +1,93 @@
+session_name: flask
+start_directory: ~/study/javascript
+windows:
+- window_name: jquery
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
+  start_directory: jquery
+  focus: true
+  panes:
+  - focus: true
+  - pane
+  - pane
+- window_name: sizzle
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
+  start_directory: sizzle
+  focus: true
+  panes:
+  - focus: true
+  - pane
+  - pane
+- window_name: backbone
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
+  start_directory: backbone
+  focus: true
+  panes:
+  - focus: true
+  - pane
+  - pane
+- window_name: backbone.marionette
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
+  start_directory: backbone.marionette
+  focus: true
+  panes:
+  - focus: true
+  - pane
+  - pane
+- window_name: backbone.wreqr
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
+  start_directory: backbone.wreqr
+  focus: true
+  panes:
+  - focus: true
+  - pane
+  - pane
+- window_name: backbone.babysitter
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
+  start_directory: backbone.babysitter
+  focus: true
+  panes:
+  - focus: true
+  - pane
+  - pane
+- window_name: underscore
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
+  start_directory: underscore
+  focus: true
+  panes:
+  - focus: true
+  - pane
+  - pane
+- window_name: list
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
+  start_directory: list
+  focus: true
+  panes:
+  - focus: true
+  - pane
+  - pane
+- window_name: codemirror
+  options:
+    main-pane-height: 35
+  layout: main-horizontal
+  start_directory: codemirror
+  focus: true
+  panes:
+  - focus: true
+  - pane
+  - pane
