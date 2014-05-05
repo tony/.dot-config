@@ -1,4 +1,4 @@
-session_name: flask
+session_name: js-frontend
 start_directory: ~/study/javascript
 windows:
 - window_name: jquery
