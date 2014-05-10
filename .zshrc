@@ -110,6 +110,34 @@ if [ -f ~/.profile ]; then
     . ~/.profile
 fi
 
+# thank you https://github.com/miohtama/ztanesh/blob/master/zsh-scripts/rc/01-detect-os
+if [[ `uname` == 'Linux' ]]
+then
+    export LINUX=1
+    export GNU_USERLAND=1
+else
+    export LINUX=
+fi
+
+if [[ `uname` == 'Darwin' ]]
+then
+    export OSX=1
+else
+    export OSX=
+fi
+
+# detect AWS Elastic Beanstalk Command Line Tool
+# http://aws.amazon.com/code/6752709412171743
+if [ -d ~/.aws/eb ]; then
+    if [[ "$OSX" == "1" ]]; then
+        export PATH=$PATH:$HOME/.aws/eb/macosx/python2.7
+    fi
+
+    if [[ "$LINUX" == "1" ]]; then
+        export PATH=$PATH:~/.aws/eb/linux/python2.7
+    fi
+fi
+
 # dircolors
 if [ -f dircolors ]; then
     eval `dircolors ~/.dircolors-solarized/dircolors.256dark`
@@ -147,3 +175,6 @@ fi
 if command -v cowsay >/dev/null 2>&1 && command -v fortune >/dev/null 2>&1; then
     fortune | cowsay -n
 fi
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
