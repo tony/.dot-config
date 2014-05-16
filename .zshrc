@@ -128,15 +128,17 @@ fi
 
 # detect AWS Elastic Beanstalk Command Line Tool
 # http://aws.amazon.com/code/6752709412171743
-if [ -d ~/.aws/eb ]; then
-    if [[ "$OSX" == "1" ]]; then
-        export PATH=$PATH:$HOME/.aws/eb/macosx/python2.7
-    fi
+# if [ -d ~/.aws/eb ]; then
+#     if [[ "$OSX" == "1" ]]; then
+#         export PATH=$PATH:$HOME/.aws/eb/macosx/python2.7
+#     fi
+#
+#     if [[ "$LINUX" == "1" ]]; then
+#         export PATH=$PATH:~/.aws/eb/linux/python2.7
+#     fi
+# fi
 
-    if [[ "$LINUX" == "1" ]]; then
-        export PATH=$PATH:~/.aws/eb/linux/python2.7
-    fi
-fi
+source /usr/local/share/zsh/site-functions/_aws
 
 # dircolors
 if [ -f dircolors ]; then
@@ -168,9 +170,9 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 # To use Homebrew's directories rather than ~/.pyenv add to your profile:
 # export PYENV_ROOT=/usr/local/opt/pyenv
 
-if [ -f ~/.base16-shell/base16-monokai.dark.sh ]; then
-    . ~/.base16-shell/base16-monokai.dark.sh
-fi
+BASE16_SCHEME="monokai"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 if command -v cowsay >/dev/null 2>&1 && command -v fortune >/dev/null 2>&1; then
     fortune | cowsay -n
