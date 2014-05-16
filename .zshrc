@@ -178,5 +178,11 @@ if command -v cowsay >/dev/null 2>&1 && command -v fortune >/dev/null 2>&1; then
     fortune | cowsay -n
 fi
 
+if command -v reattach-to-user-namespace > /dev/null; then
+    alias vim="reattach-to-user-namespace vim"
+    alias mvim="reattach-to-user-namespace mvim"
+fi
+
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
