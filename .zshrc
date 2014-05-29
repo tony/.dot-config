@@ -138,7 +138,9 @@ fi
 #     fi
 # fi
 
-source /usr/local/share/zsh/site-functions/_aws
+if [ -f /usr/local/share/zsh/site-functions/_aws ]; then
+    source /usr/local/share/zsh/site-functions/_aws
+fi
 
 # dircolors
 if [ -f dircolors ]; then
