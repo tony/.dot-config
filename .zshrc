@@ -183,6 +183,5 @@ if command -v reattach-to-user-namespace > /dev/null; then
     alias mvim="reattach-to-user-namespace mvim"
 fi
 
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
