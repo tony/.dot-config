@@ -12,7 +12,14 @@
   north: 'git+https://github.com/Snugug/north.git'
   semantic-ui: 'git+https://github.com/Semantic-Org/Semantic-UI.git'
   isobar-frontend: 'git+https://github.com/isobar-idev/code-standards/'
-
+~/study/data-structures-algorithms/c:
+  libds: 'git+https://github.com/zhemao/libds.git'
+~/study/data-structures-algorithms/c++:
+  algorithms: 'git+https://github.com/xtaci/algorithms.git'
+~/study/data-structures-algorithms/python:
+  Algorithms: 'git+https://github.com/prakhar1989/Algorithms.git'
+~/study/data-structures-algorithms/java:
+  java-algorithms-implementations: 'git+https://github.com/phishman3579/java-algorithms-implementation.git'
 ~/study/devops-books:
   github-cheat-sheet: 'git+https://github.com/tiimgreen/github-cheat-sheet.git'
 ~/study/standards-and-practices/php:
