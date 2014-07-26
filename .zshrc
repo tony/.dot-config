@@ -1,3 +1,9 @@
+# OSX
+if [ -f ~/.profile ]; then
+    . ~/.profile
+fi
+
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -105,10 +111,6 @@ if [ -f ~/.opam/opam-init/init.zsh ]; then
     . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 fi
 
-# OSX
-if [ -f ~/.profile ]; then
-    . ~/.profile
-fi
 
 # thank you https://github.com/miohtama/ztanesh/blob/master/zsh-scripts/rc/01-detect-os
 if [[ `uname` == 'Linux' ]]
@@ -187,3 +189,4 @@ fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
