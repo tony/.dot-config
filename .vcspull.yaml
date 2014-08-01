@@ -161,6 +161,11 @@
   ocaml-from-very-beginning-exercises: 'git+https://github.com/johnwhitington/ocaml-from-very-beginning-exercises.git'
 ~/study/java:
   elasticsearch: 'git+https://github.com/elasticsearch/elasticsearch.git'
+  libgdx: 'git+https://github.com/libgdx/libgdx.git'
+  crate: 'git+https://github.com/crate/crate.git'
+  unbescape: 'git+https://github.com/unbescape/unbescape.git'
+  pysonar2: 'git+https://github.com/yinwang0/pysonar2.git'
+  zxing: 'git+https://github.com/zxing/zxing.git'
 ~/study/c:
   lua: 'git+https://github.com/LuaDist/lua.git'
   luajit: 'git+https://github.com/LuaDist/luajit.git'
