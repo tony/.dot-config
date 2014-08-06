@@ -453,6 +453,7 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  click: 'git+https://github.com/mitsuhiko/click.git'
   pulseaudio-mixer-cli: 'git+https://github.com/mk-fg/pulseaudio-mixer-cli.git'
   psycopg2: 'git+git://github.com/psycopg/psycopg2.git'
   momoko: 'git+git://github.com/FSX/momoko.git'
