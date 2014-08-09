@@ -636,6 +636,8 @@
   django-cities: 'git+https://github.com/coderholic/django-cities.git'
   django-crispy-forms: 'git+https://github.com/maraujop/django-crispy-forms.git'
   django-debug-toolbar: 'git+https://github.com/django-debug-toolbar/django-debug-toolbar.git'
+  django-treebeard: 'git+https://github.com/tabo/django-treebeard.git'
+  django-filter: 'git+https://github.com/alex/django-filter.git'
 ~/study/flask:
   book-explore-flask: 'git+https://github.com/rpicard/explore-flask.git'
 
