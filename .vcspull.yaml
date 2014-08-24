@@ -629,6 +629,7 @@
 
   weasyprint: 'git+https://github.com/Kozea/WeasyPrint.git'
 ~/study/django:
+  coffin: 'git+https://github.com/coffin/coffin.git'
   django: 'git+https://github.com/django/django.git'
   django-assets: 'git+https://github.com/miracle2k/django-assets.git'
   django-taggit: 'git+https://github.com/alex/django-taggit.git'
