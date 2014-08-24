@@ -190,3 +190,10 @@ fi
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# http://stackoverflow.com/a/12484846
+export SBT_OPTS=-XX:MaxPermSize=1024m
+
+export PATH="$PATH:$HOME/.local/activator"
+
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
