@@ -171,6 +171,14 @@
   bukkit: 'git+https://github.com/Bukkit/Bukkit.git'
   kolmafia: 'svn+svn://svn.code.sf.net/p/kolmafia/code'
   h2o: 'git+https://github.com/0xdata/h2o.git'
+  mustache: 'git+https://github.com/spullara/mustache.java.git'
+  squeryl: 'git+https://github.com/squeryl/squeryl.git'
+  hibernate-orm: 'git+https://github.com/hibernate/hibernate-orm'
+~/study/scala:
+  scala: 'git+https://github.com/scala/scala.git'
+  spray: 'git+https://github.com/spray/spray.git'
+  play: 'git+https://github.com/playframework/playframework.git'
+  akka: 'git+https://github.com/akka/akka'
 ~/study/c:
   lua: 'git+https://github.com/LuaDist/lua.git'
   luajit: 'git+https://github.com/LuaDist/luajit.git'
