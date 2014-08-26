@@ -1,3 +1,9 @@
+# OSX
+if [ -f ~/.profile ]; then
+    . ~/.profile
+fi
+
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -105,10 +111,6 @@ if [ -f ~/.opam/opam-init/init.zsh ]; then
     . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 fi
 
-# OSX
-if [ -f ~/.profile ]; then
-    . ~/.profile
-fi
 
 # thank you https://github.com/miohtama/ztanesh/blob/master/zsh-scripts/rc/01-detect-os
 if [[ `uname` == 'Linux' ]]
@@ -188,4 +190,14 @@ fi
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+<<<<<<< HEAD
 export SBT_OPTS=-XX:MaxPermSize=1024m
+=======
+# http://stackoverflow.com/a/12484846
+export SBT_OPTS=-XX:MaxPermSize=1024m
+
+export PATH="$PATH:$HOME/.local/activator"
+
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
+>>>>>>> 96e5e9264ab61f1772e2115ed98d3cb4b3cf1628

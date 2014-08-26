@@ -5,7 +5,14 @@
   north: 'git+https://github.com/Snugug/north.git'
   semantic-ui: 'git+https://github.com/Semantic-Org/Semantic-UI.git'
   isobar-frontend: 'git+https://github.com/isobar-idev/code-standards/'
-
+~/study/data-structures-algorithms/c:
+  libds: 'git+https://github.com/zhemao/libds.git'
+~/study/data-structures-algorithms/c++:
+  algorithms: 'git+https://github.com/xtaci/algorithms.git'
+~/study/data-structures-algorithms/python:
+  Algorithms: 'git+https://github.com/prakhar1989/Algorithms.git'
+~/study/data-structures-algorithms/java:
+  java-algorithms-implementations: 'git+https://github.com/phishman3579/java-algorithms-implementation.git'
 ~/study/devops-books:
   github-cheat-sheet: 'git+https://github.com/tiimgreen/github-cheat-sheet.git'
 ~/study/standards-and-practices/php:
@@ -145,8 +152,26 @@
   yojson: 'git+https://github.com/mjambon/yojson.git'
   99-problems-ocaml: 'git+https://github.com/VictorNicollet/99-Problems-OCaml.git'
   ocaml-from-very-beginning-exercises: 'git+https://github.com/johnwhitington/ocaml-from-very-beginning-exercises.git'
+~/study/andrid:
+  Sunshine: 'git+https://github.com/udacity/Sunshine.git'
 ~/study/java:
   elasticsearch: 'git+https://github.com/elasticsearch/elasticsearch.git'
+  libgdx: 'git+https://github.com/libgdx/libgdx.git'
+  crate: 'git+https://github.com/crate/crate.git'
+  unbescape: 'git+https://github.com/unbescape/unbescape.git'
+  pysonar2: 'git+https://github.com/yinwang0/pysonar2.git'
+  zxing: 'git+https://github.com/zxing/zxing.git'
+  bukkit: 'git+https://github.com/Bukkit/Bukkit.git'
+  kolmafia: 'svn+svn://svn.code.sf.net/p/kolmafia/code'
+  h2o: 'git+https://github.com/0xdata/h2o.git'
+  mustache: 'git+https://github.com/spullara/mustache.java.git'
+  squeryl: 'git+https://github.com/squeryl/squeryl.git'
+  hibernate-orm: 'git+https://github.com/hibernate/hibernate-orm'
+~/study/scala:
+  scala: 'git+https://github.com/scala/scala.git'
+  spray: 'git+https://github.com/spray/spray.git'
+  play: 'git+https://github.com/playframework/playframework.git'
+  akka: 'git+https://github.com/akka/akka'
 ~/study/c:
   lua: 'git+https://github.com/LuaDist/lua.git'
   luajit: 'git+https://github.com/LuaDist/luajit.git'
@@ -430,6 +455,7 @@
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
   webassets: 'git+https://github.com/miracle2k/webassets.git'
+  click: 'git+https://github.com/mitsuhiko/click.git'
   pulseaudio-mixer-cli: 'git+https://github.com/mk-fg/pulseaudio-mixer-cli.git'
   psycopg2: 'git+git://github.com/psycopg/psycopg2.git'
   momoko: 'git+git://github.com/FSX/momoko.git'
@@ -563,7 +589,7 @@
   ranger: 'git+git://git.savannah.nongnu.org/ranger.git'
 
   readthedocs: 'git+https://github.com/rtfd/readthedocs.org.git'
-  django: 'git+https://github.com/django/django.git'
+
   norman: 'hg+https://bitbucket.org/aquavitae/norman/src'
   sphinx: 'hg+https://bitbucket.org/birkenfeld/sphinx'
   sphinx-contrib: 'hg+https://bitbucket.org/birkenfeld/sphinx-contrib'
@@ -603,7 +629,20 @@
   pyenv-virtualenvwrapper: 'git+https://github.com/yyuu/pyenv-virtualenvwrapper.git'
 
   weasyprint: 'git+https://github.com/Kozea/WeasyPrint.git'
-
+~/study/django:
+  coffin: 'git+https://github.com/coffin/coffin.git'
+  django: 'git+https://github.com/django/django.git'
+  django-assets: 'git+https://github.com/miracle2k/django-assets.git'
+  django-taggit: 'git+https://github.com/alex/django-taggit.git'
+  django-basic-apps: 'git+https://github.com/nathanborror/django-basic-apps.git'
+  django-mptt: 'git+https://github.com/django-mptt/django-mptt.git'
+  django-allauth: 'git+https://github.com/pennersr/django-allauth.git'
+  django-cities: 'git+https://github.com/coderholic/django-cities.git'
+  django-crispy-forms: 'git+https://github.com/maraujop/django-crispy-forms.git'
+  django-debug-toolbar: 'git+https://github.com/django-debug-toolbar/django-debug-toolbar.git'
+  django-treebeard: 'git+https://github.com/tabo/django-treebeard.git'
+  django-filter: 'git+https://github.com/alex/django-filter.git'
+  django-extensions: 'git+https://github.com/django-extensions/django-extensions.git'
 ~/study/flask:
   book-explore-flask: 'git+https://github.com/rpicard/explore-flask.git'
 
