@@ -40,7 +40,7 @@ export DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git docker npm node brew)
+plugins=(git docker npm node brew pip python)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -187,3 +187,5 @@ fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+export SBT_OPTS=-XX:MaxPermSize=1024m
