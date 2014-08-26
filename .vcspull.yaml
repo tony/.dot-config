@@ -1,10 +1,3 @@
-~/workspace/:
-  kaptan:
-    repo: git+https://github.com/emre/kaptan
-    remotes:
-      upstream: git+https://github.com/emre/kaptan
-      marksteve: git+https://github.com/marksteve/kaptan.git
-      tony: git+git@github.com:tony/kaptan.git
 ~/study/android:
   android-menudrawer: 'git+https://github.com/SimonVT/android-menudrawer.git'
   android-bootstrap: 'git+https://github.com/AndroidBootstrap/android-bootstrap.git'
@@ -436,6 +429,7 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  webassets: 'git+https://github.com/miracle2k/webassets.git'
   pulseaudio-mixer-cli: 'git+https://github.com/mk-fg/pulseaudio-mixer-cli.git'
   psycopg2: 'git+git://github.com/psycopg/psycopg2.git'
   momoko: 'git+git://github.com/FSX/momoko.git'
@@ -652,3 +646,25 @@
 ~/study/php:
   laravel: 'git+https://github.com/laravel/laravel.git'
   laravel-framework: 'git+https://github.com/laravel/framework.git'
+~/study/java:
+  scala: 'git+https://github.com/scala/scala.git'
+  spray: 'git+https://github.com/spray/spray.git'
+  play: 'git+https://github.com/playframework/playframework.git'
+  mustache: 'git+https://github.com/spullara/mustache.java.git'
+  squeryl: 'git+https://github.com/squeryl/squeryl.git'
+  akka: 'git+https://github.com/akka/akka'
+  hibernate-orm: 'git+https://github.com/hibernate/hibernate-orm'
+~/study/django:
+  coffin: 'git+https://github.com/coffin/coffin.git'
+  django: 'git+https://github.com/django/django.git'
+  django-assets: 'git+https://github.com/miracle2k/django-assets.git'
+  django-taggit: 'git+https://github.com/alex/django-taggit.git'
+  django-basic-apps: 'git+https://github.com/nathanborror/django-basic-apps.git'
+  django-mptt: 'git+https://github.com/django-mptt/django-mptt.git'
+  django-allauth: 'git+https://github.com/pennersr/django-allauth.git'
+  django-cities: 'git+https://github.com/coderholic/django-cities.git'
+  django-crispy-forms: 'git+https://github.com/maraujop/django-crispy-forms.git'
+  django-debug-toolbar: 'git+https://github.com/django-debug-toolbar/django-debug-toolbar.git'
+  django-treebeard: 'git+https://github.com/tabo/django-treebeard.git'
+  django-filter: 'git+https://github.com/alex/django-filter.git'
+  django-extensions: 'git+https://github.com/django-extensions/django-extensions.git'
