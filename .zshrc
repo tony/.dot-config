@@ -197,3 +197,9 @@ export PATH="$PATH:$HOME/.local/activator"
 
 export PATH="$HOME/.linuxbrew/bin:$PATH"
 export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
+
+[[ -s $HOME/.zshrc.local ]] && . $HOME/.zshrc.local
+
+function unix_ts { LBUFFER="${LBUFFER}$(date '+%Y%m%d%H%M%S')" }
+zle -N unix_ts
+bindkey "^t" unix_ts
