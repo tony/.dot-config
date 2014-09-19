@@ -656,6 +656,10 @@
   django-treebeard: 'git+https://github.com/tabo/django-treebeard.git'
   django-filter: 'git+https://github.com/alex/django-filter.git'
   django-extensions: 'git+https://github.com/django-extensions/django-extensions.git'
+  dj-stripe:
+    repo: 'git+https://github.com/pydanny/dj-stripe'
+    remotes:
+      tony: 'git+https://github.com/tony/dj-stripe'
 ~/study/flask:
   book-explore-flask: 'git+https://github.com/rpicard/explore-flask.git'
 
