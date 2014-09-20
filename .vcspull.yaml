@@ -724,3 +724,8 @@
   django-treebeard: 'git+https://github.com/tabo/django-treebeard.git'
   django-filter: 'git+https://github.com/alex/django-filter.git'
   django-extensions: 'git+https://github.com/django-extensions/django-extensions.git'
+~/study/scrapy/:
+  dirbot: 'git+https://github.com/scrapy/dirbot'
+  Scrapy-Smiles: 'git+https://github.com/mjhea0/Scrapy-Samples'
+  scrapy-examples: 'git+https://github.com/geekan/scrapy-examples'
+  django-dynamic-scraper: 'git+https://github.com/holgerd77/django-dynamic-scraper'
