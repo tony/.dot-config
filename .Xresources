@@ -8,10 +8,23 @@ Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hintstyle:  hintfull
 
+!! *faceName: inconsolata, font-awesome
 
 !! Terminus
-URxvt.font:             xft:Terminus-10:hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:medium;antialias=False,xft:WenQuanYi Zen Hei-10:medium;antialias=True,xft:HanaMinA-10:medium;antialias:True,xft:HanaMinB-10:medium;antialias:True,xft:HanaMinPlus-10:medium;antialias:True
-URxvt.boldFont:             xft:Terminus-10:bold;hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:bold;antialias=False,xft:WenQuanYi Zen Hei-10:bold;antialias=True,xft:HanaMinA-10:bold;antialias:True,xft:HanaMinB-10:bold;antialias:True,xft:HanaMinPlus-10:bold;antialias:True
+! URxvt.font:             xft:Terminus-10:hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:medium;antialias=False,xft:WenQuanYi Zen Hei-10:medium;antialias=True,xft:HanaMinA-10:medium;antialias:True,xft:HanaMinB-10:medium;antialias:True,xft:HanaMinPlus-10:medium;antialias:True
+! URxvt.boldFont:             xft:Terminus-10:bold;hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:bold;antialias=False,xft:WenQuanYi Zen Hei-10:bold;antialias=True,xft:HanaMinA-10:bold;antialias:True,xft:HanaMinB-10:bold;antialias:True,xft:HanaMinPlus-10:bold;antialias:True
+
+!! Terminus Powerline (Terminess Powerline)
+!! See: https://github.com/Lokaltog/powerline-fonts/tree/master/Terminus
+URxvt.font:             xft:Terminess Powerline:size=10:hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:medium;antialias=False,xft:WenQuanYi Zen Hei-10:medium;antialias=True,xft:HanaMinA-10:medium;antialias:True,xft:HanaMinB-10:medium;antialias:True,xft:HanaMinPlus-10:medium;antialias:True
+URxvt.boldFont:             xft:Terminess Powerline:size=10:bold;hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:bold;antialias=False,xft:WenQuanYi Zen Hei-10:bold;antialias=True,xft:HanaMinA-10:bold;antialias:True,xft:HanaMinB-10:bold;antialias:True,xft:HanaMinPlus-10:bold;antialias:True
+
+!! InconsolataDz
+! URxvt.font:             xft:Inconsolata-dz for Powerline:size=10:hinting=True;antialias:True,xft:Font Awesome:size=10,xft:WenQuanYi Bitmap Song-12:medium;antialias=False,xft:WenQuanYi Zen Hei-12:medium;antialias=True,xft:HanaMinA-12:medium;antialias:True,xft:HanaMinB-12:medium;antialias:True,xft:HanaMinPlus-12:medium;antialias:True
+! URxvt.boldFont:             xft:Inconsolata-dz for Powerline:size=10:bold;hinting=True;antialias:True,xft:Font Awesome:size=10,xft:WenQuanYi Bitmap Song-12:bold;antialias=False,xft:WenQuanYi Zen Hei-12:bold;antialias=True,xft:HanaMinA-12:bold;antialias:True,xft:HanaMinB-12:bold;antialias:True,xft:HanaMinPlus-12:bold;antialias:True
+
+! URxvt.font:             xft:Inconsolata:size=10:hinting=True;antialias:True,xft:PowerlineSymbols,xft:FontAwesome,xft:WenQuanYi Bitmap Song-12:medium;antialias=False,xft:WenQuanYi Zen Hei-12:medium;antialias=True,xft:HanaMinA-12:medium;antialias:True,xft:HanaMinB-12:medium;antialias:True,xft:HanaMinPlus-12:medium;antialias:True
+! URxvt.boldFont:             xft:Inconsolata:size=10:bold;hinting=True;antialias:True,xft:PowerlineSymbols,xft:FontAwesome,xft:WenQuanYi Bitmap Song-12:bold;antialias=False,xft:WenQuanYi Zen Hei-12:bold;antialias=True,xft:HanaMinA-12:bold;antialias:True,xft:HanaMinB-12:bold;antialias:True,xft:HanaMinPlus-12:bold;antialias:True
 
 
 !! Droid Sans Mono
