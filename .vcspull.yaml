@@ -467,6 +467,7 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  pythonfutures: 'hg+https://code.google.com/p/pythonfutures/'
   webassets: 'git+https://github.com/miracle2k/webassets.git'
   click: 'git+https://github.com/mitsuhiko/click.git'
   pulseaudio-mixer-cli: 'git+https://github.com/mk-fg/pulseaudio-mixer-cli.git'
