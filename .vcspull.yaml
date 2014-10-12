@@ -1,6 +1,7 @@
 ~/study/android:
   android-menudrawer: 'git+https://github.com/SimonVT/android-menudrawer.git'
   android-bootstrap: 'git+https://github.com/AndroidBootstrap/android-bootstrap.git'
+  Sunshine: 'git+https://github.com/udacity/Sunshine.git'
 ~/study/standards-and-practices/html:
   north: 'git+https://github.com/Snugug/north.git'
   semantic-ui: 'git+https://github.com/Semantic-Org/Semantic-UI.git'
@@ -152,8 +153,6 @@
   yojson: 'git+https://github.com/mjambon/yojson.git'
   99-problems-ocaml: 'git+https://github.com/VictorNicollet/99-Problems-OCaml.git'
   ocaml-from-very-beginning-exercises: 'git+https://github.com/johnwhitington/ocaml-from-very-beginning-exercises.git'
-~/study/andrid:
-  Sunshine: 'git+https://github.com/udacity/Sunshine.git'
 ~/study/java:
   elasticsearch: 'git+https://github.com/elasticsearch/elasticsearch.git'
   libgdx: 'git+https://github.com/libgdx/libgdx.git'
@@ -644,6 +643,7 @@
 
   weasyprint: 'git+https://github.com/Kozea/WeasyPrint.git'
 ~/study/django:
+  django-celery: 'git+https://github.com/celery/django-celery.git'
   coffin: 'git+https://github.com/coffin/coffin.git'
   django: 'git+https://github.com/django/django.git'
   django-assets: 'git+https://github.com/miracle2k/django-assets.git'
