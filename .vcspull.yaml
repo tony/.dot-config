@@ -188,6 +188,7 @@
   weechat: 'git+git://git.sv.gnu.org/weechat.git'
   retroarch: 'git+https://github.com/Themaister/RetroArch.git'
   linux: 'git+https://github.com/torvalds/linux.git'
+  minix: 'git+https://github.com/minix3/minix'
   freebsd: 'git+https://github.com/freebsd/freebsd.git'
   ncmpc: 'git+git://git.musicpd.org/master/ncmpc.git'
   tmux: 'git+git://git.code.sf.net/p/tmux/tmux-code'
