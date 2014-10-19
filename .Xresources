@@ -1,5 +1,6 @@
 *customization: -color
 Xterm*termName: xterm-256color
+URxvt*termName: rxvt-256color
 
 !-- Infinality: http://www.octatech.net/blog/2014/08/ubuntu-like-debian-font-rendering-using-infinality-font/ --!
 Xft.lcdfilter: lcddefault
