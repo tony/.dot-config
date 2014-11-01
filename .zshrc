@@ -46,7 +46,7 @@ export DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git docker npm node brew pip python)
+plugins=(git docker npm node brew brew-cask pip python)
 
 source $ZSH/oh-my-zsh.sh
 
