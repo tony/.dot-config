@@ -1,6 +1,7 @@
 ~/study/android:
   android-menudrawer: 'git+https://github.com/SimonVT/android-menudrawer.git'
   android-bootstrap: 'git+https://github.com/AndroidBootstrap/android-bootstrap.git'
+  Sunshine: 'git+https://github.com/udacity/Sunshine.git'
 ~/study/standards-and-practices/html:
   north: 'git+https://github.com/Snugug/north.git'
   semantic-ui: 'git+https://github.com/Semantic-Org/Semantic-UI.git'
@@ -152,8 +153,6 @@
   yojson: 'git+https://github.com/mjambon/yojson.git'
   99-problems-ocaml: 'git+https://github.com/VictorNicollet/99-Problems-OCaml.git'
   ocaml-from-very-beginning-exercises: 'git+https://github.com/johnwhitington/ocaml-from-very-beginning-exercises.git'
-~/study/andrid:
-  Sunshine: 'git+https://github.com/udacity/Sunshine.git'
 ~/study/java:
   elasticsearch: 'git+https://github.com/elasticsearch/elasticsearch.git'
   libgdx: 'git+https://github.com/libgdx/libgdx.git'
@@ -189,6 +188,7 @@
   weechat: 'git+git://git.sv.gnu.org/weechat.git'
   retroarch: 'git+https://github.com/Themaister/RetroArch.git'
   linux: 'git+https://github.com/torvalds/linux.git'
+  minix: 'git+https://github.com/minix3/minix'
   freebsd: 'git+https://github.com/freebsd/freebsd.git'
   ncmpc: 'git+git://git.musicpd.org/master/ncmpc.git'
   tmux: 'git+git://git.code.sf.net/p/tmux/tmux-code'
@@ -469,6 +469,7 @@
 ~/study/python:
   biopython: 'git+https://github.com/biopython/biopython.git'
   invoke: 'git+https://github.com/pyinvoke/invoke.git'
+  pythonfutures: 'hg+https://code.google.com/p/pythonfutures/'
   webassets: 'git+https://github.com/miracle2k/webassets.git'
   click: 'git+https://github.com/mitsuhiko/click.git'
   pulseaudio-mixer-cli: 'git+https://github.com/mk-fg/pulseaudio-mixer-cli.git'
@@ -645,6 +646,7 @@
 
   weasyprint: 'git+https://github.com/Kozea/WeasyPrint.git'
 ~/study/django:
+  django-celery: 'git+https://github.com/celery/django-celery.git'
   coffin: 'git+https://github.com/coffin/coffin.git'
   django: 'git+https://github.com/django/django.git'
   django-assets: 'git+https://github.com/miracle2k/django-assets.git'
