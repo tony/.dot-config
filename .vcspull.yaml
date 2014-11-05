@@ -168,6 +168,7 @@
   squeryl: 'git+https://github.com/squeryl/squeryl.git'
   hibernate-orm: 'git+https://github.com/hibernate/hibernate-orm'
 ~/study/scala:
+  spark: 'git+https://github.com/apache/spark'
   scala: 'git+https://github.com/scala/scala.git'
   spray: 'git+https://github.com/spray/spray.git'
   play: 'git+https://github.com/playframework/playframework.git'
