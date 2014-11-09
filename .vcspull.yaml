@@ -173,7 +173,8 @@
   spray: 'git+https://github.com/spray/spray.git'
   play: 'git+https://github.com/playframework/playframework.git'
   akka: 'git+https://github.com/akka/akka'
-~/study/c:
+~/study/c: 
+  flex: 'git+git://flex.git.sourceforge.net/gitroot/flex/flex'
   lua: 'git+https://github.com/LuaDist/lua.git'
   luajit: 'git+https://github.com/LuaDist/luajit.git'
   i3: 'git+git://code.i3wm.org/i3'
