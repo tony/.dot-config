@@ -473,6 +473,7 @@
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
   scipy: 'git+https://github.com/scipy/scipy.git'
+  scipy-learn: 'git+https://github.com/scikit-learn/scikit-learn.git'
   biopython: 'git+https://github.com/biopython/biopython.git'
   invoke: 'git+https://github.com/pyinvoke/invoke.git'
   pythonfutures: 'hg+https://code.google.com/p/pythonfutures/'
