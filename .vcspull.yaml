@@ -339,7 +339,12 @@
   ghc: 'git+https://github.com/ghc/ghc.git'
   yi: 'git+https://github.com/yi-editor/yi.git'
   IHaskell: 'git+https://github.com/gibiansky/IHaskell.git'
-
+  koans: 'git+https://github.com/HaskVan/HaskellKoans.git'
+  learnhaskell: 'git+https://github.com/bitemyapp/learnhaskell.git'
+  hspec: 'git+https://github.com/hspec/hspec.git'
+  hastache: 'git+https://github.com/lymar/hastache.git'
+  aeson: 'git+https://github.com/bos/aeson.git'
+  hasklig: 'git+https://github.com/i-tu/Hasklig.git'
   course: 'git+https://github.com/NICTA/course.git'
   lens: 'git+https://github.com/ekmett/lens.git'
   amazonkd: 'git+https://github.com/brendanhay/amazonka.git'
