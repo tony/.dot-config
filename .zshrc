@@ -214,6 +214,9 @@ if [ -d $HOME/.cabal ]; then
     export PATH=~/.cabal/bin:$PATH
 fi
 
+if [ -d $HOME/Library/Haskell ]; then
+    export PATH="$HOME/Library/Haskell/bin:$PATH"
+fi
 
 export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
 
