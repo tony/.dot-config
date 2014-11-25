@@ -210,6 +210,10 @@ if [ -d $HOME/.linuxbrew ]; then
     export LD_LIBRARY_PATH=$LINUXBREWHOME/lib64:$LINUXBREWHOME/lib:$LD_LIBRARY_PATH
 fi
 
+if [ -d $HOME/.cabal ]; then
+    export PATH=~/.cabal/bin:$PATH
+fi
+
 
 export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
 
