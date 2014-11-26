@@ -646,6 +646,7 @@
   python-unicodecsv: 'git+https://github.com/jdunck/python-unicodecsv.git'
   ftfy: 'git+https://github.com/LuminosoInsight/python-ftfy.git'
 
+  gitpython: 'git+https://github.com/gitpython-developers/GitPython'
   bpython: 'hg+https://bitbucket.org/bobf/bpython/'
   voltron: 'git+https://github.com/snarez/voltron.git'
   urwid: 'hg+https://excess.org/hg/urwid/'
