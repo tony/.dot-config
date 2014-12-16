@@ -333,6 +333,7 @@
 ~/study/haskell:
   haskell-platform: 'git+https://github.com/haskell/haskell-platform.git'
   cabal: 'git+https://github.com/haskell/cabal.git'
+  cgrep: 'git+https://github.com/awgn/cgrep.git'
   pandoc: 'git+https://github.com/jgm/pandoc.git'
   stackage: 'git+https://github.com/fpco/stackage.git'
   Haxl: 'git+https://github.com/facebook/Haxl.git'
