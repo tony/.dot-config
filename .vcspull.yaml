@@ -496,6 +496,7 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  pycparser: 'git+https://github.com/eliben/pycparser.git'
   scipy: 'git+https://github.com/scipy/scipy.git'
   scipy-learn: 'git+https://github.com/scikit-learn/scikit-learn.git'
   biopython: 'git+https://github.com/biopython/biopython.git'
