@@ -154,6 +154,9 @@
 #   yojson: 'git+https://github.com/mjambon/yojson.git'
 #   99-problems-ocaml: 'git+https://github.com/VictorNicollet/99-Problems-OCaml.git'
 #   ocaml-from-very-beginning-exercises: 'git+https://github.com/johnwhitington/ocaml-from-very-beginning-exercises.git'
+~/study/freebsd:
+  freebsd-ports: 'git+git@github.com:freebsd/freebsd-ports.git'
+  freebsd: 'git+https://github.com/freebsd/freebsd.git'
 ~/study/java:
   elasticsearch: 'git+https://github.com/elasticsearch/elasticsearch.git'
   libgdx: 'git+https://github.com/libgdx/libgdx.git'
@@ -194,7 +197,6 @@
   retroarch: 'git+https://github.com/Themaister/RetroArch.git'
   linux: 'git+https://github.com/torvalds/linux.git'
   minix: 'git+https://github.com/minix3/minix'
-  freebsd: 'git+https://github.com/freebsd/freebsd.git'
   ncmpc: 'git+git://git.musicpd.org/master/ncmpc.git'
   tmux: 'git+git://git.code.sf.net/p/tmux/tmux-code'
   git: 'git+https://github.com/git/git.git'
