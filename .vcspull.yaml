@@ -155,7 +155,7 @@
 #   99-problems-ocaml: 'git+https://github.com/VictorNicollet/99-Problems-OCaml.git'
 #   ocaml-from-very-beginning-exercises: 'git+https://github.com/johnwhitington/ocaml-from-very-beginning-exercises.git'
 ~/study/freebsd:
-  freebsd-ports: 'git+git@github.com:freebsd/freebsd-ports.git'
+  freebsd-ports: 'git+https://github.com/freebsd/freebsd-ports.git'
   freebsd: 'git+https://github.com/freebsd/freebsd.git'
 ~/study/java:
   elasticsearch: 'git+https://github.com/elasticsearch/elasticsearch.git'
