@@ -206,6 +206,7 @@
   zsh: 'git+git://git.code.sf.net/p/zsh/code'
   cpython: 'hg+http://hg.python.org/cpython/'
   nginx: 'hg+http://hg.nginx.org/nginx'
+  tre: 'git+https://github.com/laurikari/tre'
 ~/study/c++:
   blink: 'git+https://chromium.googlesource.com/chromium/blink'
   v8: 'git+git://github.com/v8/v8.git'
