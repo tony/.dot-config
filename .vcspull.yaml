@@ -192,7 +192,7 @@
   libimobiledevice: 'git+https://github.com/libimobiledevice/libimobiledevice.git'
   redis: 'git+https://github.com/antirez/redis.git'
   cython: 'git+https://github.com/cython/cython.git'
-  awesome: 'git+git://git.naquadah.org/awesome.git'
+  awesome: 'git+https://github.com/awesomeWM/awesome.git'
   weechat: 'git+git://git.sv.gnu.org/weechat.git'
   retroarch: 'git+https://github.com/Themaister/RetroArch.git'
   linux: 'git+https://github.com/torvalds/linux.git'
