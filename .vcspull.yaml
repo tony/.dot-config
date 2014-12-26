@@ -499,6 +499,7 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  blaze: 'git+https://github.com/ContinuumIO/blaze.git'
   factory_boy: 'git+https://github.com/rbarrois/factory_boy.git'
   pycparser: 'git+https://github.com/eliben/pycparser.git'
   scipy: 'git+https://github.com/scipy/scipy.git'
