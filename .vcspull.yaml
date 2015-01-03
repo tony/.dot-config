@@ -177,6 +177,7 @@
   play: 'git+https://github.com/playframework/playframework.git'
   akka: 'git+https://github.com/akka/akka'
 ~/study/c: 
+  vis: 'git+git://repo.or.cz/vis.git'
   the_silver_searcher: 'git+https://github.com/ggreer/the_silver_searcher.git'
   ruby: 'git+https://github.com/ruby/ruby.git'
   flex: 'git+git://flex.git.sourceforge.net/gitroot/flex/flex'
