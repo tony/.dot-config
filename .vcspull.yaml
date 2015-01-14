@@ -177,6 +177,7 @@
   play: 'git+https://github.com/playframework/playframework.git'
   akka: 'git+https://github.com/akka/akka'
 ~/study/c: 
+  vis: 'git+git://repo.or.cz/vis.git'
   the_silver_searcher: 'git+https://github.com/ggreer/the_silver_searcher.git'
   ruby: 'git+https://github.com/ruby/ruby.git'
   flex: 'git+git://flex.git.sourceforge.net/gitroot/flex/flex'
@@ -499,6 +500,8 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  blaze: 'git+https://github.com/ContinuumIO/blaze.git'
+  factory_boy: 'git+https://github.com/rbarrois/factory_boy.git'
   pycparser: 'git+https://github.com/eliben/pycparser.git'
   scipy: 'git+https://github.com/scipy/scipy.git'
   scipy-learn: 'git+https://github.com/scikit-learn/scikit-learn.git'
