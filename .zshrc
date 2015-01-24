@@ -225,3 +225,7 @@ export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
 function unix_ts { LBUFFER="${LBUFFER}$(date '+%Y%m%d%H%M%S')" }
 zle -N unix_ts
 bindkey "^t" unix_ts
+
+# keys for history-search-forward
+bindkey "^[[A" history-search-backward
+bindkey "^[[B" history-search-forward
