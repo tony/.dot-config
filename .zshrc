@@ -94,6 +94,9 @@ if [ -d "${PYENV_ROOT}" ]; then
 fi
 
 
+if [ -f $HOME/.local/bin/virtualenvwrapper.sh ]; then
+    . $HOME/.local/bin/virtualenvwrapper.sh
+fi
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     . /usr/local/bin/virtualenvwrapper.sh
 fi
