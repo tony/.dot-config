@@ -100,6 +100,7 @@
   stripe-node: 'git+https://github.com/stripe/stripe-node.git'
   stripe-python: 'git+https://github.com/stripe/stripe-python.git'
   authorize-sauce: 'git+https://github.com/jeffschenck/authorizesauce'
+  paypal-python-sdk: 'git+https://github.com/paypal/PayPal-Python-SDK.git'
   pyauthorize: 'git+https://github.com/vcatalano/py-authorize.git'
   billy: 'git+https://github.com/balanced/billy.git'
   merchant: 'git+https://github.com/agiliq/merchant.git'
