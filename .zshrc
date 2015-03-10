@@ -108,10 +108,6 @@ if [ -f /usr/local/bin/perlbrew ]; then
     source ~/.perl5/perlbrew/etc/bashrc
 fi
 
-if [ -f /usr/games/fortune ] && [ -f /usr/games/cowsay ]; then
-    fortune | cowsay -n
-fi
-
 if [ -f ~/.opam/opam-init/init.zsh ]; then
     # OPAM configuration
     . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
@@ -185,6 +181,8 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 if command -v cowsay >/dev/null 2>&1 && command -v fortune >/dev/null 2>&1; then
+    fortune | cowsay -n
+elif [ -f /usr/games/fortune ] && [ -f /usr/games/cowsay ]; then
     fortune | cowsay -n
 fi
 
