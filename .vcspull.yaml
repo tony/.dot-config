@@ -748,6 +748,7 @@
   flask-oauthlib: 'git+https://github.com/lepture/flask-oauthlib.git'
   flask-babel: 'git+https://github.com/mitsuhiko/flask-babel.git'
 ~/study/php:
+  wordpress: 'git+git@github.com:WordPress/WordPress.git'
   laravel: 'git+https://github.com/laravel/laravel.git'
   laravel-framework: 'git+https://github.com/laravel/framework.git'
 ~/study/java:
