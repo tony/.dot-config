@@ -215,6 +215,10 @@ if [ -d $HOME/.cabal ]; then
     export PATH=~/.cabal/bin:$PATH
 fi
 
+if [ -d $HOME/.composer/vendor/bin ]; then
+    export PATH=~/.composer/vendor/bin:$PATH
+fi
+
 if [ -d $HOME/Library/Haskell ]; then
     export PATH="$HOME/Library/Haskell/bin:$PATH"
 fi
