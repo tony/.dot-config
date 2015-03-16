@@ -471,12 +471,3 @@
   Scrapy-Smiles: 'git+https://github.com/mjhea0/Scrapy-Samples'
   scrapy-examples: 'git+https://github.com/geekan/scrapy-examples'
   django-dynamic-scraper: 'git+https://github.com/holgerd77/django-dynamic-scraper'
-~/study/rust:
-  coreutils: 'git+https://github.com/uutils/coreutils'
-  wtftw: 'git+https://github.com/Kintaro/wtftw'
-  cargo: 'git+https://github.com/rust-lang/cargo.git'
-  gfx-rs: 'git+https://github.com/gfx-rs/gfx-rs.git'
-  rust-protobuf:  'git+https://github.com/stepancheg/rust-protobuf.git'
-  rust: 'git+https://github.com/rust-lang/rust.git'
-  rust-postgres: 'git+https://github.com/sfackler/rust-postgres'
-  racer: 'git+https://github.com/phildawes/racer.git'
