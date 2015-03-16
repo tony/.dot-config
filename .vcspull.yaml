@@ -46,48 +46,7 @@
 
 ~/study/compsci-books:
   bottomupcs: 'git+https://github.com/ianw/bottomupcs.git'
-# ~/study/angular:
-#
-#   docs.angulardart.org: 'git+https://github.com/angular/docs.angulardart.org.git'
-#
-#   angular.js: 'git+https://github.com/angular/angular.js.git'
-#
-#   pipe: 'git+https://github.com/angular/pipe.git'
-#   ngHttp: 'git+https://github.com/angular/ngHttp.git'
-#   dgeni-packages: 'git+https://github.com/angular/dgeni-packages.git'
-#   angular.dart.tutorial: 'git+https://github.com/angular/angular.dart.tutorial.git'
-#   route.dart: 'git+https://github.com/angular/route.dart.git'
-#   di.dart: 'git+https://github.com/angular/di.dart.git'
-#   builtwith.angularjs: 'git+https://github.com/angular/builtwith.angularjs.org.git'
-#   dgeni: 'git+https://github.com/angular/dgeni.git'
-#   diary.js: 'git+https://github.com/angular/diary.js.git'
-#   google-cla-verifier-for-github: 'git+https://github.com/angular/google-cla-verifier-for-github.git'
-#   angular.org: 'git+https://github.com/angular/angularjs.org.git'
-#   angular-seed: 'git+https://github.com/angular/angular-seed.git'
-#   angular-phonecat: 'git+https://github.com/angular/angular-phonecat.git'
-#   code-of-config: 'git+https://github.com/angular/code-of-conduct.git'
-#   code.angular.org: 'git+https://github.com/angular/code.angularjs.org.git'
-#   ng-clorsure-runner: 'git+https://github.com/angular/ng-closure-runner.git'
-#   projects: 'git+https://github.com/angular/projects.git'
-#   zone.js: 'git+https://github.com/angular/zone.js.git'
-#   ng-conf: 'git+https://github.com/angular/ng-conf.git'
-#   templating: 'git+https://github.com/angular/templating.git'
-#   di.js: 'git+https://github.com/angular/di.js.git'
-#   assert: 'git+https://github.com/angular/assert.git'
-#   protractor: 'git+https://github.com/angular/protractor.git'
-#
-#   bower-angular: 'git+https://github.com/angular/bower-angular.git' 
-#   bower-angular-touch: 'git+https://github.com/angular/bower-angular-touch.git'
-#   bower-angular-scenario: 'git+https://github.com/angular/bower-angular-scenario.git'
-#   bower-angular-sanitize: 'git+https://github.com/angular/bower-angular-sanitize.git'
-#   bower-angular-resource: 'git+https://github.com/angular/bower-angular-resource.git'
-#   bower-angular-route: 'git+https://github.com/angular/bower-angular-route.git'
-#   bower-angular-mocks: 'git+https://github.com/angular/bower-angular-mocks.git'
-#   bower-angular-loader: 'git+https://github.com/angular/bower-angular-loader.git'
-#   bower-angular-i18n: 'git+https://github.com/angular/bower-angular-i18n.git'
-#   bower-angular-cookies: 'git+https://github.com/angular/bower-angular-cookies.git'
-#   bower-angular-animate: 'git+https://github.com/angular/bower-angular-animate.git'
-#
+
 ~/study/merchant:
   satchless: 'git+https://github.com/mirumee/satchless.git'
   braintree.js: 'git+https://github.com/braintree/braintree.js.git'
