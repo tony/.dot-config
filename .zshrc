@@ -73,7 +73,7 @@ export NODE_PATH=/usr/local/share/npm/lib/node_modules
 export PATH=/usr/local/share/npm/bin:$PATH
 
 # rbenv
-if [ -f $HOME/.rbenv/bin ]; then
+if [ -d $HOME/.rbenv/bin ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
 elif [ -f /usr/lib/rbenv/libexec/rbenv ]; then
