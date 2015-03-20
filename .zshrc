@@ -191,6 +191,8 @@ if command -v reattach-to-user-namespace > /dev/null; then
     alias mvim="reattach-to-user-namespace mvim"
 fi
 
+alias battle.net="setarch i386 -L -B -R -3 taskset -c 2,3 /usr/share/playonlinux/playonlinux --run \"Battle.net\" %F"
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
