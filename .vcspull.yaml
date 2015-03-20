@@ -246,17 +246,6 @@
   pudb: 'git+http://git.tiker.net/trees/pudb.git'
   ipython: 'git+https://github.com/ipython/ipython.git'
   blessing: 'git+https://github.com/erikrose/blessings.git'
-  salt:
-    repo: 'git+https://github.com/saltstack/salt.git'
-    remotes:
-      tony: 'git+git@github.com:tony/salt.git'
-
-  salt-ui: 'git+https://github.com/saltstack/salt-ui.git'
-  salt-formulae: 'git+https://github.com/saltstack/formulae'
-  salt-api: 'git+https://github.com/saltstack/salt-api.git'
-  salt-cloud: 'git+https://github.com/saltstack/salt-cloud.git'
-  salt-vagrant: 'git+https://github.com/saltstack/salty-vagrant.git'
-  salt-contrib: 'git+https://github.com/saltstack/salt-contrib.git'
   sqlalchemy: 'git+https://github.com/zzzeek/sqlalchemy.git'
   wtforms: 'git+https://github.com/Khan/wtforms.git'
   botocore: 'git+https://github.com/boto/botocore.git'
@@ -473,3 +462,77 @@
   django-dynamic-scraper: 'git+https://github.com/holgerd77/django-dynamic-scraper'
 ~/study/go/:
   go: 'git+https://github.com/golang/go.git'
+~/study/salt/:
+  salt:
+    repo: 'git+https://github.com/saltstack/salt.git'
+    remotes:
+      tony: 'git+git@github.com:tony/salt.git'
+  salt-ui: 'git+https://github.com/saltstack/salt-ui.git'
+  salt-formulae: 'git+https://github.com/saltstack/formulae'
+  salt-contrib: 
+    repo: 'git+https://github.com/saltstack/salt-contrib.git'
+    remotes:
+      tony: 'git+git@github.com:tony/salt-contrib.git'
+  salt-vim: 
+    repo: 'git+https://github.com/saltstack/salt-vim.git'
+    remotes:
+      tony: 'git+git@github.com:tony/salt-vim.git'
+  salt-jenkins: 
+    repo: 'git+https://github.com/saltstack/salt-jenkins.git'
+    remotes:
+      tony: 'git+git@github.com:tony/salt-jenkins.git'
+  libnacl: 
+    repo: 'git+https://github.com/saltstack/libnacl.git'
+    remotes:
+      tony: 'git+git@github.com:tony/libnacl.git'
+  jenkins-dsl-jobs: 
+    repo: 'git+https://github.com/saltstack/jenkins-dsl-jobs.git'
+    remotes:
+      tony: 'git+git@github.com:tony/jenkins-dsl-jobs.git'
+  raet: 
+    repo: 'git+https://github.com/saltstack/raet.git'
+    remotes:
+      tony: 'git+git@github.com:tony/raet.git'
+
+  salt-jenkins-ng: 
+    repo: 'git+https://github.com/saltstack/salt-jenkins-ng.git'
+    remotes:
+      tony: 'git+git@github.com:tony/salt-jenkins-ng.git'
+  salt-bootstrap: 
+    repo: 'git+https://github.com/saltstack/salt-bootstrap.git'
+    remotes:
+      tony: 'git+git@github.com:tony/salt-bootstrap.git'
+  salt-windows-bootstrap: 
+    repo: 'git+https://github.com/saltstack/salt-windows-bootstrap.git'
+    remotes:
+      tony: 'git+git@github.com:tony/salt-windows-bootstrap.git'
+  salt-pylint: 
+    repo: 'git+https://github.com/saltstack/salt-pylint.git'
+    remotes:
+      tony: 'git+git@github.com:tony/salt-pylint.git'
+  salt-testing: 
+    repo: 'git+https://github.com/saltstack/salt-testing.git'
+    remotes:
+      tony: 'git+git@github.com:tony/salt-testing.git'
+  pepper: 
+    repo: 'git+https://github.com/saltstack/pepper.git'
+    remotes:
+      tony: 'git+git@github.com:tony/pepper.git'
+  salt-windows-msi: 
+    repo: 'git+https://github.com/saltstack/salt-windows-msi.git'
+    remotes:
+      tony: 'git+git@github.com:tony/salt-windows-msi.git'
+  docker-containers: 
+    repo: 'git+https://github.com/saltstack/docker-containers.git'
+    remotes:
+      tony: 'git+git@github.com:tony/docker-containers.git'
+
+~/study/vim_plugins:
+  vim-multiple-cursors:
+    repo: 'git+https://github.com/terryma/vim-multiple-cursors.git'
+    remotes:
+      tony: 'git+git@github.com:tony/vim-multiple-cursors.git'
+  vim-snippets:
+    repo: 'git+https://github.com/honza/vim-snippets.git'
+    remotes:
+      tony: 'git+git@github.com:tony/vim-snippets.git'
