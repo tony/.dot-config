@@ -22,7 +22,10 @@
 ~/study/standards-and-practices/js:
   idiomatic.js: 'git+https://github.com/rwaldron/idiomatic.js.git'
 ~/study/sqlalchemy:
-  sqlalchemy: 'git+https://github.com/zzzeek/sqlalchemy.git'
+  sqlalchemy: 
+    repo: 'git+https://github.com/zzzeek/sqlalchemy.git'
+    remotes:
+      tony: 'git+git@github.com:tony/sqlalchemy.git'
   sqlalchemy_traversal: 'git+https://github.com/sontek/sqlalchemy_traversal.git'
   sqlamp: 'git+https://github.com/tony/sqlamp.git'
   sqlalchemy-orm-tree: 'git+https://github.com/monetizeio/sqlalchemy-orm-tree.git'
