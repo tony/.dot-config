@@ -368,13 +368,19 @@
   pyenv-virtualenvwrapper: 'git+https://github.com/yyuu/pyenv-virtualenvwrapper.git'
 
   weasyprint: 'git+https://github.com/Kozea/WeasyPrint.git'
+
+  python-prompt-toolkit: 'git+https://github.com/jonathanslenders/python-prompt-toolkit.git'
+  ptpython: 'git+https://github.com/jonathanslenders/ptpython.git'
 ~/study/django:
   django-cms: 'git+https://github.com/divio/django-cms.git'
   wagtail: 'git+https://github.com/torchbox/wagtail.git'
   aldjemy: 'git+https://github.com/Deepwalker/aldjemy.git'
   django-celery: 'git+https://github.com/celery/django-celery.git'
   coffin: 'git+https://github.com/coffin/coffin.git'
-  django: 'git+https://github.com/django/django.git'
+  django: 
+    repo: 'git+https://github.com/django/django.git'
+    remotes:
+      tony: 'git+git@github.com:tony/django.git'
   django-assets: 'git+https://github.com/miracle2k/django-assets.git'
   django-taggit: 'git+https://github.com/alex/django-taggit.git'
   django-basic-apps: 'git+https://github.com/nathanborror/django-basic-apps.git'
