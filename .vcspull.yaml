@@ -471,3 +471,5 @@
   Scrapy-Smiles: 'git+https://github.com/mjhea0/Scrapy-Samples'
   scrapy-examples: 'git+https://github.com/geekan/scrapy-examples'
   django-dynamic-scraper: 'git+https://github.com/holgerd77/django-dynamic-scraper'
+~/study/go/:
+  go: 'git+https://github.com/golang/go.git'
