@@ -90,7 +90,7 @@
   neovim:
     repo: 'git+https://github.com/neovim/neovim.git'
     remotes:
-      tony: 'git+https://github.com/audreyr/cookiecutter-pypackage.git'
+      tony: 'git+https://github.com/tony/neovim.git'
   vim: 'hg+https://vim.googlecode.com/hg/'
   libuv: 'git+https://github.com/joyent/libuv.git'
   libimobiledevice: 'git+https://github.com/libimobiledevice/libimobiledevice.git'
