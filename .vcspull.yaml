@@ -1,7 +1,3 @@
-~/study/android:
-  android-menudrawer: 'git+https://github.com/SimonVT/android-menudrawer.git'
-  android-bootstrap: 'git+https://github.com/AndroidBootstrap/android-bootstrap.git'
-  Sunshine: 'git+https://github.com/udacity/Sunshine.git'
 ~/study/standards-and-practices/html:
   north: 'git+https://github.com/Snugug/north.git'
   semantic-ui: 'git+https://github.com/Semantic-Org/Semantic-UI.git'
