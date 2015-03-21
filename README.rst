@@ -48,6 +48,7 @@ Features / Usage
 ``.config/awesome/``      See <https://github.com/tony/.config/awesome>
 ``.fonts/``               See <https://github.com/tony/dot-fonts>.
 ``.tmuxp/``               `tmuxp`_ sessions for common processes.
+                          See <https://github.con/tony/tmuxp-config>
 ``.vcspull.yaml``         Study and stay up to date with great programming
                           code.
 ``.pythonrc``             Autocompletion (requires `readline`_, if your
