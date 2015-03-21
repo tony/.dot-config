@@ -82,6 +82,7 @@ elif [ -f /usr/lib/rbenv/libexec/rbenv ]; then
 fi
 
 ## pyenv paths
+# curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
 if [ -d "${HOME}/.pyenv" ]; then
     export PYENV_ROOT="${HOME}/.pyenv"
 elif [ -d /usr/local/opt/pyenv ]; then
@@ -91,6 +92,7 @@ fi
 if [ -d "${PYENV_ROOT}" ]; then
     export PATH="${PYENV_ROOT}/bin:${PATH}"
     eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
 fi
 
 
