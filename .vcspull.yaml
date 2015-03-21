@@ -65,19 +65,6 @@
 ~/study/freebsd:
   freebsd-ports: 'git+https://github.com/freebsd/freebsd-ports.git'
   freebsd: 'git+https://github.com/freebsd/freebsd.git'
-~/study/java:
-  elasticsearch: 'git+https://github.com/elasticsearch/elasticsearch.git'
-  libgdx: 'git+https://github.com/libgdx/libgdx.git'
-  crate: 'git+https://github.com/crate/crate.git'
-  unbescape: 'git+https://github.com/unbescape/unbescape.git'
-  pysonar2: 'git+https://github.com/yinwang0/pysonar2.git'
-  zxing: 'git+https://github.com/zxing/zxing.git'
-  bukkit: 'git+https://github.com/Bukkit/Bukkit.git'
-  kolmafia: 'svn+svn://svn.code.sf.net/p/kolmafia/code'
-  h2o: 'git+https://github.com/0xdata/h2o.git'
-  mustache: 'git+https://github.com/spullara/mustache.java.git'
-  squeryl: 'git+https://github.com/squeryl/squeryl.git'
-  hibernate-orm: 'git+https://github.com/hibernate/hibernate-orm'
 ~/study/c: 
   vis: 'git+git://repo.or.cz/vis.git'
   the_silver_searcher: 'git+https://github.com/ggreer/the_silver_searcher.git'
