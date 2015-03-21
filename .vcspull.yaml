@@ -521,3 +521,13 @@
     repo: 'git+https://github.com/honza/vim-snippets.git'
     remotes:
       tony: 'git+git@github.com:tony/vim-snippets.git'
+
+~/study/vagrant/:
+  vagrant:
+    repo: 'git+https://github.com/mitchellh/vagrant.git'
+    remotes:
+      tony: 'git+git@github.com:tony/vagrant.git'
+  vagrant-fabric:
+    repo: 'git+https://github.com/wutali/vagrant-fabric.git'
+    remotes:
+      tony: 'git+git@github.com:tony/vim-fabric.git'
