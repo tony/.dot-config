@@ -531,3 +531,7 @@
     repo: 'git+https://github.com/wutali/vagrant-fabric.git'
     remotes:
       tony: 'git+git@github.com:tony/vim-fabric.git'
+
+~/study/java:
+  jenkins: 'git+https://github.com/jenkinsci/jenkins.git'
+  elasticsearch: 'git+https://github.com/elastic/elasticsearch.git'
