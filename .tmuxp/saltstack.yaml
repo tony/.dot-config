@@ -1,5 +1,5 @@
-session_name: salt
-start_directory: ./
+session_name: saltstack
+start_directory: ~/study/salt/salt
 windows:
 - window_name: salt
   layout: main-horizontal
@@ -10,22 +10,3 @@ windows:
   - pane
   options:
     main-pane-height: 35
-  start_directory: /etc/salt
-- window_name: salt-state-configs
-  layout: main-horizontal
-  panes:
-  - focus: True
-  - pane
-  - pane
-  options:
-    main-pane-height: 35
-  start_directory: ~/workspace/salt-states-configs
-- window_name: private
-  layout: main-horizontal
-  panes:
-  - focus: True
-  - pane
-  - pane
-  options:
-    main-pane-height: 35
-  start_directory: ~/workspace/salt-states-private
