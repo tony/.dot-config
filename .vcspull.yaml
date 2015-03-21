@@ -349,14 +349,15 @@
 
   virtualenv: 'git+https://github.com/pypa/virtualenv.git'
 
-  pyenv: 'git+https://github.com/yyuu/pyenv'
-  pyenv-virtualenv: 'git+https://github.com/yyuu/pyenv-virtualenv.git'
-  pyenv-virtualenvwrapper: 'git+https://github.com/yyuu/pyenv-virtualenvwrapper.git'
-
   weasyprint: 'git+https://github.com/Kozea/WeasyPrint.git'
 
   python-prompt-toolkit: 'git+https://github.com/jonathanslenders/python-prompt-toolkit.git'
   ptpython: 'git+https://github.com/jonathanslenders/ptpython.git'
+~/study/pyenv:
+  pyenv: 'git+https://github.com/yyuu/pyenv'
+  pyenv-virtualenv: 'git+https://github.com/yyuu/pyenv-virtualenv.git'
+  pyenv-virtualenvwrapper: 'git+https://github.com/yyuu/pyenv-virtualenvwrapper.git'
+  pyenv-installer: 'git+https://github.com/yyuu/pyenv-installer.git'
 ~/study/django:
   django-cms: 'git+https://github.com/divio/django-cms.git'
   wagtail: 'git+https://github.com/torchbox/wagtail.git'
