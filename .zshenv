@@ -30,4 +30,12 @@ pathprepend $HOME/.local/bin $HOME/bin
 pathprepend /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin 
 pathprepend /usr/games /usr/local/games
 
+# Ensure that a non-login, non-interactive shell has a defined environment.
+# from sorin/ionescu/prezto
+if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprofile"
+fi
+
 [[ -s $HOME/.zshrc.local ]] && . $HOME/.zshrc.local
+
+
