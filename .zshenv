@@ -8,6 +8,8 @@ source $HOME/.dot-config/.shell/env/virtualenvwrapper.sh
 source $HOME/.dot-config/.shell/env/perlbrew.sh
 source $HOME/.dot-config/.shell/env/opam.sh
 source $HOME/.dot-config/.shell/env/aws.sh
+source $HOME/.dot-config/.shell/env/dircolors.sh
+source $HOME/.dot-config/.shell/env/macports_python.sh
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -24,17 +26,7 @@ source $ZSH/oh-my-zsh.sh
 # export PATH=$HOME/.local/bin:./node_modules/.bin:$HOME/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH
 pathprepend $HOME/.local/bin  $HOME/bin /usr/lib/lightdm/lightdm /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/games /usr/local/games $PATH
 
-# dircolors
-if [ -f dircolors ]; then
-    eval `dircolors ~/.dircolors-solarized/dircolors.256dark`
-elif [ -f /opt/local/usr/bin/gdircolors ]; then  # macports gdircolors
-    eval `gdircolors ~/.dircolors-solarized/dircolors.256dark`
-fi
 
-# python path for macports framework
-if [ -d /opt/local/Library/Frameworks/Python.framework/Versions/Current/bin ]; then
-    pathappend /opt/local/Library/Frameworks/Python.framework/Versions/Current/bin
-fi
 
 
 ## postgres paths
