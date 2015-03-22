@@ -7,131 +7,15 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="steeef"
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Uncomment this to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment to change how often before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-export DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git docker npm node brew brew-cask pip python)
-
-source $ZSH/oh-my-zsh.sh
 
 
-# http://superuser.com/a/753948
-pathappend() {
-  for ARG in "$@"
-  do
-    if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
-        PATH="${PATH:+"$PATH:"}$ARG"
-    fi
-  done
-}
-
-pathprepend() {
-  for ARG in "$@"
-  do
-    if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
-        PATH="$ARG${PATH:+":$PATH"}"
-    fi
-  done
-}
+source $HOME/.dot-config/.sh_functions.sh
 
 
 export EDITOR=vim
-# Customize to your needs...
-# export PATH=$HOME/.local/bin:./node_modules/.bin:$HOME/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH
-pathprepend $HOME/.local/bin ./node_modules/.bin $HOME/bin /usr/lib/lightdm/lightdm /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/games /usr/local/games $PATH
-
-fixssh() {
-    for key in SSH_AUTH_SOCK SSH_CONNECTION SSH_CLIENT; do
-        if (tmux show-environment | grep "^${key}" > /dev/null); then
-            value=`tmux show-environment | grep "^${key}" | sed -e "s/^[A-Z_]*=//"`
-            export ${key}="${value}"
-        fi
-    done
-}
-
-export NODE_PATH=/usr/local/share/npm/lib/node_modules
-pathprepend /usr/local/share/npm/bin
-
-# rbenv
-if [ -d $HOME/.rbenv/bin ]; then
-    pathprepend $HOME/.rbenv/bin
-    eval "$(rbenv init -)"
-elif [ -f /usr/lib/rbenv/libexec/rbenv ]; then
-    pathprepend /usr/lib/rbenv/libexec/
-    eval "$(rbenv init -)"
-fi
-
-## pyenv paths
-# curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
-if [ -d "${HOME}/.pyenv" ]; then
-    export PYENV_ROOT="${HOME}/.pyenv"
-elif [ -d /usr/local/opt/pyenv ]; then
-    export PYENV_ROOT=/usr/local/opt/pyenv
-fi
-
-if [ -d "${PYENV_ROOT}" ]; then
-    pathprepend ${PYENV_ROOT}/bin
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-fi
 
 
-if [ -f $HOME/.local/bin/virtualenvwrapper.sh ]; then
-    . $HOME/.local/bin/virtualenvwrapper.sh
-elif [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    . /usr/local/bin/virtualenvwrapper.sh
-fi
 
-export PERLBREW_ROOT=$HOME/.perl5/perlbrew
-if [ -f /usr/local/bin/perlbrew ]; then
-    #export PERLBREW_ROOT=$HOME/.perl5/perlbrew
-    # /usr/local/bin/perlbrew init
-    source ~/.perl5/perlbrew/etc/bashrc
-fi
-
-if [ -f ~/.opam/opam-init/init.zsh ]; then
-    # OPAM configuration
-    . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-fi
 
 
 # thank you https://github.com/miohtama/ztanesh/blob/master/zsh-scripts/rc/01-detect-os
@@ -162,43 +46,8 @@ fi
 #     fi
 # fi
 
-if [ -f /usr/local/share/zsh/site-functions/_aws ]; then
-    source /usr/local/share/zsh/site-functions/_aws
-fi
-
-# dircolors
-if [ -f dircolors ]; then
-    eval `dircolors ~/.dircolors-solarized/dircolors.256dark`
-elif [ -f /opt/local/usr/bin/gdircolors ]; then  # macports gdircolors
-    eval `gdircolors ~/.dircolors-solarized/dircolors.256dark`
-fi
-
-# python path for macports framework
-if [ -d /opt/local/Library/Frameworks/Python.framework/Versions/Current/bin ]; then
-    pathappend /opt/local/Library/Frameworks/Python.framework/Versions/Current/bin
-fi
-
-
-## postgres paths
-if [ -d /opt/local/lib/postgresql93/bin ]; then  # macports
-    pathappend /opt/local/lib/postgresql93/bin
-fi
-
-
-
-source tmuxp.zsh
 
 export PYTHONSTARTUP=~/.pythonrc
-
-# To enable shims and autocompletion add to your profile:
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
-# To use Homebrew's directories rather than ~/.pyenv add to your profile:
-# export PYENV_ROOT=/usr/local/opt/pyenv
-
-BASE16_SCHEME="monokai"
-BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
-[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 if command -v cowsay >/dev/null 2>&1 && command -v fortune >/dev/null 2>&1; then
     fortune | cowsay -n
@@ -213,41 +62,13 @@ fi
 
 alias battle.net="setarch i386 -L -B -R -3 taskset -c 2,3 /usr/share/playonlinux/playonlinux --run \"Battle.net\" %F"
 
-### Added by the Heroku Toolbelt
-pathprepend /usr/local/heroku/bin
-
 # http://stackoverflow.com/a/12484846
 export SBT_OPTS=-XX:MaxPermSize=1024m
 
-pathprepend $HOME/.local/activator
 
-if [ -d $HOME/.linuxbrew ]; then
-    # Until LinuxBrew is fixed, the following is required.
-    # See: https://github.com/Homebrew/linuxbrew/issues/47
-    export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/local/lib64/pkgconfig:/usr/lib64/pkgconfig:/usr/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib64/pkgconfig:/usr/share/pkgconfig:$PKG_CONFIG_PATH
-    ## Setup linux brew
-    export LINUXBREWHOME=$HOME/.linuxbrew
-    pathprepend $LINUXBREWHOME/bin:$LINUXBREWHOME/sbin
-    export MANPATH=$LINUXBREWHOME/man:$MANPATH
-    export PKG_CONFIG_PATH=$LINUXBREWHOME/lib64/pkgconfig:$LINUXBREWHOME/lib/pkgconfig:$PKG_CONFIG_PATH
-    export LD_LIBRARY_PATH=$LINUXBREWHOME/lib64:$LINUXBREWHOME/lib:$LD_LIBRARY_PATH
-fi
 
-if [ -d $HOME/.cabal ]; then
-    pathprepend ~/.cabal/bin
-fi
 
-if [ -d $HOME/.composer/vendor/bin ]; then
-    pathprepend ~/.composer/vendor/bin
-fi
 
-if [ -d $HOME/Library/Haskell ]; then
-    pathprepend $HOME/Library/Haskell/bin
-fi
-
-export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
-
-[[ -s $HOME/.zshrc.local ]] && . $HOME/.zshrc.local
 
 function unix_ts { LBUFFER="${LBUFFER}$(date '+%Y%m%d%H%M%S')" }
 zle -N unix_ts
