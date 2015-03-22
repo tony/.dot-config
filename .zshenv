@@ -1,6 +1,8 @@
 #!/bin/zsh
 
-source $HOME/.dot-config/.sh_functions.sh
+source $HOME/.dot-config/.shell/functions.sh
+source $HOME/.dot-config/.shell/env/npm.sh
+source $HOME/.dot-config/.shell/env/rbenv.sh
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -15,24 +17,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 # export PATH=$HOME/.local/bin:./node_modules/.bin:$HOME/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH
-pathprepend $HOME/.local/bin ./node_modules/.bin $HOME/bin /usr/lib/lightdm/lightdm /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/games /usr/local/games $PATH
-
-if [ -d /usr/local/share/npm/lib/node_modules ]; then
-    export NODE_PATH=/usr/local/share/npm/lib/node_modules
-fi
-
-if [ -d /usr/local/share/npm/bin ]; then
-    pathprepend /usr/local/share/npm/bin
-fi
-
-# rbenv
-if [ -d $HOME/.rbenv/bin ]; then
-    pathprepend $HOME/.rbenv/bin
-    eval "$(rbenv init -)"
-elif [ -f /usr/lib/rbenv/libexec/rbenv ]; then
-    pathprepend /usr/lib/rbenv/libexec/
-    eval "$(rbenv init -)"
-fi
+pathprepend $HOME/.local/bin  $HOME/bin /usr/lib/lightdm/lightdm /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/games /usr/local/games $PATH
 
 ## pyenv paths
 # curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash

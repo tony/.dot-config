@@ -9,7 +9,7 @@ export LC_ALL="en_US.UTF-8"
 
 
 
-source $HOME/.dot-config/.sh_functions.sh
+source $HOME/.dot-config/.shell/functions.sh
 
 
 export EDITOR=vim
