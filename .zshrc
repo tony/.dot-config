@@ -54,11 +54,30 @@ plugins=(git docker npm node brew brew-cask pip python)
 source $ZSH/oh-my-zsh.sh
 
 
+# http://superuser.com/a/753948
+pathappend() {
+  for ARG in "$@"
+  do
+    if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$ARG"
+    fi
+  done
+}
+
+pathprepend() {
+  for ARG in "$@"
+  do
+    if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
+        PATH="$ARG${PATH:+":$PATH"}"
+    fi
+  done
+}
 
 
 export EDITOR=vim
 # Customize to your needs...
-export PATH=$HOME/.local/bin:./node_modules/.bin:$HOME/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH
+# export PATH=$HOME/.local/bin:./node_modules/.bin:$HOME/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH
+pathprepend $HOME/.local/bin ./node_modules/.bin $HOME/bin /usr/lib/lightdm/lightdm /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/games /usr/local/games $PATH
 
 fixssh() {
     for key in SSH_AUTH_SOCK SSH_CONNECTION SSH_CLIENT; do
@@ -70,14 +89,14 @@ fixssh() {
 }
 
 export NODE_PATH=/usr/local/share/npm/lib/node_modules
-export PATH=/usr/local/share/npm/bin:$PATH
+pathprepend /usr/local/share/npm/bin
 
 # rbenv
 if [ -d $HOME/.rbenv/bin ]; then
-    export PATH="$HOME/.rbenv/bin:$PATH"
+    pathprepend $HOME/.rbenv/bin
     eval "$(rbenv init -)"
 elif [ -f /usr/lib/rbenv/libexec/rbenv ]; then
-    export PATH="/usr/lib/rbenv/libexec/:$PATH"
+    pathprepend /usr/lib/rbenv/libexec/
     eval "$(rbenv init -)"
 fi
 
@@ -90,7 +109,7 @@ elif [ -d /usr/local/opt/pyenv ]; then
 fi
 
 if [ -d "${PYENV_ROOT}" ]; then
-    export PATH="${PYENV_ROOT}/bin:${PATH}"
+    pathprepend ${PYENV_ROOT}/bin
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
@@ -98,8 +117,7 @@ fi
 
 if [ -f $HOME/.local/bin/virtualenvwrapper.sh ]; then
     . $HOME/.local/bin/virtualenvwrapper.sh
-fi
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+elif [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     . /usr/local/bin/virtualenvwrapper.sh
 fi
 
@@ -157,13 +175,13 @@ fi
 
 # python path for macports framework
 if [ -d /opt/local/Library/Frameworks/Python.framework/Versions/Current/bin ]; then
-    export PATH=$PATH:/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin
+    pathappend /opt/local/Library/Frameworks/Python.framework/Versions/Current/bin
 fi
 
 
 ## postgres paths
 if [ -d /opt/local/lib/postgresql93/bin ]; then  # macports
-    export PATH=$PATH:/opt/local/lib/postgresql93/bin
+    pathappend /opt/local/lib/postgresql93/bin
 fi
 
 
@@ -196,12 +214,12 @@ fi
 alias battle.net="setarch i386 -L -B -R -3 taskset -c 2,3 /usr/share/playonlinux/playonlinux --run \"Battle.net\" %F"
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+pathprepend /usr/local/heroku/bin
 
 # http://stackoverflow.com/a/12484846
 export SBT_OPTS=-XX:MaxPermSize=1024m
 
-export PATH="$PATH:$HOME/.local/activator"
+pathprepend $HOME/.local/activator
 
 if [ -d $HOME/.linuxbrew ]; then
     # Until LinuxBrew is fixed, the following is required.
@@ -209,22 +227,22 @@ if [ -d $HOME/.linuxbrew ]; then
     export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/local/lib64/pkgconfig:/usr/lib64/pkgconfig:/usr/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib64/pkgconfig:/usr/share/pkgconfig:$PKG_CONFIG_PATH
     ## Setup linux brew
     export LINUXBREWHOME=$HOME/.linuxbrew
-    export PATH=$LINUXBREWHOME/bin:$LINUXBREWHOME/sbin:$PATH
+    pathprepend $LINUXBREWHOME/bin:$LINUXBREWHOME/sbin
     export MANPATH=$LINUXBREWHOME/man:$MANPATH
     export PKG_CONFIG_PATH=$LINUXBREWHOME/lib64/pkgconfig:$LINUXBREWHOME/lib/pkgconfig:$PKG_CONFIG_PATH
     export LD_LIBRARY_PATH=$LINUXBREWHOME/lib64:$LINUXBREWHOME/lib:$LD_LIBRARY_PATH
 fi
 
 if [ -d $HOME/.cabal ]; then
-    export PATH=~/.cabal/bin:$PATH
+    pathprepend ~/.cabal/bin
 fi
 
 if [ -d $HOME/.composer/vendor/bin ]; then
-    export PATH=~/.composer/vendor/bin:$PATH
+    pathprepend ~/.composer/vendor/bin
 fi
 
 if [ -d $HOME/Library/Haskell ]; then
-    export PATH="$HOME/Library/Haskell/bin:$PATH"
+    pathprepend $HOME/Library/Haskell/bin
 fi
 
 export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
