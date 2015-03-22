@@ -3,6 +3,11 @@
 source $HOME/.dot-config/.shell/functions.sh
 source $HOME/.dot-config/.shell/env/npm.sh
 source $HOME/.dot-config/.shell/env/rbenv.sh
+source $HOME/.dot-config/.shell/env/pyenv.sh
+source $HOME/.dot-config/.shell/env/virtualenvwrapper.sh
+source $HOME/.dot-config/.shell/env/perlbrew.sh
+source $HOME/.dot-config/.shell/env/opam.sh
+source $HOME/.dot-config/.shell/env/aws.sh
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -18,43 +23,6 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 # export PATH=$HOME/.local/bin:./node_modules/.bin:$HOME/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH
 pathprepend $HOME/.local/bin  $HOME/bin /usr/lib/lightdm/lightdm /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/games /usr/local/games $PATH
-
-## pyenv paths
-# curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
-if [ -d "${HOME}/.pyenv" ]; then
-    export PYENV_ROOT="${HOME}/.pyenv"
-elif [ -d /usr/local/opt/pyenv ]; then
-    export PYENV_ROOT=/usr/local/opt/pyenv
-fi
-
-if [ -d "${PYENV_ROOT}" ]; then
-    pathprepend ${PYENV_ROOT}/bin
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-fi
-
-
-if [ -f $HOME/.local/bin/virtualenvwrapper.sh ]; then
-    . $HOME/.local/bin/virtualenvwrapper.sh
-elif [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    . /usr/local/bin/virtualenvwrapper.sh
-fi
-
-export PERLBREW_ROOT=$HOME/.perl5/perlbrew
-if [ -f /usr/local/bin/perlbrew ]; then
-    #export PERLBREW_ROOT=$HOME/.perl5/perlbrew
-    # /usr/local/bin/perlbrew init
-    source ~/.perl5/perlbrew/etc/bashrc
-fi
-
-if [ -f ~/.opam/opam-init/init.zsh ]; then
-    # OPAM configuration
-    . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-fi
-
-if [ -f /usr/local/share/zsh/site-functions/_aws ]; then
-    source /usr/local/share/zsh/site-functions/_aws
-fi
 
 # dircolors
 if [ -f dircolors ]; then
