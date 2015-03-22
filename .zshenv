@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+autoload -U +X compinit && compinit
+
 source $HOME/.dot-config/.shell/functions.sh
 source $HOME/.dot-config/.shell/env/npm.sh
 source $HOME/.dot-config/.shell/env/rbenv.sh
