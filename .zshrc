@@ -6,17 +6,6 @@ fi
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
-_load_zprezto() {
-    source ~/.zprezto/runcoms/zpreztorc
-    zstyle ':prezto:module:prompt' theme 'steeef'
-    source ~/.zprezto/init.zsh
-}
-
-if [ -d $HOME/.zprezto ]; then
-    _load_zprezto
-else
-    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto" && _load_zprezto
-fi
 
 
 source $HOME/.dot-config/.shell/functions.sh
