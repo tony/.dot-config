@@ -2,7 +2,6 @@
 
 _load_zprezto() {
     source ~/.zprezto/runcoms/zpreztorc
-    zstyle ':prezto:module:prompt' theme 'steeef'
     source ~/.zprezto/init.zsh
 }
 
