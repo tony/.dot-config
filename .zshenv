@@ -43,7 +43,7 @@ elif [ -d /usr/local/opt/pyenv ]; then
 fi
 
 if [ -d "${PYENV_ROOT}" ]; then
-    #pathprepend ${PYENV_ROOT}/bin
+    pathprepend ${PYENV_ROOT}/bin
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
