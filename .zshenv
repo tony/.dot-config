@@ -10,6 +10,8 @@ source $HOME/.dot-config/.shell/env/opam.sh
 source $HOME/.dot-config/.shell/env/aws.sh
 source $HOME/.dot-config/.shell/env/dircolors.sh
 source $HOME/.dot-config/.shell/env/macports_python.sh
+source $HOME/.dot-config/.shell/env/base16-shell.sh
+source $HOME/.dot-config/.shell/env/tmuxp.sh
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -26,19 +28,13 @@ source $ZSH/oh-my-zsh.sh
 # export PATH=$HOME/.local/bin:./node_modules/.bin:$HOME/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH
 pathprepend $HOME/.local/bin  $HOME/bin /usr/lib/lightdm/lightdm /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/games /usr/local/games $PATH
 
-
-
-
 ## postgres paths
 if [ -d /opt/local/lib/postgresql93/bin ]; then  # macports
     pathappend /opt/local/lib/postgresql93/bin
 fi
 
-BASE16_SCHEME="monokai"
-BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
-[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
-source tmuxp.zsh
+
 
 ### Added by the Heroku Toolbelt
 if [ -d /usr/local/heroku ]; then
