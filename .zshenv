@@ -2,7 +2,10 @@
 
 autoload -U +X compinit && compinit
 
+source $HOME/.dot-config/.shell/aliases.sh
 source $HOME/.dot-config/.shell/functions.sh
+
+
 source $HOME/.dot-config/.shell/env/npm.sh
 source $HOME/.dot-config/.shell/env/rbenv.sh
 source $HOME/.dot-config/.shell/env/pyenv.sh
