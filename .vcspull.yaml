@@ -180,6 +180,14 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  tmuxp:
+    repo: 'git+https://github.com/tony/tmuxp.git'
+    remotes:
+      tony: 'git+git@github.com:tony/tmuxp.git'
+  vcspull:
+    repo: 'git+https://github.com/tony/vcspull.git'
+    remotes:
+      tony: 'git+git@github.com:tony/vcspull.git'
   pyston: 'git+https://github.com/dropbox/pyston.git'
   blaze: 'git+https://github.com/ContinuumIO/blaze.git'
   factory_boy: 'git+https://github.com/rbarrois/factory_boy.git'
