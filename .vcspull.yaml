@@ -305,7 +305,10 @@
 
   calibre: 'git+git://github.com/kovidgoyal/calibre.git'
 
-  kaptan: 'git+https://github.com/emre/kaptan.git'
+  kaptan: 
+    repo: 'git+https://github.com/emre/kaptan.git'
+    remotes:
+      tony: 'git+git@github.com:tony/kaptan.git'
   aws-cli: 'git+https://github.com/aws/aws-cli.git'
 
   youcompleteme: 'git+https://github.com/Valloric/YouCompleteMe.git'
