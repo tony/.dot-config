@@ -350,6 +350,7 @@
   mock: 'hg+https://code.google.com/p/mock/'
 
   virtualenv: 'git+https://github.com/pypa/virtualenv.git'
+  virtualenvwrapper: 'git+https://bitbucket.org/dhellmann/virtualenvwrapper.git'
 
   weasyprint: 'git+https://github.com/Kozea/WeasyPrint.git'
 
