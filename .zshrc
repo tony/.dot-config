@@ -3,19 +3,14 @@ if [ -f ~/.profile ]; then
     . ~/.profile
 fi
 
+#[[ -s $HOME/.zshenv ]] && source $HOME/.zshenv
+
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
-
-
 source $HOME/.dot-config/.shell/functions.sh
 
-
 export EDITOR=vim
-
-
-
-
 
 # thank you https://github.com/miohtama/ztanesh/blob/master/zsh-scripts/rc/01-detect-os
 if [[ `uname` == 'Linux' ]]
@@ -32,19 +27,6 @@ then
 else
     export OSX=
 fi
-
-# detect AWS Elastic Beanstalk Command Line Tool
-# http://aws.amazon.com/code/6752709412171743
-# if [ -d ~/.aws/eb ]; then
-#     if [[ "$OSX" == "1" ]]; then
-#         export PATH=$PATH:$HOME/.aws/eb/macosx/python2.7
-#     fi
-#
-#     if [[ "$LINUX" == "1" ]]; then
-#         export PATH=$PATH:~/.aws/eb/linux/python2.7
-#     fi
-# fi
-
 
 export PYTHONSTARTUP=~/.pythonrc
 
@@ -64,11 +46,6 @@ alias battle.net="setarch i386 -L -B -R -3 taskset -c 2,3 /usr/share/playonlinux
 # http://stackoverflow.com/a/12484846
 export SBT_OPTS=-XX:MaxPermSize=1024m
 
-
-
-
-
-
 function unix_ts { LBUFFER="${LBUFFER}$(date '+%Y%m%d%H%M%S')" }
 zle -N unix_ts
 bindkey "^t" unix_ts
@@ -76,3 +53,5 @@ bindkey "^t" unix_ts
 # keys for history-search-forward
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
+
+[[ -s $HOME/.zshrc.local ]] && . $HOME/.zshrc.local
