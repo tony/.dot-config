@@ -73,11 +73,6 @@
   lua: 'git+https://github.com/LuaDist/lua.git'
   luajit: 'git+https://github.com/LuaDist/luajit.git'
   i3: 'git+git://code.i3wm.org/i3'
-  neovim:
-    repo: 'git+https://github.com/neovim/neovim.git'
-    remotes:
-      tony: 'git+https://github.com/tony/neovim.git'
-  vim: 'hg+https://vim.googlecode.com/hg/'
   libuv: 'git+https://github.com/joyent/libuv.git'
   libimobiledevice: 'git+https://github.com/libimobiledevice/libimobiledevice.git'
   redis: 'git+https://github.com/antirez/redis.git'
@@ -421,20 +416,6 @@
   wordpress: 'git+https://github.com/WordPress/WordPress.git'
   laravel: 'git+https://github.com/laravel/laravel.git'
   laravel-framework: 'git+https://github.com/laravel/framework.git'
-~/study/django:
-  coffin: 'git+https://github.com/coffin/coffin.git'
-  django: 'git+https://github.com/django/django.git'
-  django-assets: 'git+https://github.com/miracle2k/django-assets.git'
-  django-taggit: 'git+https://github.com/alex/django-taggit.git'
-  django-basic-apps: 'git+https://github.com/nathanborror/django-basic-apps.git'
-  django-mptt: 'git+https://github.com/django-mptt/django-mptt.git'
-  django-allauth: 'git+https://github.com/pennersr/django-allauth.git'
-  django-cities: 'git+https://github.com/coderholic/django-cities.git'
-  django-crispy-forms: 'git+https://github.com/maraujop/django-crispy-forms.git'
-  django-debug-toolbar: 'git+https://github.com/django-debug-toolbar/django-debug-toolbar.git'
-  django-treebeard: 'git+https://github.com/tabo/django-treebeard.git'
-  django-filter: 'git+https://github.com/alex/django-filter.git'
-  django-extensions: 'git+https://github.com/django-extensions/django-extensions.git'
 ~/study/scrapy/:
   dirbot: 'git+https://github.com/scrapy/dirbot'
   Scrapy-Smiles: 'git+https://github.com/mjhea0/Scrapy-Samples'
@@ -442,6 +423,10 @@
   django-dynamic-scraper: 'git+https://github.com/holgerd77/django-dynamic-scraper'
 ~/study/go/:
   go: 'git+https://github.com/golang/go.git'
+  go-koans:
+    repo: 'git+https://github.com/cdarwin/go-koans.gi'
+    remotes:
+      tony: 'git+ssh://git@github.com:cdarwin/go-koans.git'
 ~/study/salt/:
   salt:
     repo: 'git+https://github.com/saltstack/salt.git'
@@ -507,7 +492,15 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/docker-containers.git'
 
-~/study/vim_plugins:
+~/study/vim:
+  vim:
+    repo: 'git+https://github.com/vim/vim.git'
+    remotes:
+      tony: 'git+https://github.com/tony/vim.git'
+  neovim:
+    repo: 'git+https://github.com/neovim/neovim.git'
+    remotes:
+      tony: 'git+https://github.com/tony/neovim.git'
   vim-multiple-cursors:
     repo: 'git+https://github.com/terryma/vim-multiple-cursors.git'
     remotes:
@@ -516,7 +509,10 @@
     repo: 'git+https://github.com/honza/vim-snippets.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/vim-snippets.git'
-
+  vimtutor-extended:
+    repo: 'git+https://github.com/superjer/vimtutor-extended.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/vimtutor-extended.git'
 ~/study/vagrant/:
   vagrant:
     repo: 'git+https://github.com/mitchellh/vagrant.git'
