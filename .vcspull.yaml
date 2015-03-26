@@ -424,7 +424,7 @@
 ~/study/go/:
   go: 'git+https://github.com/golang/go.git'
   go-koans:
-    repo: 'git+https://github.com/cdarwin/go-koans.gi'
+    repo: 'git+https://github.com/cdarwin/go-koans.git'
     remotes:
       tony: 'git+ssh://git@github.com:cdarwin/go-koans.git'
 ~/study/salt/:
