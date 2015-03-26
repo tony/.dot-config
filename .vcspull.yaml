@@ -175,6 +175,7 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  cookiecutter-pypackage-tony: 'git+ssh://git@github.com/tony/cookiecutter-pypackage.git'
   tmuxp:
     repo: 'git+https://github.com/tony/tmuxp.git'
     remotes:
