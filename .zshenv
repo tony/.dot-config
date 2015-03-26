@@ -18,7 +18,6 @@ source $HOME/.dot-config/.shell/env/aws.sh
 source $HOME/.dot-config/.shell/env/dircolors.sh
 source $HOME/.dot-config/.shell/env/macports_python.sh
 source $HOME/.dot-config/.shell/env/base16-shell.sh
-source $HOME/.dot-config/.shell/env/tmuxp.sh
 source $HOME/.dot-config/.shell/env/postgres.sh
 source $HOME/.dot-config/.shell/env/heroku.sh
 source $HOME/.dot-config/.shell/env/activator.sh
@@ -28,7 +27,7 @@ source $HOME/.dot-config/.shell/env/composer.sh
 source $HOME/.dot-config/.shell/env/haskell.sh
 source $HOME/.dot-config/.shell/env/lightdm.sh
 source $HOME/.dot-config/.shell/env/oh-my-zsh.zsh
-#source $HOME/.dot-config/.shell/env/prezto.zsh
+source $HOME/.dot-config/.shell/env/tmuxp.sh
 
 
 # Customize to your needs...
