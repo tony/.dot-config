@@ -426,7 +426,7 @@
   go-koans:
     repo: 'git+https://github.com/cdarwin/go-koans.git'
     remotes:
-      tony: 'git+ssh://git@github.com:cdarwin/go-koans.git'
+      tony: 'git+ssh://git@github.com/cdarwin/go-koans.git'
 ~/study/salt/:
   salt:
     repo: 'git+https://github.com/saltstack/salt.git'
@@ -496,11 +496,11 @@
   vim:
     repo: 'git+https://github.com/vim/vim.git'
     remotes:
-      tony: 'git+https://github.com/tony/vim.git'
+      tony: 'git+ssh://git@github.com/tony/vim.git'
   neovim:
     repo: 'git+https://github.com/neovim/neovim.git'
     remotes:
-      tony: 'git+https://github.com/tony/neovim.git'
+      tony: 'git+ssh://git@github.com/tony/neovim.git'
   vim-multiple-cursors:
     repo: 'git+https://github.com/terryma/vim-multiple-cursors.git'
     remotes:
