@@ -527,3 +527,14 @@
 ~/study/java:
   jenkins: 'git+https://github.com/jenkinsci/jenkins.git'
   elasticsearch: 'git+https://github.com/elastic/elasticsearch.git'
+~/study/reST:
+
+  sphinx:
+    repo: 'git+https://github.com/sphinx-doc/sphinx.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sphinx.git'
+  sphinx-testing:
+    repo: 'git+https://github.com/sphinx-doc/sphinx-testing.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sphinx-testing.git'
+  docutils: 'svn+ssh://gitpull@svn.code.sf.net/p/docutils/code'
