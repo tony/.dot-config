@@ -42,6 +42,8 @@
   python-for-signal-processing: 'git+https://github.com/unpingco/Python-for-Signal-Processing.git'
   probabilistic-programming-and-bayesian-methods: 'git+https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers.git'
   python-guide: 'git+https://github.com/kennethreitz/python-guide.git'
+  python-patterns: 'git+https://github.com/faif/python-patterns.git'
+  learn-pandas: 'git+https://bitbucket.org/hrojas/learn-pandas.git'
 
 ~/study/compsci-books:
   bottomupcs: 'git+https://github.com/ianw/bottomupcs.git'
@@ -292,16 +294,10 @@
   twisted: 'git+https://github.com/twisted/twisted.git'
 
   ckan: 'git+https://github.com/okfn/ckan.git'
-  mediagoblin: 'git+git://gitorious.org/mediagoblin/mediagoblin.git'
-  ckan: 'git+https://github.com/okfn/ckan.git'
   reddit: 'git+https://github.com/reddit/reddit.git'
 
   python_koans: 'git+https://github.com/gregmalcolm/python_koans.git'
-  python-guide: 'git+https://github.com/kennethreitz/python-guide.git'
   #introduction_to_sqlalchemy: 'git+https://bitbucket.org/zzzeek/pycon2013_student_package.git'
-  probablistic-programming-and-beyesian-methods: 'git+https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers.git'
-  python-patterns: 'git+https://github.com/faif/python-patterns.git'
-  learn-pandas: 'git+https://bitbucket.org/hrojas/learn-pandas.git'
 
   w3lib: 'git+https://github.com/scrapy/w3lib'
   scrapy: 'git+https://github.com/scrapy/scrapy.git'
