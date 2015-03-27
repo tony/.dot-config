@@ -24,7 +24,10 @@
       tony: 'git+ssh://git@github.com/tony/sqlalchemy.git'
   sqlalchemy_traversal: 'git+https://github.com/sontek/sqlalchemy_traversal.git'
   sqlamp: 'git+https://github.com/tony/sqlamp.git'
-  sqlalchemy-orm-tree: 'git+https://github.com/monetizeio/sqlalchemy-orm-tree.git'
+  sqlalchemy-orm-tree: 
+    repo: 'git+https://github.com/monetizeio/sqlalchemy-orm-tree.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sqlalchemy-orm-tree.git'
   sqlalchemy-bitcoin: 'git+https://github.com/monetizeio/sqlalchemy-bitcoin.git'
   cubes: 'git+https://github.com/Stiivi/cubes.git'
   bubbles: 'git+https://github.com/Stiivi/bubbles.git'
@@ -41,7 +44,10 @@
   byte-of-python: 'git+https://github.com/swaroopch/byte_of_python.git'
   python-for-signal-processing: 'git+https://github.com/unpingco/Python-for-Signal-Processing.git'
   probabilistic-programming-and-bayesian-methods: 'git+https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers.git'
-  python-guide: 'git+https://github.com/kennethreitz/python-guide.git'
+  python-guide: 
+    repo: 'git+https://github.com/kennethreitz/python-guide.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/python-guide.git'
   python-patterns: 'git+https://github.com/faif/python-patterns.git'
   learn-pandas: 'git+https://bitbucket.org/hrojas/learn-pandas.git'
 
@@ -534,3 +540,8 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/sphinx-testing.git'
   docutils: 'svn+ssh://gitpull@svn.code.sf.net/p/docutils/code'
+  sphinxcontrib-stud:
+    repo: 'git+https://github.com/guibog/stud.git'
+    remotes:
+      tony: 'git+ssh://git@github.com:tony/sphinxcontrib-stud.git'
+  sphinxcontrib-github: 'git+https://github.com/tony/sphinxcontrib-github.git'
