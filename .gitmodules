@@ -16,3 +16,6 @@
 [submodule ".i3"]
 	path = .i3
 	url = https://github.com/tony/i3-config.git
+[submodule ".tmuxp"]
+	path = .tmuxp
+	url = https://github.com/tony/tmuxp-config.git

@@ -3,9 +3,12 @@
     "browser",
     "ecma5",
     "jquery",
-      "underscore"
+    "lodash",
+    "reserved"
   ],
   "plugins": {
-    "node": {}
+    "node": {},
+    "require": {},
+    "doc_comment": {}
   }
 }

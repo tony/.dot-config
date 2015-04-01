@@ -1,7 +1,3 @@
-~/study/android:
-  android-menudrawer: 'git+https://github.com/SimonVT/android-menudrawer.git'
-  android-bootstrap: 'git+https://github.com/AndroidBootstrap/android-bootstrap.git'
-  Sunshine: 'git+https://github.com/udacity/Sunshine.git'
 ~/study/standards-and-practices/html:
   north: 'git+https://github.com/Snugug/north.git'
   semantic-ui: 'git+https://github.com/Semantic-Org/Semantic-UI.git'
@@ -13,7 +9,7 @@
   algorithms: 'git+https://github.com/xtaci/algorithms.git'
 ~/study/data-structures-algorithms/python:
   Algorithms: 'git+https://github.com/prakhar1989/Algorithms.git'
-~/study/data-structures-algorithms/java:
+~/study/data-structures-algorithms/java: 
   java-algorithms-implementations: 'git+https://github.com/phishman3579/java-algorithms-implementation.git'
 ~/study/devops-books:
   github-cheat-sheet: 'git+https://github.com/tiimgreen/github-cheat-sheet.git'
@@ -22,10 +18,16 @@
 ~/study/standards-and-practices/js:
   idiomatic.js: 'git+https://github.com/rwaldron/idiomatic.js.git'
 ~/study/sqlalchemy:
-  sqlalchemy: 'git+https://github.com/zzzeek/sqlalchemy.git'
+  sqlalchemy: 
+    repo: 'git+https://github.com/zzzeek/sqlalchemy.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sqlalchemy.git'
   sqlalchemy_traversal: 'git+https://github.com/sontek/sqlalchemy_traversal.git'
   sqlamp: 'git+https://github.com/tony/sqlamp.git'
-  sqlalchemy-orm-tree: 'git+https://github.com/monetizeio/sqlalchemy-orm-tree.git'
+  sqlalchemy-orm-tree: 
+    repo: 'git+https://github.com/monetizeio/sqlalchemy-orm-tree.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sqlalchemy-orm-tree.git'
   sqlalchemy-bitcoin: 'git+https://github.com/monetizeio/sqlalchemy-bitcoin.git'
   cubes: 'git+https://github.com/Stiivi/cubes.git'
   bubbles: 'git+https://github.com/Stiivi/bubbles.git'
@@ -42,52 +44,16 @@
   byte-of-python: 'git+https://github.com/swaroopch/byte_of_python.git'
   python-for-signal-processing: 'git+https://github.com/unpingco/Python-for-Signal-Processing.git'
   probabilistic-programming-and-bayesian-methods: 'git+https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers.git'
-  python-guide: 'git+https://github.com/kennethreitz/python-guide.git'
+  python-guide: 
+    repo: 'git+https://github.com/kennethreitz/python-guide.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/python-guide.git'
+  python-patterns: 'git+https://github.com/faif/python-patterns.git'
+  learn-pandas: 'git+https://bitbucket.org/hrojas/learn-pandas.git'
 
 ~/study/compsci-books:
   bottomupcs: 'git+https://github.com/ianw/bottomupcs.git'
-# ~/study/angular:
-#
-#   docs.angulardart.org: 'git+https://github.com/angular/docs.angulardart.org.git'
-#
-#   angular.js: 'git+https://github.com/angular/angular.js.git'
-#
-#   pipe: 'git+https://github.com/angular/pipe.git'
-#   ngHttp: 'git+https://github.com/angular/ngHttp.git'
-#   dgeni-packages: 'git+https://github.com/angular/dgeni-packages.git'
-#   angular.dart.tutorial: 'git+https://github.com/angular/angular.dart.tutorial.git'
-#   route.dart: 'git+https://github.com/angular/route.dart.git'
-#   di.dart: 'git+https://github.com/angular/di.dart.git'
-#   builtwith.angularjs: 'git+https://github.com/angular/builtwith.angularjs.org.git'
-#   dgeni: 'git+https://github.com/angular/dgeni.git'
-#   diary.js: 'git+https://github.com/angular/diary.js.git'
-#   google-cla-verifier-for-github: 'git+https://github.com/angular/google-cla-verifier-for-github.git'
-#   angular.org: 'git+https://github.com/angular/angularjs.org.git'
-#   angular-seed: 'git+https://github.com/angular/angular-seed.git'
-#   angular-phonecat: 'git+https://github.com/angular/angular-phonecat.git'
-#   code-of-config: 'git+https://github.com/angular/code-of-conduct.git'
-#   code.angular.org: 'git+https://github.com/angular/code.angularjs.org.git'
-#   ng-clorsure-runner: 'git+https://github.com/angular/ng-closure-runner.git'
-#   projects: 'git+https://github.com/angular/projects.git'
-#   zone.js: 'git+https://github.com/angular/zone.js.git'
-#   ng-conf: 'git+https://github.com/angular/ng-conf.git'
-#   templating: 'git+https://github.com/angular/templating.git'
-#   di.js: 'git+https://github.com/angular/di.js.git'
-#   assert: 'git+https://github.com/angular/assert.git'
-#   protractor: 'git+https://github.com/angular/protractor.git'
-#
-#   bower-angular: 'git+https://github.com/angular/bower-angular.git' 
-#   bower-angular-touch: 'git+https://github.com/angular/bower-angular-touch.git'
-#   bower-angular-scenario: 'git+https://github.com/angular/bower-angular-scenario.git'
-#   bower-angular-sanitize: 'git+https://github.com/angular/bower-angular-sanitize.git'
-#   bower-angular-resource: 'git+https://github.com/angular/bower-angular-resource.git'
-#   bower-angular-route: 'git+https://github.com/angular/bower-angular-route.git'
-#   bower-angular-mocks: 'git+https://github.com/angular/bower-angular-mocks.git'
-#   bower-angular-loader: 'git+https://github.com/angular/bower-angular-loader.git'
-#   bower-angular-i18n: 'git+https://github.com/angular/bower-angular-i18n.git'
-#   bower-angular-cookies: 'git+https://github.com/angular/bower-angular-cookies.git'
-#   bower-angular-animate: 'git+https://github.com/angular/bower-angular-animate.git'
-#
+
 ~/study/merchant:
   satchless: 'git+https://github.com/mirumee/satchless.git'
   braintree.js: 'git+https://github.com/braintree/braintree.js.git'
@@ -100,82 +66,13 @@
   stripe-node: 'git+https://github.com/stripe/stripe-node.git'
   stripe-python: 'git+https://github.com/stripe/stripe-python.git'
   authorize-sauce: 'git+https://github.com/jeffschenck/authorizesauce'
+  paypal-python-sdk: 'git+https://github.com/paypal/PayPal-Python-SDK.git'
   pyauthorize: 'git+https://github.com/vcatalano/py-authorize.git'
   billy: 'git+https://github.com/balanced/billy.git'
   merchant: 'git+https://github.com/agiliq/merchant.git'
-# ~/study/ocaml:
-#   cmdliner: 'git+http://erratique.ch/repos/cmdliner.git'
-#   ipython-ocaml-kernel: 'git+https://github.com/jpraher/ipython-ocaml-kernel.git'
-#   ocaml: 'git+https://github.com/ocaml/ocaml.git'
-#   core: 'git+https://github.com/janestreet/core.git'
-#   async_kernel: 'git+https://github.com/janestreet/async_kernel.git'
-#   async_inotify: 'git+https://github.com/janestreet/async_inotify'
-#   async_extra: 'git+https://github.com/janestreet/async_extra.git'
-#   async: 'git+https://github.com/janestreet/async.git'
-#   async_parallel: 'git+https://github.com/janestreet/async_parallel.git'
-#   async_unix: 'git+https://github.com/janestreet/async_unix.git'
-#   core_bench: 'git+https://github.com/janestreet/core_bench.git'
-#   core_extended: 'git+https://github.com/janestreet/core_extended.git'
-#   core_kernel: 'git+https://github.com/janestreet/core_kernel.git'
-#   piqi: 'git+https://github.com/alavrik/piqi.git'
-#   merlin: 'git+https://github.com/the-lambda-church/merlin.git'
-#   typerex: 'git+https://github.com/OCamlPro/typerex.git'
-#   ocaml.org: 'git+https://github.com/ocaml/ocaml.org.git'
-#   batteries-included: 'git+https://github.com/ocaml-batteries-team/batteries-included.git'
-#   utop: 'git+https://github.com/diml/utop.git'
-#   zed: 'git+https://github.com/diml/zed.git'
-#   lambda-term: 'git+https://github.com/diml/lambda-term.git'
-#   react: 'git+http://erratique.ch/repos/react.git'
-#   pfff: 'git+https://github.com/facebook/pfff.git'
-#   opam: 'git+https://github.com/ocaml/opam.git'
-#   git-fs: 'git+https://github.com/g2p/git-fs.git'
-#   ocaml-cheat-sheets: 'git+https://github.com/OCamlPro/ocaml-cheat-sheets.git'
-#   tryocaml: 'git+https://github.com/OCamlPro/tryocaml.git'
-#   ocp-build: 'git+https://github.com/OCamlPro/ocp-build.git'
-#   ocp-indent: 'git+https://github.com/OCamlPro/ocp-indent.git'
-#   ocp-index: 'git+https://github.com/OCamlPro/ocp-index.git'
-#   camlp4: 'git+https://github.com/ocaml/camlp4'
-#   opam-repository:
-#     repo: 'git+https://github.com/ocaml/opam-repository.git'
-#     remotes:
-#       janestreet: 'git+https://github.com/janestreet/opam-repository.git'
-#   ocaml-re: 'git+https://github.com/ocaml/ocaml-re.git'
-#   realworldocaml-examples: 'git+https://github.com/realworldocaml/examples.git'
-#   ocaml-cohttp: 'git+https://github.com/avsm/ocaml-cohttp.git'
-#   ocaml-github: 'git+https://github.com/avsm/ocaml-github.git'
-#   ocaml-uri: 'git+https://github.com/avsm/ocaml-uri.git'
-#   mirage: 'git+https://github.com/mirage/mirage.git'
-#   mirage-types: 'git+https://github.com/mirage/mirage-types.git'
-#   mirage-platform: 'git+https://github.com/mirage/mirage-platform.git'
-#   orm: 'git+https://github.com/mirage/orm.git'
-#   ocaml-sqlexpr: 'git+https://github.com/mfp/ocaml-sqlexpr.git'
-#   jingoo: 'git+https://github.com/tategakibunko/jingoo.git'
-#   ucorelib: 'git+https://github.com/yoriyuki/ucorelib.git'
-#   yojson: 'git+https://github.com/mjambon/yojson.git'
-#   99-problems-ocaml: 'git+https://github.com/VictorNicollet/99-Problems-OCaml.git'
-#   ocaml-from-very-beginning-exercises: 'git+https://github.com/johnwhitington/ocaml-from-very-beginning-exercises.git'
 ~/study/freebsd:
   freebsd-ports: 'git+https://github.com/freebsd/freebsd-ports.git'
   freebsd: 'git+https://github.com/freebsd/freebsd.git'
-~/study/java:
-  elasticsearch: 'git+https://github.com/elasticsearch/elasticsearch.git'
-  libgdx: 'git+https://github.com/libgdx/libgdx.git'
-  crate: 'git+https://github.com/crate/crate.git'
-  unbescape: 'git+https://github.com/unbescape/unbescape.git'
-  pysonar2: 'git+https://github.com/yinwang0/pysonar2.git'
-  zxing: 'git+https://github.com/zxing/zxing.git'
-  bukkit: 'git+https://github.com/Bukkit/Bukkit.git'
-  kolmafia: 'svn+svn://svn.code.sf.net/p/kolmafia/code'
-  h2o: 'git+https://github.com/0xdata/h2o.git'
-  mustache: 'git+https://github.com/spullara/mustache.java.git'
-  squeryl: 'git+https://github.com/squeryl/squeryl.git'
-  hibernate-orm: 'git+https://github.com/hibernate/hibernate-orm'
-~/study/scala:
-  spark: 'git+https://github.com/apache/spark'
-  scala: 'git+https://github.com/scala/scala.git'
-  spray: 'git+https://github.com/spray/spray.git'
-  play: 'git+https://github.com/playframework/playframework.git'
-  akka: 'git+https://github.com/akka/akka'
 ~/study/c: 
   vis: 'git+git://repo.or.cz/vis.git'
   the_silver_searcher: 'git+https://github.com/ggreer/the_silver_searcher.git'
@@ -184,11 +81,6 @@
   lua: 'git+https://github.com/LuaDist/lua.git'
   luajit: 'git+https://github.com/LuaDist/luajit.git'
   i3: 'git+git://code.i3wm.org/i3'
-  neovim:
-    repo: 'git+https://github.com/neovim/neovim.git'
-    remotes:
-      tony: 'git+https://github.com/audreyr/cookiecutter-pypackage.git'
-  vim: 'hg+https://vim.googlecode.com/hg/'
   libuv: 'git+https://github.com/joyent/libuv.git'
   libimobiledevice: 'git+https://github.com/libimobiledevice/libimobiledevice.git'
   redis: 'git+https://github.com/antirez/redis.git'
@@ -211,7 +103,7 @@
   nginx: 'hg+http://hg.nginx.org/nginx'
   tre: 'git+https://github.com/laurikari/tre'
 ~/study/c++:
-  blink: 'git+https://chromium.googlesource.com/chromium/blink'
+  #blink: 'git+https://chromium.googlesource.com/chromium/blink'
   v8: 'git+git://github.com/v8/v8.git'
   zeal: 'git+https://github.com/jkozera/zeal.git'
   phantomjs: 'git+https://github.com/ariya/phantomjs.git'
@@ -231,99 +123,7 @@
   clementine: 'git+https://code.google.com/p/clementine-player/'
   amarok: 'git+git://anongit.kde.org/amarok.git'
 ~/study/node:
-  gitbook: 'git+https://github.com/GitbookIO/gitbook.git'
-  orchestrator: 'git+https://github.com/orchestrator/orchestrator.git'
-  vinyl-fs: 'git+https://github.com/wearefractal/vinyl-fs.git'
-  gulp: 'git+https://github.com/gulpjs/gulp.git'
-  gulp-util: 'git+https://github.com/gulpjs/gulp-util.git'
-  gulp-mocha: 'git+https://github.com/sindresorhus/gulp-mocha.git'
-  grunt: 'git+https://github.com/gruntjs/grunt.git'
-  grunt-mocha: 'git+https://github.com/kmiyashiro/grunt-mocha.git'
-  fabric.js: 'git+https://github.com/kangax/fabric.js.git'
-  nconf: 'git+https://github.com/flatiron/nconf.git'
-  hanzi: 'git+https://github.com/nieldlr/Hanzi.git'
-  async: 'git+http://github.com/caolan/async.git'
-  request: 'git+git://github.com/mikeal/request.git'
   express: 'git+https://github.com/visionmedia/express.git'
-  node-optimist: 'git+http://github.com/substack/node-optimist.git'
-  commander.js: 'git+https://github.com/visionmedia/commander.js.git' 
-  colors.js: 'git+git://github.com/Marak/colors.js.git'
-  uglify.js: 'git+git://github.com/mishoo/UglifyJS.git'
-  connect: 'git+git://github.com/senchalabs/connect.git'
-  socket.io: 'git+https://github.com/LearnBoost/socket.io.git'
-  node-mkdirp: 'git+https://github.com/substack/node-mkdirp.git'
-  jade: 'git+https://github.com/visionmedia/jade.git'
-  redis: 'git+https://github.com/antirez/redis.git'
-  node-uuid: 'git+https://github.com/broofa/node-uuid.git'
-  node-mime: 'git+https://github.com/broofa/node-mime.git'
-  mime-magic: 'git+https://github.com/SaltwaterC/mime-magic.git'
-  debug: 'git+https://github.com/visionmedia/debug.git'
-  wintson: 'git+https://github.com/flatiron/winston.git'
-  less.js: 'git+https://github.com/cloudhead/less.js.git'
-  less: 'git+https://github.com/cloudhead/less.git'
-  todo: 'git+https://github.com/cloudhead/toto.git'
-  http-control: 'git+https://github.com/cloudhead/http-console.git'
-  cradle: 'git+https://github.com/cloudhead/cradle.git'
-  journey: 'git+https://github.com/cloudhead/journey.git'
-  pilgim: 'git+https://github.com/cloudhead/pilgrim.git'
-  node-glob: 'git+https://github.com/isaacs/node-glob.git'
-  jsdom: 'git+https://github.com/tmpvar/jsdom.git'
-  node-mongodb-native: 'git+https://github.com/mongodb/node-mongodb-native.git'
-  node-pkginfo: 'git+https://github.com/indexzero/node-pkginfo.git'
-  nodejs-intro: 'git+https://github.com/indexzero/nodejs-intro.git'
-  wrench-js: 'git+https://github.com/ryanmcgrath/wrench-js.git'
-  grunt: 'git+https://github.com/gruntjs/grunt.git'
-  moment: 'git+https://github.com/timrwood/moment.git'
-  q: 'git+https://github.com/kriskowal/q.git'
-  mocha: 'git+https://github.com/visionmedia/mocha.git'
-  node-semvar: 'git+https://github.com/isaacs/node-semver.git'
-  handlebars.js: 'git+https://github.com/wycats/handlebars.js.git'
-  underscore.string: 'git+https://github.com/epeli/underscore.string.git'
-  node-oauth: 'git+https://github.com/ciaranj/node-oauth.git'
-  vows: 'git+https://github.com/cloudhead/vows.git'
-  cheerio: 'git+https://github.com/MatthewMueller/cheerio.git'
-  node-mysql: 'git+https://github.com/felixge/node-mysql.git'
-  node-querystring: 'git+https://github.com/visionmedia/node-querystring.git'
-  node-browserify: 'git+https://github.com/substack/node-browserify.git'
-  node-http-proxy: 'git+https://github.com/nodejitsu/node-http-proxy.git'
-  through: 'git+https://github.com/dominictarr/through.git'
-  superagent: 'git+https://github.com/visionmedia/superagent.git'
-  supertest: 'git+https://github.com/visionmedia/supertest.git'
-  npm: 'git+https://github.com/isaacs/npm.git'
-  passport-oauth: 'git+https://github.com/jaredhanson/passport-oauth.git'
-  watch: 'git+https://github.com/mikeal/watch.git'
-  hogan.js: 'git+https://github.com/twitter/hogan.js.git'
-  mustache: 'git+https://github.com/defunkt/mustache.git'
-  node-temp: 'git+https://github.com/bruce/node-temp.git'
-  node-sprintf: 'git+https://github.com/maritz/node-sprintf.git'
-  nodeunit: 'git+https://github.com/caolan/nodeunit.git'
-  cli-color: 'git+git://github.com/medikoo/cli-color.git'
-  node-jshint: 'git+https://github.com/jshint/node-jshint.git'
-  node-static: 'git+https://github.com/cloudhead/node-static.git'
-  passport: 'git+https://github.com/jaredhanson/passport.git'
-  shelljs: 'git+https://github.com/arturadib/shelljs.git'
-  tutorial-nodejs-cli: 'git+https://github.com/oscmejia/tutorial-nodejs-cli.git'
-  cli-table: 'git+https://github.com/LearnBoost/cli-table.git'
-  mongoose: 'git+https://github.com/LearnBoost/mongoose.git'
-  browserbuild: 'git+https://github.com/LearnBoost/browserbuild.git'
-  engine.io: 'git+https://github.com/LearnBoost/engine.io.git'
-  engine.io-client: 'git+https://github.com/LearnBoost/engine.io-client.git'
-  socket.io: 'git+https://github.com/LearnBoost/socket.io.git'
-  socket.io-client: 'git+https://github.com/LearnBoost/socket.io-client.git'
-  knox: 'git+https://github.com/LearnBoost/knox.git'
-  jsonp: 'git+https://github.com/LearnBoost/jsonp.git'
-  node-tar: 'git+https://github.com/isaacs/node-tar.git'
-  node-bindings: 'git+https://github.com/TooTallNate/node-bindings.git'
-  node-fs-extra: 'git+https://github.com/jprichardson/node-fs-extra.git'
-  chai: 'git+https://github.com/chaijs/chai.git'
-  grunt-lib-contrib: 'git+https://github.com/gruntjs/grunt-lib-contrib.git'
-  node-irc: 'git+https://github.com/martynsmith/node-irc.git'
-  node-querystring: 'git+https://github.com/visionmedia/node-querystring.git'
-  highlight.js: 'git+https://github.com/isagalaev/highlight.js.git'
-  bookshelf: 'git+https://github.com/tgriesser/bookshelf.git'
-  knex: 'git+https://github.com/tgriesser/knex.git'
-
-
 ~/study/javascript-testing:
   mocha: 'git+https://github.com/visionmedia/mocha.git'
   mocha-phantomjs: 'git+https://github.com/metaskills/mocha-phantomjs.git'
@@ -333,123 +133,6 @@
   chai-jquery: 'git+https://github.com/chaijs/chai-jquery.git'
   chai-http: 'git+https://github.com/chaijs/chai-http.git'
   chai-spies: 'git+https://github.com/chaijs/chai-spies.git'
-
-~/study/haskell:
-  haskell-platform: 'git+https://github.com/haskell/haskell-platform.git'
-  cabal: 'git+https://github.com/haskell/cabal.git'
-  cgrep: 'git+https://github.com/awgn/cgrep.git'
-  pandoc: 'git+https://github.com/jgm/pandoc.git'
-  stackage: 'git+https://github.com/fpco/stackage.git'
-  Haxl: 'git+https://github.com/facebook/Haxl.git'
-  ghc: 'git+https://github.com/ghc/ghc.git'
-  yi: 'git+https://github.com/yi-editor/yi.git'
-  IHaskell: 'git+https://github.com/gibiansky/IHaskell.git'
-  koans: 'git+https://github.com/HaskVan/HaskellKoans.git'
-  learnhaskell: 'git+https://github.com/bitemyapp/learnhaskell.git'
-  hspec: 'git+https://github.com/hspec/hspec.git'
-  hastache: 'git+https://github.com/lymar/hastache.git'
-  aeson: 'git+https://github.com/bos/aeson.git'
-  hasklig: 'git+https://github.com/i-tu/Hasklig.git'
-  course: 'git+https://github.com/NICTA/course.git'
-  lens: 'git+https://github.com/ekmett/lens.git'
-  amazonkd: 'git+https://github.com/brendanhay/amazonka.git'
-  hasql: 'git+https://github.com/nikita-volkov/hasql.git'
-  rest: 'git+https://github.com/silkapp/rest.git'
-  xmonad: 'git+https://github.com/xmonad/xmonad.git'
-  xmonad-contrib: 'git+https://github.com/xmonad/xmonad-contrib.git'
-
-# ~/study/javascript-testing-karma:
-#   karma-chrome-launcher: 'git+https://github.com/karma-runner/karma-chrome-launcher.git'
-#   karma-ie-launcher: 'git+https://github.com/karma-runner/karma-ie-launcher.git'
-#   karma-script-launcher: 'git+https://github.com/karma-runner/karma-script-launcher.git'
-#   karma-phantomjs-launcher: 'git+https://github.com/karma-runner/karma-phantomjs-launcher.git'
-#   karma-opera-launcher: 'git+https://github.com/karma-runner/karma-opera-launcher.git'
-#   karma-safari-launcher: 'git+https://github.com/karma-runner/karma-safari-launcher.git'
-#   karma-growl-reporter: 'git+https://github.com/karma-runner/karma-growl-reporter.git'
-#   karma-sauce-launcher: 'git+https://github.com/karma-runner/karma-sauce-launcher.git'
-#   karma-firefox-launcher: 'git+https://github.com/karma-runner/karma-firefox-launcher.git'
-#   karma-browserstack-launcher: 'git+https://github.com/karma-runner/karma-browserstack-launcher.git'
-#   karma-webdriver-launcher: 'git+https://github.com/karma-runner/karma-webdriver-launcher.git'
-#
-#   karma-requirejs: 'git+https://github.com/karma-runner/karma-requirejs.git'
-#   karma-commonjs: 'git+https://github.com/karma-runner/karma-commonjs.git'
-#
-#   karma: 'git+https://github.com/karma-runner/karma.git'
-#   karma-cli: 'git+https://github.com/karma-runner/karma-cli.git'
-#
-#   karma-coffee-preprocessor: 'git+https://github.com/karma-runner/karma-coffee-preprocessor.git'
-#   karma-ember-preprocessor: 'git+https://github.com/karma-runner/karma-ember-preprocessor.git'
-#   karma-html2js-preprocessor: 'git+https://github.com/karma-runner/karma-html2js-preprocessor.git'
-#
-#   karma-test-device-manager: 'git+https://github.com/karma-runner/test-device-manager.git'
-#
-#   karma-mocha: 'git+https://github.com/karma-runner/karma-mocha.git'
-#   grunt-karma: 'git+https://github.com/karma-runner/grunt-karma.git'
-#   karma-coverage: 'git+https://github.com/karma-runner/karma-coverage.git'
-#   karma-jasmine: 'git+https://github.com/karma-runner/karma-jasmine.git'
-#
-# ~/study/polymer:
-#   polymer: 'git+https://github.com/polymer/polymer.git'
-#   TemplatingBind: 'git+https://github.com/polymer/polymer'
-#
-#   platform: 'git+https://github.com/Polymer/platform.git'
-#   HTMLImports: 'git+https://github.com/Polymer/HTMLImports.git'
-#   ShadowDOM: 'git+https://github.com/Polymer/ShadowDOM.git'
-#
-#   core-input: 'git+https://github.com/Polymer/core-input.git'
-#   core-meta: 'git+https://github.com/Polymer/core-meta.git'
-#   core-menu: 'git+https://github.com/Polymer/core-menu.git'
-#   core-item: 'git+https://github.com/Polymer/core-item.git'
-#   core-media-query: 'git+https://github.com/Polymer/core-media-query.git'
-#   core-toolbar: 'git+https://github.com/Polymer/core-toolbar.git'
-#   core-ajax: 'git+https://github.com/Polymer/core-ajax.git'
-#   core-layout: 'git+https://github.com/Polymer/core-layout.git'
-#   core-overlay: 'git+https://github.com/Polymer/core-overlay.git'
-#   core-doc-viewer: 'git+https://github.com/Polymer/core-doc-viewer.git'
-#   core-component-page: 'git+https://github.com/Polymer/core-component-page.git'
-#   core-elements: 'git+https://github.com/Polymer/core-elements.git'
-#   core-drawer-panel: 'git+https://github.com/Polymer/core-drawer-panel.git'
-#   core-header-panel: 'git+https://github.com/Polymer/core-header-panel.git'
-#   core-firebase: 'git+https://github.com/Polymer/core-firebase.git'
-#   core-selector: 'git+https://github.com/Polymer/core-selector.git'
-#   core-theme-aware: 'git+https://github.com/Polymer/core-theme-aware.git'
-#   core-selection: 'git+https://github.com/Polymer/core-selection.git'
-#   core-layout-trbl: 'git+https://github.com/Polymer/core-layout-trbl.git'
-#   core-layout-grid: 'git+https://github.com/Polymer/core-layout-grid.git'
-#   core-icon-button: 'git+https://github.com/Polymer/core-icon-button.git'
-#   core-action-icons: 'git+https://github.com/Polymer/core-action-icons.git'
-#   core-collapse: 'git+https://github.com/Polymer/core-collapse.git'
-#   core-pages: 'git+https://github.com/Polymer/core-pages.git'
-#   core-iconset: 'git+https://github.com/Polymer/core-iconset.git'
-#   core-iconset-svg: 'git+https://github.com/Polymer/core-iconset-svg.git'
-#   core-docs: 'git+https://github.com/Polymer/core-docs.git'
-#   core-tests: 'git+https://github.com/Polymer/core-tests.git'
-#   core-range: 'git+https://github.com/Polymer/core-range.git'
-#   core-component-page-dev: 'git+https://github.com/Polymer/core-component-page-dev.git'
-#
-#   observe-js: 'git+https://github.com/Polymer/observe-js.git'
-#
-#   jquery2-import: 'git+https://github.com/Polymer/jquery2-import.git'
-#
-#
-#
-#
-#   vulcanize: 'git+https://github.com/Polymer/vulcanize.git'
-#   todomvc: 'git+https://github.com/Polymer/todomvc.git'
-#   WeakMap: 'git+https://github.com/Polymer/WeakMap.git'
-#   URL: 'git+https://github.com/Polymer/URL.git'
-#   PointerGestures: 'git+https://github.com/Polymer/PointerGestures.git'
-#   PointerEvents: 'git+https://github.com/Polymer/PointerEvents.git'
-#   NodeBind: 'git+https://github.com/Polymer/NodeBind.git'
-#   MutationObservers: 'git+https://github.com/Polymer/MutationObservers.git'
-#   CustomElements: 'git+https://github.com/Polymer/CustomElements.git'
-#
-#   polymer-gestures: 'git+https://github.com/Polymer/polymer-gestures.git'
-#   polymer-dev: 'git+https://github.com/Polymer/polymer-dev.git'
-#   polymer-expression: 'git+https://github.com/Polymer/polymer-expressions.git'
-#
-#   karma-browserstack-launcher: 'git+https://github.com/Polymer/karma-browserstack-launcher.git'
-#
 ~/study/javascript-visuals:
   rickshaw: 'git+https://github.com/shutterstock/rickshaw.git'
   d3: 'git+https://github.com/mbostock/d3.git'
@@ -500,6 +183,16 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  cookiecutter-pypackage-tony: 'git+ssh://git@github.com/tony/cookiecutter-pypackage.git'
+  tmuxp:
+    repo: 'git+https://github.com/tony/tmuxp.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/tmuxp.git'
+  vcspull:
+    repo: 'git+https://github.com/tony/vcspull.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/vcspull.git'
+  pyston: 'git+https://github.com/dropbox/pyston.git'
   blaze: 'git+https://github.com/ContinuumIO/blaze.git'
   factory_boy: 'git+https://github.com/rbarrois/factory_boy.git'
   pycparser: 'git+https://github.com/eliben/pycparser.git'
@@ -551,17 +244,6 @@
   pudb: 'git+http://git.tiker.net/trees/pudb.git'
   ipython: 'git+https://github.com/ipython/ipython.git'
   blessing: 'git+https://github.com/erikrose/blessings.git'
-  salt:
-    repo: 'git+https://github.com/saltstack/salt.git'
-    remotes:
-      tony: 'git+git@github.com:tony/salt.git'
-
-  salt-ui: 'git+https://github.com/saltstack/salt-ui.git'
-  salt-formulae: 'git+https://github.com/saltstack/formulae'
-  salt-api: 'git+https://github.com/saltstack/salt-api.git'
-  salt-cloud: 'git+https://github.com/saltstack/salt-cloud.git'
-  salt-vagrant: 'git+https://github.com/saltstack/salty-vagrant.git'
-  salt-contrib: 'git+https://github.com/saltstack/salt-contrib.git'
   sqlalchemy: 'git+https://github.com/zzzeek/sqlalchemy.git'
   wtforms: 'git+https://github.com/Khan/wtforms.git'
   botocore: 'git+https://github.com/boto/botocore.git'
@@ -618,16 +300,10 @@
   twisted: 'git+https://github.com/twisted/twisted.git'
 
   ckan: 'git+https://github.com/okfn/ckan.git'
-  mediagoblin: 'git+git://gitorious.org/mediagoblin/mediagoblin.git'
-  ckan: 'git+https://github.com/okfn/ckan.git'
   reddit: 'git+https://github.com/reddit/reddit.git'
 
   python_koans: 'git+https://github.com/gregmalcolm/python_koans.git'
-  python-guide: 'git+https://github.com/kennethreitz/python-guide.git'
   #introduction_to_sqlalchemy: 'git+https://bitbucket.org/zzzeek/pycon2013_student_package.git'
-  probablistic-programming-and-beyesian-methods: 'git+https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers.git'
-  python-patterns: 'git+https://github.com/faif/python-patterns.git'
-  learn-pandas: 'git+https://bitbucket.org/hrojas/learn-pandas.git'
 
   w3lib: 'git+https://github.com/scrapy/w3lib'
   scrapy: 'git+https://github.com/scrapy/scrapy.git'
@@ -635,7 +311,10 @@
 
   calibre: 'git+git://github.com/kovidgoyal/calibre.git'
 
-  kaptan: 'git+https://github.com/emre/kaptan.git'
+  kaptan: 
+    repo: 'git+https://github.com/emre/kaptan.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/kaptan.git'
   aws-cli: 'git+https://github.com/aws/aws-cli.git'
 
   youcompleteme: 'git+https://github.com/Valloric/YouCompleteMe.git'
@@ -678,17 +357,27 @@
   mock: 'hg+https://code.google.com/p/mock/'
 
   virtualenv: 'git+https://github.com/pypa/virtualenv.git'
+  virtualenvwrapper: 'git+https://bitbucket.org/dhellmann/virtualenvwrapper.git'
 
+  weasyprint: 'git+https://github.com/Kozea/WeasyPrint.git'
+
+  python-prompt-toolkit: 'git+https://github.com/jonathanslenders/python-prompt-toolkit.git'
+  ptpython: 'git+https://github.com/jonathanslenders/ptpython.git'
+~/study/pyenv:
   pyenv: 'git+https://github.com/yyuu/pyenv'
   pyenv-virtualenv: 'git+https://github.com/yyuu/pyenv-virtualenv.git'
   pyenv-virtualenvwrapper: 'git+https://github.com/yyuu/pyenv-virtualenvwrapper.git'
-
-  weasyprint: 'git+https://github.com/Kozea/WeasyPrint.git'
+  pyenv-installer: 'git+https://github.com/yyuu/pyenv-installer.git'
 ~/study/django:
+  django-cms: 'git+https://github.com/divio/django-cms.git'
+  wagtail: 'git+https://github.com/torchbox/wagtail.git'
   aldjemy: 'git+https://github.com/Deepwalker/aldjemy.git'
   django-celery: 'git+https://github.com/celery/django-celery.git'
   coffin: 'git+https://github.com/coffin/coffin.git'
-  django: 'git+https://github.com/django/django.git'
+  django: 
+    repo: 'git+https://github.com/django/django.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/django.git'
   django-assets: 'git+https://github.com/miracle2k/django-assets.git'
   django-taggit: 'git+https://github.com/alex/django-taggit.git'
   django-basic-apps: 'git+https://github.com/nathanborror/django-basic-apps.git'
@@ -707,27 +396,10 @@
 ~/study/flask:
   book-explore-flask: 'git+https://github.com/rpicard/explore-flask.git'
 
-  example-kit: 'git+https://github.com/semirook/flask-kit.git'
-  example-simple: 'git+https://github.com/orf/simple.git'
-  example-overholt: 'git+https://github.com/mattupstate/overholt.git'
-  example-app-template: 'git+https://github.com/nprapps/app-template.git'
-  example-foundation: 'git+https://github.com/JackStouffer/Flask-Foundation.git'
-  example-instant-feedback: 'git+https://github.com/adewes/instant-feedback.git'
-  example-bigapp-template: 'git+https://github.com/rahulkmr/flask-bigapp-template.git'
-  example-emeraldbox: 'git+https://github.com/femmerling/EmeraldBox.git'
-  example-websockets: 'git+https://github.com/tzangms/python-websocket-example'
-
   flask: 'git+https://github.com/mitsuhiko/flask.git'
 
-  flask-bb: 'git+https://github.com/sh4nks/flaskbb.git'
-  flask-split: 'git+https://github.com/jpvanhal/flask-split.git'
-
-  flask-goblet: 'git+https://github.com/seveas/goblet.git'
-  flask-migrate: 'git+https://github.com/miguelgrinberg/Flask-Migrate.git'
-  flask-weasyprint: 'git+https://github.com/SimonSapin/Flask-WeasyPrint.git'
   flask-sqlalchemy: 'git+https://github.com/mitsuhiko/flask-sqlalchemy.git'
   flask-admin: 'git+https://github.com/mrjoes/flask-admin.git'
-  flask-script: 'git+https://github.com/techniq/flask-script.git'
   flask-principal: 'git+https://github.com/mattupstate/flask-principal.git'
   flask-sockets: 'git+https://github.com/kennethreitz/flask-sockets'
   flask-bone: 'git+https://github.com/imwilsonxu/fbone.git'
@@ -744,41 +416,132 @@
   flask-oauthlib: 'git+https://github.com/lepture/flask-oauthlib.git'
   flask-babel: 'git+https://github.com/mitsuhiko/flask-babel.git'
 ~/study/php:
+  wordpress: 'git+https://github.com/WordPress/WordPress.git'
   laravel: 'git+https://github.com/laravel/laravel.git'
   laravel-framework: 'git+https://github.com/laravel/framework.git'
-~/study/java:
-  scala: 'git+https://github.com/scala/scala.git'
-  spray: 'git+https://github.com/spray/spray.git'
-  play: 'git+https://github.com/playframework/playframework.git'
-  mustache: 'git+https://github.com/spullara/mustache.java.git'
-  squeryl: 'git+https://github.com/squeryl/squeryl.git'
-  akka: 'git+https://github.com/akka/akka'
-  hibernate-orm: 'git+https://github.com/hibernate/hibernate-orm'
-~/study/django:
-  coffin: 'git+https://github.com/coffin/coffin.git'
-  django: 'git+https://github.com/django/django.git'
-  django-assets: 'git+https://github.com/miracle2k/django-assets.git'
-  django-taggit: 'git+https://github.com/alex/django-taggit.git'
-  django-basic-apps: 'git+https://github.com/nathanborror/django-basic-apps.git'
-  django-mptt: 'git+https://github.com/django-mptt/django-mptt.git'
-  django-allauth: 'git+https://github.com/pennersr/django-allauth.git'
-  django-cities: 'git+https://github.com/coderholic/django-cities.git'
-  django-crispy-forms: 'git+https://github.com/maraujop/django-crispy-forms.git'
-  django-debug-toolbar: 'git+https://github.com/django-debug-toolbar/django-debug-toolbar.git'
-  django-treebeard: 'git+https://github.com/tabo/django-treebeard.git'
-  django-filter: 'git+https://github.com/alex/django-filter.git'
-  django-extensions: 'git+https://github.com/django-extensions/django-extensions.git'
 ~/study/scrapy/:
   dirbot: 'git+https://github.com/scrapy/dirbot'
   Scrapy-Smiles: 'git+https://github.com/mjhea0/Scrapy-Samples'
   scrapy-examples: 'git+https://github.com/geekan/scrapy-examples'
   django-dynamic-scraper: 'git+https://github.com/holgerd77/django-dynamic-scraper'
-~/study/rust:
-  coreutils: 'git+https://github.com/uutils/coreutils'
-  wtftw: 'git+https://github.com/Kintaro/wtftw'
-  cargo: 'git+https://github.com/rust-lang/cargo.git'
-  gfx-rs: 'git+https://github.com/gfx-rs/gfx-rs.git'
-  rust-protobuf:  'git+https://github.com/stepancheg/rust-protobuf.git'
-  rust: 'git+https://github.com/rust-lang/rust.git'
-  rust-postgres: 'git+https://github.com/sfackler/rust-postgres'
-  racer: 'git+https://github.com/phildawes/racer.git'
+~/study/go/:
+  go: 'git+https://github.com/golang/go.git'
+  go-koans:
+    repo: 'git+https://github.com/cdarwin/go-koans.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/cdarwin/go-koans.git'
+~/study/salt/:
+  salt:
+    repo: 'git+https://github.com/saltstack/salt.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/salt.git'
+  salt-ui: 'git+https://github.com/saltstack/salt-ui.git'
+  salt-formulae: 'git+https://github.com/saltstack/formulae'
+  salt-contrib: 
+    repo: 'git+https://github.com/saltstack/salt-contrib.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/salt-contrib.git'
+  salt-vim: 
+    repo: 'git+https://github.com/saltstack/salt-vim.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/salt-vim.git'
+  salt-jenkins: 
+    repo: 'git+https://github.com/saltstack/salt-jenkins.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/salt-jenkins.git'
+  libnacl: 
+    repo: 'git+https://github.com/saltstack/libnacl.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/libnacl.git'
+  jenkins-dsl-jobs: 
+    repo: 'git+https://github.com/saltstack/jenkins-dsl-jobs.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/jenkins-dsl-jobs.git'
+  raet: 
+    repo: 'git+https://github.com/saltstack/raet.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/raet.git'
+
+  salt-jenkins-ng: 
+    repo: 'git+https://github.com/saltstack/salt-jenkins-ng.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/salt-jenkins-ng.git'
+  salt-bootstrap: 
+    repo: 'git+https://github.com/saltstack/salt-bootstrap.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/salt-bootstrap.git'
+  salt-windows-bootstrap: 
+    repo: 'git+https://github.com/saltstack/salt-windows-bootstrap.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/salt-windows-bootstrap.git'
+  salt-pylint: 
+    repo: 'git+https://github.com/saltstack/salt-pylint.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/salt-pylint.git'
+  salt-testing: 
+    repo: 'git+https://github.com/saltstack/salt-testing.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/salt-testing.git'
+  pepper: 
+    repo: 'git+https://github.com/saltstack/pepper.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/pepper.git'
+  salt-windows-msi: 
+    repo: 'git+https://github.com/saltstack/salt-windows-msi.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/salt-windows-msi.git'
+  docker-containers: 
+    repo: 'git+https://github.com/saltstack/docker-containers.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/docker-containers.git'
+
+~/study/vim:
+  vim:
+    repo: 'git+https://github.com/vim/vim.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/vim.git'
+  neovim:
+    repo: 'git+https://github.com/neovim/neovim.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/neovim.git'
+  vim-multiple-cursors:
+    repo: 'git+https://github.com/terryma/vim-multiple-cursors.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/vim-multiple-cursors.git'
+  vim-snippets:
+    repo: 'git+https://github.com/honza/vim-snippets.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/vim-snippets.git'
+  vimtutor-extended:
+    repo: 'git+https://github.com/superjer/vimtutor-extended.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/vimtutor-extended.git'
+~/study/vagrant/:
+  vagrant:
+    repo: 'git+https://github.com/mitchellh/vagrant.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/vagrant.git'
+  vagrant-fabric:
+    repo: 'git+https://github.com/wutali/vagrant-fabric.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/vagrant-fabric.git'
+
+~/study/java:
+  jenkins: 'git+https://github.com/jenkinsci/jenkins.git'
+  elasticsearch: 'git+https://github.com/elastic/elasticsearch.git'
+~/study/reST:
+
+  sphinx:
+    repo: 'git+https://github.com/sphinx-doc/sphinx.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sphinx.git'
+  sphinx-testing:
+    repo: 'git+https://github.com/sphinx-doc/sphinx-testing.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sphinx-testing.git'
+  docutils: 'svn+ssh://gitpull@svn.code.sf.net/p/docutils/code'
+  sphinxcontrib-stud:
+    repo: 'git+https://github.com/guibog/stud.git'
+    remotes:
+      tony: 'git+ssh://git@github.com:tony/sphinxcontrib-stud.git'
+  sphinxcontrib-github: 'git+https://github.com/tony/sphinxcontrib-github.git'

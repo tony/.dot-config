@@ -10,18 +10,9 @@ windows:
   - pane
   options:
     main-pane-height: 35
-# - window_name: awesome
-#   layout: main-horizontal
-#   start_directory: .config/awesome
-#   panes:
-#   - focus: True
-#   - pane
-#   - pane
-#   options:
-#     main-pane-height: 35
-- window_name: .fonts
+- window_name: .vim
   layout: main-horizontal
-  start_directory: .fonts/
+  start_directory: .vim/
   panes:
   - focus: True
   - pane
@@ -55,9 +46,9 @@ windows:
   - pane
   options:
     main-pane-height: 35
-- window_name: .vim
+- window_name: .fonts
   layout: main-horizontal
-  start_directory: .vim/
+  start_directory: .fonts/
   panes:
   - focus: True
   - pane
