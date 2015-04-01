@@ -225,3 +225,6 @@ export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
 function unix_ts { LBUFFER="${LBUFFER}$(date '+%Y%m%d%H%M%S')" }
 zle -N unix_ts
 bindkey "^t" unix_ts
+
+# added by travis gem
+[ -f /home/tony/.travis/travis.sh ] && source /home/tony/.travis/travis.sh
