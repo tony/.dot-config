@@ -107,7 +107,7 @@
   v8: 'git+git://github.com/v8/v8.git'
   zeal: 'git+https://github.com/jkozera/zeal.git'
   phantomjs: 'git+https://github.com/ariya/phantomjs.git'
-  tudu: 'git+git://gitorious.org/tudu/tudu.git'
+  tudu: 'git+https://gitorious.org/tudu/tudu.git'
   wxPython: 'git+https://github.com/wxWidgets/wxPython.git'
   wxWidgets: 'git+https://github.com/wxWidgets/wxWidgets.git'
   openttd: 'git+git://git.openttd.org/openttd/trunk.git'
@@ -516,6 +516,11 @@
     repo: 'git+https://github.com/superjer/vimtutor-extended.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/vimtutor-extended.git'
+  color_coded:
+    repo: 'git+https://github.com/jeaye/color_coded.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/color_coded.git'
+
 ~/study/vagrant/:
   vagrant:
     repo: 'git+https://github.com/mitchellh/vagrant.git'
