@@ -97,6 +97,7 @@
   pgadmin3: 'git+git://git.postgresql.org/git/pgadmin3.git'
   textadept: 'hg+http://foicica.com/hg/textadept'
 
+  musl-libc: 'git+git://git.musl-libc.org/musl'
   util-cursor: 'git+git://anongit.freedesktop.org/xcb/util-cursor'
   zsh: 'git+git://git.code.sf.net/p/zsh/code'
   cpython: 'hg+http://hg.python.org/cpython/'
