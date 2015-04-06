@@ -521,6 +521,11 @@
     repo: 'git+https://github.com/jeaye/color_coded.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/color_coded.git'
+  unite.vim:
+    repo: 'git+https://github.com/Shougo/unite.vim.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/unite.vim.git'
+
 
 ~/study/vagrant/:
   vagrant:
