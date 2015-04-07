@@ -122,19 +122,6 @@
   doubanfm-qt: 'git+https://github.com/zonyitoo/doubanfm-qt.git'
 ~/study/node:
   express: 'git+https://github.com/visionmedia/express.git'
-~/study/javascript-testing:
-  mocha: 'git+https://github.com/visionmedia/mocha.git'
-  mocha-phantomjs: 'git+https://github.com/metaskills/mocha-phantomjs.git'
-  sinon: 'git+https://github.com/cjohansen/Sinon.JS.git'
-  sinon-chai: 'git+https://github.com/domenic/sinon-chai.git'
-  chai: 'git+https://github.com/chaijs/chai.git'
-  chai-jquery: 'git+https://github.com/chaijs/chai-jquery.git'
-  chai-http: 'git+https://github.com/chaijs/chai-http.git'
-  chai-spies: 'git+https://github.com/chaijs/chai-spies.git'
-~/study/javascript-visuals:
-  rickshaw: 'git+https://github.com/shutterstock/rickshaw.git'
-  d3: 'git+https://github.com/mbostock/d3.git'
-  timelinejs: 'git+https://github.com/NUKnightLab/TimelineJS.git'
 ~/study/javascript:
   backbone: 'git+https://github.com/documentcloud/backbone.git'
   backbone.deepmodel: 'git+https://github.com/powmedia/backbone-deep-model.git'
