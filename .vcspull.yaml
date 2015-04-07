@@ -136,11 +136,17 @@
   jquery: 'git+https://github.com/jquery/jquery.git'
   jquery-ui: 'git+https://github.com/jquery/jquery-ui.git'
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
+  doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
   vim-vimlparser:
     repo: 'git+https://github.com/ynkdir/vim-vimlparser.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/vim-vimlparser.git'
+
+  dotfiles:
+    repo: 'git+https://github.com/jbernard/dotfiles.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/dotfiles.git'
 
   cookiecutter-pypackage-tony: 'git+ssh://git@github.com/tony/cookiecutter-pypackage.git'
   tmuxp:
