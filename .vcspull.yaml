@@ -120,9 +120,6 @@
   node: 'git+https://github.com/joyent/node.git'
   libzmp: 'git+https://github.com/zeromq/libzmq.git'
   doubanfm-qt: 'git+https://github.com/zonyitoo/doubanfm-qt.git'
-  retroarch-phoenix: 'git+https://github.com/Themaister/RetroArch-Phoenix.git'
-  clementine: 'git+https://code.google.com/p/clementine-player/'
-  amarok: 'git+git://anongit.kde.org/amarok.git'
 ~/study/node:
   express: 'git+https://github.com/visionmedia/express.git'
 ~/study/javascript-testing:
