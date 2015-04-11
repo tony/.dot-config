@@ -81,7 +81,7 @@
   lua: 'git+https://github.com/LuaDist/lua.git'
   luajit: 'git+https://github.com/LuaDist/luajit.git'
   i3: 'git+git://code.i3wm.org/i3'
-  libuv: 'git+https://github.com/joyent/libuv.git'
+  libuv: 'git+https://github.com/libuv/libuv.git'
   libimobiledevice: 'git+https://github.com/libimobiledevice/libimobiledevice.git'
   redis: 'git+https://github.com/antirez/redis.git'
   cython: 'git+https://github.com/cython/cython.git'
