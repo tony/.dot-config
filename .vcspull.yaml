@@ -138,6 +138,11 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  sniffer:
+    repo: 'git+https://github.com/jeffh/sniffer.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sniffer.git'
+
   vim-vimlparser:
     repo: 'git+https://github.com/ynkdir/vim-vimlparser.git'
     remotes:
