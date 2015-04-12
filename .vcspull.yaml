@@ -71,15 +71,21 @@
   billy: 'git+https://github.com/balanced/billy.git'
   merchant: 'git+https://github.com/agiliq/merchant.git'
 ~/study/freebsd:
-  freebsd-ports: 'git+https://github.com/freebsd/freebsd-ports.git'
+  freebsd-ports: 
+    repo: 'git+https://github.com/freebsd/freebsd-ports.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/freebsd-ports.git'
+
   freebsd: 'git+https://github.com/freebsd/freebsd.git'
+~/study/lua:
+  lua: 'git+https://github.com/LuaDist/lua.git'
+  luajit: 'git+https://github.com/LuaDist/luajit.git'
+  lua-re2: 'git+https://github.com/cloudflare/lua-re2.git'
 ~/study/c: 
   vis: 'git+git://repo.or.cz/vis.git'
   the_silver_searcher: 'git+https://github.com/ggreer/the_silver_searcher.git'
   ruby: 'git+https://github.com/ruby/ruby.git'
   flex: 'git+git://flex.git.sourceforge.net/gitroot/flex/flex'
-  lua: 'git+https://github.com/LuaDist/lua.git'
-  luajit: 'git+https://github.com/LuaDist/luajit.git'
   i3: 'git+git://code.i3wm.org/i3'
   libuv: 'git+https://github.com/libuv/libuv.git'
   libimobiledevice: 'git+https://github.com/libimobiledevice/libimobiledevice.git'
@@ -104,6 +110,7 @@
   nginx: 'hg+http://hg.nginx.org/nginx'
   tre: 'git+https://github.com/laurikari/tre'
 ~/study/c++:
+  re2: 'git+https://github.com/google/re2.git'
   #blink: 'git+https://chromium.googlesource.com/chromium/blink'
   v8: 'git+git://github.com/v8/v8.git'
   zeal: 'git+https://github.com/jkozera/zeal.git'
@@ -138,6 +145,12 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+
+  pyre2:
+    repo: 'git+https://github.com/facebook/pyre2.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/pyre2.git'
+
   sniffer:
     repo: 'git+https://github.com/jeffh/sniffer.git'
     remotes:
