@@ -4,7 +4,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 _prep_zsh() {
-    ZSH_THEME="daveverwer"
+    ZSH_THEME="steeef"
     export DISABLE_AUTO_TITLE="true"
     plugins=(git)
     source $ZSH/oh-my-zsh.sh
