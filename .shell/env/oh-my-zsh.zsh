@@ -4,9 +4,9 @@
 ZSH=$HOME/.oh-my-zsh
 
 _prep_zsh() {
-    ZSH_THEME="steeef"
+    ZSH_THEME="daveverwer"
     export DISABLE_AUTO_TITLE="true"
-    plugins=(git docker npm node brew brew-cask pip python)
+    plugins=(git)
     source $ZSH/oh-my-zsh.sh
 }
 if [ -d $ZSH ]; then
