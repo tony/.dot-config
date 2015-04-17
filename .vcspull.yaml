@@ -99,6 +99,7 @@
   ncmpc: 'git+git://git.musicpd.org/master/ncmpc.git'
   tmux: 'git+git://git.code.sf.net/p/tmux/tmux-code'
   git: 'git+https://github.com/git/git.git'
+  libgit2: 'git+https://github.com/libgit2/libgit2.git'
   postgres: 'git+https://github.com/postgres/postgres.git'
   pgadmin3: 'git+git://git.postgresql.org/git/pgadmin3.git'
   textadept: 'hg+http://foicica.com/hg/textadept'
