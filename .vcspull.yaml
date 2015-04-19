@@ -87,6 +87,7 @@
   ruby: 'git+https://github.com/ruby/ruby.git'
   flex: 'git+git://flex.git.sourceforge.net/gitroot/flex/flex'
   i3: 'git+git://code.i3wm.org/i3'
+  klib: 'git+https://github.com/attractivechaos/klib.git'
   libuv: 'git+https://github.com/libuv/libuv.git'
   libimobiledevice: 'git+https://github.com/libimobiledevice/libimobiledevice.git'
   redis: 'git+https://github.com/antirez/redis.git'
