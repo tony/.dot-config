@@ -305,6 +305,11 @@
 
   youcompleteme: 'git+https://github.com/Valloric/YouCompleteMe.git'
 
+  jedi: 
+    repo: 'git+https://github.com/davidhalter/jedi.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/jedi.git'
+
   ranger: 'git+git://git.savannah.nongnu.org/ranger.git'
 
   readthedocs: 'git+https://github.com/rtfd/readthedocs.org.git'
