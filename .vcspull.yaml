@@ -82,6 +82,7 @@
   luajit: 'git+https://github.com/LuaDist/luajit.git'
   lua-re2: 'git+https://github.com/cloudflare/lua-re2.git'
 ~/study/c: 
+  libressl: 'git+https://github.com/libressl-portable/portable.git'
   ck: 'git+https://github.com/concurrencykit/ck.git'
   vis: 'git+git://repo.or.cz/vis.git'
   the_silver_searcher: 'git+https://github.com/ggreer/the_silver_searcher.git'
