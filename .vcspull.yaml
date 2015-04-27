@@ -75,6 +75,10 @@
     repo: 'git+https://github.com/freebsd/freebsd-ports.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/freebsd-ports.git'
+  freebsd-ci: 
+    repo: 'git+https://github.com/freebsd/freebsd-ci.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/freebsd-ci.git'
 
   freebsd: 'git+https://github.com/freebsd/freebsd.git'
 ~/study/lua:
@@ -82,7 +86,8 @@
   luajit: 'git+https://github.com/LuaDist/luajit.git'
   lua-re2: 'git+https://github.com/cloudflare/lua-re2.git'
 ~/study/c: 
-  libressl: 'git+https://github.com/libressl-portable/portable.git'
+  libressl: 'git+https://github.com/libressl-portable/openbsd.git'
+  libressl-portable: 'git+https://github.com/libressl-portable/portable.git'
   ck: 'git+https://github.com/concurrencykit/ck.git'
   vis: 'git+git://repo.or.cz/vis.git'
   the_silver_searcher: 'git+https://github.com/ggreer/the_silver_searcher.git'
@@ -355,6 +360,7 @@
 
   python-prompt-toolkit: 'git+https://github.com/jonathanslenders/python-prompt-toolkit.git'
   ptpython: 'git+https://github.com/jonathanslenders/ptpython.git'
+  pyvim: 'git+https://github.com/jonathanslenders/pyvim.git'
 ~/study/pyenv:
   pyenv: 'git+https://github.com/yyuu/pyenv'
   pyenv-virtualenv: 'git+https://github.com/yyuu/pyenv-virtualenv.git'
