@@ -17,6 +17,12 @@
   php-fig: 'git+https://github.com/php-fig/fig-standards.git'
 ~/study/standards-and-practices/js:
   idiomatic.js: 'git+https://github.com/rwaldron/idiomatic.js.git'
+~/study/llvm:
+  llvm: 'git+http://llvm.org/git/llvm.git'
+  clang: 'git+http://llvm.org/git/clang.git'
+  lldb: 'git+http://llvm.org/git/lldb.git'
+~/study/dotnet:
+  coreclr: 'git+https://github.com/dotnet/coreclr.git'
 ~/study/sqlalchemy:
   sqlalchemy: 
     repo: 'git+https://github.com/zzzeek/sqlalchemy.git'
