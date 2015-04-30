@@ -280,7 +280,7 @@
   envoy: 'git+https://github.com/kennethreitz/envoy.git'
 
   glances: 'git+https://github.com/nicolargo/glances.git'
-  powerline: 'git+https://github.com/Lokaltog/powerline.git'
+  powerline: 'git+https://github.com/powerline/powerline.git'
   jieba: 'git+https://github.com/fxsjy/jieba.git'
   storm: 'git+https://github.com/emre/storm.git'
   fabric: 'git+https://github.com/fabric/fabric.git'
