@@ -5,7 +5,7 @@
   diff = auto
   branch = auto
   status = auto
-  ui = always
+  ui = true
 [diff]
   tool = vimdiff
 [difftool]
@@ -16,6 +16,7 @@
   editor = vim
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
   excludesfile = ~/.gitignore
-	quotepath = false
+  quotepath = false
+  pager = less -r
 [web]
   browser = google-chrome
