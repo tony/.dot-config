@@ -23,7 +23,11 @@
   clang: 'git+http://llvm.org/git/clang.git'
   lldb: 'git+http://llvm.org/git/lldb.git'
 ~/study/dotnet:
-  coreclr: 'git+https://github.com/dotnet/coreclr.git'
+  coreclr:
+    repo: 'git+https://github.com/dotnet/coreclr.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/coreclr.git'
+
 ~/study/sqlalchemy:
   sqlalchemy: 
     repo: 'git+https://github.com/zzzeek/sqlalchemy.git'
