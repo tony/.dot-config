@@ -1,0 +1,2 @@
+~/work/salt:
+  salt-states-configs: "git+https://github.com/tony/salt-states-configs.git"
