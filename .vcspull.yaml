@@ -60,7 +60,6 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/python-guide.git'
   python-patterns: 'git+https://github.com/faif/python-patterns.git'
-  learn-pandas: 'git+https://bitbucket.org/hrojas/learn-pandas.git'
 
 ~/study/compsci-books:
   bottomupcs: 'git+https://github.com/ianw/bottomupcs.git'
