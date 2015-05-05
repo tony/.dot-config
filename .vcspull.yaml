@@ -126,6 +126,7 @@
   util-cursor: 'git+git://anongit.freedesktop.org/xcb/util-cursor'
   zsh: 'git+git://git.code.sf.net/p/zsh/code'
   cpython: 'hg+http://hg.python.org/cpython/'
+  micropython: 'git+https://github.com/micropython/micropython.git'
   nginx: 'hg+http://hg.nginx.org/nginx'
   tre: 'git+https://github.com/laurikari/tre'
 ~/study/c++:
