@@ -16,4 +16,6 @@ if `which keychain` ; then
     eval `keychain --eval --agents ssh`
 fi
 
+feh --bg-scale /usr/local/share/wallpapers/Damselfly/contents/images/2559x1600.jpg 
+
 exec $1
