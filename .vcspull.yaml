@@ -219,10 +219,13 @@
   python-social-auth: 'git+https://github.com/omab/python-social-auth.git'
   Flexget: 'git+https://github.com/Flexget/Flexget.git'
   cookiecutter-pypackage:
-    repo: git+https://github.com/tony/cookiecutter-pypackage.git
+    repo: 'git+https://github.com/tony/cookiecutter-pypackage.git'
     remotes:
-      upstream: git+https://github.com/audreyr/cookiecutter-pypackage.git
-  cookiecutter: git+https://github.com/audreyr/cookiecutter.git
+      upstream: 'git+https://github.com/audreyr/cookiecutter-pypackage.git'
+  cookiecutter:
+    repo: 'git+https://github.com/audreyr/cookiecutter.git'
+    remotes:
+      tony: 'git+https://github.com/tony/cookiecutter.git'
   unittest2: 'hg+http://hg.python.org/unittest2'
   pypy: 'hg+https://bitbucket.org/pypy/pypy'
   asv: 'git+https://github.com/spacetelescope/asv.git'
@@ -439,6 +442,9 @@
     repo: 'git+https://github.com/cdarwin/go-koans.git'
     remotes:
       tony: 'git+ssh://git@github.com/cdarwin/go-koans.git'
+  go-python: 'git+https://github.com/sbinet/go-python'
+  otto: 'git+https://github.com/robertkrimen/otto'
+  blackfriday: 'git+https://github.com/russross/blackfriday.git'
 ~/study/salt/:
   salt:
     repo: 'git+https://github.com/saltstack/salt.git'
