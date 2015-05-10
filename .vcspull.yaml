@@ -32,6 +32,7 @@
     repo: 'git+https://github.com/bmizerany/roundup.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/roundup.git'
+  shocco: 'git+https://github.com/rtomayko/shocco'
 ~/study/sqlalchemy:
   sqlalchemy: 
     repo: 'git+https://github.com/zzzeek/sqlalchemy.git'
