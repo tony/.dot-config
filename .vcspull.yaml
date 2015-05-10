@@ -27,7 +27,11 @@
     repo: 'git+https://github.com/dotnet/coreclr.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/coreclr.git'
-
+~/study/sh:
+  roundup: 
+    repo: 'git+https://github.com/bmizerany/roundup.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/roundup.git'
 ~/study/sqlalchemy:
   sqlalchemy: 
     repo: 'git+https://github.com/zzzeek/sqlalchemy.git'
