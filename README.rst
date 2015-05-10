@@ -90,19 +90,25 @@ Features / Usage
 .. _stand-alone readline module: https://pypi.python.org/pypi/readline
 .. _Thinkpad Trackpoint config: http://www.thinkwiki.org/wiki/How_to_configure_the_TrackPoint
 
-Cloning
--------
+Installation
+------------
 
-.. code-block:: bash
+.. code-block:: sh
 
-    $ git clone --recursive git@github.com:tony/.dot-config.git ~/.dot-config
-
-Synchronizing dot files
------------------------
+    $ git clone --recursive https://github.com/tony/.dot-config.git ~/.dot-config
+    
+Symlinking
+~~~~~~~~~~
 
 ``.dotfilesrc`` is included for support with `dotfiles`_.
 
 Install via `pip`_ (`pip installation instructions`_)
+
+.. code-block:: sh
+   
+   $ pip install dotfiles
+   $ rehash
+   $ dotfiles --sync
 
 .. _pip: http://www.pip-installer.org/en/latest/
 .. _pip installation instructions: http://www.pip-installer.org/en/latest/installing.html
