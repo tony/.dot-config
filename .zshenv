@@ -30,6 +30,7 @@ source $HOME/.dot-config/.shell/paths.d/haskell.sh
 source $HOME/.dot-config/.shell/paths.d/lightdm.sh
 source $HOME/.dot-config/.shell/paths.d/npm.sh
 source $HOME/.dot-config/.shell/paths.d/golang.sh
+source $HOME/.dot-config/.shell/paths.d/rust.sh
 
 # Customize to your needs...
 pathprepend $HOME/.local/bin $HOME/bin 
