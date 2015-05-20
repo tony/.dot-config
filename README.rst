@@ -107,7 +107,10 @@ Install via `pip`_ (`pip installation instructions`_)
 .. code-block:: sh
    
    $ pip install dotfiles
+   # zsh
    $ rehash
+   # zsh
+   $ hash -r
    $ dotfiles --sync
 
 .. _pip: http://www.pip-installer.org/en/latest/
