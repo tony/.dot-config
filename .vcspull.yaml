@@ -597,3 +597,6 @@
     remotes:
       tony: 'git+ssh://git@github.com:tony/sphinxcontrib-stud.git'
   sphinxcontrib-github: 'git+https://github.com/tony/sphinxcontrib-github.git'
+
+~/study/rust/:
+  rust: 'git+https://github.com/rust-lang/rust.git'
