@@ -346,6 +346,10 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/readthedocs.org.git'
 
+  klaus:
+    repo: 'git+https://github.com/jonashaag/klaus.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/klaus.git'
 
   norman: 'hg+https://bitbucket.org/aquavitae/norman/src'
   sphinx: 'hg+https://bitbucket.org/birkenfeld/sphinx'
