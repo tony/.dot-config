@@ -4,7 +4,10 @@
   isobar-frontend: 'git+https://github.com/isobar-idev/code-standards/'
 ~/study/data-structures-algorithms/c:
   libds: 'git+https://github.com/zhemao/libds.git'
-  AlgoXY: 'git+https://github.com/liuxinyu95/AlgoXY.git'
+  AlgoXY: 
+    repo: 'git+https://github.com/liuxinyu95/AlgoXY.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/AlgoXY.git'
 ~/study/data-structures-algorithms/c++:
   algorithms: 'git+https://github.com/xtaci/algorithms.git'
 ~/study/data-structures-algorithms/python:
