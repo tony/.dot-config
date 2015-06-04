@@ -123,7 +123,7 @@
   #linux: 'git+https://github.com/torvalds/linux.git'
   #minix: 'git+https://github.com/minix3/minix'
   ncmpc: 'git+git://git.musicpd.org/master/ncmpc.git'
-  tmux: 'git+git://git.code.sf.net/p/tmux/tmux-code'
+  tmux: 'git+https://github.com/tmux/tmux.git'
   git: 'git+https://github.com/git/git.git'
   libgit2: 'git+https://github.com/libgit2/libgit2.git'
   postgres: 'git+https://github.com/postgres/postgres.git'
