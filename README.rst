@@ -107,6 +107,7 @@ Install via `pip`_ (`pip installation instructions`_)
 .. code-block:: sh
   
    $ ln -sf ~/.dot-config/.dotfilesrc ~/.dotfilesrc
+   $ pip install dotfiles  
    # zsh
    $ rehash
    # bash
