@@ -105,11 +105,11 @@ Symlinking
 Install via `pip`_ (`pip installation instructions`_)
 
 .. code-block:: sh
-   
-   $ pip install dotfiles
+  
+   $ ln -sf ~/.dot-config/.dotfilesrc ~/.dotfilesrc
    # zsh
    $ rehash
-   # zsh
+   # bash
    $ hash -r
    $ dotfiles --sync
 
