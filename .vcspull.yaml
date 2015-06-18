@@ -115,7 +115,7 @@
     repo: 'git+https://github.com/i3/i3.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/i3.git'
-      airblader: 'git+https://git@github.com/Airblader/i3.git'  # gaps
+      airblader: 'git+https://github.com/Airblader/i3.git'  # gaps
   klib: 'git+https://github.com/attractivechaos/klib.git'
   libuv: 'git+https://github.com/libuv/libuv.git'
   #libimobiledevice: 'git+https://github.com/libimobiledevice/libimobiledevice.git'
@@ -490,6 +490,10 @@
   django-dynamic-scraper: 'git+https://github.com/holgerd77/django-dynamic-scraper'
 ~/study/go/:
   go: 'git+https://github.com/golang/go.git'
+  gitea:
+    repo: 'git+https://github.com/go-gitea/gitea.git'
+    remotes:
+      tony: 'git+git@github.com:tony/gitea.git'
   go-koans:
     repo: 'git+https://github.com/cdarwin/go-koans.git'
     remotes:
