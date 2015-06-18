@@ -111,7 +111,11 @@
   the_silver_searcher: 'git+https://github.com/ggreer/the_silver_searcher.git'
   ruby: 'git+https://github.com/ruby/ruby.git'
   flex: 'git+git://flex.git.sourceforge.net/gitroot/flex/flex'
-  i3: 'git+git://code.i3wm.org/i3'
+  i3: 
+    repo: 'git+https://github.com/i3/i3.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/i3.git'
+      airblader: 'git+https://git@github.com/Airblader/i3.git'  # gaps
   klib: 'git+https://github.com/attractivechaos/klib.git'
   libuv: 'git+https://github.com/libuv/libuv.git'
   #libimobiledevice: 'git+https://github.com/libimobiledevice/libimobiledevice.git'
@@ -173,6 +177,10 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  profiling:
+    repo: 'git+https://github.com/what-studio/profiling.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/profiling.git'
 
   pyre2:
     repo: 'git+https://github.com/facebook/pyre2.git'
