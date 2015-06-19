@@ -1,7 +1,7 @@
 ~/study/standards-and-practices/html:
   north: 'git+https://github.com/Snugug/north.git'
   semantic-ui: 'git+https://github.com/Semantic-Org/Semantic-UI.git'
-  isobar-frontend: 'git+https://github.com/isobar-idev/code-standards/'
+  isobar-frontend: 'git+https://github.com/isobar-idev/code-standards.git'
 ~/study/data-structures-algorithms/c:
   libds: 'git+https://github.com/zhemao/libds.git'
   AlgoXY: 
