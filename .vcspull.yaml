@@ -211,6 +211,11 @@
     repo: 'git+https://github.com/tony/vcspull.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/vcspull.git'
+  pyston:
+    repo: 'git+https://github.com/dropbox/pyston.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/pyston.git'
+
   pyston: 'git+https://github.com/dropbox/pyston.git'
   blaze: 'git+https://github.com/ContinuumIO/blaze.git'
   factory_boy: 'git+https://github.com/rbarrois/factory_boy.git'
@@ -629,3 +634,16 @@
 
 ~/study/rust/:
   rust: 'git+https://github.com/rust-lang/rust.git'
+~/study/react: 
+  react: 'git+https://github.com/facebook/react'
+  react-intl: 'git+https://github.com/yahoo/react-intl.git'
+  react-magic: 'git+https://github.com/reactjs/react-magic.git'
+  react-page-middleware: 'git+https://github.com/reactjs/react-page-middleware.git'
+  react-autocomplete: 'git+https://github.com/eliseumds/react-autocomplete.git'
+  react-page: 'git+https://github.com/reactjs/react-page.git'
+  react-future: 'git+https://github.com/reactjs/react-future.git'
+  react-file: 'git+https://github.com/firebase/reactfire.git'
+  express-react-views: 'git+https://github.com/reactjs/express-react-views'
+  react-router: 'git+https://github.com/rackt/react-router'
+  react-tutorial: 'git+https://github.com/reactjs/react-tutorial.git'
+  react-python: 'git+https://github.com/reactjs/react-python.git'
