@@ -636,6 +636,7 @@
   rust: 'git+https://github.com/rust-lang/rust.git'
 ~/study/react: 
   react: 'git+https://github.com/facebook/react'
+  material-ui: 'git+https://github.com/callemall/material-ui.git'
   react-intl: 'git+https://github.com/yahoo/react-intl.git'
   react-magic: 'git+https://github.com/reactjs/react-magic.git'
   react-page-middleware: 'git+https://github.com/reactjs/react-page-middleware.git'
