@@ -499,7 +499,7 @@
   gitea:
     repo: 'git+https://github.com/go-gitea/gitea.git'
     remotes:
-      tony: 'git+git@github.com:tony/gitea.git'
+      tony: 'git+git@github.com/tony/gitea.git'
   go-koans:
     repo: 'git+https://github.com/cdarwin/go-koans.git'
     remotes:
@@ -630,7 +630,7 @@
   sphinxcontrib-stud:
     repo: 'git+https://github.com/guibog/stud.git'
     remotes:
-      tony: 'git+ssh://git@github.com:tony/sphinxcontrib-stud.git'
+      tony: 'git+ssh://git@github.com/tony/sphinxcontrib-stud.git'
   sphinxcontrib-github: 'git+https://github.com/tony/sphinxcontrib-github.git'
 
 ~/study/rust/:
@@ -640,7 +640,7 @@
   material-ui: 
     repo: 'git+https://github.com/callemall/material-ui.git'
     remotes:
-      tony: 'git+ssh://git@github.com:tony/material-ui.git'
+      tony: 'git+ssh://git@github.com/tony/material-ui.git'
 
   react-intl: 'git+https://github.com/yahoo/react-intl.git'
   react-magic: 'git+https://github.com/reactjs/react-magic.git'
