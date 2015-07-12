@@ -8,16 +8,6 @@
 --regex-xslt=/apply-templates+select="([^"]{2,})"( +mode="([^"]+)")?/\1 \2/a,apply/
 --regex-xslt=/call-templates+select="([^"]+)"( +mode="([^"]+)")?/\1 \2/c,call/
 
-
---langdef=rst
---langmap=rst:.rst
---regex-rst=/^#+$/##########/h,headers/
---regex-rst=/^=+$/==========/h,headers/
---regex-rst=/^-+$/----------/h,headers/
---regex-rst=/^\^+$/^^^^^^^^^^/h,headers/
---regex-rst=/^\.{2}[\t]+([^:]+):$/\1/r,references/
-
-
 --langdef=js
 --langmap=js:.js
 --regex-js=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\{/\1/,object/
