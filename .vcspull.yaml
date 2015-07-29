@@ -120,7 +120,11 @@
   libuv: 'git+https://github.com/libuv/libuv.git'
   #libimobiledevice: 'git+https://github.com/libimobiledevice/libimobiledevice.git'
   redis: 'git+https://github.com/antirez/redis.git'
-  cython: 'git+https://github.com/cython/cython.git'
+  cython: 
+    repo: 'git+https://github.com/cython/cython.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/cython.git'
+
   #awesome: 'git+https://github.com/awesomeWM/awesome.git'
   ctags: 'git+https://github.com/universal-ctags/ctags'
   #weechat: 'git+git://git.sv.gnu.org/weechat.git'
