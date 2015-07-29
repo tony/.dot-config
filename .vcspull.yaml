@@ -677,3 +677,6 @@
     repo: 'git+https://github.com/kivy/kivy-designer.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/kivy-designer.git'
+
+  pygame: 
+    repo: 'hg+https://bitbucket.org/pygame/pygame'
