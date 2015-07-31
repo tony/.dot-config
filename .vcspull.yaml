@@ -682,3 +682,9 @@
     repo: 'hg+https://bitbucket.org/pygame/pygame'
 
   buildozer: 'git+https://github.com/kivy/buildozer.git'
+
+  python-for-android: 
+    repo: 'git+https://github.com/kivy/python-for-android.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/python-for-android.git'
+
