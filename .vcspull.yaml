@@ -182,6 +182,13 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+
+
+  pillow:
+    repo: 'git+https://github.com/python-pillow/Pillow.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/Pillow.git'
+
   profiling:
     repo: 'git+https://github.com/what-studio/profiling.git'
     remotes:
