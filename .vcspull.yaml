@@ -680,3 +680,5 @@
 
   pygame: 
     repo: 'hg+https://bitbucket.org/pygame/pygame'
+
+  buildozer: 'git+https://github.com/kivy/buildozer.git'
