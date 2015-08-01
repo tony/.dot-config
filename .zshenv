@@ -9,6 +9,7 @@ if echo "$-" | grep i > /dev/null; then
     source $HOME/.dot-config/.shell/functions.sh
 
 
+    source $HOME/.dot-config/.shell/env.d/p4a.sh
     source $HOME/.dot-config/.shell/env.d/rbenv.sh
     source $HOME/.dot-config/.shell/env.d/pyenv.sh
     source $HOME/.dot-config/.shell/env.d/virtualenvwrapper.sh
