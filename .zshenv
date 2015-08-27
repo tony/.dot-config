@@ -19,6 +19,7 @@ if echo "$-" | grep i > /dev/null; then
     source $HOME/.dot-config/.shell/env.d/oh-my-zsh.zsh
     source $HOME/.dot-config/.shell/env.d/tmuxp.sh
 
+    source $HOME/.dot-config/.shell/paths.d/brew_python.sh
     source $HOME/.dot-config/.shell/paths.d/macports_python.sh
     source $HOME/.dot-config/.shell/paths.d/opam.sh
     source $HOME/.dot-config/.shell/paths.d/aws.sh
