@@ -103,6 +103,8 @@
   lua: 'git+https://github.com/LuaDist/lua.git'
   luajit: 'git+https://github.com/LuaDist/luajit.git'
   lua-re2: 'git+https://github.com/cloudflare/lua-re2.git'
+~/study/ruby:
+  rails: 'git+https://github.com/rails/rails.git'
 ~/study/c: 
   libressl: 'git+https://github.com/libressl-portable/openbsd.git'
   libressl-portable: 'git+https://github.com/libressl-portable/portable.git'
