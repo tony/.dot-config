@@ -8,7 +8,6 @@ if echo "$-" | grep i > /dev/null; then
     source $HOME/.dot-config/.shell/aliases.sh
     source $HOME/.dot-config/.shell/functions.sh
 
-
     source $HOME/.dot-config/.shell/env.d/p4a.sh
     source $HOME/.dot-config/.shell/env.d/rbenv.sh
     source $HOME/.dot-config/.shell/env.d/pyenv.sh
@@ -19,6 +18,7 @@ if echo "$-" | grep i > /dev/null; then
     source $HOME/.dot-config/.shell/env.d/oh-my-zsh.zsh
     source $HOME/.dot-config/.shell/env.d/tmuxp.sh
 
+    source $HOME/.dot-config/.shell/paths.d/postgres_app.sh
     source $HOME/.dot-config/.shell/paths.d/brew_python.sh
     source $HOME/.dot-config/.shell/paths.d/macports_python.sh
     source $HOME/.dot-config/.shell/paths.d/opam.sh
