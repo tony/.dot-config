@@ -43,3 +43,8 @@ Thumbs.db
 .env2.6
 
 config/gtk-3.0/bookmarks
+
+# vim #
+#######
+
+*.swp
