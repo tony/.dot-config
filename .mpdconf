@@ -5,12 +5,12 @@
 # You can put symlinks in here, if you like. Make sure that
 # the user that mpd runs as (see the 'user' config parameter)
 # can read the files in this directory.
-music_directory   "/home/tony/Music"
-playlist_directory    "/home/tony/.mpd/playlists"
-db_file               "/home/tony/.mpd/mpd.db"
-log_file              "/home/tony/.mpd/mpd.log"
-pid_file              "/home/tony/.mpd/mpd.pid"
-state_file            "/home/tony/.mpd/mpdstate"
+music_directory   "~/Music"
+playlist_directory    "~/.mpd/playlists"
+db_file               "~/.mpd/mpd.db"
+log_file              "~/.mpd/mpd.log"
+pid_file              "~/.mpd/mpd.pid"
+state_file            "~/.mpd/mpdstate"
 ################################################################
 
 ######################## DAEMON OPTIONS ########################
@@ -52,11 +52,15 @@ audio_output {
        # name    "alsa MPD"
 # }
 
+# audio_output {
+#    type    "pulse"
+#    name    "My MPD PulseAudio Output"
+# }
 audio_output {
-   type    "pulse"
-   name    "My MPD PulseAudio Output"
+	type            "osx"
+	name            "My Mac Device"
+	mixer_type      "software"
 }
-
 #$ mkdir ~/.ncmpcpp
 #$ cp /usr/share/doc/ncmpcpp/doc/config ~/.ncmpcpp/config
 #$ echo "visualizer_fifo_path = \"/tmp/mpd.fifo\"" >> ~/.ncmpcpp/config
