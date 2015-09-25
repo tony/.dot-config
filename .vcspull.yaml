@@ -106,6 +106,7 @@
 ~/study/ruby:
   rails: 'git+https://github.com/rails/rails.git'
 ~/study/c: 
+  cmake: 'git+https://github.com/Kitware/CMake.git'
   libressl: 'git+https://github.com/libressl-portable/openbsd.git'
   libressl-portable: 'git+https://github.com/libressl-portable/portable.git'
   ck: 'git+https://github.com/concurrencykit/ck.git'
