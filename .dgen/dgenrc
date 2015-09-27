@@ -1,0 +1,13 @@
+# If you prefer W.A.S.D type controls (again player 1):
+key_pad1_up = w
+key_pad1_down = s
+key_pad1_left = a
+key_pad1_right = d
+key_pad1_a = j
+key_pad1_b = k
+key_pad1_c = l
+key_pad1_x = u
+key_pad1_y = i
+key_pad1_z = o
+key_pad1_mode = backspace
+key_pad1_start = return
