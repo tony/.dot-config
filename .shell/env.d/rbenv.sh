@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -f /usr/local/bin/rbenv ]; then # installed via freebsd ports pkg
+if [ -f /usr/local/libexec/rbenv ]; then # installed via freebsd ports pkg
     eval "$(rbenv init -)"
 elif [ -d $HOME/.rbenv/bin ]; then
     pathprepend $HOME/.rbenv/bin
