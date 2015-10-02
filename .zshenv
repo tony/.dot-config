@@ -19,6 +19,9 @@ if echo "$-" | grep i > /dev/null; then
     source $HOME/.dot-config/.shell/env.d/tmuxp.sh
     source $HOME/.dot-config/.shell/env.d/most.sh
 
+    pathprepend /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+    pathprepend /usr/games /usr/local/games
+
     source $HOME/.dot-config/.shell/paths.d/postgres_app.sh
     source $HOME/.dot-config/.shell/paths.d/brew_python.sh
     source $HOME/.dot-config/.shell/paths.d/macports_python.sh
@@ -37,7 +40,5 @@ if echo "$-" | grep i > /dev/null; then
     source $HOME/.dot-config/.shell/paths.d/rust.sh
 
     # Customize to your needs...
-    pathprepend $HOME/.local/bin $HOME/bin 
-    pathprepend /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin 
-    pathprepend /usr/games /usr/local/games
+    pathprepend $HOME/.local/bin $HOME/bin
 fi
