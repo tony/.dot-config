@@ -20,8 +20,8 @@
   pager = less -r
 [web]
   browser = google-chrome
-#[url "ssh://git@github.com/"]
-#  insteadOf = https://github.com/
+[url "ssh://git@github.com/tony"]
+  insteadOf = https://github.com/tony
 # Disable for bitbucket, gives prompts.
 #[url "ssh://git@bitbucket.org/"]
 #  insteadOf = https://bitbucket.org/
