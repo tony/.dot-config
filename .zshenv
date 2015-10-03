@@ -5,8 +5,12 @@ if echo "$-" | grep i > /dev/null; then
 
     autoload -U +X compinit && compinit
 
-    source $HOME/.dot-config/.shell/aliases.sh
     source $HOME/.dot-config/.shell/functions.sh
+
+    pathprepend /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+    pathprepend /usr/games /usr/local/games
+
+    source $HOME/.dot-config/.shell/aliases.sh
 
     source $HOME/.dot-config/.shell/env.d/p4a.sh
     source $HOME/.dot-config/.shell/env.d/rbenv.sh
@@ -17,10 +21,8 @@ if echo "$-" | grep i > /dev/null; then
     source $HOME/.dot-config/.shell/env.d/base16-shell.sh
     source $HOME/.dot-config/.shell/env.d/oh-my-zsh.zsh
     source $HOME/.dot-config/.shell/env.d/tmuxp.sh
+    source $HOME/.dot-config/.shell/env.d/keychain.sh
     source $HOME/.dot-config/.shell/env.d/most.sh
-
-    pathprepend /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
-    pathprepend /usr/games /usr/local/games
 
     source $HOME/.dot-config/.shell/paths.d/postgres_app.sh
     source $HOME/.dot-config/.shell/paths.d/brew_python.sh
