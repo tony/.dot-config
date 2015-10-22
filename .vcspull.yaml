@@ -1,0 +1,701 @@
+~/study/standards-and-practices/html:
+  north: 'git+https://github.com/Snugug/north.git'
+  semantic-ui: 'git+https://github.com/Semantic-Org/Semantic-UI.git'
+  isobar-frontend: 'git+https://github.com/isobar-idev/code-standards.git'
+~/study/data-structures-algorithms/c:
+  libds: 'git+https://github.com/zhemao/libds.git'
+  AlgoXY: 
+    repo: 'git+https://github.com/liuxinyu95/AlgoXY.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/AlgoXY.git'
+~/study/data-structures-algorithms/c++:
+  algorithms: 'git+https://github.com/xtaci/algorithms.git'
+~/study/data-structures-algorithms/python:
+  Algorithms: 'git+https://github.com/prakhar1989/Algorithms.git'
+~/study/data-structures-algorithms/java: 
+  java-algorithms-implementations: 'git+https://github.com/phishman3579/java-algorithms-implementation.git'
+~/study/devops-books:
+  github-cheat-sheet: 'git+https://github.com/tiimgreen/github-cheat-sheet.git'
+~/study/standards-and-practices/php:
+  php-fig: 'git+https://github.com/php-fig/fig-standards.git'
+~/study/standards-and-practices/js:
+  idiomatic.js: 'git+https://github.com/rwaldron/idiomatic.js.git'
+~/study/llvm:
+  llvm: 'git+http://llvm.org/git/llvm.git'
+# ~/study/llvm/llvm/tools:
+#   clang: 'git+http://llvm.org/git/clang.git'
+#   lldb: 'git+http://llvm.org/git/lldb.git'
+~/study/dotnet:
+  coreclr:
+    repo: 'git+https://github.com/dotnet/coreclr.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/coreclr.git'
+~/study/sh:
+  roundup: 
+    repo: 'git+https://github.com/bmizerany/roundup.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/roundup.git'
+  shocco: 'git+https://github.com/rtomayko/shocco'
+~/study/sqlalchemy:
+  sqlalchemy: 
+    repo: 'git+https://github.com/zzzeek/sqlalchemy.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sqlalchemy.git'
+  sqlalchemy_traversal: 'git+https://github.com/sontek/sqlalchemy_traversal.git'
+  sqlamp: 'git+https://github.com/tony/sqlamp.git'
+  sqlalchemy-orm-tree: 
+    repo: 'git+https://github.com/monetizeio/sqlalchemy-orm-tree.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sqlalchemy-orm-tree.git'
+  sqlalchemy-bitcoin: 'git+https://github.com/monetizeio/sqlalchemy-bitcoin.git'
+  cubes: 'git+https://github.com/Stiivi/cubes.git'
+  bubbles: 'git+https://github.com/Stiivi/bubbles.git'
+~/study/js-books:
+  backbone-fundamentals: 'git+https://github.com/addyosmani/backbone-fundamentals'
+  essential-js-design-patterns: 'git+https://github.com/addyosmani/essential-js-design-patterns.git'
+  you-dont-know-js: 'git+https://github.com/getify/You-Dont-Know-JS.git'
+  eloquent-js:  'git+https://github.com/marijnh/Eloquent-JavaScript.git'
+  jqfundamentals: 'git+https://github.com/rmurphey/jqfundamentals.git'
+~/study/koans:
+  backbone: 'git+https://github.com/addyosmani/backbone-koans-qunit.git'
+~/study/python-books:
+  pydata-book: 'git+https://github.com/pydata/pydata-book.git'
+  byte-of-python: 'git+https://github.com/swaroopch/byte_of_python.git'
+  python-for-signal-processing: 'git+https://github.com/unpingco/Python-for-Signal-Processing.git'
+  probabilistic-programming-and-bayesian-methods: 'git+https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers.git'
+  python-guide: 
+    repo: 'git+https://github.com/kennethreitz/python-guide.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/python-guide.git'
+  python-patterns: 'git+https://github.com/faif/python-patterns.git'
+
+~/study/compsci-books:
+  bottomupcs: 'git+https://github.com/ianw/bottomupcs.git'
+
+~/study/merchant:
+  satchless: 'git+https://github.com/mirumee/satchless.git'
+  braintree.js: 'git+https://github.com/braintree/braintree.js.git'
+  braintree_node: 'git+https://github.com/braintree/braintree_node.git'
+  braintree_python: 'git+https://github.com/braintree/braintree_python.git'
+  braintree_node_guide: 'git+https://github.com/braintree/braintree_node_guide.git'
+  braintree_python_guide: 'git+https://github.com/braintree/braintree_python_guide.git'
+  balanced-js: 'git+https://github.com/balanced/balanced-js.git'
+  balanced-python: 'git+https://github.com/balanced/balanced-python.git'
+  stripe-node: 'git+https://github.com/stripe/stripe-node.git'
+  stripe-python: 'git+https://github.com/stripe/stripe-python.git'
+  authorize-sauce: 'git+https://github.com/jeffschenck/authorizesauce'
+  paypal-python-sdk: 'git+https://github.com/paypal/PayPal-Python-SDK.git'
+  pyauthorize: 'git+https://github.com/vcatalano/py-authorize.git'
+  billy: 'git+https://github.com/balanced/billy.git'
+  merchant: 'git+https://github.com/agiliq/merchant.git'
+~/study/freebsd:
+  freebsd-ports: 
+    repo: 'git+https://github.com/freebsd/freebsd-ports.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/freebsd-ports.git'
+  freebsd-ci: 
+    repo: 'git+https://github.com/freebsd/freebsd-ci.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/freebsd-ci.git'
+
+  freebsd: 'git+https://github.com/freebsd/freebsd.git'
+~/study/lua:
+  lua: 'git+https://github.com/LuaDist/lua.git'
+  luajit: 'git+https://github.com/LuaDist/luajit.git'
+  lua-re2: 'git+https://github.com/cloudflare/lua-re2.git'
+~/study/ruby:
+  rails: 'git+https://github.com/rails/rails.git'
+~/study/c: 
+  craft: 'git+https://github.com/fogleman/Craft.git'
+  cmake: 'git+https://github.com/Kitware/CMake.git'
+  libressl: 'git+https://github.com/libressl-portable/openbsd.git'
+  libressl-portable: 'git+https://github.com/libressl-portable/portable.git'
+  ck: 'git+https://github.com/concurrencykit/ck.git'
+  vis: 'git+git://repo.or.cz/vis.git'
+  the_silver_searcher: 'git+https://github.com/ggreer/the_silver_searcher.git'
+  ruby: 'git+https://github.com/ruby/ruby.git'
+  flex: 'git+git://flex.git.sourceforge.net/gitroot/flex/flex'
+  i3: 
+    repo: 'git+https://github.com/i3/i3.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/i3.git'
+      airblader: 'git+https://github.com/Airblader/i3.git'  # gaps
+  klib: 'git+https://github.com/attractivechaos/klib.git'
+  libuv: 'git+https://github.com/libuv/libuv.git'
+  #libimobiledevice: 'git+https://github.com/libimobiledevice/libimobiledevice.git'
+  redis: 'git+https://github.com/antirez/redis.git'
+  cython: 
+    repo: 'git+https://github.com/cython/cython.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/cython.git'
+
+  #awesome: 'git+https://github.com/awesomeWM/awesome.git'
+  ctags: 'git+https://github.com/universal-ctags/ctags'
+  #weechat: 'git+git://git.sv.gnu.org/weechat.git'
+  #retroarch: 'git+https://github.com/Themaister/RetroArch.git'
+  #linux: 'git+https://github.com/torvalds/linux.git'
+  #minix: 'git+https://github.com/minix3/minix'
+  ncmpc: 'git+git://git.musicpd.org/master/ncmpc.git'
+  tmux: 'git+https://github.com/tmux/tmux.git'
+  git: 'git+https://github.com/git/git.git'
+  libgit2: 'git+https://github.com/libgit2/libgit2.git'
+  postgres: 'git+https://github.com/postgres/postgres.git'
+  pgadmin3: 'git+git://git.postgresql.org/git/pgadmin3.git'
+  textadept: 'hg+http://foicica.com/hg/textadept'
+
+  musl-libc: 'git+git://git.musl-libc.org/musl'
+  util-cursor: 'git+git://anongit.freedesktop.org/xcb/util-cursor'
+  zsh: 'git+git://git.code.sf.net/p/zsh/code'
+  cpython: 'hg+http://hg.python.org/cpython/'
+  micropython: 'git+https://github.com/micropython/micropython.git'
+  nginx: 'hg+http://hg.nginx.org/nginx'
+  tre: 'git+https://github.com/laurikari/tre'
+~/study/c++:
+  re2: 'git+https://github.com/google/re2.git'
+  #blink: 'git+https://chromium.googlesource.com/chromium/blink'
+  #v8: 'git+git://github.com/v8/v8.git'
+  #zeal: 'git+https://github.com/jkozera/zeal.git'
+  #phantomjs: 'git+https://github.com/ariya/phantomjs.git'
+  #tudu: 'git+https://gitorious.org/tudu/tudu.git'
+  #wxPython: 'git+https://github.com/wxWidgets/wxPython.git'
+  #wxWidgets: 'git+https://github.com/wxWidgets/wxWidgets.git'
+  #openttd: 'git+git://git.openttd.org/openttd/trunk.git'
+  #vimpc: 'git+https://github.com/boysetsfrog/vimpc'
+  #mpd: 'git+git://git.musicpd.org/master/mpd.git'
+  #libmpd: 'git+git://git.musicpd.org/master/libmpd.git'
+  ncmpcpp: 'git+git://git.musicpd.org/mirror/ncmpcpp.git'
+  #libmpdclient: 'git+git://git.musicpd.org/master/libmpdclient.git'
+  #node: 'git+https://github.com/joyent/node.git'
+  #libzmp: 'git+https://github.com/zeromq/libzmq.git'
+  doubanfm-qt: 'git+https://github.com/zonyitoo/doubanfm-qt.git'
+~/study/node:
+  express: 'git+https://github.com/visionmedia/express.git'
+~/study/javascript:
+  backbone: 'git+https://github.com/documentcloud/backbone.git'
+  backbone.deepmodel: 'git+https://github.com/powmedia/backbone-deep-model.git'
+  backbone.marionette: 'git+https://github.com/marionettejs/backbone.marionette.git'
+  backbone.wreqr: 'git+https://github.com/marionettejs/backbone.wreqr.git'
+  backbone.babysitter: 'git+https://github.com/marionettejs/backbone.babysitter.git'
+  underscore: 'git+https://github.com/documentcloud/underscore.git'
+  underscore-contrib: 'git+https://github.com/documentcloud/underscore-contrib.git'
+  lodash: 'git+https://github.com/bestiejs/lodash.git'
+  requirejs: 'git+https://github.com/jrburke/requirejs.git'
+  r.js: 'git+https://github.com/jrburke/r.js.git'
+  jquery: 'git+https://github.com/jquery/jquery.git'
+  jquery-ui: 'git+https://github.com/jquery/jquery-ui.git'
+  codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
+  doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
+~/study/python:
+
+
+  pillow:
+    repo: 'git+https://github.com/python-pillow/Pillow.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/Pillow.git'
+
+  profiling:
+    repo: 'git+https://github.com/what-studio/profiling.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/profiling.git'
+
+  pyre2:
+    repo: 'git+https://github.com/facebook/pyre2.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/pyre2.git'
+
+  sniffer:
+    repo: 'git+https://github.com/jeffh/sniffer.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sniffer.git'
+
+  vim-vimlparser:
+    repo: 'git+https://github.com/ynkdir/vim-vimlparser.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/vim-vimlparser.git'
+
+  dotfiles:
+    repo: 'git+https://github.com/jbernard/dotfiles.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/dotfiles.git'
+
+  cookiecutter-pypackage-tony: 'git+ssh://git@github.com/tony/cookiecutter-pypackage.git'
+  tmuxp:
+    repo: 'git+https://github.com/tony/tmuxp.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/tmuxp.git'
+  vcspull:
+    repo: 'git+https://github.com/tony/vcspull.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/vcspull.git'
+  pyston:
+    repo: 'git+https://github.com/dropbox/pyston.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/pyston.git'
+
+  pyston: 'git+https://github.com/dropbox/pyston.git'
+  blaze: 'git+https://github.com/ContinuumIO/blaze.git'
+  factory_boy: 'git+https://github.com/rbarrois/factory_boy.git'
+  pycparser: 'git+https://github.com/eliben/pycparser.git'
+  scipy: 'git+https://github.com/scipy/scipy.git'
+  scipy-learn: 'git+https://github.com/scikit-learn/scikit-learn.git'
+  biopython: 'git+https://github.com/biopython/biopython.git'
+  invoke: 'git+https://github.com/pyinvoke/invoke.git'
+  pythonfutures: 'hg+https://code.google.com/p/pythonfutures/'
+  webassets: 'git+https://github.com/miracle2k/webassets.git'
+  click: 'git+https://github.com/mitsuhiko/click.git'
+  pulseaudio-mixer-cli: 'git+https://github.com/mk-fg/pulseaudio-mixer-cli.git'
+  psycopg2: 'git+git://github.com/psycopg/psycopg2.git'
+  momoko: 'git+git://github.com/FSX/momoko.git'
+  nova: 'git+https://github.com/openstack/nova.git'
+  jsonschema: 'git+https://github.com/Julian/jsonschema.git'
+  rdflib: 'git+https://github.com/RDFLib/rdflib.git'
+  rdflib-sqlalchemy: 'git+https://github.com/RDFLib/rdflib-sqlalchemy.git'
+  rdfalchemy: 'git+https://github.com/gjhiggins/RDFAlchemy.git'
+  RootTheBox: 'git+https://github.com/moloch--/RootTheBox.git'
+  celery: 'git+https://github.com/celery/celery.git'
+  python-social-auth: 'git+https://github.com/omab/python-social-auth.git'
+  Flexget: 'git+https://github.com/Flexget/Flexget.git'
+  cookiecutter-pypackage:
+    repo: 'git+https://github.com/tony/cookiecutter-pypackage.git'
+    remotes:
+      upstream: 'git+https://github.com/audreyr/cookiecutter-pypackage.git'
+  cookiecutter:
+    repo: 'git+https://github.com/audreyr/cookiecutter.git'
+    remotes:
+      tony: 'git+https://github.com/tony/cookiecutter.git'
+  unittest2: 'hg+http://hg.python.org/unittest2'
+  pypy: 'hg+https://bitbucket.org/pypy/pypy'
+  asv: 'git+https://github.com/spacetelescope/asv.git'
+  camelot: 'hg+https://bitbucket.org/conceptive/camelot'
+  jmespath: 'git+https://github.com/boto/jmespath.git'
+  anyvcs: 'git+https://github.com/ScottDuckworth/python-anyvcs.git'
+  pip:
+    repo: 'git+https://github.com/pypa/pip.git'
+    remotes:
+      tony: 'git+https://github.com/tony/pip.git'
+
+  warehouse: 'git+git://github.com/pypa/warehouse.git'
+  setuptools: 'hg+https://bitbucket.org/pypa/setuptools'
+  ipdb: 'git+http://github.com/gotcha/ipdb.git'
+  otrace: 'git+https://github.com/mitotic/otrace.git'
+  jinja2: 'git+https://github.com/mitsuhiko/jinja2.git'
+
+
+  beaker: 'git+https://github.com/bbangert/beaker.git'
+  babel: 'git+https://github.com/mitsuhiko/babel.git'
+
+  werkzeug: 'git+https://github.com/mitsuhiko/werkzeug.git'
+  logbook: 'git+https://github.com/mitsuhiko/logbook.git'
+  cjklib: 'git+https://github.com/cburgmer/cjklib.git'
+  ltchinese: 'hg+http://bitbucket.org/lost_theory/ltchinese/'
+  pudb: 'git+http://git.tiker.net/trees/pudb.git'
+  ipython: 'git+https://github.com/ipython/ipython.git'
+  blessing: 'git+https://github.com/erikrose/blessings.git'
+  sqlalchemy: 'git+https://github.com/zzzeek/sqlalchemy.git'
+  wtforms: 'git+https://github.com/Khan/wtforms.git'
+  botocore: 'git+https://github.com/boto/botocore.git'
+  libcloud: 'git+https://github.com/apache/libcloud.git'
+
+  argcomplete: 'git+https://github.com/kislyuk/argcomplete.git'
+
+  lxml: 'git+https://github.com/lxml/lxml.git'
+
+  httpbin: 'git+https://github.com/kennethreitz/httpbin.git'
+  envoy: 'git+https://github.com/kennethreitz/envoy.git'
+  legit: 'git+https://github.com/kennethreitz/legit.git'
+  tablib: 'git+https://github.com/kennethreitz/tablib.git'
+  requests: 'git+https://github.com/kennethreitz/requests.git'
+  grequests: 'git+https://github.com/kennethreitz/grequests.git'
+
+  kr-sphinx-themes: 'git+https://github.com/kennethreitz/kr-sphinx-themes.git'
+
+  gist-api: 'git+https://github.com/kennethreitz/gistapi.py.git'
+
+  pystache: 'git+https://github.com/defunkt/pystache.git'
+  pandas: 'git+https://github.com/pydata/pandas'
+  numpy: 'git+https://github.com/numpy/numpy.git'
+  pytables: 'git+https://github.com/PyTables/PyTables.git'
+
+  ncmpy: 'git+https://github.com/cykerway/ncmpy.git'
+
+  gevent: 'git+https://github.com/surfly/gevent.git'
+  tornado: 'git+https://github.com/facebook/tornado.git'
+
+  soundcloud-cli: 'git+https://github.com/0xPr0xy/soundcloud-cli.git'
+  pyradio: 'git+https://github.com/coderholic/pyradio.git'
+
+  sh: 'git+https://github.com/amoffat/sh.git'
+  envoy: 'git+https://github.com/kennethreitz/envoy.git'
+
+  glances: 'git+https://github.com/nicolargo/glances.git'
+  powerline: 'git+https://github.com/powerline/powerline.git'
+  jieba: 'git+https://github.com/fxsjy/jieba.git'
+  storm: 'git+https://github.com/emre/storm.git'
+  fabric: 'git+https://github.com/fabric/fabric.git'
+  ansible: 'git+https://github.com/ansible/ansible'
+  fn.py: 'git+https://github.com/kachayev/fn.py.git'
+  buildbot: 'git+https://github.com/buildbot/buildbot.git'
+  beets: 'git+https://github.com/sampsyo/beets.git'
+  magicmethods: 'git+https://github.com/RafeKettler/magicmethods.git'
+
+  gateone: 'git+https://github.com/liftoff/GateOne.git'
+  glue: 'git+https://github.com/jorgebastida/glue.git'
+  objbrowser: 'git+https://github.com/titusjan/objbrowser'
+
+  pythagora: 'git+https://github.com/tarmack/Pythagora.git'
+  youtube-dl: 'git+https://github.com/rg3/youtube-dl.git'
+  twisted: 'git+https://github.com/twisted/twisted.git'
+
+  ckan: 'git+https://github.com/okfn/ckan.git'
+  reddit: 'git+https://github.com/reddit/reddit.git'
+
+  python_koans: 'git+https://github.com/gregmalcolm/python_koans.git'
+  #introduction_to_sqlalchemy: 'git+https://bitbucket.org/zzzeek/pycon2013_student_package.git'
+
+  w3lib: 'git+https://github.com/scrapy/w3lib'
+  scrapy: 'git+https://github.com/scrapy/scrapy.git'
+  scrapely: 'git+https://github.com/scrapy/scrapely.git'
+
+  calibre: 'git+git://github.com/kovidgoyal/calibre.git'
+
+  kaptan: 
+    repo: 'git+https://github.com/emre/kaptan.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/kaptan.git'
+  aws-cli: 'git+https://github.com/aws/aws-cli.git'
+
+  youcompleteme: 'git+https://github.com/Valloric/YouCompleteMe.git'
+
+  jedi: 
+    repo: 'git+https://github.com/davidhalter/jedi.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/jedi.git'
+
+  ranger: 'git+git://git.savannah.nongnu.org/ranger.git'
+
+  readthedocs:
+    repo: 'git+https://github.com/rtfd/readthedocs.org.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/readthedocs.org.git'
+
+  klaus:
+    repo: 'git+https://github.com/jonashaag/klaus.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/klaus.git'
+
+  norman: 'hg+https://bitbucket.org/aquavitae/norman/src'
+  sphinx: 'hg+https://bitbucket.org/birkenfeld/sphinx'
+  sphinx-contrib: 'hg+https://bitbucket.org/birkenfeld/sphinx-contrib'
+  pexpect-u: 'hg+https://bitbucket.org/takluyver/pexpect'
+  pygments: 'hg+http://bitbucket.org/birkenfeld/pygments-main'
+  docutils: 'svn+http://svn.code.sf.net/p/docutils/code/trunk'
+
+  python-unicodecsv: 'git+https://github.com/jdunck/python-unicodecsv.git'
+  ftfy: 'git+https://github.com/LuminosoInsight/python-ftfy.git'
+
+  gitpython: 
+    repo: 'git+https://github.com/gitpython-developers/GitPython'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/GitPython.git'
+
+  gitdb: 
+    repo: 'git+https://github.com/gitpython-developers/gitdb'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/gitdb.git'
+
+  smmap: 
+    repo: 'git+https://github.com/gitpython-developers/smmap'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/smmap.git'
+
+  bpython: 'hg+https://bitbucket.org/bobf/bpython/'
+  voltron: 'git+https://github.com/snarez/voltron.git'
+  urwid: 'hg+https://excess.org/hg/urwid/'
+  understate: 'git+https://github.com/L3V3L9/understate.git'
+  pygcurse: 'git+https://github.com/asweigart/pygcurse.git'
+  npyscreen: 'hg+https://code.google.com/p/npyscreen/'
+
+  cython-book: 'git+https://github.com/redbrain/cython-book.git'
+
+  profilehooks: 'git+https://github.com/mgedmin/profilehooks'
+  line_profile: 'hg+https://bitbucket.org/robertkern/line_profiler'
+
+  kaa: 'git+https://github.com/kaaedit/kaa.git'
+  kdb: 'git+https://github.com/kaaedit/kaadbg.git'
+  curses_ex: 'git+https://github.com/atsuoishimoto/python.curses_ex.git'
+  pyjf3: 'git+https://github.com/atsuoishimoto/pyjf3.git'
+
+  alembic: 'git+https://github.com/zzzeek/alembic.git'
+  nose: 'git+https://github.com/nose-devs/nose.git'
+  pytest: 'hg+https://bitbucket.org/hpk42/pytest'
+  mock: 'hg+https://code.google.com/p/mock/'
+
+  virtualenv: 'git+https://github.com/pypa/virtualenv.git'
+  virtualenvwrapper: 'git+https://bitbucket.org/dhellmann/virtualenvwrapper.git'
+
+  weasyprint: 'git+https://github.com/Kozea/WeasyPrint.git'
+
+  python-prompt-toolkit: 'git+https://github.com/jonathanslenders/python-prompt-toolkit.git'
+  ptpython: 'git+https://github.com/jonathanslenders/ptpython.git'
+  pyvim: 'git+https://github.com/jonathanslenders/pyvim.git'
+~/study/pyenv:
+  pyenv: 'git+https://github.com/yyuu/pyenv'
+  pyenv-virtualenv: 'git+https://github.com/yyuu/pyenv-virtualenv.git'
+  pyenv-virtualenvwrapper: 'git+https://github.com/yyuu/pyenv-virtualenvwrapper.git'
+  pyenv-installer: 'git+https://github.com/yyuu/pyenv-installer.git'
+~/study/django:
+  django-cms: 'git+https://github.com/divio/django-cms.git'
+  wagtail: 'git+https://github.com/torchbox/wagtail.git'
+  aldjemy: 'git+https://github.com/Deepwalker/aldjemy.git'
+  django-celery: 'git+https://github.com/celery/django-celery.git'
+  coffin: 'git+https://github.com/coffin/coffin.git'
+  django: 
+    repo: 'git+https://github.com/django/django.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/django.git'
+  django-allauth: 
+    repo: 'git+https://github.com/pennersr/django-allauth.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/django-allauth.git'
+  django-assets: 'git+https://github.com/miracle2k/django-assets.git'
+  django-taggit: 'git+https://github.com/alex/django-taggit.git'
+  django-basic-apps: 'git+https://github.com/nathanborror/django-basic-apps.git'
+  django-mptt: 'git+https://github.com/django-mptt/django-mptt.git'
+  django-cities: 'git+https://github.com/coderholic/django-cities.git'
+  django-crispy-forms: 'git+https://github.com/maraujop/django-crispy-forms.git'
+  django-debug-toolbar: 'git+https://github.com/django-debug-toolbar/django-debug-toolbar.git'
+  django-treebeard:
+    repo: 'git+https://github.com/tabo/django-treebeard'
+    remotes:
+      tony: 'git+https://github.com/tony/django-treebeard'
+
+  django-filter: 'git+https://github.com/alex/django-filter.git'
+  django-extensions: 'git+https://github.com/django-extensions/django-extensions.git'
+  dj-stripe:
+    repo: 'git+https://github.com/pydanny/dj-stripe'
+    remotes:
+      tony: 'git+https://github.com/tony/dj-stripe'
+~/study/flask:
+  book-explore-flask: 'git+https://github.com/rpicard/explore-flask.git'
+
+  flask: 
+    repo: 'git+https://github.com/mitsuhiko/flask.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/flask.git'
+
+  flask-sqlalchemy: 'git+https://github.com/mitsuhiko/flask-sqlalchemy.git'
+  flask-admin: 'git+https://github.com/mrjoes/flask-admin.git'
+  flask-principal: 'git+https://github.com/mattupstate/flask-principal.git'
+  flask-sockets: 'git+https://github.com/kennethreitz/flask-sockets'
+  flask-bone: 'git+https://github.com/imwilsonxu/fbone.git'
+  flask-script: 'git+https://github.com/techniq/flask-script.git'
+  flask-assets: 'git+http://github.com/miracle2k/flask-assets'
+  flask-debugtoolbar: 'git+https://github.com/mgood/flask-debugtoolbar.git'
+  flask-tdd: 'git+https://github.com/mjhea0/flaskr-tdd.git'
+  flask-restless: 'git+https://github.com/jfinkels/flask-restless.git'
+  flask-superadmin: 'git+https://github.com/SyrusAkbary/Flask-SuperAdmin.git'
+  flask-debugtoolbar: 'git+https://github.com/mgood/flask-debugtoolbar.git'
+  flask-script: 'git+https://github.com/techniq/flask-script.git'
+  flask-frozen: 'git+https://github.com/SimonSapin/Frozen-Flask.git'
+  flask-assets: 'git+https://github.com/miracle2k/flask-assets.git'
+  flask-oauthlib: 'git+https://github.com/lepture/flask-oauthlib.git'
+  flask-babel: 'git+https://github.com/mitsuhiko/flask-babel.git'
+~/study/php:
+  wordpress: 'git+https://github.com/WordPress/WordPress.git'
+  laravel: 'git+https://github.com/laravel/laravel.git'
+  laravel-framework: 'git+https://github.com/laravel/framework.git'
+~/study/scrapy/:
+  dirbot: 'git+https://github.com/scrapy/dirbot'
+  Scrapy-Smiles: 'git+https://github.com/mjhea0/Scrapy-Samples'
+  scrapy-examples: 'git+https://github.com/geekan/scrapy-examples'
+  django-dynamic-scraper: 'git+https://github.com/holgerd77/django-dynamic-scraper'
+~/study/go/:
+  go: 'git+https://github.com/golang/go.git'
+  gitea:
+    repo: 'git+https://github.com/go-gitea/gitea.git'
+    remotes:
+      tony: 'git+git@github.com/tony/gitea.git'
+  go-koans:
+    repo: 'git+https://github.com/cdarwin/go-koans.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/cdarwin/go-koans.git'
+  go-python: 'git+https://github.com/sbinet/go-python'
+  otto: 'git+https://github.com/robertkrimen/otto'
+  blackfriday: 'git+https://github.com/russross/blackfriday.git'
+~/study/salt/:
+  salt:
+    repo: 'git+https://github.com/saltstack/salt.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/salt.git'
+  salt-ui: 'git+https://github.com/saltstack/salt-ui.git'
+  salt-formulae: 'git+https://github.com/saltstack/formulae'
+  salt-contrib: 
+    repo: 'git+https://github.com/saltstack/salt-contrib.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/salt-contrib.git'
+  salt-vim: 
+    repo: 'git+https://github.com/saltstack/salt-vim.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/salt-vim.git'
+  salt-jenkins: 
+    repo: 'git+https://github.com/saltstack/salt-jenkins.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/salt-jenkins.git'
+  libnacl: 
+    repo: 'git+https://github.com/saltstack/libnacl.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/libnacl.git'
+  jenkins-dsl-jobs: 
+    repo: 'git+https://github.com/saltstack/jenkins-dsl-jobs.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/jenkins-dsl-jobs.git'
+  raet: 
+    repo: 'git+https://github.com/saltstack/raet.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/raet.git'
+
+  salt-jenkins-ng: 
+    repo: 'git+https://github.com/saltstack/salt-jenkins-ng.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/salt-jenkins-ng.git'
+  salt-bootstrap: 
+    repo: 'git+https://github.com/saltstack/salt-bootstrap.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/salt-bootstrap.git'
+  salt-windows-bootstrap: 
+    repo: 'git+https://github.com/saltstack/salt-windows-bootstrap.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/salt-windows-bootstrap.git'
+  salt-pylint: 
+    repo: 'git+https://github.com/saltstack/salt-pylint.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/salt-pylint.git'
+  salt-testing: 
+    repo: 'git+https://github.com/saltstack/salt-testing.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/salt-testing.git'
+  pepper: 
+    repo: 'git+https://github.com/saltstack/pepper.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/pepper.git'
+  salt-windows-msi: 
+    repo: 'git+https://github.com/saltstack/salt-windows-msi.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/salt-windows-msi.git'
+  docker-containers: 
+    repo: 'git+https://github.com/saltstack/docker-containers.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/docker-containers.git'
+
+~/study/vim:
+  vim:
+    repo: 'git+https://github.com/vim/vim.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/vim.git'
+  neovim:
+    repo: 'git+https://github.com/neovim/neovim.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/neovim.git'
+  vim-multiple-cursors:
+    repo: 'git+https://github.com/terryma/vim-multiple-cursors.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/vim-multiple-cursors.git'
+  vim-snippets:
+    repo: 'git+https://github.com/honza/vim-snippets.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/vim-snippets.git'
+  vimtutor-extended:
+    repo: 'git+https://github.com/superjer/vimtutor-extended.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/vimtutor-extended.git'
+  color_coded:
+    repo: 'git+https://github.com/jeaye/color_coded.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/color_coded.git'
+  unite.vim:
+    repo: 'git+https://github.com/Shougo/unite.vim.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/unite.vim.git'
+
+
+~/study/vagrant/:
+  vagrant:
+    repo: 'git+https://github.com/mitchellh/vagrant.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/vagrant.git'
+  vagrant-fabric:
+    repo: 'git+https://github.com/wutali/vagrant-fabric.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/vagrant-fabric.git'
+
+~/study/java:
+  jenkins: 'git+https://github.com/jenkinsci/jenkins.git'
+  elasticsearch: 'git+https://github.com/elastic/elasticsearch.git'
+~/study/reST:
+
+  sphinx:
+    repo: 'git+https://github.com/sphinx-doc/sphinx.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sphinx.git'
+  sphinx-testing:
+    repo: 'git+https://github.com/sphinx-doc/sphinx-testing.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sphinx-testing.git'
+  docutils: 'svn+ssh://gitpull@svn.code.sf.net/p/docutils/code'
+  sphinxcontrib-stud:
+    repo: 'git+https://github.com/guibog/stud.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sphinxcontrib-stud.git'
+  sphinxcontrib-github: 'git+https://github.com/tony/sphinxcontrib-github.git'
+
+~/study/rust/:
+  rust: 'git+https://github.com/rust-lang/rust.git'
+~/study/react: 
+  react: 'git+https://github.com/facebook/react'
+  material-ui: 
+    repo: 'git+https://github.com/callemall/material-ui.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/material-ui.git'
+
+  react-intl: 'git+https://github.com/yahoo/react-intl.git'
+  react-magic: 'git+https://github.com/reactjs/react-magic.git'
+  react-page-middleware: 'git+https://github.com/reactjs/react-page-middleware.git'
+  react-autocomplete: 'git+https://github.com/eliseumds/react-autocomplete.git'
+  react-page: 'git+https://github.com/reactjs/react-page.git'
+  react-future: 'git+https://github.com/reactjs/react-future.git'
+  react-file: 'git+https://github.com/firebase/reactfire.git'
+  express-react-views: 'git+https://github.com/reactjs/express-react-views'
+  react-router: 'git+https://github.com/rackt/react-router'
+  react-tutorial: 'git+https://github.com/reactjs/react-tutorial.git'
+  react-python: 'git+https://github.com/reactjs/react-python.git'
+~/study/kivy:
+
+  kivy: 
+    repo: 'git+https://github.com/kivy/kivy.git'
+    kivy:
+      tony: 'git+ssh://git@github.com/tony/kivy.git'
+  garden: 
+    repo: 'git+https://github.com/kivy-garden/garden.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/garden.git'
+
+  garden.filebrowser: 
+    repo: 'git+https://github.com/kivy-garden/garden.filebrowser.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/garden.filebrowser.git'
+
+  kivy-designer: 
+    repo: 'git+https://github.com/kivy/kivy-designer.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/kivy-designer.git'
+
+  pygame: 
+    repo: 'hg+https://bitbucket.org/pygame/pygame'
+
+  buildozer: 'git+https://github.com/kivy/buildozer.git'
+
+  python-for-android: 
+    repo: 'git+https://github.com/kivy/python-for-android.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/python-for-android.git'
+
