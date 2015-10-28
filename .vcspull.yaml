@@ -25,11 +25,11 @@
 # ~/study/llvm/llvm/tools:
 #   clang: 'git+http://llvm.org/git/clang.git'
 #   lldb: 'git+http://llvm.org/git/lldb.git'
-~/study/dotnet:
-  coreclr:
-    repo: 'git+https://github.com/dotnet/coreclr.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/coreclr.git'
+# ~/study/dotnet:
+#   coreclr:
+#     repo: 'git+https://github.com/dotnet/coreclr.git'
+#     remotes:
+#       tony: 'git+ssh://git@github.com/tony/coreclr.git'
 ~/study/sh:
   roundup: 
     repo: 'git+https://github.com/bmizerany/roundup.git'
@@ -694,8 +694,8 @@
 
   buildozer: 'git+https://github.com/kivy/buildozer.git'
 
-  python-for-android: 
-    repo: 'git+https://github.com/kivy/python-for-android.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/python-for-android.git'
+  # python-for-android: 
+  #   repo: 'git+https://github.com/kivy/python-for-android.git'
+  #   remotes:
+  #     tony: 'git+ssh://git@github.com/tony/python-for-android.git'
 
