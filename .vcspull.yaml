@@ -139,7 +139,10 @@
   tmux: 'git+https://github.com/tmux/tmux.git'
   git: 'git+https://github.com/git/git.git'
   libgit2: 'git+https://github.com/libgit2/libgit2.git'
-  postgres: 'git+https://github.com/postgres/postgres.git'
+  postgres:
+    repo: 'git+https://github.com/postgres/postgres.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/postgres.git'
   pgadmin3: 'git+git://git.postgresql.org/git/pgadmin3.git'
   textadept: 'hg+http://foicica.com/hg/textadept'
 
