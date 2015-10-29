@@ -1,2 +1,2 @@
 make lint:
-	shellcheck -s sh \.* .shell/**/*.sh
+	shellcheck -s sh \.shell/**/*.sh
