@@ -112,7 +112,10 @@
   libressl-portable: 'git+https://github.com/libressl-portable/portable.git'
   ck: 'git+https://github.com/concurrencykit/ck.git'
   vis: 'git+git://repo.or.cz/vis.git'
-  the_silver_searcher: 'git+https://github.com/ggreer/the_silver_searcher.git'
+  the_silver_searcher:
+    repo: 'git+https://github.com/ggreer/the_silver_searcher.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/the_silver_searcher.git'
   ruby: 'git+https://github.com/ruby/ruby.git'
   i3: 
     repo: 'git+https://github.com/i3/i3.git'
