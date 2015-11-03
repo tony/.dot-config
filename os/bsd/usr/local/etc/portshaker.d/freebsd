@@ -1,0 +1,6 @@
+# /usr/local/etc/portshaker.d/freebsd
+. /usr/local/share/portshaker/portshaker.subr
+
+method="git"
+git_clone_uri="https://github.com/freebsd/freebsd-ports.git"
+run_portshaker_command $*
