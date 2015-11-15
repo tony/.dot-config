@@ -10,6 +10,11 @@
 #
 # Linux:
 #     curl -kL http://install.perlbrew.pl | bash
+#
+#
+# cpanm:
+#   perlbrew install-cpanm
+#   cpanm --local-lib=$PERLBREW_ROOT local::lib && eval $(perl -I $PERLBREW_ROOT/lib/perl5/ -Mlocal::lib) 
 
 
 if [ -d "$HOME/.perl5/perlbrew" ]; then
