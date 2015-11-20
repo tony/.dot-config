@@ -4,7 +4,6 @@ db_file               "~/.mpd/mpd.db"
 log_file              "~/.mpd/mpd.log"
 pid_file              "~/.mpd/mpd.pid"
 state_file            "~/.mpd/mpdstate"
-user                            "tony"
 bind_to_address                 "127.0.0.1"
 port                            "6600"
 audio_output {
