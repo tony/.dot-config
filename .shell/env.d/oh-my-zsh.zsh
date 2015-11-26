@@ -2,11 +2,14 @@
 
 ## Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
+ZSH_CUSTOM=$HOME/.config/oh-my-zsh/custom
 
 _prep_zsh() {
-    ZSH_THEME="lambda"
-    export DISABLE_AUTO_TITLE="true"
-    plugins=(git)
+    export DISABLE_AUTO_TITLE="true"  # for tmuxp
+
+    ZSH_THEME="pure"
+
+    plugins=(git virtualenv)
     source $ZSH/oh-my-zsh.sh
 }
 if [ -d $ZSH ]; then
