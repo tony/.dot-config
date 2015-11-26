@@ -10,7 +10,11 @@ _prep_zsh() {
 
     ZSH_THEME="pure"
 
-    plugins=(git virtualenv)
+    plugins=(virtualenv)
+
+    export ZSH_THEME_VIRTUALENV_PREFIX=' '
+    export ZSH_THEME_VIRTUALENV_SUFFIX='%{%}'
+
     source $ZSH/oh-my-zsh.sh
 }
 
@@ -29,5 +33,10 @@ else
 
     if [ -d $HOME/.dot-config/.oh-my-zsh/custom/ ]; then
         ln -s $HOME/.dot-config/.oh-my-zsh/custom/* $HOME/.oh-my-zsh/custom/
+    fi
+
+    if [ -f $HOME/.zshrc ]; then
+        mv $HOME/.zshrc $HOME/.zshrc.post-oh-my-zsh-install
+        ln -sf $HOME/.dot-config/.zshrc $HOME/.zshrc
     fi
 fi
