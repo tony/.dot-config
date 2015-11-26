@@ -24,6 +24,27 @@
 # \e[2K => clear everything on the current line
 
 
+# Customizations START
+
+function _virtualenv_prompt_info {
+    [[ -n $(whence virtualenv_prompt_info) ]] && virtualenv_prompt_info
+}
+
+function _hg_prompt_info {
+    [[ -n $(whence hg_prompt_info) ]] && hg_prompt_info
+}
+
+PYENV_PROMPT_DEFAULT_VERSION=${PYENV_PROMPT_DEFAULT_VERSION:="system"}
+
+function _pyenv_prompt_info {
+    [[ -n $(whence pyenv_prompt_info) ]] && \
+        [[ "$(pyenv_prompt_info)" != "${PYENV_PROMPT_DEFAULT_VERSION}" ]] && \
+        echo "${ZSH_THEME_PYENV_PROMPT_PREFIX}$(pyenv_prompt_info)${ZSH_THEME_PYENV_PROMPT_SUFFIX}"
+}
+
+# Customizations END
+
+
 # turns seconds into human readable time
 # 165392 => 1d 21h 56m 32s
 # https://github.com/sindresorhus/pretty-time-zsh
@@ -129,6 +150,10 @@ prompt_pure_preprompt_render() {
 
 	# construct preprompt, beginning with path
 	local preprompt="%F{blue}%~%f"
+	# Added: hg / virtualenv / pyenv if plugins exist
+	# TODO: Make these async
+	preprompt+="%F{magenta}$(_virtualenv_prompt_info)$(_pyenv_prompt_info)%f"
+	preprompt+="%F{$git_color}$(_hg_prompt_info)%f"
 	# git info
 	preprompt+="%F{$git_color}${vcs_info_msg_0_}${prompt_pure_git_dirty}%f"
 	# git pull/push arrows
