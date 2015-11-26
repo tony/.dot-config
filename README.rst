@@ -90,6 +90,15 @@ Features / Usage
 .. _stand-alone readline module: https://pypi.python.org/pypi/readline
 .. _Thinkpad Trackpoint config: http://www.thinkwiki.org/wiki/How_to_configure_the_TrackPoint
 
+Notes
+-----
+
+neovim
+~~~~~~
+
+VIM config is backward compatible.  ``~/.config/nvim/init.vim`` checks and
+``~/.vim/.vimrc`` and ``~/.vimrc`` and sources the first it finds.
+
 Installation
 ------------
 
