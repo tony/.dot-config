@@ -52,3 +52,6 @@ config/gtk-3.0/bookmarks
 # dgen
 #######
 .dgen/saves
+
+# neovim can leave these config/nvim/.init.vim-rplugin~
+*~
