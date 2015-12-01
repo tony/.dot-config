@@ -25,11 +25,11 @@
 # ~/study/llvm/llvm/tools:
 #   clang: 'git+http://llvm.org/git/clang.git'
 #   lldb: 'git+http://llvm.org/git/lldb.git'
-# ~/study/dotnet:
-#   coreclr:
-#     repo: 'git+https://github.com/dotnet/coreclr.git'
-#     remotes:
-#       tony: 'git+ssh://git@github.com/tony/coreclr.git'
+~/study/dotnet:
+  coreclr:
+    repo: 'git+https://github.com/dotnet/coreclr.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/coreclr.git'
 ~/study/sh:
   roundup: 
     repo: 'git+https://github.com/bmizerany/roundup.git'
@@ -419,6 +419,12 @@
     repo: 'git+https://github.com/gitpython-developers/smmap'
     remotes:
       tony: 'git+ssh://git@github.com/tony/smmap.git'
+
+  rl:
+    repo: 'git+https://github.com/stefanholek/rl'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/rl.git'
+
 
   bpython: 'hg+https://bitbucket.org/bobf/bpython/'
   voltron: 'git+https://github.com/snarez/voltron.git'
