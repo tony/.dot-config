@@ -48,3 +48,7 @@ config/gtk-3.0/bookmarks
 #######
 
 *.swp
+
+# dgen
+#######
+.dgen/saves
