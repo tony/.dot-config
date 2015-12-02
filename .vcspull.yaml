@@ -135,6 +135,11 @@
     repo: 'git+git://git.code.sf.net/p/flex/flex'
     remotes:
       tony: 'git+ssh://git@github.com:tony/flex.git'
+  spectrwm:
+    repo: 'git+https://github.com/conformal/spectrwm.git'
+    remotes:
+      tony: 'git+ssh://git@github.com:tony/spectrwm.git'
+
 
   #awesome: 'git+https://github.com/awesomeWM/awesome.git'
   ctags: 'git+https://github.com/universal-ctags/ctags'
