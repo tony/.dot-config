@@ -106,6 +106,7 @@
 ~/study/ruby:
   rails: 'git+https://github.com/rails/rails.git'
 ~/study/c: 
+  jemalloc: 'git+https://github.com/jemalloc/jemalloc'
   craft: 'git+https://github.com/fogleman/Craft.git'
   cmake: 'git+https://github.com/Kitware/CMake.git'
   libressl: 'git+https://github.com/libressl-portable/openbsd.git'
