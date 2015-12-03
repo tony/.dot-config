@@ -1,2 +1,11 @@
 ~/work/salt:
   salt-states-configs: "git+https://github.com/tony/salt-states-configs.git"
+~/work/c++:
+  uMario:
+    repo: "git+https://github.com/jakowskidev/uMario_Jakowski"
+    remotes:
+      tony: "git@github.com:tony/uMario_Jakowski.git"
+~/work/c:
+  sdl2-playproject: "git+ssh://git@github.com/tony/sdl2-playproject.git"
+  ncurses-example: "git+ssh://git@github.com/tony/ncurses-example.git"
+  reST-lex-byacc: "git+ssh://git@github.com/tony/reST-lex-byacc.git"
