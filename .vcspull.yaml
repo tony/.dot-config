@@ -199,8 +199,6 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
-
-
   pillow:
     repo: 'git+https://github.com/python-pillow/Pillow.git'
     remotes:
@@ -231,15 +229,6 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/dotfiles.git'
 
-  cookiecutter-pypackage-tony: 'git+ssh://git@github.com/tony/cookiecutter-pypackage.git'
-  tmuxp:
-    repo: 'git+https://github.com/tony/tmuxp.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/tmuxp.git'
-  vcspull:
-    repo: 'git+https://github.com/tony/vcspull.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/vcspull.git'
   pyston:
     repo: 'git+https://github.com/dropbox/pyston.git'
     remotes:
@@ -648,23 +637,6 @@
 ~/study/java:
   jenkins: 'git+https://github.com/jenkinsci/jenkins.git'
   elasticsearch: 'git+https://github.com/elastic/elasticsearch.git'
-~/study/reST:
-
-  sphinx:
-    repo: 'git+https://github.com/sphinx-doc/sphinx.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/sphinx.git'
-  sphinx-testing:
-    repo: 'git+https://github.com/sphinx-doc/sphinx-testing.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/sphinx-testing.git'
-  docutils: 'svn+ssh://gitpull@svn.code.sf.net/p/docutils/code'
-  sphinxcontrib-stud:
-    repo: 'git+https://github.com/guibog/stud.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/sphinxcontrib-stud.git'
-  sphinxcontrib-github: 'git+https://github.com/tony/sphinxcontrib-github.git'
-
 ~/study/rust/:
   rust: 'git+https://github.com/rust-lang/rust.git'
 ~/study/react: 

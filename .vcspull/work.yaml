@@ -23,3 +23,32 @@
     repo: 'git+https://github.com/freebsd/freebsd.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/freebsd.git'
+
+~/work/python:
+  vcspull:
+    repo: 'git+https://github.com/tony/vcspull.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/vcspull.git'
+
+  tmuxp:
+    repo: 'git+https://github.com/tony/tmuxp.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/tmuxp.git'
+
+  cookiecutter-pypackage-tony: 'git+ssh://git@github.com/tony/cookiecutter-pypackage.git'
+
+~/work/reStructuredText:
+  docutils: 'svn+ssh://gitpull@svn.code.sf.net/p/docutils/code'
+  sphinx:
+    repo: 'git+https://github.com/sphinx-doc/sphinx.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sphinx.git'
+  sphinx-testing:
+    repo: 'git+https://github.com/sphinx-doc/sphinx-testing.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sphinx-testing.git'
+  sphinxcontrib-github: 'git+https://github.com/tony/sphinxcontrib-github.git'
+  sphinxcontrib-stud:
+    repo: 'git+https://github.com/guibog/stud.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sphinxcontrib-stud.git'
