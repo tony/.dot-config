@@ -414,7 +414,7 @@
 
   bpython: 'hg+https://bitbucket.org/bobf/bpython/'
   voltron: 'git+https://github.com/snarez/voltron.git'
-  urwid: 'hg+https://excess.org/hg/urwid/'
+  urwid: 'git+https://github.com/wardi/urwid.git'
   understate: 'git+https://github.com/L3V3L9/understate.git'
   pygcurse: 'git+https://github.com/asweigart/pygcurse.git'
   npyscreen: 'hg+https://code.google.com/p/npyscreen/'
