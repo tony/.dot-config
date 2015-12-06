@@ -172,7 +172,7 @@
   #tudu: 'git+https://gitorious.org/tudu/tudu.git'
   #wxPython: 'git+https://github.com/wxWidgets/wxPython.git'
   #wxWidgets: 'git+https://github.com/wxWidgets/wxWidgets.git'
-  #openttd: 'git+git://git.openttd.org/openttd/trunk.git'
+  openttd: 'git+git://git.openttd.org/openttd/trunk.git'
   #vimpc: 'git+https://github.com/boysetsfrog/vimpc'
   #mpd: 'git+git://git.musicpd.org/master/mpd.git'
   #libmpd: 'git+git://git.musicpd.org/master/libmpd.git'
