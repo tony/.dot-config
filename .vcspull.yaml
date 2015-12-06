@@ -87,17 +87,7 @@
   pyauthorize: 'git+https://github.com/vcatalano/py-authorize.git'
   billy: 'git+https://github.com/balanced/billy.git'
   merchant: 'git+https://github.com/agiliq/merchant.git'
-~/study/freebsd:
-  freebsd-ports: 
-    repo: 'git+https://github.com/freebsd/freebsd-ports.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/freebsd-ports.git'
-  freebsd-ci: 
-    repo: 'git+https://github.com/freebsd/freebsd-ci.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/freebsd-ci.git'
 
-  freebsd: 'git+https://github.com/freebsd/freebsd.git'
 ~/study/lua:
   lua: 'git+https://github.com/LuaDist/lua.git'
   luajit: 'git+https://github.com/LuaDist/luajit.git'

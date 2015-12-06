@@ -9,3 +9,17 @@
   sdl2-playproject: "git+ssh://git@github.com/tony/sdl2-playproject.git"
   ncurses-example: "git+ssh://git@github.com/tony/ncurses-example.git"
   reST-lex-byacc: "git+ssh://git@github.com/tony/reST-lex-byacc.git"
+
+~/work/freebsd:
+  freebsd-ports:
+    repo: 'git+https://github.com/freebsd/freebsd-ports.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/freebsd-ports.git'
+  freebsd-ci:
+    repo: 'git+https://github.com/freebsd/freebsd-ci.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/freebsd-ci.git'
+  freebsd:
+    repo: 'git+https://github.com/freebsd/freebsd.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/freebsd.git'
