@@ -52,3 +52,8 @@
     repo: 'git+https://github.com/guibog/stud.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/sphinxcontrib-stud.git'
+
+  kaptan:
+    repo: 'git+https://github.com/emre/kaptan.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/kaptan.git'
