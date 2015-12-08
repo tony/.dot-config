@@ -358,10 +358,6 @@
 
   calibre: 'git+git://github.com/kovidgoyal/calibre.git'
 
-  kaptan: 
-    repo: 'git+https://github.com/emre/kaptan.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/kaptan.git'
   aws-cli: 'git+https://github.com/aws/aws-cli.git'
 
   youcompleteme: 'git+https://github.com/Valloric/YouCompleteMe.git'
