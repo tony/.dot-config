@@ -686,3 +686,37 @@
   #   remotes:
   #     tony: 'git+ssh://git@github.com/tony/python-for-android.git'
 
+~/study/jupyter:
+  notebook: 'git+https://github.com/jupyter/notebook.git'
+  nbconvert: 'git+https://github.com/jupyter/nbconvert.git'
+  jupyter: 'git+https://github.com/jupyter/jupyter.git'
+  jupyter_client: 'git+https://github.com/jupyter/jupyter_client.git'
+  jupyterhub: 'git+https://github.com/jupyter/jupyterhub.git'
+  tmpnb: 'git+https://github.com/jupyter/tmpnb.git'
+  docker-stacks: 'git+https://github.com/jupyter/docker-stacks.git'
+
+  nbviewer: 'git+https://github.com/jupyter/nbviewer.git'
+  jupyter_console: 'git+https://github.com/jupyter/jupyter_console.git'
+
+  dockerspawner: 'git+https://github.com/jupyter/dockerspawner.git'
+  nbformat: 'git+https://github.com/jupyter/nbformat.git'
+
+  configuratable-http-proxy: 'git+https://github.com/jupyter/configurable-http-proxy.git'
+  jupyter-js-servicse: 'git+https://github.com/jupyter/jupyter-js-services.git'
+  jupyter-js-filebrowser: 'git+https://github.com/jupyter/jupyter-js-filebrowser.git'
+
+  jupyter-js-output-area: 'git+https://github.com/jupyter/jupyter-js-output-area.git'
+
+  jupyter-js-input-area: 'git+https://github.com/jupyter/jupyter-js-input-area.git'
+
+  jupyter-js-cells: 'git+https://github.com/jupyter/jupyter-js-cells.git'
+  jupyter-js-notebook: 'git+https://github.com/jupyter/jupyter-js-notebook.git'
+  jupyter-js-filebrowser: 'git+https://github.com/jupyter/jupyter-js-filebrowser-plugin.git'
+  jupyter-js-editor: 'git+https://github.com/jupyter/jupyter-js-editor.git'
+  jupyter-js-terminal: 'git+https://github.com/jupyter/jupyter-js-terminal.git'
+  jupyter-js-utils: 'git+https://github.com/jupyter/jupyter-js-utils.git'
+  oauthenticator: 'git+https://github.com/jupyter/oauthenticator.git'
+  jupyter-js-terminal-plugin: 'git+https://github.com/jupyter/jupyter-js-terminal-plugin.git'
+  jupyter-js-editor-plugin: 'git+https://github.com/jupyter/jupyter-js-editor-plugin.git'
+  jupyter_core: 'git+https://github.com/jupyter/jupyter_core.git'
+  nbgrader: 'git+https://github.com/jupyter/nbgrader.git'
