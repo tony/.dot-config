@@ -156,10 +156,6 @@
   nginx: 'hg+http://hg.nginx.org/nginx'
   tre: 'git+https://github.com/laurikari/tre'
 ~/study/c++:
-  aseprite:
-    repo: 'git+https://github.com/aseprite/aseprite.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/aseprite.git'
   ninja: 
     repo: 'git+https://github.com/ninja-build/ninja.git'
     remotes:
@@ -592,6 +588,10 @@
     repo: 'git+https://github.com/vim/vim.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/vim.git'
+  vim-virtualenv:
+    repo: 'git+https://github.com/jmcantrell/vim-virtualenv.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/vim-virtualenv.git'
   neovim:
     repo: 'git+https://github.com/neovim/neovim.git'
     remotes:

@@ -57,3 +57,10 @@
     repo: 'git+https://github.com/emre/kaptan.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/kaptan.git'
+
+~/work/c++:
+  aseprite:
+    repo: 'git+https://github.com/aseprite/aseprite.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/aseprite.git'
+
