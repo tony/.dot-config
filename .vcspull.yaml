@@ -592,6 +592,11 @@
     repo: 'git+https://github.com/jmcantrell/vim-virtualenv.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/vim-virtualenv.git'
+  python-mode:
+    repo: 'git+https://github.com/klen/python-mode.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/python-mode.git'
+
   neovim:
     repo: 'git+https://github.com/neovim/neovim.git'
     remotes:
