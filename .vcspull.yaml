@@ -251,10 +251,6 @@
   celery: 'git+https://github.com/celery/celery.git'
   python-social-auth: 'git+https://github.com/omab/python-social-auth.git'
   Flexget: 'git+https://github.com/Flexget/Flexget.git'
-  cookiecutter-pypackage:
-    repo: 'git+https://github.com/tony/cookiecutter-pypackage.git'
-    remotes:
-      upstream: 'git+https://github.com/audreyr/cookiecutter-pypackage.git'
   cookiecutter:
     repo: 'git+https://github.com/audreyr/cookiecutter.git'
     remotes:

@@ -35,7 +35,13 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/tmuxp.git'
 
-  cookiecutter-pypackage-tony: 'git+ssh://git@github.com/tony/cookiecutter-pypackage.git'
+  cookiecutter-flask-pythonic:
+    repo: 'git+https://github.com/tony/cookiecutter-flask-pythonic.git'
+
+  cookiecutter-pypackage:
+    repo: 'git+https://github.com/tony/cookiecutter-pypackage.git'
+    remotes:
+      upstream: 'git+https://github.com/audreyr/cookiecutter-pypackage.git'
 
 ~/work/reStructuredText:
   docutils: 'svn+ssh://gitpull@svn.code.sf.net/p/docutils/code'
