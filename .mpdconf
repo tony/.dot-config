@@ -20,7 +20,7 @@ state_file            "~/.mpd/mpdstate"
 # started by.  If left unspecified, MPD will not drop root
 # privileges at all (not recommended).
 #
-user                            "tony"
+# user                            "mpd"
 #
 # The address and port to listen on.
 #
