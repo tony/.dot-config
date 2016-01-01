@@ -1,3 +1,5 @@
-!config
-!\.gitignore
 *
+!config
+!conf
+!conf/*
+!\.gitignore
