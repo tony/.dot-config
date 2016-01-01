@@ -502,6 +502,11 @@
   scrapy-examples: 'git+https://github.com/geekan/scrapy-examples'
   django-dynamic-scraper: 'git+https://github.com/holgerd77/django-dynamic-scraper'
 ~/study/go/:
+  docker:
+    repo: 'git+https://github.com/docker/docker.git'
+    remotes:
+      kvasdopil: 'https://github.com/kvasdopil/docker.git'
+      tony: 'https://github.com/tony/docker.git'
   go: 'git+https://github.com/golang/go.git'
   gitea:
     repo: 'git+https://github.com/go-gitea/gitea.git'
