@@ -38,8 +38,8 @@
   cookiecutter-flask-pythonic:
     repo: 'git+https://github.com/tony/cookiecutter-flask-pythonic.git'
 
-  cookiecutter-pypackage:
-    repo: 'git+https://github.com/tony/cookiecutter-pypackage.git'
+  cookiecutter-pypackage-pythonic:
+    repo: 'git+https://github.com/tony/cookiecutter-pypackage-pythonic.git'
     remotes:
       upstream: 'git+https://github.com/audreyr/cookiecutter-pypackage.git'
 
