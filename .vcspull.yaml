@@ -436,7 +436,10 @@
   pyenv-virtualenvwrapper: 'git+https://github.com/yyuu/pyenv-virtualenvwrapper.git'
   pyenv-installer: 'git+https://github.com/yyuu/pyenv-installer.git'
 ~/study/django:
-  django-cms: 'git+https://github.com/divio/django-cms.git'
+  django-cms:
+    repo: 'git+https://github.com/divio/django-cms.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/django-cms.git'
   wagtail: 'git+https://github.com/torchbox/wagtail.git'
   aldjemy: 'git+https://github.com/Deepwalker/aldjemy.git'
   django-celery: 'git+https://github.com/celery/django-celery.git'
