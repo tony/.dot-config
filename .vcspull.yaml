@@ -172,7 +172,10 @@
   #vimpc: 'git+https://github.com/boysetsfrog/vimpc'
   #mpd: 'git+git://git.musicpd.org/master/mpd.git'
   #libmpd: 'git+git://git.musicpd.org/master/libmpd.git'
-  ncmpcpp: 'git+git://git.musicpd.org/mirror/ncmpcpp.git'
+  ncmpcpp: 
+    repo: 'git+https://github.com/arybczak/ncmpcpp.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/ncmpcpp.git'
   #libmpdclient: 'git+git://git.musicpd.org/master/libmpdclient.git'
   #node: 'git+https://github.com/joyent/node.git'
   #libzmp: 'git+https://github.com/zeromq/libzmq.git'
