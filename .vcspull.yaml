@@ -505,6 +505,7 @@
   scrapy-examples: 'git+https://github.com/geekan/scrapy-examples'
   django-dynamic-scraper: 'git+https://github.com/holgerd77/django-dynamic-scraper'
 ~/study/go/:
+  jetpack: 'git+https://github.com/3ofcoins/jetpack.git'
   docker:
     repo: 'git+https://github.com/docker/docker.git'
     remotes:
