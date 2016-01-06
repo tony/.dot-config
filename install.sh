@@ -30,3 +30,4 @@ ln -sf ~/.dot-config/.dotfilesrc ~/.dotfilesrc
 ~/.local/bin/dotfiles --sync
 
 ln -sf ~/.vim/.vimrc ~/.vimrc
+ln -sf ~/.tmux/.tmux.conf ~/.tmux.conf
