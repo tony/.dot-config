@@ -11,6 +11,10 @@
   reST-lex-byacc: "git+ssh://git@github.com/tony/reST-lex-byacc.git"
 
 ~/work/freebsd:
+  freebsd-doc:
+    repo: 'git+https://github.com/freebsd/freebsd-doc'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/freebsd-doc.git'
   freebsd-ports:
     repo: 'git+https://github.com/freebsd/freebsd-ports.git'
     remotes:
