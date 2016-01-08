@@ -446,7 +446,7 @@
   wagtail:
     repo: 'git+https://github.com/torchbox/wagtail.git'
     remotes:
-      tony: 'git+https://github.com/tony/wagtail.git'
+      tony: 'git+ssh://git@github.com/tony/wagtail.git'
   aldjemy: 'git+https://github.com/Deepwalker/aldjemy.git'
   django-celery: 'git+https://github.com/celery/django-celery.git'
   coffin: 'git+https://github.com/coffin/coffin.git'
