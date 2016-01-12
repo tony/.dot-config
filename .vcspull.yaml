@@ -173,7 +173,10 @@
   #tudu: 'git+https://gitorious.org/tudu/tudu.git'
   #wxPython: 'git+https://github.com/wxWidgets/wxPython.git'
   #wxWidgets: 'git+https://github.com/wxWidgets/wxWidgets.git'
-  openttd: 'git+git://git.openttd.org/openttd/trunk.git'
+  openttd:
+    repo: 'git+git://git.openttd.org/openttd/trunk.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/openttd.git'
   #vimpc: 'git+https://github.com/boysetsfrog/vimpc'
   #mpd: 'git+git://git.musicpd.org/master/mpd.git'
   #libmpd: 'git+git://git.musicpd.org/master/libmpd.git'
@@ -203,6 +206,12 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+
+  pymux:
+    repo: 'git+https://github.com/jonathanslenders/pymux.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/pymux.git'
+
   pillow:
     repo: 'git+https://github.com/python-pillow/Pillow.git'
     remotes:
