@@ -156,6 +156,7 @@
   nginx: 'hg+http://hg.nginx.org/nginx'
   tre: 'git+https://github.com/laurikari/tre'
 ~/study/c++:
+  solarus: 'git+https://github.com/christopho/solarus.git'
   tmux-mem-cpu-load: 
     repo: 'git+https://github.com/thewtex/tmux-mem-cpu-load.git'
     remotes:
@@ -631,6 +632,11 @@
     repo: 'git+https://github.com/neovim/neovim.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/neovim.git'
+
+  python-client:
+    repo: 'git+https://github.com/neovim/python-client.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/python-client.git'
   vim-multiple-cursors:
     repo: 'git+https://github.com/terryma/vim-multiple-cursors.git'
     remotes:
