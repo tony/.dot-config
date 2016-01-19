@@ -156,8 +156,12 @@
   nginx: 'hg+http://hg.nginx.org/nginx'
   tre: 'git+https://github.com/laurikari/tre'
 ~/study/c++:
-  solarus: 'git+https://github.com/christopho/solarus.git'
-  tmux-mem-cpu-load: 
+  solarus:
+    repo: 'git+https://github.com/christopho/solarus.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/solarus.git'
+
+  tmux-mem-cpu-load:
     repo: 'git+https://github.com/thewtex/tmux-mem-cpu-load.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/tmux-mem-cpu-load.git'
