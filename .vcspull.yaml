@@ -165,6 +165,7 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/libunwind.git'
       dropbox: 'https://github.com/dropbox/libunwind.git'
+      llvm: 'http://llvm.org/git/libunwind'
 
   solarus:
     repo: 'git+https://github.com/christopho/solarus.git'
