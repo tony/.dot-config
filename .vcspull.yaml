@@ -156,6 +156,15 @@
   nginx: 'hg+http://hg.nginx.org/nginx'
   tre: 'git+https://github.com/laurikari/tre'
 ~/study/c++:
+  libpypa:
+    repo: 'git+https://github.com/vinzenz/libpypa.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/libpypa.git'
+  libunwind:
+    repo: 'git+git://git.sv.gnu.org/libunwind.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/libunwind.git'
+
   solarus:
     repo: 'git+https://github.com/christopho/solarus.git'
     remotes:
@@ -251,10 +260,6 @@
     repo: 'git+https://github.com/dropbox/pyston.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/pyston.git'
-  libpypa:
-    repo: 'git+https://github.com/vinzenz/libpypa.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/libpypa.git'
 
   blaze: 'git+https://github.com/ContinuumIO/blaze.git'
   factory_boy: 'git+https://github.com/rbarrois/factory_boy.git'
