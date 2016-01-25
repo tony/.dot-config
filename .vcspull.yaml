@@ -176,6 +176,10 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/tmux-mem-cpu-load.git'
 
+  oxygine:
+    repo: 'git+https://github.com/oxygine/oxygine-framework.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/oxygine-framework.git'
   ninja: 
     repo: 'git+https://github.com/ninja-build/ninja.git'
     remotes:
