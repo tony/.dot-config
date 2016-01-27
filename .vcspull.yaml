@@ -226,6 +226,11 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  plop: 'git+https://github.com/bdarnell/plop.git'
+  cldoc:
+    repo: 'git+https://github.com/jessevdk/cldoc.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/cldoc.git'
 
   pymux:
     repo: 'git+https://github.com/jonathanslenders/pymux.git'
