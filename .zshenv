@@ -45,4 +45,8 @@ if echo "$-" | grep i > /dev/null; then
 
     # Customize to your needs...
     pathprepend $HOME/.local/bin $HOME/bin
+
+    # Add completions to path
+    fpath+="$HOME/.dot-config/.shell/completions.d"
+    autoload -U compinit && compinit
 fi
