@@ -232,6 +232,11 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  mypy:
+    repo: 'git+https://github.com/python/mypy.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/mypy.git'
+
   typeshed:
     repo: 'git+https://github.com/python/typeshed.git'
     remotes:
