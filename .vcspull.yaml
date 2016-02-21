@@ -30,6 +30,10 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/coreclr.git'
 ~/study/sh:
+  misspell_fixer:
+    repo: 'git+https://github.com/vlajos/misspell_fixer.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/misspell_fixer.git'
   roundup: 
     repo: 'git+https://github.com/bmizerany/roundup.git'
     remotes:
@@ -228,6 +232,10 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  typeshed:
+    repo: 'git+https://github.com/python/typeshed.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/typeshed.git'
   plop: 'git+https://github.com/bdarnell/plop.git'
   cldoc:
     repo: 'git+https://github.com/jessevdk/cldoc.git'
