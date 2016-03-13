@@ -4,7 +4,7 @@
   isobar-frontend: 'git+https://github.com/isobar-idev/code-standards.git'
 ~/study/data-structures-algorithms/c:
   libds: 'git+https://github.com/zhemao/libds.git'
-  AlgoXY: 
+  algoxy: 
     repo: 'git+https://github.com/liuxinyu95/AlgoXY.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/AlgoXY.git'
@@ -161,6 +161,7 @@
   nginx: 'hg+http://hg.nginx.org/nginx'
   tre: 'git+https://github.com/laurikari/tre'
 ~/study/c++:
+  libsdl2pp: 'git+https://github.com/libSDL2pp/libSDL2pp'
   boost: 'git+https://github.com/boostorg/boost'
   libpypa:
     repo: 'git+https://github.com/vinzenz/libpypa.git'
@@ -526,7 +527,11 @@
       tony: 'git+https://github.com/tony/django-treebeard'
 
   django-filter: 'git+https://github.com/alex/django-filter.git'
-  django-extensions: 'git+https://github.com/django-extensions/django-extensions.git'
+  django-extensions:
+    repo: 'git+https://github.com/django-extensions/django-extensions.git'
+    remotes:
+      tony: 'git+https://github.com/tony/django-extensions'
+
   dj-stripe:
     repo: 'git+https://github.com/pydanny/dj-stripe'
     remotes:
@@ -733,14 +738,13 @@
   react-tutorial: 'git+https://github.com/reactjs/react-tutorial.git'
   react-python: 'git+https://github.com/reactjs/react-python.git'
 ~/study/kivy:
-
   kivy: 
     repo: 'git+https://github.com/kivy/kivy.git'
-    kivy:
+    remotes:
       tony: 'git+ssh://git@github.com/tony/kivy.git'
   kivy-ios: 
     repo: 'git+https://github.com/kivy/kivy-ios.git'
-    kivy:
+    remotes:
       tony: 'git+ssh://git@github.com/tony/kivy-ios.git'
   garden: 
     repo: 'git+https://github.com/kivy-garden/garden.git'
