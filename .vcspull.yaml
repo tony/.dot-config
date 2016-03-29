@@ -527,10 +527,10 @@
       tony: 'git+https://github.com/tony/django-treebeard'
 
   django-filter: 'git+https://github.com/alex/django-filter.git'
-  django-extensions:
+  django-extensions: 
     repo: 'git+https://github.com/django-extensions/django-extensions.git'
     remotes:
-      tony: 'git+https://github.com/tony/django-extensions'
+      tony: 'git+https://github.com/tony/django-extensions.git'
 
   dj-stripe:
     repo: 'git+https://github.com/pydanny/dj-stripe'
