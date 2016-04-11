@@ -99,6 +99,7 @@
 ~/study/ruby:
   rails: 'git+https://github.com/rails/rails.git'
 ~/study/c: 
+  SDL2: 'hg+https://hg.libsdl.org/SDL'
   htop: 'git+https://github.com/hishamhm/htop.git'
   jemalloc: 'git+https://github.com/jemalloc/jemalloc'
   craft: 'git+https://github.com/fogleman/Craft.git'
