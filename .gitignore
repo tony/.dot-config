@@ -57,3 +57,6 @@ config/gtk-3.0/bookmarks
 # neovim can leave these config/nvim/.init.vim-rplugin~
 *~
 *.netrwhist
+
+# neovim config
+config/nvim
