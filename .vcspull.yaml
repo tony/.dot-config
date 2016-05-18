@@ -235,6 +235,11 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+
+  case:
+    repo: 'git+https://github.com/celery/case.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/case.git'
   mypy:
     repo: 'git+https://github.com/python/mypy.git'
     remotes:
