@@ -255,11 +255,6 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/cldoc.git'
 
-  pymux:
-    repo: 'git+https://github.com/jonathanslenders/pymux.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/pymux.git'
-
   pillow:
     repo: 'git+https://github.com/python-pillow/Pillow.git'
     remotes:
@@ -493,9 +488,30 @@
 
   weasyprint: 'git+https://github.com/Kozea/WeasyPrint.git'
 
-  python-prompt-toolkit: 'git+https://github.com/jonathanslenders/python-prompt-toolkit.git'
-  ptpython: 'git+https://github.com/jonathanslenders/ptpython.git'
-  pyvim: 'git+https://github.com/jonathanslenders/pyvim.git'
+  pypdb: 
+    repo: 'git+https://github.com/jonathanslenders/pypdb.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/pypdb.git'
+
+  python-prompt-toolkit: 
+    repo: 'git+https://github.com/jonathanslenders/python-prompt-toolkit.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/python-prompt-toolkit.git'
+
+  ptpython: 
+    repo: 'git+https://github.com/jonathanslenders/ptpython.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/ptpython.git'
+
+  pymux:
+    repo: 'git+https://github.com/jonathanslenders/pymux.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/pymux.git'
+
+  pyvim: 
+    repo: 'git+https://github.com/jonathanslenders/pyvim.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/pyvim.git'
 ~/study/pyenv:
   pyenv: 'git+https://github.com/yyuu/pyenv'
   pyenv-virtualenv: 'git+https://github.com/yyuu/pyenv-virtualenv.git'
