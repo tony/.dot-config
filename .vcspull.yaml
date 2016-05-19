@@ -488,10 +488,10 @@
 
   weasyprint: 'git+https://github.com/Kozea/WeasyPrint.git'
 
-  pypdb: 
-    repo: 'git+https://github.com/jonathanslenders/pypdb.git'
+  ptpdb: 
+    repo: 'git+https://github.com/jonathanslenders/ptpdb.git'
     remotes:
-      tony: 'git+ssh://git@github.com/tony/pypdb.git'
+      tony: 'git+ssh://git@github.com/tony/ptpdb.git'
 
   python-prompt-toolkit: 
     repo: 'git+https://github.com/jonathanslenders/python-prompt-toolkit.git'
