@@ -2,7 +2,10 @@
 """
 Pyvim configuration. Save to file to: ~/.pyvimrc
 """
+from pyvim.enums import COMMAND_BUFFER
 from prompt_toolkit.keys import Keys
+from prompt_toolkit.filters import ViInsertMode, Condition
+from prompt_toolkit.key_binding.vi_state import InputMode
 from subprocess import call
 import six
 
@@ -39,10 +42,16 @@ def configure(editor):
     editor.enable_jedi = True
 
     # Apply colorscheme. (:colorscheme emacs)
-    editor.use_colorscheme('emacs')
+    editor.use_colorscheme('monokai')
 
+    # Filters for detecting insert mode (for exit_insert_mode)
+    vi_buffer_focussed = Condition(lambda cli: cli.current_buffer_name.startswith('buffer-'))
+    in_insert_mode = ViInsertMode() & vi_buffer_focussed
 
     # Add custom key bindings:
+    @editor.add_key_binding(Keys.ControlC, filter=in_insert_mode)
+    def exit_insert_mode(event):
+        editor.cli.vi_state.input_mode = InputMode.NAVIGATION
 
     @editor.add_key_binding(Keys.F9)
     def save_and_execute_python_file(event):
@@ -58,7 +67,7 @@ def configure(editor):
                 return
             else:
                 editor_buffer.write()
-        
+
         # Now run the Python interpreter. But use
         # `CommandLineInterface.run_in_terminal` to go to the background and
         # not destroy the window layout.
