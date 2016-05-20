@@ -46,7 +46,8 @@ def configure(editor):
     editor.use_colorscheme('monokai')
 
     # Filters for detecting insert mode (for exit_insert_mode)
-    vi_buffer_focussed = Condition(lambda cli: cli.current_buffer_name.startswith('buffer-'))
+    vi_buffer_focussed = Condition(
+        lambda cli: cli.current_buffer_name.startswith('buffer-'))
     in_insert_mode = ViInsertMode() & vi_buffer_focussed
     in_select_mode = ViSelectionMode() & vi_buffer_focussed
 
@@ -64,14 +65,13 @@ def configure(editor):
         if vi_state.input_mode in (InputMode.INSERT, InputMode.REPLACE):
             buffer.cursor_position += buffer.document.get_cursor_left_position()
 
-	if editor.cli.current_buffer_name == COMMAND_BUFFER:
+        if editor.cli.current_buffer_name == COMMAND_BUFFER:
             editor.leave_command_mode()
 
         vi_state.reset(InputMode.NAVIGATION)
 
         if bool(buffer.selection_state):
             buffer.exit_selection()
-
 
     @editor.add_key_binding(Keys.F9)
     def save_and_execute_python_file(event):
@@ -83,7 +83,8 @@ def configure(editor):
 
         if editor_buffer is not None:
             if editor_buffer.filename is None:
-                editor.show_message("File doesn't have a filename. Please save first.")
+                editor.show_message(
+                    "File doesn't have a filename. Please save first.")
                 return
             else:
                 editor_buffer.write()
