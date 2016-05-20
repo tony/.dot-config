@@ -6,6 +6,7 @@ from pyvim.enums import COMMAND_BUFFER
 from prompt_toolkit.keys import Keys
 from prompt_toolkit.filters import ViInsertMode, Condition
 from prompt_toolkit.key_binding.vi_state import InputMode
+from prompt_toolkit.filters.cli import ViSelectionMode
 from subprocess import call
 import six
 
@@ -47,11 +48,27 @@ def configure(editor):
     # Filters for detecting insert mode (for exit_insert_mode)
     vi_buffer_focussed = Condition(lambda cli: cli.current_buffer_name.startswith('buffer-'))
     in_insert_mode = ViInsertMode() & vi_buffer_focussed
+    in_select_mode = ViSelectionMode() & vi_buffer_focussed
 
     # Add custom key bindings:
-    @editor.add_key_binding(Keys.ControlC, filter=in_insert_mode)
-    def exit_insert_mode(event):
+    @editor.add_key_binding(Keys.ControlC)
+    def exit_mode(event):
         editor.cli.vi_state.input_mode = InputMode.NAVIGATION
+
+        """
+        Escape goes to vi navigation mode.
+        """
+        buffer = event.current_buffer
+        vi_state = event.cli.vi_state
+
+        if vi_state.input_mode in (InputMode.INSERT, InputMode.REPLACE):
+            buffer.cursor_position += buffer.document.get_cursor_left_position()
+
+        vi_state.reset(InputMode.NAVIGATION)
+
+        if bool(buffer.selection_state):
+            buffer.exit_selection()
+
 
     @editor.add_key_binding(Keys.F9)
     def save_and_execute_python_file(event):
