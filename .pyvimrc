@@ -3,6 +3,7 @@
 Pyvim configuration. Save to file to: ~/.pyvimrc
 """
 from pyvim.enums import COMMAND_BUFFER
+from prompt_toolkit.enums import SEARCH_BUFFER
 from prompt_toolkit.keys import Keys
 from prompt_toolkit.filters import ViInsertMode, Condition, HasFocus
 from prompt_toolkit.key_binding.vi_state import InputMode
@@ -69,6 +70,10 @@ def configure(editor):
             editor.leave_command_mode()
 
         vi_state.reset(InputMode.NAVIGATION)
+
+        if editor.cli.current_buffer_name == SEARCH_BUFFER:
+            event.cli.pop_focus()
+            event.cli.buffers[SEARCH_BUFFER].reset()
 
         if bool(buffer.selection_state):
             buffer.exit_selection()
