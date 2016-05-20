@@ -4,7 +4,7 @@ Pyvim configuration. Save to file to: ~/.pyvimrc
 """
 from pyvim.enums import COMMAND_BUFFER
 from prompt_toolkit.keys import Keys
-from prompt_toolkit.filters import ViInsertMode, Condition
+from prompt_toolkit.filters import ViInsertMode, Condition, HasFocus
 from prompt_toolkit.key_binding.vi_state import InputMode
 from prompt_toolkit.filters.cli import ViSelectionMode
 from subprocess import call
@@ -63,6 +63,9 @@ def configure(editor):
 
         if vi_state.input_mode in (InputMode.INSERT, InputMode.REPLACE):
             buffer.cursor_position += buffer.document.get_cursor_left_position()
+
+	if editor.cli.current_buffer_name == COMMAND_BUFFER:
+            editor.leave_command_mode()
 
         vi_state.reset(InputMode.NAVIGATION)
 
