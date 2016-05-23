@@ -440,7 +440,7 @@
   norman: 'hg+https://bitbucket.org/aquavitae/norman'
   sphinx-contrib: 'hg+https://bitbucket.org/birkenfeld/sphinx-contrib'
   pexpect-u: 'hg+https://bitbucket.org/takluyver/pexpect'
-  pygments: 'hg+http://bitbucket.org/birkenfeld/pygments-main'
+  pygments: 'hg+https://bitbucket.org/birkenfeld/pygments-main'
   docutils: 'svn+http://svn.code.sf.net/p/docutils/code/trunk'
 
   python-unicodecsv: 'git+https://github.com/jdunck/python-unicodecsv.git'
