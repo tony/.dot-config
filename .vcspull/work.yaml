@@ -5,8 +5,13 @@
     repo: "git+https://github.com/jakowskidev/uMario_Jakowski"
     remotes:
       tony: "git@github.com:tony/uMario_Jakowski.git"
-~/work/c:
   sdl2-playproject: "git+ssh://git@github.com/tony/sdl2-playproject.git"
+  aseprite:
+    repo: 'git+https://github.com/aseprite/aseprite.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/aseprite.git'
+
+~/work/c:
   ncurses-example: "git+ssh://git@github.com/tony/ncurses-example.git"
   reST-lex-byacc: "git+ssh://git@github.com/tony/reST-lex-byacc.git"
 
@@ -47,6 +52,11 @@
     remotes:
       upstream: 'git+https://github.com/audreyr/cookiecutter-pypackage.git'
 
+  kaptan:
+    repo: 'git+https://github.com/emre/kaptan.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/kaptan.git'
+
 ~/work/reStructuredText:
   docutils: 'svn+ssh://gitpull@svn.code.sf.net/p/docutils/code'
   sphinx:
@@ -62,15 +72,3 @@
     repo: 'git+https://github.com/guibog/stud.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/sphinxcontrib-stud.git'
-
-  kaptan:
-    repo: 'git+https://github.com/emre/kaptan.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/kaptan.git'
-
-~/work/c++:
-  aseprite:
-    repo: 'git+https://github.com/aseprite/aseprite.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/aseprite.git'
-
