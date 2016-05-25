@@ -266,11 +266,6 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/Pillow.git'
 
-  profiling:
-    repo: 'git+https://github.com/what-studio/profiling.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/profiling.git'
-
   pyre2:
     repo: 'git+https://github.com/facebook/pyre2.git'
     remotes:

@@ -34,6 +34,12 @@
       tony: 'git+ssh://git@github.com/tony/freebsd.git'
 
 ~/work/python:
+
+  profiling:
+    repo: 'git+https://github.com/what-studio/profiling.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/profiling.git'
+
   vcspull:
     repo: 'git+https://github.com/tony/vcspull.git'
     remotes:
