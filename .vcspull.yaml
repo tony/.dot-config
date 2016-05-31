@@ -168,6 +168,11 @@
   nginx: 'hg+http://hg.nginx.org/nginx'
   tre: 'git+https://github.com/laurikari/tre'
 ~/study/c++:
+
+  kakoune:
+    repo: 'git+https://github.com/mawww/kakoune.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/kakoune.git'
   googletest: 'git+https://github.com/google/googletest'
   benchmark: 'git+https://github.com/google/benchmark'
   skia: 'git+https://github.com/google/skia.git'
