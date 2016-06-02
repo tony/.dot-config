@@ -150,7 +150,11 @@
   #linux: 'git+https://github.com/torvalds/linux.git'
   #minix: 'git+https://github.com/minix3/minix'
   ncmpc: 'git+git://git.musicpd.org/master/ncmpc.git'
-  tmux: 'git+https://github.com/tmux/tmux.git'
+  tmux:
+    repo: 'git+https://github.com/tmux/tmux.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/tmux.git'
+
   git: 'git+https://github.com/git/git.git'
   libgit2: 'git+https://github.com/libgit2/libgit2.git'
   postgres:
