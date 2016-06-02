@@ -173,6 +173,11 @@
   tre: 'git+https://github.com/laurikari/tre'
 ~/study/c++:
   boost-python-examples: 'git+https://github.com/TNG/boost-python-examples.git'
+  pybind11:
+    repo: 'git+https://github.com/pybind/pybind11.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/pybind11.git'
+
   kakoune:
     repo: 'git+https://github.com/mawww/kakoune.git'
     remotes:
