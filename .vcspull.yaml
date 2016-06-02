@@ -168,7 +168,7 @@
   nginx: 'hg+http://hg.nginx.org/nginx'
   tre: 'git+https://github.com/laurikari/tre'
 ~/study/c++:
-
+  boost-python-examples: 'git+https://github.com/TNG/boost-python-examples.git'
   kakoune:
     repo: 'git+https://github.com/mawww/kakoune.git'
     remotes:
