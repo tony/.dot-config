@@ -2,3 +2,4 @@
 /*env*/
 /.cache/
 /.eggs/
+/.clang_complete
