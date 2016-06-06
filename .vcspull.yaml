@@ -173,6 +173,8 @@
   nginx: 'hg+http://hg.nginx.org/nginx'
   tre: 'git+https://github.com/laurikari/tre'
 ~/study/c++:
+  caffe: 'git+https://github.com/BVLC/caffe.git'
+  tensorflow: 'git+https://github.com/tensorflow/tensorflow.git'
   boost-python-examples: 'git+https://github.com/TNG/boost-python-examples.git'
   pybind11:
     repo: 'git+https://github.com/pybind/pybind11.git'
