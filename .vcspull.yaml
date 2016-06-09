@@ -99,6 +99,7 @@
 ~/study/ruby:
   rails: 'git+https://github.com/rails/rails.git'
 ~/study/c: 
+  git: 'git+https://github.com/git/git.git'
   libevent: 'git+https://github.com/libevent/libevent'
   SDL2: 'hg+https://hg.libsdl.org/SDL'
   htop: 'git+https://github.com/hishamhm/htop.git'
