@@ -105,6 +105,12 @@
       tony: 'git+ssh://git@github.com/tony/python-cmake-buildsystem.git'
 
 ~/study/c: 
+  zlib: 
+    repo: 'git+https://github.com/madler/zlib.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/zlib.git'
+      commontk: 'git+https://github.com/commontk/zlib.git'
+
   git: 'git+https://github.com/git/git.git'
   libevent: 'git+https://github.com/libevent/libevent'
   SDL2: 'hg+https://hg.libsdl.org/SDL'
