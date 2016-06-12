@@ -98,6 +98,12 @@
   lua-re2: 'git+https://github.com/cloudflare/lua-re2.git'
 ~/study/ruby:
   rails: 'git+https://github.com/rails/rails.git'
+~/study/cmake:
+  python-cmake-buildsystem: 
+    repo: 'git+https://github.com/python-cmake-buildsystem/python-cmake-buildsystem.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/python-cmake-buildsystem.git'
+
 ~/study/c: 
   git: 'git+https://github.com/git/git.git'
   libevent: 'git+https://github.com/libevent/libevent'
