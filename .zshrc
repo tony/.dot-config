@@ -8,6 +8,9 @@ fi
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
+# ignore hosts completion
+zstyle ':completion:*' hosts off
+
 source $HOME/.dot-config/.shell/functions.sh
 
 export EDITOR=vim
