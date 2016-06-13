@@ -121,8 +121,11 @@
   libressl: 'git+https://github.com/libressl-portable/openbsd.git'
   libressl-portable: 'git+https://github.com/libressl-portable/portable.git'
   ck: 'git+https://github.com/concurrencykit/ck.git'
-  vis: 'git+git://repo.or.cz/vis.git'
-  
+  vis:
+    repo: 'git+https://github.com/martanne/vis.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/vis.git'
+
   libui:
     repo: 'git+https://github.com/andlabs/libui.git'
     remotes:
