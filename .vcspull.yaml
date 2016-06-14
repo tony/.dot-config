@@ -276,6 +276,7 @@
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
+  cffi: 'hg+https://bitbucket.org/cffi/cffi'
   pygit2:
     repo: 'git+https://github.com/libgit2/pygit2.git'
     remotes:
