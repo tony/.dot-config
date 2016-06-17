@@ -196,6 +196,10 @@
     repo: 'git+https://github.com/pybind/pybind11.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/pybind11.git'
+  jucipp:
+    repo: 'git+https://github.com/cppit/jucipp.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/jucipp.git'
 
   kakoune:
     repo: 'git+https://github.com/mawww/kakoune.git'
