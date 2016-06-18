@@ -196,6 +196,11 @@
     repo: 'git+https://github.com/pybind/pybind11.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/pybind11.git'
+  cmake:
+    repo: 'git+https://github.com/Kitware/cmake.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/cmake.git'
+
   jucipp:
     repo: 'git+https://github.com/cppit/jucipp.git'
     remotes:
