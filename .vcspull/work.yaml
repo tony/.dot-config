@@ -45,6 +45,11 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/vcspull.git'
 
+  libvcs:
+    repo: 'git+https://github.com/tony/libvcs.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/libvcs.git'
+
   tmuxp:
     repo: 'git+https://github.com/tony/tmuxp.git'
     remotes:
