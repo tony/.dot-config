@@ -55,6 +55,12 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/tmuxp.git'
 
+
+  libtmux:
+    repo: 'git+https://github.com/tony/libtmux.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/libtmux.git'
+
   cookiecutter-flask-pythonic:
     repo: 'git+https://github.com/tony/cookiecutter-flask-pythonic.git'
 
