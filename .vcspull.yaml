@@ -23,6 +23,7 @@
 ~/study/llvm:
   llvm: 'git+http://llvm.org/git/llvm.git'
   clang: 'git+http://llvm.org/git/clang.git'
+  clang-tools-extra: 'git+https://github.com/llvm-mirror/clang-tools-extra.git'
   lldb: 'git+http://llvm.org/git/lldb.git'
 ~/study/dotnet:
   coreclr:
