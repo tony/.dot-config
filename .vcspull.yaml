@@ -173,7 +173,11 @@
       tony: 'git+ssh://git@github.com/tony/tmux.git'
 
   git: 'git+https://github.com/git/git.git'
-  libgit2: 'git+https://github.com/libgit2/libgit2.git'
+  libgit2:
+    repo: 'git+https://github.com/libgit2/libgit2.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/libgit2.git'
+
   postgres:
     repo: 'git+https://github.com/postgres/postgres.git'
     remotes:
