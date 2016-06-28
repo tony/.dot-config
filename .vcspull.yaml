@@ -291,6 +291,14 @@
 ~/study/python:
   grako: 'hg+https://bitbucket.org/apalala/grako'
   cffi: 'hg+https://bitbucket.org/cffi/cffi'
+  kaa:
+    repo: 'git+https://github.com/kaaedit/kaa.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/kaa.git'
+  kaadbg:
+    repo: 'git+https://github.com/kaaedit/kaadbg.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/kaadbg.git'
   pygit2:
     repo: 'git+https://github.com/libgit2/pygit2.git'
     remotes:
@@ -527,8 +535,6 @@
   profilehooks: 'git+https://github.com/mgedmin/profilehooks'
   line_profile: 'hg+https://bitbucket.org/robertkern/line_profiler'
 
-  kaa: 'git+https://github.com/kaaedit/kaa.git'
-  kdb: 'git+https://github.com/kaaedit/kaadbg.git'
   curses_ex: 'git+https://github.com/atsuoishimoto/python.curses_ex.git'
   pyjf3: 'git+https://github.com/atsuoishimoto/pyjf3.git'
 
