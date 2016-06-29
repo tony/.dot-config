@@ -215,6 +215,7 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/kakoune.git'
   googletest: 'git+https://github.com/google/googletest'
+  gmock: 'git+https://github.com/google/googlemock'
   benchmark: 'git+https://github.com/google/benchmark'
   skia: 'git+https://github.com/google/skia.git'
   libsdl2pp: 'git+https://github.com/libSDL2pp/libSDL2pp'
