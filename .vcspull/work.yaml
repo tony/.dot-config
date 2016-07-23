@@ -13,7 +13,7 @@
 
 ~/work/c:
   ncurses-example: "git+ssh://git@github.com/tony/ncurses-example.git"
-  ncurses-example: "git+ssh://git@github.com/tony/NCURSES-Programming-HOWTO-examples.git"
+  NCURSES-Programming-HOWTO-examples: "git+ssh://git@github.com/tony/NCURSES-Programming-HOWTO-examples.git"
   reST-lex-byacc: "git+ssh://git@github.com/tony/reST-lex-byacc.git"
 
 ~/work/freebsd:
