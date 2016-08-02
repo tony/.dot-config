@@ -19,7 +19,6 @@ if echo "$-" | grep i > /dev/null; then
     source $HOME/.dot-config/.shell/env.d/rbenv.sh
     source $HOME/.dot-config/.shell/env.d/pyenv.sh
     source $HOME/.dot-config/.shell/env.d/virtualenvwrapper.sh
-    source $HOME/.dot-config/.shell/env.d/docker-machine.sh
     source $HOME/.dot-config/.shell/env.d/perlbrew.sh
     source $HOME/.dot-config/.shell/env.d/dircolors.sh
     source $HOME/.dot-config/.shell/env.d/base16-shell.sh
