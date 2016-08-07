@@ -256,8 +256,8 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/ninja.git'
   re2: 'git+https://github.com/google/re2.git'
-  blink:
-    repo: 'git+https://chromium.googlesource.com/chromium/blink'
+  # blink:
+  #   repo: 'git+https://chromium.googlesource.com/chromium/blink'
   v8:
     repo: 'git+git://github.com/v8/v8.git'
     remotes:
