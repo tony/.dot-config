@@ -256,8 +256,16 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/ninja.git'
   re2: 'git+https://github.com/google/re2.git'
-  #blink: 'git+https://chromium.googlesource.com/chromium/blink'
-  #v8: 'git+git://github.com/v8/v8.git'
+  blink:
+    repo: 'git+https://chromium.googlesource.com/chromium/blink'
+  v8:
+    repo: 'git+git://github.com/v8/v8.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/v8.git'
+  node:
+    repo: 'git+https://github.com/nodejs/node.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/node.git'
   #zeal: 'git+https://github.com/jkozera/zeal.git'
   #phantomjs: 'git+https://github.com/ariya/phantomjs.git'
   #tudu: 'git+https://gitorious.org/tudu/tudu.git'
