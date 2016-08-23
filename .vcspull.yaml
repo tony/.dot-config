@@ -226,7 +226,11 @@
   gmock: 'git+https://github.com/google/googlemock'
   benchmark: 'git+https://github.com/google/benchmark'
   skia: 'git+https://github.com/google/skia.git'
-  libsdl2pp: 'git+https://github.com/libSDL2pp/libSDL2pp'
+  libsdl2pp:
+    repo: 'git+https://github.com/libSDL2pp/libSDL2pp'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/libSDL2pp.git'
+
   boost: 'git+https://github.com/boostorg/boost'
   libpypa:
     repo: 'git+https://github.com/vinzenz/libpypa.git'
