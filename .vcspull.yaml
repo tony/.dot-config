@@ -203,6 +203,10 @@
     repo: 'git+https://github.com/google/protobuf.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/protobuf.git'
+  box2d:
+    repo: 'git+https://github.com/erincatto/Box2D.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/Box2D.git'
 
   pybind11:
     repo: 'git+https://github.com/pybind/pybind11.git'
