@@ -199,6 +199,10 @@
   caffe: 'git+https://github.com/BVLC/caffe.git'
   tensorflow: 'git+https://github.com/tensorflow/tensorflow.git'
   boost-python-examples: 'git+https://github.com/TNG/boost-python-examples.git'
+  magnum:
+    repo: 'git+https://github.com/mosra/magnum.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/magnum.git'
   protobuf:
     repo: 'git+https://github.com/google/protobuf.git'
     remotes:
