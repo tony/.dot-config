@@ -203,6 +203,11 @@
     repo: 'git+https://github.com/mosra/magnum.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/magnum.git'
+  nanogui:
+    repo: 'git+https://github.com/wjakob/nanogui.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/nanogui.git'
+
   protobuf:
     repo: 'git+https://github.com/google/protobuf.git'
     remotes:
