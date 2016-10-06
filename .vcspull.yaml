@@ -10,7 +10,9 @@
       tony: 'git+ssh://git@github.com/tony/AlgoXY.git'
 ~/study/data-structures-algorithms/c++:
   algorithms: 'git+https://github.com/xtaci/algorithms.git'
+  cracking-the-code-interview: 'git+https://github.com/Hawstein/cracking-the-coding-interview.git'
 ~/study/data-structures-algorithms/python:
+  cracking-the-code-interview: 'git+https://github.com/careercup/CtCI-6th-Edition-Python'
   Algorithms: 'git+https://github.com/prakhar1989/Algorithms.git'
 ~/study/data-structures-algorithms/java: 
   java-algorithms-implementations: 'git+https://github.com/phishman3579/java-algorithms-implementation.git'
