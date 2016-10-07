@@ -9,7 +9,10 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/AlgoXY.git'
 ~/study/data-structures-algorithms/c++:
-  algorithms: 'git+https://github.com/xtaci/algorithms.git'
+  algorithms:
+    repo: 'git+https://github.com/xtaci/algorithms.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/algorithms.git'
   cracking-the-code-interview: 'git+https://github.com/Hawstein/cracking-the-coding-interview.git'
 ~/study/data-structures-algorithms/python:
   cracking-the-code-interview: 'git+https://github.com/careercup/CtCI-6th-Edition-Python'
