@@ -137,6 +137,10 @@
     repo: 'git+https://github.com/memononen/nanovg.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/nanovg.git'
+  glfw:
+    repo: 'git+https://github.com/glfw/glfw.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/glfw/glfw.git'
 
   libui:
     repo: 'git+https://github.com/andlabs/libui.git'
