@@ -190,6 +190,11 @@
     repo: 'git+https://github.com/postgres/postgres.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/postgres.git'
+  nuklear:
+    repo: 'git+https://github.com/vurtun/nuklear.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/nuklear.git'
+
   pgadmin3: 'git+git://git.postgresql.org/git/pgadmin3.git'
   textadept: 'hg+http://foicica.com/hg/textadept'
 
