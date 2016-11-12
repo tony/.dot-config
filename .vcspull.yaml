@@ -133,6 +133,10 @@
     repo: 'git+https://github.com/martanne/vis.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/vis.git'
+  nanovg:
+    repo: 'git+https://github.com/memononen/nanovg.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/nanovg.git'
 
   libui:
     repo: 'git+https://github.com/andlabs/libui.git'
