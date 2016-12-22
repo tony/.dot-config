@@ -446,7 +446,11 @@
     remotes:
       tony: 'git+https://github.com/tony/pip.git'
 
-  warehouse: 'git+git://github.com/pypa/warehouse.git'
+  warehouse:
+    repo: 'git+git://github.com/pypa/warehouse.git'
+    remotes:
+      tony: 'git+https://github.com/tony/warehouse.git'
+
   setuptools: 'hg+https://bitbucket.org/pypa/setuptools'
   ipdb: 'git+http://github.com/gotcha/ipdb.git'
   otrace: 'git+https://github.com/mitotic/otrace.git'
