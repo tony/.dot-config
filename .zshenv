@@ -26,6 +26,7 @@ if echo "$-" | grep i > /dev/null; then
     source $HOME/.dot-config/.shell/env.d/tmuxp.sh
     source $HOME/.dot-config/.shell/env.d/keychain.sh
     source $HOME/.dot-config/.shell/env.d/most.sh
+    source $HOME/.dot-config/.shell/env.d/java.sh
 
     source $HOME/.dot-config/.shell/paths.d/depot_tools.sh
     source $HOME/.dot-config/.shell/paths.d/postgres_app.sh
