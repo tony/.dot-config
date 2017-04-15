@@ -35,6 +35,11 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/freebsd.git'
 
+~/work/cihai:
+    cihai-handbook: 'git+ssh://git@github.com/cihai/cihai-handbook.git'
+    cihai: 'git+ssh://git@github.com/cihai/cihai-python.git'
+    cihaidata-unihan: 'git+ssh://git@github.com/cihai/cihaidata-unihan.git'
+
 ~/work/python:
 
   profiling:
