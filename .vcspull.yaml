@@ -951,3 +951,39 @@
   jupyter-js-editor-plugin: 'git+https://github.com/jupyter/jupyter-js-editor-plugin.git'
   jupyter_core: 'git+https://github.com/jupyter/jupyter_core.git'
   nbgrader: 'git+https://github.com/jupyter/nbgrader.git'
+
+~/study/frictionlessdata/:
+  tableschema-py: 
+    repo: 'git+https://github.com/frictionlessdata/tableschema-py.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/tableschema-py.git'
+
+  datapackage-py: 
+    repo: 'git+https://github.com/frictionlessdata/datapackage-py.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/datapackage-py.git'
+
+  tabulator-py: 
+    repo: 'git+https://github.com/frictionlessdata/tabulator-py.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/tabulator-py.git'
+
+  dpm-py: 
+    repo: 'git+https://github.com/frictionlessdata/dpm-py.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/dpm-py.git'
+
+  jsontableschema-sql-py: 
+    repo: 'git+https://github.com/frictionlessdata/jsontableschema-sql-py.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/jsontableschema-sql-py.git'
+
+  jsontableschema-pandas-py: 
+    repo: 'git+https://github.com/frictionlessdata/jsontableschema-pandas-py.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/jsontableschema-pandas-py.git'
+
+  datapackage-pipelines: 
+    repo: 'git+https://github.com/frictionlessdata/datapackage-pipelines.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/datapackage-pipelines.git'
