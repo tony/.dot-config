@@ -38,7 +38,7 @@
 ~/work/cihai:
     cihai-handbook: 'git+ssh://git@github.com/cihai/cihai-handbook.git'
     cihai: 'git+ssh://git@github.com/cihai/cihai.git'
-    cihaidata-unihan: 'git+ssh://git@github.com/cihai/cihaidata-unihan.git'
+    unihan-tabular: 'git+ssh://git@github.com/cihai/unihan-tabular.git'
 
 ~/work/python:
 
