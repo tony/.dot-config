@@ -36,9 +36,12 @@
       tony: 'git+ssh://git@github.com/tony/freebsd.git'
 
 ~/work/cihai:
-    cihai-handbook: 'git+ssh://git@github.com/cihai/cihai-handbook.git'
+    # cihai-handbook: 'git+ssh://git@github.com/cihai/cihai-handbook.git'
+    cli: 'git+ssh://git@github.com/cihai/cli.git'
     cihai: 'git+ssh://git@github.com/cihai/cihai.git'
     unihan-tabular: 'git+ssh://git@github.com/cihai/unihan-tabular.git'
+    cjkdecomp-mirror: 'git+git@github.com:cihai/cjkdecomp-mirror.git'
+
 
 ~/work/python:
 
