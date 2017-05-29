@@ -40,6 +40,7 @@
     cli: 'git+ssh://git@github.com/cihai/cli.git'
     cihai: 'git+ssh://git@github.com/cihai/cihai.git'
     unihan-etl: 'git+ssh://git@github.com/cihai/unihan-etl.git'
+    unihan-db: 'git+ssh://git@github.com/cihai/unihan-db.git'
     cjkdecomp-mirror: 'git+git@github.com:cihai/cjkdecomp-mirror.git'
 
 
