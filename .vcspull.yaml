@@ -228,6 +228,10 @@
     repo: 'git+https://github.com/wjakob/nanogui.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/nanogui.git'
+  nanogui-sdl:
+    repo: 'git+https://github.com/dalerank/nanogui-sdl.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/nanogui-sdl.git'
 
   protobuf:
     repo: 'git+https://github.com/google/protobuf.git'
