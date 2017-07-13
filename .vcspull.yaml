@@ -214,6 +214,7 @@
   nginx: 'hg+http://hg.nginx.org/nginx'
   tre: 'git+https://github.com/laurikari/tre'
 ~/study/c++:
+  GeographicLib: 'git+https://git.code.sf.net/p/geographiclib/code'
   blender: 'git+https://git.blender.org/blender.git'
   entityx: 'git+https://github.com/alecthomas/entityx'
   anax: 'git+https://github.com/miguelmartin75/anax'
