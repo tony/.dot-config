@@ -645,6 +645,10 @@
   pyenv-virtualenvwrapper: 'git+https://github.com/yyuu/pyenv-virtualenvwrapper.git'
   pyenv-installer: 'git+https://github.com/yyuu/pyenv-installer.git'
 ~/study/django:
+  django-activeurl:
+    repo: 'git+https://github.com/hellysmile/django-activeurl.git'
+    remotes:
+      develtech: 'git+ssh://git@github.com/develtech/django-activeurl.git'
   django-cms:
     repo: 'git+https://github.com/divio/django-cms.git'
     remotes:
