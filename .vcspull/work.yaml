@@ -44,6 +44,15 @@
     cjkdecomp-mirror: 'git+git@github.com:cihai/cjkdecomp-mirror.git'
 
 
+~/work/js:
+
+  ScrollMagic:
+    repo: 'git+https://github.com/janpaepke/ScrollMagic.git'
+    remotes:
+      develtech: 'git+ssh://git@github.com/develtech/ScrollMagic.git'
+
+
+
 ~/work/python:
 
   profiling:
