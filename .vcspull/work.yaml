@@ -101,6 +101,10 @@
 
 ~/work/reStructuredText:
   docutils: 'svn+ssh://gitpull@svn.code.sf.net/p/docutils/code'
+  sphinxcontrib-websupport:
+    repo: 'git+https://github.com/sphinx-doc/sphinxcontrib-websupport.git'
+    remotes:
+      develtech: 'git+ssh://git@github.com/develtech/sphinxcontrib-websupport.git'
   sphinx:
     repo: 'git+https://github.com/sphinx-doc/sphinx.git'
     remotes:
