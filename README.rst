@@ -17,4 +17,6 @@ Installation
    
    $ make install
 
+   $ make link
+
 .. _MIT: http://opensource.org/licenses/MIT
