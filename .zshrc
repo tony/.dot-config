@@ -3,6 +3,8 @@ if [ -f ~/.profile ]; then
     . ~/.profile
 fi
 
+plugins=(zsh-256color)
+
 #[[ -s $HOME/.zshenv ]] && source $HOME/.zshenv
 
 export LANG="en_US.UTF-8"
