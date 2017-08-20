@@ -60,3 +60,6 @@ config/gtk-3.0/bookmarks
 
 # neovim config
 config/nvim
+
+# antigen
+antigen.zsh
