@@ -33,3 +33,5 @@ if command -v reattach-to-user-namespace > /dev/null; then
 fi
 
 source ~/.dot-config/.shell/env.d/base16-shell.sh
+source ~/.dot-config/.shell/env.d/keychain.sh
+source ~/.dot-config/.shell/env.d/most.sh
