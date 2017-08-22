@@ -683,7 +683,7 @@
   django-filter: 
     repo: 'git+https://github.com/carltongibson/django-filter.git'
     remotes:
-      develtech: 'git+https://github.com/develtech/django-extensions.git'
+      develtech: 'git+https://github.com/develtech/django-filter.git'
   django-extensions: 
     repo: 'git+https://github.com/django-extensions/django-extensions.git'
     remotes:
