@@ -29,7 +29,7 @@ zstyle ':completion:*' hosts off
 
 if command -v reattach-to-user-namespace > /dev/null; then
   alias vim="reattach-to-user-namespace vim"
-  alias mvim="reattach-to-user-namespace mvim"
+  alias nvim="reattach-to-user-namespace nvim"
 fi
 
 source ~/.dot-config/.shell/env.d/base16-shell.sh
