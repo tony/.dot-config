@@ -35,3 +35,12 @@ fi
 source ~/.dot-config/.shell/env.d/base16-shell.sh
 source ~/.dot-config/.shell/env.d/keychain.sh
 source ~/.dot-config/.shell/env.d/most.sh
+pathprepend() {
+  for ARG in "$@"
+  do
+    if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
+        PATH="$ARG${PATH:+":$PATH"}"
+    fi
+  done
+}
+source ~/.dot-config/.shell/paths.d/python.sh
