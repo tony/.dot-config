@@ -14,13 +14,19 @@ pip:
 	curl -L https://bootstrap.pypa.io/get-pip.py > /tmp/get-pip.py
 	python /tmp/get-pip.py
 
+
+vim:
+	cd ${DOT_CONFIG_DIR}/.vim && $(MAKE) complete
+
 install:
 	$(MAKE) base16-shell
 	$(MAKE) antigen
 
 link:
-	ln -s ${DOT_CONFIG_DIR}/.tmux/ ~/.tmux/
-	ln -s ~/.tmux/.tmux.conf ~/.tmux.conf
-	ln -s ${DOT_CONFIG_DIR}/.vim/ ~/.vim/
-	ln -s ~/.vim/.vimrc ~/.vimrc
-	ln -s ${DOT_CONFIG_DIR}/.fonts/ ~/.fonts/
+	ln -si ${DOT_CONFIG_DIR}/.tmux/ ~/.tmux
+	ln -si ~/.tmux/.tmux.conf ~/.tmux.conf
+	ln -si ${DOT_CONFIG_DIR}/.vim/ ~/.vim
+	ln -si ~/.vim/.vimrc ~/.vimrc
+	ln -si ${DOT_CONFIG_DIR}/.fonts/ ~/.fonts
+	ln -si ${DOT_CONFIG_DIR}/.gitconfig ~/.gitconfig
+	ln -si ${DOT_CONFIG_DIR}/.zshrc ~/.zshrc
