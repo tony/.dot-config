@@ -33,6 +33,16 @@ if command -v reattach-to-user-namespace > /dev/null; then
 fi
 
 source ~/.dot-config/.shell/env.d/base16-shell.sh
+# for OS X keychain(1) error, Error: Problem adding; giving up
+fixssh() {
+    for key in SSH_AUTH_SOCK SSH_CONNECTION SSH_CLIENT; do
+        if (tmux show-environment | grep "^${key}" > /dev/null); then
+            value=`tmux show-environment | grep "^${key}" | sed -e "s/^[A-Z_]*=//"`
+            export ${key}="${value}"
+        fi
+    done
+}
+fixssh()
 source ~/.dot-config/.shell/env.d/keychain.sh
 source ~/.dot-config/.shell/env.d/most.sh
 pathprepend() {
@@ -43,4 +53,5 @@ pathprepend() {
     fi
   done
 }
+
 source ~/.dot-config/.shell/paths.d/python.sh
