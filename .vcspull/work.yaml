@@ -50,11 +50,12 @@
     repo: 'git+https://github.com/janpaepke/ScrollMagic.git'
     remotes:
       develtech: 'git+ssh://git@github.com/develtech/ScrollMagic.git'
-
-
+  social-share-kit:
+    repo: 'git+https://github.com/darklow/social-share-kit.git'
+    remotes:
+      develtech: 'git+ssh://git@github.com/develtech/social-share-kit.git'
 
 ~/work/python:
-
   profiling:
     repo: 'git+https://github.com/what-studio/profiling.git'
     remotes:
