@@ -30,3 +30,5 @@ link:
 	ln -si ${DOT_CONFIG_DIR}/.fonts/ ~/.fonts
 	ln -si ${DOT_CONFIG_DIR}/.gitconfig ~/.gitconfig
 	ln -si ${DOT_CONFIG_DIR}/.zshrc ~/.zshrc
+	ln -si ${DOT_CONFIG_DIR}/.vcspull ~/.vcspull
+	ln -si ${DOT_CONFIG_DIR}/.vcspull.yaml ~/.vcspull.yaml
