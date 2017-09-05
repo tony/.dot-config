@@ -32,6 +32,8 @@ if command -v reattach-to-user-namespace > /dev/null; then
   alias nvim="reattach-to-user-namespace nvim"
 fi
 
+alias clear_pyc='find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf'
+
 source ~/.dot-config/.shell/env.d/base16-shell.sh
 # for OS X keychain(1) error, Error: Problem adding; giving up
 fixssh() {
