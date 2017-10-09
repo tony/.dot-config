@@ -61,6 +61,6 @@ source ~/.dot-config/.shell/paths.d/python.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export FZF_DEFAULT_COMMAND='
-  (git ls-tree -r --name-only --recurse-submodules HEAD ||
+  (git ls-files --recurse-submodules ||
    find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
       sed s/^..//) 2> /dev/null'
