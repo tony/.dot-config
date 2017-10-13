@@ -56,6 +56,11 @@
       develtech: 'git+ssh://git@github.com/develtech/social-share-kit.git'
 
 ~/work/python:
+  fabtools:
+    repo: 'git+https://github.com/fabtools/fabtools.git'
+    remotes:
+      develtech: 'git+ssh://git@github.com/develtech/fabtools.git'
+      ssteinerx: 'git+ssh://git@github.com/ssteinerx/fabtools.git'
   profiling:
     repo: 'git+https://github.com/what-studio/profiling.git'
     remotes:
