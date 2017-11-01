@@ -12,6 +12,12 @@ Configuration within is MIT unless stated otherwise.
 Just want snippets? Feel free to check out `devel.tech's snippets section
 <https://devel.tech/snippets/>`_.
 
+New branch
+----------
+
+I am building a newer, simpler config in the `antigen branch
+<https://github.com/tony/.dot-config/tree/antigen>`_.
+
 Configurations
 --------------
 
