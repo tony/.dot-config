@@ -9,6 +9,9 @@ daily.
 
 Configuration within is MIT unless stated otherwise.
 
+Just want snippets? Feel free to check out `devel.tech's snippets section
+<https://devel.tech/snippets/>`_.
+
 Configurations
 --------------
 
