@@ -64,3 +64,5 @@ export FZF_DEFAULT_COMMAND='
   (git ls-files --recurse-submodules ||
    find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
       sed s/^..//) 2> /dev/null'
+
+antigen apply
