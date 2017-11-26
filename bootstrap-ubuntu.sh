@@ -7,13 +7,15 @@ wget \
 git \
 keychain \
 most \
-entr
+entr \
+curl \
+openssh-server \
+build-essential
 
 
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
-sudo apt-get install -y build-essential
 
 
 # 1. Add the Spotify repository signing keys to be able to verify downloaded packages
@@ -36,9 +38,6 @@ sudo apt-get install vbam
 
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-
-sudo apt-get install curl
-sudo apt-get install openssh-server
 
 # https://github.com/golang/go/wiki/Ubuntu
 sudo add-apt-repository ppa:gophers/archive
