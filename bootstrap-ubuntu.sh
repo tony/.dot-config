@@ -38,3 +38,9 @@ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
 sudo apt-get install curl
+sudo apt-get install openssh-server
+
+# https://github.com/golang/go/wiki/Ubuntu
+sudo add-apt-repository ppa:gophers/archive
+sudo apt update
+sudo apt-get install golang-1.9-go
