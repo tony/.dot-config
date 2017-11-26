@@ -13,7 +13,8 @@ openssh-server \
 build-essential \
 python3-pip \
 pgadmin3 \
-postgresql-9.6
+postgresql-9.6 \
+htop
 
 
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
