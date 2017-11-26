@@ -10,7 +10,10 @@ most \
 entr \
 curl \
 openssh-server \
-build-essential
+build-essential \
+python3-pip \
+pgadmin3 \
+postgresql-9.6
 
 
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
