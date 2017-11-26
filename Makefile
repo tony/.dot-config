@@ -20,8 +20,8 @@ vim:
 install:
 	$(MAKE) base16-shell
 	$(MAKE) antigen
+	$(MAKE) vim
 
-link:
 	ln -si ${DOT_CONFIG_DIR}/.tmux/ ~/.tmux
 	ln -si ~/.tmux/.tmux.conf ~/.tmux.conf
 	ln -si ${DOT_CONFIG_DIR}/.vim/ ~/.vim
