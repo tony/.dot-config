@@ -32,3 +32,4 @@ install:
 	ln -si ${DOT_CONFIG_DIR}/.zshrc ~/.zshrc
 	ln -si ${DOT_CONFIG_DIR}/.vcspull ~/.vcspull
 	ln -si ${DOT_CONFIG_DIR}/.vcspull.yaml ~/.vcspull.yaml
+	ln -si ${DOT_CONFIG_DIR}/.Xresources ~/.Xresources
