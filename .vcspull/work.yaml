@@ -56,6 +56,8 @@
       develtech: 'git+ssh://git@github.com/develtech/social-share-kit.git'
 
 ~/work/python:
+  django-slugify-processor:
+    repo: 'git+https://github.com/develtech/django-slugify-processor.git'
   fabtools:
     repo: 'git+https://github.com/fabtools/fabtools.git'
     remotes:
