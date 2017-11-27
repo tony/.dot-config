@@ -1,6 +1,11 @@
 source ~/.dot-config/antigen.zsh
 
+
+# tmux / tmuxp
 export DISABLE_AUTO_TITLE='true'
+
+# https://github.com/robbyrussell/oh-my-zsh/issues/5874
+export ZSH_CACHE_DIR=$HOME/.zsh
 
 antigen use oh-my-zsh
 
@@ -64,5 +69,7 @@ export FZF_DEFAULT_COMMAND='
   (git ls-files --recurse-submodules ||
    find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
       sed s/^..//) 2> /dev/null'
+
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 antigen apply
