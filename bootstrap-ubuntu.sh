@@ -5,6 +5,7 @@ pgadmin3 \
 vim-nox \
 wget \
 git \
+tig \
 keychain \
 most \
 entr \
