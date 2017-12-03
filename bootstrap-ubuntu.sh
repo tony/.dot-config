@@ -3,6 +3,7 @@ cowsay \
 fortune-mod \
 pgadmin3 \
 vim-nox \
+ctags \
 wget \
 git \
 tig \
