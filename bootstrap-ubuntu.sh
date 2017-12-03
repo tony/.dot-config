@@ -4,6 +4,7 @@ fortune-mod \
 pgadmin3 \
 vim-nox \
 ctags \
+silversearcher-ag \
 wget \
 git \
 tig \
