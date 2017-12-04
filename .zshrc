@@ -17,17 +17,17 @@ zstyle ':completion:*' hosts off
 ## History
 ###
 ### Source: https://dustri.org/b/my-zsh-configuration.html
+### Also https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/history.zsh
 HISTFILE=~/.zsh_history         # where to store zsh config
-HISTSIZE=1024                   # big history
-SAVEHIST=1024                   # big history
+HISTSIZE=10000                   # big history
+SAVEHIST=10000                   # big history
 setopt append_history           # append
+setopt hist_expire_dups_first
 setopt hist_ignore_all_dups     # no duplicate
-unsetopt hist_ignore_space      # ignore space prefixed commands
-setopt hist_reduce_blanks       # trim blanks
+setopt hist_ignore_space      # ignore space prefixed commands
 setopt hist_verify              # show before executing history commands
 setopt inc_append_history       # add commands as they are typed, don't wait until shell exit 
 setopt share_history            # share hist between sessions
-setopt bang_hist                # !keyword
 
 # antigen
 antigen use oh-my-zsh
@@ -37,7 +37,7 @@ antigen bundle git
 antigen bundle npm
 antigen bundle pip
 
-antigen bundle zsh-users/zsh-completions src
+antigen bundle zsh-users/zsh-completions
 
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
