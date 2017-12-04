@@ -19,12 +19,12 @@ Xft.hintstyle:  hintslight
 
 !! Terminus Powerline (Terminess Powerline)
 !! See: https://github.com/Lokaltog/powerline-fonts/tree/master/Terminus
-URxvt.font:             xft:Terminess Powerline:size=10:hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:medium;antialias=False,xft:WenQuanYi Zen Hei-10:medium;antialias=True,xft:HanaMinA-10:medium;antialias:True,xft:HanaMinB-10:medium;antialias:True,xft:HanaMinPlus-10:medium;antialias:True
-URxvt.boldFont:             xft:Terminess Powerline:size=10:bold;hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:bold;antialias=False,xft:WenQuanYi Zen Hei-10:bold;antialias=True,xft:HanaMinA-10:bold;antialias:True,xft:HanaMinB-10:bold;antialias:True,xft:HanaMinPlus-10:bold;antialias:True
+!!URxvt.font:             xft:Terminess Powerline:size=10:hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:medium;antialias=False,xft:WenQuanYi Zen Hei-10:medium;antialias=True,xft:HanaMinA-10:medium;antialias:True,xft:HanaMinB-10:medium;antialias:True,xft:HanaMinPlus-10:medium;antialias:True
+!!URxvt.boldFont:             xft:Terminess Powerline:size=10:bold;hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:bold;antialias=False,xft:WenQuanYi Zen Hei-10:bold;antialias=True,xft:HanaMinA-10:bold;antialias:True,xft:HanaMinB-10:bold;antialias:True,xft:HanaMinPlus-10:bold;antialias:True
 
 !! Monofur
-! URxvt.font:             xft:monofur For Powerline:size=11:hinting=True;antialias:True,xft:PowerlineSymbols,xft:Font Awesome:size=10,xft:WenQuanYi Bitmap Song-12:medium;antialias=False,xft:WenQuanYi Zen Hei-12:medium;antialias=True,xft:HanaMinA-12:medium;antialias:True,xft:HanaMinB-12:medium;antialias:True,xft:HanaMinPlus-12:medium;antialias:True
-! URxvt.boldFont:             xft:monofur For Powerline:size=11:bold;hinting=True;antialias:True,xft:Font Awesome:size=10,xft:WenQuanYi Bitmap Song-12:bold;antialias=False,xft:WenQuanYi Zen Hei-12:bold;antialias=True,xft:HanaMinA-12:bold;antialias:True,xft:HanaMinB-12:bold;antialias:True,xft:HanaMinPlus-12:bold;antialias:True
+!URxvt.font:             xft:monofur For Powerline:size=11:hinting=True;antialias:True,xft:PowerlineSymbols,xft:Font Awesome:size=10,xft:WenQuanYi Bitmap Song-12:medium;antialias=False,xft:WenQuanYi Zen Hei-12:medium;antialias=True,xft:HanaMinA-12:medium;antialias:True,xft:HanaMinB-12:medium;antialias:True,xft:HanaMinPlus-12:medium;antialias:True
+!URxvt.boldFont:             xft:monofur For Powerline:size=11:bold;hinting=True;antialias:True,xft:Font Awesome:size=10,xft:WenQuanYi Bitmap Song-12:bold;antialias=False,xft:WenQuanYi Zen Hei-12:bold;antialias=True,xft:HanaMinA-12:bold;antialias:True,xft:HanaMinB-12:bold;antialias:True,xft:HanaMinPlus-12:bold;antialias:True
 
 
 !! Hack
@@ -34,8 +34,8 @@ URxvt.boldFont:             xft:Terminess Powerline:size=10:bold;hinting=True;an
 
 
 !! InconsolataDz
-! URxvt.font:             xft:Inconsolata-dz for Powerline:size=10:hinting=True;antialias:True,xft:PowerlineSymbols,xft:Font Awesome:size=10,xft:WenQuanYi Bitmap Song-12:medium;antialias=False,xft:WenQuanYi Zen Hei-12:medium;antialias=True,xft:HanaMinA-12:medium;antialias:True,xft:HanaMinB-12:medium;antialias:True,xft:HanaMinPlus-12:medium;antialias:True
-! URxvt.boldFont:             xft:Inconsolata-dz for Powerline:size=10:bold;hinting=True;antialias:True,xft:Font Awesome:size=10,xft:WenQuanYi Bitmap Song-12:bold;antialias=False,xft:WenQuanYi Zen Hei-12:bold;antialias=True,xft:HanaMinA-12:bold;antialias:True,xft:HanaMinB-12:bold;antialias:True,xft:HanaMinPlus-12:bold;antialias:True
+URxvt.font:             xft:Inconsolata-dz for Powerline:size=9:hinting=True;antialias:True,xft:PowerlineSymbols,xft:Font Awesome:size=9,xft:WenQuanYi Bitmap Song-12:medium;antialias=False,xft:WenQuanYi Zen Hei-12:medium;antialias=True,xft:HanaMinA-12:medium;antialias:True,xft:HanaMinB-12:medium;antialias:True,xft:HanaMinPlus-12:medium;antialias:True
+URxvt.boldFont:             xft:Inconsolata-dz for Powerline:size=9:bold;hinting=True;antialias:True,xft:Font Awesome:size=9,xft:WenQuanYi Bitmap Song-12:bold;antialias=False,xft:WenQuanYi Zen Hei-12:bold;antialias=True,xft:HanaMinA-12:bold;antialias:True,xft:HanaMinB-12:bold;antialias:True,xft:HanaMinPlus-12:bold;antialias:True
 !
 !URxvt.font:             xft:Inconsolata:size=10,xft:PowerlineSymbols,xft:FontAwesome,xft:WenQuanYi Bitmap Song-12:medium;antialias=False,xft:WenQuanYi Zen Hei-12:medium;antialias=True,xft:HanaMinA-12:medium;antialias:True,xft:HanaMinB-12:medium;antialias:True,xft:HanaMinPlus-12:medium;antialias:True
 !URxvt.boldFont:             xft:Inconsolata:size=10:bold;hinting=True;antialias:True,xft:PowerlineSymbols,xft:FontAwesome,xft:WenQuanYi Bitmap Song-12:bold;antialias=False,xft:WenQuanYi Zen Hei-12:bold;antialias=True,xft:HanaMinA-12:bold;antialias:True,xft:HanaMinB-12:bold;antialias:True,xft:HanaMinPlus-12:bold;antialias:True

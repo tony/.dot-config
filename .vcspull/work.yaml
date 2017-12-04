@@ -50,11 +50,19 @@
     repo: 'git+https://github.com/janpaepke/ScrollMagic.git'
     remotes:
       develtech: 'git+ssh://git@github.com/develtech/ScrollMagic.git'
-
-
+  social-share-kit:
+    repo: 'git+https://github.com/darklow/social-share-kit.git'
+    remotes:
+      develtech: 'git+ssh://git@github.com/develtech/social-share-kit.git'
 
 ~/work/python:
-
+  django-slugify-processor:
+    repo: 'git+https://github.com/develtech/django-slugify-processor.git'
+  fabtools:
+    repo: 'git+https://github.com/fabtools/fabtools.git'
+    remotes:
+      develtech: 'git+ssh://git@github.com/develtech/fabtools.git'
+      ssteinerx: 'git+ssh://git@github.com/ssteinerx/fabtools.git'
   profiling:
     repo: 'git+https://github.com/what-studio/profiling.git'
     remotes:
@@ -109,6 +117,7 @@
     repo: 'git+https://github.com/sphinx-doc/sphinx.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/sphinx.git'
+      develtech: 'git+ssh://git@github.com/develtech/sphinx.git'
   sphinx-testing:
     repo: 'git+https://github.com/sphinx-doc/sphinx-testing.git'
     remotes:
