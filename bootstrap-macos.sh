@@ -14,4 +14,6 @@ brew install keychain \
   htop \
   cmake ninja \
   caskroom/cask/alfred \
-  tig
+  tig \
+  entr \
+  most
