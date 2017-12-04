@@ -6,22 +6,29 @@ Feel free to copy and paste from here, everything is licensed `MIT`_.
 
 Powered by antigen.
 
-Requirements
-============
-
-Configuration within is MIT unless stated otherwise.
-
 Just want snippets? Feel free to check out `devel.tech's snippets section
 <https://devel.tech/snippets/>`_.
 
-New branch
-----------
+Dependencies
+============
 
-I am building a newer, simpler config in the `antigen branch
-<https://github.com/tony/.dot-config/tree/antigen>`_.
+- zsh
+- curl (for installation)
+- git
 
-Configurations
---------------
+I keep commonly install packages I use in  *bootstrap-[platform].sh*.
+
+Installation
+============
+
+.. code-block:: sh
+   
+   $ make install
+
+.. _MIT: http://opensource.org/licenses/MIT
+
+Support
+=======
 
 ========================  ================================================
 
@@ -48,8 +55,8 @@ This package              `dotfiles`_ (for this repo), ``.tmuxp.yaml``
 .. _vcspull: https://github.com/tony/vcspull
 .. _ncmpcpp: http://ncmpcpp.rybczak.net/
 
-Features / Usage
-----------------
+Structure
+=========
 
 ========================  ================================================
 
@@ -102,28 +109,16 @@ Features / Usage
 .. _Thinkpad Trackpoint config: http://www.thinkwiki.org/wiki/How_to_configure_the_TrackPoint
 
 Notes
------
+=====
 
 neovim
-~~~~~~
+------
 
 VIM config is backward compatible.  ``~/.config/nvim/init.vim`` checks and
 ``~/.vim/.vimrc`` and ``~/.vimrc`` and sources the first it finds.
 
-Dependencies
-============
+Old branch
+==========
 
-- zsh
-- curl (for installation)
-- git
-
-Installation
-============
-
-.. code-block:: sh
-   
-   $ make install
-
-   $ make link
-
-.. _MIT: http://opensource.org/licenses/MIT
+To see the old codebar (before antigen) see `legacy-2017 branch
+<https://github.com/tony/.dot-config/tree/legacy-2017>`_.
