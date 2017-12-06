@@ -63,7 +63,7 @@
       develtech: 'git+ssh://git@github.com/develtech/django-polymorphic-tree.git'
 
   django-polymorphic:
-    repo: 'git+https://github.com/django-polymoprhic/django-polymorphic.git'
+    repo: 'git+https://github.com/django-polymorphic/django-polymorphic.git'
     remotes:
       develtech: 'git+ssh://git@github.com/develtech/django-polymorphic.git'
 
