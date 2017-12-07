@@ -57,6 +57,11 @@
 
 ~/work/python:
 
+  django-robots:
+    repo: 'git+https://github.com/jazzband/django-robots.git'
+    remotes:
+      develtech: 'git+ssh://git@github.com/develtech/django-robots.git'
+
   django-polymorphic-tree:
     repo: 'git+https://github.com/django-polymorphic/django-polymorphic-tree.git'
     remotes:
