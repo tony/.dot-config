@@ -54,3 +54,6 @@ sudo apt-get install yarn
 sudo add-apt-repository ppa:gophers/archive
 sudo apt update
 sudo apt-get install golang-1.9-go
+
+GOEXPORT='export PATH=$PATH:/usr/lib/go-1.9/bin'
+grep -q -F "$GOEXPORT" ~/.profile || echo "$GOEXPORT" >> ~/.profile 
