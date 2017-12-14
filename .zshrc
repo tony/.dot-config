@@ -94,5 +94,6 @@ export FZF_DEFAULT_COMMAND='
       sed s/^..//) 2> /dev/null'
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+[ -f ~/.profile ] && source ~/.profile
 
 antigen apply
