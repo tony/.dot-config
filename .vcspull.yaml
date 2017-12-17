@@ -557,6 +557,7 @@
     repo: 'git+https://github.com/rtfd/readthedocs.org.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/readthedocs.org.git'
+      develtech: 'git+ssh://git@github.com/develtech/readthedocs.org.git'
 
   klaus:
     repo: 'git+https://github.com/jonashaag/klaus.git'
