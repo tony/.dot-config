@@ -56,11 +56,6 @@
       develtech: 'git+ssh://git@github.com/develtech/social-share-kit.git'
 
 ~/work/python:
-  django-pagination:
-    repo: 'git+https://github.com/zyga/django-pagination.git'
-    remotes:
-      develtech: 'git+ssh://git@github.com/develtech/django-pagination.git'
-      ericflo: 'git+https://github.com/ericflo/django-pagination.git'
 
   django-robots:
     repo: 'git+https://github.com/jazzband/django-robots.git'
