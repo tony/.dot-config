@@ -57,6 +57,12 @@
 
 ~/work/python:
 
+  pytest-django:
+    repo: 'git+https://github.com/pytest-dev/pytest-django.git'
+    remotes:
+      develtech: 'git+ssh://git@github.com/develtech/pytest-django.git'
+
+
   django-robots:
     repo: 'git+https://github.com/jazzband/django-robots.git'
     remotes:
