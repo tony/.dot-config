@@ -497,7 +497,10 @@
 
   pystache: 'git+https://github.com/defunkt/pystache.git'
   pandas: 'git+https://github.com/pydata/pandas'
-  numpy: 'git+https://github.com/numpy/numpy.git'
+  numpy:
+    repo: 'git+https://github.com/numpy/numpy.git'
+    remotes:
+      tony: 'git+https://github.com/tony/numpy.git'
   pytables: 'git+https://github.com/PyTables/PyTables.git'
 
   ncmpy: 'git+https://github.com/cykerway/ncmpy.git'
