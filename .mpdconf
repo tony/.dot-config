@@ -33,14 +33,20 @@ port                            "6600"
 #log_level                       "default"
 #
 
+auto_update "yes"
+auto_update_depth "2"
+follow_outside_symlinks "yes"
+follow_inside_symlinks "yes"
 
 ################################################################
 #mixer_type			"software"
 audio_output {
-         type            "fifo"
-         name            "My FIFO"
-         path            "/tmp/mpd.fifo"
-         format          "44100:16:1"
+  type            "fifo"
+  name            "My FIFO"
+  path            "/tmp/mpd.fifo"
+  format          "44100:16:2"
+  auto_resample "no"
+  use_mmap "yes"
 }
 #audio_output {
   #type "osx"
@@ -58,7 +64,7 @@ audio_output {
 # }
 audio_output {
 	type            "osx"
-	name            "My Mac Device"
+	name            "CoreAudio"
 	mixer_type      "software"
 }
 #$ mkdir ~/.ncmpcpp
