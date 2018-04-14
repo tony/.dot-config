@@ -34,7 +34,6 @@ antigen use oh-my-zsh
 
 antigen bundle history
 antigen bundle git
-antigen bundle npm
 antigen bundle pip
 
 antigen bundle zsh-users/zsh-completions
