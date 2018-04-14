@@ -100,31 +100,35 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/profiling.git'
 
-  vcspull:
-    repo: 'git+https://github.com/tony/vcspull.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/vcspull.git'
-
   alagitpull:
     repo: 'git+https://github.com/git-pull/alagitpull.git'
     remotes:
       tony: 'git+ssh://git@github.com/git-pull/alagitpull.git'
 
+  dotkeeper:
+    repo: 'git+https://github.com/dotkeeper/dotkeeper.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/dotkeeper/dotkeeper.git'
+
   libvcs:
-    repo: 'git+https://github.com/tony/libvcs.git'
+    repo: 'git+https://github.com/vcs-python/libvcs.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/libvcs.git'
 
-  tmuxp:
-    repo: 'git+https://github.com/tony/tmuxp.git'
+  vcspull:
+    repo: 'git+https://github.com/vcs-python/vcspull.git'
     remotes:
-      tony: 'git+ssh://git@github.com/tony/tmuxp.git'
-
+      tony: 'git+ssh://git@github.com/tony/vcspull.git'
 
   libtmux:
-    repo: 'git+https://github.com/tony/libtmux.git'
+    repo: 'git+https://github.com/tmux-python/libtmux.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/libtmux.git'
+
+  tmuxp:
+    repo: 'git+https://github.com/tmux-python/tmuxp.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/tmuxp.git'
 
   cookiecutter-flask-pythonic:
     repo: 'git+https://github.com/tony/cookiecutter-flask-pythonic.git'
