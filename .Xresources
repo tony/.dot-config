@@ -5,7 +5,7 @@ URxvt*termName: rxvt-256color
 !-- Infinality: http://www.octatech.net/blog/2014/08/ubuntu-like-debian-font-rendering-using-infinality-font/ --!
 Xft.lcdfilter: lcddefault
 !-- Xft settings -- !
-Xft.dpi:        72
+Xft.dpi:        112
 Xft.hinting:    true
 Xft.hintstyle:  hintfull
 Xft.autohint: 0
