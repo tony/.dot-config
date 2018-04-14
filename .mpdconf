@@ -54,19 +54,25 @@ audio_output {
 #}
 
 # audio_output {
-       # type    "alsa"
-       # name    "alsa MPD"
+#        type    "alsa"
+#        name    "alsa MPD"
 # }
 
 # audio_output {
-#    type    "pulse"
-#    name    "My MPD PulseAudio Output"
+#   type            "osx"
+#   name            "CoreAudio"
+#   mixer_type      "software"
 # }
+
 audio_output {
-	type            "osx"
-	name            "CoreAudio"
-	mixer_type      "software"
+   type    "pulse"
+   name    "My MPD PulseAudio Output"
 }
+# audio_output {
+# 	type            "osx"
+# 	name            "My Mac Device"
+# 	mixer_type      "software"
+# }
 #$ mkdir ~/.ncmpcpp
 #$ cp /usr/share/doc/ncmpcpp/doc/config ~/.ncmpcpp/config
 #$ echo "visualizer_fifo_path = \"/tmp/mpd.fifo\"" >> ~/.ncmpcpp/config
