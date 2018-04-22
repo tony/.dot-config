@@ -30,6 +30,8 @@ setopt inc_append_history       # add commands as they are typed, don't wait unt
 setopt share_history            # share hist between sessions
 
 # antigen
+antigen use oh-my-zsh
+
 antigen bundle history
 antigen bundle git
 antigen bundle pip
