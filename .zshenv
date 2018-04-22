@@ -12,8 +12,6 @@ if echo "$-" | grep i > /dev/null; then
 
     source $HOME/.dot-config/.shell/aliases.sh
 
-    source $HOME/.dot-config/.shell/paths.d/python.sh
-
     source $HOME/.dot-config/.shell/env.d/p4a.sh
     source $HOME/.dot-config/.shell/env.d/opam.sh
     source $HOME/.dot-config/.shell/env.d/rbenv.sh
@@ -21,7 +19,6 @@ if echo "$-" | grep i > /dev/null; then
     source $HOME/.dot-config/.shell/env.d/virtualenvwrapper.sh
     source $HOME/.dot-config/.shell/env.d/perlbrew.sh
     source $HOME/.dot-config/.shell/env.d/dircolors.sh
-    source $HOME/.dot-config/.shell/env.d/base16-shell.sh
     source $HOME/.dot-config/.shell/env.d/tmuxp.sh
     source $HOME/.dot-config/.shell/env.d/keychain.sh
     source $HOME/.dot-config/.shell/env.d/most.sh
