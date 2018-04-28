@@ -46,15 +46,15 @@ Xft.autohint: 0
 
 !! Sauce Code Pro
 URxvt.font:\
-	xft:Source Code Pro for Powerline:antialias=true,\
-	xft:Noto Sans Mono CJK SC:antialias=False,\
-	xft:Noto Sans Mono CJK TC:antialias=False,\
-	xft:Noto Sans Mono CJK JP:antialias=False
+	xft:Source Code Pro for Powerline:antialias=true:hinting=True,\
+	xft:Noto Sans Mono CJK SC:antialias=False:hinting=False,\
+	xft:Noto Sans Mono CJK TC:antialias=False:hinting=False,\
+	xft:Noto Sans Mono CJK JP:antialias=False:hinting=False
 URxvt.boldFont:\
-	xft:Source Code Pro for Powerline:bold:hinting=True;antialias:True,\
-	xft:Noto Sans Mono CJK SC:bold:antialias=False,\
-	xft:Noto Sans Mono CJK TC:bold:antialias=False,\
-	xft:Noto Sans Mono CJK JP:bold:antialias=False
+	xft:Source Code Pro for Powerline:bold:hinting=True:antialias=True,\
+	xft:Noto Sans Mono CJK SC:bold:antialias=False:hinting=False,\
+	xft:Noto Sans Mono CJK TC:bold:antialias=False:hinting=False,\
+	xft:Noto Sans Mono CJK JP:bold:antialias=False:hinting=False
 ! URxvt.font:             xft:Source Code Pro for Powerline-10:hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:medium;antialias=False,xft:WenQuanYi Zen Hei-10:medium;antialias=True,xft:HanaMinA-10:medium;antialias:True,xft:HanaMinB-10:medium;antialias:True,xft:HanaMinPlus-10:medium;antialias:True
 ! URxvt.boldFont:             xft:Source Code Pro for Powerline-10:bold;hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:bold;antialias=False,xft:WenQuanYi Zen Hei-10:bold;antialias=True,xft:HanaMinA-10:bold;antialias:True,xft:HanaMinB-10:bold;antialias:True,xft:HanaMinPlus-10:bold;antialias:True
 
