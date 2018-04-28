@@ -10,41 +10,6 @@ Xft.hinting:    true
 Xft.hintstyle:  hintfull
 Xft.autohint: 0
 
-!! *faceName: inconsolata, font-awesome
-
-!! Terminus
-! URxvt.font:             xft:Terminus-10:hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:medium;antialias=False,xft:WenQuanYi Zen Hei-10:medium;antialias=True,xft:HanaMinA-10:medium;antialias:True,xft:HanaMinB-10:medium;antialias:True,xft:HanaMinPlus-10:medium;antialias:True
-! URxvt.boldFont:             xft:Terminus-10:bold;hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:bold;antialias=False,xft:WenQuanYi Zen Hei-10:bold;antialias=True,xft:HanaMinA-10:bold;antialias:True,xft:HanaMinB-10:bold;antialias:True,xft:HanaMinPlus-10:bold;antialias:True
-
-!! Terminus Powerline (Terminess Powerline)
-!! See: https://github.com/Lokaltog/powerline-fonts/tree/master/Terminus
-!!URxvt.font:             xft:Terminess Powerline:size=10:hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:medium;antialias=False,xft:WenQuanYi Zen Hei-10:medium;antialias=True,xft:HanaMinA-10:medium;antialias:True,xft:HanaMinB-10:medium;antialias:True,xft:HanaMinPlus-10:medium;antialias:True
-!!URxvt.boldFont:             xft:Terminess Powerline:size=10:bold;hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:bold;antialias=False,xft:WenQuanYi Zen Hei-10:bold;antialias=True,xft:HanaMinA-10:bold;antialias:True,xft:HanaMinB-10:bold;antialias:True,xft:HanaMinPlus-10:bold;antialias:True
-
-!! Monofur
-!URxvt.font:             xft:monofur For Powerline:size=11:hinting=True;antialias:True,xft:PowerlineSymbols,xft:Font Awesome:size=10,xft:WenQuanYi Bitmap Song-12:medium;antialias=False,xft:WenQuanYi Zen Hei-12:medium;antialias=True,xft:HanaMinA-12:medium;antialias:True,xft:HanaMinB-12:medium;antialias:True,xft:HanaMinPlus-12:medium;antialias:True
-!URxvt.boldFont:             xft:monofur For Powerline:size=11:bold;hinting=True;antialias:True,xft:Font Awesome:size=10,xft:WenQuanYi Bitmap Song-12:bold;antialias=False,xft:WenQuanYi Zen Hei-12:bold;antialias=True,xft:HanaMinA-12:bold;antialias:True,xft:HanaMinB-12:bold;antialias:True,xft:HanaMinPlus-12:bold;antialias:True
-
-
-!! Hack
-!URxvt.font:             xft:Hack:size=10:hinting=True;antialias:True,xft:PowerlineSymbols,xft:Font Awesome:size=10,xft:WenQuanYi Bitmap Song-12:medium;antialias=False,xft:WenQuanYi Zen Hei-12:medium;antialias=True,xft:HanaMinA-12:medium;antialias:True,xft:HanaMinB-12:medium;antialias:True,xft:HanaMinPlus-12:medium;antialias:True
-!URxvt.boldFont:             xft:Hack:size=10:bold;hinting=True;antialias:True,xft:Font Awesome:size=10,xft:WenQuanYi Bitmap Song-12:bold;antialias=False,xft:WenQuanYi Zen Hei-12:bold;antialias=True,xft:HanaMinA-12:bold;antialias:True,xft:HanaMinB-12:bold;antialias:True,xft:HanaMinPlus-12:bold;antialias:True
-!
-
-
-!! InconsolataDz
-! URxvt.font:             xft:Inconsolata-dz for Powerline:hinting=True;antialias:True,xft:PowerlineSymbols,xft:Font Awesome,xft:WenQuanYi Bitmap Song:medium;antialias=False,xft:WenQuanYi Zen Hei:medium;antialias=True,xft:HanaMinA:medium;antialias:True,xft:HanaMinB:medium;antialias:True,xft:HanaMinPlus:medium;antialias:True
-! URxvt.boldFont:             xft:Inconsolata-dz for Powerline:bold;hinting=True;antialias:True,xft:Font Awesome,xft:WenQuanYi Bitmap Song:bold;antialias=False,xft:WenQuanYi Zen Hei:bold;antialias=True,xft:HanaMinA:bold;antialias:True,xft:HanaMinB:bold;antialias:True,xft:HanaMinPlus:bold;antialias:True
-!
-!URxvt.font:             xft:Inconsolata:size=10,xft:PowerlineSymbols,xft:FontAwesome,xft:WenQuanYi Bitmap Song-12:medium;antialias=False,xft:WenQuanYi Zen Hei-12:medium;antialias=True,xft:HanaMinA-12:medium;antialias:True,xft:HanaMinB-12:medium;antialias:True,xft:HanaMinPlus-12:medium;antialias:True
-!URxvt.boldFont:             xft:Inconsolata:size=10:bold;hinting=True;antialias:True,xft:PowerlineSymbols,xft:FontAwesome,xft:WenQuanYi Bitmap Song-12:bold;antialias=False,xft:WenQuanYi Zen Hei-12:bold;antialias=True,xft:HanaMinA-12:bold;antialias:True,xft:HanaMinB-12:bold;antialias:True,xft:HanaMinPlus-12:bold;antialias:True
-
-
-!! Droid Sans Mono
-! URxvt.font:             xft:Droid Sans Mono for Powerline-10:hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-12:medium;antialias=False,xft:WenQuanYi Zen Hei-12:medium;antialias=True,xft:HanaMinA-12:medium;antialias:True,xft:HanaMinB-12:medium;antialias:True,xft:HanaMinPlus-12:medium;antialias:True
-! URxvt.boldFont:             xft:Droid Sans Mono for Powerline-10:bold;hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-12:bold;antialias=False,xft:WenQuanYi Zen Hei-12:bold;antialias=True,xft:HanaMinA-12:bold;antialias:True,xft:HanaMinB-12:bold;antialias:True,xft:HanaMinPlus-12:bold;antialias:True
-
-!! Sauce Code Pro
 URxvt.font:\
 	xft:Source Code Pro for Powerline:antialias=true:hinting=True,\
 	xft:Noto Sans Mono CJK SC:antialias=False:hinting=False,\
@@ -55,19 +20,7 @@ URxvt.boldFont:\
 	xft:Noto Sans Mono CJK SC:bold:antialias=False:hinting=False,\
 	xft:Noto Sans Mono CJK TC:bold:antialias=False:hinting=False,\
 	xft:Noto Sans Mono CJK JP:bold:antialias=False:hinting=False
-! URxvt.font:             xft:Source Code Pro for Powerline-10:hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:medium;antialias=False,xft:WenQuanYi Zen Hei-10:medium;antialias=True,xft:HanaMinA-10:medium;antialias:True,xft:HanaMinB-10:medium;antialias:True,xft:HanaMinPlus-10:medium;antialias:True
-! URxvt.boldFont:             xft:Source Code Pro for Powerline-10:bold;hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:bold;antialias=False,xft:WenQuanYi Zen Hei-10:bold;antialias=True,xft:HanaMinA-10:bold;antialias:True,xft:HanaMinB-10:bold;antialias:True,xft:HanaMinPlus-10:bold;antialias:True
 
-! URxvt.font:             xft:Source Code Pro for Powerline-9:hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-9:medium;antialias=False,xft:WenQuanYi Zen Hei-9:medium;antialias=True,xft:HanaMinA-9:medium;antialias:True,xft:HanaMinB-9:medium;antialias:True,xft:HanaMinPlus-9:medium;antialias:True
-! URxvt.boldFont:             xft:Source Code Pro for Powerline-9:bold;hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-9:bold;antialias=False,xft:WenQuanYi Zen Hei-9:bold;antialias=True,xft:HanaMinA-9:bold;antialias:True,xft:HanaMinB-9:bold;antialias:True,xft:HanaMinPlus-9:bold;antialias:True
-
-URxvt.letterSpace:      0
-
-
-
-
-!! URxvt.meta8: true
-!!URxvt.depth: 32
 !! --- URxvt ---
 URxvt*intensityStyles: false
 URxvt*internalBorder: 0
@@ -80,6 +33,8 @@ URxvt.preeditType: OverTheSpot
 
 URxvt*scrollBar_right: false
 URxvt*scrollBar: false
+
+URxvt.letterSpace:      0
 
 URxvt.perl-ext-common: default,matcher,tabbed
 URxvt.tabbed.tabbar-bg: -1
