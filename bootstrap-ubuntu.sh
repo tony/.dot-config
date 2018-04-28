@@ -18,7 +18,8 @@ python3-pip \
 pgadmin3 \
 postgresql-9.6 \
 htop \
-virtualbox
+virtualbox \
+fonts-noto-cjk
 
 
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
