@@ -33,8 +33,8 @@ Xft.autohint: 0
 
 
 !! InconsolataDz
-URxvt.font:             xft:Inconsolata-dz for Powerline:hinting=True;antialias:True,xft:PowerlineSymbols,xft:Font Awesome,xft:WenQuanYi Bitmap Song:medium;antialias=False,xft:WenQuanYi Zen Hei:medium;antialias=True,xft:HanaMinA:medium;antialias:True,xft:HanaMinB:medium;antialias:True,xft:HanaMinPlus:medium;antialias:True
-URxvt.boldFont:             xft:Inconsolata-dz for Powerline:bold;hinting=True;antialias:True,xft:Font Awesome,xft:WenQuanYi Bitmap Song:bold;antialias=False,xft:WenQuanYi Zen Hei:bold;antialias=True,xft:HanaMinA:bold;antialias:True,xft:HanaMinB:bold;antialias:True,xft:HanaMinPlus:bold;antialias:True
+! URxvt.font:             xft:Inconsolata-dz for Powerline:hinting=True;antialias:True,xft:PowerlineSymbols,xft:Font Awesome,xft:WenQuanYi Bitmap Song:medium;antialias=False,xft:WenQuanYi Zen Hei:medium;antialias=True,xft:HanaMinA:medium;antialias:True,xft:HanaMinB:medium;antialias:True,xft:HanaMinPlus:medium;antialias:True
+! URxvt.boldFont:             xft:Inconsolata-dz for Powerline:bold;hinting=True;antialias:True,xft:Font Awesome,xft:WenQuanYi Bitmap Song:bold;antialias=False,xft:WenQuanYi Zen Hei:bold;antialias=True,xft:HanaMinA:bold;antialias:True,xft:HanaMinB:bold;antialias:True,xft:HanaMinPlus:bold;antialias:True
 !
 !URxvt.font:             xft:Inconsolata:size=10,xft:PowerlineSymbols,xft:FontAwesome,xft:WenQuanYi Bitmap Song-12:medium;antialias=False,xft:WenQuanYi Zen Hei-12:medium;antialias=True,xft:HanaMinA-12:medium;antialias:True,xft:HanaMinB-12:medium;antialias:True,xft:HanaMinPlus-12:medium;antialias:True
 !URxvt.boldFont:             xft:Inconsolata:size=10:bold;hinting=True;antialias:True,xft:PowerlineSymbols,xft:FontAwesome,xft:WenQuanYi Bitmap Song-12:bold;antialias=False,xft:WenQuanYi Zen Hei-12:bold;antialias=True,xft:HanaMinA-12:bold;antialias:True,xft:HanaMinB-12:bold;antialias:True,xft:HanaMinPlus-12:bold;antialias:True
@@ -45,6 +45,16 @@ URxvt.boldFont:             xft:Inconsolata-dz for Powerline:bold;hinting=True;a
 ! URxvt.boldFont:             xft:Droid Sans Mono for Powerline-10:bold;hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-12:bold;antialias=False,xft:WenQuanYi Zen Hei-12:bold;antialias=True,xft:HanaMinA-12:bold;antialias:True,xft:HanaMinB-12:bold;antialias:True,xft:HanaMinPlus-12:bold;antialias:True
 
 !! Sauce Code Pro
+URxvt.font:\
+	xft:Source Code Pro for Powerline:antialias=true,\
+	xft:Noto Sans Mono CJK SC:antialias=False,\
+	xft:Noto Sans Mono CJK TC:antialias=False,\
+	xft:Noto Sans Mono CJK JP:antialias=False
+URxvt.boldFont:\
+	xft:Source Code Pro for Powerline:bold:hinting=True;antialias:True,\
+	xft:Noto Sans Mono CJK SC:bold:antialias=False,\
+	xft:Noto Sans Mono CJK TC:bold:antialias=False,\
+	xft:Noto Sans Mono CJK JP:bold:antialias=False
 ! URxvt.font:             xft:Source Code Pro for Powerline-10:hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:medium;antialias=False,xft:WenQuanYi Zen Hei-10:medium;antialias=True,xft:HanaMinA-10:medium;antialias:True,xft:HanaMinB-10:medium;antialias:True,xft:HanaMinPlus-10:medium;antialias:True
 ! URxvt.boldFont:             xft:Source Code Pro for Powerline-10:bold;hinting=True;antialias:True,xft:WenQuanYi Bitmap Song-10:bold;antialias=False,xft:WenQuanYi Zen Hei-10:bold;antialias=True,xft:HanaMinA-10:bold;antialias:True,xft:HanaMinB-10:bold;antialias:True,xft:HanaMinPlus-10:bold;antialias:True
 
