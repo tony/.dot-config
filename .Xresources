@@ -5,18 +5,20 @@ URxvt*termName: rxvt-256color
 !-- Infinality: http://www.octatech.net/blog/2014/08/ubuntu-like-debian-font-rendering-using-infinality-font/ --!
 Xft.lcdfilter: lcddefault
 !-- Xft settings -- !
-Xft.dpi:        112
+Xft.dpi:        88
 Xft.hinting:    true
 Xft.hintstyle:  hintfull
 Xft.autohint: 0
 
 URxvt.font:\
-	xft:Source Code Pro for Powerline:antialias=true:hinting=True,\
+	xft:Source Code Pro for Powerline:antialias=true:hinting=True:pixelsize=12,\
+	xft:WenQuanYi Bitmap Song:antialias=False:hinting=False,\
 	xft:Noto Sans Mono CJK SC:antialias=False:hinting=False,\
 	xft:Noto Sans Mono CJK TC:antialias=False:hinting=False,\
 	xft:Noto Sans Mono CJK JP:antialias=False:hinting=False
 URxvt.boldFont:\
 	xft:Source Code Pro for Powerline:bold:hinting=True:antialias=True,\
+	xft:WenQuanYi Bitmap Song:bold:antialias=False:hinting=False,\
 	xft:Noto Sans Mono CJK SC:bold:antialias=False:hinting=False,\
 	xft:Noto Sans Mono CJK TC:bold:antialias=False:hinting=False,\
 	xft:Noto Sans Mono CJK JP:bold:antialias=False:hinting=False
