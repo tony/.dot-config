@@ -1,0 +1,91 @@
+*customization: -color
+Xterm*termName: xterm-256color
+URxvt*termName: rxvt-256color
+
+!-- Infinality: http://www.octatech.net/blog/2014/08/ubuntu-like-debian-font-rendering-using-infinality-font/ --!
+Xft.lcdfilter: lcddefault
+!-- Xft settings -- !
+Xft.dpi:        132
+Xft.hinting:    true
+Xft.hintstyle:  hintfull
+Xft.autohint: 0
+
+URxvt.font:\
+	xft:Source Code Pro for Powerline:antialias=true:hinting=True,\
+	xft:Noto Sans Mono CJK SC:antialias=False:hinting=False,\
+	xft:Noto Sans Mono CJK TC:antialias=False:hinting=False,\
+	xft:Noto Sans Mono CJK JP:antialias=False:hinting=False
+URxvt.boldFont:\
+	xft:Source Code Pro for Powerline:bold:hinting=True:antialias=True,\
+	xft:Noto Sans Mono CJK SC:bold:antialias=False:hinting=False,\
+	xft:Noto Sans Mono CJK TC:bold:antialias=False:hinting=False,\
+	xft:Noto Sans Mono CJK JP:bold:antialias=False:hinting=False
+
+!! --- URxvt ---
+URxvt*intensityStyles: false
+URxvt*internalBorder: 0
+!!URxvt*transparent: true
+!!URxvt*.shading:  25
+
+URxvt.inputMethod: fcitx
+!!URxvt.preeditType: OnTheSpot,None
+URxvt.preeditType: OverTheSpot
+
+URxvt*scrollBar_right: false
+URxvt*scrollBar: false
+
+URxvt.letterSpace:      0
+
+URxvt.perl-ext-common: default,matcher,tabbed
+URxvt.tabbed.tabbar-bg: -1
+URxvt.scrollBar:        false
+URxvt.urgentOnBell:     true
+URxvt.imLocale:         en_US.UTF-8
+URxvt.cursorBlink:      true
+
+
+URxvt.borderless:       true
+URxvt*perl-ext-common:  default,matcher
+URxvt*urlLauncher:      x-www-browser
+URxvt*matcher.button:   1
+URxvt.searchable-scrollback: CM-s
+
+
+!! colors from base16
+
+#define base00 #272822
+#define base01 #383830
+#define base02 #49483e
+#define base03 #75715e
+#define base04 #a59f85
+#define base05 #f8f8f2
+#define base06 #f5f4f1
+#define base07 #f9f8f5
+#define base08 #f92672
+#define base09 #fd971f
+#define base0A #f4bf75
+#define base0B #a6e22e
+#define base0C #a1efe4
+#define base0D #66d9ef
+#define base0E #ae81ff
+#define base0F #cc6633
+
+*.foreground:   base05
+*.background:   base00
+*.cursorColor:  base05
+*.color0:       base00
+*.color1:       base08
+*.color2:       base0B
+*.color3:       base0A
+*.color4:       base0D
+*.color5:       base0E
+*.color6:       base0C
+*.color7:       base05
+*.color8:       base03
+*.color9:       base09
+*.color10:      base01
+*.color11:      base02
+*.color12:      base04
+*.color13:      base06
+*.color14:      base0F
+*.color15:      base07
