@@ -19,7 +19,8 @@ pgadmin3 \
 postgresql-9.6 \
 htop \
 virtualbox \
-fonts-noto-cjk
+fonts-noto-cjk \
+xfonts-wqy
 
 
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
