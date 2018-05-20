@@ -1,0 +1,16 @@
+{
+    "telemetry.enableTelemetry": false,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "gitlens.historyExplorer.enabled": true,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.statusBar.feedback.visible": false,
+    "window.zoomLevel": -2,
+    "files.exclude": {
+        "**/*.so": true,
+        "**/*.pyc": true,
+    },
+    "flow.useNPMPackagedFlow": true,
+    "javascript.validate.enable": false,
+}
