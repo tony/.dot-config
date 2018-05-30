@@ -15,5 +15,6 @@
     "flow.useNPMPackagedFlow": true,
     "flow.enabled": false,
     "javascript.validate.enable": false,
-    "vim.useSystemClipboard": true
+    "vim.useSystemClipboard": true,
+    "workbench.colorTheme": "Monokai Dimmed"
 }
