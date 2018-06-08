@@ -320,7 +320,7 @@
   #wxPython: 'git+https://github.com/wxWidgets/wxPython.git'
   #wxWidgets: 'git+https://github.com/wxWidgets/wxWidgets.git'
   openttd:
-    repo: 'git+git://git.openttd.org/openttd/trunk.git'
+    repo: 'git+git://github.com/openttd/openttd.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/openttd.git'
   #vimpc: 'git+https://github.com/boysetsfrog/vimpc'
