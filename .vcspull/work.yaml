@@ -143,6 +143,11 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/kaptan.git'
 
+  releases:
+    repo: 'git+https://github.com/bitprophet/releases.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/releases.git'
+
 ~/work/reStructuredText:
   docutils: 'svn+ssh://gitpull@svn.code.sf.net/p/docutils/code'
   sphinxcontrib-websupport:
