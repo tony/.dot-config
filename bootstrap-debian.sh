@@ -18,6 +18,5 @@ pgadmin3 \
 htop \
 virtualbox \
 fonts-noto-cjk \
-xfonts-wqy
-
-
+xfonts-wqy \
+silversearcher-ag
