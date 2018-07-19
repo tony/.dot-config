@@ -96,3 +96,8 @@ export FZF_DEFAULT_COMMAND='
 [ -f ~/.profile ] && source ~/.profile
 
 antigen apply
+
+grepp() {
+    history | grep $1 | sed 's/^[ ]*[0-9]*[ ]*//g' | sed 's/\\n/\
+    /g'
+}
