@@ -16,5 +16,6 @@
     "flow.enabled": false,
     "javascript.validate.enable": false,
     "vim.useSystemClipboard": true,
-    "workbench.colorTheme": "Monokai Dimmed"
+    "workbench.colorTheme": "Monokai Dimmed",
+    "breadcrumbs.enabled": true
 }
