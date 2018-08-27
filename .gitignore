@@ -63,3 +63,7 @@ config/nvim
 
 # antigen
 antigen.zsh
+
+# vscode
+config/Code/
+!config/Code/User/settings.json
