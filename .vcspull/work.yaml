@@ -37,7 +37,7 @@
 
 ~/work/cihai:
     # cihai-handbook: 'git+ssh://git@github.com/cihai/cihai-handbook.git'
-    cli: 'git+ssh://git@github.com/cihai/cli.git'
+    cihai-cli: 'git+ssh://git@github.com/cihai/cihai-cli.git'
     cihai: 'git+ssh://git@github.com/cihai/cihai.git'
     unihan-etl: 'git+ssh://git@github.com/cihai/unihan-etl.git'
     unihan-db: 'git+ssh://git@github.com/cihai/unihan-db.git'
