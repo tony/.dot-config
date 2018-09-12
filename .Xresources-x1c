@@ -35,7 +35,7 @@ URxvt.preeditType: OverTheSpot
 URxvt*scrollBar_right: false
 URxvt*scrollBar: false
 
-URxvt.letterSpace:      -1
+URxvt.letterSpace:      1
 
 URxvt.perl-ext-common: default,matcher,tabbed
 URxvt.tabbed.tabbar-bg: -1
