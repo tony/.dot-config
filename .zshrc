@@ -41,6 +41,7 @@ antigen bundle zsh-users/zsh-completions
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 
+antigen bundle chrissicool/zsh-256color
 antigen bundle chriskempson/base16-shell
 antigen bundle chriskempson/base16-iterm2
 
