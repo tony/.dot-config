@@ -1,0 +1,6 @@
+# base16-color fix
+# https://github.com/jonas/tig/issues/495
+#
+color cursor            black    white bold
+
+# vi: ts=8 sts=8 sw=8 noet
