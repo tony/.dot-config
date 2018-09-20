@@ -336,6 +336,9 @@
   doubanfm-qt: 'git+https://github.com/zonyitoo/doubanfm-qt.git'
 ~/study/node:
   express: 'git+https://github.com/visionmedia/express.git'
+~/study/typescript:
+  typescript: 'git+https://github.com/Microsoft/TypeScript.git'
+  blueprint: 'git+https://github.com/palantir/blueprint.git'
 ~/study/javascript:
   backbone: 'git+https://github.com/documentcloud/backbone.git'
   backbone.deepmodel: 'git+https://github.com/powmedia/backbone-deep-model.git'
