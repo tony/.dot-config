@@ -114,6 +114,7 @@
       tony: 'git+ssh://git@github.com/tony/python-cmake-buildsystem.git'
 
 ~/study/c: 
+  watchman: 'git+https://github.com/facebook/watchman.git'
   zlib: 
     repo: 'git+https://github.com/madler/zlib.git'
     remotes:
