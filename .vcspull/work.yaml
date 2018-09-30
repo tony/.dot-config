@@ -11,6 +11,13 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/aseprite.git'
 
+
+~/work/peergrade:
+  flask-admin:
+    repo: 'git+https://github.com/flask-admin/flask-admin.git'
+    remotes:
+      peergrade: 'git+ssh://git@github.com/peergradeio/flask-admin.git'
+
 ~/work/c:
   ncurses-example: "git+ssh://git@github.com/tony/ncurses-example.git"
   NCURSES-Programming-HOWTO-examples: "git+ssh://git@github.com/tony/NCURSES-Programming-HOWTO-examples.git"
