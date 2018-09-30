@@ -13,6 +13,7 @@
 
 
 ~/work/peergrade:
+  pymongo-basic-profiler: 'git+ssh://git@github.com/peergradeio/pymongo-basic-profiler.git'
   flask-admin:
     repo: 'git+https://github.com/flask-admin/flask-admin.git'
     remotes:
