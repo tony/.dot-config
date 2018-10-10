@@ -19,6 +19,12 @@
     remotes:
       peergrade: 'git+ssh://git@github.com/peergradeio/flask-admin.git'
 
+  flask-mongoengine:
+    repo: 'git+https://github.com/MongoEngine/flask-mongoengine.git'
+    remotes:
+      peergrade: 'git+ssh://git@github.com/peergradeio/flask-mongoengine.git'
+
+
 ~/work/c:
   ncurses-example: "git+ssh://git@github.com/tony/ncurses-example.git"
   NCURSES-Programming-HOWTO-examples: "git+ssh://git@github.com/tony/NCURSES-Programming-HOWTO-examples.git"
