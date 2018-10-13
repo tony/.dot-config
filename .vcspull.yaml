@@ -363,6 +363,10 @@
   nltk: 'git+https://github.com/nltk/nltk.git'
   grako: 'hg+https://bitbucket.org/apalala/grako'
   cffi: 'hg+https://bitbucket.org/cffi/cffi'
+  sqltap:
+    repo: 'git+https://github.com/inconshreveable/sqltap.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sqltap.git'
   kaa:
     repo: 'git+https://github.com/kaaedit/kaa.git'
     remotes:
