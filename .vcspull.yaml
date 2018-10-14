@@ -363,6 +363,10 @@
   nltk: 'git+https://github.com/nltk/nltk.git'
   grako: 'hg+https://bitbucket.org/apalala/grako'
   cffi: 'hg+https://bitbucket.org/cffi/cffi'
+  rq-dashboard:
+    repo: 'git+https://github.com/eoranged/rq-dashboard.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/rq-dashboard.git'
   sqltap:
     repo: 'git+https://github.com/inconshreveable/sqltap.git'
     remotes:
