@@ -9,3 +9,5 @@ alias configure_vim='./configure --with-features=huge --enable-pythoninterp --wi
 # fi
 
 export TTY=$(tty)
+
+alias vim_git='vim -p $(git diff --name-only HEAD)'
