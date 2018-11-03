@@ -23,6 +23,14 @@
     repo: 'git+https://github.com/MongoEngine/flask-mongoengine.git'
     remotes:
       peergrade: 'git+ssh://git@github.com/peergradeio/flask-mongoengine.git'
+  python-saml:
+    repo: 'git+https://github.com/onelogin/python-saml.git'
+    remotes:
+      peergrade: 'git+ssh://git@github.com/peergradeio/python-saml.git'
+  python3-saml:
+    repo: 'git+https://github.com/onelogin/python3-saml.git'
+    remotes:
+      peergrade: 'git+ssh://git@github.com/peergradeio/python3-saml.git'
 
 
 ~/work/c:
