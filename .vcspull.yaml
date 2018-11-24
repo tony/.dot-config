@@ -215,6 +215,7 @@
   nginx: 'hg+http://hg.nginx.org/nginx'
   tre: 'git+https://github.com/laurikari/tre'
 ~/study/c++:
+  cquery: 'git+https://github.com/cquery-project/cquery.git'
   GeographicLib: 'git+https://git.code.sf.net/p/geographiclib/code'
   blender: 'git+https://git.blender.org/blender.git'
   entityx: 'git+https://github.com/alecthomas/entityx'
