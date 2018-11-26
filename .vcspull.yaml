@@ -364,6 +364,12 @@
   nltk: 'git+https://github.com/nltk/nltk.git'
   grako: 'hg+https://bitbucket.org/apalala/grako'
   cffi: 'hg+https://bitbucket.org/cffi/cffi'
+  graphene:
+    repo: 'git+https://github.com/graphql-python/graphene.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/graphene.git'
+      peergrade: 'git+ssh://git@github.com/peergradeio/graphene.git'
+
   rq-dashboard:
     repo: 'git+https://github.com/eoranged/rq-dashboard.git'
     remotes:
