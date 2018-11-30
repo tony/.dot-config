@@ -58,10 +58,21 @@ audio_output {
 #        name    "alsa MPD"
 # }
 
+# audio_output {
+#   type            "osx"
+#   name            "CoreAudio"
+#   mixer_type      "software"
+# }
+
+# https://github.com/MusicPlayerDaemon/MPD/issues/72
+# Fix audio with bluetooth on OS X
 audio_output {
-  type            "osx"
-  name            "CoreAudio"
-  mixer_type      "software"
+  name "default"
+  type "ao"
+  mixer_type "software"
+
+  audio_buffer_size "8192"
+  buffer_before_play "25%"
 }
 
 # audio_output {
