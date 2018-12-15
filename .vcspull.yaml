@@ -369,6 +369,10 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/graphene.git'
       peergrade: 'git+ssh://git@github.com/peergradeio/graphene.git'
+  python-docx:
+    repo: 'git+https://github.com/python-openxml/python-docx.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/python-docx.git'
 
   rq-dashboard:
     repo: 'git+https://github.com/eoranged/rq-dashboard.git'
