@@ -19,6 +19,11 @@
     remotes:
       peergrade: 'git+ssh://git@github.com/peergradeio/python-socketio.git'
 
+  sphinx-graphiql:
+    repo: 'git+https://github.com/hasura/sphinx-graphiql.git'
+    remotes:
+      peergrade: 'git+ssh://git@github.com/peergradeio/sphinx-graphiql.git'
+
 
   flask-admin:
     repo: 'git+https://github.com/flask-admin/flask-admin.git'
