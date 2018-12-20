@@ -25,6 +25,18 @@
     remotes:
       peergrade: 'git+ssh://git@github.com/peergradeio/flask-admin.git'
 
+  mongoengine-slugfield:
+    repo: 'git+https://github.com/bennylope/mongoengine-extras.git'
+    remotes:
+      peergrade: 'git+ssh://git@github.com/peergradeio/mongoengine-slugfield.git'
+
+  mongoengine-objectidmapfield: 'git+https://github.com/peergradeio/mongoengine-objectidmapfield.git'
+
+  extras-mongoengine:
+    repo: 'git+https://github.com/MongoEngine/extras-mongoengine.git'
+    remotes:
+      peergrade: 'git+ssh://git@github.com/peergradeio/extras-mongoengine.git'
+
   flask-mongoengine:
     repo: 'git+https://github.com/MongoEngine/flask-mongoengine.git'
     remotes:
