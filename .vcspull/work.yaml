@@ -107,6 +107,9 @@
     remotes:
       develtech: 'git+ssh://git@github.com/develtech/pytest-django.git'
 
+  django-docutils:
+    repo: 'git+https://github.com/tony/django-docutils'
+
 
   django-robots:
     repo: 'git+https://github.com/jazzband/django-robots.git'
