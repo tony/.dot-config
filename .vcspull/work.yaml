@@ -13,6 +13,12 @@
 
 
 ~/work/peergrade:
+  django-assets:
+    repo: 'git+https://github.com/miracle2k/django-assets.git'
+    remotes:
+      peergrade: 'git+ssh://git@github.com/peergradeio/django-assets.git'
+      tony: 'git+ssh://git@github.com/tony/django-assets.git'
+
   pymongo-basic-profiler: 'git+ssh://git@github.com/peergradeio/pymongo-basic-profiler.git'
   python-socketio:
     repo: 'git+https://github.com/miguelgrinberg/python-socketio.git'
