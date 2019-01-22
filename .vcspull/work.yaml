@@ -19,6 +19,11 @@
       peergrade: 'git+ssh://git@github.com/peergradeio/django-assets.git'
       tony: 'git+ssh://git@github.com/tony/django-assets.git'
 
+  django-mongoengine:
+    repo: 'git+https://github.com/MongoEngine/django-mongoengine.git'
+    remotes:
+      peergrade: 'git+ssh://git@github.com/peergradeio/django-mongoengine.git'
+
   pymongo-basic-profiler: 'git+ssh://git@github.com/peergradeio/pymongo-basic-profiler.git'
   python-socketio:
     repo: 'git+https://github.com/miguelgrinberg/python-socketio.git'
