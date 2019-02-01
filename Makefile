@@ -33,3 +33,5 @@ install:
 	ln -si ${DOT_CONFIG_DIR}/.vcspull ~/.vcspull
 	ln -si ${DOT_CONFIG_DIR}/.vcspull.yaml ~/.vcspull.yaml
 	ln -si ${DOT_CONFIG_DIR}/.Xresources ~/.Xresources
+	ln -si ${DOT_CONFIG_DIR}/.ipython ~/.ipython
+	ln -si ${DOT_CONFIG_DIR}/.ptpython ~/.ptpython
