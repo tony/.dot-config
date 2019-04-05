@@ -61,7 +61,10 @@ fi
 
 alias clear_pyc='find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf'
 
-source ~/.dot-config/.shell/env.d/base16-shell.sh
+if [ -z "$KONSOLE_PROFILE_NAME" ]; then
+  source ~/.dot-config/.shell/env.d/base16-shell.sh
+fi
+
 # for OS X keychain(1) error, Error: Problem adding; giving up
 fixssh() {
     for key in SSH_AUTH_SOCK SSH_CONNECTION SSH_CLIENT; do
