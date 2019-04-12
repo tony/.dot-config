@@ -14,16 +14,19 @@ entr \
 curl \
 openssh-server \
 build-essential \
-python3-pip \
 pgadmin3 \
-postgresql-9.6 \
+postgresql-10 \
 htop \
 virtualbox \
 fonts-noto-cjk \
 xfonts-wqy
 
 
-curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install python3.7
+
+
+curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 
@@ -55,7 +58,7 @@ sudo apt-get install yarn
 # https://github.com/golang/go/wiki/Ubuntu
 sudo add-apt-repository ppa:gophers/archive
 sudo apt update
-sudo apt-get install golang-1.9-go
+sudo apt-get install golang-1.11-go
 
-GOEXPORT='export PATH=$PATH:/usr/lib/go-1.9/bin'
+GOEXPORT='export PATH=$PATH:/usr/lib/go-1.11/bin'
 grep -q -F "$GOEXPORT" ~/.profile || echo "$GOEXPORT" >> ~/.profile 
