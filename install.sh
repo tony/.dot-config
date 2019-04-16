@@ -58,6 +58,10 @@ fi
 if [ ! "$(python -c 'import dotfiles' >/dev/null 2>&1)" ]; then
   pip install --user dotfiles
 fi
+
+if [ ! "$(python -c 'import tmuxp' >/dev/null 2>&1)" ]; then
+  pip install --user tmuxp vcspull virtualenv pipenv setuptools python-language-server
+fi
 if [ ! -d $HOME/.dot-config ]; then
   git clone --recursive https://github.com/tony/.dot-config ~/.dot-config
 fi
