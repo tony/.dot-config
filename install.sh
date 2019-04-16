@@ -47,10 +47,10 @@ echo "pip not installed"
 	fi
   case ${OS_NAME_L} in
     freebsd )
-      su - root -c "python $HOME/Downloads/get-pip.py"
+      su - root -c "python3 $HOME/Downloads/get-pip.py"
     ;;
     linux )
-      sudo python $HOME/Downloads/get-pip.py
+      sudo python3 $HOME/Downloads/get-pip.py
     ;;
   esac
 fi
