@@ -41,8 +41,6 @@ antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 
 antigen bundle chrissicool/zsh-256color
-antigen bundle chriskempson/base16-shell
-antigen bundle chriskempson/base16-iterm2
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 
@@ -60,10 +58,6 @@ if command -v reattach-to-user-namespace > /dev/null; then
 fi
 
 alias clear_pyc='find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf'
-
-if [ -z "$KONSOLE_PROFILE_NAME" ]; then
-  source ~/.dot-config/.shell/env.d/base16-shell.sh
-fi
 
 # for OS X keychain(1) error, Error: Problem adding; giving up
 fixssh() {
