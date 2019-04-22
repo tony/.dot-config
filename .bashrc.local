@@ -7,3 +7,9 @@ source ~/.dot-config/.shell/prompt/git-prompt.sh
 
 export GIT_PS1_SHOWCOLORHINTS=true # Option for git-prompt.sh to show branch name in color
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] $(__git_ps1 "%s") \$ '
+
+# Needed and used by vim to ignore .gitignore files
+export FZF_DEFAULT_COMMAND='
+  (git ls-files --recurse-submodules ||
+   find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
+      sed s/^..//) 2> /dev/null'
