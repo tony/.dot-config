@@ -15,3 +15,33 @@ export FZF_DEFAULT_COMMAND='
   (git ls-files --recurse-submodules ||
    find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
       sed s/^..//) 2> /dev/null'
+
+
+#
+# Bash History: START
+#
+
+# Append
+shopt -s histappend
+
+# One command per line
+shopt -s cmdhist
+
+# Thanks https://unix.stackexchange.com/a/131507
+export PROMPT_COMMAND="${PROMPT_COMMAND}${PROMPT_COMMAND:+;}history -a; history -n"
+# export PROMPT_COMMAND="history -a; history -n"
+
+https://sanctum.geek.nz/arabesque/better-bash-history/
+
+
+export HISTCONTROL=ignoreboth
+export HISTIGNORE='ls:bg:fg:history'
+
+# Larger than 500 lines
+export HISTFILESIZE=1000000
+export HISTSIZE=1000000
+
+#
+# Bash History: END
+#
+
