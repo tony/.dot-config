@@ -31,9 +31,7 @@ shopt -s cmdhist
 export PROMPT_COMMAND="${PROMPT_COMMAND}${PROMPT_COMMAND:+;}history -a; history -n"
 # export PROMPT_COMMAND="history -a; history -n"
 
-https://sanctum.geek.nz/arabesque/better-bash-history/
-
-
+# https://sanctum.geek.nz/arabesque/better-bash-history/
 export HISTCONTROL=ignoreboth
 export HISTIGNORE='ls:bg:fg:history'
 
