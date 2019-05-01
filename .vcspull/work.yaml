@@ -19,6 +19,20 @@
       peergrade: 'git+ssh://git@github.com/peergradeio/django-assets.git'
       tony: 'git+ssh://git@github.com/tony/django-assets.git'
 
+  django-webpack-loader:
+    repo: 'git+https://github.com/owais/django-webpack-loader.git'
+    remotes:
+      peergrade: 'git+ssh://git@github.com/peergradeio/django-webpack-loader.git'
+      tony: 'git+ssh://git@github.com/tony/django-webpack-loader.git'
+      alihazemfarouk: 'git+ssh://git@github.com/alihazemfarouk/django-webpack-loader.git'
+
+  webpack-bundle-tracker:
+    repo: 'git+https://github.com/owais/webpack-bundle-tracker.git'
+    remotes:
+      peergrade: 'git+ssh://git@github.com/peergradeio/webpack-bundle-tracker.git'
+      tony: 'git+ssh://git@github.com/tony/webpack-bundle-tracker.git'
+      alihazemfarouk: 'git+ssh://git@github.com/alihazemfarouk/webpack-bundle-tracker.git'
+
   django-mongoengine:
     repo: 'git+https://github.com/MongoEngine/django-mongoengine.git'
     remotes:
