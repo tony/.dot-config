@@ -1,4 +1,4 @@
-export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/.local/bin:/mnt/c/Users/tony/Scripts
 
 source ~/.dot-config/.shell/env.d/most.sh
 source ~/.dot-config/.shell/aliases.sh
