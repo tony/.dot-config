@@ -364,6 +364,11 @@
   nltk: 'git+https://github.com/nltk/nltk.git'
   grako: 'hg+https://bitbucket.org/apalala/grako'
   cffi: 'hg+https://bitbucket.org/cffi/cffi'
+  pytest-splinter:
+    repo: 'git+https://github.com/pytest-dev/pytest-splinter.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/pytest-splinter.git'
+
   graphene:
     repo: 'git+https://github.com/graphql-python/graphene.git'
     remotes:
