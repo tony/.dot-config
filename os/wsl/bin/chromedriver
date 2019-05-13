@@ -1,0 +1,2 @@
+#!/bin/sh
+/mnt/c/Users/tony/Scripts/chromedriver.exe "$@"
