@@ -364,6 +364,12 @@
   nltk: 'git+https://github.com/nltk/nltk.git'
   grako: 'hg+https://bitbucket.org/apalala/grako'
   cffi: 'hg+https://bitbucket.org/cffi/cffi'
+
+  djangorestframework-api-key:
+    repo: 'git+https://github.com/florimondmanca/djangorestframework-api-key.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/djangorestframework-api-key.git'
+
   pytest-splinter:
     repo: 'git+https://github.com/pytest-dev/pytest-splinter.git'
     remotes:
