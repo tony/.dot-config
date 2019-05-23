@@ -21,3 +21,7 @@ install:
 	ln -si ${DOT_CONFIG_DIR}/.Xresources ~/.Xresources
 	ln -si ${DOT_CONFIG_DIR}/.ipython ~/.ipython
 	ln -si ${DOT_CONFIG_DIR}/.ptpython ~/.ptpython
+
+debian_fix_inotify:
+	# Fixes inotify for watchman
+	echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
