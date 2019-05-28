@@ -27,7 +27,10 @@ debian_fix_inotify:
 	echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
 debian_packages:
-	sudo apt-get install tmux cmake ninja-build rxvt-unicode-256color libpython-dev \
+	sudo apt-get install \
+	tmux \
+	cmake ninja-build \
+	rxvt-unicode-256color \
 	cowsay \
 	fortune-mod \
 	vim-nox \
@@ -41,10 +44,13 @@ debian_packages:
 	entr \
 	curl \
 	openssh-server \
-	build-essential \
 	pgadmin3 \
 	postgresql-11 \
 	htop \
-	fonts-noto-cjk \
-	xfonts-wqy libpython3.7-dev python3-pip libsasl2-dev libxslt1-dev libxmlsec1-dev libxml2-dev libldap2-dev tmux redis-server pkg-config libtool m4 automake autoconf \
+	redis-server \
+	fonts-noto-cjk xfonts-wqy \
+	libpython3.7-dev python3-pip libpython-dev \
+	libsasl2-dev libxslt1-dev libxmlsec1-dev libxml2-dev libldap2-dev \
+	build-essential \
+	pkg-config libtool m4 automake autoconf \
 	chromium-chromedriver
