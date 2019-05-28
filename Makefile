@@ -52,5 +52,4 @@ debian_packages:
 	libpython3.7-dev python3-pip libpython-dev \
 	libsasl2-dev libxslt1-dev libxmlsec1-dev libxml2-dev libldap2-dev \
 	build-essential \
-	pkg-config libtool m4 automake autoconf \
-	chromium-chromedriver
+	pkg-config libtool m4 automake autoconf
