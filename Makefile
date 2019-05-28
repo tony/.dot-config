@@ -46,4 +46,5 @@ debian_packages:
 	postgresql-11 \
 	htop \
 	fonts-noto-cjk \
-	xfonts-wqy libpython3.7-dev python3-pip libsasl2-dev libxslt1-dev libxmlsec1-dev libxml2-dev libldap2-dev tmux redis-server pkg-config libtool m4 automake autoconf
+	xfonts-wqy libpython3.7-dev python3-pip libsasl2-dev libxslt1-dev libxmlsec1-dev libxml2-dev libldap2-dev tmux redis-server pkg-config libtool m4 automake autoconf \
+	chromium-chromedriver
