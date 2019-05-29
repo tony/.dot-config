@@ -17,5 +17,7 @@
     "javascript.validate.enable": false,
     "vim.useSystemClipboard": true,
     "workbench.colorTheme": "Monokai Dimmed",
-    "breadcrumbs.enabled": true
+    "breadcrumbs.enabled": true,
+    "telemetry.enableCrashReporter": false,
+    "gitlens.advanced.telemetry.enabled": false
 }
