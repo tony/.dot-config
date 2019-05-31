@@ -33,6 +33,12 @@
       tony: 'git+ssh://git@github.com/tony/webpack-bundle-tracker.git'
       alihazemfarouk: 'git+ssh://git@github.com/alihazemfarouk/webpack-bundle-tracker.git'
 
+  fakeredis:
+    repo: 'git+https://github.com/jamesls/fakeredis.git'
+    remotes:
+      peergrade: 'git+ssh://git@github.com/peergradeio/fakeredis.git'
+      tony: 'git+ssh://git@github.com/tony/fakeredis.git'
+
   django-mongoengine:
     repo: 'git+https://github.com/MongoEngine/django-mongoengine.git'
     remotes:
