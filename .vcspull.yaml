@@ -1,362 +1,24 @@
-~/study/standards-and-practices/html:
-  north: 'git+https://github.com/Snugug/north.git'
-  semantic-ui: 'git+https://github.com/Semantic-Org/Semantic-UI.git'
-  isobar-frontend: 'git+https://github.com/isobar-idev/code-standards.git'
-~/study/data-structures-algorithms/c:
-  libds: 'git+https://github.com/zhemao/libds.git'
-  algoxy: 
-    repo: 'git+https://github.com/liuxinyu95/AlgoXY.git'
+~/study/go/:
+  jetpack: 'git+https://github.com/3ofcoins/jetpack.git'
+  docker:
+    repo: 'git+https://github.com/docker/docker.git'
     remotes:
-      tony: 'git+ssh://git@github.com/tony/AlgoXY.git'
-~/study/data-structures-algorithms/c++:
-  algorithms:
-    repo: 'git+https://github.com/xtaci/algorithms.git'
+      kvasdopil: 'https://github.com/kvasdopil/docker.git'
+      tony: 'https://github.com/tony/docker.git'
+  go: 'git+https://github.com/golang/go.git'
+  gitea:
+    repo: 'git+https://github.com/go-gitea/gitea.git'
     remotes:
-      tony: 'git+ssh://git@github.com/tony/algorithms.git'
-  cracking-the-code-interview: 'git+https://github.com/Hawstein/cracking-the-coding-interview.git'
-~/study/data-structures-algorithms/python:
-  cracking-the-code-interview: 'git+https://github.com/careercup/CtCI-6th-Edition-Python'
-  Algorithms: 'git+https://github.com/prakhar1989/Algorithms.git'
-~/study/data-structures-algorithms/java: 
-  java-algorithms-implementations: 'git+https://github.com/phishman3579/java-algorithms-implementation.git'
-~/study/devops-books:
-  github-cheat-sheet: 'git+https://github.com/tiimgreen/github-cheat-sheet.git'
-~/study/standards-and-practices/php:
-  php-fig: 'git+https://github.com/php-fig/fig-standards.git'
-~/study/standards-and-practices/js:
-  idiomatic.js: 'git+https://github.com/rwaldron/idiomatic.js.git'
-~/study/swift:
-  swift: 'git+https://github.com/apple/swift.git'
-~/study/llvm:
-  llvm: 'git+http://llvm.org/git/llvm.git'
-  clang: 'git+http://llvm.org/git/clang.git'
-  clang-tools-extra: 'git+https://github.com/llvm-mirror/clang-tools-extra.git'
-  lldb: 'git+http://llvm.org/git/lldb.git'
-  libcxx: 'git+https://github.com/llvm-mirror/libcxx.git'
-~/study/dotnet:
-  coreclr:
-    repo: 'git+https://github.com/dotnet/coreclr.git'
+      tony: 'git+git@github.com/tony/gitea.git'
+  go-koans:
+    repo: 'git+https://github.com/cdarwin/go-koans.git'
     remotes:
-      tony: 'git+ssh://git@github.com/tony/coreclr.git'
-~/study/sh:
-  misspell_fixer:
-    repo: 'git+https://github.com/vlajos/misspell_fixer.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/misspell_fixer.git'
-  roundup: 
-    repo: 'git+https://github.com/bmizerany/roundup.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/roundup.git'
-  shocco: 'git+https://github.com/rtomayko/shocco'
-~/study/sqlalchemy:
-  sqlalchemy: 
-    repo: 'git+https://github.com/zzzeek/sqlalchemy.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/sqlalchemy.git'
-  sqlalchemy_traversal: 'git+https://github.com/sontek/sqlalchemy_traversal.git'
-  sqlamp: 'git+https://github.com/tony/sqlamp.git'
-  sqlalchemy-orm-tree: 
-    repo: 'git+https://github.com/monetizeio/sqlalchemy-orm-tree.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/sqlalchemy-orm-tree.git'
-  sqlalchemy-bitcoin: 'git+https://github.com/monetizeio/sqlalchemy-bitcoin.git'
-  cubes: 'git+https://github.com/Stiivi/cubes.git'
-  bubbles: 'git+https://github.com/Stiivi/bubbles.git'
-~/study/js-books:
-  backbone-fundamentals: 'git+https://github.com/addyosmani/backbone-fundamentals'
-  essential-js-design-patterns: 'git+https://github.com/addyosmani/essential-js-design-patterns.git'
-  you-dont-know-js: 'git+https://github.com/getify/You-Dont-Know-JS.git'
-  eloquent-js:  'git+https://github.com/marijnh/Eloquent-JavaScript.git'
-  jqfundamentals: 'git+https://github.com/rmurphey/jqfundamentals.git'
-~/study/koans:
-  backbone: 'git+https://github.com/addyosmani/backbone-koans-qunit.git'
-~/study/python-books:
-  pydata-book: 'git+https://github.com/pydata/pydata-book.git'
-  byte-of-python: 'git+https://github.com/swaroopch/byte_of_python.git'
-  python-for-signal-processing: 'git+https://github.com/unpingco/Python-for-Signal-Processing.git'
-  probabilistic-programming-and-bayesian-methods: 'git+https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers.git'
-  python-guide: 
-    repo: 'git+https://github.com/kennethreitz/python-guide.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/python-guide.git'
-  python-patterns: 'git+https://github.com/faif/python-patterns.git'
-
-~/study/compsci-books:
-  bottomupcs: 'git+https://github.com/ianw/bottomupcs.git'
-
-~/study/merchant:
-  satchless: 'git+https://github.com/mirumee/satchless.git'
-  braintree.js: 'git+https://github.com/braintree/braintree.js.git'
-  braintree_node: 'git+https://github.com/braintree/braintree_node.git'
-  braintree_python: 'git+https://github.com/braintree/braintree_python.git'
-  braintree_node_guide: 'git+https://github.com/braintree/braintree_node_guide.git'
-  braintree_python_guide: 'git+https://github.com/braintree/braintree_python_guide.git'
-  balanced-js: 'git+https://github.com/balanced/balanced-js.git'
-  balanced-python: 'git+https://github.com/balanced/balanced-python.git'
-  stripe-node: 'git+https://github.com/stripe/stripe-node.git'
-  stripe-python: 'git+https://github.com/stripe/stripe-python.git'
-  authorize-sauce: 'git+https://github.com/jeffschenck/authorizesauce'
-  paypal-python-sdk: 'git+https://github.com/paypal/PayPal-Python-SDK.git'
-  pyauthorize: 'git+https://github.com/vcatalano/py-authorize.git'
-  billy: 'git+https://github.com/balanced/billy.git'
-  merchant: 'git+https://github.com/agiliq/merchant.git'
-
-~/study/lua:
-  lua: 'git+https://github.com/LuaDist/lua.git'
-  luajit: 'git+https://github.com/LuaDist/luajit.git'
-  lua-re2: 'git+https://github.com/cloudflare/lua-re2.git'
-~/study/ruby:
-  rails: 'git+https://github.com/rails/rails.git'
-~/study/cmake:
-  python-cmake-buildsystem: 
-    repo: 'git+https://github.com/python-cmake-buildsystem/python-cmake-buildsystem.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/python-cmake-buildsystem.git'
-
-~/study/c: 
-  sway: 'git+https://github.com/swaywm/sway.git'
-  watchman: 'git+https://github.com/facebook/watchman.git'
-  zlib: 
-    repo: 'git+https://github.com/madler/zlib.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/zlib.git'
-      commontk: 'git+https://github.com/commontk/zlib.git'
-
-  git-vcs: 'git+https://github.com/git/git.git'
-  libevent: 'git+https://github.com/libevent/libevent'
-  SDL2: 'hg+https://hg.libsdl.org/SDL'
-  htop: 'git+https://github.com/hishamhm/htop.git'
-  jemalloc: 'git+https://github.com/jemalloc/jemalloc'
-  craft: 'git+https://github.com/fogleman/Craft.git'
-  libressl: 'git+https://github.com/libressl-portable/openbsd.git'
-  libressl-portable: 'git+https://github.com/libressl-portable/portable.git'
-  ck: 'git+https://github.com/concurrencykit/ck.git'
-  vis:
-    repo: 'git+https://github.com/martanne/vis.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/vis.git'
-  nanovg:
-    repo: 'git+https://github.com/memononen/nanovg.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/nanovg.git'
-  glfw:
-    repo: 'git+https://github.com/glfw/glfw.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/glfw/glfw.git'
-
-  libui:
-    repo: 'git+https://github.com/andlabs/libui.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/libui.git'
-
-  the_silver_searcher:
-    repo: 'git+https://github.com/ggreer/the_silver_searcher.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/the_silver_searcher.git'
-  ruby: 'git+https://github.com/ruby/ruby.git'
-  i3: 
-    repo: 'git+https://github.com/i3/i3.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/i3.git'
-      airblader: 'git+https://github.com/Airblader/i3.git'  # gaps
-  klib: 'git+https://github.com/attractivechaos/klib.git'
-  libuv: 'git+https://github.com/libuv/libuv.git'
-  #libimobiledevice: 'git+https://github.com/libimobiledevice/libimobiledevice.git'
-  redis: 'git+https://github.com/antirez/redis.git'
-  cython: 
-    repo: 'git+https://github.com/cython/cython.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/cython.git'
-
-  flex:
-    repo: 'git+git://git.code.sf.net/p/flex/flex'
-    remotes:
-      tony: 'git+ssh://git@github.com:tony/flex.git'
-  spectrwm:
-    repo: 'git+https://github.com/conformal/spectrwm.git'
-    remotes:
-      tony: 'git+ssh://git@github.com:tony/spectrwm.git'
+      tony: 'git+ssh://git@github.com/cdarwin/go-koans.git'
+  go-python: 'git+https://github.com/sbinet/go-python'
+  otto: 'git+https://github.com/robertkrimen/otto'
+  blackfriday: 'git+https://github.com/russross/blackfriday.git'
 
 
-  #awesome: 'git+https://github.com/awesomeWM/awesome.git'
-  ctags: 'git+https://github.com/universal-ctags/ctags'
-  #weechat: 'git+git://git.sv.gnu.org/weechat.git'
-  #retroarch: 'git+https://github.com/Themaister/RetroArch.git'
-  #linux: 'git+https://github.com/torvalds/linux.git'
-  #minix: 'git+https://github.com/minix3/minix'
-  ncmpc: 'git+git://git.musicpd.org/master/ncmpc.git'
-  tmux:
-    repo: 'git+https://github.com/tmux/tmux.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/tmux.git'
-
-  git: 'git+https://github.com/git/git.git'
-  libgit2:
-    repo: 'git+https://github.com/libgit2/libgit2.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/libgit2.git'
-
-  postgres:
-    repo: 'git+https://github.com/postgres/postgres.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/postgres.git'
-  nuklear:
-    repo: 'git+https://github.com/vurtun/nuklear.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/nuklear.git'
-
-  pgadmin3: 'git+git://git.postgresql.org/git/pgadmin3.git'
-  textadept: 'hg+http://foicica.com/hg/textadept'
-
-  musl-libc: 'git+git://git.musl-libc.org/musl'
-  util-cursor: 'git+git://anongit.freedesktop.org/xcb/util-cursor'
-  zsh: 'git+git://git.code.sf.net/p/zsh/code'
-  cpython: 'git+https://github.com/python/cpython.git'
-  micropython: 'git+https://github.com/micropython/micropython.git'
-  nginx: 'hg+http://hg.nginx.org/nginx'
-  tre: 'git+https://github.com/laurikari/tre'
-~/study/c++:
-  cquery: 'git+https://github.com/cquery-project/cquery.git'
-  GeographicLib: 'git+https://git.code.sf.net/p/geographiclib/code'
-  blender: 'git+https://git.blender.org/blender.git'
-  entityx: 'git+https://github.com/alecthomas/entityx'
-  anax: 'git+https://github.com/miguelmartin75/anax'
-  caffe: 'git+https://github.com/BVLC/caffe.git'
-  tensorflow: 'git+https://github.com/tensorflow/tensorflow.git'
-  boost-python-examples: 'git+https://github.com/TNG/boost-python-examples.git'
-  magnum:
-    repo: 'git+https://github.com/mosra/magnum.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/magnum.git'
-  nanogui:
-    repo: 'git+https://github.com/wjakob/nanogui.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/nanogui.git'
-  nanogui-sdl:
-    repo: 'git+https://github.com/dalerank/nanogui-sdl.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/nanogui-sdl.git'
-
-  protobuf:
-    repo: 'git+https://github.com/google/protobuf.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/protobuf.git'
-  box2d:
-    repo: 'git+https://github.com/erincatto/Box2D.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/Box2D.git'
-
-  pybind11:
-    repo: 'git+https://github.com/pybind/pybind11.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/pybind11.git'
-  cmake:
-    repo: 'git+https://github.com/Kitware/cmake.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/cmake.git'
-
-  jucipp:
-    repo: 'git+https://github.com/cppit/jucipp.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/jucipp.git'
-
-  kakoune:
-    repo: 'git+https://github.com/mawww/kakoune.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/kakoune.git'
-  googletest: 'git+https://github.com/google/googletest'
-  gmock: 'git+https://github.com/google/googlemock'
-  benchmark: 'git+https://github.com/google/benchmark'
-  skia: 
-    repo: 'git+https://github.com/google/skia.git'
-    remotes:
-      aseprite: 'git+https://github.com/aseprite/skia'
-  libsdl2pp:
-    repo: 'git+https://github.com/libSDL2pp/libSDL2pp'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/libSDL2pp.git'
-
-  boost: 'git+https://github.com/boostorg/boost'
-  libpypa:
-    repo: 'git+https://github.com/vinzenz/libpypa.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/libpypa.git'
-  libunwind:
-    repo: 'git+git://git.sv.gnu.org/libunwind.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/libunwind.git'
-      dropbox: 'https://github.com/dropbox/libunwind.git'
-      llvm: 'http://llvm.org/git/libunwind'
-
-  solarus:
-    repo: 'git+https://github.com/christopho/solarus.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/solarus.git'
-
-  tmux-mem-cpu-load:
-    repo: 'git+https://github.com/thewtex/tmux-mem-cpu-load.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/tmux-mem-cpu-load.git'
-
-  oxygine:
-    repo: 'git+https://github.com/oxygine/oxygine-framework.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/oxygine-framework.git'
-  ninja: 
-    repo: 'git+https://github.com/ninja-build/ninja.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/ninja.git'
-  re2: 'git+https://github.com/google/re2.git'
-  # blink:
-  #   repo: 'git+https://chromium.googlesource.com/chromium/blink'
-  v8:
-    repo: 'git+git://github.com/v8/v8.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/v8.git'
-  node:
-    repo: 'git+https://github.com/nodejs/node.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/node.git'
-  #zeal: 'git+https://github.com/jkozera/zeal.git'
-  #phantomjs: 'git+https://github.com/ariya/phantomjs.git'
-  #tudu: 'git+https://gitorious.org/tudu/tudu.git'
-  #wxPython: 'git+https://github.com/wxWidgets/wxPython.git'
-  #wxWidgets: 'git+https://github.com/wxWidgets/wxWidgets.git'
-  openttd:
-    repo: 'git+git://github.com/openttd/openttd.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/openttd.git'
-  #vimpc: 'git+https://github.com/boysetsfrog/vimpc'
-  #mpd: 'git+git://git.musicpd.org/master/mpd.git'
-  #libmpd: 'git+git://git.musicpd.org/master/libmpd.git'
-  ncmpcpp: 
-    repo: 'git+https://github.com/arybczak/ncmpcpp.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/ncmpcpp.git'
-  #libmpdclient: 'git+git://git.musicpd.org/master/libmpdclient.git'
-  #node: 'git+https://github.com/joyent/node.git'
-  #libzmp: 'git+https://github.com/zeromq/libzmq.git'
-  doubanfm-qt: 'git+https://github.com/zonyitoo/doubanfm-qt.git'
-~/study/node:
-  express: 'git+https://github.com/visionmedia/express.git'
-~/study/typescript:
-  typescript: 'git+https://github.com/Microsoft/TypeScript.git'
-  blueprint: 'git+https://github.com/palantir/blueprint.git'
-~/study/javascript:
-  backbone: 'git+https://github.com/documentcloud/backbone.git'
-  backbone.deepmodel: 'git+https://github.com/powmedia/backbone-deep-model.git'
-  backbone.marionette: 'git+https://github.com/marionettejs/backbone.marionette.git'
-  backbone.wreqr: 'git+https://github.com/marionettejs/backbone.wreqr.git'
-  backbone.babysitter: 'git+https://github.com/marionettejs/backbone.babysitter.git'
-  underscore: 'git+https://github.com/documentcloud/underscore.git'
-  underscore-contrib: 'git+https://github.com/documentcloud/underscore-contrib.git'
-  lodash: 'git+https://github.com/bestiejs/lodash.git'
-  requirejs: 'git+https://github.com/jrburke/requirejs.git'
-  r.js: 'git+https://github.com/jrburke/r.js.git'
-  jquery: 'git+https://github.com/jquery/jquery.git'
-  jquery-ui: 'git+https://github.com/jquery/jquery-ui.git'
-  codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
-  doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/python:
   # some nice sqlalchemy code
   oslo.db: 'git+https://github.com/openstack/oslo.db'
@@ -773,25 +435,366 @@
   Scrapy-Smiles: 'git+https://github.com/mjhea0/Scrapy-Samples'
   scrapy-examples: 'git+https://github.com/geekan/scrapy-examples'
   django-dynamic-scraper: 'git+https://github.com/holgerd77/django-dynamic-scraper'
-~/study/go/:
-  jetpack: 'git+https://github.com/3ofcoins/jetpack.git'
-  docker:
-    repo: 'git+https://github.com/docker/docker.git'
+
+~/study/standards-and-practices/html:
+  north: 'git+https://github.com/Snugug/north.git'
+  semantic-ui: 'git+https://github.com/Semantic-Org/Semantic-UI.git'
+  isobar-frontend: 'git+https://github.com/isobar-idev/code-standards.git'
+~/study/data-structures-algorithms/c:
+  libds: 'git+https://github.com/zhemao/libds.git'
+  algoxy: 
+    repo: 'git+https://github.com/liuxinyu95/AlgoXY.git'
     remotes:
-      kvasdopil: 'https://github.com/kvasdopil/docker.git'
-      tony: 'https://github.com/tony/docker.git'
-  go: 'git+https://github.com/golang/go.git'
-  gitea:
-    repo: 'git+https://github.com/go-gitea/gitea.git'
+      tony: 'git+ssh://git@github.com/tony/AlgoXY.git'
+~/study/data-structures-algorithms/c++:
+  algorithms:
+    repo: 'git+https://github.com/xtaci/algorithms.git'
     remotes:
-      tony: 'git+git@github.com/tony/gitea.git'
-  go-koans:
-    repo: 'git+https://github.com/cdarwin/go-koans.git'
+      tony: 'git+ssh://git@github.com/tony/algorithms.git'
+  cracking-the-code-interview: 'git+https://github.com/Hawstein/cracking-the-coding-interview.git'
+~/study/data-structures-algorithms/python:
+  cracking-the-code-interview: 'git+https://github.com/careercup/CtCI-6th-Edition-Python'
+  Algorithms: 'git+https://github.com/prakhar1989/Algorithms.git'
+~/study/data-structures-algorithms/java: 
+  java-algorithms-implementations: 'git+https://github.com/phishman3579/java-algorithms-implementation.git'
+~/study/devops-books:
+  github-cheat-sheet: 'git+https://github.com/tiimgreen/github-cheat-sheet.git'
+~/study/standards-and-practices/php:
+  php-fig: 'git+https://github.com/php-fig/fig-standards.git'
+~/study/standards-and-practices/js:
+  idiomatic.js: 'git+https://github.com/rwaldron/idiomatic.js.git'
+~/study/swift:
+  swift: 'git+https://github.com/apple/swift.git'
+~/study/llvm:
+  llvm: 'git+http://llvm.org/git/llvm.git'
+  clang: 'git+http://llvm.org/git/clang.git'
+  clang-tools-extra: 'git+https://github.com/llvm-mirror/clang-tools-extra.git'
+  lldb: 'git+http://llvm.org/git/lldb.git'
+  libcxx: 'git+https://github.com/llvm-mirror/libcxx.git'
+~/study/dotnet:
+  coreclr:
+    repo: 'git+https://github.com/dotnet/coreclr.git'
     remotes:
-      tony: 'git+ssh://git@github.com/cdarwin/go-koans.git'
-  go-python: 'git+https://github.com/sbinet/go-python'
-  otto: 'git+https://github.com/robertkrimen/otto'
-  blackfriday: 'git+https://github.com/russross/blackfriday.git'
+      tony: 'git+ssh://git@github.com/tony/coreclr.git'
+~/study/sh:
+  misspell_fixer:
+    repo: 'git+https://github.com/vlajos/misspell_fixer.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/misspell_fixer.git'
+  roundup: 
+    repo: 'git+https://github.com/bmizerany/roundup.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/roundup.git'
+  shocco: 'git+https://github.com/rtomayko/shocco'
+~/study/sqlalchemy:
+  sqlalchemy: 
+    repo: 'git+https://github.com/zzzeek/sqlalchemy.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sqlalchemy.git'
+  sqlalchemy_traversal: 'git+https://github.com/sontek/sqlalchemy_traversal.git'
+  sqlamp: 'git+https://github.com/tony/sqlamp.git'
+  sqlalchemy-orm-tree: 
+    repo: 'git+https://github.com/monetizeio/sqlalchemy-orm-tree.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sqlalchemy-orm-tree.git'
+  sqlalchemy-bitcoin: 'git+https://github.com/monetizeio/sqlalchemy-bitcoin.git'
+  cubes: 'git+https://github.com/Stiivi/cubes.git'
+  bubbles: 'git+https://github.com/Stiivi/bubbles.git'
+~/study/js-books:
+  backbone-fundamentals: 'git+https://github.com/addyosmani/backbone-fundamentals'
+  essential-js-design-patterns: 'git+https://github.com/addyosmani/essential-js-design-patterns.git'
+  you-dont-know-js: 'git+https://github.com/getify/You-Dont-Know-JS.git'
+  eloquent-js:  'git+https://github.com/marijnh/Eloquent-JavaScript.git'
+  jqfundamentals: 'git+https://github.com/rmurphey/jqfundamentals.git'
+~/study/koans:
+  backbone: 'git+https://github.com/addyosmani/backbone-koans-qunit.git'
+~/study/python-books:
+  pydata-book: 'git+https://github.com/pydata/pydata-book.git'
+  byte-of-python: 'git+https://github.com/swaroopch/byte_of_python.git'
+  python-for-signal-processing: 'git+https://github.com/unpingco/Python-for-Signal-Processing.git'
+  probabilistic-programming-and-bayesian-methods: 'git+https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers.git'
+  python-guide: 
+    repo: 'git+https://github.com/kennethreitz/python-guide.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/python-guide.git'
+  python-patterns: 'git+https://github.com/faif/python-patterns.git'
+
+~/study/compsci-books:
+  bottomupcs: 'git+https://github.com/ianw/bottomupcs.git'
+
+~/study/merchant:
+  satchless: 'git+https://github.com/mirumee/satchless.git'
+  braintree.js: 'git+https://github.com/braintree/braintree.js.git'
+  braintree_node: 'git+https://github.com/braintree/braintree_node.git'
+  braintree_python: 'git+https://github.com/braintree/braintree_python.git'
+  braintree_node_guide: 'git+https://github.com/braintree/braintree_node_guide.git'
+  braintree_python_guide: 'git+https://github.com/braintree/braintree_python_guide.git'
+  balanced-js: 'git+https://github.com/balanced/balanced-js.git'
+  balanced-python: 'git+https://github.com/balanced/balanced-python.git'
+  stripe-node: 'git+https://github.com/stripe/stripe-node.git'
+  stripe-python: 'git+https://github.com/stripe/stripe-python.git'
+  authorize-sauce: 'git+https://github.com/jeffschenck/authorizesauce'
+  paypal-python-sdk: 'git+https://github.com/paypal/PayPal-Python-SDK.git'
+  pyauthorize: 'git+https://github.com/vcatalano/py-authorize.git'
+  billy: 'git+https://github.com/balanced/billy.git'
+  merchant: 'git+https://github.com/agiliq/merchant.git'
+
+~/study/lua:
+  lua: 'git+https://github.com/LuaDist/lua.git'
+  luajit: 'git+https://github.com/LuaDist/luajit.git'
+  lua-re2: 'git+https://github.com/cloudflare/lua-re2.git'
+~/study/ruby:
+  rails: 'git+https://github.com/rails/rails.git'
+~/study/cmake:
+  python-cmake-buildsystem: 
+    repo: 'git+https://github.com/python-cmake-buildsystem/python-cmake-buildsystem.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/python-cmake-buildsystem.git'
+
+~/study/c: 
+  sway: 'git+https://github.com/swaywm/sway.git'
+  watchman: 'git+https://github.com/facebook/watchman.git'
+  zlib: 
+    repo: 'git+https://github.com/madler/zlib.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/zlib.git'
+      commontk: 'git+https://github.com/commontk/zlib.git'
+
+  git-vcs: 'git+https://github.com/git/git.git'
+  libevent: 'git+https://github.com/libevent/libevent'
+  SDL2: 'hg+https://hg.libsdl.org/SDL'
+  htop: 'git+https://github.com/hishamhm/htop.git'
+  jemalloc: 'git+https://github.com/jemalloc/jemalloc'
+  craft: 'git+https://github.com/fogleman/Craft.git'
+  libressl: 'git+https://github.com/libressl-portable/openbsd.git'
+  libressl-portable: 'git+https://github.com/libressl-portable/portable.git'
+  ck: 'git+https://github.com/concurrencykit/ck.git'
+  vis:
+    repo: 'git+https://github.com/martanne/vis.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/vis.git'
+  nanovg:
+    repo: 'git+https://github.com/memononen/nanovg.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/nanovg.git'
+  glfw:
+    repo: 'git+https://github.com/glfw/glfw.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/glfw/glfw.git'
+
+  libui:
+    repo: 'git+https://github.com/andlabs/libui.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/libui.git'
+
+  the_silver_searcher:
+    repo: 'git+https://github.com/ggreer/the_silver_searcher.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/the_silver_searcher.git'
+  ruby: 'git+https://github.com/ruby/ruby.git'
+  i3: 
+    repo: 'git+https://github.com/i3/i3.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/i3.git'
+      airblader: 'git+https://github.com/Airblader/i3.git'  # gaps
+  klib: 'git+https://github.com/attractivechaos/klib.git'
+  libuv: 'git+https://github.com/libuv/libuv.git'
+  #libimobiledevice: 'git+https://github.com/libimobiledevice/libimobiledevice.git'
+  redis: 'git+https://github.com/antirez/redis.git'
+  cython: 
+    repo: 'git+https://github.com/cython/cython.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/cython.git'
+
+  flex:
+    repo: 'git+git://git.code.sf.net/p/flex/flex'
+    remotes:
+      tony: 'git+ssh://git@github.com:tony/flex.git'
+  spectrwm:
+    repo: 'git+https://github.com/conformal/spectrwm.git'
+    remotes:
+      tony: 'git+ssh://git@github.com:tony/spectrwm.git'
+
+
+  #awesome: 'git+https://github.com/awesomeWM/awesome.git'
+  ctags: 'git+https://github.com/universal-ctags/ctags'
+  #weechat: 'git+git://git.sv.gnu.org/weechat.git'
+  #retroarch: 'git+https://github.com/Themaister/RetroArch.git'
+  #linux: 'git+https://github.com/torvalds/linux.git'
+  #minix: 'git+https://github.com/minix3/minix'
+  ncmpc: 'git+git://git.musicpd.org/master/ncmpc.git'
+  tmux:
+    repo: 'git+https://github.com/tmux/tmux.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/tmux.git'
+
+  git: 'git+https://github.com/git/git.git'
+  libgit2:
+    repo: 'git+https://github.com/libgit2/libgit2.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/libgit2.git'
+
+  postgres:
+    repo: 'git+https://github.com/postgres/postgres.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/postgres.git'
+  nuklear:
+    repo: 'git+https://github.com/vurtun/nuklear.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/nuklear.git'
+
+  pgadmin3: 'git+git://git.postgresql.org/git/pgadmin3.git'
+  textadept: 'hg+http://foicica.com/hg/textadept'
+
+  musl-libc: 'git+git://git.musl-libc.org/musl'
+  util-cursor: 'git+git://anongit.freedesktop.org/xcb/util-cursor'
+  zsh: 'git+git://git.code.sf.net/p/zsh/code'
+  cpython: 'git+https://github.com/python/cpython.git'
+  micropython: 'git+https://github.com/micropython/micropython.git'
+  nginx: 'hg+http://hg.nginx.org/nginx'
+  tre: 'git+https://github.com/laurikari/tre'
+~/study/c++:
+  cquery: 'git+https://github.com/cquery-project/cquery.git'
+  GeographicLib: 'git+https://git.code.sf.net/p/geographiclib/code'
+  blender: 'git+https://git.blender.org/blender.git'
+  entityx: 'git+https://github.com/alecthomas/entityx'
+  anax: 'git+https://github.com/miguelmartin75/anax'
+  caffe: 'git+https://github.com/BVLC/caffe.git'
+  tensorflow: 'git+https://github.com/tensorflow/tensorflow.git'
+  boost-python-examples: 'git+https://github.com/TNG/boost-python-examples.git'
+  magnum:
+    repo: 'git+https://github.com/mosra/magnum.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/magnum.git'
+  nanogui:
+    repo: 'git+https://github.com/wjakob/nanogui.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/nanogui.git'
+  nanogui-sdl:
+    repo: 'git+https://github.com/dalerank/nanogui-sdl.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/nanogui-sdl.git'
+
+  protobuf:
+    repo: 'git+https://github.com/google/protobuf.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/protobuf.git'
+  box2d:
+    repo: 'git+https://github.com/erincatto/Box2D.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/Box2D.git'
+
+  pybind11:
+    repo: 'git+https://github.com/pybind/pybind11.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/pybind11.git'
+  cmake:
+    repo: 'git+https://github.com/Kitware/cmake.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/cmake.git'
+
+  jucipp:
+    repo: 'git+https://github.com/cppit/jucipp.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/jucipp.git'
+
+  kakoune:
+    repo: 'git+https://github.com/mawww/kakoune.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/kakoune.git'
+  googletest: 'git+https://github.com/google/googletest'
+  gmock: 'git+https://github.com/google/googlemock'
+  benchmark: 'git+https://github.com/google/benchmark'
+  skia: 
+    repo: 'git+https://github.com/google/skia.git'
+    remotes:
+      aseprite: 'git+https://github.com/aseprite/skia'
+  libsdl2pp:
+    repo: 'git+https://github.com/libSDL2pp/libSDL2pp'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/libSDL2pp.git'
+
+  boost: 'git+https://github.com/boostorg/boost'
+  libpypa:
+    repo: 'git+https://github.com/vinzenz/libpypa.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/libpypa.git'
+  libunwind:
+    repo: 'git+git://git.sv.gnu.org/libunwind.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/libunwind.git'
+      dropbox: 'https://github.com/dropbox/libunwind.git'
+      llvm: 'http://llvm.org/git/libunwind'
+
+  solarus:
+    repo: 'git+https://github.com/christopho/solarus.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/solarus.git'
+
+  tmux-mem-cpu-load:
+    repo: 'git+https://github.com/thewtex/tmux-mem-cpu-load.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/tmux-mem-cpu-load.git'
+
+  oxygine:
+    repo: 'git+https://github.com/oxygine/oxygine-framework.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/oxygine-framework.git'
+  ninja: 
+    repo: 'git+https://github.com/ninja-build/ninja.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/ninja.git'
+  re2: 'git+https://github.com/google/re2.git'
+  # blink:
+  #   repo: 'git+https://chromium.googlesource.com/chromium/blink'
+  v8:
+    repo: 'git+git://github.com/v8/v8.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/v8.git'
+  node:
+    repo: 'git+https://github.com/nodejs/node.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/node.git'
+  #zeal: 'git+https://github.com/jkozera/zeal.git'
+  #phantomjs: 'git+https://github.com/ariya/phantomjs.git'
+  #tudu: 'git+https://gitorious.org/tudu/tudu.git'
+  #wxPython: 'git+https://github.com/wxWidgets/wxPython.git'
+  #wxWidgets: 'git+https://github.com/wxWidgets/wxWidgets.git'
+  openttd:
+    repo: 'git+git://github.com/openttd/openttd.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/openttd.git'
+  #vimpc: 'git+https://github.com/boysetsfrog/vimpc'
+  #mpd: 'git+git://git.musicpd.org/master/mpd.git'
+  #libmpd: 'git+git://git.musicpd.org/master/libmpd.git'
+  ncmpcpp:
+    repo: 'git+https://github.com/arybczak/ncmpcpp.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/ncmpcpp.git'
+  #libmpdclient: 'git+git://git.musicpd.org/master/libmpdclient.git'
+  #node: 'git+https://github.com/joyent/node.git'
+  #libzmp: 'git+https://github.com/zeromq/libzmq.git'
+  doubanfm-qt: 'git+https://github.com/zonyitoo/doubanfm-qt.git'
+~/study/node:
+  express: 'git+https://github.com/visionmedia/express.git'
+~/study/typescript:
+  typescript: 'git+https://github.com/Microsoft/TypeScript.git'
+  blueprint: 'git+https://github.com/palantir/blueprint.git'
+~/study/javascript:
+  backbone: 'git+https://github.com/documentcloud/backbone.git'
+  backbone.deepmodel: 'git+https://github.com/powmedia/backbone-deep-model.git'
+  backbone.marionette: 'git+https://github.com/marionettejs/backbone.marionette.git'
+  backbone.wreqr: 'git+https://github.com/marionettejs/backbone.wreqr.git'
+  backbone.babysitter: 'git+https://github.com/marionettejs/backbone.babysitter.git'
+  underscore: 'git+https://github.com/documentcloud/underscore.git'
+  underscore-contrib: 'git+https://github.com/documentcloud/underscore-contrib.git'
+  lodash: 'git+https://github.com/bestiejs/lodash.git'
+  requirejs: 'git+https://github.com/jrburke/requirejs.git'
+  r.js: 'git+https://github.com/jrburke/r.js.git'
+  jquery: 'git+https://github.com/jquery/jquery.git'
+  jquery-ui: 'git+https://github.com/jquery/jquery-ui.git'
+  codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
+  doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
 ~/study/salt/:
   salt:
     repo: 'git+https://github.com/saltstack/salt.git'
