@@ -5,6 +5,11 @@
       peergrade: 'git+ssh://git@github.com/peergradeio/django-assets.git'
       tony: 'git+ssh://git@github.com/tony/django-assets.git'
 
+  react-google-picker:
+    repo: 'git+https://github.com/sdoomz/react-google-picker.git'
+    remotes:
+      peergrade: 'git+ssh://git@github.com/peergradeio/react-google-picker.git'
+      tony: 'git+ssh://git@github.com/tony/react-google-picker.git'
 
   react-quill:
     repo: 'git+https://github.com/zenoamaro/react-quill.git'
