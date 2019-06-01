@@ -5,6 +5,20 @@
       peergrade: 'git+ssh://git@github.com/peergradeio/django-assets.git'
       tony: 'git+ssh://git@github.com/tony/django-assets.git'
 
+
+  react-quill:
+    repo: 'git+https://github.com/zenoamaro/react-quill.git'
+    remotes:
+      peergrade: 'git+ssh://git@github.com/peergradeio/react-quill.git'
+      tony: 'git+ssh://git@github.com/tony/react-quill.git'
+
+  quill:
+    repo: 'git+https://github.com/quilljs/quill.git'
+    remotes:
+      peergrade: 'git+ssh://git@github.com/peergradeio/quill.git'
+      tony: 'git+ssh://git@github.com/tony/quill.git'
+
+
   django-webpack-loader:
     repo: 'git+https://github.com/owais/django-webpack-loader.git'
     remotes:
