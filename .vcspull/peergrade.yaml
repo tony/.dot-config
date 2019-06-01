@@ -23,6 +23,11 @@
       peergrade: 'git+ssh://git@github.com/peergradeio/quill.git'
       tony: 'git+ssh://git@github.com/tony/quill.git'
 
+  flask: 
+    repo: 'git+https://github.com/mitsuhiko/flask.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/flask.git'
+      peergrade: 'git+ssh://git@github.com/peergradeio/flask.git'
 
   django-webpack-loader:
     repo: 'git+https://github.com/owais/django-webpack-loader.git'
