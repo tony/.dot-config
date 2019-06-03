@@ -53,3 +53,14 @@ debian_packages:
 	libsasl2-dev libxslt1-dev libxmlsec1-dev libxml2-dev libldap2-dev \
 	build-essential \
 	pkg-config libtool m4 automake autoconf
+
+pip_packages:
+	pip install --user -U \
+	python-language-server \
+	virtualenv \
+	pip \
+	pipenv \
+	tmuxp \
+	vcspull \
+	dotfiles \
+	spotdl
