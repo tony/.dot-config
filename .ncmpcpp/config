@@ -3,4 +3,5 @@ visualizer_output_name = "my_fifo"
 visualizer_sync_interval = "30" 
 visualizer_in_stereo = "yes"
 visualizer_type = "wave" # (spectrum/wave)
+media_library_primary_tag = album_artist
 #mpd_host = "/var/mpd/socket"
