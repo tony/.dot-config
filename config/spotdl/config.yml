@@ -1,0 +1,23 @@
+spotify-downloader:
+  avconv: false
+  download-only-metadata: false
+  dry-run: false
+  file-format: '{artist}/{album}/{track_name}'
+  folder: /home/t/Music/Spotify Downloads
+  input-ext: .m4a
+  log-level: INFO
+  manual: false
+  music-videos-only: false
+  no-fallback-metadata: false
+  no-metadata: false
+  no-spaces: false
+  output-ext: .mp3
+  overwrite: skip
+  search-format: '{artist} - {track_name} lyrics'
+  skip: null
+  spotify_client_id: 4fe3fecfe5334023a1472516cc99d805
+  spotify_client_secret: 0f02b7c483c04257984695007a4a8d5c
+  trim-silence: false
+  write-successful: /home/t/.config/spotdl/write-successful.log
+  write-to: null
+  youtube-api-key: null
