@@ -2,7 +2,7 @@ spotify-downloader:
   avconv: false
   download-only-metadata: false
   dry-run: false
-  file-format: '{artist}/{album}/{track_name}'
+  file-format: '{album_artist}/{album}/{track_name}'
   folder: /home/t/Music/Spotify Downloads
   input-ext: .m4a
   log-level: INFO
