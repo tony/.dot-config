@@ -5,6 +5,13 @@
       peergrade: 'git+ssh://git@github.com/peergradeio/django-assets.git'
       tony: 'git+ssh://git@github.com/tony/django-assets.git'
 
+  curlify:
+    repo: 'git+https://github.com/ofw/curlify.git'
+    remotes:
+      peergrade: 'git+ssh://git@github.com/peergradeio/curlify.git'
+      tony: 'git+ssh://git@github.com/tony/curlify.git'
+
+
   react-google-picker:
     repo: 'git+https://github.com/sdoomz/react-google-picker.git'
     remotes:
