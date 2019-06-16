@@ -42,6 +42,7 @@
       peergrade: 'git+ssh://git@github.com/peergradeio/django-webpack-loader.git'
       tony: 'git+ssh://git@github.com/tony/django-webpack-loader.git'
       alihazemfarouk: 'git+ssh://git@github.com/alihazemfarouk/django-webpack-loader.git'
+      naivefeeling-flask-webpack-loader: 'git+ssh://git@github.com/naivefeeling/flask-webpack-loader.git'
 
   webpack-bundle-tracker:
     repo: 'git+https://github.com/owais/webpack-bundle-tracker.git'
