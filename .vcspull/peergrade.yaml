@@ -36,6 +36,12 @@
       tony: 'git+ssh://git@github.com/tony/flask.git'
       peergrade: 'git+ssh://git@github.com/peergradeio/flask.git'
 
+  django-celery-monitor:
+    repo: 'git+https://github.com/jezdez/django-celery-monitor.git'
+    remotes:
+      peergrade: 'git+ssh://git@github.com/peergradeio/django-celery-monitor.git'
+      tony: 'git+ssh://git@github.com/tony/django-celery-monitor.git'
+
   django-webpack-loader:
     repo: 'git+https://github.com/owais/django-webpack-loader.git'
     remotes:
