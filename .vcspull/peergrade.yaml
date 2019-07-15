@@ -5,6 +5,12 @@
       peergrade: 'git+ssh://git@github.com/peergradeio/django-assets.git'
       tony: 'git+ssh://git@github.com/tony/django-assets.git'
 
+  videojs-record:
+    repo: 'git+https://github.com/collab-project/videojs-record.git'
+    remotes:
+      peergrade: 'git+ssh://git@github.com/peergradeio/videojs-record.git'
+      tony: 'git+ssh://git@github.com/tony/videojs-record.git'
+
   curlify:
     repo: 'git+https://github.com/ofw/curlify.git'
     remotes:
