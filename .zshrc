@@ -38,6 +38,8 @@ antigen bundle git
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 
+antigen bundle lukechilds/zsh-nvm
+
 antigen bundle chrissicool/zsh-256color
 
 antigen bundle zsh-users/zsh-syntax-highlighting
