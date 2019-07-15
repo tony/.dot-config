@@ -35,8 +35,6 @@ antigen use oh-my-zsh
 antigen bundle history
 antigen bundle git
 
-antigen bundle zsh-users/zsh-completions
-
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 
@@ -73,6 +71,7 @@ source ~/.dot-config/.shell/env.d/ssh-agent.sh
 source ~/.dot-config/.shell/env.d/keychain.sh
 source ~/.dot-config/.shell/env.d/most.sh
 source ~/.dot-config/.shell/env.d/python-breakpoint.sh
+source ~/.dot-config/.shell/env.d/nvm.sh
 pathprepend() {
   for ARG in "$@"
   do
