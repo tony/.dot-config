@@ -552,6 +552,10 @@
       tony: 'git+ssh://git@github.com/tony/python-cmake-buildsystem.git'
 
 ~/study/c: 
+  qmk_firmware:
+    repo: 'git+https://github.com/qmk/qmk_firmware.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/qmk_firmware'
   sway: 'git+https://github.com/swaywm/sway.git'
   watchman: 'git+https://github.com/facebook/watchman.git'
   zlib: 
