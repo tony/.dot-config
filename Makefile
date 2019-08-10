@@ -70,3 +70,6 @@ remove_civ6_harassing_intro:
 	cd ~/.steam/steam/steamapps/common/Sid\ Meier\'s\ Civilization\ VI/steamassets/base/platforms/windows/movies/; \
 	mv logos.bk2 logos.bk2.backup; \
 	mv bink2_aspyr_logo_black_white_1080p_30fps.bk2 bink2_aspyr_logo_black_white_1080p_30fps.bk2.backup;
+
+fix_linux_time_dualboot:
+	timedatectl set-local-rtc 1 --adjust-system-clock
