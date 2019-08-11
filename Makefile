@@ -30,7 +30,6 @@ debian_packages:
 	sudo apt-get install \
 	tmux \
 	cmake ninja-build \
-	rxvt-unicode-256color \
 	cowsay \
 	fortune-mod \
 	vim-nox \
@@ -44,16 +43,20 @@ debian_packages:
 	entr \
 	curl \
 	openssh-server \
-	pgadmin3 \
-	postgresql-11 \
+	postgresql \
 	htop \
 	redis-server \
-	fonts-noto-cjk xfonts-wqy \
 	libpython3.7-dev python3-pip libpython-dev \
 	libsasl2-dev libxslt1-dev libxmlsec1-dev libxml2-dev libldap2-dev \
 	build-essential \
 	pkg-config libtool m4 automake autoconf \
-	kitty
+	zsh
+
+debian_packages_x11:
+	pgadmin3 \
+	kitty \
+	fonts-noto-cjk xfonts-wqy \
+	rxvt-unicode-256color
 
 pip_packages:
 	pip install --user -U \
