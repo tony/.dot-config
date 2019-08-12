@@ -29,6 +29,7 @@ debian_fix_inotify:
 debian_packages:
 	sudo apt-get install \
 	tmux \
+	rsync \
 	cmake ninja-build \
 	cowsay \
 	fortune-mod \
@@ -53,10 +54,17 @@ debian_packages:
 	zsh
 
 debian_packages_x11:
+	sudo apt install \
 	pgadmin3 \
 	kitty \
 	fonts-noto-cjk xfonts-wqy \
 	rxvt-unicode-256color
+
+debian_node:
+	curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+
+ubuntu_geary:
+	sudo add-apt-repository ppa:geary-team/releases
 
 pip_packages:
 	pip install --user -U \
