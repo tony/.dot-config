@@ -785,6 +785,11 @@
   typescript: 'git+https://github.com/Microsoft/TypeScript.git'
   blueprint: 'git+https://github.com/palantir/blueprint.git'
   data-forge-ts: 'git+https://github.com/data-forge/data-forge-ts.git'
+  DefinitelyTyped:
+    repo: 'git+https://github.com/DefinitelyTyped/DefinitelyTyped.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/DefinitelyTyped.git'
+  salt-ui: 'git+https://github.com/saltstack/salt-ui.git'
 ~/study/javascript:
   backbone: 'git+https://github.com/documentcloud/backbone.git'
   backbone.deepmodel: 'git+https://github.com/powmedia/backbone-deep-model.git'
