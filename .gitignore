@@ -67,3 +67,6 @@ antigen.zsh
 # vscode
 config/Code/
 !config/Code/User/settings.json
+
+# ptpython
+.ptpython/history
