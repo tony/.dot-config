@@ -24,7 +24,7 @@ install:
 
 debian_fix_inotify:
 	# Fixes inotify for watchman
-	echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+	echo fs.inotify.max_user_watches=1524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
 debian_packages:
 	sudo apt-get install \
