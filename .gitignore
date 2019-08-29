@@ -68,5 +68,9 @@ antigen.zsh
 config/Code/
 !config/Code/User/settings.json
 
+# ssh
+.ssh/
+!.ssh/config
+
 # ptpython
 .ptpython/history
