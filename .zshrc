@@ -60,10 +60,10 @@ fi
 alias clear_pyc='find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf'
 
 # for OS X keychain(1) error, Error: Problem adding; giving up
-if ! fuser "$SSH_AUTH_SOCK" >/dev/null 2>/dev/null; then
-  # Nothing has the socket open, it means the agent isn't running
-  ssh-agent -a "$SSH_AUTH_SOCK" -s >~/.ssh/agent-info
-fi
+# if ! fuser "$SSH_AUTH_SOCK" >/dev/null 2>/dev/null; then
+#   # Nothing has the socket open, it means the agent isn't running
+#   ssh-agent -a "$SSH_AUTH_SOCK" -s >~/.ssh/agent-info
+# fi
 fixssh() {
     for key in SSH_AUTH_SOCK SSH_CONNECTION SSH_CLIENT; do
         if (tmux show-environment | grep "^${key}" > /dev/null); then
