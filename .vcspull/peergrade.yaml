@@ -30,6 +30,12 @@
       peergrade: 'git+ssh://git@github.com/peergradeio/react-quill.git'
       tony: 'git+ssh://git@github.com/tony/react-quill.git'
 
+  react-plyr:
+    repo: 'git+https://github.com/xDae/react-plyr.git'
+    remotes:
+      peergrade: 'git+ssh://git@github.com/peergradeio/react-plyr.git'
+      tony: 'git+ssh://git@github.com/tony/react-plyr.git'
+
   quill:
     repo: 'git+https://github.com/quilljs/quill.git'
     remotes:
