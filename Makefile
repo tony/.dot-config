@@ -76,7 +76,9 @@ pip_packages:
 	tmuxp \
 	vcspull \
 	dotfiles \
-	spotdl
+	spotdl \
+	black \
+	isort
 
 remove_civ6_harassing_intro:
 	cd ~/.steam/steam/steamapps/common/Sid\ Meier\'s\ Civilization\ VI/steamassets/base/platforms/windows/movies/; \
