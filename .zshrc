@@ -38,8 +38,6 @@ antigen bundle git
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 
-antigen bundle lukechilds/zsh-nvm
-
 antigen bundle chrissicool/zsh-256color
 
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -106,3 +104,6 @@ grepp() {
     history | grep $1 | sed 's/^[ ]*[0-9]*[ ]*//g' | sed 's/\\n/\
     /g'
 }
+
+# added by travis gem
+[ -f /home/t/.travis/travis.sh ] && source /home/t/.travis/travis.sh
