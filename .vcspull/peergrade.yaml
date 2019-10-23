@@ -68,6 +68,7 @@
     remotes:
       peergrade: 'git+ssh://git@github.com/peergradeio/webpack-bundle-tracker.git'
       tony: 'git+ssh://git@github.com/tony/webpack-bundle-tracker.git'
+      develtech: 'git+ssh://git@github.com/develtech/webpack-bundle-tracker.git'
       alihazemfarouk: 'git+ssh://git@github.com/alihazemfarouk/webpack-bundle-tracker.git'
 
   fakeredis:
