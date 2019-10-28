@@ -71,7 +71,7 @@ fixssh() {
     done
 }
 source ~/.dot-config/.shell/env.d/ssh-agent.sh
-source ~/.dot-config/.shell/env.d/keychain.sh
+# source ~/.dot-config/.shell/env.d/keychain.sh
 fixssh()
 source ~/.dot-config/.shell/env.d/most.sh
 source ~/.dot-config/.shell/env.d/python-breakpoint.sh
