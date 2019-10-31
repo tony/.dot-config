@@ -34,6 +34,7 @@ antigen use oh-my-zsh
 
 antigen bundle history
 antigen bundle git
+antigen bundle ssh-agent
 
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
@@ -70,8 +71,6 @@ fixssh() {
         fi
     done
 }
-source ~/.dot-config/.shell/env.d/ssh-agent.sh
-# source ~/.dot-config/.shell/env.d/keychain.sh
 fixssh()
 source ~/.dot-config/.shell/env.d/most.sh
 source ~/.dot-config/.shell/env.d/python-breakpoint.sh
