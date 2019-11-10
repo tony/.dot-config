@@ -17,6 +17,10 @@
   NCURSES-Programming-HOWTO-examples: "git+ssh://git@github.com/tony/NCURSES-Programming-HOWTO-examples.git"
   reST-lex-byacc: "git+ssh://git@github.com/tony/reST-lex-byacc.git"
 
+~/work:
+  vue-typescript-vanilla-starter: "git+git@github.com:tony/vue-typescript-vanilla-starter.git"
+  react-typescript-vanilla-starter: "git+git@github.com:tony/react-typescript-vanilla-starter.git"
+
 ~/work/freebsd:
   plasma5: 'svn+http://area51.pcbsd.org/branches/plasma5'
   freebsd-doc:
