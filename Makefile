@@ -1,4 +1,5 @@
 DOT_CONFIG_DIR=~/.dot-config
+PIPX_PACKAGES=python-language-server virtualenv pipenv tmuxp vcspull dotfiles spotdl black isort
 
 make lint:
 	shellcheck -s sh \.shell/**/*.sh
@@ -73,18 +74,24 @@ debian_postgres:
 	sudo apt update
 	sudo apt -y install postgresql-12 postgresql-client-12
 
-pip_packages:
-	pip install --user -U \
-	python-language-server \
-	virtualenv \
-	pip \
-	pipenv \
-	tmuxp \
-	vcspull \
-	dotfiles \
-	spotdl \
-	black \
-	isort
+pip_install_packages:
+	pip install --user -U ${PIPX_PACKAGES}
+
+pip_uninstall_packages:
+	pip uninstall -y ${PIPX_PACKAGES}
+
+pipx_install:
+	python3 -m pip install pipx
+
+pipx_install_packages:
+	for pkg in ${PIPX_PACKAGES}; do \
+		pipx install $$pkg; \
+	done
+
+pipx_upgrade_packages:
+	for pkg in ${PIPX_PACKAGES}; do \
+		pipx upgrade $$pkg; \
+	done
 
 remove_civ6_harassing_intro:
 	cd ~/.steam/steam/steamapps/common/Sid\ Meier\'s\ Civilization\ VI/steamassets/base/platforms/windows/movies/; \
@@ -93,3 +100,5 @@ remove_civ6_harassing_intro:
 
 fix_linux_time_dualboot:
 	timedatectl set-local-rtc 1 --adjust-system-clock
+
+
