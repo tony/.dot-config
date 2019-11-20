@@ -46,7 +46,6 @@ debian_packages:
 	entr \
 	curl \
 	openssh-server \
-	postgresql \
 	htop \
 	redis-server \
 	libpython3.7-dev python3-pip python3-venv libpython-dev \
@@ -72,7 +71,7 @@ debian_postgres:
 	wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 	echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee  /etc/apt/sources.list.d/pgdg.list
 	sudo apt update
-	sudo apt -y install postgresql-12 postgresql-client-12
+	sudo apt -y install postgresql-12 postgresql-client-12 postgresql-server-dev-12
 
 pip_install_packages:
 	pip install --user -U ${PIPX_PACKAGES}
