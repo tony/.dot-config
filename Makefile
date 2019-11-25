@@ -48,7 +48,8 @@ debian_packages:
 	openssh-server \
 	htop \
 	redis-server \
-	libpython3.7-dev python3-pip python3-venv libpython-dev \
+	libpython-dev \
+	python3.8 python3.8-dev python3.8-venv python3.8-dbg \
 	libsasl2-dev libxslt1-dev libxmlsec1-dev libxml2-dev libldap2-dev \
 	build-essential \
 	pkg-config libtool m4 automake autoconf \
@@ -72,6 +73,9 @@ debian_postgres:
 	echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee  /etc/apt/sources.list.d/pgdg.list
 	sudo apt update
 	sudo apt -y install postgresql-12 postgresql-client-12 postgresql-server-dev-12
+
+pip_install:
+	python3.8 -m pip install pip
 
 pip_install_packages:
 	pip install --user -U ${PIPX_PACKAGES}
