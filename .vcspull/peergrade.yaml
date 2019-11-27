@@ -48,6 +48,13 @@
       tony: 'git+ssh://git@github.com/tony/flask.git'
       peergrade: 'git+ssh://git@github.com/peergradeio/flask.git'
 
+  mmh3:
+    repo: 'git+https://github.com/hajimes/mmh3.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/mmh3.git'
+      peergrade: 'git+ssh://git@github.com/peergradeio/mmh3.git'
+      honnibal: 'git+ssh://git@github.com/honnibal/mmh3.git'
+
   django-celery-monitor:
     repo: 'git+https://github.com/jezdez/django-celery-monitor.git'
     remotes:
