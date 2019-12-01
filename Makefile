@@ -104,4 +104,14 @@ remove_civ6_harassing_intro:
 fix_linux_time_dualboot:
 	timedatectl set-local-rtc 1 --adjust-system-clock
 
+vcspull:
+	vcspull \
+	libtmux \
+	tmuxp \
+	libvcs \
+	vcspull \
+	unihan-db \
+	unihan-etl \
+	cihai \
+	cihai-cli
 
