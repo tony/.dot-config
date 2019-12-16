@@ -22,6 +22,12 @@ install:
 	ln -si ${DOT_CONFIG_DIR}/.Xresources ~/.Xresources
 	ln -si ${DOT_CONFIG_DIR}/.ipython ~/.ipython
 	ln -si ${DOT_CONFIG_DIR}/.ptpython ~/.ptpython
+	ln -si ${DOT_CONFIG_DIR}/.zfunc/ ~
+
+poetry:
+	python3 -m pip install --user poetry
+	ln -sf ${DOT_CONFIG_DIR}/.zfunc/ ~
+	poetry completions zsh > ~/.zfunc/_poetry
 
 debian_fix_inotify:
 	# Fixes inotify for watchman
