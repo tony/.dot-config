@@ -20,8 +20,8 @@ install:
 	ln -si ${DOT_CONFIG_DIR}/.vcspull ~
 	ln -si ${DOT_CONFIG_DIR}/.vcspull.yaml ~/.vcspull.yaml
 	ln -si ${DOT_CONFIG_DIR}/.Xresources ~/.Xresources
-	ln -si ${DOT_CONFIG_DIR}/.ipython ~/.ipython
-	ln -si ${DOT_CONFIG_DIR}/.ptpython ~/.ptpython
+	ln -si ${DOT_CONFIG_DIR}/.ipython ~
+	ln -si ${DOT_CONFIG_DIR}/.ptpython ~
 	ln -si ${DOT_CONFIG_DIR}/.zfunc/ ~
 
 poetry:
