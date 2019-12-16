@@ -7,6 +7,9 @@ export DISABLE_AUTO_TITLE='true'
 # https://github.com/robbyrussell/oh-my-zsh/issues/5874
 export ZSH_CACHE_DIR=$HOME/.zsh
 
+# For poetry: https://github.com/python-poetry/poetry#enable-tab-completion-for-bash-fish-or-zsh
+fpath+=~/.zfunc
+
 # additional completions
 autoload -U +X compinit && compinit
 
