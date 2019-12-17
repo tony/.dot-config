@@ -61,6 +61,10 @@
       develtech: 'git+ssh://git@github.com/develtech/social-share-kit.git'
 
 ~/work/python:
+  DjangoChannelsGraphqlWs:
+    repo: 'git+https://github.com/datadvance/DjangoChannelsGraphqlWs.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/DjangoChannelsGraphqlWs.git'
 
   pytest-django:
     repo: 'git+https://github.com/pytest-dev/pytest-django.git'
