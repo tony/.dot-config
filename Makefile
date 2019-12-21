@@ -24,6 +24,10 @@ install:
 	ln -si ${DOT_CONFIG_DIR}/.ptpython ~
 	ln -si ${DOT_CONFIG_DIR}/.zfunc/ ~
 
+dephell:
+	python3 -m pip install --user 'dephell[full]'
+	dephell self autocomplete
+
 poetry:
 	python3 -m pip install --user poetry
 	ln -sf ${DOT_CONFIG_DIR}/.zfunc/ ~
