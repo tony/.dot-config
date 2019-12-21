@@ -99,13 +99,6 @@ export FZF_DEFAULT_COMMAND='
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.profile ] && source ~/.profile
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
 antigen apply
-
-grepp() {
-    history | grep $1 | sed 's/^[ ]*[0-9]*[ ]*//g' | sed 's/\\n/\
-    /g'
-}
-
-# added by travis gem
-[ -f /home/t/.travis/travis.sh ] && source /home/t/.travis/travis.sh
