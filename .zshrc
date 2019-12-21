@@ -100,5 +100,6 @@ export FZF_DEFAULT_COMMAND='
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.profile ] && source ~/.profile
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
+[ -f ~/.local/share/dephell/_dephell_zsh_autocomplete ] && source ~/.local/share/dephell/_dephell_zsh_autocomplete
 
 antigen apply
