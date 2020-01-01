@@ -67,6 +67,12 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/DjangoChannelsGraphqlWs.git'
 
+  django-classy-tags:
+    repo: 'git+https://github.com/divio/django-classy-tags.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/django-classy-tags.git'
+      yakky: 'git+https://github.com/yakky/django-classy-tags.git'
+
   pytest-django:
     repo: 'git+https://github.com/pytest-dev/pytest-django.git'
     remotes:
