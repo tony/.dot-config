@@ -38,6 +38,11 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/pytest-splinter.git'
 
+  bumblebee-status:
+    repo: 'git+https://github.com/tobi-wan-kenobi/bumblebee-status.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/bumblebee-status.git'
+
   graphene:
     repo: 'git+https://github.com/graphql-python/graphene.git'
     remotes:
