@@ -1,0 +1,3 @@
+[play_sound]
+    summary = "*"
+    script = ~/.dot-config/config/dunst/alert.sh
