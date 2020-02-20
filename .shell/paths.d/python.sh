@@ -20,6 +20,14 @@ if [ -d "$HOME/Library/Python/3.7/bin" ]; then
     pathprepend "$HOME/Library/Python/3.7/bin"
 fi
 
+if [ -d "$HOME/Library/Python/3.8/bin" ]; then
+    pathprepend "$HOME/Library/Python/3.8/bin"
+fi
+
+if [ -d "$HOME/Library/Python/3.9/bin" ]; then
+    pathprepend "$HOME/Library/Python/3.9/bin"
+fi
+
 if [ -d "$HOME/.local/bin" ]; then
     pathprepend "$HOME/.local/bin"
 fi
