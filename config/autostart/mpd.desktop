@@ -1,0 +1,12 @@
+# This will automatically start MPD as your user when you log into GNOME/KDE,
+# provided that the system-wide MPD has been disabled.
+# Make sure to create your own ~/.mpdconf containing the path to your music,
+# and adjust the other paths such that MPD can write to its log and databases.
+[Desktop Entry]
+Type=Application
+Exec=mpd
+Terminal=false
+Hidden=true
+X-GNOME-Autostart-enabled=false
+Name=MPD Music Player Daemon
+Comment=start MPD as user when you log in
