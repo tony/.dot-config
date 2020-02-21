@@ -125,3 +125,6 @@ vcspull:
 	cihai \
 	cihai-cli
 
+debian_disable_mpd:
+	sudo update-rc.d mpd disable
+	sudo systemctl disable mpd.socket
