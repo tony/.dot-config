@@ -92,7 +92,8 @@ source ~/.dot-config/.shell/paths.d/python.sh
 
 # Exclude file types that can't be open in vim (FZF_DEFAULT_IGNORE is used for fzf.vim)
 export IGNORE_FILE_EXT=""
-IGNORE_FILE_EXT+="gz\|zip\|min.js\|min.map"
+IGNORE_FILE_EXT+="gz\|tar\|rar\|zip\|7z"
+IGNORE_FILE_EXT+="\|min.js\|min.map"
 IGNORE_FILE_EXT+="\|pdf\|doc\|docx"
 IGNORE_FILE_EXT+="\|gif\|jpeg\|jpg\|png\|svg"
 IGNORE_FILE_EXT+="\|snap"
@@ -104,9 +105,9 @@ IGNORE_FILE_EXT+="\|o\|so\|dll"
 IGNORE_FILE_EXT+="\|wpj"
 
 export FZF_CUSTOM_GREP_IGNORE="
-  grep --ignore-case --invert-match '.*[.]\(\
+  grep --ignore-case --invert-match -e '.*[.]\(\
     ${IGNORE_FILE_EXT} \
-  \)'
+  \)' -e '.*\(cache\|Library\|Cache\|site-packages\|egg-info\|node-gyp\|build\|node_modules\).*'
 "
 
 export FZF_DEFAULT_COMMAND="
