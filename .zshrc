@@ -104,10 +104,16 @@ IGNORE_FILE_EXT+="\|musicdb\|itdb\|itl\|itc"
 IGNORE_FILE_EXT+="\|o\|so\|dll"
 IGNORE_FILE_EXT+="\|wpj"
 
+export IGNORE_FILE_WILD=""
+IGNORE_FILE_WILD+="cache\|Library\|Cache"
+IGNORE_FILE_WILD+="\|site-packages\|egg-info"
+IGNORE_FILE_WILD+="\|node-gyp\|node_modules"
+IGNORE_FILE_WILD+="\|build"
+
 export FZF_CUSTOM_GREP_IGNORE="
   grep --ignore-case --invert-match -e '.*[.]\(\
     ${IGNORE_FILE_EXT} \
-  \)' -e '.*\(cache\|Library\|Cache\|site-packages\|egg-info\|node-gyp\|build\|node_modules\).*'
+  \)' -e '.*\(${IGNORE_FILE_WILD}\).*'
 "
 
 export FZF_DEFAULT_COMMAND="
