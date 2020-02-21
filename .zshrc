@@ -90,20 +90,22 @@ pathprepend() {
 
 source ~/.dot-config/.shell/paths.d/python.sh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # Exclude file types that can't be open in vim (FZF_DEFAULT_IGNORE is used for fzf.vim)
+export IGNORE_FILE_EXT=""
+IGNORE_FILE_EXT+="gz\|zip\|min.js\|min.map"
+IGNORE_FILE_EXT+="\|pdf\|doc\|docx"
+IGNORE_FILE_EXT+="\|gif\|jpeg\|jpg\|png\|svg"
+IGNORE_FILE_EXT+="\|snap"
+IGNORE_FILE_EXT+="\|TTF\|ttf\|otf\|eot\|woff\|woff2"
+IGNORE_FILE_EXT+="\|mp3\|m4a\|ape\|ogg\|opus\|flac"
+IGNORE_FILE_EXT+="\|mp4\|wmv\|avi\|mkv\|webm\|m4b"
+IGNORE_FILE_EXT+="\|musicdb\|itdb\|itl\|itc"
+IGNORE_FILE_EXT+="\|o\|so\|dll"
+IGNORE_FILE_EXT+="\|wpj"
+
 export FZF_CUSTOM_GREP_IGNORE="
   grep --ignore-case --invert-match '.*[.]\(\
-    gz\|zip\|min.js\|min.map\
-    \|pdf\|doc\|docx\
-    \|gif\|jpeg\|jpg\|png\|svg\
-    \|snap\
-    \|TTF\|ttf\|otf\|eot\|woff\|woff2\
-    \|mp3\|m4a\|ape\|ogg\|opus\|flac\
-    \|mp4\|wmv\|avi\|mkv\|webm\|m4b\
-    \|musicdb\|itdb\|itl\|itc\
-    \|o\|so\|dll \
+    ${IGNORE_FILE_EXT} \
   \)'
 "
 
@@ -114,6 +116,7 @@ export FZF_DEFAULT_COMMAND="
 ) | ${FZF_CUSTOM_GREP_IGNORE} 2> /dev/null
 "
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.profile ] && source ~/.profile
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
