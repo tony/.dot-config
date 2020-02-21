@@ -92,10 +92,22 @@ source ~/.dot-config/.shell/paths.d/python.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export FZF_DEFAULT_COMMAND='
-  (git ls-files --recurse-submodules ||
-   find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
-      sed s/^..//) 2> /dev/null'
+# Exclude file types that can't be open in vim (FZF_DEFAULT_IGNORE is used for fzf.vim)
+export FZF_CUSTOM_GREP_IGNORE="
+  grep --ignore-case --invert-match '.*[.]\(\
+    pdf\|gz\|zip\|doc \
+    \|docx\|gif\|jpeg\|png\|svg \
+    \|snap \
+    \|TTF\|ttf\|otf\|eot\|woff\|woff2 \
+  \)'
+"
+
+export FZF_DEFAULT_COMMAND="
+(git ls-files --recurse-submodules ||
+   find . -path '*/\.*' -prune -o -type f -print -o -type l -print | \
+   sed s/^..// \
+) | ${FZF_CUSTOM_GREP_IGNORE} 2> /dev/null
+"
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.profile ] && source ~/.profile
