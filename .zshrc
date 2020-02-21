@@ -102,13 +102,16 @@ IGNORE_FILE_EXT+="\|mp3\|m4a\|ape\|ogg\|opus\|flac"
 IGNORE_FILE_EXT+="\|mp4\|wmv\|avi\|mkv\|webm\|m4b"
 IGNORE_FILE_EXT+="\|musicdb\|itdb\|itl\|itc"
 IGNORE_FILE_EXT+="\|o\|so\|dll"
+IGNORE_FILE_EXT+="\|cbor\|msgpack"
 IGNORE_FILE_EXT+="\|wpj"
 
 export IGNORE_FILE_WILD=""
 IGNORE_FILE_WILD+="cache\|Library\|Cache"
+IGNORE_FILE_WILD+="\|Android"
 IGNORE_FILE_WILD+="\|site-packages\|egg-info"
-IGNORE_FILE_WILD+="\|node-gyp\|node_modules"
-IGNORE_FILE_WILD+="\|build"
+IGNORE_FILE_WILD+="\|node-gyp\|node_modules\|bower_components"
+IGNORE_FILE_WILD+="\|build\|webpack_bundles"
+IGNORE_FILE_WILD+="\|json\/test\/data"  # sdl2-playproject
 
 export FZF_CUSTOM_GREP_IGNORE="
   grep --ignore-case --invert-match -e '.*[.]\(\
