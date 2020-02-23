@@ -114,6 +114,7 @@ IGNORE_FILE_WILD+="\|site-packages\|egg-info"
 IGNORE_FILE_WILD+="\|node-gyp\|node_modules\|bower_components"
 IGNORE_FILE_WILD+="\|build\|webpack_bundles"
 IGNORE_FILE_WILD+="\|json\/test\/data"  # sdl2-playproject
+IGNORE_FILE_WILD+="\|drive_[a-z]\/"  # WINE (esp if created in lutris)
 
 export FZF_CUSTOM_GREP_IGNORE="
   grep --ignore-case --invert-match -e '.*[.]\(\
