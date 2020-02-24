@@ -120,7 +120,7 @@ export FZF_CUSTOM_GREP_IGNORE="
   \)' -e '.*\(${IGNORE_FILE_WILD}\).*'
 "
 
-export FZF_DEFAULT_COMMAND="(git ls-files --recurse-submodules ||
+export FZF_DEFAULT_COMMAND="(git ls-files --recurse-submodules & git ls-files --exclude-standard --others ||
     find . -path '*/\.*' -prune -o -type f -print -o -type l \
     \( -iname '.*\($IGNORE_FILE_WILD\).*' -o -iname '.*[.]\($IGNORE_FILE_EXT\)' \) -print | \
    sed s/^..// \
