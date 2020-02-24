@@ -120,13 +120,11 @@ export FZF_CUSTOM_GREP_IGNORE="
   \)' -e '.*\(${IGNORE_FILE_WILD}\).*'
 "
 
-export FZF_DEFAULT_COMMAND="
-(git ls-files --recurse-submodules ||
+export FZF_DEFAULT_COMMAND="(git ls-files --recurse-submodules ||
     find . -path '*/\.*' -prune -o -type f -print -o -type l \
     \( -iname '.*\($IGNORE_FILE_WILD\).*' -o -iname '.*[.]\($IGNORE_FILE_EXT\)' \) -print | \
    sed s/^..// \
-) | ${FZF_CUSTOM_GREP_IGNORE} 2> /dev/null
-"
+) | ${FZF_CUSTOM_GREP_IGNORE} 2> /dev/null"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
