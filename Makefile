@@ -128,3 +128,6 @@ vcspull:
 debian_disable_mpd:
 	sudo update-rc.d mpd disable
 	sudo systemctl disable mpd.socket
+
+test_fzf_default_command:
+	eval $${FZF_DEFAULT_COMMAND}
