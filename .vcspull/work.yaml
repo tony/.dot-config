@@ -61,6 +61,10 @@
       develtech: 'git+ssh://git@github.com/develtech/social-share-kit.git'
 
 ~/work/python:
+  canvas:
+    repo: 'git+https://github.com/instructure/canvas-lms.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/canvas-lms.git'
   fabric-helpers: "git+git@github.com:develtech/fabric-helpers.git"
   DjangoChannelsGraphqlWs:
     repo: 'git+https://github.com/datadvance/DjangoChannelsGraphqlWs.git'
