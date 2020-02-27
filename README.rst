@@ -27,6 +27,20 @@ Installation
 
 .. _MIT: http://opensource.org/licenses/MIT
 
+Commands / Aliases
+==================
+
+- ``update_packages`` - Updates debian packages, npm global dependencies,
+  pipx and pip dependencies
+- ``clear_pyc`` - Remove python2/3 cache files recursively
+- ``clear_empty_dirs`` - Removes empty directories recursively
+
+Nice things
+===========
+- ``FZF_DEFAULT_COMMAND`` automatically ignores binary file formats /
+  package directories.  vim fuzzy file search can be opened anywhere without
+  being overwhelmed by junk files.
+
 Support
 =======
 
