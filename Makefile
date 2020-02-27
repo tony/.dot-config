@@ -1,5 +1,6 @@
 DOT_CONFIG_DIR=~/.dot-config
-PIPX_PACKAGES=python-language-server virtualenv pipenv tmuxp vcspull dotfiles spotdl black isort
+PIP_PACKAGES=python-language-server black isort
+PIPX_PACKAGES=virtualenv pipenv tmuxp vcspull dotfiles spotdl
 
 make lint:
 	shellcheck -s sh \.shell/**/*.sh
@@ -88,10 +89,10 @@ pip_install:
 	python3.8 -m pip install pip
 
 pip_install_packages:
-	pip install --user -U ${PIPX_PACKAGES}
+	pip install --user -U ${PIP_PACKAGES}
 
 pip_uninstall_packages:
-	pip uninstall -y ${PIPX_PACKAGES}
+	pip uninstall -y ${PIP_PACKAGES}
 
 pipx_install:
 	python3 -m pip install pipx
@@ -131,3 +132,16 @@ debian_disable_mpd:
 
 test_fzf_default_command:
 	eval $${FZF_DEFAULT_COMMAND}
+
+debian_update:
+	sudo apt update && sudo apt full-upgrade
+
+npm_update_global:
+	sudo npm install -g bower browserify brunch foreman nodemon npm npm-check-updates create-next-app tslint
+
+global_update:
+	$(MAKE) debian_update
+	$(MAKE) pip_install_packages  # Handles upgrades
+	$(MAKE) pipx_install_packages
+	$(MAKE) pipx_upgrade_packages
+	$(MAKE) npm_update_global
