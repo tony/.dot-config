@@ -115,6 +115,7 @@ IGNORE_FILE_WILD+="\|json\/test\/data"  # sdl2-playproject
 IGNORE_FILE_WILD+="\|drive_[a-z]\/"  # WINE (esp if created in lutris)
 IGNORE_FILE_WILD+="\|^snap\/"  # $HOME/snap/ (when FZF invoked via home directory)
 IGNORE_FILE_WILD+="\|\/gems\/"  # canvas-lms
+IGNORE_FILE_WILD+="\|^work\/\|^study\/"  # canvas-lms
 
 export FZF_CUSTOM_GREP_IGNORE="
   grep --ignore-case --invert-match -e '.*[.]\(\
