@@ -116,6 +116,7 @@ IGNORE_FILE_WILD+="\|node-gyp\|node_modules\|bower_components"
 IGNORE_FILE_WILD+="\|build\|webpack_bundles"
 IGNORE_FILE_WILD+="\|json\/test\/data"  # sdl2-playproject
 IGNORE_FILE_WILD+="\|drive_[a-z]\/"  # WINE (esp if created in lutris)
+IGNORE_FILE_WILD+="\|\^\?\(\.\/\)snap\/"  # $HOME/snap/ (when FZF invoked via home directory)
 IGNORE_FILE_WILD+="\|^snap\/"  # $HOME/snap/ (when FZF invoked via home directory)
 IGNORE_FILE_WILD+="\|\/gems\/"  # canvas-lms
 IGNORE_FILE_WILD+="\|^work\/\|^study\/"  # canvas-lms
@@ -126,11 +127,15 @@ export FZF_CUSTOM_GREP_IGNORE="
   \)' -e '.*\(${IGNORE_FILE_WILD}\).*'
 "
 
+export FZF_FIND_COMMAND="find . -path '*/\.*' -prune -o -type f -print -o -type l \
+\( -iname '.*\($IGNORE_FILE_WILD\).*' -o -iname '.*[.]\($IGNORE_FILE_EXT\)' \) -print"
+
 export FZF_DEFAULT_COMMAND="(git ls-files --recurse-submodules & git ls-files --exclude-standard --others ||
-    find . -path '*/\.*' -prune -o -type f -print -o -type l \
-    \( -iname '.*\($IGNORE_FILE_WILD\).*' -o -iname '.*[.]\($IGNORE_FILE_EXT\)' \) -print | \
+    ${FZF_FIND_COMMAND} | \
    sed s/^..// \
 ) | ${FZF_CUSTOM_GREP_IGNORE} 2> /dev/null"
+
+export FZF_CTRL_T_COMMAND="$FZF_FIND_COMMAND | ${FZF_CUSTOM_GREP_IGNORE} 2> /dev/null"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
