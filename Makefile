@@ -72,7 +72,9 @@ debian_packages_x11:
 	pgadmin3 \
 	kitty \
 	fonts-noto-cjk xfonts-wqy \
-	rxvt-unicode-256color
+	rxvt-unicode-256color \
+	maim \
+	slop
 
 debian_node:
 	curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
