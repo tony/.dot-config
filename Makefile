@@ -73,6 +73,8 @@ debian_packages_x11:
 	kitty \
 	fonts-noto-cjk xfonts-wqy \
 	rxvt-unicode-256color \
+	nitrogen \
+	scrot \
 	maim \
 	slop
 
