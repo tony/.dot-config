@@ -9,7 +9,10 @@
     "window.zoomLevel": 0,
     "files.exclude": {
         "**/__pycache__": true,
-        "**/.*cache": true,
+        "**/.*cache*": true,
+        "**/.cache": true,
+        "**/.env*": true,
+        "**/.venv*": true,
         "**/*.pyc": true,
         "**/*.so": true
     },
@@ -23,5 +26,10 @@
     "gitlens.advanced.telemetry.enabled": false,
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "python.jediEnabled": false
+    "python.jediEnabled": false,
+    "search.exclude": {
+        "**./.env*": true,
+        "**/.cache*": true,
+        "**/.venv*": true
+    }
 }
