@@ -8,9 +8,10 @@
     "workbench.statusBar.feedback.visible": false,
     "window.zoomLevel": 0,
     "files.exclude": {
-        "**/*.so": true,
+        "**/__pycache__": true,
+        "**/.*cache": true,
         "**/*.pyc": true,
-        "**/.*cache": true
+        "**/*.so": true
     },
     "flow.useNPMPackagedFlow": true,
     "flow.enabled": false,
@@ -21,5 +22,6 @@
     "telemetry.enableCrashReporter": false,
     "gitlens.advanced.telemetry.enabled": false,
     "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.jediEnabled": false
 }
