@@ -142,7 +142,7 @@ debian_update:
 	sudo apt update && sudo apt full-upgrade
 
 npm_update_global:
-	sudo npm install -g bower browserify brunch foreman nodemon npm npm-check-updates create-next-app tslint
+	sudo npm install -g bower browserify brunch foreman nodemon npm npm-check-updates create-next-app tslint gatsby-cli
 
 global_update:
 	$(MAKE) debian_update
