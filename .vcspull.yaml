@@ -48,6 +48,12 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/graphene.git'
       peergrade: 'git+ssh://git@github.com/peergradeio/graphene.git'
+  graphene-django:
+    repo: 'git+https://github.com/graphql-python/graphene-django.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/graphene-django.git'
+      peergrade: 'git+ssh://git@github.com/peergradeio/graphene-django.git'
+
   python-docx:
     repo: 'git+https://github.com/python-openxml/python-docx.git'
     remotes:
