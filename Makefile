@@ -104,12 +104,12 @@ pipx_install:
 
 pipx_install_packages:
 	for pkg in ${PIPX_PACKAGES}; do \
-		pipx install $$pkg; \
+		pipx install --force $$pkg; \
 	done
 
 pipx_upgrade_packages:
 	for pkg in ${PIPX_PACKAGES}; do \
-		pipx upgrade $$pkg; \
+		pipx upgrade --force $$pkg; \
 	done
 
 remove_civ6_harassing_intro:
