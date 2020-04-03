@@ -21,6 +21,12 @@
   vue-typescript-vanilla-starter: "git+git@github.com:tony/vue-typescript-vanilla-starter.git"
   react-typescript-vanilla-starter: "git+git@github.com:tony/react-typescript-vanilla-starter.git"
 
+~/work/typescript:
+  gatsby-s3-action:
+    repo: 'git+https://github.com/jonelantha/gatsby-s3-action.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/gatsby-s3-action.git'
+
 ~/work/freebsd:
   plasma5: 'svn+http://area51.pcbsd.org/branches/plasma5'
   freebsd-doc:
