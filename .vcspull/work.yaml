@@ -71,6 +71,11 @@
     repo: 'git+https://github.com/instructure/canvas-lms.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/canvas-lms.git'
+  moodle:
+    repo: 'git+https://github.com/moodle/moodle.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/moodle.git'
+
   fabric-helpers: "git+git@github.com:develtech/fabric-helpers.git"
   DjangoChannelsGraphqlWs:
     repo: 'git+https://github.com/datadvance/DjangoChannelsGraphqlWs.git'
