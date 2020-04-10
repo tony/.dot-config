@@ -72,7 +72,7 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/canvas-lms.git'
 
-~/work/php:
+~/study/php:
   moodle:
     repo: 'git+https://github.com/moodle/moodle.git'
     remotes:
