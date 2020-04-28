@@ -88,6 +88,13 @@ ubuntu_peek:
 	sudo add-apt-repository ppa:peek-developers/stable
 	sudo apt update && sudo apt install peek
 
+ubuntu_i3:
+	sudo /usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2020.02.03_all.deb keyring.deb SHA256:c5dd35231930e3c8d6a9d9539c846023fe1a08e4b073ef0d2833acd815d80d48
+	sudo dpkg -i ./keyring.deb
+	sudo echo "deb https://debian.sur5r.net/i3/ `grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=)` universe" | sudo tee /etc/apt/sources.list.d/sur5r-i3.list
+	sudo apt update
+	sudo apt install i3
+
 debian_postgres:
 	wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 	echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee  /etc/apt/sources.list.d/pgdg.list
