@@ -31,5 +31,6 @@
         "**./.env*": true,
         "**/.cache*": true,
         "**/.venv*": true
-    }
+    },
+    "vim.camelCaseMotion.enable": true
 }
