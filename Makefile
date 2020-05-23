@@ -1,6 +1,5 @@
 DOT_CONFIG_DIR=~/.dot-config
-PIP_PACKAGES=python-language-server black isort
-PIPX_PACKAGES=virtualenv pipenv tmuxp vcspull dotfiles spotdl
+PIP_PACKAGES=python-language-server black isort virtualenv pipenv tmuxp vcspull dotfiles spotdl
 
 make lint:
 	shellcheck -s sh \.shell/**/*.sh
@@ -110,18 +109,10 @@ pip_install_packages:
 pip_uninstall_packages:
 	pip uninstall -y ${PIP_PACKAGES}
 
-pipx_install:
-	python3 -m pip install pipx
-
-pipx_install_packages:
-	for pkg in ${PIPX_PACKAGES}; do \
-		pipx install --force $$pkg; \
-	done
-
-pipx_upgrade_packages:
-	for pkg in ${PIPX_PACKAGES}; do \
-		pipx upgrade --force $$pkg; \
-	done
+# pip_upgrade_packages:
+# 	for pkg in ${PIPX_PACKAGES}; do \
+# 		pip install -U --user $$pkg; \
+# 	done
 
 remove_civ6_harassing_intro:
 	cd ~/.steam/steam/steamapps/common/Sid\ Meier\'s\ Civilization\ VI/steamassets/base/platforms/windows/movies/; \
@@ -158,6 +149,4 @@ npm_update_global:
 global_update:
 	$(MAKE) debian_update
 	$(MAKE) pip_install_packages  # Handles upgrades
-	$(MAKE) pipx_install_packages
-	$(MAKE) pipx_upgrade_packages
 	$(MAKE) npm_update_global
