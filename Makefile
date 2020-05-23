@@ -104,6 +104,7 @@ pip_install:
 	python3.8 -m pip install pip
 
 pip_install_packages:
+	pip install --user -U pip
 	pip install --user -U ${PIP_PACKAGES}
 
 pip_uninstall_packages:
