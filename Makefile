@@ -1,5 +1,5 @@
 DOT_CONFIG_DIR=~/.dot-config
-PIP_PACKAGES=python-language-server black isort virtualenv pipenv tmuxp vcspull dotfiles spotdl
+PIP_PACKAGES=python-language-server black isort virtualenv pipenv tmuxp vcspull dotfiles spotdl poetry
 
 make lint:
 	shellcheck -s sh \.shell/**/*.sh
