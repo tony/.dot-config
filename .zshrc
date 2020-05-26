@@ -87,6 +87,7 @@ pathprepend() {
 }
 
 source ~/.dot-config/.shell/paths.d/python.sh
+source ~/.dot-config/.shell/env.d/pyenv.sh
 
 # Exclude file types that can't be open in vim (FZF_DEFAULT_IGNORE is used for fzf.vim)
 export IGNORE_FILE_EXT=""
