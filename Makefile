@@ -62,6 +62,7 @@ debian_packages:
 	python3-venv python3 python3-dev python3-venv python3-dbg \
 	python3.8-venv python3.8 python3.8-dev python3.8-venv python3.8-dbg \
 	libsasl2-dev libxslt1-dev libxmlsec1-dev libxml2-dev libldap2-dev \
+	libffi-dev \
 	build-essential \
 	pkg-config libtool m4 automake autoconf \
 	zsh
