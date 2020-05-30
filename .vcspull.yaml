@@ -816,10 +816,13 @@
   jquery-ui: 'git+https://github.com/jquery/jquery-ui.git'
   codemirror: 'git+https://github.com/marijnh/CodeMirror.git'
   doctorjs: 'git+https://github.com/mozilla/doctorjs.git'
+~/study/gatsby:
   gatsby:
     repo: 'git+https://github.com/gatsbyjs/gatsby.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/gatsby.git'
+  typescript-website:
+    repo: 'git+https://github.com/microsoft/TypeScript-Website'
 ~/study/salt/:
   salt:
     repo: 'git+https://github.com/saltstack/salt.git'
