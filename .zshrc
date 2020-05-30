@@ -88,6 +88,7 @@ pathprepend() {
 
 source ~/.dot-config/.shell/paths.d/python.sh
 source ~/.dot-config/.shell/env.d/pyenv.sh
+source ~/.dot-config/.shell/env.d/nvm.sh
 
 # Exclude file types that can't be open in vim (FZF_DEFAULT_IGNORE is used for fzf.vim)
 export IGNORE_FILE_EXT=""
@@ -145,3 +146,7 @@ export FZF_CTRL_T_COMMAND="$FZF_FIND_COMMAND | ${FZF_CUSTOM_GREP_IGNORE} 2> /dev
 [ -f ~/.local/share/dephell/_dephell_zsh_autocomplete ] && source ~/.local/share/dephell/_dephell_zsh_autocomplete
 
 antigen apply
+
+export DOCKER_HOST=unix:///run/user/1000/docker.sock
+
+pathprepend $HOME/bin
