@@ -87,6 +87,7 @@ pathprepend() {
 }
 
 source ~/.dot-config/.shell/paths.d/python.sh
+source ~/.dot-config/.shell/paths.d/yarn.sh
 source ~/.dot-config/.shell/env.d/pyenv.sh
 source ~/.dot-config/.shell/env.d/nvm.sh
 
