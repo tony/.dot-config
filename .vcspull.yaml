@@ -801,6 +801,12 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/DefinitelyTyped.git'
   salt-ui: 'git+https://github.com/saltstack/salt-ui.git'
+~/study/chakra:
+  chakra-ui:
+    repo: 'git+https://github.com/chakra-ui/chakra-ui.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/chakra-ui.git'
+
 ~/study/javascript:
   backbone: 'git+https://github.com/documentcloud/backbone.git'
   backbone.deepmodel: 'git+https://github.com/powmedia/backbone-deep-model.git'
