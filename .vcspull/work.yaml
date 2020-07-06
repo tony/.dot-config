@@ -82,6 +82,12 @@
 
 ~/work/python:
   fabric-helpers: "git+git@github.com:develtech/fabric-helpers.git"
+
+  qencode-api-python-client:
+    repo: 'git+https://github.com/qencode-dev/qencode-api-python-client.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/qencode-api-python-client.git'
+      peergradeio: 'git+ssh://git@github.com/peergradeio/qencode-api-python-client.git'
   DjangoChannelsGraphqlWs:
     repo: 'git+https://github.com/datadvance/DjangoChannelsGraphqlWs.git'
     remotes:
