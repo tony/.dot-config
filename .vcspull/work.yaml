@@ -88,6 +88,12 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/qencode-api-python-client.git'
       peergradeio: 'git+ssh://git@github.com/peergradeio/qencode-api-python-client.git'
+  qencode-api-python3-client:
+    repo: 'git+https://github.com/qencode-dev/qencode-api-python3-client.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/qencode-api-python3-client.git'
+      peergradeio: 'git+ssh://git@github.com/peergradeio/qencode-api-python3-client.git'
+
   DjangoChannelsGraphqlWs:
     repo: 'git+https://github.com/datadvance/DjangoChannelsGraphqlWs.git'
     remotes:
