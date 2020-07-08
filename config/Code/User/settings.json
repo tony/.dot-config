@@ -30,7 +30,15 @@
     "search.exclude": {
         "**./.env*": true,
         "**/.cache*": true,
-        "**/.venv*": true
+        "**/.venv*": true,
+        "**/*dist*": true,
+        "**/node_modules*": true,
+        "**/bower_components*": true,
+        "**/build*": true,
+        "**/static*": true
     },
-    "vim.camelCaseMotion.enable": true
+    "vim.camelCaseMotion.enable": true,
+    "debug.node.autoAttach": "on",
+    "debug.javascript.usePreview": true,
+    "githubPullRequests.telemetry.enabled": false
 }
