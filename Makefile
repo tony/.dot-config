@@ -146,7 +146,7 @@ debian_update:
 	sudo apt update && sudo apt full-upgrade
 
 npm_update_global:
-	sudo npm install -g bower browserify brunch foreman nodemon npm npm-check-updates create-next-app tslint gatsby-cli bibtex-tidy
+	sudo npm install -g bower browserify brunch foreman nodemon npm-check-updates create-next-app tslint gatsby-cli bibtex-tidy lerna
 
 global_update:
 	$(MAKE) debian_update
