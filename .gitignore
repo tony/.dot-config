@@ -74,3 +74,6 @@ config/Code/
 
 # ptpython
 .ptpython/history
+
+# autostart
+config/autostart/redshift-gtk.desktop
