@@ -40,5 +40,6 @@
     "vim.camelCaseMotion.enable": true,
     "debug.node.autoAttach": "on",
     "debug.javascript.usePreview": true,
-    "githubPullRequests.telemetry.enabled": false
+    "githubPullRequests.telemetry.enabled": false,
+    "python.languageServer": "Microsoft"
 }
