@@ -82,6 +82,11 @@
 
 ~/work/python:
   fabric-helpers: "git+git@github.com:develtech/fabric-helpers.git"
+  pypdf2:
+    repo: 'git+https://github.com/mstamy2/PyPDF2.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/PyPDF2.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/PyPDF2.git'
 
   qencode-api-python-client:
     repo: 'git+https://github.com/qencode-dev/qencode-api-python-client.git'
