@@ -5,8 +5,19 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source ~/.dot-config/antigen.zsh
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
 
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit's installer chunk
 
 # tmux / tmuxp
 export DISABLE_AUTO_TITLE='true'
@@ -39,20 +50,33 @@ setopt hist_verify              # show before executing history commands
 setopt inc_append_history       # add commands as they are typed, don't wait until shell exit 
 setopt share_history            # share hist between sessions
 
-# antigen
-antigen use oh-my-zsh
+zinit snippet OMZ::plugins/history/history.plugin.zsh
+zinit snippet OMZ::plugins/git/git.plugin.zsh
+zinit snippet OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh
 
-antigen bundle history
-antigen bundle git
-antigen bundle ssh-agent
+zinit atload'!source ~/.p10k.zsh' lucid nocd for \
+    romkatv/powerlevel10k
 
-antigen bundle mafredri/zsh-async
-# antigen bundle sindresorhus/pure
-antigen theme romkatv/powerlevel10k
+# Load ~/.p10k_zinit.zsh when in ~/github/zinit.git
+zinit id-as'zinit-prompt' nocd lucid \
+    unload'[[ $PWD != */zinit.git(|/*) ]]' \
+    load'![[ $PWD = */zinit.git(|/*) ]]' \
+    atload'!source ~/.p10k_zinit.zsh; _p9k_precmd' for \
+        zdharma/null
 
-antigen bundle chrissicool/zsh-256color
+# Load ~/.p10k.zsh when in any other directory
+zinit id-as'normal-prompt' nocd lucid \
+    unload'[[ $PWD = */zinit.git(|/*) ]]' \
+    load'![[ $PWD != */zinit.git(|/*) ]]' \
+    atload'!source ~/.p10k.zsh; _p9k_precmd' for \
+        zdharma/null
 
-antigen bundle zsh-users/zsh-syntax-highlighting
+# zinit ice pick"async.zsh" src"pure.zsh"
+# zinit light sindresorhus/pure
+
+zinit load chrissicool/zsh-256color
+
+zinit load zsh-users/zsh-syntax-highlighting
 
 # Enable completion caching
 zstyle ':completion:*' use-cache on
@@ -148,13 +172,14 @@ export FZF_DEFAULT_COMMAND="(git ls-files --recurse-submodules & git ls-files --
 
 export FZF_CTRL_T_COMMAND="$FZF_FIND_COMMAND | ${FZF_CUSTOM_GREP_IGNORE} 2> /dev/null"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Binary release in archive, from GitHub-releases page.
+# After automatic unpacking it provides program "fzf".
+zinit ice from"gh-r" as"program"
+zinit load junegunn/fzf-bin
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.profile ] && source ~/.profile
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 [ -f ~/.local/share/dephell/_dephell_zsh_autocomplete ] && source ~/.local/share/dephell/_dephell_zsh_autocomplete
-
-antigen apply
 
 export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
