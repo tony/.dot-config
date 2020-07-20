@@ -41,5 +41,8 @@
     "debug.node.autoAttach": "on",
     "debug.javascript.usePreview": true,
     "githubPullRequests.telemetry.enabled": false,
-    "python.languageServer": "Microsoft"
+    "python.languageServer": "Microsoft",
+    "[python]": {
+        "editor.defaultFormatter": "ms-vsliveshare.vsliveshare"
+    }
 }
