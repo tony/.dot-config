@@ -7,7 +7,6 @@ ctags \
 wget \
 git \
 tig \
-keychain \
 most \
 entr \
 curl \

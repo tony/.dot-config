@@ -8,7 +8,6 @@ silversearcher-ag \
 wget \
 git \
 tig \
-keychain \
 most \
 entr \
 curl \

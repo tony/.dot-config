@@ -1,6 +1,6 @@
 #!/bin/sh
 
-brew install keychain \
+brew install \
   memcached \
   golang \
   caskroom/cask/spotify \
