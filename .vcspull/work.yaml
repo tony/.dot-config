@@ -81,6 +81,10 @@
     repo: 'git+https://github.com/moodle/moodle-docker.git'
 
 ~/work/python:
+  futurecoder:
+    repo: 'git+https://github.com/alexmojaki/futurecoder.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/futurecoder.git'
   fabric-helpers: "git+git@github.com:develtech/fabric-helpers.git"
   pypdf2:
     repo: 'git+https://github.com/mstamy2/PyPDF2.git'
