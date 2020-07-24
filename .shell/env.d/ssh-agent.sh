@@ -1,11 +1,44 @@
-# https://stackoverflow.com/a/46719617
-# Ensure that we have an ssh config with AddKeysToAgent set to true
-if [ ! -f ~/.ssh/config ] || ! cat ~/.ssh/config | grep AddKeysToAgent | grep yes > /dev/null; then
-    echo "AddKeysToAgent  yes" >> ~/.ssh/config
-fi
-# Ensure a ssh-agent is running so you only have to enter keys once
-if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-  eval `ssh-agent`
-  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-fi
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+# Credit @romkatv
+# https://raw.githubusercontent.com/romkatv/dotfiles-public/master/dotfiles/ssh-agent.zsh
+# See also: https://github.com/romkatv/powerlevel10k/issues/277#issuecomment-545517605
+# "instant prompt behaves weirdly with keychain #277"
+
+# Starts ssh-agent if it isn't already running.
+() {
+  emulate -L zsh -o no_unset -o extended_glob
+
+  function _ssh-agent-running() {
+    [[ -v SSH_AUTH_SOCK && -r $SSH_AUTH_SOCK && -w $SSH_AUTH_SOCK &&
+       -v SSH_AGENT_PID && "$(ps -p $SSH_AGENT_PID -o comm= 2>/dev/null)" == ssh-agent ]]
+  }
+
+  {
+    _ssh-agent-running && return
+
+    local env_file=${XDG_CACHE_HOME:-$HOME/.cache}/ssh-agent-env
+    if [[ -d ${env_file:h} ]]; then
+      command mkdir -pm 0700 -- ${env_file:h} || return
+    fi
+
+    local f=$env_file
+    while true; do
+      if [[ -n $f(#qNW) ]]; then
+        echo "Not using ssh-agent because ${(qqq)f} is world-writable." >&2
+        return 1 
+      fi
+      [[ $f == / ]] && break
+      f=${f:h}
+    done
+
+    if [[ -e $env_file ]]; then
+      source $env_file >/dev/null
+      _ssh-agent-running && return
+    fi
+
+    unset SSH_AGENT_PID SSH_AUTH_SOCK
+    command ssh-agent -st 20h >$env_file || return
+    source $env_file >/dev/null          || return
+  } always {
+    unfunction _ssh-agent-running
+  }
+}
