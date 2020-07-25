@@ -4,12 +4,7 @@ PIP_PACKAGES=python-language-server black 'isort<5' virtualenv pipenv tmuxp vcsp
 make lint:
 	shellcheck -s sh \.shell/**/*.sh
 
-antigen:
-	curl -L git.io/antigen > ${DOT_CONFIG_DIR}/antigen.zsh
-
 install:
-	$(MAKE) antigen
-
 	ln -si ${DOT_CONFIG_DIR}/.tmux/ ~
 	ln -si ~/.tmux/.tmux.conf ~
 	ln -si ${DOT_CONFIG_DIR}/.vim/ ~
