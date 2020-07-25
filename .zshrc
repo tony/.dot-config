@@ -52,6 +52,7 @@ setopt share_history            # share hist between sessions
 
 zinit snippet OMZ::plugins/history/history.plugin.zsh
 zinit snippet OMZ::plugins/git/git.plugin.zsh
+zinit snippet OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh
 
 zinit atload'!source ~/.p10k.zsh' lucid nocd for \
     romkatv/powerlevel10k
@@ -104,7 +105,6 @@ fixssh() {
     done
 }
 fixssh()
-source ~/.dot-config/.shell/env.d/ssh-agent.sh
 source ~/.dot-config/.shell/env.d/most.sh
 source ~/.dot-config/.shell/env.d/python-breakpoint.sh
 source ~/.dot-config/.shell/aliases.sh
