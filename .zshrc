@@ -119,8 +119,10 @@ pathprepend() {
 }
 
 source ~/.dot-config/.shell/paths.d/yarn.sh
-source ~/.dot-config/.shell/paths.d/python.sh
 source ~/.dot-config/.shell/env.d/pyenv.sh
+if [ ! -d "$HOME/.pyenv" ]; then
+    source ~/.dot-config/.shell/paths.d/python.sh
+fi
 source ~/.dot-config/.shell/env.d/poetry.sh
 source ~/.dot-config/.shell/env.d/nvm.sh
 
