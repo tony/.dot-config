@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
@@ -54,25 +47,10 @@ zinit snippet OMZ::plugins/history/history.plugin.zsh
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 zinit snippet OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh
 
-zinit atload'!source ~/.p10k.zsh' lucid nocd for \
-    romkatv/powerlevel10k
-
-# Load ~/.p10k_zinit.zsh when in ~/github/zinit.git
-zinit id-as'zinit-prompt' nocd lucid \
-    unload'[[ $PWD != */zinit.git(|/*) ]]' \
-    load'![[ $PWD = */zinit.git(|/*) ]]' \
-    atload'!source ~/.p10k_zinit.zsh; _p9k_precmd' for \
-        zdharma/null
-
-# Load ~/.p10k.zsh when in any other directory
-zinit id-as'normal-prompt' nocd lucid \
-    unload'[[ $PWD = */zinit.git(|/*) ]]' \
-    load'![[ $PWD != */zinit.git(|/*) ]]' \
-    atload'!source ~/.p10k.zsh; _p9k_precmd' for \
-        zdharma/null
-
-# zinit ice pick"async.zsh" src"pure.zsh"
+# zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
 # zinit light sindresorhus/pure
+zinit ice pick"async.zsh" src"pure.zsh"
+zinit light sindresorhus/pure
 
 zinit load chrissicool/zsh-256color
 
@@ -187,9 +165,3 @@ zinit load junegunn/fzf-bin
 export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
 pathprepend $HOME/bin
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# For keychain / ssh-agent + p10k
-(( ! ${+functions[p10k]} )) || p10k finalize
