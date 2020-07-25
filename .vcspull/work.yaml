@@ -170,22 +170,22 @@
       tony: 'git+ssh://git@github.com/dotkeeper/dotkeeper.git'
 
   libvcs:
-    repo: 'git+https://github.com/vcs-python/libvcs.git'
+    repo: 'git+ssh://git@github.com/vcs-python/libvcs.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/libvcs.git'
 
   vcspull:
-    repo: 'git+https://github.com/vcs-python/vcspull.git'
+    repo: 'git+ssh://git@github.com/vcs-python/vcspull.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/vcspull.git'
 
   libtmux:
-    repo: 'git+https://github.com/tmux-python/libtmux.git'
+    repo: 'git+ssh://git@github.com/tmux-python/libtmux.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/libtmux.git'
 
   tmuxp:
-    repo: 'git+https://github.com/tmux-python/tmuxp.git'
+    repo: 'git+ssh://git@github.com/tmux-python/tmuxp.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/tmuxp.git'
 
