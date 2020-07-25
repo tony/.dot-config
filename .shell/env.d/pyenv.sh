@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 ## pyenv paths
 # curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
 if [ -d "${HOME}/.pyenv" ]; then
@@ -13,10 +12,9 @@ fi
 if [ -d "${PYENV_ROOT}" ]; then
     pathprepend ${PYENV_ROOT}/bin
     eval "$(pyenv init -)"
-
 fi
 
 if [ -d "/usr/local/opt/pyenv-virtualenv" ]; then
-	pathprepend /usr/local/opt/pyenv-virtualenv/bin
-	eval "$(pyenv virtualenv-init -)"
+    pathprepend /usr/local/opt/pyenv-virtualenv/bin
+    eval "$(pyenv virtualenv-init -)"
 fi
