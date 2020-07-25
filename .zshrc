@@ -102,7 +102,11 @@ if [ ! -d "$HOME/.pyenv" ]; then
     source ~/.dot-config/.shell/paths.d/python.sh
 fi
 source ~/.dot-config/.shell/env.d/poetry.sh
-source ~/.dot-config/.shell/env.d/nvm.sh
+
+# source ~/.dot-config/.shell/env.d/nvm.sh
+export NVM_LAZY_LOAD=true
+zplugin ice wait"1" lucid
+zplugin light lukechilds/zsh-nvm
 
 # Exclude file types that can't be open in vim (FZF_DEFAULT_IGNORE is used for fzf.vim)
 export IGNORE_FILE_EXT=""
