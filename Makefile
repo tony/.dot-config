@@ -23,6 +23,8 @@ install:
 	ln -si ${DOT_CONFIG_DIR}/.ipython ~
 	ln -si ${DOT_CONFIG_DIR}/.ptpython ~
 	ln -si ${DOT_CONFIG_DIR}/.zfunc/ ~
+	mkdir -p ~/.ssh
+	ln -si ${DOT_CONFIG_DIR}/.ssh/config ~/.ssh/config
 
 dephell:
 	python3 -m pip install --user 'dephell[full]'
