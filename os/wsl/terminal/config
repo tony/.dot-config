@@ -289,7 +289,7 @@
             "commandline" : "wsl.exe -d Ubuntu",
             "cursorColor" : "#FFFFFF",
             "cursorShape" : "bar",
-            "fontFace" : "Cascadia Code",
+            "fontFace" : "Cascadia Code PL",
             "fontSize" : 10,
             "guid" : "{2c4de342-38b7-51cf-b940-2309a097f518}",
             "historySize" : 9001,
