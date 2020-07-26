@@ -47,6 +47,7 @@ zinit snippet OMZ::plugins/history/history.plugin.zsh
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 zinit snippet OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh
 
+SPACESHIP_PROMPT_ADD_NEWLINE=false
 zinit light denysdovhan/spaceship-prompt
 
 zinit load chrissicool/zsh-256color
