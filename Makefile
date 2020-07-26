@@ -1,5 +1,5 @@
 DOT_CONFIG_DIR=~/.dot-config
-PIP_PACKAGES=python-language-server black 'isort<5' virtualenv pipenv tmuxp vcspull dotfiles spotdl poetry
+PIP_PACKAGES=python-language-server black 'isort<5' virtualenv pipenv tmuxp vcspull dotfiles spotdl
 
 make lint:
 	shellcheck -s sh \.shell/**/*.sh
@@ -22,7 +22,7 @@ install:
 	ln -si ${DOT_CONFIG_DIR}/.ssh/config ~/.ssh/config
 
 poetry:
-	python3 -m pip install --user poetry
+	python3 -m pip install --user poetry --pre
 	ln -sf ${DOT_CONFIG_DIR}/.zfunc/ ~
 	poetry completions zsh > ~/.zfunc/_poetry
 
@@ -120,6 +120,7 @@ pip_install:
 pip_install_packages:
 	pip install --user -U pip
 	pip install --user -U ${PIP_PACKAGES}
+	$(MAKE) poetry
 
 pip_uninstall_packages:
 	pip uninstall -y ${PIP_PACKAGES}
