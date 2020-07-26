@@ -47,10 +47,7 @@ zinit snippet OMZ::plugins/history/history.plugin.zsh
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 zinit snippet OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh
 
-# zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
-# zinit light sindresorhus/pure
-zinit ice pick"async.zsh" src"pure.zsh"
-zinit light sindresorhus/pure
+zinit light denysdovhan/spaceship-prompt
 
 zinit load chrissicool/zsh-256color
 
