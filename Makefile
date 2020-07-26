@@ -21,10 +21,6 @@ install:
 	mkdir -p ~/.ssh
 	ln -si ${DOT_CONFIG_DIR}/.ssh/config ~/.ssh/config
 
-dephell:
-	python3 -m pip install --user 'dephell[full]'
-	dephell self autocomplete
-
 poetry:
 	python3 -m pip install --user poetry
 	ln -sf ${DOT_CONFIG_DIR}/.zfunc/ ~
