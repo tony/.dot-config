@@ -97,8 +97,12 @@ pathprepend() {
 }
 
 source ~/.dot-config/.shell/paths.d/yarn.sh
-source ~/.dot-config/.shell/env.d/pyenv.sh
-if [ ! -d "$HOME/.pyenv" ]; then
+
+if [ -d "$HOME/.pyenv" ]; then
+    # source ~/.dot-config/.shell/env.d/pyenv.sh
+    zinit light zinit-zsh/z-a-bin-gem-node
+    zinit pack for pyenv
+else
     source ~/.dot-config/.shell/paths.d/python.sh
 fi
 source ~/.dot-config/.shell/env.d/poetry.sh
