@@ -96,7 +96,10 @@ pathprepend() {
 
 source ~/.dot-config/.shell/paths.d/yarn.sh
 
-if [ -d "$HOME/.pyenv" ]; then
+zinit light zinit-zsh/z-a-bin-gem-node
+zinit pack for pyenv
+
+if [ -d "$HOME/.pyenv" -o -d "$PYENV_ROOT" ]; then
     # source ~/.dot-config/.shell/env.d/pyenv.sh
     zinit light zinit-zsh/z-a-bin-gem-node
     zinit pack for pyenv
