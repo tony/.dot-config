@@ -21,6 +21,8 @@
     repo: 'git+https://github.com/brutasse/django-rq-dashboard.git'
     remotes:
       eduflow: 'git+ssh://git@github.com/eduflow/django-rq-dashboard.git'
+      sbussetti: 'git+ssh://git@github.com/sbussetti/django-rq-dashboard.git'
+      morlandi: 'git+ssh://git@github.com/morlandi/django-rq-dashboard.git'
 
   react-google-picker:
     repo: 'git+https://github.com/sdoomz/react-google-picker.git'
