@@ -52,10 +52,7 @@ SPACESHIP_PACKAGE_SHOW=false
 SPACESHIP_GIT_STATUS_STASHED=''
 SPACESHIP_EXEC_TIME_PREFIX=''
 SPACESHIP_PROMPT_ORDER=(
-  time          # Time stamps section
-  user          # Username section
   dir           # Current directory section
-  host          # Hostname section
   git           # Git section (git_branch + git_status)
   venv          # virtualenv section
   exec_time     # Execution time
