@@ -17,6 +17,10 @@
       eduflow: 'git+ssh://git@github.com/eduflow/curlify.git'
       tony: 'git+ssh://git@github.com/tony/curlify.git'
 
+  django-rq-dashboard:
+    repo: 'git+https://github.com/brutasse/django-rq-dashboard.git'
+    remotes:
+      eduflow: 'git+ssh://git@github.com/eduflow/django-rq-dashboard.git'
 
   react-google-picker:
     repo: 'git+https://github.com/sdoomz/react-google-picker.git'
