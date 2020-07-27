@@ -50,6 +50,7 @@ zinit snippet OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_PACKAGE_SHOW=false
 SPACESHIP_GIT_STATUS_STASHED=''
+SPACESHIP_EXEC_TIME_PREFIX=''
 SPACESHIP_PROMPT_ORDER=(
   time          # Time stamps section
   user          # Username section
