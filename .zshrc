@@ -48,6 +48,7 @@ zinit snippet OMZ::plugins/git/git.plugin.zsh
 zinit snippet OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh
 
 SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_GIT_STATUS_STASHED=''
 SPACESHIP_PROMPT_ORDER=(
   time          # Time stamps section
   user          # Username section
