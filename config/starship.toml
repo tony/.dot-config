@@ -6,3 +6,12 @@ disabled = true
 
 [python]
 disabled = true
+
+[package]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[git_status]
+stashed = ""
