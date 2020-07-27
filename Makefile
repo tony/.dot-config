@@ -85,6 +85,7 @@ debian_packages_x11:
 	pgadmin3 \
 	kitty \
 	fonts-noto-cjk xfonts-wqy \
+	fonts-cascadia-code \
 	rxvt-unicode-256color \
 	nitrogen \
 	scrot \
