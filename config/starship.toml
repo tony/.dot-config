@@ -15,3 +15,6 @@ disabled = true
 
 [git_status]
 stashed = ""
+
+[cmd_duration]
+prefix = ""
