@@ -76,7 +76,7 @@
         "cursorColor": "#FFFFFF",
         "cursorShape": "bar",
         "fontFace": "Cascadia Code PL",
-        "fontSize": 10,
+        "fontSize": 11,
         "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
         "historySize": 9001,
         "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
@@ -128,8 +128,8 @@
     // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
     // These two lines additionally bind them to Ctrl+C and Ctrl+V.
     // To learn more about selection, visit https://aka.ms/terminal-selection
-    { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+c" },
-    { "command": "paste", "keys": "ctrl+v" },
+    { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+shift+c" },
+    { "command": "paste", "keys": "ctrl+shift+v" },
 
     // Press Ctrl+Shift+F to open the search box
     { "command": "find", "keys": "ctrl+shift+f" },
