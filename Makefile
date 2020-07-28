@@ -22,7 +22,8 @@ install:
 	ln -si ${DOT_CONFIG_DIR}/.ssh/config ~/.ssh/config
 
 poetry:
-	python3 -m pip install --user poetry --pre
+	# python3 -m pip install --user poetry --pre
+	python3 -m pip install --user poetry
 	ln -sf ${DOT_CONFIG_DIR}/.zfunc/ ~
 	poetry completions zsh > ~/.zfunc/_poetry
 
