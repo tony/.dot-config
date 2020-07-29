@@ -12,6 +12,10 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit's installer chunk
 
+# Functions to make configuration less verbose (thanks https://github.com/zdharma/zinit-configs/)
+# zt() : First argument is a wait time and suffix, ie "0a". Anything that doesn't match will be passed as if it were an ice mod. Default ices depth'3' and lucid
+zt()  { zinit depth'3' lucid ${1/#[0-9][a-c]/wait"$1"} "${@:2}"; }
+
 # tmux / tmuxp
 export DISABLE_AUTO_TITLE='true'
 
@@ -43,6 +47,7 @@ setopt hist_verify              # show before executing history commands
 setopt inc_append_history       # add commands as they are typed, don't wait until shell exit 
 setopt share_history            # share hist between sessions
 
+zt for  OMZ::lib/history.zsh
 zinit snippet OMZ::plugins/history/history.plugin.zsh
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 zinit snippet OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh
