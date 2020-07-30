@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -f /usr/bin/yarn -a -d $HOME/.yarn/bin ]; then
+if yarn 1>/dev/null 2>&1; then
     # pathprepend $HOME/.yarn/bin 
     pathprepend `yarn global bin`
 fi
