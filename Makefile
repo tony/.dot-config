@@ -161,10 +161,21 @@ test_fzf_default_command:
 debian_update:
 	sudo apt update && sudo apt full-upgrade
 
-npm_update_global:
-	sudo npm install -g bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna
+yarn_add_packages:
+	yarn global add bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna
+
+yarn_upgrade_packages:
+	yarn global upgrade bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna
+
+yarn_remove_packages:
+	yarn global remove bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna
+
+npm_uninstall_packages:
+	sudo npm uninstall -g bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna
+	npm uninstall -g bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna
+	npm uninstall bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna
 
 global_update:
 	$(MAKE) debian_update
 	$(MAKE) pip_install_packages  # Handles upgrades
-	$(MAKE) npm_update_global
+	$(MAKE) yarn_upgrade_packages
