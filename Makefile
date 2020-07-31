@@ -161,10 +161,15 @@ test_fzf_default_command:
 debian_update:
 	sudo apt update && sudo apt full-upgrade
 
+yarn_set_prefix:
+	yarn config set prefix ~/.yarn  # So node_modules/yarn.lock doesn't get created everywhere
+
 yarn_add_packages:
+	$(MAKE) yarn_set_prefix
 	yarn global add bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna
 
 yarn_upgrade_packages:
+	$(MAKE) yarn_set_prefix
 	yarn global upgrade bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna
 
 yarn_remove_packages:
