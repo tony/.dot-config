@@ -207,6 +207,16 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/releases.git'
 
+~/work/mkdocs:
+  mkdocs:
+    repo: 'git+https://github.com/mkdocs/mkdocs.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/mkdocs.git'
+  mkapi:
+    repo: 'git+https://github.com/daizutabi/mkapi.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/mkapi.git'
+
 ~/work/reStructuredText:
   docutils: 'svn+ssh://gitpull@svn.code.sf.net/p/docutils/code'
   sphinxcontrib-websupport:
