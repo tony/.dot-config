@@ -149,6 +149,11 @@
   RootTheBox: 'git+https://github.com/moloch--/RootTheBox.git'
   celery: 'git+https://github.com/celery/celery.git'
   python-social-auth: 'git+https://github.com/omab/python-social-auth.git'
+  social-app-django: 
+    repo: 'git+https://github.com/python-social-auth/social-app-django.git'
+    remotes:
+      tony: 'git+https://github.com/tony/social-app-django.git'
+      eduflow: 'git+https://github.com/eduflow/social-app-django.git'
   Flexget: 'git+https://github.com/Flexget/Flexget.git'
   cookiecutter:
     repo: 'git+https://github.com/audreyr/cookiecutter.git'
