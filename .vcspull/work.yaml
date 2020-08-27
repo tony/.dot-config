@@ -26,6 +26,52 @@
     repo: 'git+https://github.com/jonelantha/gatsby-s3-action.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/gatsby-s3-action.git'
+~/work/remark:
+  remark:
+    repo: 'git+https://github.com/remarkjs/remark.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/remark.git'
+  remark-github:
+    repo: 'git+https://github.com/remarkjs/remark-github.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/remark-github.git'
+  remark-bookmarks:
+    repo: 'git+https://github.com/remarkjs/remark-bookmarks.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/remark-bookmarks.git'
+
+  remark-inline-links:
+    repo: 'git+https://github.com/remarkjs/remark-inline-links.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/remark-inline-links.git'
+  remark-lint:
+    repo: 'git+https://github.com/remarkjs/remark-lint.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/remark-lint.git'
+  remark-normalize-headings:
+    repo: 'git+https://github.com/remarkjs/remark-normalize-headings.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/remark-normalize-headings.git'
+  remark-github-contributors:
+    repo: 'git+https://github.com/remarkjs/remark-github-contributors.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/remark-github-contributors.git'
+  remark-comment-config:
+    repo: 'git+https://github.com/remarkjs/remark-comment-config.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/remark-comment-config.git'
+  remark-reference-links:
+    repo: 'git+https://github.com/remarkjs/remark-reference-links.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/remark-reference-links.git'
+  remark-images:
+    repo: 'git+https://github.com/remarkjs/remark-images.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/remark-images.git'
+  mdx:
+    repo: 'git+https://github.com/mdx-js/mdx.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/mdx.git'
 
 ~/work/freebsd:
   plasma5: 'svn+http://area51.pcbsd.org/branches/plasma5'
