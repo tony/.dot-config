@@ -25,3 +25,5 @@
 # Disable for bitbucket, gives prompts.
 #[url "ssh://git@bitbucket.org/"]
 #  insteadOf = https://bitbucket.org/
+[pull]
+	rebase = false
