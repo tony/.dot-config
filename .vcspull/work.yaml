@@ -39,6 +39,11 @@
     repo: 'git+https://github.com/agentofuser/remark-oembed.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/remark-oembed.git'
+  remark-crossref:
+    repo: 'git+https://github.com/Paperist/remark-crossref.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/remark-crossref.git'
+
   remark-bookmarks:
     repo: 'git+https://github.com/remarkjs/remark-bookmarks.git'
     remotes:
