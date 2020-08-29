@@ -35,11 +35,18 @@
     repo: 'git+https://github.com/remarkjs/remark-github.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/remark-github.git'
+  remark-admonitions:
+    repo: 'git+https://github.com/favoloso/remarkable-admonitions.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/remarkable-admonitions.git'
+  remark-oembed:
+    repo: 'git+https://github.com/agentofuser/remark-oembed.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/remark-oembed.git'
   remark-bookmarks:
     repo: 'git+https://github.com/remarkjs/remark-bookmarks.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/remark-bookmarks.git'
-
   remark-inline-links:
     repo: 'git+https://github.com/remarkjs/remark-inline-links.git'
     remotes:
