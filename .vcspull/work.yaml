@@ -135,6 +135,12 @@
     repo: 'git+https://github.com/moodle/moodle-docker.git'
 
 ~/work/python:
+  uvicorn:
+    repo: 'git+https://github.com/encode/uvicorn.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/uvicorn.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/uvicorn.git'
+
   fabric-helpers: "git+git@github.com:develtech/fabric-helpers.git"
   pypdf2:
     repo: 'git+https://github.com/mstamy2/PyPDF2.git'
