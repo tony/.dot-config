@@ -389,10 +389,6 @@
     repo: 'git+https://github.com/django/django.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/django.git'
-  django-allauth: 
-    repo: 'git+https://github.com/pennersr/django-allauth.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/django-allauth.git'
   django-taggit: 'git+https://github.com/alex/django-taggit.git'
   django-basic-apps: 'git+https://github.com/nathanborror/django-basic-apps.git'
   django-mptt: 'git+https://github.com/django-mptt/django-mptt.git'

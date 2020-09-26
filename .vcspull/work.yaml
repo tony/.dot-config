@@ -135,6 +135,12 @@
     repo: 'git+https://github.com/moodle/moodle-docker.git'
 
 ~/work/python:
+  django-allauth: 
+    repo: 'git+https://github.com/pennersr/django-allauth.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/django-allauth.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/django-allauth.git'
+
   uvicorn:
     repo: 'git+https://github.com/encode/uvicorn.git'
     remotes:
