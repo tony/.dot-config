@@ -18,6 +18,11 @@
   otto: 'git+https://github.com/robertkrimen/otto'
   blackfriday: 'git+https://github.com/russross/blackfriday.git'
 
+~/study/cs:
+  screentogif:
+    repo: 'git+https://github.com/NickeManarin/ScreenToGif.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/ScreenToGif.git'
 
 ~/study/python:
   # some nice sqlalchemy code
