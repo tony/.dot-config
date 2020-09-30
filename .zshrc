@@ -47,7 +47,10 @@ setopt hist_verify              # show before executing history commands
 setopt inc_append_history       # add commands as they are typed, don't wait until shell exit 
 setopt share_history            # share hist between sessions
 
-zt for  OMZ::lib/history.zsh
+zt for OMZ::lib/history.zsh
+PS1="READY > "
+zinit ice wait'!0'
+
 zinit snippet OMZ::plugins/history/history.plugin.zsh
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 zinit snippet OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh
