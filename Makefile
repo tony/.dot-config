@@ -32,6 +32,9 @@ debian_fix_inotify:
 	grep -qxF 'fs.inotify.max_user_watches=1524288' /etc/sysctl.conf || echo 'fs.inotify.max_user_watches=1524288' | sudo tee -a /etc/sysctl.conf
 	sudo sysctl -p
 
+debian_fix_docker:
+	sudo usermod -aG docker $$USER
+
 debian_pyenv_packages:
 	sudo apt-get update; \
 	sudo apt-get install --no-install-recommends \
