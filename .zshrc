@@ -206,5 +206,6 @@ zinit load junegunn/fzf-bin
 export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
 pathprepend $HOME/bin
+pathprepend $HOME/.local/bin
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
