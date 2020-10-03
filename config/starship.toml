@@ -17,4 +17,4 @@ disabled = true
 stashed = ""
 
 [cmd_duration]
-prefix = ""
+format = ""
