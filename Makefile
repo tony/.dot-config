@@ -96,6 +96,9 @@ debian_packages_x11:
 	maim \
 	slop
 
+debian_vim:
+	sudo add-apt-repository ppa:jonathonf/vim
+
 debian_node:
 	curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 
