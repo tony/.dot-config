@@ -209,3 +209,4 @@ pathprepend $HOME/bin
 pathprepend $HOME/.local/bin
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.poetry/env ] && source $HOME/.poetry/env
