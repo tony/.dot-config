@@ -23,7 +23,8 @@ install:
 
 poetry:
 	# python3 -m pip install --user poetry --pre
-	python3 -m pip install --user poetry
+	# python3 -m pip install --user poetry
+        curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 	ln -sf ${DOT_CONFIG_DIR}/.zfunc/ ~
 	poetry completions zsh > ~/.zfunc/_poetry
 
