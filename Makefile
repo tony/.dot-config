@@ -1,3 +1,4 @@
+SHELL=/bin/bash
 DOT_CONFIG_DIR=~/.dot-config
 PIP_PACKAGES=python-language-server black 'isort<5' virtualenv pipenv tmuxp vcspull dotfiles spotdl
 
@@ -191,3 +192,8 @@ global_update:
 	$(MAKE) debian_update
 	$(MAKE) pip_install_packages  # Handles upgrades
 	$(MAKE) yarn_upgrade_packages
+
+update_gatsby_sites:
+	pushd ~/work/parataxic.org; git pull --rebase --autostash; popd; \
+	pushd ~/work/develtech; git pull --rebase --autostash; popd; \
+	pushd ~/work/hsk-django; git pull --rebase --autostash; popd;
