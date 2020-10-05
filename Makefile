@@ -197,7 +197,7 @@ debian_wsl2_chrome:
 	wget 'https://github.com/webnicer/chrome-downloads/blob/master/x64.deb/google-chrome-stable_85.0.4183.121-1_amd64.deb?raw=true'
 	wget http://chromedriver.storage.googleapis.com/85.0.4183.87/chromedriver_linux64.zip
 	unzip chromedriver_linux64.zip
-	sudo ln -sf $PWD/chromedriver /usr/local/bin/chromedriver
+	sudo mv $$PWD/chromedriver /usr/local/bin/chromedriver
 
 configure_wsl2_vcxsrv:
 	export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0.0
