@@ -197,3 +197,9 @@ update_gatsby_sites:
 	pushd ~/work/parataxic.org; git pull --rebase --autostash; popd; \
 	pushd ~/work/develtech; git pull --rebase --autostash; popd; \
 	pushd ~/work/hsk-django; git pull --rebase --autostash; popd;
+
+debian_wsl2_chrome:
+	wget 'https://github.com/webnicer/chrome-downloads/blob/master/x64.deb/google-chrome-stable_85.0.4183.121-1_amd64.deb?raw=true'
+	wget http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip
+	unzip chromedriver_linux64.zip
+	sudo ln -sf $PWD/chromedriver /usr/local/bin/chromedriver
