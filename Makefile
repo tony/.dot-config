@@ -22,13 +22,6 @@ install:
 	mkdir -p ~/.ssh
 	ln -si ${DOT_CONFIG_DIR}/.ssh/config ~/.ssh/config
 
-poetry:
-	# python3 -m pip install --user poetry --pre
-	# python3 -m pip install --user poetry
-        curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-	ln -sf ${DOT_CONFIG_DIR}/.zfunc/ ~
-	poetry completions zsh > ~/.zfunc/_poetry
-
 debian_fix_inotify:
 	# Fixes inotify for watchman
 	grep -qxF 'fs.inotify.max_user_watches=1524288' /etc/sysctl.conf || echo 'fs.inotify.max_user_watches=1524288' | sudo tee -a /etc/sysctl.conf
@@ -99,7 +92,7 @@ debian_packages_x11:
 	slop
 
 debian_vim:
-	sudo add-apt-repository ppa:jonathonf/vim
+	sudo add-apt-repository 'ppa:jonathonf/vim'
 
 debian_node:
 	curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
@@ -206,3 +199,19 @@ debian_wsl2_chrome:
 
 configure_wsl2_vcxsrv:
 	export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0.0
+
+debian_python:
+	wget https://bootstrap.pypa.io/get-pip.py
+	python3 get-pip.py
+	rm get-pip.py
+	# pyenv is installed by zinit
+	# curl https://pyenv.run | bash
+	$(MAKE) debian_pyenv_packages
+	pyenv install 3.7.8
+	pyenv global 3.7.8
+	$(MAKE) poetry_install
+
+poetry_install:
+	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+	ln -sf ${DOT_CONFIG_DIR}/.zfunc/ ~
+	poetry completions zsh > ~/.zfunc/_poetry
