@@ -203,3 +203,6 @@ debian_wsl2_chrome:
 	wget http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip
 	unzip chromedriver_linux64.zip
 	sudo ln -sf $PWD/chromedriver /usr/local/bin/chromedriver
+
+configure_wsl2_vcxsrv:
+	export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0.0
