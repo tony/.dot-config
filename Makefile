@@ -125,7 +125,7 @@ pip_install:
 pip_install_packages:
 	pip install --user -U pip
 	pip install --user -U ${PIP_PACKAGES}
-	$(MAKE) poetry
+	$(MAKE) poetry_install
 
 pip_uninstall_packages:
 	pip uninstall -y ${PIP_PACKAGES}
