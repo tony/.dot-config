@@ -38,6 +38,11 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/djangorestframework-api-key.git'
 
+  poetry:
+    repo: 'git+https://github.com/python-poetry/poetry.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/poetry.git'
+
   pytest-splinter:
     repo: 'git+https://github.com/pytest-dev/pytest-splinter.git'
     remotes:
