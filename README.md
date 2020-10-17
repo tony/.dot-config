@@ -1,5 +1,7 @@
 # dot-config files
 
+zsh + [zinit] + [starship] + [fzf]
+
 Feel free to copy and paste from here, everything is licensed [MIT].
 
 Powered by antigen.
@@ -66,12 +68,24 @@ This package [dotfiles] (for this repo), `.tmuxp.yaml`
 
 ---
 
-- [`.zshrc`](.zshrc) zinit-based stuff
+- [`.zshrc`](.zshrc) [zinit]-based stuff. Uses [starship]
 - [`.shell/`](.shell/) Shell plugins depo (via `.sh` scripts)
 
-     - [`.shell/env.d`](.shell/env.d) example: `poetry.sh` checks for poetry and `source`'s it in
-     - [`.shell/vars.d`](.shell/env.d) env variables, e.g. FZF ignore variables
-     - [`.shell/paths.d`](.shell/paths.d) Add things like python site packages / poetry / yarn to
+     - [`.shell/env.d`](.shell/env.d) example: [`env.d/poetry.sh`](.shell/env.d/poetry.sh) checks for poetry and `source`'s it in
+
+          When installing CLI tools, sometimes these are automatically added to
+          `.bashrc` / `.zshrc` by installer tools.
+
+          Assuming `.zshrc`, if you have this line:
+
+          `[ -f ~/.poetry/env ] && source $HOME/.poetry/env`
+
+          You can safely replace it with:
+
+          `source ~/.dot-config/.shell/env.d/poetry.sh`
+
+     - [`.shell/vars.d`](.shell/env.d) env variables, e.g. [FZF] ([fzf.vim]'s) [`FZF_DEFAULT_COMMAND`] and + [ignore pattern](.shell/vars.d/ignore.sh] variables
+     - [`.shell/paths.d`](.shell/paths.d) Add things like [python site packages](.shell/paths.d/python.sh) / [yarn](.shell/paths.d/yarn.sh) to
        `PATH`
 
 - [`.vim/`](.vim/) See \<<https://github.com/tony/vim-config>\>.
@@ -89,6 +103,11 @@ This package [dotfiles] (for this repo), `.tmuxp.yaml`
 
 ---
 
+[starship]: https://starship.rs/
+[zinit]: https://github.com/zdharma/zinit
+[fzf]: https://github.com/junegunn/fzf
+[`fzf_default_command`]: https://github.com/junegunn/fzf.vim/blob/4145f53/doc/fzf-vim.txt#L115
+[fzf.vim]: https://github.com/junegunn/fzf.vim
 [tmuxp]: https://github.com/tony/tmuxp
 [readline]: https://docs.python.org/2/library/readline.html
 [stand-alone readline module]: https://pypi.python.org/pypi/readline
