@@ -139,6 +139,7 @@ else
     source ~/.dot-config/.shell/paths.d/python.sh
 fi
 source ~/.dot-config/.shell/env.d/poetry.sh
+source ~/.dot-config/.shell/env.d/travis.sh
 
 # source ~/.dot-config/.shell/env.d/nvm.sh
 export NVM_LAZY_LOAD=true
