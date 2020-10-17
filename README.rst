@@ -67,6 +67,7 @@ This package              `dotfiles`_ (for this repo), ``.tmuxp.yaml``
 .. _python cli: https://docs.python.org/2/using/cmdline.html
 .. _git: http://git-scm.com/
 .. _vcspull: https://github.com/tony/vcspull
+.. _dotfiles: https://pypi.org/project/dotfiles/
 .. _ncmpcpp: http://ncmpcpp.rybczak.net/
 
 Structure
