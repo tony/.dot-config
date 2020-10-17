@@ -218,3 +218,9 @@ poetry_install:
 	ln -sf ${DOT_CONFIG_DIR}/.zfunc/ ~
 	poetry completions zsh > ~/.zfunc/_poetry
 	poetry self update 1.0.10
+
+gh_cli:
+	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+	sudo apt-add-repository https://cli.github.com/packages
+	sudo apt update
+	sudo apt install gh
