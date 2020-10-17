@@ -224,3 +224,6 @@ gh_cli:
 	sudo apt-add-repository https://cli.github.com/packages
 	sudo apt update
 	sudo apt install gh
+
+travis_cli:
+	gem install travis --no-document
