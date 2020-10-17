@@ -207,5 +207,3 @@ export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
 pathprepend $HOME/bin
 pathprepend $HOME/.local/bin
-
-[ -f ~/.poetry/env ] && source $HOME/.poetry/env
