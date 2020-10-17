@@ -140,6 +140,7 @@ else
 fi
 source ~/.dot-config/.shell/env.d/poetry.sh
 source ~/.dot-config/.shell/env.d/travis.sh
+source ~/.dot-config/.shell/env.d/fzf.sh
 
 # source ~/.dot-config/.shell/env.d/nvm.sh
 export NVM_LAZY_LOAD=true
@@ -201,12 +202,10 @@ zinit ice from"gh-r" as"program"
 zinit load junegunn/fzf-bin
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.profile ] && source ~/.profile
-[ -f ~/.local/share/dephell/_dephell_zsh_autocomplete ] && source ~/.local/share/dephell/_dephell_zsh_autocomplete
 
 export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
 pathprepend $HOME/bin
 pathprepend $HOME/.local/bin
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.poetry/env ] && source $HOME/.poetry/env
