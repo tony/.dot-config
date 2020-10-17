@@ -1,6 +1,6 @@
 https://productforums.google.com/d/msg/chrome/CtKF2BiskT8/K75XE8UKAAAJ
 
-Open a terminal as root and enter this command: "sudo nano /usr/share/applications/chromium-browser.desktop" 
+Open a terminal as root and enter this command: "sudo nano /usr/share/applications/chromium-browser.desktop"
 and scroll down until you get to this line: "Exec= chromium-browser" Then add this two parameters
 "--disable-gpu-driver-bug-workarounds --enable-native-gpu-memory-buffers" click Ctrl+O to save and Ctrl+X to exit.
 
