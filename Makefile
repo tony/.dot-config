@@ -121,6 +121,7 @@ debian_postgres:
 
 pip_install:
 	python3.8 -m pip install pip
+	# curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
 pip_install_packages:
 	pip install --user -U pip
@@ -226,7 +227,7 @@ gh_cli:
 	sudo apt install gh
 
 travis_cli:
-	gem install travis --no-document
+	sudo gem install travis --no-document
 
 sentry_cli:
 	curl -sL https://sentry.io/get-cli/ | bash
