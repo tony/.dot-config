@@ -147,54 +147,8 @@ export NVM_LAZY_LOAD=true
 zplugin ice wait"1" lucid
 zplugin light lukechilds/zsh-nvm
 
-# Exclude file types that can't be open in vim (FZF_DEFAULT_IGNORE is used for fzf.vim)
-export IGNORE_FILE_EXT=""
-IGNORE_FILE_EXT+="gz\|tar\|rar\|zip\|7z"
-IGNORE_FILE_EXT+="\|min.js\|min.map"
-IGNORE_FILE_EXT+="\|pdf\|doc\|docx"
-IGNORE_FILE_EXT+="\|ppt\|pptx"
-IGNORE_FILE_EXT+="\|gif\|jpeg\|jpg\|png\|svg"
-IGNORE_FILE_EXT+="\|psd\|xcf"
-IGNORE_FILE_EXT+="\|ai\|epub\|kpf\|mobi"
-IGNORE_FILE_EXT+="\|snap"
-IGNORE_FILE_EXT+="\|TTF\|ttf\|otf\|eot\|woff\|woff2"
-IGNORE_FILE_EXT+="\|wma\|mp3\|m4a\|ape\|ogg\|opus\|flac"
-IGNORE_FILE_EXT+="\|mp4\|wmv\|avi\|mkv\|webm\|m4b"
-IGNORE_FILE_EXT+="\|musicdb\|itdb\|itl\|itc"
-IGNORE_FILE_EXT+="\|o\|so\|dll"
-IGNORE_FILE_EXT+="\|cbor\|msgpack"
-IGNORE_FILE_EXT+="\|wpj"
-
-export IGNORE_FILE_WILD=""
-IGNORE_FILE_WILD+="cache"
-IGNORE_FILE_WILD+="\|Library\|Cache"  # mac
-IGNORE_FILE_WILD+="\|AppData"  # Windows
-IGNORE_FILE_WILD+="\|Android"
-IGNORE_FILE_WILD+="\|site-packages\|egg-info\|dist-info"
-IGNORE_FILE_WILD+="\|node-gyp\|node_modules\|bower_components"
-IGNORE_FILE_WILD+="\|build\|webpack_bundles"
-IGNORE_FILE_WILD+="\|json\/test\/data"  # sdl2-playproject
-IGNORE_FILE_WILD+="\|drive_[a-z]\/"  # WINE (esp if created in lutris)
-IGNORE_FILE_WILD+="\|\^\?\(\.\/\)snap\/"  # $HOME/snap/ (when FZF invoked via home directory)
-IGNORE_FILE_WILD+="\|^snap\/"  # $HOME/snap/ (when FZF invoked via home directory)
-IGNORE_FILE_WILD+="\|\/gems\/"  # canvas-lms
-IGNORE_FILE_WILD+="\|^work\/\|^study\/"  # canvas-lms
-
-export FZF_CUSTOM_GREP_IGNORE="
-  grep --ignore-case --invert-match -e '.*[.]\(\
-    ${IGNORE_FILE_EXT} \
-  \)' -e '.*\(${IGNORE_FILE_WILD}\).*'
-"
-
-export FZF_FIND_COMMAND="find . -path '*/\.*' -prune -o -type f -print -o -type l \
-\( -iname '.*\($IGNORE_FILE_WILD\).*' -o -iname '.*[.]\($IGNORE_FILE_EXT\)' \) -print"
-
-export FZF_DEFAULT_COMMAND="(git ls-files --recurse-submodules & git ls-files --exclude-standard --others ||
-    ${FZF_FIND_COMMAND} | \
-   sed s/^..// \
-) | ${FZF_CUSTOM_GREP_IGNORE} 2> /dev/null"
-
-export FZF_CTRL_T_COMMAND="$FZF_FIND_COMMAND | ${FZF_CUSTOM_GREP_IGNORE} 2> /dev/null"
+source ~/.dot-config/.shell/vars.d/ignore.sh
+source ~/.dot-config/.shell/vars.d/fzf.sh
 
 # Binary release in archive, from GitHub-releases page.
 # After automatic unpacking it provides program "fzf".
