@@ -1,10 +1,8 @@
-WSL notes
-=========
+# WSL notes
 
-Postgres notes
---------------
+## Postgres notes
 
-### WARNING:  could not flush dirty data: Function not implemented
+### WARNING: could not flush dirty data: Function not implemented
 
 Link: https://github.com/Microsoft/WSL/issues/3863
 
@@ -22,8 +20,8 @@ You have to do it manually
 sudo service postgresql start
 ```
 
-Battling terminal corruption
-----------------------------
+## Battling terminal corruption
+
 with WSL (bash.exe), vim, and tmux
 
 Link: https://github.com/cmderdev/cmder/issues/901#issuecomment-237572842
@@ -32,16 +30,15 @@ Link: https://github.com/cmderdev/cmder/issues/901#issuecomment-237572842
 %windir%\system32\bash.exe ~ -c bash -cur_console:p
 ```
 
-In ConEmu, go into Startup -> Tasks and create a ``Bash::bash`` task
+In ConEmu, go into Startup -> Tasks and create a `Bash::bash` task
 
-Task params: ``/icon "%USERPROFILE%\AppData\Local\lxss\bash.ico"``
+Task params: `/icon "%USERPROFILE%\AppData\Local\lxss\bash.ico"`
 
-Command (including starting at ``$HOME``):
+Command (including starting at `$HOME`):
 
 ```
 %windir%\system32\bash.exe ~ -c bash -cur_console:p
 ```
-
 
 ### tmux: use xterm as default terminal
 
@@ -58,7 +55,6 @@ Link: https://github.com/Maximus5/ConEmu/issues/1786#issuecomment-459748388
 ```
 set -ags terminal-overrides ",xterm-*:csr@"
 ```
-
 
 ### vim:
 
