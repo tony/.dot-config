@@ -45,7 +45,6 @@ Support
 =======
 
 ========================  ================================================
-
 Window manager            `awesome`_, `i3`_
 Terminal multiplexer      `tmux`_ (and `tmuxp`_ for tmux sessions)
 Linux Xsession            ``.xprofile``, ``.Xresources``, ``.xsessionrc``
@@ -54,7 +53,6 @@ Editor                    `vim`_
 Development               `ctags`_, `python cli`_, `git`_, `vcspull`_
 Media                     `ncmpcpp`_
 This package              `dotfiles`_ (for this repo), ``.tmuxp.yaml``
-
 ========================  ================================================
 
 .. _awesome: http://awesome.naquadah.org/
@@ -74,38 +72,20 @@ Structure
 =========
 
 ========================  ================================================
-
 ``.vim/``                 See <https://github.com/tony/vim-config>.
 ``.tmux/``                See <https://github.com/tony/tmux-config>.
 ``.i3/``                  See <https://github.com/tony/i3-config>.
 ``.config/awesome/``      See <https://github.com/tony/.config/awesome>
 ``.fonts/``               See <https://github.com/tony/dot-fonts>.
-``.tmuxp/``               `tmuxp`_ sessions for common processes.
-                          See <https://github.con/tony/tmuxp-config>
-``.vcspull.yaml``         Study and stay up to date with great programming
-                          code.
-``.pythonrc``             Autocompletion (requires `readline`_, if your
-                          system doesn't support it (OSX) try the
-                          `stand-alone readline module`_)
-``.zshrc``                - `oh-my-zsh`_.
-                          - if exists, prepares shell for: `pyenv`_,
-                            `rbenv`_, `perlbrew`_, `virtualenv`_,
-                            `virtualenvwrapper`_ and prepares shell for
-                            it.
-                          - checks for ``.profile`` and sources it.
-                          - add npm, node to path (``/usr/local/``
-                            installation)
-                          - add ``$HOME/bin`` to front of path
-``.Xresources``           - `rxvt-unicode` settings:
-
-                            - `fcitx`_ input
-                            - `molokai`_ colorscheme
-                            - programmer + CJK fonts (see ``.fonts``)
+``.tmuxp/``               `tmuxp`_ sessions for common processes. See <https://github.con/tony/tmuxp-config>
+``.vcspull.yaml``         Study and stay up to date with great programming code.
+``.pythonrc``             Autocompletion (requires `readline`_, if your system doesn't support it (OSX) try the `stand-alone readline module`_)
+``.zshrc``                zinit. 
+``.Xresources``           `rxvt-unicode` settings: `fcitx`_ input, `molokai`_ / gruvbox colorscheme /  programmer + CJK fonts (see ``.fonts``)
 ``.xsessionrc``           `Thinkpad Trackpoint config`_
 ``.ctags``
 ``.ncmpcpp``              FIFO Visualizer
-``.dotfilesrc``           Ignores ``git(1)``-related dotfiles in this
-                          project.
+``.dotfilesrc``           Ignores ``git(1)``-related dotfiles in this project.
 ========================  ================================================
 
 
