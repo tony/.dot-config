@@ -227,3 +227,6 @@ gh_cli:
 
 travis_cli:
 	gem install travis --no-document
+
+sentry_cli:
+	curl -sL https://sentry.io/get-cli/ | bash
