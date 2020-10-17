@@ -120,8 +120,8 @@ debian_postgres:
 	sudo apt -y install postgresql-12 postgresql-client-12 postgresql-server-dev-12
 
 pip_install:
-	python3.8 -m pip install pip
-	# curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+	# python3.8 -m pip install pip
+	curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
 pip_install_packages:
 	pip install --user -U pip
