@@ -66,19 +66,26 @@ This package [dotfiles] (for this repo), `.tmuxp.yaml`
 
 ---
 
-`.vim/` See \<<https://github.com/tony/vim-config>\>.
-`.tmux/` See \<<https://github.com/tony/tmux-config>\>.
-`.i3/` See \<<https://github.com/tony/i3-config>\>.
-`.config/awesome/` See \<<https://github.com/tony/.config/awesome>\>
-`.fonts/` See \<<https://github.com/tony/dot-fonts>\>.
-`.tmuxp/` [tmuxp] sessions for common processes. See \<<https://github.con/tony/tmuxp-config>\>
-`.vcspull.yaml` Study and stay up to date with great programming code.
-`.pythonrc` Autocompletion (requires [readline], if your system doesn\'t support it (OSX) try the [stand-alone readline module])
-`.zshrc` zinit.
-`.Xresources` [rxvt-unicode] settings: [fcitx] input, [molokai] / gruvbox colorscheme / programmer + CJK fonts (see `.fonts`)
-`.xsessionrc` `.ctags` [Thinkpad Trackpoint config]
-`.ncmpcpp` FIFO Visualizer
-`.dotfilesrc` Ignores `git(1)`-related dotfiles in this project.
+- `.zshrc` zinit-based stuff
+- `.shell/` Shell plugins depo (via `.sh` scripts)
+
+     - `.shell/env.d` example: `poetry.sh` checks for poetry and `source`'s it in
+     - `.shell/vars.d` env variables, e.g. FZF ignore variables
+     - `.shell/paths.d` Add things like python site packages / poetry / yarn to
+       `PATH`
+
+- `.vim/` See \<<https://github.com/tony/vim-config>\>.
+- `.tmux/` See \<<https://github.com/tony/tmux-config>\>.
+- `.i3/` See \<<https://github.com/tony/i3-config>\>.
+- `.config/awesome/` See \<<https://github.com/tony/.config/awesome>\>
+- `.fonts/` See \<<https://github.com/tony/dot-fonts>\>.
+- `.tmuxp/` [tmuxp] sessions for common processes. See \<<https://github.con/tony/tmuxp-config>\>
+- `.vcspull.yaml` Study and stay up to date with great programming code.
+- `.pythonrc` Autocompletion (requires [readline], if your system doesn\'t support it (OSX) try the [stand-alone readline module])
+- `.Xresources` [rxvt-unicode] settings: [fcitx] input, [molokai] / gruvbox colorscheme / programmer + CJK fonts (see `.fonts`)
+- `.xsessionrc` `.ctags` [Thinkpad Trackpoint config]
+- `.ncmpcpp` FIFO Visualizer
+- `.dotfilesrc` Ignores `git(1)`-related dotfiles in this project.
 
 ---
 
