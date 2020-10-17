@@ -201,7 +201,6 @@ zinit ice from"gh-r" as"program"
 zinit load junegunn/fzf-bin
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.profile ] && source ~/.profile
-[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 [ -f ~/.local/share/dephell/_dephell_zsh_autocomplete ] && source ~/.local/share/dephell/_dephell_zsh_autocomplete
 
 export DOCKER_HOST=unix:///run/user/1000/docker.sock
