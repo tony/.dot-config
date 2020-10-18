@@ -170,11 +170,11 @@ yarn_set_prefix:
 
 yarn_add_packages:
 	$(MAKE) yarn_set_prefix
-	yarn global add bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna
+	yarn global add bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna @angular/cli
 
 yarn_upgrade_packages:
 	$(MAKE) yarn_set_prefix
-	yarn global upgrade bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna
+	yarn global upgrade bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna @angular/cli
 
 yarn_remove_packages:
 	yarn global remove bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna
