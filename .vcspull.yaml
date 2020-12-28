@@ -811,6 +811,11 @@
     repo: 'git+https://github.com/DefinitelyTyped/DefinitelyTyped.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/DefinitelyTyped.git'
+  akita:
+    repo: 'git+https://github.com/datorama/akita.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/akita.git'
+
   salt-ui: 'git+https://github.com/saltstack/salt-ui.git'
 ~/study/chakra:
   chakra-ui:
