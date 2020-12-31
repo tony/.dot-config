@@ -129,6 +129,9 @@ pathprepend() {
 source ~/.dot-config/.shell/paths.d/yarn.sh
 
 zinit light zinit-zsh/z-a-bin-gem-node
+# Q: How do I pass --no-rehash ?
+# Want equivalent to eval "$(pyenv init - --no-rehash)"
+# https://github.com/pyenv/pyenv/issues/1157#issuecomment-418446159
 zplugin pack"bgn" git for pyenv
 
 if [ -d "$HOME/.pyenv" -o -d "$PYENV_ROOT" ]; then
