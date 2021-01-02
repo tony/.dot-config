@@ -815,6 +815,11 @@
     repo: 'git+https://github.com/datorama/akita.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/akita.git'
+  carbon:
+    repo: 'git+https://github.com/carbon-design-system/carbon.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/carbon.git'
+
   carbon-charts:
     repo: 'git+https://github.com/carbon-design-system/carbon-charts.git'
     remotes:
