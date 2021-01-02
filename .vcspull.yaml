@@ -828,6 +828,18 @@
       tony: 'git+ssh://git@github.com/tony/chakra-ui.git'
 
 ~/study/javascript:
+  plotly.js:
+    repo: 'git+https://github.com/plotly/plotly.js.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/plotly.js.git'
+  react-plotly.js:
+    repo: 'git+https://github.com/plotly/react-plotly.js.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/react-plotly.js.git'
+  plotly-graphing-library-docs:
+    repo: 'git+https://github.com/plotly/graphing-library-docs.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/graphing-library-docs.git'
   backbone: 'git+https://github.com/documentcloud/backbone.git'
   backbone.deepmodel: 'git+https://github.com/powmedia/backbone-deep-model.git'
   backbone.marionette: 'git+https://github.com/marionettejs/backbone.marionette.git'
