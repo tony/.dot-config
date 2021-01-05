@@ -57,12 +57,25 @@
     repo: 'git+https://github.com/graphql-python/graphene.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/graphene.git'
-      peergrade: 'git+ssh://git@github.com/peergradeio/graphene.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/graphene.git'
+
   graphene-django:
     repo: 'git+https://github.com/graphql-python/graphene-django.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/graphene-django.git'
-      peergrade: 'git+ssh://git@github.com/peergradeio/graphene-django.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/graphene-django.git'
+
+  graphql-core-legacy:
+    repo: 'git+https://github.com/graphql-python/graphql-core-legacy.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/graphql-core-legacy.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/graphene-core-legacy.git'
+
+  graphql-core:
+    repo: 'git+https://github.com/graphql-python/graphql-core.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/graphql-core.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/graphene-core.git'
 
   python-docx:
     repo: 'git+https://github.com/python-openxml/python-docx.git'
