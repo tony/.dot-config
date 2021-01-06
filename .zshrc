@@ -132,7 +132,11 @@ zinit light zinit-zsh/z-a-bin-gem-node
 # Q: How do I pass --no-rehash ?
 # Want equivalent to eval "$(pyenv init - --no-rehash)"
 # https://github.com/pyenv/pyenv/issues/1157#issuecomment-418446159
-zplugin pack"bgn" git for pyenv
+# zplugin pack"bgn" git for pyenv
+# Thanks https://github.com/zdharma/zinit-configs/issues/26#issuecomment-607207660
+zinit ice has'pyenv' id-as'pyenv' atpull'%atclone' \
+  atclone"pyenv init - --no-rehash > pyenv.plugin.zsh"
+zinit load zdharma/null
 
 if [ -d "$HOME/.pyenv" -o -d "$PYENV_ROOT" ]; then
     # source ~/.dot-config/.shell/env.d/pyenv.sh
