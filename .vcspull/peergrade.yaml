@@ -1,4 +1,9 @@
 ~/work/peergrade:
+  eduflow-api-examples:
+    repo: 'git+ssh://git@github.com/eduflow/api-examples.git'
+    remotes:
+      eduflow: 'git+ssh://git@github.com/eduflow/api-examples.git'
+      tony: 'git+ssh://git@github.com/tony/api-examples.git'
   django-assets:
     repo: 'git+https://github.com/miracle2k/django-assets.git'
     remotes:
