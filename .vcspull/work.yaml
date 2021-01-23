@@ -21,6 +21,14 @@
   vue-typescript-vanilla-starter: "git+ssh://git@github.com/tony/vue-typescript-vanilla-starter.git"
   react-typescript-vanilla-starter: "git+ssh://git@github.com/tony/react-typescript-vanilla-starter.git"
 
+
+~/work/javascript:
+  graphdoc:
+    repo: 'git+https://github.com/2fd/graphdoc.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/graphdoc.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/graphdoc.git'
+
 ~/work/typescript:
   gatsby-s3-action:
     repo: 'git+https://github.com/jonelantha/gatsby-s3-action.git'
