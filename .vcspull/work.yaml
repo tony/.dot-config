@@ -28,6 +28,12 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/graphdoc.git'
       eduflow: 'git+ssh://git@github.com/eduflow/graphdoc.git'
+  graphql-markdown:
+    repo: 'git+https://github.com/exogen/graphql-markdown.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/graphql-markdown.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/graphql-markdown.git'
+
 
 ~/work/typescript:
   gatsby-s3-action:
