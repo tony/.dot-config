@@ -155,6 +155,11 @@
       tony: 'git+ssh://git@github.com/tony/django-allauth.git'
       eduflow: 'git+ssh://git@github.com/eduflow/django-allauth.git'
 
+  django-inline-actions: 
+    repo: 'git+https://github.com/escaped/django-inline-actions.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/django-inline-actions.git'
+
   django-channels: 
     repo: 'git+https://github.com/django/channels.git'
     remotes:
