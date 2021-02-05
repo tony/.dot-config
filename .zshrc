@@ -129,38 +129,75 @@ pathprepend() {
 source ~/.dot-config/.shell/paths.d/yarn.sh
 
 zinit light zinit-zsh/z-a-bin-gem-node
-# Q: How do I pass --no-rehash ?
-# Want equivalent to eval "$(pyenv init - --no-rehash)"
-# https://github.com/pyenv/pyenv/issues/1157#issuecomment-418446159
-# zplugin pack"bgn" git for pyenv
-# Thanks https://github.com/zdharma/zinit-configs/issues/26#issuecomment-607207660
-zinit ice has'pyenv' id-as'pyenv' atpull'%atclone' \
-  atclone"pyenv init - --no-rehash > pyenv.plugin.zsh"
+
+# zinit load asdf-vm/asdf
+# Credit: https://github.com/xeho91/.dotfiles/blob/172f1d97f6d51af35981b7c87f024244d16d1540/Linux/Zsh/configurations/plugins/programming_languages.zsh
+# License: Unlicense
+function install_asdf_plugins() {
+	local plugins_list_to_install=( \
+		# https://github.com/asdf-vm/asdf-nodejs
+		nodejs \
+		# https://github.com/danhper/asdf-python
+		python \
+		# https://github.com/code-lever/asdf-rust
+		rust \
+		# https://github.com/kennyp/asdf-golang
+		golang \
+	)
+	local installed_plugins=$(asdf plugin list)
+	for plugin in $plugins_list_to_install; do
+		if [[ "$installed_plugins" != *"$plugin"* ]]; then
+			command asdf plugin add $plugin
+			print -P "%F{blue}Added plugin for %K{white} $plugin %k anod now installing the latest version...%f"
+			if [[ "$plugin" == "nodejs" ]]; then
+				bash -c "$ASDF_DATA_DIR/plugins/nodejs/bin/import-release-team-keyring"
+			fi
+                        command asdf install $plugin
+			command asdf reshim $plugin
+			print -P "%F{green}Finished installing the lastest version with asdf %K{white} $plugin %k%f."
+		else
+			if [[ "$plugin" == "rust" ]]; then
+				zinit \
+					id-as"cargo-completion" \
+					mv"cargo* -> _cargo" \
+					as"completion" \
+					for https://github.com/rust-lang/cargo/blob/master/src/etc/_cargo
+			fi
+		fi
+	done
+}
+
+# =========================================================================== #
+# Asdf-vm - Extendable (v)ersion (m)anager for languages tools
+# ------------------------------------------------------------
+# https://github.com/asdf-vm/asdf
+# =========================================================================== #
+zinit \
+	id-as"asdf" \
+	atinit'export ASDF_DATA_DIR="$XDG_CONFIG_HOME/.asdf"; \
+		export ASDF_CONFIG_FILE="$ASDF_DATA_DIR/.asdfrc";
+		export ASDF_PYTHON_DEFAULT_PACKAGES_FILE="$ZDOTDIR/.default-python-packages";
+		export ASDF_NPM_DEFAULT_PACKAGES_FILE="$ZDOTDIR/.default-npm-packages"' \
+	src"asdf.sh" \
+	atload'install_asdf_plugins; unfunction install_asdf_plugins' \
+	for @asdf-vm/asdf
+
 zinit load zdharma/null
 
-if [ -d "$HOME/.pyenv" -o -d "$PYENV_ROOT" ]; then
-    # source ~/.dot-config/.shell/env.d/pyenv.sh
-    # zinit light zinit-zsh/z-a-bin-gem-node
-    # zinit pack for pyenv
-else
-    source ~/.dot-config/.shell/paths.d/python.sh
-fi
 source ~/.dot-config/.shell/env.d/poetry.sh
 source ~/.dot-config/.shell/env.d/travis.sh
 source ~/.dot-config/.shell/env.d/fzf.sh
-
-# source ~/.dot-config/.shell/env.d/nvm.sh
-export NVM_LAZY_LOAD=true
-zplugin ice wait"1" lucid
-zplugin light lukechilds/zsh-nvm
-
 source ~/.dot-config/.shell/vars.d/ignore.sh
 source ~/.dot-config/.shell/vars.d/fzf.sh
 
 # Binary release in archive, from GitHub-releases page.
 # After automatic unpacking it provides program "fzf".
 zinit ice from"gh-r" as"program"
-zinit load junegunn/fzf-bin
+zinit load junegunn/fzf
+
+
+zplugin ice wait"1" lucid
+
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.profile ] && source ~/.profile
 
