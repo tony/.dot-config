@@ -14,6 +14,8 @@ install:
 	ln -si ${DOT_CONFIG_DIR}/.gitignore_global ~/.gitignore_global
 	ln -si ${DOT_CONFIG_DIR}/.zshrc ~/.zshrc
 	ln -si ${DOT_CONFIG_DIR}/.zshenv ~/.zshenv
+	ln -si ${DOT_CONFIG_DIR}/.asdfrc ~/.asdfrc
+	ln -si ${DOT_CONFIG_DIR}/.tool-versions ~/.tool-versions
 	ln -si ${DOT_CONFIG_DIR}/.vcspull ~
 	ln -si ${DOT_CONFIG_DIR}/.vcspull.yaml ~/.vcspull.yaml
 	ln -si ${DOT_CONFIG_DIR}/.Xresources ~/.Xresources
