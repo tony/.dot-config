@@ -44,5 +44,6 @@
     "python.languageServer": "Microsoft",
     "[python]": {
         "editor.defaultFormatter": "ms-vsliveshare.vsliveshare"
-    }
+    },
+    "git.autofetch": true
 }
