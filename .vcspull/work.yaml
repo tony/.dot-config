@@ -40,6 +40,11 @@
     repo: 'git+https://github.com/jonelantha/gatsby-s3-action.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/gatsby-s3-action.git'
+  rich-markdown-editor:
+    repo: 'git+https://github.com/outline/rich-markdown-editor.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/rich-markdown-editor.git'
+
 ~/work/remark:
   remark:
     repo: 'git+https://github.com/remarkjs/remark.git'
