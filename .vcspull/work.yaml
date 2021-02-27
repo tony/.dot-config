@@ -35,6 +35,12 @@
       eduflow: 'git+ssh://git@github.com/eduflow/graphql-markdown.git'
 
 
+  prosemirror:
+    repo: 'git+https://github.com/prosemirror/prosemirror.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/prosemirror.git'
+
+
 ~/work/typescript:
   gatsby-s3-action:
     repo: 'git+https://github.com/jonelantha/gatsby-s3-action.git'
