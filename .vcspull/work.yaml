@@ -23,6 +23,12 @@
 
 
 ~/work/javascript:
+  ckeditor5:
+    repo: 'git+https://github.com/ckeditor/ckeditor5.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/ckeditor5.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/ckeditor5.git'
+
   graphdoc:
     repo: 'git+https://github.com/2fd/graphdoc.git'
     remotes:
