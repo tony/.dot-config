@@ -35,6 +35,12 @@
       tony: 'git+ssh://git@github.com/tony/ckeditor5-react.git'
       eduflow: 'git+ssh://git@github.com/eduflow/ckeditor5-react.git'
 
+  ckeditor5-math:
+    repo: 'git+https://github.com/isaul32/ckeditor5-math.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/ckeditor5-math.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/ckeditor5-math.git'
+
   graphdoc:
     repo: 'git+https://github.com/2fd/graphdoc.git'
     remotes:
