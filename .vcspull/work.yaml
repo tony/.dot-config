@@ -52,6 +52,11 @@
       tony: 'git+ssh://git@github.com/tony/graphql-markdown.git'
       eduflow: 'git+ssh://git@github.com/eduflow/graphql-markdown.git'
 
+  sass-to-emotion:
+    repo: 'git+https://github.com/DomainGroupOSS/sass-to-emotion.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sass-to-emotion.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/sass-to-emotion.git'
 
   prosemirror:
     repo: 'git+https://github.com/prosemirror/prosemirror.git'
