@@ -17,8 +17,8 @@ IGNORE_FILE_EXT+="\|cbor\|msgpack"
 IGNORE_FILE_EXT+="\|wpj"
 
 export IGNORE_FILE_WILD=""
-IGNORE_FILE_WILD+="cache"
-IGNORE_FILE_WILD+="\|Library\|Cache"  # mac
+IGNORE_FILE_WILD+="^cache\|^_cache"
+IGNORE_FILE_WILD+="\|Library\|^Cache"  # mac
 IGNORE_FILE_WILD+="\|AppData"  # Windows
 IGNORE_FILE_WILD+="\|Android"
 IGNORE_FILE_WILD+="\|site-packages\|egg-info\|dist-info"
