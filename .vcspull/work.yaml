@@ -189,6 +189,13 @@
       tony: 'git+ssh://git@github.com/tony/django-allauth.git'
       eduflow: 'git+ssh://git@github.com/eduflow/django-allauth.git'
 
+  django-request-cache:
+    repo: 'git+https://github.com/anexia-it/django-request-cache.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/django-request-cache.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/django-request-cache.git'
+      leonardon473: 'git+ssh://git@github.com/leonardon473/django-request-cache.git'
+
   django-inline-actions: 
     repo: 'git+https://github.com/escaped/django-inline-actions.git'
     remotes:
