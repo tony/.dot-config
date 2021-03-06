@@ -4,3 +4,6 @@
 /.eggs/
 /.clang_complete
 .vscode
+
+# For ~/.fonts generating .uuid files on fc-cache(1)
+.uuid
