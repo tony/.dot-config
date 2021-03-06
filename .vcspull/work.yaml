@@ -12,6 +12,13 @@
       tony: 'git+ssh://git@github.com/tony/aseprite.git'
 
 
+~/work/rust:
+  relay:
+    repo: 'git+https://github.com/facebook/relay.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/relay.git'
+
+
 ~/work/c:
   ncurses-example: "git+ssh://git@github.com/tony/ncurses-example.git"
   NCURSES-Programming-HOWTO-examples: "git+ssh://git@github.com/tony/NCURSES-Programming-HOWTO-examples.git"
