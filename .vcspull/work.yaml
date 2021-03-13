@@ -84,6 +84,7 @@
     repo: 'git+https://github.com/PolymerLabs/lit-element-starter-ts.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/lit-element-starter-ts.git'
+      fvilers: 'git+ssh://git@github.com/fvilers/lit-element-starter-ts.git'
 
 ~/work/remark:
   remark:
