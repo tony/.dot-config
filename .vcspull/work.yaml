@@ -86,6 +86,9 @@
       tony: 'git+ssh://git@github.com/tony/lit-element-starter-ts.git'
       fvilers: 'git+ssh://git@github.com/fvilers/lit-element-starter-ts.git'
 
+  oembed-component:
+    repo: 'git+ssh://git@github.com/tony/oembed-component.git'
+
 ~/work/remark:
   remark:
     repo: 'git+https://github.com/remarkjs/remark.git'
