@@ -80,6 +80,10 @@
     repo: 'git+https://github.com/outline/rich-markdown-editor.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/rich-markdown-editor.git'
+  lit-element-starter-ts:
+    repo: 'git+https://github.com/PolymerLabs/lit-element-starter-ts.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/lit-element-starter-ts.git'
 
 ~/work/remark:
   remark:
