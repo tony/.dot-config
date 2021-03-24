@@ -30,6 +30,12 @@
   tao-of-tmux: "git+ssh://git@github.com/git-pull/tao-of-tmux.git"
 
 ~/work/javascript:
+  prettier-plugin-import-sort:
+    repo: 'git+https://github.com/ggascoigne/prettier-plugin-import-sort.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/prettier-plugin-import-sort.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/prettier-plugin-import-sort.git'
+
   ckeditor5:
     repo: 'git+https://github.com/ckeditor/ckeditor5.git'
     remotes:
