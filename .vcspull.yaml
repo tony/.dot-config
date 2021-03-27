@@ -846,6 +846,14 @@
       tony: 'git+ssh://git@github.com/tony/chakra-ui.git'
 
 ~/study/javascript:
+  react-flow:
+    repo: 'git+https://github.com/wbkd/react-flow.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/react-flow.git'
+  react-flow-docs:
+    repo: 'git+https://github.com/wbkd/react-flow-docs.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/react-flow-docs.git'
   plotly.js:
     repo: 'git+https://github.com/plotly/plotly.js.git'
     remotes:
