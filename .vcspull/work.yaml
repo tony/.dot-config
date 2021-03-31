@@ -95,6 +95,9 @@
   oembed-component:
     repo: 'git+ssh://git@github.com/tony/oembed-component.git'
 
+  social-embed:
+    repo: 'git+ssh://git@github.com/social-embed/social-embed.git'
+
 ~/work/remark:
   remark:
     repo: 'git+https://github.com/remarkjs/remark.git'
