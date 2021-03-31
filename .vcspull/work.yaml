@@ -98,6 +98,11 @@
   social-embed:
     repo: 'git+ssh://git@github.com/social-embed/social-embed.git'
 
+  typedoc-plugin-monorepo:
+    repo: 'git+https://github.com/unstubbable/typedoc-plugin-monorepo.git'
+    remotes:
+      social-embed: 'git+ssh://git@github.com/social-embed/typedoc-plugin-monorepo.git'
+
 ~/work/remark:
   remark:
     repo: 'git+https://github.com/remarkjs/remark.git'
