@@ -83,6 +83,11 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/gatsby-s3-action.git'
 
+  docusaurus:
+    repo: 'git+https://github.com/facebook/docusaurus.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/docusaurus.git'
+
   ts-debounce:
     repo: 'git+https://github.com/chodorowicz/ts-debounce.git'
     remotes:
