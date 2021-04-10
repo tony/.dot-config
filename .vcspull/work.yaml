@@ -93,6 +93,12 @@
     repo: 'git+https://github.com/TypeStrong/typedoc.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/typedoc.git'
+
+  react-diagrams:
+    repo: 'git+https://github.com/projectstorm/react-diagrams.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/react-diagrams.git'
+
   gatsby-s3-action:
     repo: 'git+https://github.com/jonelantha/gatsby-s3-action.git'
     remotes:
