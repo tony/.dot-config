@@ -94,6 +94,13 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/typedoc.git'
 
+  react-contenteditable:
+    repo: 'git+https://github.com/lovasoa/react-contenteditable.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/react-contenteditable.git'
+      eduflow: 'git+ssh://git@github.com/tony/react-contenteditable.git'
+
+
   react-diagrams:
     repo: 'git+https://github.com/projectstorm/react-diagrams.git'
     remotes:
