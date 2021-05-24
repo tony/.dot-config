@@ -87,6 +87,16 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/typedoc-plugin-markdown.git'
 
+~/work/gatsby:
+  gatsby-s3-action:
+    repo: 'git+https://github.com/jonelantha/gatsby-s3-action.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/gatsby-s3-action.git'
+
+  gatsby-plugin-aws-elasticsearch:
+    repo: 'git+https://github.com/Mrtenz/gatsby-plugin-aws-elasticsearch'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/gatsby-plugin-aws-elasticsearch.git'
 
 ~/work/typescript:
   typedoc:
@@ -105,11 +115,6 @@
     repo: 'git+https://github.com/projectstorm/react-diagrams.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/react-diagrams.git'
-
-  gatsby-s3-action:
-    repo: 'git+https://github.com/jonelantha/gatsby-s3-action.git'
-    remotes:
-      tony: 'git+ssh://git@github.com/tony/gatsby-s3-action.git'
 
   ts-debounce:
     repo: 'git+https://github.com/chodorowicz/ts-debounce.git'
