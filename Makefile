@@ -210,6 +210,11 @@ debian_wsl2_chrome:
 configure_wsl2_vcxsrv:
 	export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0.0
 
+linux_aws_sam:
+	wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
+	unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
+	sudo ./sam-installation/install
+
 debian_python:
 	wget https://bootstrap.pypa.io/get-pip.py
 	python3 get-pip.py
