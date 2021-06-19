@@ -105,6 +105,11 @@
       tony: 'git+ssh://git@github.com/tony/gatsby-plugin-aws-elasticsearch.git'
 
 ~/work/typescript:
+  astrocite:
+    repo: 'git+https://github.com/dsifford/astrocite.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/astrocite.git'
+
   typedoc:
     repo: 'git+https://github.com/TypeStrong/typedoc.git'
     remotes:
