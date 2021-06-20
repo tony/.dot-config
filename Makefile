@@ -171,7 +171,7 @@ test_fzf_default_command:
 	eval $${FZF_DEFAULT_COMMAND}
 
 debian_update:
-	sudo apt update && sudo apt full-upgrade
+	sudo apt update && sudo apt upgrade
 
 yarn_set_prefix:
 	yarn config set prefix ~/.yarn  # So node_modules/yarn.lock doesn't get created everywhere
