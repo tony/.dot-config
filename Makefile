@@ -72,6 +72,7 @@ debian_packages:
 	most \
 	entr \
 	curl \
+	keychain \
 	openssh-server \
 	htop \
 	redis-server \
