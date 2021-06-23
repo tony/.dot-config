@@ -95,7 +95,8 @@ debian_packages_x11:
 	nitrogen \
 	scrot \
 	maim \
-	slop
+	slop \
+	gammastep
 
 debian_vim:
 	sudo add-apt-repository 'ppa:jonathonf/vim'
