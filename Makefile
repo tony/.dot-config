@@ -208,6 +208,12 @@ debian_wsl2_chrome:
 	unzip chromedriver_linux64.zip
 	sudo mv $$PWD/chromedriver /usr/local/bin/chromedriver
 
+debian_elasticsearch:
+	wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+	sudo apt-get install apt-transport-https
+	echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-7.x.list
+	sudo apt-get update && sudo apt-get install elasticsearch
+
 configure_wsl2_vcxsrv:
 	export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0.0
 
