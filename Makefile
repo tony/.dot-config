@@ -250,3 +250,11 @@ travis_cli:
 
 sentry_cli:
 	curl -sL https://sentry.io/get-cli/ | bash
+
+wine_kindle_fix:
+	# Credit: https://twitter.com/sagawa_aki/status/1360561626718474240
+	# mkdir -p ${WINEPREFIX:-$HOME/.wine}/drive_c/users/$USER/AppData/Local/Amazon/Kindle
+	mkdir -p ${HOME}/.wine/drive_c/users/${USER}/AppData/Local/Amazon/Kindle
+
+download_kindle:
+	wget --trust-server-names https://www.amazon.com/kindlepcdownload/ref=klp_hz_win
