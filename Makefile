@@ -268,3 +268,7 @@ winegecko:
 
 	wget http://dl.winehq.org/wine/wine-gecko/2.47.1/wine-gecko-2.47.1-x86_64.msi
 	wine msiexec /i wine-gecko-2.47.1-x86_64.msi
+
+debian_gecko:
+	# dependency
+	sudo apt install winbind
