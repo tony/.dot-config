@@ -77,6 +77,7 @@ config/Code/
 
 # autostart
 config/autostart/redshift-gtk.desktop
+config/autostart/gammastep-indicator.desktop
 
 # Downloaded via Makefile
 google-chrome*
