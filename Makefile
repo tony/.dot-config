@@ -255,6 +255,16 @@ wine_kindle_fix:
 	# Credit: https://twitter.com/sagawa_aki/status/1360561626718474240
 	# mkdir -p ${WINEPREFIX:-$HOME/.wine}/drive_c/users/$USER/AppData/Local/Amazon/Kindle
 	mkdir -p ${HOME}/.wine/drive_c/users/${USER}/AppData/Local/Amazon/Kindle
+	# wine reg add 'HKLM\Software\Microsoft\Windows NT\CurrentVersion\FontSubstitutes' /v "MS Shell Dlg 2" /f /d "Ume UI Gothic"
 
 download_kindle:
 	wget --trust-server-names https://www.amazon.com/kindlepcdownload/ref=klp_hz_win
+
+winegecko:
+	# This is for wine 5.x
+	# https://unix.stackexchange.com/a/627495
+	wget http://dl.winehq.org/wine/wine-gecko/2.47.1/wine-gecko-2.47.1-x86.msi
+	wine msiexec /i wine-gecko-2.47.1-x86.msi
+
+	wget http://dl.winehq.org/wine/wine-gecko/2.47.1/wine-gecko-2.47.1-x86_64.msi
+	wine msiexec /i wine-gecko-2.47.1-x86_64.msi
