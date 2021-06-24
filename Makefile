@@ -235,7 +235,7 @@ debian_python:
 	$(MAKE) poetry_install
 
 poetry_install:
-	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python - --version 1.0.10
+	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python - --version 1.0.10 --no-modify-path
 	ln -sf ${DOT_CONFIG_DIR}/.zfunc/ ~
 	poetry completions zsh > ~/.zfunc/_poetry
 	poetry self update 1.0.10
