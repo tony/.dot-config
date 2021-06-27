@@ -179,7 +179,7 @@ yarn_set_prefix:
 
 yarn_add_packages:
 	$(MAKE) yarn_set_prefix
-	yarn global add bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna @angular/cli @pika/pack
+	yarn global add bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna @angular/cli @pika/pack @microsoft/api-extractor
 
 yarn_upgrade_packages:
 	$(MAKE) yarn_set_prefix
