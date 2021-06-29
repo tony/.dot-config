@@ -179,6 +179,8 @@ function install_asdf_plugins() {
 		rust \
 		# https://github.com/kennyp/asdf-golang
 		golang \
+                # https://github.com/asdf-community/asdf-poetry
+                poetry \
 	)
 	local installed_plugins=$(asdf plugin list)
 	for plugin in $plugins_list_to_install; do
