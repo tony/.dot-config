@@ -53,43 +53,7 @@ zinit ice wait'!0'
 
 zinit snippet OMZ::plugins/history/history.plugin.zsh
 zinit snippet OMZ::plugins/git/git.plugin.zsh
-# Stuff is slowing me down wtf
-# zinit snippet OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh
-if [[ "${(%):-%#}" != "#" ]]; then
-    # Revert https://github.com/ohmyzsh/ohmyzsh/pull/6309
-    # # only if not root
-    # zstyle :omz:plugins:ssh-agent agent-forwarding on
-    # # [[ -e "$HOME/.ssh/id_ed25519" ]] && zstyle :omz:plugins:ssh-agent identities id_ed25519
-    # zstyle :omz:plugins:ssh-agent lazy no
-    # zinit ice silent
-    # zinit snippet OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh
-
-    # if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    #  ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
-    #  fi
-    #  if [[ ! "$SSH_AUTH_SOCK" ]]; then
-  	# source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
-    #  fi
-
-    # Enable keychain
-    # Credit: @yous license MIT https://github.com/yous/dotfiles/blob/master/zshrc Accessed 2021-06-13
-    if command -v keychain >/dev/null; then
-      KEY=''
-      if [ -f "$HOME/.ssh/id_ed25519" ]; then
-	KEY='id_ed25519'
-      elif [ -f "$HOME/.ssh/id_rsa" ]; then
-	KEY='id_rsa'
-      fi
-      if [ -n "$KEY" ]; then
-	if [ "$(uname)" = 'Darwin' ]; then
-	  eval `keychain --eval --quiet --agents ssh --inherit any $KEY`
-	else
-	  eval `keychain --eval --quiet --agents ssh $KEY`
-	fi
-      fi
-      unset KEY
-    fi
-fi
+zinit snippet OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh
 
 # SPACESHIP_PROMPT_ADD_NEWLINE=false
 # SPACESHIP_PACKAGE_SHOW=false
