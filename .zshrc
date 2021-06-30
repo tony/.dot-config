@@ -51,9 +51,9 @@ zt for OMZ::lib/history.zsh
 PS1="READY > "
 zinit ice wait'!0'
 
-zinit snippet OMZ::plugins/history/history.plugin.zsh
-zinit snippet OMZ::plugins/git/git.plugin.zsh
-zinit snippet OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh
+zt for OMZ::plugins/history/history.plugin.zsh \
+    OMZ::plugins/git/git.plugin.zsh \
+    OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh
 
 # SPACESHIP_PROMPT_ADD_NEWLINE=false
 # SPACESHIP_PACKAGE_SHOW=false
