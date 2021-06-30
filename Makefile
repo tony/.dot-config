@@ -135,7 +135,6 @@ pip_install:
 pip_install_packages:
 	pip install --user -U pip
 	pip install --user -U ${PIP_PACKAGES}
-	$(MAKE) poetry_install
 
 pip_uninstall_packages:
 	pip uninstall -y ${PIP_PACKAGES}
@@ -232,7 +231,6 @@ debian_python:
 	$(MAKE) debian_pyenv_packages
 	pyenv install 3.7.8
 	pyenv global 3.7.8
-	$(MAKE) poetry_install
 
 poetry_install:
 	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python - --version 1.0.10 --no-modify-path
