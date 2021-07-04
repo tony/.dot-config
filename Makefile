@@ -1,7 +1,7 @@
 SHELL=/bin/bash
 DOT_CONFIG_DIR=~/.dot-config
 PIP_PACKAGES=python-language-server black 'isort<5' virtualenv pipenv tmuxp vcspull dotfiles spotdl
-NPM_PACKAGES=upgrade bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna @angular/cli
+NPM_PACKAGES=upgrade bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna @angular/cli @microsoft/rush
 
 make lint:
 	shellcheck -s sh \.shell/**/*.sh
