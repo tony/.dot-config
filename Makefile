@@ -1,6 +1,7 @@
 SHELL=/bin/bash
 DOT_CONFIG_DIR=~/.dot-config
 PIP_PACKAGES=python-language-server black 'isort<5' virtualenv pipenv tmuxp vcspull dotfiles spotdl
+NPM_PACKAGES=upgrade bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna @angular/cli
 
 make lint:
 	shellcheck -s sh \.shell/**/*.sh
@@ -178,19 +179,19 @@ yarn_set_prefix:
 
 yarn_add_packages:
 	$(MAKE) yarn_set_prefix
-	yarn global add bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna @angular/cli @pika/pack @microsoft/api-extractor
+	yarn global add ${NPM_PACKAGES}
 
 yarn_upgrade_packages:
 	$(MAKE) yarn_set_prefix
-	yarn global upgrade bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna @angular/cli
+	yarn global upgrade ${NPM_PACKAGES}
 
 yarn_remove_packages:
-	yarn global remove bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna
+	yarn global remove ${NPM_PACKAGES}
 
 npm_uninstall_packages:
-	sudo npm uninstall -g bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna
-	npm uninstall -g bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna
-	npm uninstall bower browserify brunch foreman nodemon npm-check-updates create-next-app gatsby-cli bibtex-tidy lerna
+	sudo npm uninstall -g ${NPM_PACKAGES}
+	npm uninstall -g ${NPM_PACKAGES}
+	npm uninstall ${NPM_PACKAGES}
 
 global_update:
 	$(MAKE) debian_update
