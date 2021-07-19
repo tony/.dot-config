@@ -2,4 +2,5 @@
 # https://github.com/jonas/tig/issues/495
 #
 color cursor		black	yellow	bold
+color title-focus		black	yellow	bold
 # vi: ts=8 sts=8 sw=8 noet
