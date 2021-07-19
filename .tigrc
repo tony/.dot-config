@@ -1,6 +1,6 @@
 # base16-color fix
 # https://github.com/jonas/tig/issues/495
-color cursor		black	yellow	bold
+color cursor		black	yellow	default
 # https://github.com/jonas/tig/blob/master/tigrc
 color title-focus		black	yellow	bold
 color title-blur		black	yellow
