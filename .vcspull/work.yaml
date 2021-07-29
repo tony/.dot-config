@@ -331,6 +331,11 @@
     remotes:
       develtech: 'git+ssh://git@github.com/develtech/pytest-django.git'
 
+  splinter:
+    repo: 'git+https://github.com/cobrateam/splinter.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/splinter.git'
+
   django-docutils:
     repo: 'git+https://github.com/tony/django-docutils'
 
