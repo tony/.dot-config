@@ -210,6 +210,9 @@ debian_wsl2_chrome:
 	unzip chromedriver_linux64.zip
 	sudo mv $$PWD/chromedriver /usr/local/bin/chromedriver
 
+debian_wsl_puppeteer:
+	sudo apt install libatk-adaptor libnss3 libcups2 libxkbcommon0 libgtk-3-0 libgbm1
+
 debian_elasticsearch:
 	wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 	sudo apt-get install apt-transport-https
