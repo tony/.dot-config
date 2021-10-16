@@ -84,6 +84,8 @@ zinit light starship/starship
 
 zinit load chrissicool/zsh-256color
 
+zinit load zsh-users/zsh-syntax-highlighting
+
 # Enable completion caching
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
