@@ -122,6 +122,10 @@ ubuntu_i3:
 	sudo apt update
 	sudo apt install i3
 
+ubuntu_sway:
+	sudo apt install swayidle swaybg sway-backgrounds sway swaylock \
+		wofi
+
 debian_postgres_12:
 	wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 	echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee  /etc/apt/sources.list.d/pgdg.list
