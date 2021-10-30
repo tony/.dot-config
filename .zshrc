@@ -128,7 +128,7 @@ pathprepend() {
 
 source ~/.dot-config/.shell/paths.d/yarn.sh
 
-zinit light zinit-zsh/z-a-bin-gem-node
+zinit light tony/za-bin-gem-node
 
 # zinit load asdf-vm/asdf
 # Credit: https://github.com/xeho91/.dotfiles/blob/172f1d97f6d51af35981b7c87f024244d16d1540/Linux/Zsh/configurations/plugins/programming_languages.zsh
