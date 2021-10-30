@@ -104,7 +104,7 @@ This package [dotfiles] (for this repo), `.tmuxp.yaml`
 ---
 
 [starship]: https://starship.rs/
-[zinit]: https://github.com/zdharma/zinit
+[zinit]: https://github.com/zdharma-continuum/zinit
 [fzf]: https://github.com/junegunn/fzf
 [`fzf_default_command`]: https://github.com/junegunn/fzf.vim/blob/4145f53/doc/fzf-vim.txt#L115
 [fzf.vim]: https://github.com/junegunn/fzf.vim
