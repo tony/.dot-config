@@ -203,8 +203,6 @@ zplugin ice wait"1" lucid
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.profile ] && source ~/.profile
 
-export DOCKER_HOST=unix:///run/user/1000/docker.sock
-
 pathprepend $HOME/bin
 pathprepend $HOME/.local/bin
 
