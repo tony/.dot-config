@@ -216,4 +216,6 @@ bar {
     }
 }
 
+default_border pixel 2
+
 include /etc/sway/config.d/*
