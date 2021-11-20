@@ -828,6 +828,11 @@
     repo: 'git+https://github.com/datorama/akita.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/akita.git'
+  next.js:
+    repo: 'git+https://github.com/vercel/next.js.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/next.js.git'
+
   carbon:
     repo: 'git+https://github.com/carbon-design-system/carbon.git'
     remotes:
