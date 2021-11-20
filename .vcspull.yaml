@@ -1018,6 +1018,10 @@
   lucene-solr: 'git+https://github.com/apache/lucene-solr.git'
 ~/study/rust/:
   rust: 'git+https://github.com/rust-lang/rust.git'
+  swc:
+    repo: 'git+https://github.com/rust-lang/rust.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/swc.git'
 ~/study/react: 
   react: 'git+https://github.com/facebook/react'
   material-ui: 
