@@ -77,6 +77,7 @@ debian_packages:
 	keychain \
 	openssh-server \
 	htop \
+	ccls \
 	redis-server \
 	libpython2-dev \
 	libsasl2-dev libxslt1-dev libxmlsec1-dev libxml2-dev libldap2-dev \
