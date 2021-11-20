@@ -1023,6 +1023,8 @@
   lucene-solr: 'git+https://github.com/apache/lucene-solr.git'
 ~/study/rust/:
   rust: 'git+https://github.com/rust-lang/rust.git'
+  rust-sdl2:
+    repo: 'git+https://github.com/Rust-SDL2/rust-sdl2.git'
   swc:
     repo: 'git+https://github.com/rust-lang/rust.git'
     remotes:
