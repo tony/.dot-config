@@ -1030,7 +1030,7 @@
   ripgrep:
     repo: 'git+https://github.com/BurntSushi/ripgrep.git'
   swc:
-    repo: 'git+https://github.com/rust-lang/rust.git'
+    repo: 'git+https://github.com/swc-project/swc.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/swc.git'
 ~/study/react: 
