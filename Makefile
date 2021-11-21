@@ -290,5 +290,9 @@ ubuntu_wine:
 	sudo apt-key add Release.key
 	sudo apt-add-repository 'https://dl.winehq.org/wine-builds/ubuntu/'
 
+debian_clangd:
+	sudo apt install clangd-13
+	sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-13 100
+
 wine_kindle:
 	wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Amazon/Kindle/Kindle.exe
