@@ -17,6 +17,9 @@ disabled = true
 [nodejs]
 disabled = true
 
+[cmake]
+disabled = true
+
 [git_status]
 stashed = ""
 
