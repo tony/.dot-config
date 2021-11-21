@@ -1,4 +1,5 @@
 ~/study/go/:
+  esbuild: 'git+https://github.com/evanw/esbuild.git'
   jetpack: 'git+https://github.com/3ofcoins/jetpack.git'
   docker:
     repo: 'git+https://github.com/docker/docker.git'
