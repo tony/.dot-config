@@ -1025,6 +1025,10 @@
   rust: 'git+https://github.com/rust-lang/rust.git'
   rust-sdl2:
     repo: 'git+https://github.com/Rust-SDL2/rust-sdl2.git'
+  starship:
+    repo: 'git+https://github.com/starship/starship.git'
+  ripgrep:
+    repo: 'git+https://github.com/BurntSushi/ripgrep.git'
   swc:
     repo: 'git+https://github.com/rust-lang/rust.git'
     remotes:
