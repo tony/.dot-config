@@ -148,6 +148,10 @@ function install_asdf_plugins() {
 	)
 	local installed_plugins=$(asdf plugin list)
 	for plugin in $plugins_list_to_install; do
+                if [[ "$plugin" == "poetry" ]]; then
+                        command asdf plugin remove poetry
+                        command asdf plugin add poetry https://github.com/tony/asdf-poetry
+                fi
 		if [[ "$installed_plugins" != *"$plugin"* ]]; then
 			command asdf plugin add $plugin
 			print -P "%F{blue}Added plugin for %K{white} $plugin %k anod now installing the latest version...%f"
