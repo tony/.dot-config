@@ -150,7 +150,7 @@ function install_asdf_plugins() {
 	for plugin in $plugins_list_to_install; do
 		if [[ "$installed_plugins" != *"$plugin"* ]]; then
 			command asdf plugin add $plugin
-			print -P "%F{blue}Added plugin for %K{white} $plugin %k anod now installing the latest version...%f"
+			print -P "%F{blue}Added plugin for %K{white} $plugin %k and now installing the latest version...%f"
 			if [[ "$plugin" == "nodejs" ]]; then
 				bash -c "$ASDF_DATA_DIR/plugins/nodejs/bin/import-release-team-keyring"
 			fi
