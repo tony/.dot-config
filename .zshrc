@@ -179,7 +179,8 @@ zinit \
 	atinit'export ASDF_DATA_DIR="$XDG_CONFIG_HOME/.asdf"; \
 		export ASDF_CONFIG_FILE="$ASDF_DATA_DIR/.asdfrc";
 		export ASDF_PYTHON_DEFAULT_PACKAGES_FILE="$ZDOTDIR/.default-python-packages";
-		export ASDF_NPM_DEFAULT_PACKAGES_FILE="$ZDOTDIR/.default-npm-packages"' \
+		export ASDF_NPM_DEFAULT_PACKAGES_FILE="$ZDOTDIR/.default-npm-packages"; \
+		export ASDF_POETRY_INSTALL_URL="https://install.python-poetry.org"' \
 	src"asdf.sh" \
 	atload'install_asdf_plugins; unfunction install_asdf_plugins' \
 	for @asdf-vm/asdf
