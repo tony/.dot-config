@@ -457,3 +457,10 @@
     repo: 'git+https://github.com/guibog/stud.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/sphinxcontrib-stud.git'
+
+~/work/gha:
+  zap-baseline:
+    repo: 'git+https://github.com/ICTU/zap-baseline.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/zap-baseline.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/zap-baseline.git'
