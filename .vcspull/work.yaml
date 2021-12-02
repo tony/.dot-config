@@ -458,8 +458,32 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/sphinxcontrib-stud.git'
 
-~/work/gha:
-  zap-baseline:
+~/work/zaproxy:
+  zaproxy:
+    repo: 'git+https://github.com/zaproxy/zaproxy.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/zaproxy.git'
+  action-baseline:
+    repo: 'git+https://github.com/zaproxy/action-baseline.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/action-baseline.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/action-baseline.git'
+  action-api-scan:
+    repo: 'git+https://github.com/zaproxy/action-api-scan.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/action-api-scan.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/action-api-scan.git'
+  action-full-scan:
+    repo: 'git+https://github.com/zaproxy/action-full-scan.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/action-full-scan.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/action-full-scan.git'
+  actions-common:
+    repo: 'git+https://github.com/zaproxy/actions-common.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/actions-common.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/actions-common.git'
+  zap2docker-weekly:
     repo: 'git+https://github.com/ICTU/zap-baseline.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/zap-baseline.git'
