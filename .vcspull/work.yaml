@@ -262,6 +262,11 @@
     repo: 'git+https://github.com/moodle/moodle-docker.git'
 
 ~/work/python:
+  bleach: 
+    repo: 'git+https://github.com/mozilla/bleach.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/bleach.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/bleach.git'
   pydoc-markdown: 
     repo: 'git+https://github.com/NiklasRosenstein/pydoc-markdown.git'
     remotes:
