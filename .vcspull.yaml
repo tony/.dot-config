@@ -1030,6 +1030,8 @@
     repo: 'git+https://github.com/starship/starship.git'
   ripgrep:
     repo: 'git+https://github.com/BurntSushi/ripgrep.git'
+  rslint:
+    repo: 'git+https://github.com/rslint/rslint.git'
   swc:
     repo: 'git+https://github.com/swc-project/swc.git'
     remotes:
