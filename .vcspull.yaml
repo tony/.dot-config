@@ -1024,6 +1024,7 @@
   lucene-solr: 'git+https://github.com/apache/lucene-solr.git'
 ~/study/rust/:
   rust: 'git+https://github.com/rust-lang/rust.git'
+  tui-rs: 'git+https://github.com/fdehau/tui-rs.git'
   rust-sdl2:
     repo: 'git+https://github.com/Rust-SDL2/rust-sdl2.git'
   starship:
