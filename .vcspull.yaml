@@ -44,6 +44,11 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/poetry.git'
 
+  poetry-core:
+    repo: 'git+https://github.com/python-poetry/poetry-core.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/poetry-core.git'
+
   pytest-splinter:
     repo: 'git+https://github.com/pytest-dev/pytest-splinter.git'
     remotes:
