@@ -278,6 +278,12 @@
       tony: 'git+ssh://git@github.com/tony/django-allauth.git'
       eduflow: 'git+ssh://git@github.com/eduflow/django-allauth.git'
 
+  django-manager-utils: 
+    repo: 'git+https://github.com/ambitioninc/django-manager-utils.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/django-manager-utils.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/django-manager-utils.git'
+
   django-request-cache:
     repo: 'git+https://github.com/anexia-it/django-request-cache.git'
     remotes:
