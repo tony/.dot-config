@@ -272,6 +272,11 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/pydoc-markdown.git'
 
+  redis-py: 
+    repo: 'git+https://github.com/redis/redis-py.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/redis-py.git'
+
   django-allauth: 
     repo: 'git+https://github.com/pennersr/django-allauth.git'
     remotes:
