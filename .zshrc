@@ -52,8 +52,9 @@ PS1="READY > "
 zinit ice wait'!0'
 
 zt for OMZ::plugins/history/history.plugin.zsh \
-    OMZ::plugins/git/git.plugin.zsh \
     OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh
+    # Overrides / collides with g
+    # OMZ::plugins/git/git.plugin.zsh \
 
 # SPACESHIP_PROMPT_ADD_NEWLINE=false
 # SPACESHIP_PACKAGE_SHOW=false
