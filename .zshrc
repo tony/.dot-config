@@ -211,3 +211,4 @@ pathprepend $HOME/bin
 pathprepend $HOME/.local/bin
 
 export SAM_CLI_TELEMETRY=0
+export GATSBY_TELEMETRY_DISABLED=1
