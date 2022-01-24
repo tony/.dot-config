@@ -56,7 +56,8 @@ debian_pyenv_packages:
 	libxml2-dev \
 	libxmlsec1-dev \
 	libffi-dev \
-	liblzma-dev
+	liblzma-dev \
+	libpython2-dev libpython3-all-dev
 
 debian_packages:
 	sudo apt-get install \
