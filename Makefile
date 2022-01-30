@@ -297,3 +297,9 @@ debian_clangd:
 
 wine_kindle:
 	wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Amazon/Kindle/Kindle.exe
+
+winget_export_packages:
+	winget.exe export -o ~/.dot-config/os/w11/winget-packages.json
+
+winget_import_packages:
+	winget.exe import -i ~/.dot-config/os/w11/winget-packages.json
