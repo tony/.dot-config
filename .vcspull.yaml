@@ -117,6 +117,10 @@
     repo: 'git+https://github.com/celery/case.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/case.git'
+  celery-batches:
+    repo: 'git+https://github.com/clokep/celery-batches.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/celery-batches.git'
   mypy:
     repo: 'git+https://github.com/python/mypy.git'
     remotes:
