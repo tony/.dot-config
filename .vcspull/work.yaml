@@ -272,6 +272,12 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/pydoc-markdown.git'
 
+  celery-singleton: 
+    repo: 'git+https://github.com/steinitzu/celery-singleton.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/celery-singleton.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/celery-singleton.git'
+
   redis-py: 
     repo: 'git+https://github.com/redis/redis-py.git'
     remotes:
