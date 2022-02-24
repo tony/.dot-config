@@ -39,6 +39,11 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/djangorestframework-api-key.git'
 
+  scout_apm:
+    repo: 'git+https://github.com/scoutapp/scout_apm_python.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/scout_apm_python.git'
+
   poetry:
     repo: 'git+https://github.com/python-poetry/poetry.git'
     remotes:
