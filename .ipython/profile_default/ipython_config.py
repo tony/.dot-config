@@ -1,3 +1,5 @@
+# flake8: noqa F821 E501 E266
+
 # Configuration file for ipython.
 # c.InteractiveShellApp.code_to_run = ''
 
@@ -8,7 +10,7 @@
 ## List of files to run at IPython startup.
 # c.InteractiveShellApp.exec_files = []
 
-## lines of code to run at IPython startup.
+# lines of code to run at IPython startup.
 """
 %autoreload 0
 
