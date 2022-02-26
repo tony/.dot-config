@@ -419,6 +419,11 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/vcspull.git'
 
+  g:
+    repo: 'git+ssh://git@github.com/vcs-python/g.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/g.git'
+
   libtmux:
     repo: 'git+ssh://git@github.com/tmux-python/libtmux.git'
     remotes:
