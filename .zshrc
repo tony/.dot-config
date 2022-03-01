@@ -204,11 +204,11 @@ zinit load junegunn/fzf
 
 zplugin ice wait"1" lucid
 
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
-[ -f ~/.profile ] && source ~/.profile
-
 pathprepend $HOME/bin
 pathprepend $HOME/.local/bin
 
 export SAM_CLI_TELEMETRY=0
 export GATSBY_TELEMETRY_DISABLED=1
+
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+[ -f ~/.profile ] && source ~/.profile
