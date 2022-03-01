@@ -165,7 +165,7 @@ fix_linux_time_dualboot:
 	timedatectl set-local-rtc 1 --adjust-system-clock
 
 vcspull:
-	vcspull \
+	vcspull sync \
 	libtmux \
 	tmuxp \
 	libvcs \
