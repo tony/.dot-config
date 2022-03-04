@@ -9,3 +9,5 @@ alias my_internal_ip='python -c "import socket; print([l for l in ([ip for ip in
 alias update_packages='cd ~/.dot-config; make global_update; cd -'
 
 export TTY=$(tty)
+
+alias glog='git reflog --pretty=short --date=iso'
