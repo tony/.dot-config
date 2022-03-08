@@ -389,7 +389,7 @@
       develtech: 'git+ssh://git@github.com/develtech/django-mptt.git'
 
   django-slugify-processor:
-    repo: 'git+ssh://git@github.com/develtech/django-slugify-processor.git'
+    repo: 'git+ssh://git@github.com/tony/django-slugify-processor.git'
 
   fabtools:
     repo: 'git+https://github.com/fabtools/fabtools.git'
