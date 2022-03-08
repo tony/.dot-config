@@ -27,3 +27,5 @@
 #  insteadOf = https://bitbucket.org/
 [pull]
 	rebase = false
+[blame]
+	ignoreRevsFile = .git-blame-ignore-revs
