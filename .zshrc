@@ -200,7 +200,7 @@ source ~/.dot-config/.shell/vars.d/fzf.sh
 # After automatic unpacking it provides program "fzf".
 zinit ice from"gh-r" as"program"
 zinit load junegunn/fzf
-
+zinit load MichaelAquilina/zsh-autoswitch-virtualenv
 
 zplugin ice wait"1" lucid
 
