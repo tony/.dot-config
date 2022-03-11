@@ -262,6 +262,9 @@
     repo: 'git+https://github.com/moodle/moodle-docker.git'
 
 ~/work/python:
+  watching-testrunner: 
+    repo: 'git+https://github.com/tony/watching-testrunner.git'
+
   bleach: 
     repo: 'git+https://github.com/mozilla/bleach.git'
     remotes:
