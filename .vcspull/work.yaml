@@ -28,6 +28,7 @@
   vue-typescript-vanilla-starter: "git+ssh://git@github.com/tony/vue-typescript-vanilla-starter.git"
   react-typescript-vanilla-starter: "git+ssh://git@github.com/tony/react-typescript-vanilla-starter.git"
   tao-of-tmux: "git+ssh://git@github.com/git-pull/tao-of-tmux.git"
+  website: "git+ssh://git@github.com/git-pull/website.git"
 
 ~/work/javascript:
   prettier-plugin-import-sort:
