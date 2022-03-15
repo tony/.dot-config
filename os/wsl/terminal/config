@@ -50,7 +50,6 @@
             {
                 "closeOnExit": "always",
                 "colorScheme": "GruvboxMaterialMediumDark",
-                "experimental.retroTerminalEffect": false,
                 "font": 
                 {
                     "face": "BlexMono Nerd Font Mono Text",
@@ -60,10 +59,8 @@
                 "hidden": false,
                 "intenseTextStyle": "bright",
                 "name": "Ubuntu",
-                "opacity": 100,
                 "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "\\\\wsl$\\ubuntu\\home\\t",
-                "useAcrylic": false
+                "startingDirectory": "\\\\wsl$\\ubuntu\\home\\t"
             },
             {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
