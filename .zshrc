@@ -116,6 +116,7 @@ fixssh() {
 fixssh()
 source ~/.dot-config/.shell/env.d/most.sh
 source ~/.dot-config/.shell/env.d/python-breakpoint.sh
+export PYTHONSTARTUP=$HOME/.pythonrc
 source ~/.dot-config/.shell/aliases.sh
 
 pathprepend() {
