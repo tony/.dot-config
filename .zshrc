@@ -213,5 +213,16 @@ pathprepend $HOME/.local/bin
 export SAM_CLI_TELEMETRY=0
 export GATSBY_TELEMETRY_DISABLED=1
 
+
+### Edit command in EDITOR with ctrl-x ctrl-x
+export EDITOR=vim
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+# Emacs style
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
+#
+
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.profile ] && source ~/.profile
