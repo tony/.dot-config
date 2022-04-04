@@ -223,7 +223,9 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
-#
+
+# Assure Ctrl+A, Ctrl+D work with EDITOR declared
+bindkey -e
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.profile ] && source ~/.profile
