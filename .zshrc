@@ -115,9 +115,7 @@ fixssh() {
     done
 }
 fixssh()
-source ~/.dot-config/.shell/env.d/most.sh
-source ~/.dot-config/.shell/env.d/python-breakpoint.sh
-export PYTHONSTARTUP=$HOME/.pythonrc
+
 source ~/.dot-config/.shell/aliases.sh
 
 pathprepend() {
@@ -214,6 +212,9 @@ pathprepend $HOME/.local/bin
 export SAM_CLI_TELEMETRY=0
 export GATSBY_TELEMETRY_DISABLED=1
 
+source ~/.dot-config/.shell/env.d/most.sh
+source ~/.dot-config/.shell/env.d/python-breakpoint.sh
+export PYTHONSTARTUP=$HOME/.pythonrc
 
 ### Edit command in EDITOR with ctrl-x ctrl-x
 export EDITOR=vim
