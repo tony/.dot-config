@@ -116,19 +116,6 @@ fixssh() {
 }
 fixssh()
 
-source ~/.dot-config/.shell/aliases.sh
-
-pathprepend() {
-  for ARG in "$@"
-  do
-    if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
-        PATH="$ARG${PATH:+":$PATH"}"
-    fi
-  done
-}
-
-source ~/.dot-config/.shell/paths.d/yarn.sh
-
 zinit light tony/za-bin-gem-node
 
 # zinit load asdf-vm/asdf
@@ -190,12 +177,6 @@ zinit \
 
 zinit load tony/zdharma-null
 
-source ~/.dot-config/.shell/env.d/poetry.sh
-source ~/.dot-config/.shell/env.d/travis.sh
-source ~/.dot-config/.shell/env.d/fzf.sh
-source ~/.dot-config/.shell/vars.d/ignore.sh
-source ~/.dot-config/.shell/vars.d/fzf.sh
-
 # Binary release in archive, from GitHub-releases page.
 # After automatic unpacking it provides program "fzf".
 zinit ice from"gh-r" as"program"
@@ -206,14 +187,30 @@ zinit load MichaelAquilina/zsh-autoswitch-virtualenv
 
 zplugin ice wait"1" lucid
 
+pathprepend() {
+  for ARG in "$@"
+  do
+    if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
+        PATH="$ARG${PATH:+":$PATH"}"
+    fi
+  done
+}
+
 pathprepend $HOME/bin
 pathprepend $HOME/.local/bin
 
-export SAM_CLI_TELEMETRY=0
-export GATSBY_TELEMETRY_DISABLED=1
-
+source ~/.dot-config/.shell/aliases.sh
+source ~/.dot-config/.shell/env.d/poetry.sh
+source ~/.dot-config/.shell/env.d/travis.sh
+source ~/.dot-config/.shell/env.d/fzf.sh
 source ~/.dot-config/.shell/env.d/most.sh
 source ~/.dot-config/.shell/env.d/python-breakpoint.sh
+source ~/.dot-config/.shell/vars.d/ignore.sh
+source ~/.dot-config/.shell/vars.d/fzf.sh
+source ~/.dot-config/.shell/paths.d/yarn.sh
+
+export SAM_CLI_TELEMETRY=0
+export GATSBY_TELEMETRY_DISABLED=1
 export PYTHONSTARTUP=$HOME/.pythonrc
 
 ### Edit command in EDITOR with ctrl-x ctrl-x
