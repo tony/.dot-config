@@ -135,6 +135,10 @@ function install_asdf_plugins() {
                 poetry \
                 # https://github.com/asdf-community/asdf-direnv
                 direnv \
+                # https://github.com/halcyon/asdf-java
+                java \
+                # https://github.com/rfrancis/asdf-gradle
+                gradle \
 	)
 	local installed_plugins=$(asdf plugin list)
 	for plugin in $plugins_list_to_install; do
