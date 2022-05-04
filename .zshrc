@@ -227,3 +227,6 @@ bindkey -e
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.profile ] && source ~/.profile
+
+# https://github.com/halcyon/asdf-java
+[ -f ~/.config/.asdf/plugins/java/set-java-home.zsh ] && source ~/.config/.asdf/plugins/java/set-java-home.zsh
