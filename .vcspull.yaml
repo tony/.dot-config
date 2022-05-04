@@ -579,13 +579,6 @@
 
 ~/study/merchant:
   satchless: 'git+https://github.com/mirumee/satchless.git'
-  braintree.js: 'git+https://github.com/braintree/braintree.js.git'
-  braintree_node: 'git+https://github.com/braintree/braintree_node.git'
-  braintree_python: 'git+https://github.com/braintree/braintree_python.git'
-  braintree_node_guide: 'git+https://github.com/braintree/braintree_node_guide.git'
-  braintree_python_guide: 'git+https://github.com/braintree/braintree_python_guide.git'
-  balanced-js: 'git+https://github.com/balanced/balanced-js.git'
-  balanced-python: 'git+https://github.com/balanced/balanced-python.git'
   stripe-node: 'git+https://github.com/stripe/stripe-node.git'
   stripe-python: 'git+https://github.com/stripe/stripe-python.git'
   authorize-sauce: 'git+https://github.com/jeffschenck/authorizesauce'
