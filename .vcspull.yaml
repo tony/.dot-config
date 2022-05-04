@@ -489,11 +489,6 @@
   wordpress: 'git+https://github.com/WordPress/WordPress.git'
   laravel: 'git+https://github.com/laravel/laravel.git'
   laravel-framework: 'git+https://github.com/laravel/framework.git'
-~/study/scrapy/:
-  dirbot: 'git+https://github.com/scrapy/dirbot'
-  Scrapy-Smiles: 'git+https://github.com/mjhea0/Scrapy-Samples'
-  scrapy-examples: 'git+https://github.com/geekan/scrapy-examples'
-  django-dynamic-scraper: 'git+https://github.com/holgerd77/django-dynamic-scraper'
 
 ~/study/standards-and-practices/html:
   north: 'git+https://github.com/Snugug/north.git'
