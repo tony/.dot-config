@@ -61,6 +61,8 @@ debian_pyenv_packages:
 
 debian_packages:
 	sudo apt-get install \
+	unzip \
+	wget \
 	tmux \
 	rsync \
 	cmake ninja-build \
@@ -69,7 +71,6 @@ debian_packages:
 	vim-nox \
 	universal-ctags \
 	silversearcher-ag \
-	wget \
 	git \
 	tig \
 	most \
