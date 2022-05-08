@@ -490,6 +490,9 @@
   laravel: 'git+https://github.com/laravel/laravel.git'
   laravel-framework: 'git+https://github.com/laravel/framework.git'
 
+~/study/data-structures-algorithms:
+  cs:
+    repo: 'git+ssh://git@github.com/tony/cs.git'
 ~/study/standards-and-practices/html:
   north: 'git+https://github.com/Snugug/north.git'
   semantic-ui: 'git+https://github.com/Semantic-Org/Semantic-UI.git'
