@@ -29,3 +29,5 @@
 	rebase = false
 [blame]
 	ignoreRevsFile = .git-blame-ignore-revs
+[init]
+	defaultBranch = master
