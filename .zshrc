@@ -218,15 +218,16 @@ export PYTHONSTARTUP=$HOME/.pythonrc
 
 ### Edit command in EDITOR with ctrl-x ctrl-x
 export EDITOR=vim
+
+# Assure emacs style Ctrl+A, Ctrl+D work with EDITOR declared
+bindkey -e
+
 # Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
-# Emacs style
+# Emacs style launch of EDITOR
 zle -N edit-command-line
 bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
-
-# Assure Ctrl+A, Ctrl+D work with EDITOR declared
-bindkey -e
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.profile ] && source ~/.profile
