@@ -105,7 +105,7 @@ debian_vim:
 	sudo add-apt-repository 'ppa:jonathonf/vim'
 
 debian_node:
-	curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+	curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 
 ubuntu_geary:
 	sudo add-apt-repository ppa:geary-team/releases
