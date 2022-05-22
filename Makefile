@@ -171,10 +171,14 @@ vcspull:
 	tmuxp \
 	libvcs \
 	vcspull \
+	g \
 	unihan-db \
 	unihan-etl \
 	cihai \
-	cihai-cli
+	cihai-cli \
+	django-slugify-processor \
+	django-docutils \
+	website
 
 debian_disable_mpd:
 	sudo update-rc.d mpd disable
