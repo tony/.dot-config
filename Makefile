@@ -157,6 +157,12 @@ pip_uninstall_packages:
 # 		pip install -U --user $$pkg; \
 # 	done
 
+cargo_install:
+	cargo install \
+		gitui \
+		hyperfine \
+		dprint
+
 remove_civ6_harassing_intro:
 	cd ~/.steam/steam/steamapps/common/Sid\ Meier\'s\ Civilization\ VI/steamassets/base/platforms/windows/movies/; \
 	mv logos.bk2 logos.bk2.backup; \
