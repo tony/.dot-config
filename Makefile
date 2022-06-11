@@ -1,6 +1,6 @@
 SHELL=/bin/bash
 DOT_CONFIG_DIR=~/.dot-config
-PIP_PACKAGES=python-language-server virtualenv pipenv tmuxp vcspull dotfiles spotdl ptpython
+PIP_PACKAGES=python-language-server virtualenv pipenv tmuxp vcspull dotfiles spotdl ptpython git-sweep
 NPM_PACKAGES=npm-check-updates gatsby-cli lerna @angular/cli
 # Unused packages: browserify nodemon create-next-app bibtex-tidy @microsoft/rush pnpm @nrwl/workspace @nrwl/react
 
