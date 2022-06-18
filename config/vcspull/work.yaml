@@ -441,6 +441,11 @@
       gitlab: 'git@gitlab.com:tmux-python/tmuxp.git'
       codeberg: 'git@codeberg.org:tmux-python/tmuxp.git'
 
+  python-questions:
+    repo: 'git+ssh://git@gitlab.com/tony/python-questions.git'
+    remotes:
+      github: 'git+ssh://git@github.com/tony/python-questions.git'
+
   tmux-manuals:
     repo: 'git+ssh://git@github.com/tmux-python/tmux-manuals.git'
 
