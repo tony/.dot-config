@@ -438,6 +438,8 @@
     repo: 'git+ssh://git@github.com/tmux-python/tmuxp.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/tmuxp.git'
+      gitlab: 'git@gitlab.com:tmux-python/tmuxp.git'
+      codeberg: 'git@codeberg.org:tmux-python/tmuxp.git'
 
   tmux-manuals:
     repo: 'git+ssh://git@github.com/tmux-python/tmux-manuals.git'
