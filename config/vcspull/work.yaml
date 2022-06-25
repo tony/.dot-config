@@ -488,6 +488,10 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/sphinx.git'
       develtech: 'git+ssh://git@github.com/develtech/sphinx.git'
+  sphinx-autoapi:
+    repo: 'git+https://github.com/readthedocs/sphinx-autoapi.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sphinx-autoapi.git'
   sphinx-testing:
     repo: 'git+https://github.com/sphinx-doc/sphinx-testing.git'
     remotes:
@@ -497,6 +501,7 @@
     repo: 'git+https://github.com/guibog/stud.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/sphinxcontrib-stud.git'
+
 
 ~/work/zaproxy:
   zaproxy:

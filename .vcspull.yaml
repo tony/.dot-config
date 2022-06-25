@@ -327,6 +327,13 @@
       tony: 'git+ssh://git@github.com/tony/klaus.git'
   norman: 'hg+https://bitbucket.org/aquavitae/norman'
   sphinx-contrib: 'hg+https://bitbucket.org/birkenfeld/sphinx-contrib'
+  # duplicating this until vcspull bug is fixed
+  # ~/.config/vcspull/<repos>.yaml aren't detected
+  sphinx-autoapi:
+    repo: 'git+https://github.com/readthedocs/sphinx-autoapi.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/sphinx-autoapi.git'
+
   pexpect-u: 'hg+https://bitbucket.org/takluyver/pexpect'
   pygments: 'hg+https://bitbucket.org/birkenfeld/pygments-main'
   docutils: 'svn+http://svn.code.sf.net/p/docutils/code/trunk'
