@@ -15,6 +15,8 @@ IGNORE_FILE_EXT+="\|musicdb\|itdb\|itl\|itc"
 IGNORE_FILE_EXT+="\|o\|so\|dll"
 IGNORE_FILE_EXT+="\|cbor\|msgpack"
 IGNORE_FILE_EXT+="\|wpj"
+IGNORE_FILE_EXT+="\|pyc"
+IGNORE_FILE_EXT+="\|js.map"
 
 export IGNORE_FILE_WILD=""
 IGNORE_FILE_WILD+="^cache\|^_cache"
@@ -30,3 +32,7 @@ IGNORE_FILE_WILD+="\|\^\?\(\.\/\)snap\/"  # $HOME/snap/ (when FZF invoked via ho
 IGNORE_FILE_WILD+="\|^snap\/"  # $HOME/snap/ (when FZF invoked via home directory)
 IGNORE_FILE_WILD+="\|\/gems\/"  # canvas-lms
 IGNORE_FILE_WILD+="\|^work\/\|^study\/"  # canvas-lms
+IGNORE_FILE_WILD+="\|__pycache__\/"  # python
+IGNORE_FILE_WILD+="\|^\.cache\/"  # webpack, so on
+IGNORE_FILE_WILD+="\|\(_\)\?build\/"  # output directories for static files
+IGNORE_FILE_WILD+="\|__generated__\/"  # relay
