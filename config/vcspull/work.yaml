@@ -272,6 +272,12 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/bleach.git'
       eduflow: 'git+ssh://git@github.com/eduflow/bleach.git'
+
+  pytest-sphinx:
+    repo: 'git+https://github.com/thisch/pytest-sphinx.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/pytest-sphinx.git'
+
   pydoc-markdown: 
     repo: 'git+https://github.com/NiklasRosenstein/pydoc-markdown.git'
     remotes:
