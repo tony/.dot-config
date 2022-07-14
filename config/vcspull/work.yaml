@@ -273,6 +273,11 @@
       tony: 'git+ssh://git@github.com/tony/bleach.git'
       eduflow: 'git+ssh://git@github.com/eduflow/bleach.git'
 
+  faker: 
+    repo: 'git+https://github.com/joke2k/faker.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/faker.git'
+
   pytest-sphinx:
     repo: 'git+https://github.com/thisch/pytest-sphinx.git'
     remotes:
