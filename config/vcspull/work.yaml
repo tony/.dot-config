@@ -278,6 +278,11 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/faker.git'
 
+  freezegun: 
+    repo: 'git+https://github.com/spulec/freezegun.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/freezegun.git'
+
   pytest-sphinx:
     repo: 'git+https://github.com/thisch/pytest-sphinx.git'
     remotes:
