@@ -273,6 +273,11 @@
   watching-testrunner: 
     repo: 'git+https://github.com/tony/watching-testrunner.git'
 
+  responses: 
+    repo: 'git+https://github.com/getsentry/responses.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/responses.git'
+
   bleach: 
     repo: 'git+https://github.com/mozilla/bleach.git'
     remotes:
