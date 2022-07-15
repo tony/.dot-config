@@ -31,6 +31,12 @@
   website: "git+ssh://git@github.com/git-pull/website.git"
   git-pull-widget: "git+ssh://git@github.com/tony/git-pull-wigdet.git"
 
+~/work/java:
+  selenium:
+    repo: 'git+https://github.com/SeleniumHQ/selenium.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/selenium.git'
+
 ~/work/javascript:
   prettier-plugin-import-sort:
     repo: 'git+https://github.com/ggascoigne/prettier-plugin-import-sort.git'
