@@ -278,6 +278,11 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/responses.git'
 
+  tingle:
+    repo: 'git+https://github.com/deathbeds/tingle.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/tingle.git'
+
   bleach: 
     repo: 'git+https://github.com/mozilla/bleach.git'
     remotes:
