@@ -27,7 +27,7 @@
 #  insteadOf = https://bitbucket.org/
 [pull]
 	rebase = false
-[blame]
-	ignoreRevsFile = .git-blame-ignore-revs
+# [blame]
+# 	ignoreRevsFile = .git-blame-ignore-revs
 [init]
 	defaultBranch = master
