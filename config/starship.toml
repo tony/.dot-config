@@ -20,6 +20,9 @@ disabled = true
 [cmake]
 disabled = true
 
+[golang]
+disabled = true
+
 [git_status]
 stashed = ""
 
