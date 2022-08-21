@@ -473,6 +473,11 @@
       gitlab: 'git@gitlab.com:tmux-python/tmuxp.git'
       codeberg: 'git@codeberg.org:tmux-python/tmuxp.git'
 
+  sphinx-autoissues:
+    repo: 'git+ssh://git@github.com/tony/sphinx-autoissues.git'
+    remotes:
+      ignatenkobrain: 'git+ssh://git@github.com/ignatenkobrain/sphinxcontrib-issuetracker.git'
+
   python-questions:
     repo: 'git+ssh://git@gitlab.com/tony/python-questions.git'
     remotes:
