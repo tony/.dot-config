@@ -26,5 +26,8 @@ disabled = true
 [git_status]
 stashed = ""
 
+[git_commit]
+tag_symbol = " "
+
 [cmd_duration]
 format = ""
