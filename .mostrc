@@ -1,7 +1,7 @@
 color normal white default
-color status brightcyan black
-color underline brightgreen black
-color overstrike brightred black
+color status default default
+color underline brightgreen default
+color overstrike brightred default
 
 unsetkey "^K"
 unsetkey "g"
