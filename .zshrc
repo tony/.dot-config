@@ -78,7 +78,7 @@ if [ "$(uname)" = "Darwin" ]; then
         atclone"cargo build --release" atpull"%atclone" \
         atload'eval $(starship init zsh)'
 else
-    zinit ice from"gh-r" as"program" mv"target/*/release/starship -> starship" \
+    zinit ice from"gh-r" as"program" bpick'*unknown-linux-gnu*' \
         atload'eval $(starship init zsh)'
 fi
 zinit light starship/starship
