@@ -138,6 +138,8 @@ function install_asdf_plugins() {
                 java \
                 # https://github.com/rfrancis/asdf-gradle
                 gradle \
+                # https://github.com/tsuyoshicho/asdf-vim
+                vim \
 	)
 	local installed_plugins=$(asdf plugin list)
 	for plugin in $plugins_list_to_install; do
