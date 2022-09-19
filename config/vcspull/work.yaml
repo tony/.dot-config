@@ -405,6 +405,11 @@
       develtech: 'git+ssh://git@github.com/develtech/django-robots.git'
       tony: 'git+ssh://git@github.com/tony/django-robots.git'
 
+  factory_boy:
+    repo: 'git+https://github.com/FactoryBoy/factory_boy.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/factory_boy.git'
+
   django-model-utils:
     repo: 'git+https://github.com/jazzband/django-model-utils.git'
     remotes:
