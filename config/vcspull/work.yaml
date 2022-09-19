@@ -409,6 +409,8 @@
     repo: 'git+https://github.com/FactoryBoy/factory_boy.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/factory_boy.git'
+      kingbuzzman: 'git+ssh://git@github.com/kingbuzzman/factory_boy.git'
+      francoisfreitag: 'git+ssh://git@github.com/francoisfreitag/factory_boy.git'
 
   django-model-utils:
     repo: 'git+https://github.com/jazzband/django-model-utils.git'
