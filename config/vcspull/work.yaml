@@ -385,6 +385,11 @@
       tony: 'git+ssh://git@github.com/tony/django-classy-tags.git'
       yakky: 'git+https://github.com/yakky/django-classy-tags.git'
 
+  django-reversion:
+    repo: 'git+https://github.com/etianen/django-reversion.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/django-reversion.git'
+
   pytest-django:
     repo: 'git+https://github.com/pytest-dev/pytest-django.git'
     remotes:
