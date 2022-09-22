@@ -35,14 +35,10 @@ $ make install
 
 ---
 
-Window manager [awesome], [i3]
-Terminal multiplexer [tmux] (and [tmuxp] for tmux sessions)
-Linux Xsession `.xprofile`, `.Xresources`, `.xsessionrc`
-Shell [zsh]
-Editor [vim]
-Development [ctags], [python cli], [git], [vcspull]
-Media [ncmpcpp]
-This package [dotfiles] (for this repo), `.tmuxp.yaml`
+Window manager [awesome], [i3] Terminal multiplexer [tmux] (and [tmuxp] for tmux sessions) Linux
+Xsession `.xprofile`, `.Xresources`, `.xsessionrc` Shell [zsh] Editor [vim] Development [ctags],
+[python cli], [git], [vcspull] Media [ncmpcpp] This package [dotfiles] (for this repo),
+`.tmuxp.yaml`
 
 ---
 
@@ -66,32 +62,37 @@ This package [dotfiles] (for this repo), `.tmuxp.yaml`
 - [`.zshrc`](.zshrc) [zinit]-based stuff. Uses [starship]
 - [`.shell/`](.shell/) Shell plugins depo (via `.sh` scripts)
 
-     - [`.shell/env.d`](.shell/env.d) example: [`env.d/poetry.sh`](.shell/env.d/poetry.sh) checks for poetry and `source`'s it in
+  - [`.shell/env.d`](.shell/env.d) example: [`env.d/poetry.sh`](.shell/env.d/poetry.sh) checks for
+    poetry and `source`'s it in
 
-          When installing CLI tools, sometimes these are automatically added to
-          `.bashrc` / `.zshrc` by installer tools.
+    When installing CLI tools, sometimes these are automatically added to `.bashrc` / `.zshrc` by
+    installer tools.
 
-          Assuming `.zshrc`, if you have this line:
+    Assuming `.zshrc`, if you have this line:
 
-          `[ -f ~/.poetry/env ] && source $HOME/.poetry/env`
+    `[ -f ~/.poetry/env ] && source $HOME/.poetry/env`
 
-          You can safely replace it with:
+    You can safely replace it with:
 
-          `source ~/.dot-config/.shell/env.d/poetry.sh`
+    `source ~/.dot-config/.shell/env.d/poetry.sh`
 
-     - [`.shell/vars.d`](.shell/env.d) env variables, e.g. [FZF] ([fzf.vim]'s) [`FZF_DEFAULT_COMMAND`] and + [ignore pattern](.shell/vars.d/ignore.sh] variables
-     - [`.shell/paths.d`](.shell/paths.d) Add things like [python site packages](.shell/paths.d/python.sh) / [yarn](.shell/paths.d/yarn.sh) to
-       `PATH`
+  - [`.shell/vars.d`](.shell/env.d) env variables, e.g. [FZF] ([fzf.vim]'s) [`FZF_DEFAULT_COMMAND`]
+    and + [ignore pattern](.shell/vars.d/ignore.sh] variables
+  - [`.shell/paths.d`](.shell/paths.d) Add things like
+    [python site packages](.shell/paths.d/python.sh) / [yarn](.shell/paths.d/yarn.sh) to `PATH`
 
 - [`.vim/`](.vim/) See \<<https://github.com/tony/vim-config>\>.
 - [`.tmux/`](.tmux/) See \<<https://github.com/tony/tmux-config>\>.
 - [`.i3/`](.i3) See \<<https://github.com/tony/i3-config>\>.
 - [`.config/awesome/`](.config/awesome/) See \<<https://github.com/tony/.config/awesome>\>
 - [`.fonts/`](.fonts/) See \<<https://github.com/tony/dot-fonts>\>.
-- [`.tmuxp/`](.tmuxp/) [tmuxp] sessions for common processes. See \<<https://github.con/tony/tmuxp-config>\>
+- [`.tmuxp/`](.tmuxp/) [tmuxp] sessions for common processes. See
+  \<<https://github.con/tony/tmuxp-config>\>
 - [`.vcspull.yaml`](.vcspull.yaml) Study and stay up to date with great programming code.
-- [`.pythonrc`](.pythonrc) Autocompletion (requires [readline], if your system doesn\'t support it (OSX) try the [stand-alone readline module])
-- [`.Xresources`](.Xresources) [rxvt-unicode] settings: [fcitx] input, [molokai] / gruvbox colorscheme / programmer + CJK fonts (see `.fonts`)
+- [`.pythonrc`](.pythonrc) Autocompletion (requires [readline], if your system doesn\'t support it
+  (OSX) try the [stand-alone readline module])
+- [`.Xresources`](.Xresources) [rxvt-unicode] settings: [fcitx] input, [molokai] / gruvbox
+  colorscheme / programmer + CJK fonts (see `.fonts`)
 - [`.xsessionrc`](.xsessionrc) [Thinkpad Trackpoint config]
 - [`.ncmpcpp/`](.ncmpcpp/) FIFO Visualizer
 - [`.dotfilesrc`](.dotfilesrc) Ignores `git(1)`-related dotfiles in this project.
