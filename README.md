@@ -4,12 +4,7 @@ zsh + [zinit] + [starship] + [fzf]
 
 Feel free to copy and paste from here, everything is licensed [MIT].
 
-Powered by antigen.
-
-Just want snippets? Feel free to check out [devel.tech\'s snippets section].
-
 [mit]: http://opensource.org/licenses/MIT
-[devel.tech\'s snippets section]: https://devel.tech/snippets/
 
 ## Dependencies
 
