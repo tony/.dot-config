@@ -73,24 +73,27 @@ Xsession `.xprofile`, `.Xresources`, `.xsessionrc` Shell [zsh] Editor [vim] Deve
 
     Assuming `.zshrc`, if you have this line:
 
-    `[ -f ~/.poetry/env ] && source $HOME/.poetry/env`
+    ```console
+    [ -f ~/.poetry/env ] && source $HOME/.poetry/env
+    ```
 
     You can safely replace it with:
 
-    `source ~/.dot-config/.shell/env.d/poetry.sh`
+    ```console
+    source ~/.dot-config/.shell/env.d/poetry.sh
+    ```
 
   - [`.shell/vars.d`](.shell/env.d) env variables, e.g. [FZF] ([fzf.vim]'s) [`FZF_DEFAULT_COMMAND`]
-    and + [ignore pattern](.shell/vars.d/ignore.sh] variables
+    and + [ignore pattern](.shell/vars.d/ignore.sh) variables
   - [`.shell/paths.d`](.shell/paths.d) Add things like
     [python site packages](.shell/paths.d/python.sh) / [yarn](.shell/paths.d/yarn.sh) to `PATH`
 
-- [`.vim/`](.vim/) See \<<https://github.com/tony/vim-config>\>.
-- [`.tmux/`](.tmux/) See \<<https://github.com/tony/tmux-config>\>.
-- [`.i3/`](.i3) See \<<https://github.com/tony/i3-config>\>.
-- [`.config/awesome/`](.config/awesome/) See \<<https://github.com/tony/.config/awesome>\>
-- [`.fonts/`](.fonts/) See \<<https://github.com/tony/dot-fonts>\>.
-- [`.tmuxp/`](.tmuxp/) [tmuxp] sessions for common processes. See
-  \<<https://github.con/tony/tmuxp-config>\>
+- `.vim/` See <https://github.com/tony/vim-config>.
+- `.tmux/` See <https://github.com/tony/tmux-config>.
+- [`.i3/`](.i3) See <https://github.com/tony/i3-config>.
+- [`.config/awesome/`](.config/awesome/) See <https://github.com/tony/.config/awesome>
+- [`.fonts/`](.fonts/) See <https://github.com/tony/dot-fonts>.
+- `.tmuxp/` [tmuxp] sessions for common processes. See <https://github.con/tony/tmuxp-config>
 - [`.vcspull.yaml`](.vcspull.yaml) Study and stay up to date with great programming code.
 - [`.pythonrc`](.pythonrc) Autocompletion (requires [readline], if your system doesn\'t support it
   (OSX) try the [stand-alone readline module])
