@@ -4,6 +4,9 @@ zsh + [zinit] + [starship] + [fzf]
 
 Feel free to copy and paste from here, everything is licensed [MIT].
 
+_You probably don't want to fork this - it's bloated and a personal config - click through the files
+and/or search and copy examples you find helpful_
+
 [mit]: http://opensource.org/licenses/MIT
 
 ## Dependencies
