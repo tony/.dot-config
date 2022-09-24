@@ -380,7 +380,11 @@
 
   alembic: 'git+https://github.com/zzzeek/alembic.git'
   nose: 'git+https://github.com/nose-devs/nose.git'
-  pytest: 'hg+https://bitbucket.org/hpk42/pytest'
+  # pytest: 'hg+https://bitbucket.org/hpk42/pytest'
+  pytest: 
+    repo: 'git+https://github.com/pytest-dev/pytest.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/pytest.git'
   mock: 'hg+https://code.google.com/p/mock/'
 
   virtualenv: 'git+https://github.com/pypa/virtualenv.git'
