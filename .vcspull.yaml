@@ -11,7 +11,7 @@
   gitea:
     repo: 'git+https://github.com/go-gitea/gitea.git'
     remotes:
-      tony: 'git+git@github.com/tony/gitea.git'
+      tony: 'git+ssh://git@github.com/tony/gitea.git'
   go-koans:
     repo: 'git+https://github.com/cdarwin/go-koans.git'
     remotes:
@@ -183,8 +183,8 @@
   webassets: 'git+https://github.com/miracle2k/webassets.git'
   click: 'git+https://github.com/mitsuhiko/click.git'
   pulseaudio-mixer-cli: 'git+https://github.com/mk-fg/pulseaudio-mixer-cli.git'
-  psycopg2: 'git+git://github.com/psycopg/psycopg2.git'
-  momoko: 'git+git://github.com/FSX/momoko.git'
+  psycopg2: 'git+ssh://github.com/psycopg/psycopg2.git'
+  momoko: 'git+ssh://github.com/FSX/momoko.git'
   nova: 'git+https://github.com/openstack/nova.git'
   jsonschema: 'git+https://github.com/Julian/jsonschema.git'
   rdflib: 'git+https://github.com/RDFLib/rdflib.git'
@@ -215,7 +215,7 @@
       tony: 'git+https://github.com/tony/pip.git'
 
   warehouse:
-    repo: 'git+git://github.com/pypa/warehouse.git'
+    repo: 'git+ssh://github.com/pypa/warehouse.git'
     remotes:
       tony: 'git+https://github.com/tony/warehouse.git'
 
@@ -303,7 +303,7 @@
   scrapy: 'git+https://github.com/scrapy/scrapy.git'
   scrapely: 'git+https://github.com/scrapy/scrapely.git'
 
-  calibre: 'git+git://github.com/kovidgoyal/calibre.git'
+  calibre: 'git+ssh://github.com/kovidgoyal/calibre.git'
 
   aws-cli: 'git+https://github.com/aws/aws-cli.git'
 
@@ -314,7 +314,7 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/jedi.git'
 
-  ranger: 'git+git://git.savannah.nongnu.org/ranger.git'
+  ranger: 'git+ssh://git.savannah.nongnu.org/ranger.git'
 
   readthedocs:
     repo: 'git+https://github.com/rtfd/readthedocs.org.git'
@@ -674,7 +674,7 @@
       tony: 'git+ssh://git@github.com/tony/cython.git'
 
   flex:
-    repo: 'git+git://git.code.sf.net/p/flex/flex'
+    repo: 'git+ssh://git.code.sf.net/p/flex/flex'
     remotes:
       tony: 'git+ssh://git@github.com:tony/flex.git'
   spectrwm:
@@ -685,11 +685,11 @@
 
   #awesome: 'git+https://github.com/awesomeWM/awesome.git'
   ctags: 'git+https://github.com/universal-ctags/ctags'
-  #weechat: 'git+git://git.sv.gnu.org/weechat.git'
+  #weechat: 'git+ssh://git.sv.gnu.org/weechat.git'
   #retroarch: 'git+https://github.com/Themaister/RetroArch.git'
   #linux: 'git+https://github.com/torvalds/linux.git'
   #minix: 'git+https://github.com/minix3/minix'
-  ncmpc: 'git+git://git.musicpd.org/master/ncmpc.git'
+  ncmpc: 'git+ssh://git.musicpd.org/master/ncmpc.git'
   tmux:
     repo: 'git+https://github.com/tmux/tmux.git'
     remotes:
@@ -710,12 +710,12 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/nuklear.git'
 
-  pgadmin3: 'git+git://git.postgresql.org/git/pgadmin3.git'
+  pgadmin3: 'git+ssh://git.postgresql.org/git/pgadmin3.git'
   textadept: 'hg+http://foicica.com/hg/textadept'
 
-  musl-libc: 'git+git://git.musl-libc.org/musl'
-  util-cursor: 'git+git://anongit.freedesktop.org/xcb/util-cursor'
-  zsh: 'git+git://git.code.sf.net/p/zsh/code'
+  musl-libc: 'git+ssh://git.musl-libc.org/musl'
+  util-cursor: 'git+ssh://anongit.freedesktop.org/xcb/util-cursor'
+  zsh: 'git+ssh://git.code.sf.net/p/zsh/code'
   cpython: 'git+https://github.com/python/cpython.git'
   micropython: 'git+https://github.com/micropython/micropython.git'
   nginx: 'hg+http://hg.nginx.org/nginx'
@@ -787,7 +787,7 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/libpypa.git'
   libunwind:
-    repo: 'git+git://git.sv.gnu.org/libunwind.git'
+    repo: 'git+ssh://git.sv.gnu.org/libunwind.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/libunwind.git'
       dropbox: 'https://github.com/dropbox/libunwind.git'
@@ -815,7 +815,7 @@
   # blink:
   #   repo: 'git+https://chromium.googlesource.com/chromium/blink'
   v8:
-    repo: 'git+git://github.com/v8/v8.git'
+    repo: 'git+ssh://github.com/v8/v8.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/v8.git'
   node:
@@ -828,17 +828,17 @@
   #wxPython: 'git+https://github.com/wxWidgets/wxPython.git'
   #wxWidgets: 'git+https://github.com/wxWidgets/wxWidgets.git'
   openttd:
-    repo: 'git+git://github.com/openttd/openttd.git'
+    repo: 'git+ssh://github.com/openttd/openttd.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/openttd.git'
   #vimpc: 'git+https://github.com/boysetsfrog/vimpc'
-  #mpd: 'git+git://git.musicpd.org/master/mpd.git'
-  #libmpd: 'git+git://git.musicpd.org/master/libmpd.git'
+  #mpd: 'git+ssh://git.musicpd.org/master/mpd.git'
+  #libmpd: 'git+ssh://git.musicpd.org/master/libmpd.git'
   ncmpcpp:
     repo: 'git+https://github.com/arybczak/ncmpcpp.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/ncmpcpp.git'
-  #libmpdclient: 'git+git://git.musicpd.org/master/libmpdclient.git'
+  #libmpdclient: 'git+ssh://git.musicpd.org/master/libmpdclient.git'
   #node: 'git+https://github.com/joyent/node.git'
   #libzmp: 'git+https://github.com/zeromq/libzmq.git'
   doubanfm-qt: 'git+https://github.com/zonyitoo/doubanfm-qt.git'
