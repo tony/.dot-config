@@ -405,7 +405,7 @@
 
 
   django-robots:
-    repo: 'git+https://github.com/jazzband/django-robots.git'
+    repo: 'git+ssh://git@github.com/jazzband/django-robots.git'
     remotes:
       develtech: 'git+ssh://git@github.com/develtech/django-robots.git'
       tony: 'git+ssh://git@github.com/tony/django-robots.git'
