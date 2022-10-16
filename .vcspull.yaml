@@ -185,7 +185,6 @@
   pulseaudio-mixer-cli: 'git+https://github.com/mk-fg/pulseaudio-mixer-cli.git'
   psycopg2: 'git+ssh://github.com/psycopg/psycopg2.git'
   momoko: 'git+ssh://github.com/FSX/momoko.git'
-  nova: 'git+https://github.com/openstack/nova.git'
   jsonschema: 'git+https://github.com/Julian/jsonschema.git'
   rdflib: 'git+https://github.com/RDFLib/rdflib.git'
   rdflib-sqlalchemy: 'git+https://github.com/RDFLib/rdflib-sqlalchemy.git'
@@ -274,7 +273,6 @@
   pyradio: 'git+https://github.com/coderholic/pyradio.git'
 
   sh: 'git+https://github.com/amoffat/sh.git'
-  envoy: 'git+https://github.com/kennethreitz/envoy.git'
 
   glances: 'git+https://github.com/nicolargo/glances.git'
   powerline: 'git+https://github.com/powerline/powerline.git'
@@ -493,10 +491,7 @@
   flask-tdd: 'git+https://github.com/mjhea0/flaskr-tdd.git'
   flask-restless: 'git+https://github.com/jfinkels/flask-restless.git'
   flask-superadmin: 'git+https://github.com/SyrusAkbary/Flask-SuperAdmin.git'
-  flask-debugtoolbar: 'git+https://github.com/mgood/flask-debugtoolbar.git'
-  flask-script: 'git+https://github.com/techniq/flask-script.git'
   flask-frozen: 'git+https://github.com/SimonSapin/Frozen-Flask.git'
-  flask-assets: 'git+https://github.com/miracle2k/flask-assets.git'
   flask-oauthlib: 'git+https://github.com/lepture/flask-oauthlib.git'
   flask-babel: 'git+https://github.com/mitsuhiko/flask-babel.git'
 ~/study/php:
@@ -1144,7 +1139,6 @@
 
   jupyter-js-cells: 'git+https://github.com/jupyter/jupyter-js-cells.git'
   jupyter-js-notebook: 'git+https://github.com/jupyter/jupyter-js-notebook.git'
-  jupyter-js-filebrowser: 'git+https://github.com/jupyter/jupyter-js-filebrowser-plugin.git'
   jupyter-js-editor: 'git+https://github.com/jupyter/jupyter-js-editor.git'
   jupyter-js-terminal: 'git+https://github.com/jupyter/jupyter-js-terminal.git'
   jupyter-js-utils: 'git+https://github.com/jupyter/jupyter-js-utils.git'
