@@ -240,8 +240,10 @@
   botocore: 'git+https://github.com/boto/botocore.git'
   libcloud: 'git+https://github.com/apache/libcloud.git'
 
-  argcomplete: 'git+https://github.com/kislyuk/argcomplete.git'
-
+  argcomplete:
+    repo: 'git+https://github.com/kislyuk/argcomplete.git'
+    remotes:
+      tony: 'git+ssh://github.com/tony/argcomplete.git'
   lxml: 'git+https://github.com/lxml/lxml.git'
 
   httpbin: 'git+https://github.com/kennethreitz/httpbin.git'
