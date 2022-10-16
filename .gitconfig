@@ -12,6 +12,7 @@
   prompt = false
 [push]
   default = simple
+  autoSetupRemote = true
 [core]
   editor = vim
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
@@ -26,8 +27,8 @@
 #[url "ssh://git@bitbucket.org/"]
 #  insteadOf = https://bitbucket.org/
 [pull]
-	rebase = false
+  rebase = false
 # [blame]
-# 	ignoreRevsFile = .git-blame-ignore-revs
+#   ignoreRevsFile = .git-blame-ignore-revs
 [init]
-	defaultBranch = master
+  defaultBranch = master
