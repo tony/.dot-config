@@ -241,7 +241,7 @@
   argcomplete:
     repo: "git+https://github.com/kislyuk/argcomplete.git"
     remotes:
-      tony: "git+ssh://github.com/tony/argcomplete.git"
+      tony: "git+ssh://git@github.com/tony/argcomplete.git"
   lxml: "git+https://github.com/lxml/lxml.git"
 
   httpbin: "git+https://github.com/kennethreitz/httpbin.git"
