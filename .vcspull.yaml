@@ -422,7 +422,11 @@
 ~/study/django:
   django-storages:
     repo: "git+https://github.com/jschneier/django-storages.git"
-
+  django-silk:
+    repo: "git+https://github.com/jazzband/django-silk.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/django-silk.git"
+      eduflow: "git+ssh://git@github.com/eduflow/django-silk.git"
   django-activeurl:
     repo: "git+https://github.com/hellysmile/django-activeurl.git"
     remotes:
