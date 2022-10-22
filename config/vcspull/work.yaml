@@ -275,6 +275,11 @@
     remotes:
       tony: "git+ssh://git@github.com/tony/argcomplete.git"
 
+  pytest-watcher:
+    repo: "git+https://github.com/olzhasar/pytest-watcher.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/pytest-watcher.git"
+
   watching-testrunner: 
     repo: 'git+https://github.com/tony/watching-testrunner.git'
 
