@@ -270,6 +270,11 @@
     repo: 'git+https://github.com/moodle/moodle-docker.git'
 
 ~/work/python:
+  argcomplete:
+    repo: "git+https://github.com/kislyuk/argcomplete.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/argcomplete.git"
+
   watching-testrunner: 
     repo: 'git+https://github.com/tony/watching-testrunner.git'
 
