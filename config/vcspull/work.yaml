@@ -472,11 +472,15 @@
     repo: 'git+ssh://git@github.com/vcs-python/libvcs.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/libvcs.git'
+      gitlab: 'git@gitlab.com:vcs-python/libvcs.git'
+      codeberg: 'git@codeberg.org:vcs-python/libvcs.git'
 
   vcspull:
     repo: 'git+ssh://git@github.com/vcs-python/vcspull.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/vcspull.git'
+      gitlab: 'git@gitlab.com:vcs-python/vcspull.git'
+      codeberg: 'git@codeberg.org:vcs-python/vcspull.git'
 
   g:
     repo: 'git+ssh://git@github.com/vcs-python/g.git'
@@ -487,6 +491,8 @@
     repo: 'git+ssh://git@github.com/tmux-python/libtmux.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/libtmux.git'
+      gitlab: 'git@gitlab.com:tmux-python/libtmux.git'
+      codeberg: 'git@codeberg.org:tmux-python/libtmux.git'
 
   tmuxp:
     repo: 'git+ssh://git@github.com/tmux-python/tmuxp.git'
