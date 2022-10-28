@@ -6,3 +6,4 @@ golang 1.19.2
 java adoptopenjdk-18.0.2+101
 gradle 7.5.1
 vim 9.0.0814
+direnv 2.32.1
