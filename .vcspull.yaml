@@ -446,6 +446,7 @@
     repo: "git+https://github.com/tbicr/django-pg-zero-downtime-migrations.git"
     remotes:
       tony: "git+ssh://git@github.com/tony/django-pg-zero-downtime-migrations.git"
+      eduflow: "git+ssh://git@github.com/eduflow/django-pg-zero-downtime-migrations.git"
   django-taggit: "git+https://github.com/alex/django-taggit.git"
   django-basic-apps: "git+https://github.com/nathanborror/django-basic-apps.git"
   django-mptt: "git+https://github.com/django-mptt/django-mptt.git"
