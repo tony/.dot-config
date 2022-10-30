@@ -388,6 +388,7 @@
     repo: 'git+https://github.com/datadvance/DjangoChannelsGraphqlWs.git'
     remotes:
       tony: 'git+ssh://git@github.com/tony/DjangoChannelsGraphqlWs.git'
+      eduflow: 'git+ssh://git@github.com/eduflow/DjangoChannelsGraphqlWs.git'
 
   django-classy-tags:
     repo: 'git+https://github.com/divio/django-classy-tags.git'
