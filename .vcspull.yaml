@@ -1029,6 +1029,12 @@
     remotes:
       tony: "git+ssh://git@github.com/tony/unite.vim.git"
 
+  coc-pyright:
+    repo: "git+https://github.com/fannheyward/coc-pyright.git"
+
+  coc-clangd:
+    repo: "git+https://github.com/clangd/coc-clangd.git"
+
 ~/study/vagrant/:
   vagrant:
     repo: "git+https://github.com/mitchellh/vagrant.git"
