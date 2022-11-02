@@ -715,6 +715,12 @@
   micropython: "git+https://github.com/micropython/micropython.git"
   nginx: "hg+http://hg.nginx.org/nginx"
   tre: "git+https://github.com/laurikari/tre"
+~/study/zsh:
+  zsh-autoswitch-virtualenv:
+    repo: "git+https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/zsh-autoswitch-virtualenv.git"
+
 ~/study/c++:
   cquery: "git+https://github.com/cquery-project/cquery.git"
   GeographicLib: "git+https://git.code.sf.net/p/geographiclib/code"
