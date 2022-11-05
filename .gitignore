@@ -84,3 +84,6 @@ config/autostart/gammastep-indicator.desktop
 google-chrome*
 get-pip.py
 sam-installation/
+
+# fish
+config/fish/fish_variables
