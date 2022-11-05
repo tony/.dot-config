@@ -1,4 +1,4 @@
-set -x ASDF_DATA_DIR ~/.config/.asdf
+set -x ASDF_DATA_DIR ~/.config/asdf
 set -x ASDF_DIR ~/.zinit/plugins/asdf
 set -x ASDF_CONFIG_FILE ~/.asdfrc
 
