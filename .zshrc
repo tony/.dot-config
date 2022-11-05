@@ -132,8 +132,6 @@ function install_asdf_plugins() {
 		golang \
                 # https://github.com/asdf-community/asdf-poetry
                 poetry \
-                # https://github.com/asdf-community/asdf-direnv
-                direnv \
                 # https://github.com/halcyon/asdf-java
                 java \
                 # https://github.com/rfrancis/asdf-gradle
@@ -236,7 +234,3 @@ bindkey '^x^e' edit-command-line
 
 # https://github.com/halcyon/asdf-java
 [ -f ~/.config/.asdf/plugins/java/set-java-home.zsh ] && source ~/.config/.asdf/plugins/java/set-java-home.zsh
-
-# asdf direnv setup --shell zsh --version 2.32.1
-# Modified to check for zshrc first
-[ -f ${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
