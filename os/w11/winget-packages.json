@@ -22,12 +22,6 @@
 					"PackageIdentifier" : "BleachBit.BleachBit"
 				},
 				{
-					"PackageIdentifier" : "Canonical.Ubuntu"
-				},
-				{
-					"PackageIdentifier" : "Discord.Discord"
-				},
-				{
 					"PackageIdentifier" : "Docker.DockerDesktop"
 				},
 				{
@@ -38,15 +32,6 @@
 				},
 				{
 					"PackageIdentifier" : "Git.Git"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.Edge"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.EdgeWebView2Runtime"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.WindowsTerminal"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.Skype"
@@ -61,9 +46,6 @@
 					"PackageIdentifier" : "Notion.Notion"
 				},
 				{
-					"PackageIdentifier" : "SlackTechnologies.Slack"
-				},
-				{
 					"PackageIdentifier" : "VideoLAN.VLC"
 				},
 				{
@@ -71,9 +53,6 @@
 				},
 				{
 					"PackageIdentifier" : "Inkscape.Inkscape"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VC++2015-2019Redist-x64"
 				},
 				{
 					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
@@ -86,9 +65,6 @@
 				},
 				{
 					"PackageIdentifier" : "Google.Drive"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.dotnetRuntime.6-x64"
 				},
 				{
 					"PackageIdentifier" : "Mailbird.Mailbird"
