@@ -7,25 +7,13 @@
 			"Packages" : 
 			[
 				{
-					"PackageIdentifier" : "AgileBits.1Password"
-				},
-				{
 					"PackageIdentifier" : "ShareX.ShareX"
-				},
-				{
-					"PackageIdentifier" : "Formagrid.Airtable"
 				},
 				{
 					"PackageIdentifier" : "Amazon.Kindle"
 				},
 				{
-					"PackageIdentifier" : "BleachBit.BleachBit"
-				},
-				{
 					"PackageIdentifier" : "Docker.DockerDesktop"
-				},
-				{
-					"PackageIdentifier" : "Figma.Figma"
 				},
 				{
 					"PackageIdentifier" : "GIMP.GIMP"
@@ -34,16 +22,10 @@
 					"PackageIdentifier" : "Git.Git"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.Skype"
-				},
-				{
 					"PackageIdentifier" : "Valve.Steam"
 				},
 				{
 					"PackageIdentifier" : "SumatraPDF.SumatraPDF"
-				},
-				{
-					"PackageIdentifier" : "Notion.Notion"
 				},
 				{
 					"PackageIdentifier" : "VideoLAN.VLC"
@@ -56,9 +38,6 @@
 				},
 				{
 					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
-				},
-				{
-					"PackageIdentifier" : "DuongDieuPhap.ImageGlass"
 				},
 				{
 					"PackageIdentifier" : "NickeManarin.ScreenToGif"
@@ -77,12 +56,6 @@
 				},
 				{
 					"PackageIdentifier" : "BlenderFoundation.Blender"
-				},
-				{
-					"PackageIdentifier" : "Zoom.Zoom"
-				},
-				{
-					"PackageIdentifier" : "Klocman.BulkCrapUninstaller"
 				}
 			],
 			"SourceDetails" : 
