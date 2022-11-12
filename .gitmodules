@@ -22,6 +22,3 @@
 [submodule "config/base16-shell"]
 	path = config/base16-shell
 	url = https://github.com/chriskempson/base16-shell.git
-[submodule ".spectrwm"]
-	path = .spectrwm
-	url = https://github.com/tony/spectrwm-config.git
