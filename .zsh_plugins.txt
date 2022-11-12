@@ -1,0 +1,21 @@
+# Spaceship theme
+# denysdovhan/spaceship-prompt
+starship/starship kind:fpath
+
+asdf-vm/asdf
+# asdf-vm/asdf kind:fpath
+
+# ohmyzsh/ohmyzsh   path:lib/history.zsh
+# ohmyzsh/ohmyzsh   path:lib/clipboard.zsh
+ ohmyzsh/ohmyzsh   path:plugins/ssh-agent
+# ohmyzsh/ohmyzsh   path:plugins/colored-man-pages
+# romkatv/zsh-bench kind:path
+# olets/zsh-abbr    kind:defer
+
+zsh-users/zsh-history-substring-search
+
+# Binary is installed in ~/.zshrc
+junegunn/fzf kind:clone
+# # Add completion scripts and fzf binary to PATH
+junegunn/fzf path:shell kind:zsh
+junegunn/fzf path:bin kind:path
