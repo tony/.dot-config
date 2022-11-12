@@ -4,12 +4,6 @@
 [submodule ".tmux"]
 	path = .tmux
 	url = https://github.com/tony/tmux-config.git
-[submodule ".fonts"]
-	path = .fonts
-	url = https://github.com/tony/dot-fonts.git
-[submodule ".i3"]
-	path = .i3
-	url = https://github.com/tony/i3-config.git
 [submodule ".tmuxp"]
 	path = .tmuxp
 	url = https://github.com/tony/tmuxp-config.git
