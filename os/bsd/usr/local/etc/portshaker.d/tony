@@ -1,7 +1,0 @@
-# /usr/local/etc/portshaker.d/tony
-. /usr/local/share/portshaker/portshaker.subr
-
-method="git"
-git_clone_uri="https://github.com/tony/freebsd-ports.git"
-git_branch="master"
-run_portshaker_command $*

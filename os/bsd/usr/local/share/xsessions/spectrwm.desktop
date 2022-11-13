@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=spectrwm
-Comment=The spectrwm window manager
-Type=Application
-Exec=spectrwm
-TryExec=spectrwm
