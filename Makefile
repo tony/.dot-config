@@ -97,15 +97,6 @@ debian_packages_x11:
 	slop \
 	gammastep
 
-debian_vim:
-	sudo add-apt-repository 'ppa:jonathonf/vim'
-
-debian_node:
-	curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-
-ubuntu_geary:
-	sudo add-apt-repository ppa:geary-team/releases
-
 ubuntu_peek: 
 	sudo add-apt-repository ppa:peek-developers/stable
 	sudo apt update && sudo apt install peek
@@ -124,18 +115,6 @@ ubuntu_i3:
 ubuntu_sway:
 	sudo apt install swayidle swaybg sway-backgrounds sway swaylock \
 		wofi
-
-debian_postgres_12:
-	wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-	echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee  /etc/apt/sources.list.d/pgdg.list
-	sudo apt update
-	sudo apt -y install postgresql-12 postgresql-client-12 postgresql-server-dev-12
-
-debian_postgres_13:
-	wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-	echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee  /etc/apt/sources.list.d/pgdg.list
-	sudo apt update
-	sudo apt -y install postgresql-13 postgresql-client-13 postgresql-server-dev-13
 
 pip_install:
 	# python3.8 -m pip install pip
