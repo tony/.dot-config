@@ -2,7 +2,7 @@ SHELL=/bin/bash
 DOT_CONFIG_DIR=~/.dot-config
 PIP_PACKAGES=python-language-server virtualenv pipenv tmuxp vcspull dotfiles spotdl ptpython git-sweep
 NPM_PACKAGES=npm-check-updates gatsby-cli lerna @angular/cli
-SH_FILES= find . -type f -not -path '*/\.vim*' -and -not -path '*/\.git*' -and -not -path '*/.tmux*' -and -not -path '*/config/base16\-shell*' -and -not -path '*\.shell/prompt/git\-prompt\.sh' | grep -i '.*[.]\(z\)\?sh$$' 2> /dev/null
+SH_FILES= find . -type f -not -path '*/\.vim*' -and -not -path '*/\.git*' -and -not -path '*/.tmux*' -and -not -path '*/config/base16\-shell*' -and -not -path '*\.shell/prompt/git\-prompt\.sh' | grep -i '.*[.]\(z\)\?sh$$\|[.]zsh.*$$' 2> /dev/null
 # Unused packages: browserify nodemon create-next-app bibtex-tidy @microsoft/rush pnpm @nrwl/workspace @nrwl/react
 
 lint:
