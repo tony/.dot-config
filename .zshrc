@@ -79,12 +79,6 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 # Disable hostname completion, because it's slow
 zstyle ':completion:*' hosts off
 
-
-if command -v reattach-to-user-namespace > /dev/null; then
-  alias vim="reattach-to-user-namespace vim"
-  alias nvim="reattach-to-user-namespace nvim"
-fi
-
 # for OS X keychain(1) error, Error: Problem adding; giving up
 # if ! fuser "$SSH_AUTH_SOCK" >/dev/null 2>/dev/null; then
 #   # Nothing has the socket open, it means the agent isn't running
