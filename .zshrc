@@ -56,21 +56,6 @@ zt for OMZ::plugins/history/history.plugin.zsh \
     # Overrides / collides with g
     # OMZ::plugins/git/git.plugin.zsh \
 
-# SPACESHIP_PROMPT_ADD_NEWLINE=false
-# SPACESHIP_PACKAGE_SHOW=false
-# SPACESHIP_GIT_STATUS_STASHED=''
-# SPACESHIP_EXEC_TIME_PREFIX=''
-# SPACESHIP_PROMPT_ORDER=(
-#   dir           # Current directory section
-#   git           # Git section (git_branch + git_status)
-#   venv          # virtualenv section
-#   exec_time     # Execution time
-#   line_sep      # Line break
-#   exit_code     # Exit code section
-#   char          # Prompt character
-# )
-# zinit light denysdovhan/spaceship-prompt
-
 # Thanks @rkoder
 # https://github.com/rkoder/dotfiles/blob/2d792f9091b33f67a2507b70878a7f575c28b5f0/zsh/rc.d/50-zinit.zsh
 if [ "$(uname)" = "Darwin" ]; then
