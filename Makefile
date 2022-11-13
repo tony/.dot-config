@@ -4,7 +4,7 @@ PIP_PACKAGES=python-language-server virtualenv pipenv tmuxp vcspull dotfiles spo
 NPM_PACKAGES=npm-check-updates gatsby-cli lerna @angular/cli
 # Unused packages: browserify nodemon create-next-app bibtex-tidy @microsoft/rush pnpm @nrwl/workspace @nrwl/react
 
-make lint:
+lint:
 	shellcheck -s sh \.shell/**/*.sh
 
 install:
