@@ -9,14 +9,12 @@ if [ -z "$IGNORE_FILE_EXT" ]; then  # No ignores set
        sed s/^..// \
     ) 2> /dev/null"
 
-    export FZF_DEFAULT_COMMAND='
-      (git ls-files --recurse-submodules ||
+    export FZF_DEFAULT_COMMAND='(git ls-files --recurse-submodules ||
        find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
           sed s/^..//) 2> /dev/null'
 
 else  # Exists
-    export FZF_CUSTOM_GREP_IGNORE="
-      grep --ignore-case --invert-match -e '.*[.]\(\
+    export FZF_CUSTOM_GREP_IGNORE="grep --ignore-case --invert-match -e '.*[.]\(\
         ${IGNORE_FILE_EXT} \
       \)' -e '.*\(${IGNORE_FILE_WILD}\).*'
     "
