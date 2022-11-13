@@ -33,9 +33,6 @@ install:
 	mkdir -p ~/.ssh
 	ln -si ${DOT_CONFIG_DIR}/.ssh/config ~/.ssh/config
 
-debian_fix_docker:
-	sudo usermod -aG docker $$USER
-
 debian_pyenv_packages:
 	sudo apt-get update; \
 	sudo apt-get install --no-install-recommends \
