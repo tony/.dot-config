@@ -43,7 +43,7 @@ setopt hist_expire_dups_first
 setopt hist_ignore_all_dups     # no duplicate
 setopt hist_ignore_space      # ignore space prefixed commands
 setopt hist_verify              # show before executing history commands
-setopt inc_append_history       # add commands as they are typed, don't wait until shell exit 
+setopt inc_append_history       # add commands as they are typed, don't wait until shell exit
 setopt share_history            # share hist between sessions
 
 zt for OMZ::lib/history.zsh
@@ -52,10 +52,10 @@ zinit ice wait'!0'
 
 zt for OMZ::plugins/history/history.plugin.zsh \
     OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh
-    # Overrides / collides with g
-    # OMZ::plugins/git/git.plugin.zsh \
+# Overrides / collides with g
+# OMZ::plugins/git/git.plugin.zsh \
 
-# Thanks @rkoder
+    # Thanks @rkoder
 # https://github.com/rkoder/dotfiles/blob/2d792f9091b33f67a2507b70878a7f575c28b5f0/zsh/rc.d/50-zinit.zsh
 if [ "$(uname)" = "Darwin" ]; then
     zinit ice as"program" pick"target/release/starship" \
@@ -99,45 +99,45 @@ zinit light zdharma-continuum/zinit-annex-bin-gem-node
 # Credit: https://github.com/xeho91/.dotfiles/blob/172f1d97f6d51af35981b7c87f024244d16d1540/Linux/Zsh/configurations/plugins/programming_languages.zsh
 # License: Unlicense
 function install_asdf_plugins() {
-	local plugins_list_to_install=( \
-		# https://github.com/asdf-vm/asdf-nodejs
-		nodejs \
-		# https://github.com/danhper/asdf-python
-		python \
-		# https://github.com/code-lever/asdf-rust
-		rust \
-		# https://github.com/kennyp/asdf-golang
-		golang \
-                # https://github.com/asdf-community/asdf-poetry
-                poetry \
-                # https://github.com/halcyon/asdf-java
-                java \
-                # https://github.com/rfrancis/asdf-gradle
-                gradle \
-                # https://github.com/tsuyoshicho/asdf-vim
-                vim \
-	)
-	local installed_plugins=$(asdf plugin list)
-	for plugin in $plugins_list_to_install; do
-		if [[ "$installed_plugins" != *"$plugin"* ]]; then
-			command asdf plugin add $plugin
-			print -P "%F{blue}Added plugin for %K{white} $plugin %k and now installing the latest version...%f"
-			if [[ "$plugin" == "nodejs" ]]; then
-				bash -c "$ASDF_DATA_DIR/plugins/nodejs/bin/import-release-team-keyring"
-			fi
-                        command asdf install $plugin
-			command asdf reshim $plugin
-			print -P "%F{green}Finished installing the lastest version with asdf %K{white} $plugin %k%f."
-		else
-			if [[ "$plugin" == "rust" ]]; then
-				zinit \
-					id-as"cargo-completion" \
-					mv"cargo* -> _cargo" \
-					as"completion" \
-					for https://github.com/rust-lang/cargo/blob/master/src/etc/_cargo
-			fi
-		fi
-	done
+    local plugins_list_to_install=( \
+            # https://github.com/asdf-vm/asdf-nodejs
+        nodejs \
+            # https://github.com/danhper/asdf-python
+        python \
+            # https://github.com/code-lever/asdf-rust
+        rust \
+            # https://github.com/kennyp/asdf-golang
+        golang \
+            # https://github.com/asdf-community/asdf-poetry
+        poetry \
+            # https://github.com/halcyon/asdf-java
+        java \
+            # https://github.com/rfrancis/asdf-gradle
+        gradle \
+            # https://github.com/tsuyoshicho/asdf-vim
+        vim \
+        )
+    local installed_plugins=$(asdf plugin list)
+    for plugin in $plugins_list_to_install; do
+        if [[ "$installed_plugins" != *"$plugin"* ]]; then
+            command asdf plugin add $plugin
+            print -P "%F{blue}Added plugin for %K{white} $plugin %k and now installing the latest version...%f"
+            if [[ "$plugin" == "nodejs" ]]; then
+                bash -c "$ASDF_DATA_DIR/plugins/nodejs/bin/import-release-team-keyring"
+            fi
+            command asdf install $plugin
+            command asdf reshim $plugin
+            print -P "%F{green}Finished installing the lastest version with asdf %K{white} $plugin %k%f."
+        else
+            if [[ "$plugin" == "rust" ]]; then
+                zinit \
+                    id-as"cargo-completion" \
+                    mv"cargo* -> _cargo" \
+                    as"completion" \
+                    for https://github.com/rust-lang/cargo/blob/master/src/etc/_cargo
+            fi
+        fi
+    done
 }
 
 # =========================================================================== #
@@ -146,15 +146,15 @@ function install_asdf_plugins() {
 # https://github.com/asdf-vm/asdf
 # =========================================================================== #
 zinit \
-	id-as"asdf" \
-	atinit'export ASDF_DATA_DIR="$XDG_CONFIG_HOME/asdf"; \
-		export ASDF_CONFIG_FILE="$HOME/.asdfrc";
-		export ASDF_PYTHON_DEFAULT_PACKAGES_FILE="$ZDOTDIR/.default-python-packages";
-		export ASDF_NPM_DEFAULT_PACKAGES_FILE="$ZDOTDIR/.default-npm-packages"; \
-		export ASDF_POETRY_INSTALL_URL="https://install.python-poetry.org"' \
-	src"asdf.sh" \
-	atload'install_asdf_plugins; unfunction install_asdf_plugins' \
-	for @asdf-vm/asdf
+    id-as"asdf" \
+    atinit'export ASDF_DATA_DIR="$XDG_CONFIG_HOME/asdf"; \
+    export ASDF_CONFIG_FILE="$HOME/.asdfrc";
+export ASDF_PYTHON_DEFAULT_PACKAGES_FILE="$ZDOTDIR/.default-python-packages";
+export ASDF_NPM_DEFAULT_PACKAGES_FILE="$ZDOTDIR/.default-npm-packages"; \
+    export ASDF_POETRY_INSTALL_URL="https://install.python-poetry.org"' \
+    src"asdf.sh" \
+    atload'install_asdf_plugins; unfunction install_asdf_plugins' \
+    for @asdf-vm/asdf
 
 zinit load tony/zdharma-null
 
@@ -169,12 +169,12 @@ zinit load MichaelAquilina/zsh-autoswitch-virtualenv
 zplugin ice wait"1" lucid
 
 pathprepend() {
-  for ARG in "$@"
-  do
-    if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
-        PATH="$ARG${PATH:+":$PATH"}"
-    fi
-  done
+    for ARG in "$@"
+    do
+        if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
+            PATH="$ARG${PATH:+":$PATH"}"
+        fi
+    done
 }
 
 pathprepend $HOME/bin

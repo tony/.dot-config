@@ -7,6 +7,6 @@ fi
 python -c "import ipython" &> /dev/null
 
 if [[ $? -eq 2 ]]; then
-  export PYTHONBREAKPOINT="ipython.set_trace"
+    export PYTHONBREAKPOINT="ipython.set_trace"
 fi
 
