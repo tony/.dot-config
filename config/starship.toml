@@ -37,6 +37,7 @@ format = ""
 
 [lua]
 format = ""
+disabled = true
 
 # Workaround for WSL + systemd: https://github.com/starship/starship/issues/4555
 [container]
