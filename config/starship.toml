@@ -35,6 +35,9 @@ tag_symbol = " "
 [cmd_duration]
 format = ""
 
+[lua]
+format = ""
+
 # Workaround for WSL + systemd: https://github.com/starship/starship/issues/4555
 [container]
 disabled = true
