@@ -488,6 +488,9 @@
     remotes:
       tony: 'git+ssh://git@github.com/tony/g.git'
 
+  gp-libs:
+    repo: 'git+ssh://git@github.com/git-pull/gp-libs.git'
+
   libtmux:
     repo: 'git+ssh://git@github.com/tmux-python/libtmux.git'
     remotes:
