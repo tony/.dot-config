@@ -143,6 +143,7 @@ vcspull:
 	libvcs \
 	vcspull \
 	g \
+	gp-libs \
 	unihan-db \
 	unihan-etl \
 	cihai \
