@@ -280,3 +280,14 @@ winget_export_packages:
 
 winget_import_packages:
 	winget.exe import -i ~/.dot-config/os/w11/winget-packages.json
+
+wsl_shortcuts:
+	# When using intercop.appendWindowsPath = false, this makes sure those paths are available again
+	ln -sf `wslpath C:/Windows/System32/wsl.exe` ~/.local/bin/wsl
+	ln -sf `wslpath C:/Windows/System32/wsl.exe` ~/.local/bin/wsl.exe
+	ln -sf `wslpath \`wslvar USERPROFILE\`"\AppData\Local\Microsoft\WindowsApps\winget.exe"` ~/.local/bin/winget.exe
+	ln -sf `wslpath \`wslvar USERPROFILE\`"\AppData\Local\Microsoft\WindowsApps\winget.exe"` ~/.local/bin/winget
+	ln -sf `wslpath C:/Windows/System32/notepad.exe` ~/.local/bin/notepad.exe
+	ln -sf `wslpath C:/Windows/System32/notepad.exe` ~/.local/bin/notepad
+	ln -sf `wslpath C:/Windows/explorer.exe` ~/.local/bin/explorer.exe
+	ln -sf `wslpath C:/Windows/explorer.exe` ~/.local/bin/explorer
