@@ -77,6 +77,8 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 
 # Disable hostname completion, because it's slow
 zstyle ':completion:*' hosts off
+# Ignore DLL's on WSL2, these make it slower to complete t<tab>
+zstyle ':completion:*' ignored-patterns '*?.aux' '*?.bbl' '*?.blg' '*?.out' '*?.log' '*?.toc' '*?.snm' '*?.nav' '*?.pdf' '*?.bak' '*\~' '*?.dll'
 
 # for OS X keychain(1) error, Error: Problem adding; giving up
 # if ! fuser "$SSH_AUTH_SOCK" >/dev/null 2>/dev/null; then
