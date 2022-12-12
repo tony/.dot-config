@@ -19,3 +19,5 @@ junegunn/fzf kind:clone
 # # Add completion scripts and fzf binary to PATH
 junegunn/fzf path:shell kind:zsh
 junegunn/fzf path:bin kind:path
+
+MichaelAquilina/zsh-autoswitch-virtualenv

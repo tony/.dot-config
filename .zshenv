@@ -26,6 +26,9 @@ if [ -n XDG_CONFIG_HOME ]; then
   export XDG_CONFIG_HOME="$HOME/.config"
 fi
 
+# MichaelAquilina/zsh-autoswitch-virtualenv 
+export AUTOSWITCH_SILENT=1
+
 pathprepend() {
     for ARG in "$@"
     do
