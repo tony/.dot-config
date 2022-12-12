@@ -13,6 +13,15 @@ if [ -d /etc/profile.d ]; then
   unset i
 fi
 
+if [ -d $HOME/.dot-config/.shell/vars.d/ ]; then
+  for i in $HOME/.dot-config/.shell/vars.d/*.sh; do
+    if [ -r $i ]; then
+      . $i
+    fi
+  done
+  unset i
+fi
+
 if [ -n XDG_CONFIG_HOME ]; then
   export XDG_CONFIG_HOME="$HOME/.config"
 fi
