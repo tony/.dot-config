@@ -5,19 +5,6 @@
 export ASDF_DATA_DIR="$XDG_CONFIG_HOME/asdf";
 export ASDF_CONFIG_FILE="$HOME/.asdfrc";
 
-# PATH
-pathprepend() {
-    for ARG in "$@"
-    do
-        if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
-            PATH="$ARG${PATH:+":$PATH"}"
-        fi
-    done
-}
-
-pathprepend $HOME/bin
-pathprepend $HOME/.local/bin
-
 # Cache fix: https://github.com/robbyrussell/oh-my-zsh/issues/5874
 export ZSH_CACHE_DIR=$HOME/.zsh
 

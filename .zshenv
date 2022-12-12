@@ -26,4 +26,14 @@ if [ -n XDG_CONFIG_HOME ]; then
   export XDG_CONFIG_HOME="$HOME/.config"
 fi
 
+pathprepend() {
+    for ARG in "$@"
+    do
+        if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
+            PATH="$ARG${PATH:+":$PATH"}"
+        fi
+    done
+}
 
+pathprepend $HOME/bin
+pathprepend $HOME/.local/bin
