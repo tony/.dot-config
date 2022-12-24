@@ -148,3 +148,7 @@ fi
 
 # Load starship prompt
 eval "$(starship init zsh)"
+
+if [[ -f ~/.zshrc.local ]] then
+  source ~/.zshrc.local
+fi
