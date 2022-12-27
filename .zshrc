@@ -2,8 +2,12 @@
 #
 # Constants
 #
-export ASDF_DATA_DIR="$XDG_CONFIG_HOME/asdf";
-export ASDF_CONFIG_FILE="$HOME/.asdfrc";
+export ASDF_DATA_DIR="$XDG_CONFIG_HOME/asdf"
+export ASDF_CONFIG_FILE="$HOME/.asdfrc"
+export ASDF_CRATE_DEFAULT_PACKAGES_FILE="$ZDOTDIR/.default-cargo-crates"
+export ASDF_PYTHON_DEFAULT_PACKAGES_FILE="$ZDOTDIR/.default-python-packages"
+export ASDF_NPM_DEFAULT_PACKAGES_FILE="$ZDOTDIR/.default-npm-packages"
+export ASDF_POETRY_INSTALL_URL="https://install.python-poetry.org"
 
 # Cache fix: https://github.com/robbyrussell/oh-my-zsh/issues/5874
 export ZSH_CACHE_DIR=$HOME/.zsh
