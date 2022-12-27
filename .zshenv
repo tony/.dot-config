@@ -44,3 +44,5 @@ pathprepend $HOME/.local/bin
 if which yarn 1>/dev/null 2>&1; then
     pathprepend `yarn global bin`
 fi
+
+export PYTHONSTARTUP=$HOME/.pythonrc
