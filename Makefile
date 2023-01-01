@@ -30,6 +30,8 @@ install:
 	ln -si ${DOT_CONFIG_DIR}/.zfunc/ ~
 	ln -si ${DOT_CONFIG_DIR}/.tmux/ ~
 	ln -si ${DOT_CONFIG_DIR}/.tmuxp/ ~
+	ln -si ${DOT_CONFIG_DIR}/.zsh_plugins.txt ~
+	ln -si ${DOT_CONFIG_DIR}/.dotfilesrc ~
 	mkdir -p ~/.ssh
 	ln -si ${DOT_CONFIG_DIR}/.ssh/config ~/.ssh/config
 
