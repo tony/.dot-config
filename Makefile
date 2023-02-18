@@ -295,3 +295,6 @@ wsl_shortcuts:
 	ln -sf `wslpath C:/Windows/explorer.exe` ~/.local/bin/explorer
 	ln -sf `wslpath \`wslvar USERPROFILE\``/AppData/Local/Programs/Microsoft\ VS\ Code/code.exe ~/.local/bin/code.exe
 	ln -sf `wslpath \`wslvar USERPROFILE\``/AppData/Local/Programs/Microsoft\ VS\ Code/code.exe ~/.local/bin/code
+
+asdf_plugins_install:
+	cut -d' ' -f1 .tool-versions|xargs -i asdf plugin add  {}
