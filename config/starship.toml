@@ -3,7 +3,8 @@
 
 # Don't print a new line at the start of the prompt
 add_newline = false
-command_timeout = 2000
+command_timeout = 300
+scan_timeout = 15
 
 [line_break]
 disabled = true
