@@ -23,6 +23,9 @@ disabled = true
 [cmake]
 disabled = true
 
+[elixir]
+disabled = true
+
 [golang]
 disabled = true
 
