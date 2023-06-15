@@ -130,6 +130,10 @@ antidote load
 #
 # Install starship prompt
 # Install fzf binary if not found
+
+# Starship: Disable warnings (e.g. command_timeout)
+export STARSHIP_LOG=error
+
 if ! [[ -e "$(antidote home)/junegunn/fzf/bin/fzf" ]]
 then
   antidote load
