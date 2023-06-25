@@ -123,7 +123,6 @@ pip_install:
 	curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
 pip_install_packages:
-	pip install --user -U pip
 	pip install --user -U ${PIP_PACKAGES}
 
 pip_uninstall_packages:
