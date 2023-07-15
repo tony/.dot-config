@@ -1,4 +1,6 @@
 # via asdf-rust
 # https://github.com/code-lever/asdf-rust
-
+dprint
+gitui
+hyperfine
 git-interactive-rebase-tool
