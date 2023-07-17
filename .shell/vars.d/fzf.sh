@@ -1,5 +1,6 @@
 #!/bin/zsh
 
+# IGNORE_FILE_EXT is set by ./ignore.sh
 if [ -z "$IGNORE_FILE_EXT" ]; then  # No ignores set
 
     export FZF_FIND_COMMAND="find . -path '*/\.*' -prune -o -type f -print -o -type l -print"

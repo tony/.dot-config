@@ -14,6 +14,11 @@ if [ -d /etc/profile.d ]; then
 fi
 
 if [ -d $HOME/.dot-config/.shell/vars.d/ ]; then
+  # These vars are at least used by fzf.sh
+  if [ -r $HOME/.dot-config/.shell/vars.d/ignore.sh ]; then
+      . $HOME/.dot-config/.shell/vars.d/ignore.sh
+  fi
+
   for i in $HOME/.dot-config/.shell/vars.d/*.sh; do
     if [ -r $i ]; then
       . $i
