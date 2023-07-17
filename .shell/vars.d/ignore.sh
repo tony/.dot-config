@@ -19,7 +19,8 @@ IGNORE_FILE_EXT+="\|pyc"
 IGNORE_FILE_EXT+="\|js.map"
 
 export IGNORE_FILE_WILD=""
-IGNORE_FILE_WILD+="^cache\|^_cache"
+IGNORE_FILE_WILD+="^snap\/"
+IGNORE_FILE_WILD+="\|^cache\|^_cache"
 IGNORE_FILE_WILD+="\|Library\|^Cache"  # mac
 IGNORE_FILE_WILD+="\|AppData"  # Windows
 IGNORE_FILE_WILD+="\|Android"
