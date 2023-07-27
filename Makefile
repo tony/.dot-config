@@ -296,4 +296,4 @@ wsl_shortcuts:
 	ln -sf `wslpath \`wslvar USERPROFILE\``/AppData/Local/Programs/Microsoft\ VS\ Code/code.exe ~/.local/bin/code
 
 asdf_plugins_install:
-	cut -d' ' -f1 .tool-versions|xargs -i asdf plugin add  {}
+	cut -d' ' -f1 .tool-versions|xargs -I '{}' asdf plugin add '{}'
