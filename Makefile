@@ -297,3 +297,6 @@ wsl_shortcuts:
 
 asdf_plugins_install:
 	cut -d' ' -f1 .tool-versions|xargs -I '{}' asdf plugin add '{}'
+
+asdf_install_with_nodejs_mirror:
+	env NODEJS_ORG_MIRROR=https://mirrors.dotsrc.org/nodejs/release/ asdf install
