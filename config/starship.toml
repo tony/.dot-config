@@ -46,6 +46,9 @@ disabled = true
 [aws]
 disabled = true
 
-# Workaround for WSL + systemd: https://github.com/starship/starship/issues/4555
+[terraform]
+disabled = true
+
+# Workaround for WSL + systemd: https://github.com/starship/starship/issues/4556
 [container]
 disabled = true
