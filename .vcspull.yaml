@@ -65,6 +65,11 @@
     remotes:
       tony: "git+ssh://git@github.com/tony/pytest-splinter.git"
 
+  ptpython:
+    repo: "git+https://github.com/prompt-toolkit/ptpython.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/ptpython.git"
+
   bumblebee-status:
     repo: "git+https://github.com/tobi-wan-kenobi/bumblebee-status.git"
     remotes:
