@@ -300,3 +300,6 @@ asdf_plugins_install:
 
 asdf_install_with_nodejs_mirror:
 	env NODEJS_ORG_MIRROR=https://mirrors.dotsrc.org/nodejs/release/ asdf install
+
+htoprc_ignore_changes:
+	git update-index --assume-unchanged config/htop/htoprc
