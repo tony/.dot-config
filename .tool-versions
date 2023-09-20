@@ -5,5 +5,5 @@ rust 1.72.0
 golang 1.21.0
 java openjdk-20.0.1
 gradle 8.3
-elixir 1.14.4
-erlang 25.3.1
+elixir 1.14.2-otp-25
+erlang 25.1.2
