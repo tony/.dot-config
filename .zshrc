@@ -157,6 +157,14 @@ fi
 # Load starship prompt
 eval "$(starship init zsh)"
 
+# AWS CLI v2 completions
+if command -v aws_completer &> /dev/null; then
+  AWS_ZSH_COMPLETION_SCRIPT_PATH=~/.shell/completions/aws_zsh_completer.sh
+  if [[ -r $AWS_ZSH_COMPLETION_SCRIPT_PATH ]]; then
+    [[ -r $AWS_ZSH_COMPLETION_SCRIPT_PATH ]] && source $AWS_ZSH_COMPLETION_SCRIPT_PATH
+  fi
+fi
+
 if [[ -f ~/.zshrc.local ]] then
   source ~/.zshrc.local
 fi
