@@ -165,6 +165,11 @@ if command -v aws_completer &> /dev/null; then
   fi
 fi
 
+if command -v terraform &> /dev/null; then
+  autoload -U +X bashcompinit && bashcompinit
+  complete -o nospace -C terraform terraform
+fi
+
 if [[ -f ~/.zshrc.local ]] then
   source ~/.zshrc.local
 fi
