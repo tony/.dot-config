@@ -1,143 +1,142 @@
 ~/work/peergrade:
   eduflow-api-examples:
-    repo: 'git+ssh://git@github.com/eduflow/api-examples.git'
+    repo: "git+ssh://git@github.com/eduflow/api-examples.git"
     remotes:
-      eduflow: 'git+ssh://git@github.com/eduflow/api-examples.git'
-      tony: 'git+ssh://git@github.com/tony/api-examples.git'
+      eduflow: "git+ssh://git@github.com/eduflow/api-examples.git"
+      tony: "git+ssh://git@github.com/tony/api-examples.git"
   django-assets:
-    repo: 'git+https://github.com/miracle2k/django-assets.git'
+    repo: "git+https://github.com/miracle2k/django-assets.git"
     remotes:
-      eduflow: 'git+ssh://git@github.com/eduflow/django-assets.git'
-      tony: 'git+ssh://git@github.com/tony/django-assets.git'
+      eduflow: "git+ssh://git@github.com/eduflow/django-assets.git"
+      tony: "git+ssh://git@github.com/tony/django-assets.git"
 
   videojs-record:
-    repo: 'git+https://github.com/collab-project/videojs-record.git'
+    repo: "git+https://github.com/collab-project/videojs-record.git"
     remotes:
-      eduflow: 'git+ssh://git@github.com/eduflow/videojs-record.git'
-      tony: 'git+ssh://git@github.com/tony/videojs-record.git'
+      eduflow: "git+ssh://git@github.com/eduflow/videojs-record.git"
+      tony: "git+ssh://git@github.com/tony/videojs-record.git"
 
   curlify:
-    repo: 'git+https://github.com/ofw/curlify.git'
+    repo: "git+https://github.com/ofw/curlify.git"
     remotes:
-      eduflow: 'git+ssh://git@github.com/eduflow/curlify.git'
-      tony: 'git+ssh://git@github.com/tony/curlify.git'
+      eduflow: "git+ssh://git@github.com/eduflow/curlify.git"
+      tony: "git+ssh://git@github.com/tony/curlify.git"
 
   django-rq-dashboard:
-    repo: 'git+https://github.com/brutasse/django-rq-dashboard.git'
+    repo: "git+https://github.com/brutasse/django-rq-dashboard.git"
     remotes:
-      eduflow: 'git+ssh://git@github.com/eduflow/django-rq-dashboard.git'
-      sbussetti: 'git+ssh://git@github.com/sbussetti/django-rq-dashboard.git'
-      morlandi: 'git+ssh://git@github.com/morlandi/django-rq-dashboard.git'
+      eduflow: "git+ssh://git@github.com/eduflow/django-rq-dashboard.git"
+      sbussetti: "git+ssh://git@github.com/sbussetti/django-rq-dashboard.git"
+      morlandi: "git+ssh://git@github.com/morlandi/django-rq-dashboard.git"
 
   react-google-picker:
-    repo: 'git+https://github.com/sdoomz/react-google-picker.git'
+    repo: "git+https://github.com/sdoomz/react-google-picker.git"
     remotes:
-      eduflow: 'git+ssh://git@github.com/eduflow/react-google-picker.git'
-      tony: 'git+ssh://git@github.com/tony/react-google-picker.git'
+      eduflow: "git+ssh://git@github.com/eduflow/react-google-picker.git"
+      tony: "git+ssh://git@github.com/tony/react-google-picker.git"
 
   react-quill:
-    repo: 'git+https://github.com/zenoamaro/react-quill.git'
+    repo: "git+https://github.com/zenoamaro/react-quill.git"
     remotes:
-      eduflow: 'git+ssh://git@github.com/eduflow/react-quill.git'
-      tony: 'git+ssh://git@github.com/tony/react-quill.git'
+      eduflow: "git+ssh://git@github.com/eduflow/react-quill.git"
+      tony: "git+ssh://git@github.com/tony/react-quill.git"
 
   react-plyr:
-    repo: 'git+https://github.com/xDae/react-plyr.git'
+    repo: "git+https://github.com/xDae/react-plyr.git"
     remotes:
-      eduflow: 'git+ssh://git@github.com/eduflow/react-plyr.git'
-      tony: 'git+ssh://git@github.com/tony/react-plyr.git'
+      eduflow: "git+ssh://git@github.com/eduflow/react-plyr.git"
+      tony: "git+ssh://git@github.com/tony/react-plyr.git"
 
   quill:
-    repo: 'git+https://github.com/quilljs/quill.git'
+    repo: "git+https://github.com/quilljs/quill.git"
     remotes:
-      eduflow: 'git+ssh://git@github.com/eduflow/quill.git'
-      tony: 'git+ssh://git@github.com/tony/quill.git'
+      eduflow: "git+ssh://git@github.com/eduflow/quill.git"
+      tony: "git+ssh://git@github.com/tony/quill.git"
 
-  flask: 
-    repo: 'git+https://github.com/mitsuhiko/flask.git'
+  flask:
+    repo: "git+https://github.com/mitsuhiko/flask.git"
     remotes:
-      tony: 'git+ssh://git@github.com/tony/flask.git'
-      eduflow: 'git+ssh://git@github.com/eduflow/flask.git'
+      tony: "git+ssh://git@github.com/tony/flask.git"
+      eduflow: "git+ssh://git@github.com/eduflow/flask.git"
 
   mmh3:
-    repo: 'git+https://github.com/hajimes/mmh3.git'
+    repo: "git+https://github.com/hajimes/mmh3.git"
     remotes:
-      tony: 'git+ssh://git@github.com/tony/mmh3.git'
-      eduflow: 'git+ssh://git@github.com/eduflow/mmh3.git'
-      honnibal: 'git+ssh://git@github.com/honnibal/mmh3.git'
+      tony: "git+ssh://git@github.com/tony/mmh3.git"
+      eduflow: "git+ssh://git@github.com/eduflow/mmh3.git"
+      honnibal: "git+ssh://git@github.com/honnibal/mmh3.git"
 
   django-celery-monitor:
-    repo: 'git+https://github.com/jezdez/django-celery-monitor.git'
+    repo: "git+https://github.com/jezdez/django-celery-monitor.git"
     remotes:
-      eduflow: 'git+ssh://git@github.com/eduflow/django-celery-monitor.git'
-      tony: 'git+ssh://git@github.com/tony/django-celery-monitor.git'
+      eduflow: "git+ssh://git@github.com/eduflow/django-celery-monitor.git"
+      tony: "git+ssh://git@github.com/tony/django-celery-monitor.git"
 
   django-webpack-loader:
-    repo: 'git+https://github.com/owais/django-webpack-loader.git'
+    repo: "git+https://github.com/owais/django-webpack-loader.git"
     remotes:
-      eduflow: 'git+ssh://git@github.com/eduflow/django-webpack-loader.git'
-      tony: 'git+ssh://git@github.com/tony/django-webpack-loader.git'
-      develtech: 'git+ssh://git@github.com/develtech/django-webpack-loader.git'
-      alihazemfarouk: 'git+ssh://git@github.com/alihazemfarouk/django-webpack-loader.git'
-      naivefeeling-flask-webpack-loader: 'git+ssh://git@github.com/naivefeeling/flask-webpack-loader.git'
+      eduflow: "git+ssh://git@github.com/eduflow/django-webpack-loader.git"
+      tony: "git+ssh://git@github.com/tony/django-webpack-loader.git"
+      develtech: "git+ssh://git@github.com/develtech/django-webpack-loader.git"
+      alihazemfarouk: "git+ssh://git@github.com/alihazemfarouk/django-webpack-loader.git"
+      naivefeeling-flask-webpack-loader: "git+ssh://git@github.com/naivefeeling/flask-webpack-loader.git"
 
   webpack-bundle-tracker:
-    repo: 'git+https://github.com/owais/webpack-bundle-tracker.git'
+    repo: "git+https://github.com/owais/webpack-bundle-tracker.git"
     remotes:
-      eduflow: 'git+ssh://git@github.com/eduflow/webpack-bundle-tracker.git'
-      tony: 'git+ssh://git@github.com/tony/webpack-bundle-tracker.git'
-      develtech: 'git+ssh://git@github.com/develtech/webpack-bundle-tracker.git'
-      alihazemfarouk: 'git+ssh://git@github.com/alihazemfarouk/webpack-bundle-tracker.git'
+      eduflow: "git+ssh://git@github.com/eduflow/webpack-bundle-tracker.git"
+      tony: "git+ssh://git@github.com/tony/webpack-bundle-tracker.git"
+      develtech: "git+ssh://git@github.com/develtech/webpack-bundle-tracker.git"
+      alihazemfarouk: "git+ssh://git@github.com/alihazemfarouk/webpack-bundle-tracker.git"
 
   fakeredis:
-    repo: 'git+https://github.com/jamesls/fakeredis.git'
+    repo: "git+https://github.com/jamesls/fakeredis.git"
     remotes:
-      eduflow: 'git+ssh://git@github.com/eduflow/fakeredis.git'
-      tony: 'git+ssh://git@github.com/tony/fakeredis.git'
+      eduflow: "git+ssh://git@github.com/eduflow/fakeredis.git"
+      tony: "git+ssh://git@github.com/tony/fakeredis.git"
 
   django-mongoengine:
-    repo: 'git+https://github.com/MongoEngine/django-mongoengine.git'
+    repo: "git+https://github.com/MongoEngine/django-mongoengine.git"
     remotes:
-      eduflow: 'git+ssh://git@github.com/eduflow/django-mongoengine.git'
+      eduflow: "git+ssh://git@github.com/eduflow/django-mongoengine.git"
 
-  pymongo-basic-profiler: 'git+ssh://git@github.com/eduflow/pymongo-basic-profiler.git'
+  pymongo-basic-profiler: "git+ssh://git@github.com/eduflow/pymongo-basic-profiler.git"
   python-socketio:
-    repo: 'git+https://github.com/miguelgrinberg/python-socketio.git'
+    repo: "git+https://github.com/miguelgrinberg/python-socketio.git"
     remotes:
-      eduflow: 'git+ssh://git@github.com/eduflow/python-socketio.git'
+      eduflow: "git+ssh://git@github.com/eduflow/python-socketio.git"
 
   sphinx-graphiql:
-    repo: 'git+https://github.com/hasura/sphinx-graphiql.git'
+    repo: "git+https://github.com/hasura/sphinx-graphiql.git"
     remotes:
-      eduflow: 'git+ssh://git@github.com/eduflow/sphinx-graphiql.git'
-
+      eduflow: "git+ssh://git@github.com/eduflow/sphinx-graphiql.git"
 
   flask-admin:
-    repo: 'git+https://github.com/flask-admin/flask-admin.git'
+    repo: "git+https://github.com/flask-admin/flask-admin.git"
     remotes:
-      eduflow: 'git+ssh://git@github.com/eduflow/flask-admin.git'
+      eduflow: "git+ssh://git@github.com/eduflow/flask-admin.git"
 
   mongoengine-slugfield:
-    repo: 'git+https://github.com/bennylope/mongoengine-extras.git'
+    repo: "git+https://github.com/bennylope/mongoengine-extras.git"
     remotes:
-      eduflow: 'git+ssh://git@github.com/eduflow/mongoengine-slugfield.git'
+      eduflow: "git+ssh://git@github.com/eduflow/mongoengine-slugfield.git"
 
-  mongoengine-objectidmapfield: 'git+https://github.com/eduflow/mongoengine-objectidmapfield.git'
+  mongoengine-objectidmapfield: "git+https://github.com/eduflow/mongoengine-objectidmapfield.git"
 
   extras-mongoengine:
-    repo: 'git+https://github.com/MongoEngine/extras-mongoengine.git'
+    repo: "git+https://github.com/MongoEngine/extras-mongoengine.git"
     remotes:
-      eduflow: 'git+ssh://git@github.com/eduflow/extras-mongoengine.git'
+      eduflow: "git+ssh://git@github.com/eduflow/extras-mongoengine.git"
 
   flask-mongoengine:
-    repo: 'git+https://github.com/MongoEngine/flask-mongoengine.git'
+    repo: "git+https://github.com/MongoEngine/flask-mongoengine.git"
     remotes:
-      eduflow: 'git+ssh://git@github.com/eduflow/flask-mongoengine.git'
+      eduflow: "git+ssh://git@github.com/eduflow/flask-mongoengine.git"
   python-saml:
-    repo: 'git+https://github.com/onelogin/python-saml.git'
+    repo: "git+https://github.com/onelogin/python-saml.git"
     remotes:
-      eduflow: 'git+ssh://git@github.com/eduflow/python-saml.git'
+      eduflow: "git+ssh://git@github.com/eduflow/python-saml.git"
   python3-saml:
-    repo: 'git+https://github.com/onelogin/python3-saml.git'
+    repo: "git+https://github.com/onelogin/python3-saml.git"
     remotes:
-      eduflow: 'git+ssh://git@github.com/eduflow/python3-saml.git'
+      eduflow: "git+ssh://git@github.com/eduflow/python3-saml.git"
