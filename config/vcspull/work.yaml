@@ -341,6 +341,11 @@
       tony: 'git+ssh://git@github.com/tony/django-allauth.git'
       eduflow: 'git+ssh://git@github.com/eduflow/django-allauth.git'
 
+  django-stubs: 
+    repo: 'git+https://github.com/typeddjango/django-stubs.git'
+    remotes:
+      tony: 'git+ssh://git@github.com/tony/django-stubs.git'
+
   django-manager-utils: 
     repo: 'git+https://github.com/ambitioninc/django-manager-utils.git'
     remotes:
