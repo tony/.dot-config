@@ -401,11 +401,6 @@
     remotes:
       tony: "git+ssh://git@github.com/tony/python-prompt-toolkit.git"
 
-  ptpython:
-    repo: "git+https://github.com/jonathanslenders/ptpython.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/ptpython.git"
-
   pymux:
     repo: "git+https://github.com/jonathanslenders/pymux.git"
     remotes:
