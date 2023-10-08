@@ -279,6 +279,11 @@
     remotes:
       tony: "git+ssh://git@github.com/tony/pytest-watcher.git"
 
+  pygments:
+    repo: "git+https://github.com/pygments/pygments.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/pygments.git"
+
   watching-testrunner:
     repo: "git+https://github.com/tony/watching-testrunner.git"
 
