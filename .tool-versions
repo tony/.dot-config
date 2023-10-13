@@ -4,6 +4,6 @@ nodejs 20.8.0 19.8.1 18.12.1 18.9.0 18.5.0 16.20.0 16.13.0 16.10.0 16.4.0
 rust 1.73.0
 golang 1.21.3
 java openjdk-20.0.1
-gradle 8.3
+gradle 8.4
 elixir 1.14.2-otp-25
 erlang 25.1.2
