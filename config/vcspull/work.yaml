@@ -269,6 +269,11 @@
     repo: "git+https://github.com/moodle/moodle-docker.git"
 
 ~/work/python:
+  graphql-sync-dataloaders:
+    repo: "git+https://github.com/jkimbo/graphql-sync-dataloaders.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/graphql-sync-dataloaders.git"
+
   argcomplete:
     repo: "git+https://github.com/kislyuk/argcomplete.git"
     remotes:
