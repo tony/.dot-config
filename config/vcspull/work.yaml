@@ -269,6 +269,11 @@
     repo: "git+https://github.com/moodle/moodle-docker.git"
 
 ~/work/python:
+  graphql-core-promise:
+    repo: "git+https://github.com/fellowapp/graphql-core-promise.git"
+    remotes:
+      tony: "git+git@github.com:tony/graphql-core-promise.git"
+
   graphql-sync-dataloaders:
     repo: "git+https://github.com/jkimbo/graphql-sync-dataloaders.git"
     remotes:
