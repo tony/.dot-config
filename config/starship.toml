@@ -24,6 +24,9 @@ disabled = true
 [cmake]
 disabled = true
 
+[docker_context]
+disabled = true
+
 [elixir]
 disabled = true
 
