@@ -170,6 +170,10 @@ if command -v terraform &> /dev/null; then
   complete -o nospace -C terraform terraform
 fi
 
+if [[ -d ~/.yarn/bin ]] then
+  export PATH=$PATH:~/.yarn/bin
+fi
+
 if [[ -f ~/.zshrc.local ]] then
   source ~/.zshrc.local
 fi
