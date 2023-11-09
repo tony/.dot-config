@@ -1,49 +1,85 @@
 {
-    "telemetry.enableTelemetry": false,
-    "gitlens.advanced.messages": {
-        "suppressShowKeyBindingsNotice": true
-    },
-    "gitlens.historyExplorer.enabled": true,
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.statusBar.feedback.visible": false,
-    "window.zoomLevel": 0,
-    "files.exclude": {
-        "**/__pycache__": true,
-        "**/.*cache*": true,
-        "**/.cache": true,
-        "**/.env*": true,
-        "**/.venv*": true,
-        "**/*.pyc": true,
-        "**/*.so": true
-    },
-    "flow.useNPMPackagedFlow": true,
-    "flow.enabled": false,
-    "javascript.validate.enable": false,
-    "vim.useSystemClipboard": true,
-    "workbench.colorTheme": "Monokai Dimmed",
-    "breadcrumbs.enabled": true,
-    "telemetry.enableCrashReporter": false,
-    "gitlens.advanced.telemetry.enabled": false,
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "python.jediEnabled": false,
-    "search.exclude": {
-        "**./.env*": true,
-        "**/.cache*": true,
-        "**/.venv*": true,
-        "**/*dist*": true,
-        "**/node_modules*": true,
-        "**/bower_components*": true,
-        "**/build*": true,
-        "**/static*": true
-    },
-    "vim.camelCaseMotion.enable": true,
-    "debug.node.autoAttach": "on",
-    "debug.javascript.usePreview": true,
-    "githubPullRequests.telemetry.enabled": false,
-    "python.languageServer": "Microsoft",
-    "[python]": {
-        "editor.defaultFormatter": "ms-vsliveshare.vsliveshare"
-    },
-    "git.autofetch": true
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "breadcrumbs.enabled": false,
+  "cSpell.enableFiletypes": ["!json", "!jsonc", "!yaml"],
+  "cSpell.userWords": ["Endopsychic", "Fairbairn", "sovereignity"],
+  "docsYaml.telemetry.enableTelemetry": false,
+  "dotnetAcquisitionExtension.enableTelemetry": false,
+  "editor.cursorStyle": "line",
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": false,
+  "editor.lineNumbers": "on",
+  "editor.renderControlCharacters": true,
+  "editor.tabSize": 8,
+  "editor.unicodeHighlight.allowedCharacters": {
+    "…": true,
+    "”": true,
+    "’": true,
+    "“": true
+  },
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off",
+  "files.autoSave": "afterDelay",
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/.mypy_cache": true,
+    "**/.ruff_cache": true,
+    "**/*.pyc": true
+  },
+  "files.watcherExclude": {
+    "**/.pytest_cache/*/**": true,
+    "**/.ruff_cache/*/**": true,
+    "**/.mypy_cache/*/**": true,
+    "**/bower_components/*/**": true,
+    "**/node_modules/*/**": true
+  },
+  "git.autofetch": true,
+  "git.openRepositoryInParentFolders": "never",
+  "gitlens.views.fileHistory.avatars": false,
+  "python.languageServer": "Pylance",
+  "python.testing.unittestArgs": ["-v", "-s", "-p", "*test*.py"],
+  "python.venvFolders": ["~/.cache/pypoetry/virtualenvs/"],
+  "redhat.telemetry.enabled": false,
+  "search.exclude": {
+    "**/.pytest_cache": true,
+    "**/.mypy_cache": true,
+    "**/.ruff_cache": true,
+    "dump/": true
+  },
+  "security.workspace.trust.untrustedFiles": "newWindow",
+  "settingsSync.ignoredSettings": ["-python.venvFolders"],
+  "telemetry.telemetryLevel": "off",
+  "vim.camelCaseMotion.enable": true,
+  "window.zoomLevel": 0,
+  "workbench.colorCustomizations": {},
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "workbench.settings.applyToAllProfiles": [
+    "cSpell.enableFiletypes",
+    "python.venvFolders",
+    "editor.defaultFormatter"
+  ],
+  "workbench.startupEditor": "newUntitledFile",
+  "yaml.schemas": {
+    "~/.vscode/extensions/docsmsft.docs-yaml-1.0.1/dist/toc.schema.json": "/toc\\.yml/i"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
