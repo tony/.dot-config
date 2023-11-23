@@ -7,6 +7,3 @@ java openjdk-20.0.1
 gradle 8.4
 elixir 1.14.2-otp-25
 erlang 25.1.2
-clang-format 17
-clang-query 17
-clang-tidy 17
