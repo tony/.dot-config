@@ -139,6 +139,14 @@ eval "$(starship init zsh)"
 # Completions
 # 
 
+# Ensure zfunc directory exists
+if [[ ! -d ~/.zfunc ]]; then
+  mkdir ~/.zfunc
+fi
+
+# poetry: https://github.com/python-poetry/poetry#enable-tab-completion-for-bash-fish-or-zsh
+fpath+=~/.zfunc
+
 # asdf completions
 if [[ -d $ASDF_DIR/completions ]]; then
   fpath=(${ASDF_DIR}/completions $fpath)
@@ -158,9 +166,6 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 zstyle ':completion:*' hosts off
 # Ignore DLL's on WSL2, these make it slower to complete t<tab>
 zstyle ':completion:*' ignored-patterns '*?.aux' '*?.bbl' '*?.blg' '*?.out' '*?.log' '*?.toc' '*?.snm' '*?.nav' '*?.pdf' '*?.bak' '*\~' '*?.dll'
-
-# poetry: https://github.com/python-poetry/poetry#enable-tab-completion-for-bash-fish-or-zsh
-fpath+=~/.zfunc
 
 # AWS CLI v2 completions
 if command -v aws_completer &> /dev/null; then
