@@ -152,6 +152,13 @@ if [[ -d $ASDF_DIR/completions ]]; then
   fpath=(${ASDF_DIR}/completions $fpath)
 fi
 
+# poetry
+if command -v poetry &> /dev/null; then
+  if [[ ! -f ~/.zfunc/_poetry ]]; then
+    poetry completions zsh > ~/.zfunc/_poetry
+  fi
+fi
+
 # Additional completions
 autoload -Uz +X compinit && compinit
 
