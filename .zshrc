@@ -139,8 +139,13 @@ eval "$(starship init zsh)"
 # Completions
 # 
 
+# asdf completions
+if [[ -d $ASDF_DIR/completions ]]; then
+  fpath=(${ASDF_DIR}/completions $fpath)
+fi
+
 # Additional completions
-autoload -U +X compinit && compinit
+autoload -Uz +X compinit && compinit
 
 # Ignore hosts completion
 zstyle ':completion:*' hosts off
