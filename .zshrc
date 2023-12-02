@@ -20,28 +20,6 @@ export GATSBY_TELEMETRY_DISABLED=1
 export PYTHONSTARTUP=$HOME/.pythonrc
 
 #
-# Completions
-# 
-
-# Additional completions
-autoload -U +X compinit && compinit
-
-# Ignore hosts completion
-zstyle ':completion:*' hosts off
-
-# Enable completion caching
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
-
-# Disable hostname completion, because it's slow
-zstyle ':completion:*' hosts off
-# Ignore DLL's on WSL2, these make it slower to complete t<tab>
-zstyle ':completion:*' ignored-patterns '*?.aux' '*?.bbl' '*?.blg' '*?.out' '*?.log' '*?.toc' '*?.snm' '*?.nav' '*?.pdf' '*?.bak' '*\~' '*?.dll'
-
-# poetry: https://github.com/python-poetry/poetry#enable-tab-completion-for-bash-fish-or-zsh
-fpath+=~/.zfunc
-
-#
 # History
 #
 HISTFILE=~/.zsh_history         # where to store zsh config
@@ -156,6 +134,28 @@ fi
 
 # Load starship prompt
 eval "$(starship init zsh)"
+
+#
+# Completions
+# 
+
+# Additional completions
+autoload -U +X compinit && compinit
+
+# Ignore hosts completion
+zstyle ':completion:*' hosts off
+
+# Enable completion caching
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+# Disable hostname completion, because it's slow
+zstyle ':completion:*' hosts off
+# Ignore DLL's on WSL2, these make it slower to complete t<tab>
+zstyle ':completion:*' ignored-patterns '*?.aux' '*?.bbl' '*?.blg' '*?.out' '*?.log' '*?.toc' '*?.snm' '*?.nav' '*?.pdf' '*?.bak' '*\~' '*?.dll'
+
+# poetry: https://github.com/python-poetry/poetry#enable-tab-completion-for-bash-fish-or-zsh
+fpath+=~/.zfunc
 
 # AWS CLI v2 completions
 if command -v aws_completer &> /dev/null; then
