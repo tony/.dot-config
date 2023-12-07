@@ -16,10 +16,6 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "command": "paste",
-            "keys": "ctrl+shift+v"
-        },
-        {
             "command": 
             {
                 "action": "splitPane",
@@ -27,6 +23,10 @@
                 "splitMode": "duplicate"
             },
             "keys": "alt+shift+d"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+shift+v"
         }
     ],
     "copyFormatting": "none",
@@ -55,11 +55,13 @@
             },
             {
                 "closeOnExit": "always",
-                "colorScheme": "GruvboxMaterialMediumDark",
+                "colorScheme": "Everforest Hard",
                 "font": 
                 {
+                    "cellHeight": "1.4",
                     "face": "BlexMono Nerd Font Mono",
-                    "size": 10.0
+                    "size": 10.25,
+                    "weight": "normal"
                 },
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
@@ -123,6 +125,84 @@
             "selectionBackground": "#FFFFFF",
             "white": "#CCCCCC",
             "yellow": "#C19C00"
+        },
+        {
+            "background": "#323232",
+            "black": "#323232",
+            "blue": "#61AFEF",
+            "brightBlack": "#B2A68F",
+            "brightBlue": "#84B0D8",
+            "brightCyan": "#56B6C2",
+            "brightGreen": "#8AB98E",
+            "brightPurple": "#C678DD",
+            "brightRed": "#E06C75",
+            "brightWhite": "#D8C9AD",
+            "brightYellow": "#E5C07B",
+            "cursorColor": "#D8C9AD",
+            "cyan": "#56B6C2",
+            "foreground": "#D8C9AD",
+            "green": "#8AB98E",
+            "name": "Everforest",
+            "purple": "#C8BDDE",
+            "red": "#F07076",
+            "selectionBackground": "#CCCCCC",
+            "white": "#FFFFFF",
+            "yellow": "#E5C07B"
+        },
+        {
+            "background": "#272E33",
+            "black": "#323232",
+            "blue": "#384B55",
+            "brightBlack": "#B2A68F",
+            "brightBlue": "#7FBBB3",
+            "brightCyan": "#56B6C2",
+            "brightGreen": "#A7C080",
+            "brightPurple": "#C678DD",
+            "brightRed": "#E06C75",
+            "brightWhite": "#D8C9AD",
+            "brightYellow": "#DBBC7F",
+            "cursorColor": "#D8C9AD",
+            "cyan": "#56B6C2",
+            "foreground": "#D3C6AA",
+            "green": "#3C4841",
+            "name": "Everforest Hard",
+            "purple": "#D699B6",
+            "red": "#F07076",
+            "selectionBackground": "#A7C080",
+            "white": "#FFFFFF",
+            "yellow": "#45443C",
+            "tab": {
+              "background": "#272e33FF",
+              "showCloseButton": "always",
+              "unfocusedBackground": null
+            },
+            "tabRow": {
+              "background": "#1E2326",
+              "unfocusedBackground": "#1E2326"
+            }
+        },
+        {
+            "background": "#1e2327",
+            "black": "#4B565C",
+            "blue": "#7FBBB3",
+            "brightBlack": "#4B565C",
+            "brightBlue": "#7FBBB3",
+            "brightCyan": "#83C092",
+            "brightGreen": "#A7C080",
+            "brightPurple": "#D39BB6",
+            "brightRed": "#E67E80",
+            "brightWhite": "#D3C6AA",
+            "brightYellow": "#DBBC7F",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#83C092",
+            "foreground": "#D3C6AA",
+            "green": "#A7C080",
+            "name": "Everforest Harder",
+            "purple": "#D699B6",
+            "red": "#E67E80",
+            "selectionBackground": "#30383d",
+            "white": "#D3C6AA",
+            "yellow": "#DBBC7F"
         },
         {
             "background": "#282828",
@@ -470,49 +550,5 @@
             "yellow": "#808000"
         }
     ],
-    "themes": 
-    [
-        {
-            "name": "legacyDark",
-            "tab": 
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window": 
-            {
-                "applicationTheme": "dark",
-                "useMica": false
-            }
-        },
-        {
-            "name": "legacyLight",
-            "tab": 
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window": 
-            {
-                "applicationTheme": "light",
-                "useMica": false
-            }
-        },
-        {
-            "name": "legacySystem",
-            "tab": 
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window": 
-            {
-                "applicationTheme": "system",
-                "useMica": false
-            }
-        }
-    ]
+    "themes": []
 }
