@@ -159,6 +159,13 @@ if command -v poetry &> /dev/null; then
   fi
 fi
 
+# rustup
+if command -v rustup &> /dev/null; then
+  if [[ ! -f ~/.zfunc/_rustup ]]; then
+    rustup completions zsh > ~/.zfunc/_rustup
+  fi
+fi
+
 # Additional completions
 autoload -Uz +X compinit && compinit
 
