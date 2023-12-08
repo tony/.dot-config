@@ -164,6 +164,9 @@ if command -v rustup &> /dev/null; then
   if [[ ! -f ~/.zfunc/_rustup ]]; then
     rustup completions zsh > ~/.zfunc/_rustup
   fi
+  if [[ ! -f ~/.zfunc/_cargo ]]; then
+    rustup completions zsh cargo > ~/.zfunc/_cargo
+  fi
 fi
 
 # Additional completions
