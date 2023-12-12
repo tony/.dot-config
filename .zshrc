@@ -57,6 +57,8 @@ bindkey '^x^e' edit-command-line
 alias clear_pyc='find . | grep -E "(__pycache__|\.pyc|\.pyo$$)" | xargs rm -rf'
 alias clear_empty_dirs='find . -type d -empty -delete'
 
+alias git_prune_local='git branch --merged | egrep -v "(^\*|master|main|dev)" | xargs git branch -d'
+
 alias update_packages='pushd ~/.dot-config; make global_update; popd;'
 alias update_repos='pushd ~/.dot-config; make vcspull; popd;'
 
