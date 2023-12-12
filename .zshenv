@@ -51,3 +51,7 @@ if which yarn 1>/dev/null 2>&1; then
 fi
 
 export PYTHONSTARTUP=$HOME/.pythonrc
+
+if [[ -f $HOME/.cargo/env ]]; then
+    . $HOME/.cargo/env
+fi
