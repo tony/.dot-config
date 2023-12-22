@@ -16,6 +16,10 @@
     repo: "git+https://github.com/facebook/relay.git"
     remotes:
       tony: "git+ssh://git@github.com/tony/relay.git"
+  biome:
+    repo: "git+https://github.com/biomejs/biome.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/biome.git"
 
 ~/work/c:
   ncurses-example: "git+ssh://git@github.com/tony/ncurses-example.git"
