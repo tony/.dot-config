@@ -56,6 +56,7 @@ bindkey '^x^e' edit-command-line
 
 alias clear_pyc='find . | grep -E "(__pycache__|\.pyc|\.pyo$$)" | xargs rm -rf'
 alias clear_empty_dirs='find . -type d -empty -delete'
+alias clear_biome='rm -rf **/biome-socket-*; rm -rf **/biome-logs'
 
 alias git_prune_local='git branch --merged | egrep -v "(^\*|master|main|dev)" | xargs git branch -d'
 
