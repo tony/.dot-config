@@ -8,5 +8,6 @@ end
 
 
 if status is-interactive
-    keychain --eval --agents ssh --quiet -Q id_ed25519 | source
+   set -lx SHELL fish
+   keychain --eval --agents ssh --quiet -Q id_ed25519 --nogui | source
 end
