@@ -34,3 +34,6 @@ function fish_user_key_bindings
     # The argument specifies the initial mode (insert, "default" or visual).
     fish_vi_key_bindings --no-erase insert
 end
+
+fish_add_path "$HOME/.local/bin"
+fish_add_path "$HOME/.cargo/bin"
