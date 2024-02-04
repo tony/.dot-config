@@ -14,6 +14,10 @@ if ! type -q fisher
   curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 end
 
+if type -q yarn
+  set -U fish_user_paths (yarn global bin) $fish_user_paths
+end
+
 if status is-interactive
    # Commands to run in interactive sessions can go here
    set -lx SHELL fish
