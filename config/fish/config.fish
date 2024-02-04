@@ -1,3 +1,7 @@
+set -Ux EDITOR (which vim)
+set -Ux VISUAL $EDITOR
+set -Ux SUDO_EDITOR $EDITOR
+
 # Disable fish greeting
 set fish_greeting
 
