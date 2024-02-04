@@ -1,13 +1,21 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
+# Disable fish greeting
+set fish_greeting
+
+if test -d $ASDF_DIR
+  if ! test ~/.config/fish/completions/asdf.fish
+    mkdir -p ~/.config/fish/completions; and ln -s $ASDF_DIR/completions/asdf.fish ~/.config/fish/completions
+  end
+  source $ASDF_DIR/asdf.fish
+else
+  git clone https://github.com/asdf-vm/asdf.git $ASDF_DIR --branch v0.14.0
 end
 
-if test -d "$HOME/.zinit/plugins/asdf"
-  source ~/.zinit/plugins/asdf/asdf.fish
+if ! type -q fisher
+  curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 end
 
-
 if status is-interactive
+   # Commands to run in interactive sessions can go here
    set -lx SHELL fish
    keychain --eval --agents ssh --quiet -Q id_ed25519 --nogui | source
 end

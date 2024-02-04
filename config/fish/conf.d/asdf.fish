@@ -1,5 +1,9 @@
 set -x ASDF_DATA_DIR ~/.config/asdf
-set -x ASDF_DIR ~/.zinit/plugins/asdf
+if test -d ~/.zinit/plugins/asdf
+    set -x ASDF_DIR ~/.zinit/plugins/asdf
+else
+    set -x ASDF_DIR ~/.asdf
+end
 set -x ASDF_CONFIG_FILE ~/.asdfrc
 
 if test -n "$ASDF_DIR" -a -d "$ASDF_DIR"
