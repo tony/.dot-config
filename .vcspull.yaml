@@ -50,6 +50,11 @@
     remotes:
       tony: "git+ssh://git@github.com/tony/pydantic-settings.git"
 
+  pydantic-extra-types:
+    repo: "git+https://github.com/pydantic/pydantic-extra-types.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/pydantic-extra-types.git"
+
   djangorestframework-api-key:
     repo: "git+https://github.com/florimondmanca/djangorestframework-api-key.git"
     remotes:
