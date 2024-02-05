@@ -35,6 +35,21 @@
   grako: "hg+https://bitbucket.org/apalala/grako"
   cffi: "hg+https://bitbucket.org/cffi/cffi"
 
+  pydantic:
+    repo: "git+https://github.com/pydantic/pydantic.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/pydantic.git"
+
+  pydantic-core:
+    repo: "git+https://github.com/pydantic/pydantic-core.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/pydantic-core.git"
+
+  pydantic-settings:
+    repo: "git+https://github.com/pydantic/pydantic-settings.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/pydantic-settings.git"
+
   djangorestframework-api-key:
     repo: "git+https://github.com/florimondmanca/djangorestframework-api-key.git"
     remotes:
