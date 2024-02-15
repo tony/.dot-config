@@ -1090,6 +1090,8 @@
   gitui: "git+https://github.com/extrawurst/gitui.git"
   ruff:
     repo: "git+ssh://git@github.com/astral-sh/ruff.git"
+  uv:
+    repo: "git+ssh://git@github.com/astral-sh/uv.git"
   rust-sdl2:
     repo: "git+https://github.com/Rust-SDL2/rust-sdl2.git"
   starship:
