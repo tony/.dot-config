@@ -41,3 +41,10 @@ end
 
 fish_add_path "$HOME/.local/bin"
 fish_add_path "$HOME/.cargo/bin"
+
+# Hydro
+set hydro_color_pwd $fish_color_command
+set hydro_color_git $fish_color_command
+set hydro_color_error $fish_color_error
+set hydro_color_prompt --dim $fish_color_command
+set hydro_color_duration --dim $fish_color_command
