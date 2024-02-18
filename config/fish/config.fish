@@ -41,3 +41,11 @@ end
 
 fish_add_path "$HOME/.local/bin"
 fish_add_path "$HOME/.cargo/bin"
+
+function fish_user_key_bindings
+  fzf_key_bindings
+
+  bind --user \cx \ce edit_command_buffer
+  bind --user -M insert \cx\ce edit_command_buffer
+  bind --user -M visual \cx\ce edit_command_buffer
+end
