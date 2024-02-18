@@ -43,9 +43,56 @@ fish_add_path "$HOME/.local/bin"
 fish_add_path "$HOME/.cargo/bin"
 
 function fish_user_key_bindings
-  fzf_key_bindings
+    fzf_key_bindings
 
-  bind --user \cx \ce edit_command_buffer
-  bind --user -M insert \cx\ce edit_command_buffer
-  bind --user -M visual \cx\ce edit_command_buffer
+    bind --user \cx \ce edit_command_buffer
+    bind --user -M insert \cx\ce edit_command_buffer
+    bind --user -M visual \cx\ce edit_command_buffer
 end
+
+function ignore_variables
+    # Set IGNORE_FILE_EXT as a multi-line variable
+    set IGNORE_FILE_EXT "gz|tar|rar|zip|7z" \
+        "|min.js|min.map" \
+        "|pdf|doc|docx" \
+        "|ppt|pptx" \
+        "|gif|jpeg|jpg|png|svg" \
+        "|psd|xcf" \
+        "|ai|epub|kpf|mobi" \
+        "|snap" \
+        "|TTF|ttf|otf|eot|woff|woff2" \
+        "|wma|mp3|m4a|ape|ogg|opus|flac" \
+        "|mp4|wmv|avi|mkv|webm|m4b" \
+        "|musicdb|itdb|itl|itc" \
+        "|o|so|dll" \
+        "|cbor|msgpack" \
+        "|wpj" \
+        "|pyc" \
+        "|js.map"
+
+    # Set IGNORE_FILE_WILD as a multi-line variable
+    set IGNORE_FILE_WILD "^snap/" \
+        "|^cache|^_cache" \
+        "|Library|^Cache" \
+        "|AppData" \
+        "|Android" \
+        "|site-packages|egg-info|dist-info" \
+        "|node-gyp|node_modules|bower_components" \
+        "|^build|webpack_bundles" \
+        "|json/test/data" \
+        "|drive_[a-z]/" \
+        "|^?(/)snap/" \
+        "|^snap/" \
+        "|/gems/" \
+        "|^work/^study/" \
+        "|__pycache__/" \
+        "|^.cache/" \
+        "|(_)?build/" \
+        "|__generated__/"
+
+    # Exporting the variables to make them available to child processes
+    set -xg IGNORE_FILE_EXT $IGNORE_FILE_EXT
+    set -xg IGNORE_FILE_WILD $IGNORE_FILE_WILD
+end
+
+ignore_variables
