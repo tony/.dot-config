@@ -96,3 +96,7 @@ function ignore_variables
 end
 
 ignore_variables
+
+if type -q starship
+    starship init fish | source
+end
