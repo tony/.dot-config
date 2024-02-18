@@ -100,3 +100,51 @@ ignore_variables
 if type -q starship
     starship init fish | source
 end
+
+set fzf_fd_opts -xg "-path '*/\.*' -prune -o -type f -print -o -type l \
+    \( -iname '.*\($IGNORE_FILE_WILD\).*' -o -iname '.*[.]\($IGNORE_FILE_EXT\)' \) -print"
+
+if type -q fzf
+    # Assume IGNORE_FILE_EXT is set by ./ignore.sh or some other mechanism in Fish
+
+    # Check if IGNORE_FILE_EXT is set or empty
+    if test -z "$IGNORE_FILE_EXT"
+        # No ignores set
+
+        set -x FZF_FIND_COMMAND "find . -path '*/\.*' -prune -o -type f -print -o -type l -print"
+
+        set -x FZF_DEFAULT_COMMAND "(git ls-files --recurse-submodules & git ls-files --exclude-standard --others ||
+    $FZF_FIND_COMMAND | \
+        sed s/^..// \
+    ) 2> /dev/null"
+
+        set -x FZF_DEFAULT_COMMAND "(git ls-files --recurse-submodules ||
+    find . -path '*/\.*' -prune -o -type f -print -o -type l -print |
+      sed s/^..//) 2> /dev/null"
+
+    else
+        # Exists
+        set -xg FZF_CUSTOM_GREP_IGNORE "grep --ignore-case --invert-match -e '.*[.]\(\
+    $IGNORE_FILE_EXT \
+    \)' -e '.*\($IGNORE_FILE_WILD\).*'
+      "
+
+        set -xg FZF_FIND_COMMAND "find . -path '*/\.*' -prune -o -type f -print -o -type l \
+      \( -iname '.*\($IGNORE_FILE_WILD\).*' -o -iname '.*[.]\($IGNORE_FILE_EXT\)' \) -print"
+
+        function fzf_git_files
+            set -l IFS
+            # Capture the output of the git commands or FZF_FIND_COMMAND into a variable
+            set command_output (git ls-files --recurse-submodules; or git ls-files --exclude-standard --others; or eval $FZF_FIND_COMMAND)
+
+            # Process the captured output through sed and your custom grep ignore command
+            echo $command_output | sed 's/^\.\.//' | eval $FZF_CUSTOM_GREP_IGNORE 2>/dev/null
+        end
+
+        set -xg FZF_DEFAULT_COMMAND fzf_git_files
+
+        set -xg FZF_CTRL_T_COMMAND "$FZF_FIND_COMMAND | $FZF_CUSTOM_GREP_IGNORE 2> /dev/null"
+    end
+
+
+end
