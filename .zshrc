@@ -204,6 +204,11 @@ if [[ -d ~/.yarn/bin ]] then
   export PATH=$PATH:~/.yarn/bin
 fi
 
+if [[ -d ~/.deno/bin ]] then
+  export DENO_INSTALL="$HOME/.deno"
+  export PATH="$DENO_INSTALL/bin:$PATH"
+fi
+
 if [[ -f ~/.zshrc.local ]] then
   source ~/.zshrc.local
 fi
