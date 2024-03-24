@@ -48,14 +48,14 @@ debian_pyenv_packages:
 	wget \
 	curl \
 	llvm \
-	libncurses5-dev \
+	libncurses-dev \
 	xz-utils \
 	tk-dev \
 	libxml2-dev \
 	libxmlsec1-dev \
 	libffi-dev \
 	liblzma-dev \
-	libpython2-dev libpython3-all-dev
+	libpython3-all-dev
 
 debian_packages:
 	sudo apt-get install \
@@ -79,7 +79,6 @@ debian_packages:
 	htop \
 	ccls \
 	redis-server \
-	libpython2-dev \
 	libsasl2-dev libxslt1-dev libxmlsec1-dev libxml2-dev libldap2-dev \
 	libffi-dev libsqlite3-dev libreadline-dev libbz2-dev \
 	build-essential \
