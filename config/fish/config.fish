@@ -46,7 +46,9 @@ fish_add_path "$HOME/.local/bin"
 fish_add_path "$HOME/.cargo/bin"
 
 function fish_user_key_bindings
-    fzf_key_bindings
+    if type -q fzf_key_bindings
+        fzf_key_bindings
+    end
 
     bind --user \cx \ce edit_command_buffer
     bind --user -M insert \cx\ce edit_command_buffer
