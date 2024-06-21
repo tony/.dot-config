@@ -27,7 +27,6 @@ install:
 	ln -si ${DOT_CONFIG_DIR}/.Xresources ~/.Xresources
 	ln -si ${DOT_CONFIG_DIR}/.ipython ~
 	ln -si ${DOT_CONFIG_DIR}/.ptpython ~
-	ln -si ${DOT_CONFIG_DIR}/.zfunc/ ~
 	ln -si ${DOT_CONFIG_DIR}/.tmux/ ~
 	ln -si ${DOT_CONFIG_DIR}/.tmuxp/ ~
 	ln -si ${DOT_CONFIG_DIR}/.zsh_plugins.txt ~
