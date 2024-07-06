@@ -209,6 +209,11 @@ if [[ -d ~/.deno/bin ]] then
   export PATH="$DENO_INSTALL/bin:$PATH"
 fi
 
+if [[ -d ~/.local/share/bob ]] then
+  export BOB_NVIM_PATH=$HOME/.local/share/bob/nvim-bin/
+  export PATH="$BOB_NVIM_PATH:$PATH"
+fi
+
 if [[ -f ~/.zshrc.local ]] then
   source ~/.zshrc.local
 fi
