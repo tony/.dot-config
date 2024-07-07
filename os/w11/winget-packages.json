@@ -13,9 +13,6 @@
 					"PackageIdentifier" : "Amazon.Kindle"
 				},
 				{
-					"PackageIdentifier" : "Docker.DockerDesktop"
-				},
-				{
 					"PackageIdentifier" : "GIMP.GIMP"
 				},
 				{
@@ -44,9 +41,6 @@
 				},
 				{
 					"PackageIdentifier" : "Google.Drive"
-				},
-				{
-					"PackageIdentifier" : "Mailbird.Mailbird"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VisualStudioCode"
