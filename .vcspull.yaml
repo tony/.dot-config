@@ -117,7 +117,7 @@
     repo: "git+https://github.com/graphql-python/graphql-core-legacy.git"
     remotes:
       tony: "git+ssh://git@github.com/tony/graphql-core-legacy.git"
-      eduflow: "git+ssh://git@github.com/eduflow/graphene-core-legacy.git"
+      eduflow: "git+ssh://git@github.com/eduflow/graphql-core-legacy.git"
 
   graphql-core:
     repo: "git+https://github.com/graphql-python/graphql-core.git"
