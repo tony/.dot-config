@@ -1,23 +1,24 @@
 (
-    selected_tab: Reset,
-    command_fg: White,
-    selection_bg: Blue,
-    selection_fg: White,
-    cmdbar_bg: Blue,
-    cmdbar_extra_lines_bg: Blue,
-    disabled_fg: DarkGray,
-    diff_line_add: Green,
-    diff_line_delete: Red,
-    diff_file_added: LightGreen,
-    diff_file_removed: LightRed,
-    diff_file_moved: LightMagenta,
-    diff_file_modified: Yellow,
-    commit_hash: Magenta,
-    commit_time: LightCyan,
-    commit_author: Green,
-    danger_fg: Red,
-    push_gauge_bg: Blue,
-    push_gauge_fg: Reset,
-    tag_fg: LightMagenta,
-    branch_fg: LightYellow,
+    selected_tab: Some("#82aaff"),           // Bright Blue
+    command_fg: Some("#c8d3f5"),             // Light Blue
+    selection_bg: Some("#2d3f76"),           // Darker Blue
+    selection_fg: Some("#c8d3f5"),           // Light Blue
+    cmdbar_bg: Some("#1e2030"),              // Dark Blue
+    cmdbar_extra_lines_bg: Some("#1e2030"),  // Dark Blue
+    disabled_fg: Some("#3b4261"),            // Dark Gray
+    diff_line_add: Some("#c3e88d"),          // Light Green
+    diff_line_delete: Some("#c53b53"),       // Red
+    diff_file_added: Some("#c3e88d"),        // Light Green
+    diff_file_removed: Some("#ff966c"),      // Peach
+    diff_file_moved: Some("#c099ff"),        // Light Purple
+    diff_file_modified: Some("#ffc777"),     // Yellow
+    commit_hash: Some("#c099ff"),            // Light Purple
+    commit_time: Some("#86e1fc"),            // Light Cyan
+    commit_author: Some("#82aaff"),          // Bright Blue
+    danger_fg: Some("#c53b53"),              // Red
+    push_gauge_bg: Some("#2d3f76"),          // Darker Blue
+    push_gauge_fg: Some("#c8d3f5"),          // Light Blue
+    tag_fg: Some("#65bcff"),                 // Sky Blue
+    branch_fg: Some("#ffc777"),              // Yellow
+    block_title_focused: Some("#82aaff"),    // Bright Blue
 )
