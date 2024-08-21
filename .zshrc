@@ -8,6 +8,7 @@ export ASDF_CRATE_DEFAULT_PACKAGES_FILE="$ZDOTDIR/.default-cargo-crates"
 export ASDF_PYTHON_DEFAULT_PACKAGES_FILE="$ZDOTDIR/.default-python-packages"
 export ASDF_NPM_DEFAULT_PACKAGES_FILE="$ZDOTDIR/.default-npm-packages"
 export ASDF_POETRY_INSTALL_URL="https://install.python-poetry.org"
+export ASDF_NODEJS_AUTO_ENABLE_COREPACK=1
 
 # Cache fix: https://github.com/robbyrussell/oh-my-zsh/issues/5874
 export ZSH_CACHE_DIR=$HOME/.zsh
