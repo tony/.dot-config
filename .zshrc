@@ -226,3 +226,7 @@ fi
 if [[ -f "$HOME/.rye/env" ]] then
   . "$HOME/.rye/env"
 fi
+
+# Disable Next.js telemetry
+# Learn more here: https://nextjs.org/telemetry
+export NEXT_TELEMETRY_DISABLED=1
