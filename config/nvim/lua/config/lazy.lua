@@ -190,7 +190,7 @@ require("lazy").setup({
   -- CoC plugin setup
   {
     "neoclide/coc.nvim",
-    branch = "master",
+    branch = "release",
     -- build = "yarn install --frozen-lockfile",
     build = function()
       -- Reset local changes in package.json before building
