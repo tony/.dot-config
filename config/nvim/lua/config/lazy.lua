@@ -198,38 +198,7 @@ require("lazy").setup({
       vim.fn.system({ "git", "checkout", "--", "package.json" })
     end,
     config = function()
-      vim.g.coc_global_extensions = {
-        "coc-json",
-        "coc-pyright",
-        "coc-tsserver",
-        "coc-rust-analyzer",
-        "coc-prettier",
-        "coc-yaml",
-        "coc-toml",
-        "coc-git",
-        "coc-lists",
-        "coc-eslint",
-        "coc-biome",
-      }
-
-      -- CoC keybindings and auto commands
-      vim.cmd([[
-        function! OnLoadCoc()
-          " Remap keys for CoC functionality
-          inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#next(1) : CheckBackspace() ? "\<Tab>" : coc#refresh()
-          inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-          inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-          nnoremap <silent> <F12> <Plug>(coc-definition)
-          nnoremap <silent> gd <Plug>(coc-definition)
-          nnoremap <silent> gi <Plug>(coc-implementation)
-          nnoremap <silent> gr <Plug>(coc-references)
-
-          autocmd CursorHold * silent call CocActionAsync('highlight')
-        endfunction
-
-        call OnLoadCoc()
-      ]])
+      require("settings.coc").setup()
     end,
   },
 
