@@ -99,7 +99,33 @@ require("lazy").setup({
     "tpope/vim-markdown",
     ft = {"markdown"},
   },
-  "airblade/vim-rooter",
+	-- Project management
+  {
+    'ahmedkhalf/project.nvim',
+    config = function()
+      require('project_nvim').setup({
+        manual_mode = false,
+        patterns = {
+          'manage.py',
+          '.venv',
+          '.env',
+          '.env3',
+          '.venv3',
+          'Rakefile',
+          '.git',
+          'gulpfile.js',
+          'bower.json',
+          'Gruntfile.js',
+          'Gemfile',
+          'Procfile',
+          '.svn',
+          '.hg',
+          'Pipfile',
+        },
+        silent_chdir = true,
+      })
+    end,
+  },
   {
     "justinmk/vim-syntax-extra",
     ft = {"c", "cpp"},
