@@ -32,13 +32,45 @@ require("lazy").setup({
   "qpkorr/vim-bufkill",
   "editorconfig/editorconfig-vim",
 
-  -- FZF configuration with post-installation script
   {
-    "junegunn/fzf",
-    dir = "~/.fzf",
-    build = "./install --all --no-update-rc",
+    'nvim-telescope/telescope.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('telescope').setup({
+        defaults = {
+          mappings = {
+            i = {
+              ["<C-q>"] = require('telescope.actions').send_to_qflist,
+            },
+          },
+          file_ignore_patterns = { -- Add your ignore patterns here
+            "%.git/",
+            "node_modules",
+            -- ... other patterns
+          },
+        },
+        pickers = {
+          buffers = {
+            sort_lastused = true,
+          },
+        },
+        extensions = {
+          fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = "smart_case",
+          },
+        },
+      })
+      -- Load the fzf extension
+      require('telescope').load_extension('fzf')
+    end,
   },
-  "junegunn/fzf.vim",
+  {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    build = 'make',
+  },
 
   -- Load vim-toml when pipenv is available
   {

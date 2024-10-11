@@ -81,3 +81,19 @@ vim.keymap.set("n", "<leader>[", ":bprev<CR>", { silent = true })
 
 -- NERDTree
 vim.keymap.set("n", "<leader>e", ":NERDTreeFocus<CR>", { silent = true })
+
+
+local builtin = require('telescope.builtin')
+local opts = { noremap = true, silent = true }
+
+-- Find files
+vim.keymap.set('n', '<C-p>', builtin.find_files, opts)
+
+-- Live Grep
+vim.keymap.set('n', '<C-f>', builtin.live_grep, opts)
+
+-- Buffers
+vim.keymap.set('n', '<Leader>fb', builtin.buffers, opts)
+
+-- Help Tags
+vim.keymap.set('n', '<Leader>fh', builtin.help_tags, opts)
