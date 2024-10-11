@@ -191,7 +191,12 @@ require("lazy").setup({
   {
     "neoclide/coc.nvim",
     branch = "master",
-    build = "yarn install --frozen-lockfile",
+    -- build = "yarn install --frozen-lockfile",
+    build = function()
+      -- Reset local changes in package.json before building
+      vim.fn.system("yarn install --frozen-lockfile")
+      vim.fn.system({ "git", "checkout", "--", "package.json" })
+    end,
     config = function()
       vim.g.coc_global_extensions = {
         "coc-json",
