@@ -176,6 +176,17 @@ require("lazy").setup({
     as = "catppuccin",
   },
 
+  -- Tokyonight Theme
+  {
+    'folke/tokyonight.nvim',
+    lazy = false,    -- Load during startup
+    priority = 1000, -- Ensure it loads first
+    config = function()
+      -- Load the colorscheme here
+      vim.cmd([[colorscheme tokyonight]])
+    end,
+  },
+
   -- CoC plugin setup
   {
     "neoclide/coc.nvim",
