@@ -15,6 +15,9 @@ disabled = true
 [rust]
 disabled = true
 
+[ruby]
+disabled = true
+
 [package]
 disabled = true
 
