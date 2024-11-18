@@ -25,3 +25,5 @@ rerun() {
     fi
   done
 }
+
+export rerun
