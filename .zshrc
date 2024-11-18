@@ -188,6 +188,11 @@ zstyle ':completion:*' hosts off
 # Ignore DLL's on WSL2, these make it slower to complete t<tab>
 zstyle ':completion:*' ignored-patterns '*?.aux' '*?.bbl' '*?.blg' '*?.out' '*?.log' '*?.toc' '*?.snm' '*?.nav' '*?.pdf' '*?.bak' '*\~' '*?.dll'
 
+
+if [[ -f ~/.shell/fn.sh ]] then
+    source ~/.shell/fn.sh
+fi
+
 # AWS CLI v2 completions
 if command -v aws_completer &> /dev/null; then
   AWS_ZSH_COMPLETION_SCRIPT_PATH=~/.shell/completions/aws_zsh_completer.sh
