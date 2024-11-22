@@ -3,6 +3,10 @@
   "$schema": "https://aka.ms/terminal-profiles-schema",
   "actions": [
     {
+      "command": "unbound",
+      "keys": "ctrl+v"
+    },
+    {
       "command": {
         "action": "copy",
         "singleLine": false
@@ -12,8 +16,7 @@
     },
     {
       "command": "paste",
-      "id": "User.paste",
-      "keys": "ctrl+v"
+      "id": "User.paste"
     },
     {
       "command": "find",
@@ -39,9 +42,7 @@
     }
   ],
   "profiles": {
-    "defaults": {
-      "startingDirectory": null
-    },
+    "defaults": {},
     "list": [
       {
         "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
@@ -56,34 +57,23 @@
         "name": "Command Prompt"
       },
       {
-        "colorScheme": "Tokyo Night",
-        "font": {
-          "face": "BlexMono Nerd Font Mono",
-          "size": 10.5
-        },
-        "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-        "hidden": true,
-        "name": "Ubuntu",
-        "source": "Windows.Terminal.Wsl"
-      },
-      {
         "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
         "hidden": false,
         "name": "Azure Cloud Shell",
         "source": "Windows.Terminal.Azure"
       },
       {
-        "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
-        "hidden": false,
-        "name": "Git Bash",
-        "source": "Git"
+        "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+        "hidden": true,
+        "name": "Ubuntu",
+        "source": "Windows.Terminal.Wsl"
       },
       {
         "closeOnExit": "always",
-        "colorScheme": "Tokyo Night",
+        "colorScheme": "One Half Dark",
         "font": {
-          "face": "BlexMono Nerd Font Mono",
-          "size": 10.5
+          "face": "Ligalex Mono for Powerline",
+          "size": 10
         },
         "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
         "hidden": false,
