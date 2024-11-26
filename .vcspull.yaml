@@ -41,16 +41,6 @@
   grako: "hg+https://bitbucket.org/apalala/grako"
   cffi: "hg+https://bitbucket.org/cffi/cffi"
 
-  pydantic:
-    repo: "git+https://github.com/pydantic/pydantic.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/pydantic.git"
-
-  pydantic-core:
-    repo: "git+https://github.com/pydantic/pydantic-core.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/pydantic-core.git"
-
   pydantic-settings:
     repo: "git+https://github.com/pydantic/pydantic-settings.git"
     remotes:
@@ -1110,6 +1100,14 @@
     repo: "git+ssh://git@github.com/astral-sh/ruff.git"
   uv:
     repo: "git+ssh://git@github.com/astral-sh/uv.git"
+  pydantic:
+    repo: "git+https://github.com/pydantic/pydantic.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/pydantic.git"
+  pydantic-core:
+    repo: "git+https://github.com/pydantic/pydantic-core.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/pydantic-core.git"
   orjson:
     repo: "git+https://github.com/ijl/orjson.git"
   pyxirr:
