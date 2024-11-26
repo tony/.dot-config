@@ -1108,6 +1108,8 @@
     repo: "git+ssh://git@github.com/astral-sh/ruff.git"
   uv:
     repo: "git+ssh://git@github.com/astral-sh/uv.git"
+  orjson:
+    repo: "git+https://github.com/ijl/orjson.git"
 
 ~/study/rust-node/:
   swc:
