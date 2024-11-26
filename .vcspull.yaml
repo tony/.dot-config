@@ -1110,6 +1110,8 @@
     repo: "git+ssh://git@github.com/astral-sh/uv.git"
   orjson:
     repo: "git+https://github.com/ijl/orjson.git"
+  pyxirr:
+    repo: "git+https://github.com/Anexen/pyxirr.git"
 
 ~/study/rust-node/:
   swc:
