@@ -20,6 +20,14 @@
   otto: "git+https://github.com/robertkrimen/otto"
   blackfriday: "git+https://github.com/russross/blackfriday.git"
 
+~/study:
+  learning-rust-nodejs:
+    repo: "git+ssh://git@github.com/tony/learning-rust-nodejs.git"
+  learning-rust-python:
+    repo: "git+ssh://git@github.com/tony/learning-rust-python.git"
+  learning-rust:
+    repo: "git+ssh://git@github.com/tony/learning-rust.git"
+
 ~/study/cs:
   screentogif:
     repo: "git+https://github.com/NickeManarin/ScreenToGif.git"
