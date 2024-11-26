@@ -1112,6 +1112,8 @@
     repo: "git+https://github.com/ijl/orjson.git"
   pyxirr:
     repo: "git+https://github.com/Anexen/pyxirr.git"
+  fastuuid:
+    repo: "git+https://github.com/fastuuid/fastuuid.git"
 
 ~/study/rust-node/:
   swc:
