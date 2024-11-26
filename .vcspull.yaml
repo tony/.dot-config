@@ -1114,6 +1114,8 @@
     repo: "git+https://github.com/Anexen/pyxirr.git"
   fastuuid:
     repo: "git+https://github.com/fastuuid/fastuuid.git"
+  polars:
+    repo: "git+https://github.com/pola-rs/polars.git"
 
 ~/study/rust-node/:
   swc:
