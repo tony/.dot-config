@@ -1106,6 +1106,10 @@
     repo: "git+https://github.com/swc-project/swc.git"
     remotes:
       tony: "git+ssh://git@github.com/tony/swc.git"
+  pyo3:
+    repo: "git+https://github.com/PyO3/pyo3.git"
+  neon:
+    repo: "git+https://github.com/neon-bindings/neon.git"
 ~/study/react:
   react: "git+https://github.com/facebook/react"
   material-ui:
