@@ -1110,6 +1110,8 @@
     repo: "git+https://github.com/PyO3/pyo3.git"
   neon:
     repo: "git+https://github.com/neon-bindings/neon.git"
+  napi-rs:
+    repo: "git+https://github.com/napi-rs/napi-rs.git"
 ~/study/react:
   react: "git+https://github.com/facebook/react"
   material-ui:
