@@ -1088,10 +1088,6 @@
   rust: "git+https://github.com/rust-lang/rust.git"
   tui-rs: "git+https://github.com/fdehau/tui-rs.git"
   gitui: "git+https://github.com/extrawurst/gitui.git"
-  ruff:
-    repo: "git+ssh://git@github.com/astral-sh/ruff.git"
-  uv:
-    repo: "git+ssh://git@github.com/astral-sh/uv.git"
   rye:
     repo: "git+ssh://git@github.com/astral-sh/uv.git"
   rust-sdl2:
@@ -1102,16 +1098,33 @@
     repo: "git+https://github.com/BurntSushi/ripgrep.git"
   rslint:
     repo: "git+https://github.com/rslint/rslint.git"
+
+~/study/rust-python/:
+  pyo3:
+    repo: "git+https://github.com/PyO3/pyo3.git"
+  napi-rs:
+    repo: "git+https://github.com/napi-rs/napi-rs.git"
+  ruff:
+    repo: "git+ssh://git@github.com/astral-sh/ruff.git"
+  uv:
+    repo: "git+ssh://git@github.com/astral-sh/uv.git"
+
+~/study/rust-node/:
   swc:
     repo: "git+https://github.com/swc-project/swc.git"
     remotes:
       tony: "git+ssh://git@github.com/tony/swc.git"
-  pyo3:
-    repo: "git+https://github.com/PyO3/pyo3.git"
   neon:
     repo: "git+https://github.com/neon-bindings/neon.git"
-  napi-rs:
-    repo: "git+https://github.com/napi-rs/napi-rs.git"
+  relay:
+    repo: "git+https://github.com/facebook/relay.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/relay.git"
+  biome:
+    repo: "git+https://github.com/biomejs/biome.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/biome.git"
+
 ~/study/react:
   react: "git+https://github.com/facebook/react"
   material-ui:
