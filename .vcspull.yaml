@@ -20,15 +20,13 @@
   otto: "git+https://github.com/robertkrimen/otto"
   blackfriday: "git+https://github.com/russross/blackfriday.git"
 
-~/study:
+~/study/rust:
   learning-rust-nodejs:
     repo: "git+ssh://git@github.com/tony/learning-rust-nodejs.git"
   learning-rust-python:
     repo: "git+ssh://git@github.com/tony/learning-rust-python.git"
   learning-rust:
     repo: "git+ssh://git@github.com/tony/learning-rust.git"
-
-~/study/rust:
   rustlings:
     repo: "git+ssh://git@github.com/tony/rustlings.git"
 
