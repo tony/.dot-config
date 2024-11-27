@@ -51,6 +51,9 @@
   grako: "hg+https://bitbucket.org/apalala/grako"
   cffi: "hg+https://bitbucket.org/cffi/cffi"
 
+  hypothesis:
+    repo: "git+https://github.com/HypothesisWorks/hypothesis.git"
+
   pydantic-settings:
     repo: "git+https://github.com/pydantic/pydantic-settings.git"
     remotes:
