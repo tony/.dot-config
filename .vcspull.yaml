@@ -1145,6 +1145,10 @@
     repo: "git+https://github.com/biomejs/biome.git"
     remotes:
       tony: "git+ssh://git@github.com/tony/biome.git"
+  rolldown:
+    repo: "git+https://github.com/rolldown/rolldown.git"
+    remotes:
+      tony: "git+ssh://github.com/tony/rolldown.git"
 
 ~/study/react:
   react: "git+https://github.com/facebook/react"
