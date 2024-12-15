@@ -1085,6 +1085,7 @@
 
 ~/study/java:
   jenkins: "git+https://github.com/jenkinsci/jenkins.git"
+  lucene: "git+https://github.com/apache/lucene.git"
   elasticsearch: "git+https://github.com/elastic/elasticsearch.git"
   lucene-solr: "git+https://github.com/apache/lucene-solr.git"
 ~/study/rust/:
