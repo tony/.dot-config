@@ -1087,6 +1087,7 @@
   jenkins: "git+https://github.com/jenkinsci/jenkins.git"
   lucene: "git+https://github.com/apache/lucene.git"
   elasticsearch: "git+https://github.com/elastic/elasticsearch.git"
+  opensearch: "git+https://github.com/opensearch-project/OpenSearch.git"
   lucene-solr: "git+https://github.com/apache/lucene-solr.git"
 ~/study/rust/:
   rust: "git+https://github.com/rust-lang/rust.git"
