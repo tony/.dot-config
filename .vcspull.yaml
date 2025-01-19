@@ -68,6 +68,21 @@
     remotes:
       tony: 'git+ssh://git@github.com:tony/sqlspec.git'
 
+  pytest-databases:
+    repo: 'git+https://git@github.com/litestar-org/pytest-databases.git'
+    remotes:
+      tony: 'git+ssh://git@github.com:tony/pytest-databases.git'
+
+  type-lens:
+    repo: 'git+https://git@github.com/litestar-org/type-lens.git'
+    remotes:
+      tony: 'git+ssh://git@github.com:tony/type-lens.git'
+
+  litestar-vite:
+    repo: 'git+https://git@github.com/litestar-org/litestar-vite.git'
+    remotes:
+      tony: 'git+ssh://git@github.com:tony/litestar-vite.git'
+
 ~/study/python:
   # some nice sqlalchemy code
   oslo.db: "git+https://github.com/openstack/oslo.db"
