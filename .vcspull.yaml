@@ -53,6 +53,11 @@
     remotes:
       tony: 'git+ssh://git@github.com:tony/polyfactory.git'
 
+  fast-query-parsers:
+    repo: 'git+https://git@github.com/litestar-org/fast-query-parsers.git'
+    remotes:
+      tony: 'git+ssh://git@github.com:tony/fast-query-parsers.git'
+
 ~/study/python:
   # some nice sqlalchemy code
   oslo.db: "git+https://github.com/openstack/oslo.db"
