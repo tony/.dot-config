@@ -83,6 +83,11 @@
     remotes:
       tony: 'git+ssh://git@github.com:tony/litestar-vite.git'
 
+  litestar-fullstack:
+    repo: 'git+https://git@github.com/litestar-org/litestar-fullstack.git'
+    remotes:
+      tony: 'git+ssh://git@github.com:tony/litestar-fullstck.git'
+
 ~/study/python:
   # some nice sqlalchemy code
   oslo.db: "git+https://github.com/openstack/oslo.db"
