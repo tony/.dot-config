@@ -58,6 +58,11 @@
     remotes:
       tony: 'git+ssh://git@github.com:tony/fast-query-parsers.git'
 
+  advanced-alchemy:
+    repo: 'git+https://git@github.com/litestar-org/advanced-alchemy.git'
+    remotes:
+      tony: 'git+ssh://git@github.com:tony/advanced-alchemy.git'
+
 ~/study/python:
   # some nice sqlalchemy code
   oslo.db: "git+https://github.com/openstack/oslo.db"
