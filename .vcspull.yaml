@@ -42,6 +42,12 @@
     remotes:
       tony: "git+ssh://git@github.com/tony/tiktoken.git"
 
+~/study/litestar:
+  litestar:
+    repo: 'git+https://git@github.com/litestar-org/litestar.git'
+    remotes:
+      tony: 'git+ssh://git@github.com:tony/litestar.git'
+
 ~/study/python:
   # some nice sqlalchemy code
   oslo.db: "git+https://github.com/openstack/oslo.db"
