@@ -116,6 +116,16 @@ antidote load
 # Starship: Disable warnings (e.g. command_timeout)
 export STARSHIP_LOG=error
 
+if command -v hstr &> /dev/null; then
+  # via hstr --show-zsh-configuration >> ~/.zshrc:
+  # HSTR configuration - add this to ~/.zshrc
+  alias hh=hstr                    # hh to be alias for hstr
+  setopt histignorespace           # skip cmds w/ leading space from history
+  export HSTR_CONFIG=hicolor       # get more colors
+  bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
+  export HSTR_TIOCSTI=y
+fi
+
 if ! [[ -e "$(antidote home)/junegunn/fzf/bin/fzf" ]]
 then
   antidote load
