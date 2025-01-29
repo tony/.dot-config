@@ -131,6 +131,7 @@ then
   antidote load
   "$(antidote home)/junegunn/fzf/install" --bin
 fi
+
 if ! command -v starship >/dev/null 2>&1; then
   if which wget >/dev/null ; then
     echo "Downloading via wget"
