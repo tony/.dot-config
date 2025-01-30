@@ -126,10 +126,15 @@ if command -v hstr &> /dev/null; then
   export HSTR_TIOCSTI=y
 fi
 
-if ! [[ -e "$(antidote home)/junegunn/fzf/bin/fzf" ]]
+if ! [[ -e "$(antidote home)/junegunn/fzf/bin/fzf" ]] && [[ -d "$(antidote home)/junegunn/fzf/" ]]
 then
   antidote load
   "$(antidote home)/junegunn/fzf/install" --bin
+fi
+
+if ! [[ -e "$(antidote home)/unixorn/fzf-zsh-plugin/fzf-zsh-plugin.zsh" ]]
+then
+  source "$(antidote home)/unixorn/fzf-zsh-plugin/fzf-zsh-plugin.plugin.zsh"
 fi
 
 if ! command -v starship >/dev/null 2>&1; then

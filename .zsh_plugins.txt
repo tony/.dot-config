@@ -16,8 +16,18 @@ zsh-users/zsh-history-substring-search
 
 # Binary is installed in ~/.zshrc
 junegunn/fzf kind:clone
-# # Add completion scripts and fzf binary to PATH
-junegunn/fzf path:shell kind:zsh
+# Add completion scripts and fzf binary to PATH
+# junegunn/fzf path:shell kind:zsh
 junegunn/fzf path:bin kind:path
+
+unixorn/fzf-zsh-plugin kind:defer
+Aloxaf/fzf-tab
+
+#
+# Fish-like
+#
+zdharma-continuum/fast-syntax-highlighting kind:defer
+zsh-users/zsh-autosuggestions kind:defer
+zsh-users/zsh-history-substring-search kind:defer
 
 MichaelAquilina/zsh-autoswitch-virtualenv
