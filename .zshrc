@@ -1,253 +1,259 @@
+# If ZDOTDIR isn’t already set, default it to $HOME.
+ZDOTDIR="${ZDOTDIR:-$HOME}"
 
-#
-# Constants
-#
-export ASDF_DATA_DIR="$XDG_CONFIG_HOME/asdf"
-export ASDF_CONFIG_FILE="$HOME/.asdfrc"
-export ASDF_CRATE_DEFAULT_PACKAGES_FILE="$ZDOTDIR/.default-cargo-crates"
-export ASDF_PYTHON_DEFAULT_PACKAGES_FILE="$ZDOTDIR/.default-python-packages"
-export ASDF_NPM_DEFAULT_PACKAGES_FILE="$ZDOTDIR/.default-npm-packages"
+###############################################################################
+# Helper Functions
+###############################################################################
+
+# Safely source a file if it exists and is readable
+source_if_exists() {
+  local file="$1"
+  [[ -r "$file" ]] && source "$file"
+}
+
+# Create a directory if it doesn't exist
+make_dir_if_missing() {
+  local dir="$1"
+  [[ -d "$dir" ]] || mkdir -p "$dir"
+}
+
+###############################################################################
+# Environment Variables & Constants
+###############################################################################
+
+# asdf
+export ASDF_DATA_DIR="${XDG_CONFIG_HOME}/asdf"
+export ASDF_CONFIG_FILE="${HOME}/.asdfrc"
+export ASDF_CRATE_DEFAULT_PACKAGES_FILE="${ZDOTDIR}/.default-cargo-crates"
+export ASDF_PYTHON_DEFAULT_PACKAGES_FILE="${ZDOTDIR}/.default-python-packages"
+export ASDF_NPM_DEFAULT_PACKAGES_FILE="${ZDOTDIR}/.default-npm-packages"
 export ASDF_POETRY_INSTALL_URL="https://install.python-poetry.org"
 export ASDF_NODEJS_AUTO_ENABLE_COREPACK=1
 
-# Cache fix: https://github.com/robbyrussell/oh-my-zsh/issues/5874
-export ZSH_CACHE_DIR=$HOME/.zsh
+# Cache fix
+export ZSH_CACHE_DIR="${HOME}/.zsh"
 
-# Opt-out of spyware / spam
+# Disable usage telemetry
 export SAM_CLI_TELEMETRY=0
 export GATSBY_TELEMETRY_DISABLED=1
+export NEXT_TELEMETRY_DISABLED=1  # Next.js
 
 # Python
-export PYTHONSTARTUP=$HOME/.pythonrc
+export PYTHONSTARTUP="${HOME}/.pythonrc"
 
-#
-# History
-#
-HISTFILE=~/.zsh_history         # where to store zsh config
-HISTSIZE=10000                   # big history
-SAVEHIST=10000                   # big history
-setopt append_history           # append
+# Editor
+export EDITOR="vim"
+
+# Terminal TTY reference
+export TTY="$(tty)"
+
+###############################################################################
+# History Options
+###############################################################################
+HISTFILE="${HOME}/.zsh_history"  # where to store zsh history
+HISTSIZE=10000
+SAVEHIST=10000
+
+setopt append_history           # append to history file
 setopt hist_expire_dups_first
-setopt hist_ignore_all_dups     # no duplicate
-setopt hist_ignore_space      # ignore space prefixed commands
-setopt hist_verify              # show before executing history commands
-setopt inc_append_history       # add commands as they are typed, don't wait until shell exit
-setopt share_history            # share hist between sessions
+setopt hist_ignore_all_dups     # remove all lines matching prev commands
+setopt hist_ignore_space        # ignore commands starting with space
+setopt hist_verify              # preview history command before running
+setopt inc_append_history       # share commands across multiple terminals
+setopt share_history
 
-#
-# vim-like input (for those big commands)
-#
+###############################################################################
+# Keybindings & Vim-like Input
+###############################################################################
 
-# Edit command in EDITOR with ctrl-x ctrl-x
-export EDITOR=vim
-
-# Assure emacs style Ctrl+A, Ctrl+D work with EDITOR declared
+# Emacs-style keybindings
 bindkey -e
 
-# Enable Ctrl-x-e to edit command line
+# Ctrl-x-e to edit the current command line in $EDITOR
 autoload -U edit-command-line
-# Emacs style launch of EDITOR
 zle -N edit-command-line
 bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
 
-#
+###############################################################################
 # Aliases
-#
-
-alias clear_pyc='find . | grep -E "(__pycache__|\.pyc|\.pyo$$)" | xargs rm -rf'
+###############################################################################
+alias clear_pyc='find . -type f -regex ".*\(\.pyc\|\.pyo\|__pycache__\).*" -delete'
 alias clear_empty_dirs='find . -type d -empty -delete'
-alias clear_biome='rm -rf **/biome-socket-*; rm -rf **/biome-logs'
-
+alias clear_biome='rm -rf **/biome-socket-* **/biome-logs'
 alias git_prune_local='git branch --merged | egrep -v "(^\*|master|main|dev)" | xargs git branch -d'
+alias update_packages='pushd "${HOME}/.dot-config"; make global_update; popd;'
+alias update_repos='pushd "${HOME}/.dot-config"; make vcspull; popd;'
 
-alias update_packages='pushd ~/.dot-config; make global_update; popd;'
-alias update_repos='pushd ~/.dot-config; make vcspull; popd;'
+# Simple benchmarking
+alias bench='for i in $(seq 1 10); do /usr/bin/time /bin/zsh -i -c exit; done;'
 
-export TTY=$(tty)
+###############################################################################
+# Antidote (Plugin Manager)
+###############################################################################
+antidote_dir="${ZDOTDIR}/.antidote"
+plugins_txt="${ZDOTDIR}/.zsh_plugins.txt"
+static_file="${ZDOTDIR}/.zsh_plugins.zsh"
 
-alias bench='for i in $(seq 1 10); do /usr/bin//time /bin/zsh -i -c exit; done;'
-
-#
-# <Antidote> Plugins
-#
-
-# You can change the names/locations of these if you prefer.
-antidote_dir=${ZDOTDIR:-~}/.antidote
-plugins_txt=${ZDOTDIR:-~}/.zsh_plugins.txt
-static_file=${ZDOTDIR:-~}/.zsh_plugins.zsh
-
-# Make plugin folder names pretty
+# Make plugin folder names more readable
 zstyle ':antidote:bundle' use-friendly-names 'yes'
 
-# Clone antidote if necessary and generate a static plugin file.
-if [[ ! $static_file -nt $plugins_txt ]]; then
-  [[ -e $antidote_dir ]] ||
-    git clone --depth=1 https://github.com/mattmc3/antidote.git $antidote_dir
+# Clone antidote if necessary, rebuild static plugin file if needed
+if [[ ! -e "$static_file" || "$static_file" -ot "$plugins_txt" ]]; then
+  [[ -d "$antidote_dir" ]] || git clone --depth=1 https://github.com/mattmc3/antidote.git "$antidote_dir"
   (
-    source $antidote_dir/antidote.zsh
-    [[ -e $plugins_txt ]] || touch $plugins_txt
-    antidote bundle <$plugins_txt >$static_file
+    source "${antidote_dir}/antidote.zsh"
+    [[ -e "$plugins_txt" ]] || touch "$plugins_txt"
+    antidote bundle <"$plugins_txt" >"$static_file"
   )
 fi
 
-# Uncomment this if you want antidote commands like `antidote update` available
-# in your interactive shell session:
-autoload -Uz $antidote_dir/functions/antidote
+# Load antidote commands if desired (comment out if not needed)
+autoload -Uz "${antidote_dir}/functions/antidote"
 
+# Actually load the plugins
 antidote load
 
-# source the static plugins file
-# source $static_file
+# Optionally source the static plugin file directly
+# source "$static_file"
 
-# cleanup
-# unset antidote_dir plugins_txt static_file
+###############################################################################
+# Post-Plugin Install Actions
+###############################################################################
 
-#
-# </Antidote> Plugins
-#
-
-#
-# <Antidote> Plugins: Post installation
-#
-# Install starship prompt
-# Install fzf binary if not found
-
-# Starship: Disable warnings (e.g. command_timeout)
+# Starship logs: disable warnings
 export STARSHIP_LOG=error
 
-if command -v hstr &> /dev/null; then
-  # via hstr --show-zsh-configuration >> ~/.zshrc:
-  # HSTR configuration - add this to ~/.zshrc
-  alias hh=hstr                    # hh to be alias for hstr
-  setopt histignorespace           # skip cmds w/ leading space from history
-  export HSTR_CONFIG=hicolor       # get more colors
-  bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
-  export HSTR_TIOCSTI=y
+# HSTR (history search) config
+if command -v hstr >/dev/null 2>&1; then
+  alias hh='hstr'
+  setopt histignorespace
+  export HSTR_CONFIG='hicolor'
+  bindkey -s '\C-r' '\C-a hstr -- \C-j'
+  export HSTR_TIOCSTI='y'
 fi
 
-if ! [[ -e "$(antidote home)/junegunn/fzf/bin/fzf" ]] && [[ -d "$(antidote home)/junegunn/fzf/" ]]
-then
+# Ensure fzf is installed if junegunn/fzf plugin is present via antidote
+if [[ ! -e "$(antidote home)/junegunn/fzf/bin/fzf" && -d "$(antidote home)/junegunn/fzf" ]]; then
   antidote load
   "$(antidote home)/junegunn/fzf/install" --bin
 fi
 
-if ! [[ -e "$(antidote home)/unixorn/fzf-zsh-plugin/fzf-zsh-plugin.zsh" ]]
-then
-  source "$(antidote home)/unixorn/fzf-zsh-plugin/fzf-zsh-plugin.plugin.zsh"
+# fzf-zsh-plugin load fallback
+if [[ ! -e "$(antidote home)/unixorn/fzf-zsh-plugin/fzf-zsh-plugin.zsh" ]]; then
+  source_if_exists "$(antidote home)/unixorn/fzf-zsh-plugin/fzf-zsh-plugin.plugin.zsh"
 fi
 
+# Starship installation check
 if ! command -v starship >/dev/null 2>&1; then
-  if which wget >/dev/null ; then
-    echo "Downloading via wget"
-    wget https://starship.rs/install.sh
-  elif which curl >/dev/null ; then
-    echo "Downloading via curl"
-    curl -sS -O https://starship.rs/install.sh
+  echo "Starship not found, attempting download..."
+  if command -v wget >/dev/null 2>&1; then
+    wget https://starship.rs/install.sh -O install_starship.sh
+  elif command -v curl >/dev/null 2>&1; then
+    curl -sS -o install_starship.sh https://starship.rs/install.sh
   else
-    echo "Cannot download, neither wget nor curl. Exiting"
-    exit 1
+    echo "Cannot download starship; neither wget nor curl is installed."
+    return 1
   fi
-  sh ./install.sh
-  rm ./install.sh
+  sh ./install_starship.sh
+  rm ./install_starship.sh
 fi
 
-# Load starship prompt
+# Initialize starship prompt
 eval "$(starship init zsh)"
 
-#
+###############################################################################
 # Completions
-# 
+###############################################################################
 
-# Ensure zfunc directory exists
-if [[ ! -d ~/.zfunc ]]; then
-  mkdir ~/.zfunc
-fi
-
-# poetry: https://github.com/python-poetry/poetry#enable-tab-completion-for-bash-fish-or-zsh
-fpath+=~/.zfunc
+# Ensure ~/.zfunc directory exists for custom completions
+make_dir_if_missing "${HOME}/.zfunc"
+fpath+="${HOME}/.zfunc"
 
 # asdf completions
-if [[ -d $ASDF_DIR/completions ]]; then
-  fpath=(${ASDF_DIR}/completions $fpath)
+if [[ -n "$ASDF_DIR" && -d "${ASDF_DIR}/completions" ]]; then
+  fpath=("${ASDF_DIR}/completions" $fpath)
 fi
 
-# poetry
-if command -v poetry &> /dev/null; then
-  if [[ ! -f ~/.zfunc/_poetry ]]; then
-    poetry completions zsh > ~/.zfunc/_poetry
+# Poetry completions
+if command -v poetry >/dev/null 2>&1; then
+  if [[ ! -f "${HOME}/.zfunc/_poetry" ]]; then
+    poetry completions zsh > "${HOME}/.zfunc/_poetry"
   fi
 fi
 
-# rustup
-if command -v rustup &> /dev/null; then
-  if [[ ! -f ~/.zfunc/_rustup ]]; then
-    rustup completions zsh > ~/.zfunc/_rustup
+# Rustup completions
+if command -v rustup >/dev/null 2>&1; then
+  if [[ ! -f "${HOME}/.zfunc/_rustup" ]]; then
+    rustup completions zsh > "${HOME}/.zfunc/_rustup"
   fi
-  if [[ ! -f ~/.zfunc/_cargo ]]; then
-    rustup completions zsh cargo > ~/.zfunc/_cargo
+  if [[ ! -f "${HOME}/.zfunc/_cargo" ]]; then
+    rustup completions zsh cargo > "${HOME}/.zfunc/_cargo"
   fi
 fi
 
-# Additional completions
-autoload -Uz +X compinit && compinit
+# Initialize zsh completions
+autoload -Uz +X compinit
+compinit
 
-# Ignore hosts completion
-zstyle ':completion:*' hosts off
-
-# Enable completion caching
+# Completion style settings
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
-
-# Disable hostname completion, because it's slow
+zstyle ':completion:*' cache-path "${ZSH_CACHE_DIR}/cache"
 zstyle ':completion:*' hosts off
-# Ignore DLL's on WSL2, these make it slower to complete t<tab>
-zstyle ':completion:*' ignored-patterns '*?.aux' '*?.bbl' '*?.blg' '*?.out' '*?.log' '*?.toc' '*?.snm' '*?.nav' '*?.pdf' '*?.bak' '*\~' '*?.dll'
+# Additional patterns to ignore
+zstyle ':completion:*' ignored-patterns \
+    '*?.aux' '*?.bbl' '*?.blg' '*?.out' '*?.log' '*?.toc' '*?.snm' '*?.nav' \
+    '*?.pdf' '*?.bak' '*\~' '*?.dll'
 
-
-if [[ -f ~/.shell/fn.sh ]] then
-    source ~/.shell/fn.sh
-fi
-
+###############################################################################
 # AWS CLI v2 completions
-if command -v aws_completer &> /dev/null; then
-  AWS_ZSH_COMPLETION_SCRIPT_PATH=~/.shell/completions/aws_zsh_completer.sh
-  if [[ -r $AWS_ZSH_COMPLETION_SCRIPT_PATH ]]; then
-    [[ -r $AWS_ZSH_COMPLETION_SCRIPT_PATH ]] && source $AWS_ZSH_COMPLETION_SCRIPT_PATH
-  fi
+###############################################################################
+
+if command -v aws_completer >/dev/null 2>&1; then
+  AWS_ZSH_COMPLETION_SCRIPT_PATH="${HOME}/.shell/completions/aws_zsh_completer.sh"
+  source_if_exists "$AWS_ZSH_COMPLETION_SCRIPT_PATH"
 fi
 
-if command -v terraform &> /dev/null; then
-  autoload -U +X bashcompinit && bashcompinit
+###############################################################################
+# Terraform completions
+###############################################################################
+
+if command -v terraform >/dev/null 2>&1; then
+  autoload -U +X bashcompinit
+  bashcompinit
   complete -o nospace -C terraform terraform
 fi
 
-if [[ -d ~/.yarn/bin ]] then
-  export PATH=$PATH:~/.yarn/bin
+###############################################################################
+# Yarn / Deno / Bob
+###############################################################################
+
+# Yarn
+if [[ -d "${HOME}/.yarn/bin" ]]; then
+  export PATH="${PATH}:${HOME}/.yarn/bin"
 fi
 
-if [[ -d ~/.deno/bin ]] then
-  export DENO_INSTALL="$HOME/.deno"
-  export PATH="$DENO_INSTALL/bin:$PATH"
+# Deno
+if [[ -d "${HOME}/.deno/bin" ]]; then
+  export DENO_INSTALL="${HOME}/.deno"
+  export PATH="${DENO_INSTALL}/bin:${PATH}"
 fi
 
-if [[ -d ~/.local/share/bob ]] then
-  export BOB_NVIM_PATH=$HOME/.local/share/bob/nvim-bin/
-  export PATH="$BOB_NVIM_PATH:$PATH"
+# Bob (Neovim version manager)
+if [[ -d "${HOME}/.local/share/bob" ]]; then
+  export BOB_NVIM_PATH="${HOME}/.local/share/bob/nvim-bin/"
+  export PATH="${BOB_NVIM_PATH}:${PATH}"
 fi
 
-if [[ -f ~/.zshrc.local ]] then
-  source ~/.zshrc.local
-fi
+###############################################################################
+# Additional Local Sourcing
+###############################################################################
 
-if [[ -f "$HOME/.cargo/env" ]] then
-  . "$HOME/.cargo/env"
-fi
+# Source an optional local config
+source_if_exists "${HOME}/.zshrc.local"
 
-if [[ -f "$HOME/.rye/env" ]] then
-  . "$HOME/.rye/env"
-fi
+# Cargo environment
+source_if_exists "${HOME}/.cargo/env"
 
-# Disable Next.js telemetry
-# Learn more here: https://nextjs.org/telemetry
-export NEXT_TELEMETRY_DISABLED=1
+# Rye environment (Python)
+source_if_exists "${HOME}/.rye/env"
