@@ -50,16 +50,16 @@ export TTY="$(tty)"
 ###############################################################################
 # History Options
 ###############################################################################
-HISTFILE="${HOME}/.zsh_history"  # where to store zsh history
+HISTFILE="${HOME}/.zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
 
-setopt append_history           # append to history file
+setopt append_history
 setopt hist_expire_dups_first
-setopt hist_ignore_all_dups     # remove all lines matching prev commands
-setopt hist_ignore_space        # ignore commands starting with space
-setopt hist_verify              # preview history command before running
-setopt inc_append_history       # share commands across multiple terminals
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_verify
+setopt inc_append_history
 setopt share_history
 
 ###############################################################################
@@ -84,41 +84,26 @@ alias clear_biome='rm -rf **/biome-socket-* **/biome-logs'
 alias git_prune_local='git branch --merged | egrep -v "(^\*|master|main|dev)" | xargs git branch -d'
 alias update_packages='pushd "${HOME}/.dot-config"; make global_update; popd;'
 alias update_repos='pushd "${HOME}/.dot-config"; make vcspull; popd;'
-
-# Simple benchmarking
 alias bench='for i in $(seq 1 10); do /usr/bin/time /bin/zsh -i -c exit; done;'
 
 ###############################################################################
-# Antidote (Plugin Manager)
+# Plugin Manager (Sheldon)
 ###############################################################################
-antidote_dir="${ZDOTDIR}/.antidote"
-plugins_txt="${ZDOTDIR}/.zsh_plugins.txt"
-static_file="${ZDOTDIR}/.zsh_plugins.zsh"
+# If you haven't already, create ~/.config/sheldon/plugins.toml with your plugins,
+# then run `sheldon lock` to generate a static file. 
+#
+# By default, Sheldon writes the locked file to ~/.local/share/sheldon/plugins.zsh
+# (You can customize that path with `sheldon lock --output <path>`).
 
-# Make plugin folder names more readable
-zstyle ':antidote:bundle' use-friendly-names 'yes'
+if command -v sheldon >/dev/null 2>&1; then
+  # Optionally auto-lock each time you start a shell (slower):
+  # sheldon lock
 
-# Clone antidote if necessary, rebuild static plugin file if needed
-if [[ ! -e "$static_file" || "$static_file" -ot "$plugins_txt" ]]; then
-  [[ -d "$antidote_dir" ]] || git clone --depth=1 https://github.com/mattmc3/antidote.git "$antidote_dir"
-  (
-    source "${antidote_dir}/antidote.zsh"
-    [[ -e "$plugins_txt" ]] || touch "$plugins_txt"
-    antidote bundle <"$plugins_txt" >"$static_file"
-  )
+  eval "$(sheldon source)"
 fi
 
-# Load antidote commands if desired (comment out if not needed)
-autoload -Uz "${antidote_dir}/functions/antidote"
-
-# Actually load the plugins
-antidote load
-
-# Optionally source the static plugin file directly
-# source "$static_file"
-
 ###############################################################################
-# Post-Plugin Install Actions
+# Post-Plugin Setup
 ###############################################################################
 
 # Starship logs: disable warnings
@@ -133,18 +118,7 @@ if command -v hstr >/dev/null 2>&1; then
   export HSTR_TIOCSTI='y'
 fi
 
-# Ensure fzf is installed if junegunn/fzf plugin is present via antidote
-if [[ ! -e "$(antidote home)/junegunn/fzf/bin/fzf" && -d "$(antidote home)/junegunn/fzf" ]]; then
-  antidote load
-  "$(antidote home)/junegunn/fzf/install" --bin
-fi
-
-# fzf-zsh-plugin load fallback
-if [[ ! -e "$(antidote home)/unixorn/fzf-zsh-plugin/fzf-zsh-plugin.zsh" ]]; then
-  source_if_exists "$(antidote home)/unixorn/fzf-zsh-plugin/fzf-zsh-plugin.plugin.zsh"
-fi
-
-# Starship installation check
+# Check starship installation (optional convenience)
 if ! command -v starship >/dev/null 2>&1; then
   echo "Starship not found, attempting download..."
   if command -v wget >/dev/null 2>&1; then
@@ -158,8 +132,6 @@ if ! command -v starship >/dev/null 2>&1; then
   sh ./install_starship.sh
   rm ./install_starship.sh
 fi
-
-# Initialize starship prompt
 eval "$(starship init zsh)"
 
 ###############################################################################
@@ -200,7 +172,6 @@ compinit
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "${ZSH_CACHE_DIR}/cache"
 zstyle ':completion:*' hosts off
-# Additional patterns to ignore
 zstyle ':completion:*' ignored-patterns \
     '*?.aux' '*?.bbl' '*?.blg' '*?.out' '*?.log' '*?.toc' '*?.snm' '*?.nav' \
     '*?.pdf' '*?.bak' '*\~' '*?.dll'
