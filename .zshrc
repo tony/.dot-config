@@ -109,22 +109,6 @@ fi
 # Starship logs: disable warnings
 export STARSHIP_LOG=error
 
-# Check starship installation (optional convenience)
-if ! command -v starship >/dev/null 2>&1; then
-  echo "Starship not found, attempting download..."
-  if command -v wget >/dev/null 2>&1; then
-    wget https://starship.rs/install.sh -O install_starship.sh
-  elif command -v curl >/dev/null 2>&1; then
-    curl -sS -o install_starship.sh https://starship.rs/install.sh
-  else
-    echo "Cannot download starship; neither wget nor curl is installed."
-    return 1
-  fi
-  sh ./install_starship.sh
-  rm ./install_starship.sh
-fi
-eval "$(starship init zsh)"
-
 ###############################################################################
 # Completions
 ###############################################################################
