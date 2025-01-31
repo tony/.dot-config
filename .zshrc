@@ -122,6 +122,13 @@ if [[ -n "$ASDF_DIR" && -d "${ASDF_DIR}/completions" ]]; then
   fpath=("${ASDF_DIR}/completions" $fpath)
 fi
 
+# sheldon
+if command -v sheldon >/dev/null 2>&1; then
+  if [[ ! -f "${HOME}/.zfunc/_sheldon" ]]; then
+    sheldon completions --shell zsh > "${HOME}/.zfunc/_shelldon"
+  fi
+fi
+
 # Poetry completions
 if command -v poetry >/dev/null 2>&1; then
   if [[ ! -f "${HOME}/.zfunc/_poetry" ]]; then
