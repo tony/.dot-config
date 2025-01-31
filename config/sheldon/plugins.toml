@@ -23,8 +23,8 @@ fzf-source = "source <(fzf --zsh)"
 # -------------------------------------------------------------------
 # starship/starship
 # -------------------------------------------------------------------
-# [plugins.starship]
-# inline = 'eval "$(starship init zsh)"'
+[plugins.starship]
+inline = 'eval "$(starship init zsh)"'
 
 # -------------------------------------------------------------------
 # asdf-vm (asdf), pinned to v0.15.0
