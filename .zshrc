@@ -109,15 +109,6 @@ fi
 # Starship logs: disable warnings
 export STARSHIP_LOG=error
 
-# HSTR (history search) config
-if command -v hstr >/dev/null 2>&1; then
-  alias hh='hstr'
-  setopt histignorespace
-  export HSTR_CONFIG='hicolor'
-  bindkey -s '\C-r' '\C-a hstr -- \C-j'
-  export HSTR_TIOCSTI='y'
-fi
-
 # Check starship installation (optional convenience)
 if ! command -v starship >/dev/null 2>&1; then
   echo "Starship not found, attempting download..."
