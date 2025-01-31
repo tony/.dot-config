@@ -344,7 +344,11 @@ linux_aws_sam:
 ##########################################################
 
 asdf_plugins_install:
-	cut -d' ' -f1 .tool-versions | xargs -I '{}' asdf plugin add '{}'
+	# Read each line from .tool-versions, split into plugin and version.
+	# The first column is the plugin name.
+	while read plugin version; do \
+		asdf plugin add "$$plugin" || true; \
+	done < .tool-versions
 
 asdf_install_with_nodejs_mirror:
 	env NODEJS_ORG_MIRROR=https://mirrors.dotsrc.org/nodejs/release/ asdf install
