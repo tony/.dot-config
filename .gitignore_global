@@ -1,5 +1,4 @@
 .idea/
-/*env*/
 /.cache/
 /.eggs/
 /.clang_complete
@@ -7,3 +6,15 @@
 
 # For ~/.fonts generating .uuid files on fc-cache(1)
 .uuid
+
+# Ignore environment variable files (with optional numeric suffix)
+.env
+.env[0-9]*
+env
+env[0-9]*
+
+# Ignore Python virtual environment directories (with optional numeric suffix)
+.venv
+.venv[0-9]*
+venv
+venv[0-9]*
