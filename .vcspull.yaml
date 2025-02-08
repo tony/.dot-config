@@ -131,6 +131,11 @@
     remotes:
       tony: "git+ssh://git@github.com/tony/pytest-textual-snapshot.git"
 
+  syrupy:
+    repo: "git+https://github.com/syrupy-project/syrupy.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/syrupy.git"
+
   pydantic-settings:
     repo: "git+https://github.com/pydantic/pydantic-settings.git"
     remotes:
