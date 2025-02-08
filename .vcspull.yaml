@@ -116,6 +116,11 @@
     remotes:
       tony: "git+ssh://git@github.com/tony/textual.git"
 
+  textual-dev:
+    repo: "git+https://github.com/Textualize/textual-dev.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/textual-dev.git"
+
   toolong:
     repo: "git+https://github.com/Textualize/toolong.git"
     remotes:
