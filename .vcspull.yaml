@@ -141,6 +141,11 @@
     remotes:
       tony: "git+ssh://git@github.com/tony/syrupy.git"
 
+  pydantic-ai:
+    repo: "git+https://github.com/pydantic/pydantic-ai.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/pydantic-ai.git"
+
   pydantic-settings:
     repo: "git+https://github.com/pydantic/pydantic-settings.git"
     remotes:
