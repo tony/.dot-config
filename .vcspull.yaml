@@ -106,6 +106,31 @@
   hypothesis:
     repo: "git+https://github.com/HypothesisWorks/hypothesis.git"
 
+  rich:
+    repo: "git+https://github.com/Textualize/rich.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/rich.git"
+
+  textual:
+    repo: "git+https://github.com/Textualize/textual.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/textual.git"
+
+  toolong:
+    repo: "git+https://github.com/Textualize/toolong.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/toolong.git"
+
+  trogon:
+    repo: "git+https://github.com/Textualize/trogon.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/trogon.git"
+
+  pytest-textual-snapshot:
+    repo: "git+https://github.com/Textualize/pytest-textual-snapshot.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/pytest-textual-snapshot.git"
+
   pydantic-settings:
     repo: "git+https://github.com/pydantic/pydantic-settings.git"
     remotes:
