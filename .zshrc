@@ -85,6 +85,8 @@ alias git_prune_local='git branch --merged | egrep -v "(^\*|master|main|dev)" | 
 alias update_packages='pushd "${HOME}/.dot-config"; make global_update; popd;'
 alias update_repos='pushd "${HOME}/.dot-config"; make vcspull; popd;'
 alias bench='for i in $(seq 1 10); do /usr/bin/time /bin/zsh -i -c exit; done;'
+alias git_restore_main='git restore --source=origin/main --staged --worktree .'
+alias git_restore_master='git restore --source=origin/master --staged --worktree .'
 
 ###############################################################################
 # Plugin Manager (Sheldon)
