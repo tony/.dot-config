@@ -974,6 +974,10 @@
     repo: "git+https://github.com/DefinitelyTyped/DefinitelyTyped.git"
     remotes:
       tony: "git+ssh://git@github.com/tony/DefinitelyTyped.git"
+  search-input-query:
+    repo: "git+https://github.com/williamcotton/search-input-query.git"
+    remotes:
+      tony: "git+ssh://git@github.com/tony/search-input-query.git"
   akita:
     repo: "git+https://github.com/datorama/akita.git"
     remotes:
