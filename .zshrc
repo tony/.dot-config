@@ -1,4 +1,4 @@
-# If ZDOTDIR isn’t already set, default it to $HOME.
+# If ZDOTDIR isn't already set, default it to $HOME.
 ZDOTDIR="${ZDOTDIR:-$HOME}"
 
 ###############################################################################
@@ -28,7 +28,6 @@ export ASDF_CRATE_DEFAULT_PACKAGES_FILE="${ZDOTDIR}/.default-cargo-crates"
 export ASDF_PYTHON_DEFAULT_PACKAGES_FILE="${ZDOTDIR}/.default-python-packages"
 export ASDF_NPM_DEFAULT_PACKAGES_FILE="${ZDOTDIR}/.default-npm-packages"
 export ASDF_POETRY_INSTALL_URL="https://install.python-poetry.org"
-export ASDF_NODEJS_AUTO_ENABLE_COREPACK=1
 
 # Cache fix
 export ZSH_CACHE_DIR="${HOME}/.zsh"
