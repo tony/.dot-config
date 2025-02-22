@@ -176,3 +176,29 @@ if type -q fzf
         set -xg FZF_CTRL_T_COMMAND "$FZF_FIND_COMMAND | $FZF_CUSTOM_GREP_IGNORE 2> /dev/null"
     end
 end
+
+# History Configuration
+set -g fish_history fish
+set -Ux HISTFILE "$HOME/.local/share/fish/fish_history"
+set -Ux HISTSIZE 10000
+set -Ux SAVEHIST 10000
+
+# Aliases
+if status is-interactive
+    # Clear commands
+    alias clear_pyc='find . -type f -regex ".*\(\.pyc\|\.pyo\|__pycache__\).*" -delete'
+    alias clear_empty_dirs='find . -type d -empty -delete'
+    alias clear_biome='rm -rf **/biome-socket-* **/biome-logs'
+    
+    # Git commands
+    alias git_prune_local='git branch --merged | egrep -v "(^\*|master|main|dev)" | xargs git branch -d'
+    alias git_restore_main='git restore --source=origin/main --staged --worktree .'
+    alias git_restore_master='git restore --source=origin/master --staged --worktree .'
+    
+    # Update commands
+    alias update_packages='pushd "$HOME/.dot-config"; and make global_update; and popd'
+    alias update_repos='pushd "$HOME/.dot-config"; and make vcspull; and popd'
+    
+    # Benchmarking
+    alias bench='for i in (seq 1 10); time fish -i -c exit; end'
+end
