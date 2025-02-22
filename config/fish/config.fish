@@ -1,3 +1,8 @@
+# Set XDG paths if not already set
+set -q XDG_CONFIG_HOME; or set -Ux XDG_CONFIG_HOME $HOME/.config
+set -q XDG_CACHE_HOME; or set -Ux XDG_CACHE_HOME $HOME/.cache
+set -q XDG_DATA_HOME; or set -Ux XDG_DATA_HOME $HOME/.local/share
+
 # Set EDITOR environment variables
 if type -q vim
     set -Ux EDITOR (type -p vim)
@@ -7,6 +12,28 @@ end
 
 # Disable fish greeting
 set -g fish_greeting ''
+
+# asdf configuration
+set -Ux ASDF_DATA_DIR "$XDG_CONFIG_HOME/asdf"
+set -Ux ASDF_CONFIG_FILE "$HOME/.asdfrc"
+set -Ux ASDF_CRATE_DEFAULT_PACKAGES_FILE "$HOME/.default-cargo-crates"
+set -Ux ASDF_PYTHON_DEFAULT_PACKAGES_FILE "$HOME/.default-python-packages"
+set -Ux ASDF_NPM_DEFAULT_PACKAGES_FILE "$HOME/.default-npm-packages"
+set -Ux ASDF_POETRY_INSTALL_URL "https://install.python-poetry.org"
+
+# Node.js
+set -Ux COREPACK_ENABLE_STRICT 0
+
+# Disable telemetry
+set -Ux SAM_CLI_TELEMETRY 0
+set -Ux GATSBY_TELEMETRY_DISABLED 1
+set -Ux NEXT_TELEMETRY_DISABLED 1
+
+# Python
+set -Ux PYTHONSTARTUP "$HOME/.pythonrc"
+
+# Terminal TTY reference
+set -Ux TTY (tty)
 
 if test -d $ASDF_DIR
     if ! test ~/.config/fish/completions/asdf.fish
