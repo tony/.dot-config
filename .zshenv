@@ -42,6 +42,14 @@ if [[ -d /etc/profile.d ]]; then
 fi
 
 ##################################################
+# Source user-specific functions under ~/.dot-config/.shell/fn.sh
+##################################################
+
+if [[ -f "$HOME/.dot-config/.shell/fn.sh" ]]; then
+  source "$HOME/.dot-config/.shell/fn.sh"
+fi
+
+##################################################
 # Source user-specific scripts under ~/.dot-config/.shell/vars.d/
 ##################################################
 
