@@ -198,7 +198,4 @@ if status is-interactive
     # Update commands
     alias update_packages='pushd "$HOME/.dot-config"; and make global_update; and popd'
     alias update_repos='pushd "$HOME/.dot-config"; and make vcspull; and popd'
-    
-    # Benchmarking
-    alias bench='for i in (seq 1 10); time fish -i -c exit; end'
 end
