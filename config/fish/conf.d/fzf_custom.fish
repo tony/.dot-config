@@ -33,6 +33,15 @@ set -x FZF_CTRL_T_COMMAND "$FZF_FIND_COMMAND | $STRIP_CMD"
 # Configure FZF default options
 set -x FZF_DEFAULT_OPTS "--height 40% --layout=reverse --border --cycle"
 
+# Configure history search options (Ctrl+R)
+set -x FZF_CTRL_R_OPTS "
+    --preview 'echo {}' \
+    --preview-window 'down:3:wrap' \
+    --bind 'ctrl-/:toggle-preview' \
+    --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort' \
+    --color header:italic \
+    --header 'Press CTRL-/ to toggle preview, CTRL-Y to copy command'"
+
 # Configure key bindings
 function fish_user_key_bindings
     # Standard bindings
