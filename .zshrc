@@ -29,6 +29,9 @@ export ASDF_PYTHON_DEFAULT_PACKAGES_FILE="${ZDOTDIR}/.default-python-packages"
 export ASDF_NPM_DEFAULT_PACKAGES_FILE="${ZDOTDIR}/.default-npm-packages"
 export ASDF_POETRY_INSTALL_URL="https://install.python-poetry.org"
 
+# Node.js
+export COREPACK_ENABLE_STRICT=0  # Silence corepack warnings
+
 # Cache fix
 export ZSH_CACHE_DIR="${HOME}/.zsh"
 
