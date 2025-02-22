@@ -50,6 +50,19 @@ if [[ -f "$HOME/.dot-config/.shell/fn.sh" ]]; then
 fi
 
 ##################################################
+# Source user-specific scripts under ~/.dot-config/.shell/fn.d/
+##################################################
+
+if [[ -d "$HOME/.dot-config/.shell/fn.d" ]]; then
+
+  # Then load the rest (excluding ignore.sh if you don’t want it re-sourced)
+  for f in "$HOME/.dot-config/.shell/fn.d"/*.zsh; do
+    [[ -r "$f" ]] && source "$f"
+  done
+
+fi
+
+##################################################
 # Source user-specific scripts under ~/.dot-config/.shell/vars.d/
 ##################################################
 
