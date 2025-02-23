@@ -11,6 +11,17 @@ function __fzf_mgr_log -a level message
     end
 end
 
+function __fzf_mgr_get_install_dir
+    # Use test directory if in test mode, otherwise use configured directory
+    if set -q FISH_TEST
+        echo "$test_temp_dir/local/bin"
+    else if set -q FZF_INSTALL_DIR
+        echo "$FZF_INSTALL_DIR"
+    else
+        echo "$HOME/.local/bin"
+    end
+end
+
 function fzf_mgr_get_version
     __fzf_mgr_log "DEBUG" "Checking installed fzf version"
     if command -q fzf
@@ -111,27 +122,84 @@ function fzf_mgr_install
     
     pushd $temp_dir
     
-    # Download and install fzf
-    set -l download_url "https://github.com/junegunn/fzf/releases/download/$target_ver/fzf-$target_ver-linux_amd64.tar.gz"
-    __fzf_mgr_log "DEBUG" "Downloading from: $download_url"
+    # Determine system architecture and OS
+    set -l arch (uname -m)
+    set -l os (uname -s | string lower)
     
-    if not curl -L $download_url | tar xz
-        __fzf_mgr_log "ERROR" "Failed to download or extract fzf"
+    __fzf_mgr_log "DEBUG" "System: $os, Architecture: $arch"
+    
+    # Map architecture names
+    switch $arch
+        case x86_64
+            set arch amd64
+            __fzf_mgr_log "DEBUG" "Mapped x86_64 to amd64"
+        case aarch64
+            set arch arm64
+            __fzf_mgr_log "DEBUG" "Mapped aarch64 to arm64"
+        case '*'
+            __fzf_mgr_log "ERROR" "Unsupported architecture: $arch"
+            popd
+            rm -rf $temp_dir
+            return 1
+    end
+    
+    # Map OS names
+    switch $os
+        case linux darwin
+            __fzf_mgr_log "DEBUG" "Using $os platform"
+        case '*'
+            __fzf_mgr_log "ERROR" "Unsupported operating system: $os"
+            popd
+            rm -rf $temp_dir
+            return 1
+    end
+    
+    # Strip 'v' prefix if present for filename
+    set -l ver_no_prefix (string replace -r '^v' '' $target_ver)
+    __fzf_mgr_log "DEBUG" "Version without prefix: $ver_no_prefix"
+    
+    # Construct platform-specific filename
+    set -l filename
+    if test $os = darwin
+        set filename "fzf-$ver_no_prefix-darwin_$arch.zip"
+    else
+        set filename "fzf-$ver_no_prefix-$os"_"$arch.tar.gz"
+    end
+    __fzf_mgr_log "DEBUG" "Archive filename: $filename"
+    
+    set -l download_url "https://github.com/junegunn/fzf/releases/download/$target_ver/$filename"
+    __fzf_mgr_log "DEBUG" "Download URL: $download_url"
+    
+    # Download the file first to check if it exists
+    set -l archive $temp_dir/fzf.archive
+    if not curl -L -f -o $archive $download_url
+        __fzf_mgr_log "ERROR" "Failed to download fzf: $download_url"
         popd
         rm -rf $temp_dir
         return 1
     end
     
-    chmod +x fzf
-    
-    # Use test directory if in test mode, otherwise use ~/.local/bin
-    set -l install_dir
-    if set -q FISH_TEST
-        set install_dir $test_temp_dir/local/bin
+    # Extract based on archive type
+    if string match -q '*.zip' $filename
+        if not unzip $archive
+            __fzf_mgr_log "ERROR" "Failed to extract fzf zip archive"
+            popd
+            rm -rf $temp_dir
+            return 1
+        end
     else
-        set install_dir $HOME/.local/bin
+        if not tar xzf $archive
+            __fzf_mgr_log "ERROR" "Failed to extract fzf tar.gz archive"
+            popd
+            rm -rf $temp_dir
+            return 1
+        end
     end
     
+    chmod +x fzf
+    
+    # Get installation directory
+    set -l install_dir (__fzf_mgr_get_install_dir)
     if not test -d $install_dir
         mkdir -p $install_dir
     end
@@ -160,7 +228,7 @@ end
 function fzf_mgr_ensure
     __fzf_mgr_log "DEBUG" "Ensuring fzf is installed with correct version"
     if fzf_mgr_needs_update
-        echo "Installing/updating fzf..."
+        __fzf_mgr_log "INFO" "Installing/updating fzf..."
         fzf_mgr_install $FZF_VERSION
     end
 end 

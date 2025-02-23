@@ -82,7 +82,7 @@ end
 function test_get_latest_version
     # Mock curl for testing
     echo '#!/usr/bin/env fish' > $test_temp_dir/bin/curl
-    echo 'echo \'{"tag_name": "v0.42.0"}\'' >> $test_temp_dir/bin/curl
+    echo 'echo \'{"tag_name": "v0.42.0", "name": "0.42.0"}\'' >> $test_temp_dir/bin/curl
     chmod +x $test_temp_dir/bin/curl
     
     set -l ver_str (fzf_mgr_get_latest_version)
@@ -115,7 +115,7 @@ end
 function test_install
     # Mock curl and tar for testing
     echo '#!/usr/bin/env fish' > $test_temp_dir/bin/curl
-    echo 'echo \'{"tag_name": "v0.42.0"}\'' >> $test_temp_dir/bin/curl
+    echo 'echo \'{"tag_name": "v0.42.0", "name": "0.42.0"}\'' >> $test_temp_dir/bin/curl
     chmod +x $test_temp_dir/bin/curl
     
     # Mock tar to create a fake fzf binary
@@ -133,6 +133,56 @@ function test_install
     end
 end
 
+# Test auto-update functionality
+function test_auto_update
+    # Mock initial version
+    echo '#!/usr/bin/env fish' > $test_temp_dir/bin/fzf
+    echo 'echo "0.41.0"' >> $test_temp_dir/bin/fzf
+    chmod +x $test_temp_dir/bin/fzf
+    
+    # Mock curl for latest version
+    echo '#!/usr/bin/env fish' > $test_temp_dir/bin/curl
+    echo 'echo \'{"tag_name": "v0.42.0", "name": "0.42.0"}\'' >> $test_temp_dir/bin/curl
+    chmod +x $test_temp_dir/bin/curl
+    
+    # Mock tar for installation
+    echo '#!/usr/bin/env fish' > $test_temp_dir/bin/tar
+    echo 'echo "#!/usr/bin/env fish" > fzf' >> $test_temp_dir/bin/tar
+    echo 'echo "echo \"0.42.0\"" >> fzf' >> $test_temp_dir/bin/tar
+    echo 'chmod +x fzf' >> $test_temp_dir/bin/tar
+    chmod +x $test_temp_dir/bin/tar
+    
+    # Enable auto-update
+    set -gx FZF_AUTO_UPDATE true
+    set -gx FZF_VERSION latest
+    
+    # Run ensure and verify update
+    fzf_mgr_ensure
+    set -l new_ver (fzf_mgr_get_version)
+    test "$new_ver" = "0.42.0"
+end
+
+# Test custom installation directory
+function test_custom_install_dir
+    set -l custom_dir "$test_temp_dir/custom/bin"
+    mkdir -p $custom_dir
+    set -gx FZF_INSTALL_DIR $custom_dir
+    
+    # Mock curl and tar
+    echo '#!/usr/bin/env fish' > $test_temp_dir/bin/curl
+    echo 'echo \'{"tag_name": "v0.42.0", "name": "0.42.0"}\'' >> $test_temp_dir/bin/curl
+    chmod +x $test_temp_dir/bin/curl
+    
+    echo '#!/usr/bin/env fish' > $test_temp_dir/bin/tar
+    echo 'echo "#!/usr/bin/env fish" > fzf' >> $test_temp_dir/bin/tar
+    echo 'echo "echo \"0.42.0\"" >> fzf' >> $test_temp_dir/bin/tar
+    echo 'chmod +x fzf' >> $test_temp_dir/bin/tar
+    chmod +x $test_temp_dir/bin/tar
+    
+    fzf_mgr_install "v0.42.0"
+    test -x "$custom_dir/fzf"
+end
+
 # Run all tests
 echo "Running fzf manager tests..."
 echo "=========================="
@@ -148,11 +198,13 @@ run_test "get_latest_version" test_get_latest_version; or set failed_tests (math
 run_test "needs_update with current version" test_needs_update_with_current; or set failed_tests (math $failed_tests + 1)
 run_test "needs_update with different version" test_needs_update_with_different; or set failed_tests (math $failed_tests + 1)
 run_test "install" test_install; or set failed_tests (math $failed_tests + 1)
+run_test "auto-update" test_auto_update; or set failed_tests (math $failed_tests + 1)
+run_test "custom install directory" test_custom_install_dir; or set failed_tests (math $failed_tests + 1)
 
 # Restore original FZF_VERSION
 set -gx FZF_VERSION $original_fzf_version
 
 echo "=========================="
-echo "Test summary: "(math 5 - $failed_tests)" passed, $failed_tests failed"
+echo "Test summary: "(math 7 - $failed_tests)" passed, $failed_tests failed"
 
 exit $failed_tests 

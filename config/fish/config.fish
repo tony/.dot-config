@@ -157,3 +157,14 @@ if status is-interactive
     alias update_packages='pushd "$HOME/.dot-config"; and make global_update; and popd'
     alias update_repos='pushd "$HOME/.dot-config"; and make vcspull; and popd'
 end
+
+# Skip fzf setup in test mode
+if not set -q FISH_TEST
+    # Pin fzf version
+    set -gx FZF_VERSION "v0.60.2"
+
+    # Ensure fzf is installed with the correct version
+    if not command -q fzf; or test "$FZF_AUTO_UPDATE" = "true"
+        fzf_mgr_ensure
+    end
+end
