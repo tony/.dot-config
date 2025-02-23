@@ -12,11 +12,11 @@ function __fzf_mgr_log -a level message
 end
 
 function __fzf_mgr_get_install_dir
-    # Use test directory if in test mode, otherwise use configured directory
-    if set -q FISH_TEST
-        echo "$test_temp_dir/local/bin"
-    else if set -q FZF_INSTALL_DIR
+    # Use FZF_INSTALL_DIR if set, otherwise use test directory in test mode or default directory
+    if set -q FZF_INSTALL_DIR
         echo "$FZF_INSTALL_DIR"
+    else if set -q FISH_TEST; and set -q test_temp_dir
+        echo "$test_temp_dir/local/bin"
     else
         echo "$HOME/.local/bin"
     end
