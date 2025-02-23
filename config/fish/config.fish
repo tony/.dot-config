@@ -44,8 +44,10 @@ else
     git clone https://github.com/asdf-vm/asdf.git $ASDF_DIR --branch v0.14.0
 end
 
-if ! type -q fisher
-    curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+if not set -q FISH_TEST
+    if not type -q fisher
+        curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+    end
 end
 
 if type -q yarn
