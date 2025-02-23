@@ -24,11 +24,46 @@ set -gx fish_function_path $func_dir $fish_function_path
 
 # Run the tests from the test directory
 pushd $test_dir
-./test_fzf_mgr.fish
-set -l status_code $status
+
+# Initialize test counters
+set -l total_tests 0
+set -l failed_tests 0
+
+echo "Discovering test files..."
+echo "========================"
+
+# Find all test files (test_*.fish)
+for test_file in test_*.fish
+    # Skip if not a file
+    if not test -f $test_file
+        continue
+    end
+    
+    set total_tests (math $total_tests + 1)
+    echo "Running tests from $test_file..."
+    
+    # Run the test file
+    ./$test_file
+    set -l test_status $status
+    
+    if test $test_status -ne 0
+        set failed_tests (math $failed_tests + 1)
+        echo "❌ $test_file failed with status $test_status"
+    else
+        echo "✓ $test_file passed"
+    end
+    echo
+end
 
 # Restore original function path
 set -gx fish_function_path $original_function_path
 
+echo "========================"
+echo "Test Summary"
+echo "------------"
+echo "Total test files: $total_tests"
+echo "Failed: $failed_tests"
+echo "Passed: "(math $total_tests - $failed_tests)
+
 popd
-exit $status_code 
+exit $failed_tests 
