@@ -4,6 +4,10 @@ function shell_bench --description 'Compare Fish and Zsh startup times'
     set -l zsh_times
     set -l max_retries 3
 
+    # Get the time command from PATH
+    set -l time_cmd (which time)
+    echo "DEBUG: Using time command: $time_cmd"
+
     echo "Running $iterations iterations for each shell..."
     echo "============================================"
     
@@ -13,32 +17,42 @@ function shell_bench --description 'Compare Fish and Zsh startup times'
         # Benchmark Fish with retries
         set -l fish_time 0
         set -l retry_count 0
-        while test $fish_time -le 0 -a $retry_count -lt $max_retries
-            set fish_time (/usr/bin/time -p fish -i -c exit 2>&1 | grep real | awk '{print $2}' | awk '{printf "%.0f\n", $1*1000}')
+        while test "$fish_time" -le 0; and test $retry_count -lt $max_retries
+            set -l output ($time_cmd -p fish -i -c exit 2>&1 | grep real | awk '{print $2}')
+            if test -n "$output"
+                set fish_time (math "round($output * 1000)")
+            else
+                set fish_time 0
+            end
             set retry_count (math $retry_count + 1)
             if test $retry_count -gt 1
                 echo -n "Retrying Fish ($retry_count)... "
             end
         end
         # Convert back to seconds
-        set fish_time (math "$fish_time / 1000")
-        if test $fish_time -gt 0
+        if test "$fish_time" -gt 0
+            set fish_time (math "$fish_time / 1000")
             set -a fish_times $fish_time
         end
         
         # Benchmark Zsh with retries
         set -l zsh_time 0
         set -l retry_count 0
-        while test $zsh_time -le 0 -a $retry_count -lt $max_retries
-            set zsh_time (/usr/bin/time -p zsh -i -c exit 2>&1 | grep real | awk '{print $2}' | awk '{printf "%.0f\n", $1*1000}')
+        while test "$zsh_time" -le 0; and test $retry_count -lt $max_retries
+            set -l output ($time_cmd -p zsh -i -c exit 2>&1 | grep real | awk '{print $2}')
+            if test -n "$output"
+                set zsh_time (math "round($output * 1000)")
+            else
+                set zsh_time 0
+            end
             set retry_count (math $retry_count + 1)
             if test $retry_count -gt 1
                 echo -n "Retrying Zsh ($retry_count)... "
             end
         end
         # Convert back to seconds
-        set zsh_time (math "$zsh_time / 1000")
-        if test $zsh_time -gt 0
+        if test "$zsh_time" -gt 0
+            set zsh_time (math "$zsh_time / 1000")
             set -a zsh_times $zsh_time
         end
         
