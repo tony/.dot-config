@@ -91,6 +91,16 @@ alias git_restore_main='git restore --source=origin/main --staged --worktree .'
 alias git_restore_master='git restore --source=origin/master --staged --worktree .'
 
 ###############################################################################
+# VSCode/Cursor Configuration
+###############################################################################
+
+# Set pager configuration when in VSCode/Cursor
+if [[ "$TERM_PROGRAM" = "vscode" ]]; then
+  export PAGER=cat
+  export GIT_PAGER=cat
+fi
+
+###############################################################################
 # Plugin Manager (Sheldon)
 ###############################################################################
 # If you haven't already, create ~/.config/sheldon/plugins.toml with your plugins,
