@@ -54,6 +54,12 @@ if type -q yarn
     set -U fish_user_paths (yarn global bin) $fish_user_paths
 end
 
+# VSCode/Cursor Configuration
+if test "$TERM_PROGRAM" = "vscode"
+    set -gx PAGER cat
+    set -gx GIT_PAGER cat
+end
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
     set -lx SHELL fish
