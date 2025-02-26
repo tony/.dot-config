@@ -65,6 +65,21 @@ setopt inc_append_history
 setopt share_history
 
 ###############################################################################
+# VSCode/Cursor Configuration
+###############################################################################
+
+# Set pager configuration when in VSCode/Cursor
+if [[ "$TERM_PROGRAM" = "vscode" ]]; then
+  export PAGER=cat
+  export GIT_PAGER=cat
+  # Do not store history inside editors
+  setopt HIST_NO_STORE
+  fc -R ~/.zsh_history   # Reload your existing history into memory
+  HISTFILE=/dev/null
+  unset HISTFILE         # Disable further writes to the history file
+fi
+
+###############################################################################
 # Keybindings & Vim-like Input
 ###############################################################################
 
@@ -89,16 +104,6 @@ alias update_repos='pushd "${HOME}/.dot-config"; make vcspull; popd;'
 alias bench='for i in $(seq 1 10); do /usr/bin/time /bin/zsh -i -c exit; done;'
 alias git_restore_main='git restore --source=origin/main --staged --worktree .'
 alias git_restore_master='git restore --source=origin/master --staged --worktree .'
-
-###############################################################################
-# VSCode/Cursor Configuration
-###############################################################################
-
-# Set pager configuration when in VSCode/Cursor
-if [[ "$TERM_PROGRAM" = "vscode" ]]; then
-  export PAGER=cat
-  export GIT_PAGER=cat
-fi
 
 ###############################################################################
 # Plugin Manager (Sheldon)

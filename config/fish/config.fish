@@ -58,6 +58,8 @@ end
 if test "$TERM_PROGRAM" = "vscode"
     set -gx PAGER cat
     set -gx GIT_PAGER cat
+    # Do not store history inside editors
+    set -gx fish_private_mode 1
 end
 
 if status is-interactive
@@ -153,12 +155,12 @@ if status is-interactive
     alias clear_pyc='find . -type f -regex ".*\(\.pyc\|\.pyo\|__pycache__\).*" -delete'
     alias clear_empty_dirs='find . -type d -empty -delete'
     alias clear_biome='rm -rf **/biome-socket-* **/biome-logs'
-    
+
     # Git commands
     alias git_prune_local='git branch --merged | egrep -v "(^\*|master|main|dev)" | xargs git branch -d'
     alias git_restore_main='git restore --source=origin/main --staged --worktree .'
     alias git_restore_master='git restore --source=origin/master --staged --worktree .'
-    
+
     # Update commands
     alias update_packages='pushd "$HOME/.dot-config"; and make global_update; and popd'
     alias update_repos='pushd "$HOME/.dot-config"; and make vcspull; and popd'
