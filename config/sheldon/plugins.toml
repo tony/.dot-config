@@ -52,18 +52,18 @@ github = "zsh-users/zsh-history-substring-search"
 use = ["zsh-history-substring-search.zsh"]
 
 # -------------------------------------------------------------------
-# junegunn/fzf pinned to v0.60.2 + separate bin injection
+# junegunn/fzf pinned to v0.60.3 + separate bin injection
 # -------------------------------------------------------------------
 # 1) Main clone (sources, scripts, etc.)
 [plugins."fzf-clone"]
 github = "junegunn/fzf"
-tag = "v0.60.2"
+tag = "v0.60.3"
 use = ["shell/completion.zsh", "shell/key-bindings.zsh", "install"]
 apply = ['fzf-install', 'fzf-source']
 
 [plugins."fzf-bin"]
 github = "junegunn/fzf"
-tag = "v0.60.2"
+tag = "v0.60.3"
 dir = "bin"
 apply = ["PATH"]
 
