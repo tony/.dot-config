@@ -77,6 +77,9 @@ if [[ "$TERM_PROGRAM" = "vscode" ]]; then
   fc -R ~/.zsh_history   # Reload your existing history into memory
   HISTFILE=/dev/null
   unset HISTFILE         # Disable further writes to the history file
+
+  # Forbid color in output for console / agent loops, e.g. in vitest
+  export NO_COLOR=1
 fi
 
 ###############################################################################
