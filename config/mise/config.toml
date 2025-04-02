@@ -1,0 +1,18 @@
+# mise configuration
+
+[settings]
+# Enable asdf compatibility mode
+asdf_compat = true
+# Legacy version files (.node-version, .python-version, etc)
+legacy_version_file = true
+# Automatically install missing plugins
+experimental = true
+
+[env]
+# This is the correct place to set MISE_PYTHON_COMPILE
+MISE_PYTHON_COMPILE = "1"
+
+[alias]
+# Add some useful aliases
+py = "python"
+node-lts = "node@lts"
