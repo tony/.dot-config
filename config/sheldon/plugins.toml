@@ -27,12 +27,19 @@ fzf-source = "source <(fzf --zsh)"
 inline = 'eval "$(starship init zsh)"'
 
 # -------------------------------------------------------------------
-# asdf-vm (asdf), pinned to v0.15.0
+# mise version manager (https://mise.jdx.dev/)
 # -------------------------------------------------------------------
-[plugins.asdf]
-github = "asdf-vm/asdf"
-tag = "v0.15.0"
-use = ["asdf.sh", "completions/asdf.zsh"]
+[plugins.mise]
+inline = '''
+if ! command -v mise >/dev/null 2>&1; then
+  echo "mise not found, installing..."
+  curl -fsSL https://mise.run | sh
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+if command -v mise >/dev/null 2>&1; then
+  eval "$(mise activate zsh)"
+fi
+'''
 
 # -------------------------------------------------------------------
 # ohmyzsh/ohmyzsh plugin: ssh-agent

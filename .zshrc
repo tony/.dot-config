@@ -21,13 +21,15 @@ make_dir_if_missing() {
 # Environment Variables & Constants
 ###############################################################################
 
-# asdf
-export ASDF_DATA_DIR="${XDG_CONFIG_HOME}/asdf"
-export ASDF_CONFIG_FILE="${HOME}/.asdfrc"
-export ASDF_CRATE_DEFAULT_PACKAGES_FILE="${ZDOTDIR}/.default-cargo-crates"
-export ASDF_PYTHON_DEFAULT_PACKAGES_FILE="${ZDOTDIR}/.default-python-packages"
-export ASDF_NPM_DEFAULT_PACKAGES_FILE="${ZDOTDIR}/.default-npm-packages"
-export ASDF_POETRY_INSTALL_URL="https://install.python-poetry.org"
+# mise
+export MISE_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/mise"
+export MISE_DATA_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/mise"
+# Don't set this as a TOML config file
+# export MISE_GLOBAL_CONFIG_FILE="${HOME}/.tool-versions"
+export MISE_CARGO_DEFAULT_PACKAGES_FILE="${ZDOTDIR}/.default-cargo-crates"
+export MISE_PYTHON_DEFAULT_PACKAGES_FILE="${ZDOTDIR}/.default-python-packages"
+export MISE_NODE_DEFAULT_PACKAGES_FILE="${ZDOTDIR}/.default-npm-packages"
+export MISE_ASDF_COMPAT=true
 
 # Node.js
 export COREPACK_ENABLE_STRICT=0  # Silence corepack warnings
@@ -155,9 +157,11 @@ export STARSHIP_LOG=error
 make_dir_if_missing "${HOME}/.zfunc"
 fpath+="${HOME}/.zfunc"
 
-# asdf completions
-if [[ -n "$ASDF_DIR" && -d "${ASDF_DIR}/completions" ]]; then
-  fpath=("${ASDF_DIR}/completions" $fpath)
+# mise completions
+if command -v mise >/dev/null 2>&1; then
+  if [[ ! -f "${HOME}/.zfunc/_mise" ]]; then
+    mise completions zsh > "${HOME}/.zfunc/_mise"
+  fi
 fi
 
 # sheldon
