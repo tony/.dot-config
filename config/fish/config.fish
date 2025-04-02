@@ -13,13 +13,15 @@ end
 # Disable fish greeting
 set -g fish_greeting ''
 
-# asdf configuration
-set -Ux ASDF_DATA_DIR "$XDG_CONFIG_HOME/asdf"
-set -Ux ASDF_CONFIG_FILE "$HOME/.asdfrc"
-set -Ux ASDF_CRATE_DEFAULT_PACKAGES_FILE "$HOME/.default-cargo-crates"
-set -Ux ASDF_PYTHON_DEFAULT_PACKAGES_FILE "$HOME/.default-python-packages"
-set -Ux ASDF_NPM_DEFAULT_PACKAGES_FILE "$HOME/.default-npm-packages"
-set -Ux ASDF_POETRY_INSTALL_URL "https://install.python-poetry.org"
+# mise configuration
+set -Ux MISE_CONFIG_DIR "$XDG_CONFIG_HOME/mise"
+set -Ux MISE_DATA_DIR "$XDG_CONFIG_HOME/mise"
+# Don't set this as a TOML config file
+# set -Ux MISE_GLOBAL_CONFIG_FILE "$HOME/.tool-versions"
+set -Ux MISE_CARGO_DEFAULT_PACKAGES_FILE "$HOME/.default-cargo-crates"
+set -Ux MISE_PYTHON_DEFAULT_PACKAGES_FILE "$HOME/.default-python-packages"
+set -Ux MISE_NODE_DEFAULT_PACKAGES_FILE "$HOME/.default-npm-packages"
+set -Ux MISE_ASDF_COMPAT true
 
 # Node.js
 set -Ux COREPACK_ENABLE_STRICT 0
@@ -35,13 +37,15 @@ set -Ux PYTHONSTARTUP "$HOME/.pythonrc"
 # Terminal TTY reference
 set -Ux TTY (tty)
 
-if test -d $ASDF_DIR
-    if ! test ~/.config/fish/completions/asdf.fish
-        mkdir -p ~/.config/fish/completions; and ln -s $ASDF_DIR/completions/asdf.fish ~/.config/fish/completions
+# Initialize mise if it exists, otherwise install it
+if command -sq mise
+    # mise already initialized in conf.d/mise.fish
+else if not set -q FISH_TEST
+    # Don't attempt to install mise during tests
+    if command -sq curl
+        curl -fsSL https://mise.run | sh
+        fish_add_path ~/.local/bin
     end
-    source $ASDF_DIR/asdf.fish
-else
-    git clone https://github.com/asdf-vm/asdf.git $ASDF_DIR --branch v0.14.0
 end
 
 if not set -q FISH_TEST
