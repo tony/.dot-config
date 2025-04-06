@@ -1,3 +1,44 @@
+# If in VSCode/Cursor terminal, use ultra-minimal config
+if [[ "$TERM_PROGRAM" = "vscode" ]]; then
+  # Absolute bare minimum prompt
+  export PS1="$ "
+  
+  # Performance settings
+  export PAGER=cat
+  export GIT_PAGER=cat
+  export NO_COLOR=1
+  
+  # Disable history to improve performance
+  HISTFILE=/dev/null
+  
+  # Only load core toolchain environment variables
+  
+  # mise (critical)
+  if command -v mise >/dev/null 2>&1; then
+    eval "$(mise activate zsh)"
+  fi
+  
+  # asdf (if mise doesn't cover it)
+  if [[ -f "$HOME/.asdf/asdf.sh" ]]; then
+    source "$HOME/.asdf/asdf.sh"
+  fi
+  
+  # Basic PATH additions for essential tools
+  # Cargo
+  if [[ -f "${HOME}/.cargo/env" ]]; then
+    source "${HOME}/.cargo/env"
+  fi
+  
+  # Rye (Python)
+  if [[ -f "${HOME}/.rye/env" ]]; then
+    source "${HOME}/.rye/env"
+  fi
+  
+  # Exit early - skip everything else in .zshrc
+  return 0
+fi
+
+# Regular shell configuration continues below for non-VSCode sessions
 # If ZDOTDIR isn't already set, default it to $HOME.
 ZDOTDIR="${ZDOTDIR:-$HOME}"
 
@@ -71,18 +112,18 @@ setopt share_history
 ###############################################################################
 
 # Set pager configuration when in VSCode/Cursor
-if [[ "$TERM_PROGRAM" = "vscode" ]]; then
-  export PAGER=cat
-  export GIT_PAGER=cat
-  # Do not store history inside editors
-  setopt HIST_NO_STORE
-  fc -R ~/.zsh_history   # Reload your existing history into memory
-  HISTFILE=/dev/null
-  unset HISTFILE         # Disable further writes to the history file
+# if [[ "$TERM_PROGRAM" = "vscode" ]]; then
+#   export PAGER=cat
+#   export GIT_PAGER=cat
+#   # Do not store history inside editors
+#   setopt HIST_NO_STORE
+#   fc -R ~/.zsh_history   # Reload your existing history into memory
+#   HISTFILE=/dev/null
+#   unset HISTFILE         # Disable further writes to the history file
 
-  # Forbid color in output for console / agent loops, e.g. in vitest
-  export NO_COLOR=1
-fi
+#   # Forbid color in output for console / agent loops, e.g. in vitest
+#   export NO_COLOR=1
+# fi
 
 ###############################################################################
 # Keybindings & Vim-like Input
@@ -130,7 +171,7 @@ alias git_branch_history_diff='git diff --patch "$(
 # Plugin Manager (Sheldon)
 ###############################################################################
 # If you haven't already, create ~/.config/sheldon/plugins.toml with your plugins,
-# then run `sheldon lock` to generate a static file. 
+# then run `sheldon lock` to generate a static file.
 #
 # By default, Sheldon writes the locked file to ~/.local/share/sheldon/plugins.zsh
 # (You can customize that path with `sheldon lock --output <path>`).
