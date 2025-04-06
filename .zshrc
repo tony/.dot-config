@@ -1,7 +1,7 @@
 # If in VSCode/Cursor terminal, use ultra-minimal config
 if [[ "$TERM_PROGRAM" = "vscode" ]]; then
   # Absolute bare minimum prompt
-  export PS1="$ "
+  export PS1="%~ $ "
   
   # Performance settings
   export PAGER=cat
