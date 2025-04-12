@@ -59,7 +59,7 @@ if type -q yarn
 end
 
 # VSCode/Cursor Configuration
-if test "$TERM_PROGRAM" = "vscode"
+if test "$TERM_PROGRAM" = "vscode"; or set -q VSCODE_CWD
     set -gx PAGER cat
     set -gx GIT_PAGER cat
     # Do not store history inside editors
