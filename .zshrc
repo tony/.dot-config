@@ -1,5 +1,5 @@
 # If in VSCode/Cursor terminal, use ultra-minimal config
-if [[ "$TERM_PROGRAM" = "vscode" ]]; then
+if [[ "$TERM_PROGRAM" = "vscode" || -n "$VSCODE_CWD" ]]; then
   # Absolute bare minimum prompt
   export PS1="%~ $ "
   
