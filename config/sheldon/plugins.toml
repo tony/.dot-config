@@ -8,11 +8,12 @@ shell = "zsh"
 [plugins.compinit]
 inline = 'autoload -Uz compinit && compinit'
 
-[plugins.zprof]
-inline = 'zmodload zsh/zprof'
-
 [plugins.zsh-defer]
 github = "romkatv/zsh-defer"
+
+[plugins.evalcache]
+github = "mroth/evalcache"
+rev = "3153dcd77a2c93aa8fdf5d17cece7edb1aa3e040"
 
 [templates]
 defer = '''
@@ -39,8 +40,9 @@ if ! command -v mise >/dev/null 2>&1; then
   curl -fsSL https://mise.run | sh
   export PATH="$HOME/.local/bin:$PATH"
 fi
+# Eager activation - use evalcache for performance
 if command -v mise >/dev/null 2>&1; then
-  eval "$(mise activate zsh)"
+  _evalcache mise activate zsh
 fi
 '''
 
