@@ -34,9 +34,6 @@ set -Ux NEXT_TELEMETRY_DISABLED 1
 # Python
 set -Ux PYTHONSTARTUP "$HOME/.pythonrc"
 
-# Terminal TTY reference
-set -Ux TTY (tty)
-
 # Initialize mise if it exists, otherwise install it
 if command -sq mise
     # mise already initialized in conf.d/mise.fish

@@ -29,9 +29,6 @@ export PYTHONSTARTUP="${HOME}/.pythonrc"
 # Editor
 export EDITOR="vim"
 
-# Terminal TTY reference
-export TTY="$(tty)"
-
 # If in VSCode/Cursor terminal, use ultra-minimal config
 if [[ "$TERM_PROGRAM" = "vscode" || -n "$VSCODE_CWD" ]]; then
   # Absolute bare minimum prompt
