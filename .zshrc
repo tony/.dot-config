@@ -44,7 +44,7 @@ if [[ "$TERM_PROGRAM" = "vscode" || -n "$VSCODE_CWD" ]]; then
   
   # Only load core toolchain environment variables
   
-  # mise (critical)
+  # mise (critical) - Let sheldon handle activation consistently
   if command -v mise >/dev/null 2>&1; then
     eval "$(mise activate zsh)"
   fi
