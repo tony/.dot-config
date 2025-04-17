@@ -38,6 +38,7 @@ if [[ "$TERM_PROGRAM" = "vscode" || -n "$VSCODE_CWD" ]]; then
   export PAGER=cat
   export GIT_PAGER=cat
   export NO_COLOR=1
+  export VITEST_REPORTER=dot
   
   # Disable history to improve performance
   HISTFILE=/dev/null
