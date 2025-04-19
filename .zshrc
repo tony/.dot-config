@@ -107,6 +107,22 @@ alias update_repos='pushd "${HOME}/.dot-config"; make vcspull; popd;'
 alias bench='for i in $(seq 1 10); do /usr/bin/time /bin/zsh -i -c exit; done;'
 alias git_restore_main='git restore --source=origin/main --staged --worktree .'
 alias git_restore_master='git restore --source=origin/master --staged --worktree .'
+alias git_branch_history_log='git log --patch --no-merges "$(
+  REMOTE=$(git remote 2>/dev/null | head -n1); \
+  git remote show "$REMOTE" 2>/dev/null | awk "/HEAD branch/ {print \"$REMOTE/\" \$NF}" \
+    || { for b in main master; do \
+           git show-ref --verify --quiet "refs/remotes/$REMOTE/$b" && \
+           printf \\'%s/%s\\' "$REMOTE" "$b" && break; \
+         done; } \
+)"..HEAD'
+alias git_branch_history_diff='git diff --patch "$(
+  REMOTE=$(git remote 2>/dev/null | head -n1); \
+  git remote show "$REMOTE" 2>/dev/null | awk "/HEAD branch/ {print \"$REMOTE/\" \$NF}" \
+    || { for b in main master; do \
+           git show-ref --verify --quiet "refs/remotes/$REMOTE/$b" && \
+           printf \\'%s/%s\\' "$REMOTE" "$b" && break; \
+         done; } \
+)"..HEAD'
 
 ###############################################################################
 # Plugin Manager (Sheldon)
