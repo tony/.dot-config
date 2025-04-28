@@ -29,44 +29,56 @@ export PYTHONSTARTUP="${HOME}/.pythonrc"
 # Editor
 export EDITOR="vim"
 
-# If in VSCode/Cursor terminal, use ultra-minimal config
+# If in VSCode/Cursor terminal, use ultra-minimal config.
+# This is detected by checking for environment variables set by VSCode/Cursor
+# ($TERM_PROGRAM or $VSCODE_CWD).
+# The goal is to provide a minimal, fast, and non-interactive environment
+# for agent commands. This helps ensure that complex shell features (like
+# custom prompts, plugins, hooks) don't interfere with the agent's ability
+# to reliably run commands and detect their exit status or completion.
+# See also: https://github.com/microsoft/vscode/tree/1.99.3/src/vs/workbench/contrib/terminal/common/scripts
 if [[ "$TERM_PROGRAM" = "vscode" || -n "$VSCODE_CWD" ]]; then
-  # Absolute bare minimum prompt
-  export PS1="%~ $ "
-  
-  # Performance settings
+  # Do NOT set PS1 here. While aiming for minimal, overriding PS1 can
+  # interfere with VSCode's shell integration features, which rely on
+  # manipulating the prompt or using precmd/preexec hooks.
+  # Let VSCode's injected scripts handle the prompt.
+  # export PS1="%~ $ "
+
+  # Performance settings for non-interactive use
   export PAGER=cat
   export GIT_PAGER=cat
   export NO_COLOR=1
   export VITEST_REPORTER=dot
-  
-  # Disable history to improve performance
+
+  # Disable history to improve performance and avoid conflicts
   HISTFILE=/dev/null
-  
+
   # Only load core toolchain environment variables
-  
+  # Ensure essential tools managed by mise/asdf/cargo/rye are available.
+
   # mise (critical) - Let sheldon handle activation consistently
   if command -v mise >/dev/null 2>&1; then
     eval "$(mise activate zsh)"
   fi
-  
+
   # asdf (if mise doesn't cover it)
   if [[ -f "$HOME/.asdf/asdf.sh" ]]; then
     source "$HOME/.asdf/asdf.sh"
   fi
-  
+
   # Basic PATH additions for essential tools
   # Cargo
   if [[ -f "${HOME}/.cargo/env" ]]; then
     source "${HOME}/.cargo/env"
   fi
-  
+
   # Rye (Python)
   if [[ -f "${HOME}/.rye/env" ]]; then
     source "${HOME}/.rye/env"
   fi
-  
+
   # Exit early - skip everything else in .zshrc
+  # This is the crucial step to prevent loading complex shell features below.
   return 0
 fi
 
