@@ -77,6 +77,11 @@ if [[ "$TERM_PROGRAM" = "vscode" || -n "$VSCODE_CWD" ]]; then
     source "${HOME}/.rye/env"
   fi
 
+  # GritQL
+  if [[ -f "${HOME}/.grit/bin/env" ]]; then
+    source "${HOME}/.grit/bin/env"
+  fi
+
   # Exit early - skip everything else in .zshrc
   # This is the crucial step to prevent loading complex shell features below.
   return 0
@@ -303,3 +308,6 @@ source_if_exists "${HOME}/.cargo/env"
 
 # Rye environment (Python)
 source_if_exists "${HOME}/.rye/env"
+
+# GritQL
+source_if_exists "${HOME}/.grit/bin/env"
