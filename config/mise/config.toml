@@ -7,6 +7,7 @@ asdf_compat = true
 legacy_version_file = true
 # Automatically install missing plugins
 experimental = true
+idiomatic_version_file_enable_tools = ["node"]
 
 [env]
 # This is the correct place to set MISE_PYTHON_COMPILE
