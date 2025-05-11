@@ -22,6 +22,7 @@ export ZSH_CACHE_DIR="${HOME}/.zsh"
 export SAM_CLI_TELEMETRY=0
 export GATSBY_TELEMETRY_DISABLED=1
 export NEXT_TELEMETRY_DISABLED=1  # Next.js
+export DISABLE_TELEMETRY=1  # Claude Code
 
 # Python
 export PYTHONSTARTUP="${HOME}/.pythonrc"
