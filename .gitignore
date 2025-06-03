@@ -87,3 +87,7 @@ sam-installation/
 
 # fish
 config/fish/fish_variables
+
+# Claude code
+**/CLAUDE.local.md
+**/.claude/settings.local.json
