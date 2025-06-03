@@ -109,6 +109,9 @@ install:
 	ln -si $(DOT_CONFIG_DIR)/.dotfilesrc ~
 	mkdir -p ~/.ssh
 	ln -si $(DOT_CONFIG_DIR)/.ssh/config ~/.ssh/config
+	mkdir -p ~/.config
+	ln -si $(DOT_CONFIG_DIR)/config/sheldon/ ~/.config/sheldon
+
 
 ##########################################################
 # Debian/Ubuntu-based system targets
