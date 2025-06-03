@@ -107,6 +107,7 @@ install:
 	ln -si $(DOT_CONFIG_DIR)/.tmuxp/ ~
 	ln -si $(DOT_CONFIG_DIR)/.zsh_plugins.txt ~
 	ln -si $(DOT_CONFIG_DIR)/.dotfilesrc ~
+	ln -si $(DOT_CONFIG_DIR)/config/starship.toml ~/.config/starship.toml
 	mkdir -p ~/.ssh
 	ln -si $(DOT_CONFIG_DIR)/.ssh/config ~/.ssh/config
 	mkdir -p ~/.config
