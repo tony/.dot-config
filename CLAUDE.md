@@ -25,6 +25,21 @@ make update              # Update submodules
 make check_dead_symlinks # Check for broken symlinks
 ```
 
+### Python Automation Script (dot.py)
+```bash
+# Run all tests and checks for dot.py
+uv run ruff check . --fix; uv run ruff format .; uv run mypy; uv run py.test test_dot.py --cov -v
+
+# Use dot.py instead of Makefile
+./dot.py install         # Install dotfiles symlinks
+./dot.py debian-packages # Install Debian packages
+./dot.py --dry-run install # Preview changes
+
+# Diagnostic commands
+./dot.py check           # Quick check of symlink status
+./dot.py doctor          # Comprehensive system diagnostics with recommendations
+```
+
 ### Key Makefile Targets
 - Language-specific package installation: `pip_packages`, `npm_packages`, `yarn_packages`, `cargo_packages`, `gem_packages`, `go_packages`
 - System setup: `debian_packages`, `debian_build_packages`
