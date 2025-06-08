@@ -160,6 +160,7 @@ bindkey '^x^e' edit-command-line
 alias clear_pyc='find . -type f -regex ".*\(\.pyc\|\.pyo\|__pycache__\).*" -delete'
 alias clear_empty_dirs='find . -type d -empty -delete'
 alias clear_biome='rm -rf **/biome-socket-* **/biome-logs'
+alias deep_reset_git_repos='for dir in */; do [ -d "$dir/.git" ] && echo "Processing $dir" && (cd "$dir" && git clean -fdx && git reset --hard); done'
 alias git_prune_local='git branch --merged | egrep -v "(^\*|master|main|dev)" | xargs git branch -d'
 alias update_packages='pushd "${HOME}/.dot-config"; make global_update; popd;'
 alias update_repos='pushd "${HOME}/.dot-config"; make vcspull; popd;'
