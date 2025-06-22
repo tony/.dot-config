@@ -1,0 +1,426 @@
+# dotfiles.toml - Beautiful dotfiles management
+# Inspired by Starship, Cargo, and Alacritty
+
+[config]
+source = "~/.dot-config"
+backup = true
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# HOME DIRECTORY MAPPINGS  
+# ═══════════════════════════════════════════════════════════════════════════════
+
+[home]
+method = "symlink"
+
+[home.files]
+".gitconfig" = ".gitconfig"
+".gitignore_global" = ".gitignore_global"
+".zshrc" = ".zshrc" 
+".zshenv" = ".zshenv"
+".asdfrc" = ".asdfrc"
+".tool-versions" = ".tool-versions"
+".vcspull" = ".vcspull"
+".vcspull.yaml" = ".vcspull.yaml"
+".Xresources" = ".Xresources"
+".ipython" = ".ipython"
+".tmuxp" = ".tmuxp"
+".zsh_plugins.txt" = ".zsh_plugins.txt"
+".dotfilesrc" = ".dotfilesrc"
+# V2.0 style: Direct file mappings instead of custom arrays
+".tmux.conf" = ".tmux/.tmux.conf"
+".config/starship.toml" = "config/starship.toml"
+".ssh/config" = ".ssh/config"
+
+[home.dirs]
+".vim" = ".vim"
+".tmux" = ".tmux"
+".fonts" = ".fonts"
+".shell" = ".shell"
+".config/sheldon" = "config/sheldon"
+".config/Code" = "config/Code"
+".config/base16-shell" = "config/base16-shell"
+".config/fish" = "config/fish"
+".config/gitui" = "config/gitui"
+".config/htop" = "config/htop"
+".config/kitty" = "config/kitty"
+".config/mise" = "config/mise"
+".config/nushell" = "config/nushell"
+".config/nvim" = "config/nvim"
+".config/ptpython" = "config/ptpython"
+".config/sway" = "config/sway"
+".config/vcspull" = "config/vcspull"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# PACKAGE LISTS WITH GROUPS
+# ═══════════════════════════════════════════════════════════════════════════════
+
+# APT packages for Debian/Ubuntu systems
+[packages.apt]
+# Base packages - always included in minimal group
+packages = [
+    "unzip",
+    "wget", 
+    "tmux",
+    "rsync",
+    "cmake",
+    "ninja-build",
+    "cowsay",
+    "fortune-mod",
+    "vim-nox",
+    "universal-ctags",
+    "silversearcher-ag",
+    "git",
+    "tig",
+    "most",
+    "entr",
+    "curl",
+    "keychain",
+    "openssh-server",
+    "htop",
+    "ccls",
+    "redis-server",
+    "libsasl2-dev",
+    "libxslt1-dev",
+    "libxmlsec1-dev",
+    "libxml2-dev", 
+    "libldap2-dev",
+    "libffi-dev",
+    "libsqlite3-dev",
+    "libreadline-dev",
+    "libbz2-dev",
+    "build-essential",
+    "pkg-config",
+    "libtool",
+    "m4",
+    "automake",
+    "autoconf",
+    "zsh",
+    "libssl-dev",
+    "zlib1g-dev",
+    "tk-dev",
+    "liblzma-dev",
+]
+
+# Package groups for apt - additional packages beyond base
+[packages.apt.groups]
+minimal = []  # Just base packages
+desktop = [
+    "pgadmin3",
+    "kitty", 
+    "fonts-noto-cjk",
+    "xfonts-wqy",
+    "fonts-cascadia-code",
+    "rxvt-unicode-256color",
+    "nitrogen",
+    "scrot",
+    "maim",
+    "slop",
+    "gammastep",
+]
+development = [
+    "make",
+    "llvm",
+    "libncurses-dev",
+    "libncursesw5-dev",
+    "xz-utils",
+    "libpython3-all-dev",
+    "uuid-dev",
+    "libgdbm-dev",
+    "libdb-dev",
+    "libnss3-dev",
+    "libedit-dev",
+]
+full = [
+    # Combines desktop + development groups
+    "pgadmin3",
+    "kitty",
+    "fonts-noto-cjk", 
+    "xfonts-wqy",
+    "fonts-cascadia-code",
+    "rxvt-unicode-256color",
+    "nitrogen",
+    "scrot",
+    "maim",
+    "slop",
+    "gammastep",
+    "make", 
+    "llvm",
+    "libncurses-dev",
+    "xz-utils",
+    "libpython3-all-dev",
+    "libncursesw5-dev",
+    "uuid-dev",
+    "libgdbm-dev",
+    "libdb-dev",
+    "libnss3-dev",
+    "libedit-dev",
+]
+
+# Python packages
+[packages.pip]
+packages = [
+    "virtualenv",
+    "tmuxp",
+    "vcspull",
+    "dotfiles",
+]
+
+[packages.pip.groups]
+minimal = []  # Just base packages
+development = [
+    "python-language-server",
+    "pipenv", 
+    "ptpython",
+    "git-sweep",
+    "black",
+    "pytest",
+    "mypy",
+]
+full = [
+    "python-language-server",
+    "pipenv",
+    "ptpython", 
+    "git-sweep",
+    "black",
+    "pytest",
+    "mypy",
+    "spotdl",
+    "jupyter",
+]
+
+# Node.js packages
+[packages.npm]
+packages = [
+    "npm-check-updates",
+]
+
+[packages.npm.groups]
+minimal = []
+development = [
+    "gatsby-cli",
+    "lerna",
+    "@angular/cli",
+    "typescript",
+    "eslint",
+]
+full = [
+    "gatsby-cli", 
+    "lerna",
+    "@angular/cli",
+    "typescript",
+    "eslint",
+    "@vue/cli",
+]
+
+# Rust packages  
+[packages.cargo]
+packages = [
+    "gitui",
+    "hyperfine",
+]
+
+[packages.cargo.groups]
+minimal = []
+development = [
+    "dprint",
+    "cargo-watch",
+    "cargo-edit",
+]
+full = [
+    "dprint",
+    "cargo-watch", 
+    "cargo-edit",
+    "cargo-audit",
+    "cargo-outdated",
+]
+
+# Homebrew packages (macOS)
+[packages.brew]
+packages = [
+    "tmux",
+    "git", 
+    "vim",
+    "zsh",
+]
+
+[packages.brew.groups]
+minimal = []
+development = [
+    "starship",
+    "mise",
+    "ripgrep",
+    "fd",
+    "bat",
+    "exa",
+]
+full = [
+    "starship",
+    "mise",
+    "ripgrep", 
+    "fd",
+    "bat",
+    "exa",
+    "neovim",
+    "fzf",
+    "jq",
+]
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# V2.0 PROVISIONER ARCHITECTURE
+# ═══════════════════════════════════════════════════════════════════════════════
+
+[foundation.build_tools]
+description = "Essential build tools"
+managers = { apt = ["build-essential", "pkg-config"], brew = ["cmake", "pkg-config"] }
+essential = true
+
+[provisioners.build_essential]
+description = "Essential build tools (compiler, make, etc.)"
+type = "provisioner"
+install_method = "script"
+# Platform-specific package names
+# On macOS, Xcode Command Line Tools provide cc/gcc/make
+# On Linux, build-essential provides these tools
+install_script = "sudo apt-get update && sudo apt-get install -y build-essential pkg-config libssl-dev || brew install gcc pkg-config openssl || sudo dnf install -y gcc make pkg-config openssl-devel || sudo pacman -S --noconfirm base-devel pkg-config openssl"
+provides = ["cc", "gcc", "make", "pkg-config", "openssl"]
+requires = []
+priority = 1
+verify_command = "cc --version && pkg-config --version && pkg-config --exists openssl"
+
+[provisioners.rust]
+description = "Rust programming language and toolchain"
+type = "provisioner"
+install_method = "script"
+install_script = "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y"
+provides = ["cargo", "rustc", "rustup"]
+requires = ["curl", "cc"]  # cc needed for linking
+priority = 3
+verify_command = "cargo --version"
+shell_integration = true
+stage = 0
+
+[provisioners.mise]
+description = "Runtime version manager (successor to asdf)"
+type = "provisioner"
+install_method = "script"
+install_script = "curl https://mise.run | sh"
+provides = ["mise"]
+requires = ["curl"]
+priority = 2
+verify_command = "mise --version"
+shell_integration = true
+stage = 5
+
+[provisioners.sheldon]
+description = "Fast zsh plugin manager written in Rust"
+type = "provisioner"
+install_method = "script"
+install_script = "cargo install sheldon"
+provides = ["sheldon"]
+requires = ["cargo", "cc"]
+priority = 4
+verify_command = "sheldon --version"
+shell_integration = true
+stage = 5
+
+[enhancements.fzf]
+description = "Command-line fuzzy finder"
+type = "enhancement"
+install_method = "script"
+install_script = "[ -d ~/.fzf ] || git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install --all"
+provides = ["fzf"]
+requires = ["git"]
+priority = 6
+verify_command = "fzf --version"
+shell_integration = true
+stage = 5
+
+[enhancements.starship]
+description = "Cross-shell prompt with excellent performance"
+type = "enhancement"
+install_method = "script"
+install_script = "curl -sS https://starship.rs/install.sh | sh -s -- --yes"
+provides = ["starship"]
+requires = ["curl"]
+priority = 7
+verify_command = "starship --version"
+shell_integration = true
+stage = 9
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# SHELL INTEGRATION & INSTALLATION SCRIPTS (Legacy V1.0 - Deprecated)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+[shell_integration]
+enabled = true
+prevent_duplicate_paths = true
+default_shell = "zsh"
+
+# Shell-specific configuration files and syntax
+[shell_integration.shells]
+zsh = { config = "~/.zshrc", comment = "#", source_cmd = "source", eval_syntax = 'eval "$({command})"' }
+bash = { config = "~/.bashrc", comment = "#", source_cmd = "source", eval_syntax = 'eval "$({command})"' }
+fish = { config = "~/.config/fish/config.fish", comment = "#", source_cmd = "source", eval_syntax = '{command} | source' }
+
+[shell_integration.paths]
+cargo_bin = "~/.cargo/bin"
+local_bin = "~/.local/bin"
+mise_bin = "~/.local/share/mise/shims"
+
+# Installation scripts for tools not available via package managers
+[scripts.rust]
+description = "Install Rust toolchain via rustup"
+install_script = "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y"
+path_additions = ["~/.cargo/bin"]
+verify_command = "cargo --version"
+
+[scripts.mise]
+description = "Install mise (formerly rtx) version manager"
+install_script = "curl https://mise.run | sh"
+path_additions = ["~/.local/share/mise/shims", "~/.local/bin"]
+verify_command = "mise --version"
+
+[scripts.starship]
+description = "Install Starship cross-shell prompt"
+install_script = "curl -sS https://starship.rs/install.sh | sh -s -- --yes"
+path_additions = ["~/.local/bin"]
+verify_command = "starship --version"
+
+# Shell integration snippets with shell-specific variants
+[shell_integration.snippets]
+
+[shell_integration.snippets.starship_prompt]
+description = "Starship prompt initialization"
+condition = "command -v starship >/dev/null 2>&1"
+stage = 9  # Late stage - prompts should load last
+default = 'eval "$(starship init {shell})"'
+fish = 'starship init fish | source'
+
+[shell_integration.snippets.mise_integration]
+description = "Mise runtime manager activation"
+condition = "command -v mise >/dev/null 2>&1"
+stage = 5  # Main stage - tool activations
+default = 'eval "$(mise activate {shell})"'
+fish = 'mise activate fish | source'
+
+[shell_integration.snippets.rust_env]
+description = "Rust environment"
+condition = '[ -f "$HOME/.cargo/env" ]'
+stage = 0  # Early stage - environment setup
+zsh = 'source "$HOME/.cargo/env"'
+bash = 'source "$HOME/.cargo/env"'
+fish = 'fish_add_path "$HOME/.cargo/bin"'
+
+[shell_integration.snippets.sheldon_plugins]
+description = "Load zsh plugins via sheldon"
+condition = "command -v sheldon >/dev/null 2>&1"
+stage = 5  # Main stage - plugin loading
+zsh = 'eval "$(sheldon source)"'
+
+[shell_integration.snippets.fzf_integration]
+description = "FZF fuzzy finder integration"
+condition = '[ -f "$HOME/.fzf.${shell}" ]'
+stage = 5  # Main stage - tool integrations
+bash = 'source "$HOME/.fzf.bash"'
+zsh = 'source "$HOME/.fzf.zsh"'
+fish = 'source "$HOME/.fzf.fish"'
