@@ -11,9 +11,11 @@ dev-dependencies = [
   # Testing
   "gp-libs",
   "pytest",
+  "pytest-asyncio",
   "pytest-rerunfailures",
   "pytest-mock",
   "pytest-watcher",
+  "pytest-docker-tools",
   # Coverage
   "codecov",
   "coverage",
@@ -27,9 +29,11 @@ dev-dependencies = [
 testing = [
   "gp-libs",
   "pytest",
+  "pytest-asyncio",
   "pytest-rerunfailures",
   "pytest-mock",
   "pytest-watcher",
+  "pytest-docker-tools",
 ]
 coverage =[
   "codecov",
@@ -47,6 +51,10 @@ python_files = ["test_*.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
 addopts = "-v --tb=short --strict-markers"
+asyncio_mode = "auto"
+markers = [
+    "asyncio: marks tests as requiring asyncio",
+]
 
 [tool.coverage.run]
 source = ["dot"]
@@ -62,15 +70,28 @@ exclude_lines = [
 ]
 
 [tool.mypy]
-python_version = "3.11"
+python_version = "3.12"
 strict = true
 files = [
   "dot.py",
   "test_dot.py",
 ]
 
+# Relax some rules for test files
+[[tool.mypy.overrides]]
+module = "test_dot"
+check_untyped_defs = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+disallow_untyped_decorators = false
+
 [tool.ruff]
-target-version = "py39"
+target-version = "py312"
+exclude = [
+    ".tmux/",
+    ".tmuxp/",
+    "config/",
+]
 
 [tool.ruff.lint]
 select = [
@@ -94,6 +115,8 @@ select = [
 ]
 ignore = [
   "COM812", # missing trailing comma, ruff format conflict
+  "D213", # no-blank-line-before-class
+  "D203", # incorrect-blank-line-before-class
 ]
 extend-safe-fixes = [
   "UP006",
