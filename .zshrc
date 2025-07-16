@@ -282,9 +282,7 @@ fi
 ###############################################################################
 
 # Yarn
-if [[ -d "${HOME}/.yarn/bin" ]]; then
-  export PATH="${PATH}:${HOME}/.yarn/bin"
-fi
+# Removed - let corepack handle yarn/pnpm
 
 # Deno
 if [[ -d "${HOME}/.deno/bin" ]]; then
