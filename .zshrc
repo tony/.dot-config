@@ -38,7 +38,7 @@ export EDITOR="vim"
 # custom prompts, plugins, hooks) don't interfere with the agent's ability
 # to reliably run commands and detect their exit status or completion.
 # See also: https://github.com/microsoft/vscode/tree/1.99.3/src/vs/workbench/contrib/terminal/common/scripts
-if [[ "$TERM_PROGRAM" = "vscode" || -n "$VSCODE_CWD" ]]; then
+if [[ "$TERM_PROGRAM" = "vscode" || -n "$VSCODE_CWD" || "$CURSOR_AGENT" = "1" ]]; then
   # Do NOT set PS1 here. While aiming for minimal, overriding PS1 can
   # interfere with VSCode's shell integration features, which rely on
   # manipulating the prompt or using precmd/preexec hooks.
