@@ -1,615 +1,546 @@
-~/work/salt:
-  salt-states-configs: "git+https://github.com/tony/salt-states-configs.git"
-~/work/c++:
-  uMario:
-    repo: "git+https://github.com/jakowskidev/uMario_Jakowski"
-    remotes:
-      tony: "git@github.com:tony/uMario_Jakowski.git"
-  sdl2-playproject: "git+ssh://git@github.com/tony/sdl2-playproject.git"
-  aseprite:
-    repo: "git+https://github.com/aseprite/aseprite.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/aseprite.git"
-
-~/work/c:
-  ncurses-example: "git+ssh://git@github.com/tony/ncurses-example.git"
-  NCURSES-Programming-HOWTO-examples: "git+ssh://git@github.com/tony/NCURSES-Programming-HOWTO-examples.git"
-  reST-lex-byacc: "git+ssh://git@github.com/tony/reST-lex-byacc.git"
-
-~/work:
-  vue-typescript-vanilla-starter: "git+ssh://git@github.com/tony/vue-typescript-vanilla-starter.git"
-  react-typescript-vanilla-starter: "git+ssh://git@github.com/tony/react-typescript-vanilla-starter.git"
-  tao-of-tmux: "git+ssh://git@github.com/git-pull/tao-of-tmux.git"
-  website: "git+ssh://git@github.com/git-pull/website.git"
-  git-pull-widget: "git+ssh://git@github.com/tony/git-pull-widget.git"
-
-~/work/java:
-  selenium:
-    repo: "git+https://github.com/SeleniumHQ/selenium.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/selenium.git"
-
-~/work/javascript:
-  prettier-plugin-import-sort:
-    repo: "git+https://github.com/ggascoigne/prettier-plugin-import-sort.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/prettier-plugin-import-sort.git"
-      eduflow: "git+ssh://git@github.com/eduflow/prettier-plugin-import-sort.git"
-
-  ckeditor5:
-    repo: "git+https://github.com/ckeditor/ckeditor5.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/ckeditor5.git"
-      eduflow: "git+ssh://git@github.com/eduflow/ckeditor5.git"
-
-  ckeditor5-react:
-    repo: "git+https://github.com/ckeditor/ckeditor5-react.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/ckeditor5-react.git"
-      eduflow: "git+ssh://git@github.com/eduflow/ckeditor5-react.git"
-
-  ckeditor5-math:
-    repo: "git+https://github.com/isaul32/ckeditor5-math.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/ckeditor5-math.git"
-      eduflow: "git+ssh://git@github.com/eduflow/ckeditor5-math.git"
-
-  ckeditor5-iframe:
-    repo: "git+https://github.com/eduflow/ckeditor5-iframe.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/ckeditor5-iframe.git"
-      eduflow: "git+ssh://git@github.com/eduflow/ckeditor5-iframe.git"
-
-  graphdoc:
-    repo: "git+https://github.com/2fd/graphdoc.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/graphdoc.git"
-      eduflow: "git+ssh://git@github.com/eduflow/graphdoc.git"
-  graphql-markdown:
-    repo: "git+https://github.com/exogen/graphql-markdown.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/graphql-markdown.git"
-      eduflow: "git+ssh://git@github.com/eduflow/graphql-markdown.git"
-
-  sass-to-emotion:
-    repo: "git+https://github.com/DomainGroupOSS/sass-to-emotion.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/sass-to-emotion.git"
-      eduflow: "git+ssh://git@github.com/eduflow/sass-to-emotion.git"
-
-  prosemirror:
-    repo: "git+https://github.com/prosemirror/prosemirror.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/prosemirror.git"
-
-~/work/docusaurus:
-  docusaurus:
-    repo: "git+https://github.com/facebook/docusaurus.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/docusaurus.git"
-  typedoc-plugin-markdown:
-    repo: "git+https://github.com/tgreyuk/typedoc-plugin-markdown.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/typedoc-plugin-markdown.git"
-
-~/work/gatsby:
-  gatsby-s3-action:
-    repo: "git+https://github.com/jonelantha/gatsby-s3-action.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/gatsby-s3-action.git"
-
-  gatsby-plugin-aws-elasticsearch:
-    repo: "git+https://github.com/Mrtenz/gatsby-plugin-aws-elasticsearch"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/gatsby-plugin-aws-elasticsearch.git"
-
-~/work/typescript:
-  mobx:
-    repo: "git+https://github.com/mobxjs/mobx.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/mobx.git"
-
-  astrocite:
-    repo: "git+https://github.com/dsifford/astrocite.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/astrocite.git"
-
-  typedoc:
-    repo: "git+https://github.com/TypeStrong/typedoc.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/typedoc.git"
-
-  react-contenteditable:
-    repo: "git+https://github.com/lovasoa/react-contenteditable.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/react-contenteditable.git"
-      eduflow: "git+ssh://git@github.com/tony/react-contenteditable.git"
-
-  react-diagrams:
-    repo: "git+https://github.com/projectstorm/react-diagrams.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/react-diagrams.git"
-
-  ts-debounce:
-    repo: "git+https://github.com/chodorowicz/ts-debounce.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/ts-debounce.git"
-
-  rich-markdown-editor:
-    repo: "git+https://github.com/outline/rich-markdown-editor.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/rich-markdown-editor.git"
-  lit-element-starter-ts:
-    repo: "git+https://github.com/PolymerLabs/lit-element-starter-ts.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/lit-element-starter-ts.git"
-      fvilers: "git+ssh://git@github.com/fvilers/lit-element-starter-ts.git"
-
-  oembed-component:
-    repo: "git+ssh://git@github.com/tony/oembed-component.git"
-
-  social-embed:
-    repo: "git+ssh://git@github.com/social-embed/social-embed.git"
-
-  typedoc-plugin-monorepo:
-    repo: "git+https://github.com/unstubbable/typedoc-plugin-monorepo.git"
-    remotes:
-      social-embed: "git+ssh://git@github.com/social-embed/typedoc-plugin-monorepo.git"
-
-~/work/remark:
-  remark:
-    repo: "git+https://github.com/remarkjs/remark.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/remark.git"
-  remark-github:
-    repo: "git+https://github.com/remarkjs/remark-github.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/remark-github.git"
-  remark-oembed:
-    repo: "git+https://github.com/agentofuser/remark-oembed.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/remark-oembed.git"
-  remark-crossref:
-    repo: "git+https://github.com/Paperist/remark-crossref.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/remark-crossref.git"
-
-  remark-bookmarks:
-    repo: "git+https://github.com/remarkjs/remark-bookmarks.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/remark-bookmarks.git"
-  remark-inline-links:
-    repo: "git+https://github.com/remarkjs/remark-inline-links.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/remark-inline-links.git"
-  remark-lint:
-    repo: "git+https://github.com/remarkjs/remark-lint.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/remark-lint.git"
-  remark-normalize-headings:
-    repo: "git+https://github.com/remarkjs/remark-normalize-headings.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/remark-normalize-headings.git"
-  remark-github-contributors:
-    repo: "git+https://github.com/remarkjs/remark-github-contributors.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/remark-github-contributors.git"
-  remark-comment-config:
-    repo: "git+https://github.com/remarkjs/remark-comment-config.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/remark-comment-config.git"
-  remark-reference-links:
-    repo: "git+https://github.com/remarkjs/remark-reference-links.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/remark-reference-links.git"
-  remark-images:
-    repo: "git+https://github.com/remarkjs/remark-images.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/remark-images.git"
-  mdx:
-    repo: "git+https://github.com/mdx-js/mdx.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/mdx.git"
-
-~/work/freebsd:
-  plasma5: "svn+http://area51.pcbsd.org/branches/plasma5"
-  freebsd-doc:
-    repo: "git+https://github.com/freebsd/freebsd-doc"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/freebsd-doc.git"
-  freebsd-ports:
-    repo: "git+https://github.com/freebsd/freebsd-ports.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/freebsd-ports.git"
-  freebsd-ci:
-    repo: "git+https://github.com/freebsd/freebsd-ci.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/freebsd-ci.git"
-  freebsd:
-    repo: "git+https://github.com/freebsd/freebsd.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/freebsd.git"
-
-~/work/cihai:
-  # cihai-handbook: 'git+ssh://git@github.com/cihai/cihai-handbook.git'
-  cihai-cli: "git+ssh://git@github.com/cihai/cihai-cli.git"
-  cihai: "git+ssh://git@github.com/cihai/cihai.git"
-  unihan-etl: "git+ssh://git@github.com/cihai/unihan-etl.git"
-  unihan-db: "git+ssh://git@github.com/cihai/unihan-db.git"
-  cjkdecomp-mirror: "git+ssh://git@github.com:cihai/cjkdecomp-mirror.git"
-
-~/work/js:
-  ScrollMagic:
-    repo: "git+https://github.com/janpaepke/ScrollMagic.git"
-    remotes:
-      develtech: "git+ssh://git@github.com/develtech/ScrollMagic.git"
-  social-share-kit:
-    repo: "git+https://github.com/darklow/social-share-kit.git"
-    remotes:
-      develtech: "git+ssh://git@github.com/develtech/social-share-kit.git"
-
-~/study/ruby:
-  canvas:
-    repo: "git+https://github.com/instructure/canvas-lms.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/canvas-lms.git"
-
 ~/study/php:
   moodle:
-    repo: "git+https://github.com/moodle/moodle.git"
     remotes:
-      tony: "git+ssh://git@github.com/tony/moodle.git"
+      tony: git+ssh://git@github.com/tony/moodle.git
+    repo: git+https://github.com/moodle/moodle.git
   moodle-docker:
-    repo: "git+https://github.com/moodle/moodle-docker.git"
-
-~/work/python:
-  graphql-core-promise:
-    repo: "git+https://github.com/fellowapp/graphql-core-promise.git"
+    repo: git+https://github.com/moodle/moodle-docker.git
+~/study/ruby:
+  canvas:
     remotes:
-      tony: "git+git@github.com:tony/graphql-core-promise.git"
-
-  graphql-sync-dataloaders:
-    repo: "git+https://github.com/jkimbo/graphql-sync-dataloaders.git"
+      tony: git+ssh://git@github.com/tony/canvas-lms.git
+    repo: git+https://github.com/instructure/canvas-lms.git
+~/work:
+  git-pull-widget:
+    repo: git+ssh://git@github.com/tony/git-pull-widget.git
+  react-typescript-vanilla-starter:
+    repo: git+ssh://git@github.com/tony/react-typescript-vanilla-starter.git
+  tao-of-tmux:
+    repo: git+ssh://git@github.com/git-pull/tao-of-tmux.git
+  vue-typescript-vanilla-starter:
+    repo: git+ssh://git@github.com/tony/vue-typescript-vanilla-starter.git
+  website:
+    repo: git+ssh://git@github.com/git-pull/website.git
+~/work/c:
+  NCURSES-Programming-HOWTO-examples:
+    repo: git+ssh://git@github.com/tony/NCURSES-Programming-HOWTO-examples.git
+  ncurses-example:
+    repo: git+ssh://git@github.com/tony/ncurses-example.git
+  reST-lex-byacc:
+    repo: git+ssh://git@github.com/tony/reST-lex-byacc.git
+~/work/c++:
+  aseprite:
     remotes:
-      tony: "git+ssh://git@github.com/tony/graphql-sync-dataloaders.git"
-
-  argcomplete:
-    repo: "git+https://github.com/kislyuk/argcomplete.git"
+      tony: git+ssh://git@github.com/tony/aseprite.git
+    repo: git+https://github.com/aseprite/aseprite.git
+  sdl2-playproject:
+    repo: git+ssh://git@github.com/tony/sdl2-playproject.git
+  uMario:
     remotes:
-      tony: "git+ssh://git@github.com/tony/argcomplete.git"
-
-  pytest-watcher:
-    repo: "git+https://github.com/olzhasar/pytest-watcher.git"
+      tony: git@github.com:tony/uMario_Jakowski.git
+    repo: git+https://github.com/jakowskidev/uMario_Jakowski
+~/work/cihai:
+  cihai:
+    repo: git+ssh://git@github.com/cihai/cihai.git
+  cihai-cli:
+    repo: git+ssh://git@github.com/cihai/cihai-cli.git
+  cjkdecomp-mirror:
+    repo: git+ssh://git@github.com:cihai/cjkdecomp-mirror.git
+  unihan-db:
+    repo: git+ssh://git@github.com/cihai/unihan-db.git
+  unihan-etl:
+    repo: git+ssh://git@github.com/cihai/unihan-etl.git
+~/work/docusaurus:
+  docusaurus:
     remotes:
-      tony: "git+ssh://git@github.com/tony/pytest-watcher.git"
-
-  pygments:
-    repo: "git+https://github.com/pygments/pygments.git"
+      tony: git+ssh://git@github.com/tony/docusaurus.git
+    repo: git+https://github.com/facebook/docusaurus.git
+  typedoc-plugin-markdown:
     remotes:
-      tony: "git+ssh://git@github.com/tony/pygments.git"
-
-  watching-testrunner:
-    repo: "git+https://github.com/tony/watching-testrunner.git"
-
-  responses:
-    repo: "git+https://github.com/getsentry/responses.git"
+      tony: git+ssh://git@github.com/tony/typedoc-plugin-markdown.git
+    repo: git+https://github.com/tgreyuk/typedoc-plugin-markdown.git
+~/work/freebsd:
+  freebsd:
     remotes:
-      tony: "git+ssh://git@github.com/tony/responses.git"
-
-  tingle:
-    repo: "git+https://github.com/deathbeds/tingle.git"
+      tony: git+ssh://git@github.com/tony/freebsd.git
+    repo: git+https://github.com/freebsd/freebsd.git
+  freebsd-ci:
     remotes:
-      tony: "git+ssh://git@github.com/tony/tingle.git"
-
-  bleach:
-    repo: "git+https://github.com/mozilla/bleach.git"
+      tony: git+ssh://git@github.com/tony/freebsd-ci.git
+    repo: git+https://github.com/freebsd/freebsd-ci.git
+  freebsd-doc:
     remotes:
-      tony: "git+ssh://git@github.com/tony/bleach.git"
-      eduflow: "git+ssh://git@github.com/eduflow/bleach.git"
-
-  faker:
-    repo: "git+https://github.com/joke2k/faker.git"
+      tony: git+ssh://git@github.com/tony/freebsd-doc.git
+    repo: git+https://github.com/freebsd/freebsd-doc
+  freebsd-ports:
     remotes:
-      tony: "git+ssh://git@github.com/tony/faker.git"
-
-  freezegun:
-    repo: "git+https://github.com/spulec/freezegun.git"
+      tony: git+ssh://git@github.com/tony/freebsd-ports.git
+    repo: git+https://github.com/freebsd/freebsd-ports.git
+  plasma5:
+    repo: svn+http://area51.pcbsd.org/branches/plasma5
+~/work/gatsby:
+  gatsby-plugin-aws-elasticsearch:
     remotes:
-      tony: "git+ssh://git@github.com/tony/freezegun.git"
-
-  pytest-sphinx:
-    repo: "git+https://github.com/thisch/pytest-sphinx.git"
+      tony: git+ssh://git@github.com/tony/gatsby-plugin-aws-elasticsearch.git
+    repo: git+https://github.com/Mrtenz/gatsby-plugin-aws-elasticsearch
+  gatsby-s3-action:
     remotes:
-      tony: "git+ssh://git@github.com/tony/pytest-sphinx.git"
-
-  pydoc-markdown:
-    repo: "git+https://github.com/NiklasRosenstein/pydoc-markdown.git"
+      tony: git+ssh://git@github.com/tony/gatsby-s3-action.git
+    repo: git+https://github.com/jonelantha/gatsby-s3-action.git
+~/work/java:
+  selenium:
     remotes:
-      tony: "git+ssh://git@github.com/tony/pydoc-markdown.git"
-
-  celery-singleton:
-    repo: "git+https://github.com/steinitzu/celery-singleton.git"
+      tony: git+ssh://git@github.com/tony/selenium.git
+    repo: git+https://github.com/SeleniumHQ/selenium.git
+~/work/javascript:
+  ckeditor5:
     remotes:
-      tony: "git+ssh://git@github.com/tony/celery-singleton.git"
-      eduflow: "git+ssh://git@github.com/eduflow/celery-singleton.git"
-
-  redis-py:
-    repo: "git+https://github.com/redis/redis-py.git"
+      eduflow: git+ssh://git@github.com/eduflow/ckeditor5.git
+      tony: git+ssh://git@github.com/tony/ckeditor5.git
+    repo: git+https://github.com/ckeditor/ckeditor5.git
+  ckeditor5-iframe:
     remotes:
-      tony: "git+ssh://git@github.com/tony/redis-py.git"
-
-  django-allauth:
-    repo: "git+https://github.com/pennersr/django-allauth.git"
+      eduflow: git+ssh://git@github.com/eduflow/ckeditor5-iframe.git
+      tony: git+ssh://git@github.com/tony/ckeditor5-iframe.git
+    repo: git+https://github.com/eduflow/ckeditor5-iframe.git
+  ckeditor5-math:
     remotes:
-      tony: "git+ssh://git@github.com/tony/django-allauth.git"
-      eduflow: "git+ssh://git@github.com/eduflow/django-allauth.git"
-
-  django-stubs:
-    repo: "git+https://github.com/typeddjango/django-stubs.git"
+      eduflow: git+ssh://git@github.com/eduflow/ckeditor5-math.git
+      tony: git+ssh://git@github.com/tony/ckeditor5-math.git
+    repo: git+https://github.com/isaul32/ckeditor5-math.git
+  ckeditor5-react:
     remotes:
-      tony: "git+ssh://git@github.com/tony/django-stubs.git"
-
-  django-manager-utils:
-    repo: "git+https://github.com/ambitioninc/django-manager-utils.git"
+      eduflow: git+ssh://git@github.com/eduflow/ckeditor5-react.git
+      tony: git+ssh://git@github.com/tony/ckeditor5-react.git
+    repo: git+https://github.com/ckeditor/ckeditor5-react.git
+  graphdoc:
     remotes:
-      tony: "git+ssh://git@github.com/tony/django-manager-utils.git"
-      eduflow: "git+ssh://git@github.com/eduflow/django-manager-utils.git"
-
-  django-request-cache:
-    repo: "git+https://github.com/anexia-it/django-request-cache.git"
+      eduflow: git+ssh://git@github.com/eduflow/graphdoc.git
+      tony: git+ssh://git@github.com/tony/graphdoc.git
+    repo: git+https://github.com/2fd/graphdoc.git
+  graphql-markdown:
     remotes:
-      tony: "git+ssh://git@github.com/tony/django-request-cache.git"
-      eduflow: "git+ssh://git@github.com/eduflow/django-request-cache.git"
-      leonardon473: "git+ssh://git@github.com/leonardon473/django-request-cache.git"
-
-  django-inline-actions:
-    repo: "git+https://github.com/escaped/django-inline-actions.git"
+      eduflow: git+ssh://git@github.com/eduflow/graphql-markdown.git
+      tony: git+ssh://git@github.com/tony/graphql-markdown.git
+    repo: git+https://github.com/exogen/graphql-markdown.git
+  prettier-plugin-import-sort:
     remotes:
-      tony: "git+ssh://git@github.com/tony/django-inline-actions.git"
-
-  django-channels:
-    repo: "git+https://github.com/django/channels.git"
+      eduflow: git+ssh://git@github.com/eduflow/prettier-plugin-import-sort.git
+      tony: git+ssh://git@github.com/tony/prettier-plugin-import-sort.git
+    repo: git+https://github.com/ggascoigne/prettier-plugin-import-sort.git
+  prosemirror:
     remotes:
-      tony: "git+ssh://git@github.com/tony/channels.git"
-      eduflow: "git+ssh://git@github.com/eduflow/channels.git"
-
-  uvicorn:
-    repo: "git+https://github.com/encode/uvicorn.git"
+      tony: git+ssh://git@github.com/tony/prosemirror.git
+    repo: git+https://github.com/prosemirror/prosemirror.git
+  sass-to-emotion:
     remotes:
-      tony: "git+ssh://git@github.com/tony/uvicorn.git"
-      eduflow: "git+ssh://git@github.com/eduflow/uvicorn.git"
-
-  fabric-helpers: "git+ssh://git@github.com:develtech/fabric-helpers.git"
-  pypdf2:
-    repo: "git+https://github.com/mstamy2/PyPDF2.git"
+      eduflow: git+ssh://git@github.com/eduflow/sass-to-emotion.git
+      tony: git+ssh://git@github.com/tony/sass-to-emotion.git
+    repo: git+https://github.com/DomainGroupOSS/sass-to-emotion.git
+~/work/js:
+  ScrollMagic:
     remotes:
-      tony: "git+ssh://git@github.com/tony/PyPDF2.git"
-      eduflow: "git+ssh://git@github.com/eduflow/PyPDF2.git"
-
-  qencode-api-python-client:
-    repo: "git+https://github.com/qencode-dev/qencode-api-python-client.git"
+      develtech: git+ssh://git@github.com/develtech/ScrollMagic.git
+    repo: git+https://github.com/janpaepke/ScrollMagic.git
+  social-share-kit:
     remotes:
-      tony: "git+ssh://git@github.com/tony/qencode-api-python-client.git"
-      eduflow: "git+ssh://git@github.com/eduflow/qencode-api-python-client.git"
-  qencode-api-python3-client:
-    repo: "git+https://github.com/qencode-dev/qencode-api-python3-client.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/qencode-api-python3-client.git"
-      eduflow: "git+ssh://git@github.com/eduflow/qencode-api-python3-client.git"
-
-  DjangoChannelsGraphqlWs:
-    repo: "git+https://github.com/datadvance/DjangoChannelsGraphqlWs.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/DjangoChannelsGraphqlWs.git"
-      eduflow: "git+ssh://git@github.com/eduflow/DjangoChannelsGraphqlWs.git"
-
-  django-classy-tags:
-    repo: "git+https://github.com/divio/django-classy-tags.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/django-classy-tags.git"
-      yakky: "git+https://github.com/yakky/django-classy-tags.git"
-
-  django-reversion:
-    repo: "git+https://github.com/etianen/django-reversion.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/django-reversion.git"
-
-  pytest-django:
-    repo: "git+https://github.com/pytest-dev/pytest-django.git"
-    remotes:
-      develtech: "git+ssh://git@github.com/develtech/pytest-django.git"
-
-  splinter:
-    repo: "git+https://github.com/cobrateam/splinter.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/splinter.git"
-
-  django-docutils:
-    repo: "git+https://github.com/tony/django-docutils"
-
-  django-robots:
-    repo: "git+ssh://git@github.com/jazzband/django-robots.git"
-    remotes:
-      develtech: "git+ssh://git@github.com/develtech/django-robots.git"
-      tony: "git+ssh://git@github.com/tony/django-robots.git"
-
-  factory_boy:
-    repo: "git+https://github.com/FactoryBoy/factory_boy.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/factory_boy.git"
-      kingbuzzman: "git+ssh://git@github.com/kingbuzzman/factory_boy.git"
-      francoisfreitag: "git+ssh://git@github.com/francoisfreitag/factory_boy.git"
-
-  django-model-utils:
-    repo: "git+https://github.com/jazzband/django-model-utils.git"
-    remotes:
-      develtech: "git+ssh://git@github.com/develtech/django-model-utils.git"
-
-  django-polymorphic-tree:
-    repo: "git+https://github.com/django-polymorphic/django-polymorphic-tree.git"
-    remotes:
-      develtech: "git+ssh://git@github.com/develtech/django-polymorphic-tree.git"
-
-  django-polymorphic:
-    repo: "git+https://github.com/django-polymorphic/django-polymorphic.git"
-    remotes:
-      develtech: "git+ssh://git@github.com/develtech/django-polymorphic.git"
-
-  django-mptt:
-    repo: "git+https://github.com/django-mptt/django-mptt.git"
-    remotes:
-      develtech: "git+ssh://git@github.com/develtech/django-mptt.git"
-
-  django-slugify-processor:
-    repo: "git+ssh://git@github.com/tony/django-slugify-processor.git"
-
-  fabtools:
-    repo: "git+https://github.com/fabtools/fabtools.git"
-    remotes:
-      develtech: "git+ssh://git@github.com/develtech/fabtools.git"
-      ssteinerx: "git+ssh://git@github.com/ssteinerx/fabtools.git"
-  profiling:
-    repo: "git+https://github.com/what-studio/profiling.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/profiling.git"
-
-  alagitpull:
-    repo: "git+ssh://git@github.com/git-pull/alagitpull.git"
-
-  dotkeeper:
-    repo: "git+https://github.com/dotkeeper/dotkeeper.git"
-    remotes:
-      tony: "git+ssh://git@github.com/dotkeeper/dotkeeper.git"
-
-  libvcs:
-    repo: "git+ssh://git@github.com/vcs-python/libvcs.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/libvcs.git"
-      gitlab: "git@gitlab.com:vcs-python/libvcs.git"
-      codeberg: "git@codeberg.org:vcs-python/libvcs.git"
-
-  vcspull:
-    repo: "git+ssh://git@github.com/vcs-python/vcspull.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/vcspull.git"
-      gitlab: "git@gitlab.com:vcs-python/vcspull.git"
-      codeberg: "git@codeberg.org:vcs-python/vcspull.git"
-
-  g:
-    repo: "git+ssh://git@github.com/vcs-python/g.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/g.git"
-
-  gp-libs:
-    repo: "git+ssh://git@github.com/git-pull/gp-libs.git"
-
-  libtmux:
-    repo: "git+ssh://git@github.com/tmux-python/libtmux.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/libtmux.git"
-      gitlab: "git@gitlab.com:tmux-python/libtmux.git"
-      codeberg: "git@codeberg.org:tmux-python/libtmux.git"
-
-  tmuxp:
-    repo: "git+ssh://git@github.com/tmux-python/tmuxp.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/tmuxp.git"
-      gitlab: "git@gitlab.com:tmux-python/tmuxp.git"
-      codeberg: "git@codeberg.org:tmux-python/tmuxp.git"
-
-  sphinx-autoissues:
-    repo: "git+ssh://git@github.com/tony/sphinx-autoissues.git"
-    remotes:
-      ignatenkobrain: "git+ssh://git@github.com/ignatenkobrain/sphinxcontrib-issuetracker.git"
-
-  python-questions:
-    repo: "git+ssh://git@gitlab.com/tony/python-questions.git"
-    remotes:
-      github: "git+ssh://git@github.com/tony/python-questions.git"
-
-  tmux-manuals:
-    repo: "git+ssh://git@github.com/tmux-python/tmux-manuals.git"
-
-  cookiecutter-flask-pythonic:
-    repo: "git+https://github.com/tony/cookiecutter-flask-pythonic.git"
-
-  cookiecutter-pypackage-pythonic:
-    repo: "git+https://github.com/tony/cookiecutter-pypackage-pythonic.git"
-    remotes:
-      upstream: "git+https://github.com/audreyr/cookiecutter-pypackage.git"
-
-  kaptan:
-    repo: "git+https://github.com/emre/kaptan.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/kaptan.git"
-
-  releases:
-    repo: "git+https://github.com/bitprophet/releases.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/releases.git"
-
+      develtech: git+ssh://git@github.com/develtech/social-share-kit.git
+    repo: git+https://github.com/darklow/social-share-kit.git
 ~/work/mkdocs:
-  mkdocs:
-    repo: "git+https://github.com/mkdocs/mkdocs.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/mkdocs.git"
   mkapi:
-    repo: "git+https://github.com/daizutabi/mkapi.git"
     remotes:
-      tony: "git+ssh://git@github.com/tony/mkapi.git"
-
+      tony: git+ssh://git@github.com/tony/mkapi.git
+    repo: git+https://github.com/daizutabi/mkapi.git
+  mkdocs:
+    remotes:
+      tony: git+ssh://git@github.com/tony/mkdocs.git
+    repo: git+https://github.com/mkdocs/mkdocs.git
+~/work/python:
+  DjangoChannelsGraphqlWs:
+    remotes:
+      eduflow: git+ssh://git@github.com/eduflow/DjangoChannelsGraphqlWs.git
+      tony: git+ssh://git@github.com/tony/DjangoChannelsGraphqlWs.git
+    repo: git+https://github.com/datadvance/DjangoChannelsGraphqlWs.git
+  alagitpull:
+    repo: git+ssh://git@github.com/git-pull/alagitpull.git
+  argcomplete:
+    remotes:
+      tony: git+ssh://git@github.com/tony/argcomplete.git
+    repo: git+https://github.com/kislyuk/argcomplete.git
+  bleach:
+    remotes:
+      eduflow: git+ssh://git@github.com/eduflow/bleach.git
+      tony: git+ssh://git@github.com/tony/bleach.git
+    repo: git+https://github.com/mozilla/bleach.git
+  celery-singleton:
+    remotes:
+      eduflow: git+ssh://git@github.com/eduflow/celery-singleton.git
+      tony: git+ssh://git@github.com/tony/celery-singleton.git
+    repo: git+https://github.com/steinitzu/celery-singleton.git
+  cookiecutter-flask-pythonic:
+    repo: git+https://github.com/tony/cookiecutter-flask-pythonic.git
+  cookiecutter-pypackage-pythonic:
+    remotes:
+      upstream: git+https://github.com/audreyr/cookiecutter-pypackage.git
+    repo: git+https://github.com/tony/cookiecutter-pypackage-pythonic.git
+  django-allauth:
+    remotes:
+      eduflow: git+ssh://git@github.com/eduflow/django-allauth.git
+      tony: git+ssh://git@github.com/tony/django-allauth.git
+    repo: git+https://github.com/pennersr/django-allauth.git
+  django-channels:
+    remotes:
+      eduflow: git+ssh://git@github.com/eduflow/channels.git
+      tony: git+ssh://git@github.com/tony/channels.git
+    repo: git+https://github.com/django/channels.git
+  django-classy-tags:
+    remotes:
+      tony: git+ssh://git@github.com/tony/django-classy-tags.git
+      yakky: git+https://github.com/yakky/django-classy-tags.git
+    repo: git+https://github.com/divio/django-classy-tags.git
+  django-docutils:
+    repo: git+https://github.com/tony/django-docutils
+  django-inline-actions:
+    remotes:
+      tony: git+ssh://git@github.com/tony/django-inline-actions.git
+    repo: git+https://github.com/escaped/django-inline-actions.git
+  django-manager-utils:
+    remotes:
+      eduflow: git+ssh://git@github.com/eduflow/django-manager-utils.git
+      tony: git+ssh://git@github.com/tony/django-manager-utils.git
+    repo: git+https://github.com/ambitioninc/django-manager-utils.git
+  django-model-utils:
+    remotes:
+      develtech: git+ssh://git@github.com/develtech/django-model-utils.git
+    repo: git+https://github.com/jazzband/django-model-utils.git
+  django-mptt:
+    remotes:
+      develtech: git+ssh://git@github.com/develtech/django-mptt.git
+    repo: git+https://github.com/django-mptt/django-mptt.git
+  django-polymorphic:
+    remotes:
+      develtech: git+ssh://git@github.com/develtech/django-polymorphic.git
+    repo: git+https://github.com/django-polymorphic/django-polymorphic.git
+  django-polymorphic-tree:
+    remotes:
+      develtech: git+ssh://git@github.com/develtech/django-polymorphic-tree.git
+    repo: git+https://github.com/django-polymorphic/django-polymorphic-tree.git
+  django-request-cache:
+    remotes:
+      eduflow: git+ssh://git@github.com/eduflow/django-request-cache.git
+      leonardon473: git+ssh://git@github.com/leonardon473/django-request-cache.git
+      tony: git+ssh://git@github.com/tony/django-request-cache.git
+    repo: git+https://github.com/anexia-it/django-request-cache.git
+  django-reversion:
+    remotes:
+      tony: git+ssh://git@github.com/tony/django-reversion.git
+    repo: git+https://github.com/etianen/django-reversion.git
+  django-robots:
+    remotes:
+      develtech: git+ssh://git@github.com/develtech/django-robots.git
+      tony: git+ssh://git@github.com/tony/django-robots.git
+    repo: git+ssh://git@github.com/jazzband/django-robots.git
+  django-slugify-processor:
+    repo: git+ssh://git@github.com/tony/django-slugify-processor.git
+  django-stubs:
+    remotes:
+      tony: git+ssh://git@github.com/tony/django-stubs.git
+    repo: git+https://github.com/typeddjango/django-stubs.git
+  dotkeeper:
+    remotes:
+      tony: git+ssh://git@github.com/dotkeeper/dotkeeper.git
+    repo: git+https://github.com/dotkeeper/dotkeeper.git
+  fabric-helpers:
+    repo: git+ssh://git@github.com:develtech/fabric-helpers.git
+  fabtools:
+    remotes:
+      develtech: git+ssh://git@github.com/develtech/fabtools.git
+      ssteinerx: git+ssh://git@github.com/ssteinerx/fabtools.git
+    repo: git+https://github.com/fabtools/fabtools.git
+  factory_boy:
+    remotes:
+      francoisfreitag: git+ssh://git@github.com/francoisfreitag/factory_boy.git
+      kingbuzzman: git+ssh://git@github.com/kingbuzzman/factory_boy.git
+      tony: git+ssh://git@github.com/tony/factory_boy.git
+    repo: git+https://github.com/FactoryBoy/factory_boy.git
+  faker:
+    remotes:
+      tony: git+ssh://git@github.com/tony/faker.git
+    repo: git+https://github.com/joke2k/faker.git
+  freezegun:
+    remotes:
+      tony: git+ssh://git@github.com/tony/freezegun.git
+    repo: git+https://github.com/spulec/freezegun.git
+  g:
+    remotes:
+      tony: git+ssh://git@github.com/tony/g.git
+    repo: git+ssh://git@github.com/vcs-python/g.git
+  gp-libs:
+    repo: git+ssh://git@github.com/git-pull/gp-libs.git
+  graphql-core-promise:
+    remotes:
+      tony: git+git@github.com:tony/graphql-core-promise.git
+    repo: git+https://github.com/fellowapp/graphql-core-promise.git
+  graphql-sync-dataloaders:
+    remotes:
+      tony: git+ssh://git@github.com/tony/graphql-sync-dataloaders.git
+    repo: git+https://github.com/jkimbo/graphql-sync-dataloaders.git
+  kaptan:
+    remotes:
+      tony: git+ssh://git@github.com/tony/kaptan.git
+    repo: git+https://github.com/emre/kaptan.git
+  libtmux:
+    remotes:
+      codeberg: git@codeberg.org:tmux-python/libtmux.git
+      gitlab: git@gitlab.com:tmux-python/libtmux.git
+      tony: git+ssh://git@github.com/tony/libtmux.git
+    repo: git+ssh://git@github.com/tmux-python/libtmux.git
+  libvcs:
+    remotes:
+      codeberg: git@codeberg.org:vcs-python/libvcs.git
+      gitlab: git@gitlab.com:vcs-python/libvcs.git
+      tony: git+ssh://git@github.com/tony/libvcs.git
+    repo: git+ssh://git@github.com/vcs-python/libvcs.git
+  profiling:
+    remotes:
+      tony: git+ssh://git@github.com/tony/profiling.git
+    repo: git+https://github.com/what-studio/profiling.git
+  pydoc-markdown:
+    remotes:
+      tony: git+ssh://git@github.com/tony/pydoc-markdown.git
+    repo: git+https://github.com/NiklasRosenstein/pydoc-markdown.git
+  pygments:
+    remotes:
+      tony: git+ssh://git@github.com/tony/pygments.git
+    repo: git+https://github.com/pygments/pygments.git
+  pypdf2:
+    remotes:
+      eduflow: git+ssh://git@github.com/eduflow/PyPDF2.git
+      tony: git+ssh://git@github.com/tony/PyPDF2.git
+    repo: git+https://github.com/mstamy2/PyPDF2.git
+  pytest-django:
+    remotes:
+      develtech: git+ssh://git@github.com/develtech/pytest-django.git
+    repo: git+https://github.com/pytest-dev/pytest-django.git
+  pytest-sphinx:
+    remotes:
+      tony: git+ssh://git@github.com/tony/pytest-sphinx.git
+    repo: git+https://github.com/thisch/pytest-sphinx.git
+  pytest-watcher:
+    remotes:
+      tony: git+ssh://git@github.com/tony/pytest-watcher.git
+    repo: git+https://github.com/olzhasar/pytest-watcher.git
+  python-questions:
+    remotes:
+      github: git+ssh://git@github.com/tony/python-questions.git
+    repo: git+ssh://git@gitlab.com/tony/python-questions.git
+  qencode-api-python-client:
+    remotes:
+      eduflow: git+ssh://git@github.com/eduflow/qencode-api-python-client.git
+      tony: git+ssh://git@github.com/tony/qencode-api-python-client.git
+    repo: git+https://github.com/qencode-dev/qencode-api-python-client.git
+  qencode-api-python3-client:
+    remotes:
+      eduflow: git+ssh://git@github.com/eduflow/qencode-api-python3-client.git
+      tony: git+ssh://git@github.com/tony/qencode-api-python3-client.git
+    repo: git+https://github.com/qencode-dev/qencode-api-python3-client.git
+  redis-py:
+    remotes:
+      tony: git+ssh://git@github.com/tony/redis-py.git
+    repo: git+https://github.com/redis/redis-py.git
+  releases:
+    remotes:
+      tony: git+ssh://git@github.com/tony/releases.git
+    repo: git+https://github.com/bitprophet/releases.git
+  responses:
+    remotes:
+      tony: git+ssh://git@github.com/tony/responses.git
+    repo: git+https://github.com/getsentry/responses.git
+  sphinx-autoissues:
+    remotes:
+      ignatenkobrain: git+ssh://git@github.com/ignatenkobrain/sphinxcontrib-issuetracker.git
+    repo: git+ssh://git@github.com/tony/sphinx-autoissues.git
+  splinter:
+    remotes:
+      tony: git+ssh://git@github.com/tony/splinter.git
+    repo: git+https://github.com/cobrateam/splinter.git
+  tingle:
+    remotes:
+      tony: git+ssh://git@github.com/tony/tingle.git
+    repo: git+https://github.com/deathbeds/tingle.git
+  tmux-manuals:
+    repo: git+ssh://git@github.com/tmux-python/tmux-manuals.git
+  tmuxp:
+    remotes:
+      codeberg: git@codeberg.org:tmux-python/tmuxp.git
+      gitlab: git@gitlab.com:tmux-python/tmuxp.git
+      tony: git+ssh://git@github.com/tony/tmuxp.git
+    repo: git+ssh://git@github.com/tmux-python/tmuxp.git
+  uvicorn:
+    remotes:
+      eduflow: git+ssh://git@github.com/eduflow/uvicorn.git
+      tony: git+ssh://git@github.com/tony/uvicorn.git
+    repo: git+https://github.com/encode/uvicorn.git
+  vcspull:
+    remotes:
+      codeberg: git@codeberg.org:vcs-python/vcspull.git
+      gitlab: git@gitlab.com:vcs-python/vcspull.git
+      tony: git+ssh://git@github.com/tony/vcspull.git
+    repo: git+ssh://git@github.com/vcs-python/vcspull.git
+  watching-testrunner:
+    repo: git+https://github.com/tony/watching-testrunner.git
 ~/work/reStructuredText:
-  docutils: "svn+ssh://gitpull@svn.code.sf.net/p/docutils/code"
-  sphinxcontrib-websupport:
-    repo: "git+https://github.com/sphinx-doc/sphinxcontrib-websupport.git"
-    remotes:
-      develtech: "git+ssh://git@github.com/develtech/sphinxcontrib-websupport.git"
+  docutils:
+    repo: svn+ssh://gitpull@svn.code.sf.net/p/docutils/code
   sphinx:
-    repo: "git+https://github.com/sphinx-doc/sphinx.git"
     remotes:
-      tony: "git+ssh://git@github.com/tony/sphinx.git"
-      develtech: "git+ssh://git@github.com/develtech/sphinx.git"
+      develtech: git+ssh://git@github.com/develtech/sphinx.git
+      tony: git+ssh://git@github.com/tony/sphinx.git
+    repo: git+https://github.com/sphinx-doc/sphinx.git
   sphinx-autoapi:
-    repo: "git+https://github.com/readthedocs/sphinx-autoapi.git"
     remotes:
-      tony: "git+ssh://git@github.com/tony/sphinx-autoapi.git"
+      tony: git+ssh://git@github.com/tony/sphinx-autoapi.git
+    repo: git+https://github.com/readthedocs/sphinx-autoapi.git
   sphinx-testing:
-    repo: "git+https://github.com/sphinx-doc/sphinx-testing.git"
     remotes:
-      tony: "git+ssh://git@github.com/tony/sphinx-testing.git"
-  sphinxcontrib-github: "git+https://github.com/tony/sphinxcontrib-github.git"
+      tony: git+ssh://git@github.com/tony/sphinx-testing.git
+    repo: git+https://github.com/sphinx-doc/sphinx-testing.git
+  sphinxcontrib-github:
+    repo: git+https://github.com/tony/sphinxcontrib-github.git
   sphinxcontrib-stud:
-    repo: "git+https://github.com/guibog/stud.git"
     remotes:
-      tony: "git+ssh://git@github.com/tony/sphinxcontrib-stud.git"
-
+      tony: git+ssh://git@github.com/tony/sphinxcontrib-stud.git
+    repo: git+https://github.com/guibog/stud.git
+  sphinxcontrib-websupport:
+    remotes:
+      develtech: git+ssh://git@github.com/develtech/sphinxcontrib-websupport.git
+    repo: git+https://github.com/sphinx-doc/sphinxcontrib-websupport.git
+~/work/remark:
+  mdx:
+    remotes:
+      tony: git+ssh://git@github.com/tony/mdx.git
+    repo: git+https://github.com/mdx-js/mdx.git
+  remark:
+    remotes:
+      tony: git+ssh://git@github.com/tony/remark.git
+    repo: git+https://github.com/remarkjs/remark.git
+  remark-bookmarks:
+    remotes:
+      tony: git+ssh://git@github.com/tony/remark-bookmarks.git
+    repo: git+https://github.com/remarkjs/remark-bookmarks.git
+  remark-comment-config:
+    remotes:
+      tony: git+ssh://git@github.com/tony/remark-comment-config.git
+    repo: git+https://github.com/remarkjs/remark-comment-config.git
+  remark-crossref:
+    remotes:
+      tony: git+ssh://git@github.com/tony/remark-crossref.git
+    repo: git+https://github.com/Paperist/remark-crossref.git
+  remark-github:
+    remotes:
+      tony: git+ssh://git@github.com/tony/remark-github.git
+    repo: git+https://github.com/remarkjs/remark-github.git
+  remark-github-contributors:
+    remotes:
+      tony: git+ssh://git@github.com/tony/remark-github-contributors.git
+    repo: git+https://github.com/remarkjs/remark-github-contributors.git
+  remark-images:
+    remotes:
+      tony: git+ssh://git@github.com/tony/remark-images.git
+    repo: git+https://github.com/remarkjs/remark-images.git
+  remark-inline-links:
+    remotes:
+      tony: git+ssh://git@github.com/tony/remark-inline-links.git
+    repo: git+https://github.com/remarkjs/remark-inline-links.git
+  remark-lint:
+    remotes:
+      tony: git+ssh://git@github.com/tony/remark-lint.git
+    repo: git+https://github.com/remarkjs/remark-lint.git
+  remark-normalize-headings:
+    remotes:
+      tony: git+ssh://git@github.com/tony/remark-normalize-headings.git
+    repo: git+https://github.com/remarkjs/remark-normalize-headings.git
+  remark-oembed:
+    remotes:
+      tony: git+ssh://git@github.com/tony/remark-oembed.git
+    repo: git+https://github.com/agentofuser/remark-oembed.git
+  remark-reference-links:
+    remotes:
+      tony: git+ssh://git@github.com/tony/remark-reference-links.git
+    repo: git+https://github.com/remarkjs/remark-reference-links.git
+~/work/salt:
+  salt-states-configs:
+    repo: git+https://github.com/tony/salt-states-configs.git
+~/work/typescript:
+  astrocite:
+    remotes:
+      tony: git+ssh://git@github.com/tony/astrocite.git
+    repo: git+https://github.com/dsifford/astrocite.git
+  lit-element-starter-ts:
+    remotes:
+      fvilers: git+ssh://git@github.com/fvilers/lit-element-starter-ts.git
+      tony: git+ssh://git@github.com/tony/lit-element-starter-ts.git
+    repo: git+https://github.com/PolymerLabs/lit-element-starter-ts.git
+  mobx:
+    remotes:
+      tony: git+ssh://git@github.com/tony/mobx.git
+    repo: git+https://github.com/mobxjs/mobx.git
+  oembed-component:
+    repo: git+ssh://git@github.com/tony/oembed-component.git
+  react-contenteditable:
+    remotes:
+      eduflow: git+ssh://git@github.com/tony/react-contenteditable.git
+      tony: git+ssh://git@github.com/tony/react-contenteditable.git
+    repo: git+https://github.com/lovasoa/react-contenteditable.git
+  react-diagrams:
+    remotes:
+      tony: git+ssh://git@github.com/tony/react-diagrams.git
+    repo: git+https://github.com/projectstorm/react-diagrams.git
+  rich-markdown-editor:
+    remotes:
+      tony: git+ssh://git@github.com/tony/rich-markdown-editor.git
+    repo: git+https://github.com/outline/rich-markdown-editor.git
+  social-embed:
+    repo: git+ssh://git@github.com/social-embed/social-embed.git
+  ts-debounce:
+    remotes:
+      tony: git+ssh://git@github.com/tony/ts-debounce.git
+    repo: git+https://github.com/chodorowicz/ts-debounce.git
+  typedoc:
+    remotes:
+      tony: git+ssh://git@github.com/tony/typedoc.git
+    repo: git+https://github.com/TypeStrong/typedoc.git
+  typedoc-plugin-monorepo:
+    remotes:
+      social-embed: git+ssh://git@github.com/social-embed/typedoc-plugin-monorepo.git
+    repo: git+https://github.com/unstubbable/typedoc-plugin-monorepo.git
 ~/work/zaproxy:
-  zaproxy:
-    repo: "git+https://github.com/zaproxy/zaproxy.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/zaproxy.git"
-  action-baseline:
-    repo: "git+https://github.com/zaproxy/action-baseline.git"
-    remotes:
-      tony: "git+ssh://git@github.com/tony/action-baseline.git"
-      eduflow: "git+ssh://git@github.com/eduflow/action-baseline.git"
   action-api-scan:
-    repo: "git+https://github.com/zaproxy/action-api-scan.git"
     remotes:
-      tony: "git+ssh://git@github.com/tony/action-api-scan.git"
-      eduflow: "git+ssh://git@github.com/eduflow/action-api-scan.git"
+      eduflow: git+ssh://git@github.com/eduflow/action-api-scan.git
+      tony: git+ssh://git@github.com/tony/action-api-scan.git
+    repo: git+https://github.com/zaproxy/action-api-scan.git
+  action-baseline:
+    remotes:
+      eduflow: git+ssh://git@github.com/eduflow/action-baseline.git
+      tony: git+ssh://git@github.com/tony/action-baseline.git
+    repo: git+https://github.com/zaproxy/action-baseline.git
   action-full-scan:
-    repo: "git+https://github.com/zaproxy/action-full-scan.git"
     remotes:
-      tony: "git+ssh://git@github.com/tony/action-full-scan.git"
-      eduflow: "git+ssh://git@github.com/eduflow/action-full-scan.git"
+      eduflow: git+ssh://git@github.com/eduflow/action-full-scan.git
+      tony: git+ssh://git@github.com/tony/action-full-scan.git
+    repo: git+https://github.com/zaproxy/action-full-scan.git
   actions-common:
-    repo: "git+https://github.com/zaproxy/actions-common.git"
     remotes:
-      tony: "git+ssh://git@github.com/tony/actions-common.git"
-      eduflow: "git+ssh://git@github.com/eduflow/actions-common.git"
+      eduflow: git+ssh://git@github.com/eduflow/actions-common.git
+      tony: git+ssh://git@github.com/tony/actions-common.git
+    repo: git+https://github.com/zaproxy/actions-common.git
   zap2docker-weekly:
-    repo: "git+https://github.com/ICTU/zap-baseline.git"
     remotes:
-      tony: "git+ssh://git@github.com/tony/zap-baseline.git"
-      eduflow: "git+ssh://git@github.com/eduflow/zap-baseline.git"
+      eduflow: git+ssh://git@github.com/eduflow/zap-baseline.git
+      tony: git+ssh://git@github.com/tony/zap-baseline.git
+    repo: git+https://github.com/ICTU/zap-baseline.git
+  zaproxy:
+    remotes:
+      tony: git+ssh://git@github.com/tony/zaproxy.git
+    repo: git+https://github.com/zaproxy/zaproxy.git

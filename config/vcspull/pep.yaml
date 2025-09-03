@@ -1,13 +1,13 @@
 ~/work/pepweb:
   OpenPubArchive-Content-Server:
-    repo: "git+https://git@github.com/Psychoanalytic-Electronic-Publishing/OpenPubArchive-Content-Server.git"
-  PEP-Web-User-Interface:
-    repo: "git+https://git@github.com/Psychoanalytic-Electronic-Publishing/PEP-Web-User-Interface.git"
-  PaDS:
-    repo: "git+https://git@github.com/Psychoanalytic-Electronic-Publishing/PaDS.git"
-  UI-Client-Strings:
-    repo: "git+https://git@github.com/Psychoanalytic-Electronic-Publishing/UI-Client-Strings.git"
+    repo: git+https://git@github.com/Psychoanalytic-Electronic-Publishing/OpenPubArchive-Content-Server.git
   PEP-Reporting-API:
-    repo: "git+https://git@github.com/Psychoanalytic-Electronic-Publishing/PEP-Reporting-API.git"
+    repo: git+https://git@github.com/Psychoanalytic-Electronic-Publishing/PEP-Reporting-API.git
   PEP-Web-Configuration:
-    repo: "git+https://git@github.com/Psychoanalytic-Electronic-Publishing/PEP-Web-Configuration.git"
+    repo: git+https://git@github.com/Psychoanalytic-Electronic-Publishing/PEP-Web-Configuration.git
+  PEP-Web-User-Interface:
+    repo: git+https://git@github.com/Psychoanalytic-Electronic-Publishing/PEP-Web-User-Interface.git
+  PaDS:
+    repo: git+https://git@github.com/Psychoanalytic-Electronic-Publishing/PaDS.git
+  UI-Client-Strings:
+    repo: git+https://git@github.com/Psychoanalytic-Electronic-Publishing/UI-Client-Strings.git
