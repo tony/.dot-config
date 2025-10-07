@@ -69,13 +69,13 @@ use = ["zsh-history-substring-search.zsh"]
 # 1) Main clone (sources, scripts, etc.)
 [plugins."fzf-clone"]
 github = "junegunn/fzf"
-tag = "v0.62.0"
+tag = "v0.65.2"
 use = ["shell/completion.zsh", "shell/key-bindings.zsh", "install"]
 apply = ['fzf-install', 'fzf-source']
 
 [plugins."fzf-bin"]
 github = "junegunn/fzf"
-tag = "v0.62.0"
+tag = "v0.65.2"
 dir = "bin"
 apply = ["PATH"]
 
