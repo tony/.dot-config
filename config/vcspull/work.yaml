@@ -1,16 +1,16 @@
-~/study/php:
+~/study/php/:
   moodle:
     remotes:
       tony: git+ssh://git@github.com/tony/moodle.git
     repo: git+https://github.com/moodle/moodle.git
   moodle-docker:
     repo: git+https://github.com/moodle/moodle-docker.git
-~/study/ruby:
+~/study/ruby/:
   canvas:
     remotes:
       tony: git+ssh://git@github.com/tony/canvas-lms.git
     repo: git+https://github.com/instructure/canvas-lms.git
-~/work:
+~/work/:
   git-pull-widget:
     repo: git+ssh://git@github.com/tony/git-pull-widget.git
   react-typescript-vanilla-starter:
@@ -21,14 +21,7 @@
     repo: git+ssh://git@github.com/tony/vue-typescript-vanilla-starter.git
   website:
     repo: git+ssh://git@github.com/git-pull/website.git
-~/work/c:
-  NCURSES-Programming-HOWTO-examples:
-    repo: git+ssh://git@github.com/tony/NCURSES-Programming-HOWTO-examples.git
-  ncurses-example:
-    repo: git+ssh://git@github.com/tony/ncurses-example.git
-  reST-lex-byacc:
-    repo: git+ssh://git@github.com/tony/reST-lex-byacc.git
-~/work/c++:
+~/work/c++/:
   aseprite:
     remotes:
       tony: git+ssh://git@github.com/tony/aseprite.git
@@ -39,7 +32,14 @@
     remotes:
       tony: git@github.com:tony/uMario_Jakowski.git
     repo: git+https://github.com/jakowskidev/uMario_Jakowski
-~/work/cihai:
+~/work/c/:
+  NCURSES-Programming-HOWTO-examples:
+    repo: git+ssh://git@github.com/tony/NCURSES-Programming-HOWTO-examples.git
+  ncurses-example:
+    repo: git+ssh://git@github.com/tony/ncurses-example.git
+  reST-lex-byacc:
+    repo: git+ssh://git@github.com/tony/reST-lex-byacc.git
+~/work/cihai/:
   cihai:
     repo: git+ssh://git@github.com/cihai/cihai.git
   cihai-cli:
@@ -50,7 +50,7 @@
     repo: git+ssh://git@github.com/cihai/unihan-db.git
   unihan-etl:
     repo: git+ssh://git@github.com/cihai/unihan-etl.git
-~/work/docusaurus:
+~/work/docusaurus/:
   docusaurus:
     remotes:
       tony: git+ssh://git@github.com/tony/docusaurus.git
@@ -59,7 +59,7 @@
     remotes:
       tony: git+ssh://git@github.com/tony/typedoc-plugin-markdown.git
     repo: git+https://github.com/tgreyuk/typedoc-plugin-markdown.git
-~/work/freebsd:
+~/work/freebsd/:
   freebsd:
     remotes:
       tony: git+ssh://git@github.com/tony/freebsd.git
@@ -78,7 +78,7 @@
     repo: git+https://github.com/freebsd/freebsd-ports.git
   plasma5:
     repo: svn+http://area51.pcbsd.org/branches/plasma5
-~/work/gatsby:
+~/work/gatsby/:
   gatsby-plugin-aws-elasticsearch:
     remotes:
       tony: git+ssh://git@github.com/tony/gatsby-plugin-aws-elasticsearch.git
@@ -87,12 +87,12 @@
     remotes:
       tony: git+ssh://git@github.com/tony/gatsby-s3-action.git
     repo: git+https://github.com/jonelantha/gatsby-s3-action.git
-~/work/java:
+~/work/java/:
   selenium:
     remotes:
       tony: git+ssh://git@github.com/tony/selenium.git
     repo: git+https://github.com/SeleniumHQ/selenium.git
-~/work/javascript:
+~/work/javascript/:
   ckeditor5:
     remotes:
       eduflow: git+ssh://git@github.com/eduflow/ckeditor5.git
@@ -137,7 +137,7 @@
       eduflow: git+ssh://git@github.com/eduflow/sass-to-emotion.git
       tony: git+ssh://git@github.com/tony/sass-to-emotion.git
     repo: git+https://github.com/DomainGroupOSS/sass-to-emotion.git
-~/work/js:
+~/work/js/:
   ScrollMagic:
     remotes:
       develtech: git+ssh://git@github.com/develtech/ScrollMagic.git
@@ -146,7 +146,7 @@
     remotes:
       develtech: git+ssh://git@github.com/develtech/social-share-kit.git
     repo: git+https://github.com/darklow/social-share-kit.git
-~/work/mkdocs:
+~/work/mkdocs/:
   mkapi:
     remotes:
       tony: git+ssh://git@github.com/tony/mkapi.git
@@ -155,7 +155,7 @@
     remotes:
       tony: git+ssh://git@github.com/tony/mkdocs.git
     repo: git+https://github.com/mkdocs/mkdocs.git
-~/work/python:
+~/work/python/:
   DjangoChannelsGraphqlWs:
     remotes:
       eduflow: git+ssh://git@github.com/eduflow/DjangoChannelsGraphqlWs.git
@@ -389,7 +389,7 @@
     repo: git+ssh://git@github.com/vcs-python/vcspull.git
   watching-testrunner:
     repo: git+https://github.com/tony/watching-testrunner.git
-~/work/reStructuredText:
+~/work/reStructuredText/:
   docutils:
     repo: svn+ssh://gitpull@svn.code.sf.net/p/docutils/code
   sphinx:
@@ -415,7 +415,7 @@
     remotes:
       develtech: git+ssh://git@github.com/develtech/sphinxcontrib-websupport.git
     repo: git+https://github.com/sphinx-doc/sphinxcontrib-websupport.git
-~/work/remark:
+~/work/remark/:
   mdx:
     remotes:
       tony: git+ssh://git@github.com/tony/mdx.git
@@ -468,10 +468,10 @@
     remotes:
       tony: git+ssh://git@github.com/tony/remark-reference-links.git
     repo: git+https://github.com/remarkjs/remark-reference-links.git
-~/work/salt:
+~/work/salt/:
   salt-states-configs:
     repo: git+https://github.com/tony/salt-states-configs.git
-~/work/typescript:
+~/work/typescript/:
   astrocite:
     remotes:
       tony: git+ssh://git@github.com/tony/astrocite.git
@@ -514,7 +514,7 @@
     remotes:
       social-embed: git+ssh://git@github.com/social-embed/typedoc-plugin-monorepo.git
     repo: git+https://github.com/unstubbable/typedoc-plugin-monorepo.git
-~/work/zaproxy:
+~/work/zaproxy/:
   action-api-scan:
     remotes:
       eduflow: git+ssh://git@github.com/eduflow/action-api-scan.git

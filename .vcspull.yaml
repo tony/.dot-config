@@ -1,9 +1,124 @@
-~/study/ai:
+~/study/ai/:
   tiktoken:
     remotes:
       tony: git+ssh://git@github.com/tony/tiktoken.git
     repo: git+https://github.com/openai/tiktoken.git
-~/study/c:
+~/study/c++/:
+  GeographicLib:
+    repo: git+https://git.code.sf.net/p/geographiclib/code
+  anax:
+    repo: git+https://github.com/miguelmartin75/anax
+  benchmark:
+    repo: git+https://github.com/google/benchmark
+  blender:
+    repo: git+https://git.blender.org/blender.git
+  boost:
+    repo: git+https://github.com/boostorg/boost
+  boost-python-examples:
+    repo: git+https://github.com/TNG/boost-python-examples.git
+  box2d:
+    remotes:
+      tony: git+ssh://git@github.com/tony/Box2D.git
+    repo: git+https://github.com/erincatto/Box2D.git
+  caffe:
+    repo: git+https://github.com/BVLC/caffe.git
+  cmake:
+    remotes:
+      tony: git+ssh://git@github.com/tony/cmake.git
+    repo: git+https://github.com/Kitware/cmake.git
+  cquery:
+    repo: git+https://github.com/cquery-project/cquery.git
+  doubanfm-qt:
+    repo: git+https://github.com/zonyitoo/doubanfm-qt.git
+  entityx:
+    repo: git+https://github.com/alecthomas/entityx
+  gmock:
+    repo: git+https://github.com/google/googlemock
+  googletest:
+    repo: git+https://github.com/google/googletest
+  jucipp:
+    remotes:
+      tony: git+ssh://git@github.com/tony/jucipp.git
+    repo: git+https://github.com/cppit/jucipp.git
+  kakoune:
+    remotes:
+      tony: git+ssh://git@github.com/tony/kakoune.git
+    repo: git+https://github.com/mawww/kakoune.git
+  libpypa:
+    remotes:
+      tony: git+ssh://git@github.com/tony/libpypa.git
+    repo: git+https://github.com/vinzenz/libpypa.git
+  libsdl2pp:
+    remotes:
+      tony: git+ssh://git@github.com/tony/libSDL2pp.git
+    repo: git+https://github.com/libSDL2pp/libSDL2pp
+  libunwind:
+    remotes:
+      dropbox: https://github.com/dropbox/libunwind.git
+      llvm: http://llvm.org/git/libunwind
+      tony: git+ssh://git@github.com/tony/libunwind.git
+    repo: git+ssh://git.sv.gnu.org/libunwind.git
+  magnum:
+    remotes:
+      tony: git+ssh://git@github.com/tony/magnum.git
+    repo: git+https://github.com/mosra/magnum.git
+  nanogui:
+    remotes:
+      tony: git+ssh://git@github.com/tony/nanogui.git
+    repo: git+https://github.com/wjakob/nanogui.git
+  nanogui-sdl:
+    remotes:
+      tony: git+ssh://git@github.com/tony/nanogui-sdl.git
+    repo: git+https://github.com/dalerank/nanogui-sdl.git
+  ncmpcpp:
+    remotes:
+      tony: git+ssh://git@github.com/tony/ncmpcpp.git
+    repo: git+https://github.com/arybczak/ncmpcpp.git
+  ninja:
+    remotes:
+      tony: git+ssh://git@github.com/tony/ninja.git
+    repo: git+https://github.com/ninja-build/ninja.git
+  node:
+    remotes:
+      tony: git+ssh://git@github.com/tony/node.git
+    repo: git+https://github.com/nodejs/node.git
+  openttd:
+    remotes:
+      tony: git+ssh://git@github.com/tony/openttd.git
+    repo: git+https://github.com/openttd/openttd.git
+  oxygine:
+    remotes:
+      tony: git+ssh://git@github.com/tony/oxygine-framework.git
+    repo: git+https://github.com/oxygine/oxygine-framework.git
+  protobuf:
+    remotes:
+      tony: git+ssh://git@github.com/tony/protobuf.git
+    repo: git+https://github.com/google/protobuf.git
+  pybind11:
+    remotes:
+      tony: git+ssh://git@github.com/tony/pybind11.git
+    repo: git+https://github.com/pybind/pybind11.git
+  re2:
+    repo: git+https://github.com/google/re2.git
+  skia:
+    remotes:
+      aseprite: git+https://github.com/aseprite/skia
+    repo: git+https://github.com/google/skia.git
+  solarus:
+    remotes:
+      tony: git+ssh://git@github.com/tony/solarus.git
+    repo: git+https://github.com/christopho/solarus.git
+  tensorflow:
+    repo: git+https://github.com/tensorflow/tensorflow.git
+  tmux-mem-cpu-load:
+    remotes:
+      tony: git+ssh://git@github.com/tony/tmux-mem-cpu-load.git
+    repo: git+https://github.com/thewtex/tmux-mem-cpu-load.git
+  v8:
+    remotes:
+      tony: git+ssh://git@github.com/tony/v8.git
+    repo: git+ssh://github.com/v8/v8.git
+~/study/c/:
   SDL2:
     repo: hg+https://hg.libsdl.org/SDL
   ck:
@@ -120,170 +235,55 @@
     repo: git+https://github.com/madler/zlib.git
   zsh:
     repo: git+ssh://git.code.sf.net/p/zsh/code
-~/study/c++:
-  GeographicLib:
-    repo: git+https://git.code.sf.net/p/geographiclib/code
-  anax:
-    repo: git+https://github.com/miguelmartin75/anax
-  benchmark:
-    repo: git+https://github.com/google/benchmark
-  blender:
-    repo: git+https://git.blender.org/blender.git
-  boost:
-    repo: git+https://github.com/boostorg/boost
-  boost-python-examples:
-    repo: git+https://github.com/TNG/boost-python-examples.git
-  box2d:
-    remotes:
-      tony: git+ssh://git@github.com/tony/Box2D.git
-    repo: git+https://github.com/erincatto/Box2D.git
-  caffe:
-    repo: git+https://github.com/BVLC/caffe.git
-  cmake:
-    remotes:
-      tony: git+ssh://git@github.com/tony/cmake.git
-    repo: git+https://github.com/Kitware/cmake.git
-  cquery:
-    repo: git+https://github.com/cquery-project/cquery.git
-  doubanfm-qt:
-    repo: git+https://github.com/zonyitoo/doubanfm-qt.git
-  entityx:
-    repo: git+https://github.com/alecthomas/entityx
-  gmock:
-    repo: git+https://github.com/google/googlemock
-  googletest:
-    repo: git+https://github.com/google/googletest
-  jucipp:
-    remotes:
-      tony: git+ssh://git@github.com/tony/jucipp.git
-    repo: git+https://github.com/cppit/jucipp.git
-  kakoune:
-    remotes:
-      tony: git+ssh://git@github.com/tony/kakoune.git
-    repo: git+https://github.com/mawww/kakoune.git
-  libpypa:
-    remotes:
-      tony: git+ssh://git@github.com/tony/libpypa.git
-    repo: git+https://github.com/vinzenz/libpypa.git
-  libsdl2pp:
-    remotes:
-      tony: git+ssh://git@github.com/tony/libSDL2pp.git
-    repo: git+https://github.com/libSDL2pp/libSDL2pp
-  libunwind:
-    remotes:
-      dropbox: https://github.com/dropbox/libunwind.git
-      llvm: http://llvm.org/git/libunwind
-      tony: git+ssh://git@github.com/tony/libunwind.git
-    repo: git+ssh://git.sv.gnu.org/libunwind.git
-  magnum:
-    remotes:
-      tony: git+ssh://git@github.com/tony/magnum.git
-    repo: git+https://github.com/mosra/magnum.git
-  nanogui:
-    remotes:
-      tony: git+ssh://git@github.com/tony/nanogui.git
-    repo: git+https://github.com/wjakob/nanogui.git
-  nanogui-sdl:
-    remotes:
-      tony: git+ssh://git@github.com/tony/nanogui-sdl.git
-    repo: git+https://github.com/dalerank/nanogui-sdl.git
-  ncmpcpp:
-    remotes:
-      tony: git+ssh://git@github.com/tony/ncmpcpp.git
-    repo: git+https://github.com/arybczak/ncmpcpp.git
-  ninja:
-    remotes:
-      tony: git+ssh://git@github.com/tony/ninja.git
-    repo: git+https://github.com/ninja-build/ninja.git
-  node:
-    remotes:
-      tony: git+ssh://git@github.com/tony/node.git
-    repo: git+https://github.com/nodejs/node.git
-  openttd:
-    remotes:
-      tony: git+ssh://git@github.com/tony/openttd.git
-    repo: git+https://github.com/openttd/openttd.git
-  oxygine:
-    remotes:
-      tony: git+ssh://git@github.com/tony/oxygine-framework.git
-    repo: git+https://github.com/oxygine/oxygine-framework.git
-  protobuf:
-    remotes:
-      tony: git+ssh://git@github.com/tony/protobuf.git
-    repo: git+https://github.com/google/protobuf.git
-  pybind11:
-    remotes:
-      tony: git+ssh://git@github.com/tony/pybind11.git
-    repo: git+https://github.com/pybind/pybind11.git
-  re2:
-    repo: git+https://github.com/google/re2.git
-  skia:
-    remotes:
-      aseprite: git+https://github.com/aseprite/skia
-    repo: git+https://github.com/google/skia.git
-  solarus:
-    remotes:
-      tony: git+ssh://git@github.com/tony/solarus.git
-    repo: git+https://github.com/christopho/solarus.git
-  tensorflow:
-    repo: git+https://github.com/tensorflow/tensorflow.git
-  tmux-mem-cpu-load:
-    remotes:
-      tony: git+ssh://git@github.com/tony/tmux-mem-cpu-load.git
-    repo: git+https://github.com/thewtex/tmux-mem-cpu-load.git
-  v8:
-    remotes:
-      tony: git+ssh://git@github.com/tony/v8.git
-    repo: git+ssh://github.com/v8/v8.git
-~/study/chakra:
+~/study/chakra/:
   chakra-ui:
     remotes:
       tony: git+ssh://git@github.com/tony/chakra-ui.git
     repo: git+https://github.com/chakra-ui/chakra-ui.git
-~/study/cmake:
+~/study/cmake/:
   python-cmake-buildsystem:
     remotes:
       tony: git+ssh://git@github.com/tony/python-cmake-buildsystem.git
     repo: git+https://github.com/python-cmake-buildsystem/python-cmake-buildsystem.git
-~/study/compsci-books:
+~/study/compsci-books/:
   bottomupcs:
     repo: git+https://github.com/ianw/bottomupcs.git
-~/study/cs:
+~/study/cs/:
   screentogif:
     remotes:
       tony: git+ssh://git@github.com/tony/ScreenToGif.git
     repo: git+https://github.com/NickeManarin/ScreenToGif.git
-~/study/data-structures-algorithms:
+~/study/data-structures-algorithms/:
   cs:
     repo: git+ssh://git@github.com/tony/cs.git
-~/study/data-structures-algorithms/c:
-  algoxy:
-    remotes:
-      tony: git+ssh://git@github.com/tony/AlgoXY.git
-    repo: git+https://github.com/liuxinyu95/AlgoXY.git
-  libds:
-    repo: git+https://github.com/zhemao/libds.git
-~/study/data-structures-algorithms/c++:
+~/study/data-structures-algorithms/c++/:
   algorithms:
     remotes:
       tony: git+ssh://git@github.com/tony/algorithms.git
     repo: git+https://github.com/xtaci/algorithms.git
   cracking-the-code-interview:
     repo: git+https://github.com/Hawstein/cracking-the-coding-interview.git
-~/study/data-structures-algorithms/java:
+~/study/data-structures-algorithms/c/:
+  algoxy:
+    remotes:
+      tony: git+ssh://git@github.com/tony/AlgoXY.git
+    repo: git+https://github.com/liuxinyu95/AlgoXY.git
+  libds:
+    repo: git+https://github.com/zhemao/libds.git
+~/study/data-structures-algorithms/java/:
   java-algorithms-implementations:
     repo: git+https://github.com/phishman3579/java-algorithms-implementation.git
   williamfiset-algorithms:
     repo: git+https://github.com/williamfiset/Algorithms.git
-~/study/data-structures-algorithms/python:
+~/study/data-structures-algorithms/python/:
   Algorithms:
     repo: git+https://github.com/prakhar1989/Algorithms.git
   cracking-the-code-interview:
     repo: git+https://github.com/careercup/CtCI-6th-Edition-Python
-~/study/devops-books:
+~/study/devops-books/:
   github-cheat-sheet:
     repo: git+https://github.com/tiimgreen/github-cheat-sheet.git
-~/study/django:
+~/study/django/:
   aldjemy:
     repo: git+https://github.com/Deepwalker/aldjemy.git
   coffin:
@@ -346,12 +346,12 @@
     remotes:
       tony: git+ssh://git@github.com/tony/wagtail.git
     repo: git+https://github.com/torchbox/wagtail.git
-~/study/dotnet:
+~/study/dotnet/:
   coreclr:
     remotes:
       tony: git+ssh://git@github.com/tony/coreclr.git
     repo: git+https://github.com/dotnet/coreclr.git
-~/study/flask:
+~/study/flask/:
   book-explore-flask:
     repo: git+https://github.com/rpicard/explore-flask.git
   flask:
@@ -415,7 +415,7 @@
     remotes:
       tony: git+ssh://git@github.com/tony/tabulator-py.git
     repo: git+https://github.com/frictionlessdata/tabulator-py.git
-~/study/gatsby:
+~/study/gatsby/:
   gatsby:
     remotes:
       tony: git+ssh://git@github.com/tony/gatsby.git
@@ -450,7 +450,7 @@
     repo: git+https://github.com/quii/learn-go-with-tests.git
   otto:
     repo: git+https://github.com/robertkrimen/otto
-~/study/java:
+~/study/java/:
   elasticsearch:
     repo: git+https://github.com/elastic/elasticsearch.git
   jenkins:
@@ -461,7 +461,7 @@
     repo: git+https://github.com/apache/lucene-solr.git
   opensearch:
     repo: git+https://github.com/opensearch-project/OpenSearch.git
-~/study/javascript:
+~/study/javascript/:
   backbone:
     repo: git+https://github.com/documentcloud/backbone.git
   backbone.babysitter:
@@ -510,7 +510,7 @@
     repo: git+https://github.com/documentcloud/underscore.git
   underscore-contrib:
     repo: git+https://github.com/documentcloud/underscore-contrib.git
-~/study/js-books:
+~/study/js-books/:
   backbone-fundamentals:
     repo: git+https://github.com/addyosmani/backbone-fundamentals
   eloquent-js:
@@ -521,7 +521,7 @@
     repo: git+https://github.com/rmurphey/jqfundamentals.git
   you-dont-know-js:
     repo: git+https://github.com/getify/You-Dont-Know-JS.git
-~/study/jupyter:
+~/study/jupyter/:
   configuratable-http-proxy:
     repo: git+https://github.com/jupyter/configurable-http-proxy.git
   docker-stacks:
@@ -574,7 +574,7 @@
     repo: git+https://github.com/jupyter/oauthenticator.git
   tmpnb:
     repo: git+https://github.com/jupyter/tmpnb.git
-~/study/kivy:
+~/study/kivy/:
   buildozer:
     repo: git+https://github.com/kivy/buildozer.git
   garden:
@@ -599,10 +599,10 @@
     repo: git+https://github.com/kivy/kivy-ios.git
   pygame:
     repo: hg+https://bitbucket.org/pygame/pygame
-~/study/koans:
+~/study/koans/:
   backbone:
     repo: git+https://github.com/addyosmani/backbone-koans-qunit.git
-~/study/litestar:
+~/study/litestar/:
   advanced-alchemy:
     remotes:
       tony: git+ssh://git@github.com:tony/advanced-alchemy.git
@@ -639,7 +639,7 @@
     remotes:
       tony: git+ssh://git@github.com:tony/type-lens.git
     repo: git+https://git@github.com/litestar-org/type-lens.git
-~/study/llvm:
+~/study/llvm/:
   clang:
     repo: git+http://llvm.org/git/clang.git
   clang-tools-extra:
@@ -650,14 +650,14 @@
     repo: git+http://llvm.org/git/lldb.git
   llvm:
     repo: git+http://llvm.org/git/llvm.git
-~/study/lua:
+~/study/lua/:
   lua:
     repo: git+https://github.com/LuaDist/lua.git
   lua-re2:
     repo: git+https://github.com/cloudflare/lua-re2.git
   luajit:
     repo: git+https://github.com/LuaDist/luajit.git
-~/study/merchant:
+~/study/merchant/:
   authorize-sauce:
     repo: git+https://github.com/jeffschenck/authorizesauce
   billy:
@@ -674,17 +674,17 @@
     repo: git+https://github.com/stripe/stripe-node.git
   stripe-python:
     repo: git+https://github.com/stripe/stripe-python.git
-~/study/node:
+~/study/node/:
   express:
     repo: git+https://github.com/visionmedia/express.git
-~/study/php:
+~/study/php/:
   laravel:
     repo: git+https://github.com/laravel/laravel.git
   laravel-framework:
     repo: git+https://github.com/laravel/framework.git
   wordpress:
     repo: git+https://github.com/WordPress/WordPress.git
-~/study/pyenv:
+~/study/pyenv/:
   pyenv:
     repo: git+https://github.com/yyuu/pyenv
   pyenv-installer:
@@ -693,9 +693,26 @@
     repo: git+https://github.com/yyuu/pyenv-virtualenv.git
   pyenv-virtualenvwrapper:
     repo: git+https://github.com/yyuu/pyenv-virtualenvwrapper.git
-~/study/python:
+~/study/python-books/:
+  byte-of-python:
+    repo: git+https://github.com/swaroopch/byte_of_python.git
+  probabilistic-programming-and-bayesian-methods:
+    repo: git+https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers.git
+  pydata-book:
+    repo: git+https://github.com/pydata/pydata-book.git
+  python-for-signal-processing:
+    repo: git+https://github.com/unpingco/Python-for-Signal-Processing.git
+  python-guide:
+    remotes:
+      tony: git+ssh://git@github.com/tony/python-guide.git
+    repo: git+https://github.com/kennethreitz/python-guide.git
+  python-patterns:
+    repo: git+https://github.com/faif/python-patterns.git
+~/study/python/:
   Flexget:
     repo: git+https://github.com/Flexget/Flexget.git
+  MyST-Parser:
+    repo: git@github.com:executablebooks/MyST-Parser.git
   RootTheBox:
     repo: git+https://github.com/moloch--/RootTheBox.git
   alembic:
@@ -780,10 +797,14 @@
     repo: git+https://github.com/fabric/fabric.git
   factory_boy:
     repo: git+https://github.com/rbarrois/factory_boy.git
+  fastapi:
+    repo: git@github.com:fastapi/fastapi.git
   fn.py:
     repo: git+https://github.com/kachayev/fn.py.git
   ftfy:
     repo: git+https://github.com/LuminosoInsight/python-ftfy.git
+  furo:
+    repo: git@github.com:pradyunsg/furo.git
   gateone:
     repo: git+https://github.com/liftoff/GateOne.git
   gevent:
@@ -870,6 +891,8 @@
     repo: git+ssh://git@github.com/tony/learning-asyncio.git
   learning-dsa:
     repo: git+ssh://git@github.com/tony/learning-dsa.git
+  learning-fastapi:
+    repo: git@github.com:tony/learning-fastapi.git
   learning-litestar:
     repo: git+ssh://git@github.com/tony/learning-litestar.git
   learning-pytest-internals:
@@ -960,6 +983,8 @@
     repo: git+https://github.com/mk-fg/pulseaudio-mixer-cli.git
   pycparser:
     repo: git+https://github.com/eliben/pycparser.git
+  pydantic:
+    repo: git@github.com:pydantic/pydantic.git
   pydantic-ai:
     remotes:
       tony: git+ssh://git@github.com/tony/pydantic-ai.git
@@ -1006,6 +1031,10 @@
     remotes:
       tony: git+ssh://git@github.com/tony/pytest.git
     repo: git+https://github.com/pytest-dev/pytest.git
+  pytest-asyncio:
+    repo: git@github.com:pytest-dev/pytest-asyncio.git
+  pytest-docker-tools:
+    repo: git@github.com:Jc2k/pytest-docker-tools.git
   pytest-splinter:
     remotes:
       tony: git+ssh://git@github.com/tony/pytest-splinter.git
@@ -1114,6 +1143,8 @@
     repo: git+https://github.com/inconshreveable/sqltap.git
   storm:
     repo: git+https://github.com/emre/storm.git
+  strawberry:
+    repo: git@github.com:strawberry-graphql/strawberry.git
   syrupy:
     remotes:
       tony: git+ssh://git@github.com/tony/syrupy.git
@@ -1178,57 +1209,7 @@
     repo: git+https://github.com/Valloric/YouCompleteMe.git
   youtube-dl:
     repo: git+https://github.com/rg3/youtube-dl.git
-~/study/python-books:
-  byte-of-python:
-    repo: git+https://github.com/swaroopch/byte_of_python.git
-  probabilistic-programming-and-bayesian-methods:
-    repo: git+https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers.git
-  pydata-book:
-    repo: git+https://github.com/pydata/pydata-book.git
-  python-for-signal-processing:
-    repo: git+https://github.com/unpingco/Python-for-Signal-Processing.git
-  python-guide:
-    remotes:
-      tony: git+ssh://git@github.com/tony/python-guide.git
-    repo: git+https://github.com/kennethreitz/python-guide.git
-  python-patterns:
-    repo: git+https://github.com/faif/python-patterns.git
-~/study/python/:
-  MyST-Parser:
-    repo: git@github.com:executablebooks/MyST-Parser.git
-  dotfiles:
-    repo: git@github.com:jbernard/dotfiles.git
-  fastapi:
-    repo: git@github.com:fastapi/fastapi.git
-  furo:
-    repo: git@github.com:pradyunsg/furo.git
-  learning-asyncio:
-    repo: git+ssh://git@github.com/tony/learning-asyncio.git
-  learning-dsa:
-    repo: git+ssh://git@github.com/tony/learning-dsa.git
-  learning-fastapi:
-    repo: git@github.com:tony/learning-fastapi.git
-  learning-litestar:
-    repo: git+ssh://git@github.com/tony/learning-litestar.git
-  learning-pytest-internals:
-    repo: git+ssh://git@github.com/tony/learning-pytest-internals.git
-  pydantic:
-    repo: git@github.com:pydantic/pydantic.git
-  pytest:
-    repo: https://github.com/pytest-dev/pytest.git
-  pytest-asyncio:
-    repo: git@github.com:pytest-dev/pytest-asyncio.git
-  pytest-docker-tools:
-    repo: git@github.com:Jc2k/pytest-docker-tools.git
-  reenvisioning-django:
-    repo: git+ssh://git@github.com/tony/reenvisioning-django.git
-  rich:
-    repo: https://github.com/Textualize/rich.git
-  sqlalchemy:
-    repo: https://github.com/zzzeek/sqlalchemy.git
-  strawberry:
-    repo: git@github.com:strawberry-graphql/strawberry.git
-~/study/react:
+~/study/react/:
   express-react-views:
     repo: git+https://github.com/reactjs/express-react-views
   material-ui:
@@ -1257,18 +1238,9 @@
     repo: git+https://github.com/rackt/react-router
   react-tutorial:
     repo: git+https://github.com/reactjs/react-tutorial.git
-~/study/ruby:
+~/study/ruby/:
   rails:
     repo: git+https://github.com/rails/rails.git
-~/study/rust:
-  learning-rust:
-    repo: git+ssh://git@github.com/tony/learning-rust.git
-  learning-rust-nodejs:
-    repo: git+ssh://git@github.com/tony/learning-rust-nodejs.git
-  learning-rust-python:
-    repo: git+ssh://git@github.com/tony/learning-rust-python.git
-  rustlings:
-    repo: git+ssh://git@github.com/tony/rustlings.git
 ~/study/rust-node/:
   biome:
     remotes:
@@ -1435,7 +1407,7 @@
     remotes:
       tony: git+ssh://git@github.com/tony/salt-windows-msi.git
     repo: git+https://github.com/saltstack/salt-windows-msi.git
-~/study/sh:
+~/study/sh/:
   misspell_fixer:
     remotes:
       tony: git+ssh://git@github.com/tony/misspell_fixer.git
@@ -1446,7 +1418,7 @@
     repo: git+https://github.com/bmizerany/roundup.git
   shocco:
     repo: git+https://github.com/rtomayko/shocco
-~/study/sqlalchemy:
+~/study/sqlalchemy/:
   bubbles:
     repo: git+https://github.com/Stiivi/bubbles.git
   cubes:
@@ -1465,23 +1437,25 @@
     repo: git+https://github.com/sontek/sqlalchemy_traversal.git
   sqlamp:
     repo: git+https://github.com/tony/sqlamp.git
-~/study/standards-and-practices/html:
+~/study/standards-and-practices/html/:
   isobar-frontend:
     repo: git+https://github.com/isobar-idev/code-standards.git
   north:
     repo: git+https://github.com/Snugug/north.git
   semantic-ui:
     repo: git+https://github.com/Semantic-Org/Semantic-UI.git
-~/study/standards-and-practices/js:
+~/study/standards-and-practices/js/:
   idiomatic.js:
     repo: git+https://github.com/rwaldron/idiomatic.js.git
-~/study/standards-and-practices/php:
+~/study/standards-and-practices/php/:
   php-fig:
     repo: git+https://github.com/php-fig/fig-standards.git
-~/study/swift:
+~/study/swift/:
   swift:
     repo: git+https://github.com/apple/swift.git
-~/study/typescript:
+~/study/typescript/:
+  Babylon.js:
+    repo: git@github.com:BabylonJS/Babylon.js.git
   DefinitelyTyped:
     remotes:
       tony: git+ssh://git@github.com/tony/DefinitelyTyped.git
@@ -1490,6 +1464,12 @@
     remotes:
       tony: git+ssh://git@github.com/tony/akita.git
     repo: git+https://github.com/datorama/akita.git
+  astro:
+    repo: git@github.com:withastro/astro.git
+  astro-pagefind:
+    repo: git@github.com:shishkin/astro-pagefind.git
+  billboard.js:
+    repo: git@github.com:naver/billboard.js.git
   blueprint:
     repo: git+https://github.com/palantir/blueprint.git
   carbon:
@@ -1500,33 +1480,6 @@
     remotes:
       tony: git+ssh://git@github.com/tony/carbon-charts.git
     repo: git+https://github.com/carbon-design-system/carbon-charts.git
-  data-forge-ts:
-    repo: git+https://github.com/data-forge/data-forge-ts.git
-  next.js:
-    remotes:
-      tony: git+ssh://git@github.com/tony/next.js.git
-    repo: git+https://github.com/vercel/next.js.git
-  salt-ui:
-    repo: git+https://github.com/saltstack/salt-ui.git
-  search-input-query:
-    remotes:
-      tony: git+ssh://git@github.com/tony/search-input-query.git
-    repo: git+https://github.com/williamcotton/search-input-query.git
-  typescript:
-    repo: git+https://github.com/Microsoft/TypeScript.git
-~/study/typescript/:
-  Babylon.js:
-    repo: git@github.com:BabylonJS/Babylon.js.git
-  astro:
-    repo: git@github.com:withastro/astro.git
-  astro-pagefind:
-    repo: git@github.com:shishkin/astro-pagefind.git
-  billboard.js:
-    repo: git@github.com:naver/billboard.js.git
-  carbon:
-    repo: git@github.com:carbon-design-system/carbon.git
-  carbon-charts:
-    repo: git@github.com:carbon-design-system/carbon-charts.git
   chalk:
     repo: git@github.com:chalk/chalk.git
   chroma.js:
@@ -1535,6 +1488,8 @@
     repo: git@github.com:KonghaYao/cn-font-split.git
   commander.js:
     repo: git@github.com:tj/commander.js.git
+  data-forge-ts:
+    repo: git+https://github.com/data-forge/data-forge-ts.git
   drizzle-orm:
     repo: git@github.com:drizzle-team/drizzle-orm.git
   expressive-code:
@@ -1565,6 +1520,10 @@
     repo: https://github.com/mswjs/msw
   mystmd:
     repo: git@github.com:jupyter-book/mystmd.git
+  next.js:
+    remotes:
+      tony: git+ssh://git@github.com/tony/next.js.git
+    repo: git+https://github.com/vercel/next.js.git
   nivo:
     repo: git@github.com:plouc/nivo.git
   pino:
@@ -1587,8 +1546,12 @@
     repo: git@github.com:pmndrs/react-spring.git
   react-testing-library:
     repo: https://github.com/testing-library/react-testing-library
+  salt-ui:
+    repo: git+https://github.com/saltstack/salt-ui.git
   search-input-query:
-    repo: git@github.com:williamcotton/search-input-query.git
+    remotes:
+      tony: git+ssh://git@github.com/tony/search-input-query.git
+    repo: git+https://github.com/williamcotton/search-input-query.git
   solid:
     repo: git@github.com:solidjs/solid.git
   starlight:
@@ -1616,7 +1579,7 @@
   tremor-blocks:
     repo: https://github.com/tremorlabs/tremor-blocks.git
   typescript:
-    repo: https://github.com/Microsoft/TypeScript.git
+    repo: git+https://github.com/Microsoft/TypeScript.git
   typescript-config:
     repo: git@github.com:0x80/typescript-config.git
   vega-lite:
@@ -1646,7 +1609,7 @@
     remotes:
       tony: git+ssh://git@github.com/tony/vagrant-fabric.git
     repo: git+https://github.com/wutali/vagrant-fabric.git
-~/study/vim:
+~/study/vim/:
   coc-clangd:
     repo: git+https://github.com/clangd/coc-clangd.git
   coc-pyright:
@@ -1697,7 +1660,7 @@
     remotes:
       tony: git+ssh://git@github.com/tony/vimtutor-extended.git
     repo: git+https://github.com/superjer/vimtutor-extended.git
-~/study/zsh:
+~/study/zsh/:
   zsh-autoswitch-virtualenv:
     remotes:
       tony: git+ssh://git@github.com/tony/zsh-autoswitch-virtualenv.git

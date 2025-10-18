@@ -1,4 +1,4 @@
-~/work/peergrade:
+~/work/peergrade/:
   curlify:
     remotes:
       eduflow: git+ssh://git@github.com/eduflow/curlify.git
