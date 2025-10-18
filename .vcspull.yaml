@@ -1193,6 +1193,41 @@
     repo: git+https://github.com/kennethreitz/python-guide.git
   python-patterns:
     repo: git+https://github.com/faif/python-patterns.git
+~/study/python/:
+  MyST-Parser:
+    repo: git@github.com:executablebooks/MyST-Parser.git
+  dotfiles:
+    repo: git@github.com:jbernard/dotfiles.git
+  fastapi:
+    repo: git@github.com:fastapi/fastapi.git
+  furo:
+    repo: git@github.com:pradyunsg/furo.git
+  learning-asyncio:
+    repo: git+ssh://git@github.com/tony/learning-asyncio.git
+  learning-dsa:
+    repo: git+ssh://git@github.com/tony/learning-dsa.git
+  learning-fastapi:
+    repo: git@github.com:tony/learning-fastapi.git
+  learning-litestar:
+    repo: git+ssh://git@github.com/tony/learning-litestar.git
+  learning-pytest-internals:
+    repo: git+ssh://git@github.com/tony/learning-pytest-internals.git
+  pydantic:
+    repo: git@github.com:pydantic/pydantic.git
+  pytest:
+    repo: https://github.com/pytest-dev/pytest.git
+  pytest-asyncio:
+    repo: git@github.com:pytest-dev/pytest-asyncio.git
+  pytest-docker-tools:
+    repo: git@github.com:Jc2k/pytest-docker-tools.git
+  reenvisioning-django:
+    repo: git+ssh://git@github.com/tony/reenvisioning-django.git
+  rich:
+    repo: https://github.com/Textualize/rich.git
+  sqlalchemy:
+    repo: https://github.com/zzzeek/sqlalchemy.git
+  strawberry:
+    repo: git@github.com:strawberry-graphql/strawberry.git
 ~/study/react:
   express-react-views:
     repo: git+https://github.com/reactjs/express-react-views
