@@ -1316,8 +1316,34 @@
   uv:
     repo: git+ssh://git@github.com/astral-sh/uv.git
 ~/study/rust/:
+  alacritty:
+    repo: git@github.com:alacritty/alacritty.git
+  codex:
+    repo: https://github.com/openai/codex.git
+  fish-shell:
+    repo: git@github.com:fish-shell/fish-shell.git
   gitui:
     repo: git+https://github.com/extrawurst/gitui.git
+  helix:
+    repo: git@github.com:helix-editor/helix.git
+  insta:
+    repo: git@github.com:mitsuhiko/insta.git
+  learning-rust:
+    repo: git+ssh://git@github.com/tony/learning-rust.git
+  learning-rust-nodejs:
+    repo: git+ssh://git@github.com/tony/learning-rust-nodejs.git
+  learning-rust-python:
+    repo: git+ssh://git@github.com/tony/learning-rust-python.git
+  log:
+    repo: git@github.com:rust-lang/log.git
+  mcp-sdk:
+    repo: git@github.com:modelcontextprotocol/rust-sdk.git
+  mise:
+    repo: git@github.com:jdx/mise.git
+  pagefind:
+    repo: git@github.com:Pagefind/pagefind.git
+  ratatui:
+    repo: git@github.com:ratatui/ratatui.git
   ripgrep:
     repo: git+https://github.com/BurntSushi/ripgrep.git
   rslint:
@@ -1326,12 +1352,24 @@
     repo: git+https://github.com/rust-lang/rust.git
   rust-sdl2:
     repo: git+https://github.com/Rust-SDL2/rust-sdl2.git
+  rust-yamux:
+    repo: git@github.com:libp2p/rust-yamux.git
+  rustlings:
+    repo: git+ssh://git@github.com/tony/rustlings.git
   rye:
     repo: git+ssh://git@github.com/astral-sh/uv.git
   starship:
     repo: git+https://github.com/starship/starship.git
+  tokio:
+    repo: git@github.com:tokio-rs/tokio.git
+  tracing:
+    repo: https://github.com/tokio-rs/tracing
   tui-rs:
     repo: git+https://github.com/fdehau/tui-rs.git
+  wezterm:
+    repo: git@github.com:wezterm/wezterm.git
+  zellij:
+    repo: git@github.com:zellij-org/zellij.git
 ~/study/salt/:
   docker-containers:
     remotes:
