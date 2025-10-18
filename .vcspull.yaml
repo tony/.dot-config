@@ -1441,6 +1441,129 @@
     repo: git+https://github.com/williamcotton/search-input-query.git
   typescript:
     repo: git+https://github.com/Microsoft/TypeScript.git
+~/study/typescript/:
+  Babylon.js:
+    repo: git@github.com:BabylonJS/Babylon.js.git
+  astro:
+    repo: git@github.com:withastro/astro.git
+  astro-pagefind:
+    repo: git@github.com:shishkin/astro-pagefind.git
+  billboard.js:
+    repo: git@github.com:naver/billboard.js.git
+  carbon:
+    repo: git@github.com:carbon-design-system/carbon.git
+  carbon-charts:
+    repo: git@github.com:carbon-design-system/carbon-charts.git
+  chalk:
+    repo: git@github.com:chalk/chalk.git
+  chroma.js:
+    repo: git@github.com:gka/chroma.js.git
+  cn-font-split:
+    repo: git@github.com:KonghaYao/cn-font-split.git
+  commander.js:
+    repo: git@github.com:tj/commander.js.git
+  drizzle-orm:
+    repo: git@github.com:drizzle-team/drizzle-orm.git
+  expressive-code:
+    repo: https://github.com/expressive-code/expressive-code
+  fast-json-patch:
+    repo: git@github.com:martindale/fast-json-patch.git
+  happy-dom:
+    repo: git@github.com:capricorn86/happy-dom.git
+  headlessui:
+    repo: git@github.com:tailwindlabs/headlessui.git
+  ink:
+    repo: git@github.com:vadimdemedes/ink.git
+  ink-testing-library:
+    repo: git@github.com:vadimdemedes/ink-testing-library.git
+  jsdom:
+    repo: git@github.com:jsdom/jsdom.git
+  ladle:
+    repo: git@github.com:tajo/ladle.git
+  memfs:
+    repo: git@github.com:streamich/memfs.git
+  mobx:
+    repo: git@github.com:mobxjs/mobx.git
+  mobx-keystone:
+    repo: git@github.com:xaviergonz/mobx-keystone.git
+  mobx-state-tree:
+    repo: git@github.com:mobxjs/mobx-state-tree.git
+  msw:
+    repo: https://github.com/mswjs/msw
+  mystmd:
+    repo: git@github.com:jupyter-book/mystmd.git
+  nivo:
+    repo: git@github.com:plouc/nivo.git
+  pino:
+    repo: git@github.com:pinojs/pino.git
+  pino-pretty:
+    repo: git@github.com:pinojs/pino-pretty.git
+  playwright:
+    repo: https://github.com/microsoft/playwright
+  plotly.js:
+    repo: git@github.com:plotly/plotly.js.git
+  primer-react:
+    repo: git@github.com:primer/react.git
+  radix-primitives:
+    repo: git@github.com:radix-ui/primitives.git
+  radix-website:
+    repo: git@github.com:radix-ui/website.git
+  react-select:
+    repo: git@github.com:JedWatson/react-select.git
+  react-spring:
+    repo: git@github.com:pmndrs/react-spring.git
+  react-testing-library:
+    repo: https://github.com/testing-library/react-testing-library
+  search-input-query:
+    repo: git@github.com:williamcotton/search-input-query.git
+  solid:
+    repo: git@github.com:solidjs/solid.git
+  starlight:
+    repo: git@github.com:withastro/starlight.git
+  storybook:
+    repo: git@github.com:storybookjs/storybook.git
+  storybook-docs:
+    repo: git@github.com:storybookjs/web.git
+  tailwindcss:
+    repo: https://github.com/tailwindlabs/tailwindcss
+  tailwindcss.com:
+    repo: https://github.com/tailwindlabs/tailwindcss.com
+  tanstack-devtools:
+    repo: git@github.com:TanStack/devtools.git
+  tanstack-router:
+    repo: git@github.com:TanStack/router.git
+  tanstack-store:
+    repo: git@github.com:TanStack/store.git
+  tanstack-table:
+    repo: git@github.com:TanStack/table.git
+  tanstack-virtual:
+    repo: git@github.com:TanStack/virtual.git
+  tremor:
+    repo: https://github.com/tremorlabs/tremor.git
+  tremor-blocks:
+    repo: https://github.com/tremorlabs/tremor-blocks.git
+  typescript:
+    repo: https://github.com/Microsoft/TypeScript.git
+  typescript-config:
+    repo: git@github.com:0x80/typescript-config.git
+  vega-lite:
+    repo: git@github.com:vega/vega-lite.git
+  victory:
+    repo: git@github.com:FormidableLabs/victory.git
+  vite:
+    repo: https://github.com/vitejs/vite
+  vite-console-forward-plugin:
+    repo: git@github.com:mitsuhiko/vite-console-forward-plugin.git
+  vite-plugin-storybook-nextjs:
+    repo: git@github.com:storybookjs/vite-plugin-storybook-nextjs.git
+  vite-plugin-webfont-dl:
+    repo: git@github.com:feat-agency/vite-plugin-webfont-dl.git
+  vitest:
+    repo: git@github.com:vitest-dev/vitest.git
+  vitest-browser-react:
+    repo: git@github.com:vitest-dev/vitest-browser-react.git
+  zod:
+    repo: git@github.com:colinhacks/zod.git
 ~/study/vagrant/:
   vagrant:
     remotes:
