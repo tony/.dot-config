@@ -6,26 +6,12 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = []
 
-[tool.uv]
-dev-dependencies = [
-  # Testing
-  "gp-libs",
-  "pytest",
-  "pytest-asyncio",
-  "pytest-rerunfailures",
-  "pytest-mock",
-  "pytest-watcher",
-  "pytest-docker-tools",
-  # Coverage
-  "codecov",
-  "coverage",
-  "pytest-cov",
-  # Lint
-  "ruff",
-  "mypy",
-]
-
 [dependency-groups]
+dev = [
+  {include-group = "testing"},
+  {include-group = "coverage"},
+  {include-group = "lint"},
+]
 testing = [
   "gp-libs",
   "pytest",
@@ -35,7 +21,7 @@ testing = [
   "pytest-watcher",
   "pytest-docker-tools",
 ]
-coverage =[
+coverage = [
   "codecov",
   "coverage",
   "pytest-cov",
