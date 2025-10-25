@@ -1,3 +1,14 @@
+~/study/ai-agents/:
+  aider:
+    repo: git@github.com:Aider-AI/aider.git
+  claude-code:
+    repo: git@github.com:anthropics/claude-code.git
+  codex:
+    repo: org-14957082@github.com:openai/codex.git
+  gemini-cli:
+    repo: git@github.com:google-gemini/gemini-cli.git
+  gptme:
+    repo: https://github.com/gptme/gptme
 ~/study/ai/:
   tiktoken:
     remotes:
