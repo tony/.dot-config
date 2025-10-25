@@ -1507,6 +1507,8 @@
     repo: https://github.com/expressive-code/expressive-code
   fast-json-patch:
     repo: git@github.com:martindale/fast-json-patch.git
+  floating-ui:
+    repo: git@github.com:floating-ui/floating-ui.git
   happy-dom:
     repo: git@github.com:capricorn86/happy-dom.git
   headlessui:
