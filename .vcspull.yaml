@@ -1140,6 +1140,8 @@
     repo: git+https://github.com/0xPr0xy/soundcloud-cli.git
   spacy:
     repo: git+https://github.com/explosion/spaCy
+  sphinx-argparse:
+    repo: git@github.com:sphinx-doc/sphinx-argparse.git
   sphinx-autoapi:
     remotes:
       tony: git+ssh://git@github.com/tony/sphinx-autoapi.git
