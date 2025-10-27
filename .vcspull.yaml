@@ -1309,6 +1309,8 @@
     repo: git@github.com:fish-shell/fish-shell.git
   gitui:
     repo: git+https://github.com/extrawurst/gitui.git
+  gpui-component:
+    repo: git@github.com:longbridge/gpui-component.git
   helix:
     repo: git@github.com:helix-editor/helix.git
   insta:
