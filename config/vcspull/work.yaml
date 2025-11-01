@@ -242,10 +242,6 @@
     repo: git+ssh://git@github.com/jazzband/django-robots.git
   django-slugify-processor:
     repo: git+ssh://git@github.com/tony/django-slugify-processor.git
-  django-stubs:
-    remotes:
-      tony: git+ssh://git@github.com/tony/django-stubs.git
-    repo: git+https://github.com/typeddjango/django-stubs.git
   dotkeeper:
     remotes:
       tony: git+ssh://git@github.com/dotkeeper/dotkeeper.git

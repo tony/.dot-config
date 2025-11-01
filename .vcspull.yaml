@@ -792,6 +792,10 @@
     repo: git+https://github.com/atsuoishimoto/python.curses_ex.git
   cython-book:
     repo: git+https://github.com/redbrain/cython-book.git
+  django-stubs:
+    remotes:
+      tony: git+ssh://git@github.com/tony/django-stubs.git
+    repo: git+https://github.com/typeddjango/django-stubs.git
   djangorestframework-api-key:
     remotes:
       tony: git+ssh://git@github.com/tony/djangorestframework-api-key.git
