@@ -774,6 +774,8 @@
     repo: git+https://github.com/clokep/celery-batches.git
   cffi:
     repo: hg+https://bitbucket.org/cffi/cffi
+  channels_redis:
+    repo: git@github.com:django/channels_redis.git
   cjklib:
     repo: git+https://github.com/cburgmer/cjklib.git
   ckan:
@@ -900,6 +902,8 @@
     remotes:
       tony: git+ssh://git@github.com/tony/klaus.git
     repo: git+https://github.com/jonashaag/klaus.git
+  kombu:
+    repo: git@github.com:celery/kombu.git
   kr-sphinx-themes:
     repo: git+https://github.com/kennethreitz/kr-sphinx-themes.git
   learning-asyncio:
