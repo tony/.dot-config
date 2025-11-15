@@ -10,8 +10,12 @@ local function with_desc(desc, extra)
 end
 
 local function reindent_buffer()
+  if vim.bo.readonly or not vim.bo.modifiable then
+    vim.notify('Buffer is not modifiable', vim.log.levels.WARN, { title = 'Reindent buffer' })
+    return
+  end
   local view = vim.fn.winsaveview()
-  vim.cmd('normal! gg=G')
+  vim.cmd('keepjumps keepmarks normal! mzgg=G`z')
   vim.fn.winrestview(view)
 end
 
