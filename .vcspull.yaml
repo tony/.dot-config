@@ -986,6 +986,8 @@
     repo: git+https://github.com/powerline/powerline.git
   profilehooks:
     repo: git+https://github.com/mgedmin/profilehooks
+  psycopg:
+    repo: git@github.com:psycopg/psycopg.git
   psycopg2:
     repo: git+ssh://github.com/psycopg/psycopg2.git
   ptpdb:
@@ -1052,6 +1054,8 @@
     repo: git+https://github.com/pytest-dev/pytest.git
   pytest-asyncio:
     repo: git@github.com:pytest-dev/pytest-asyncio.git
+  pytest-docker:
+    repo: https://github.com/avast/pytest-docker
   pytest-docker-tools:
     repo: git@github.com:Jc2k/pytest-docker-tools.git
   pytest-splinter:
