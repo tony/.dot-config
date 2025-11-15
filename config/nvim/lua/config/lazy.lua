@@ -35,7 +35,13 @@ require('lazy').setup({
     version = false,
   },
   install = {
-    colorscheme = { 'tokyonight-night', 'catppuccin', 'everforest', 'gruvbox-material', 'desert-warm-256' },
+    colorscheme = {
+      'tokyonight-night',
+      'catppuccin',
+      'everforest',
+      'gruvbox-material',
+      'desert-warm-256',
+    },
   },
   checker = {
     enabled = true,

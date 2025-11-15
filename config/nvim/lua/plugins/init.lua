@@ -29,7 +29,14 @@ return {
   },
   { 'kevinhwang91/nvim-bqf', ft = 'qf' },
   { 'HiPhish/rainbow-delimiters.nvim', event = { 'BufReadPost', 'BufNewFile' } },
-  { 'gelguy/wilder.nvim', event = 'CmdlineEnter', build = ':UpdateRemotePlugins', config = function() require('config.wilder').setup() end },
+  {
+    'gelguy/wilder.nvim',
+    event = 'CmdlineEnter',
+    build = ':UpdateRemotePlugins',
+    config = function()
+      require('config.wilder').setup()
+    end,
+  },
   {
     dir = vim.fn.expand('~/study/vim/claudecode.nvim'),
     name = 'claudecode.nvim',

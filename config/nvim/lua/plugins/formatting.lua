@@ -164,11 +164,14 @@ return {
         if not source then
           return
         end
-        table.insert(opts.sources, source.with({
-          condition = function(utils)
-            return has_config(utils.root, patterns)
-          end,
-        }))
+        table.insert(
+          opts.sources,
+          source.with({
+            condition = function(utils)
+              return has_config(utils.root, patterns)
+            end,
+          })
+        )
       end
 
       enable(nls.builtins.formatting.biome, biome_configs)
