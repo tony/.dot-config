@@ -1,31 +1,37 @@
 local lazyvim_path = vim.fn.expand('~/study/vim/LazyVim')
-local lazyvim_spec
+local spec = {}
 
 if vim.loop.fs_stat(lazyvim_path) then
-  lazyvim_spec = { dir = lazyvim_path, name = 'LazyVim', import = 'lazyvim.plugins', opts = {} }
+  table.insert(spec, { dir = lazyvim_path, import = 'lazyvim.plugins' })
 else
-  lazyvim_spec = { 'LazyVim/LazyVim', import = 'lazyvim.plugins', opts = {} }
+  table.insert(spec, { 'LazyVim/LazyVim', import = 'lazyvim.plugins' })
 end
 
+local extras = {
+  { import = 'lazyvim.plugins.extras.editor.telescope' },
+  { import = 'lazyvim.plugins.extras.editor.snacks_explorer' },
+  { import = 'lazyvim.plugins.extras.lang.typescript' },
+  { import = 'lazyvim.plugins.extras.lang.json' },
+  { import = 'lazyvim.plugins.extras.lang.yaml' },
+  { import = 'lazyvim.plugins.extras.lang.markdown' },
+  { import = 'lazyvim.plugins.extras.lang.python' },
+  { import = 'lazyvim.plugins.extras.formatting.biome' },
+  { import = 'lazyvim.plugins.extras.formatting.black' },
+  { import = 'lazyvim.plugins.extras.formatting.prettier' },
+  { import = 'lazyvim.plugins.extras.linting.eslint' },
+  { import = 'lazyvim.plugins.extras.lsp.none-ls' },
+  { import = 'lazyvim.plugins.extras.util.project' },
+  { import = 'lazyvim.plugins.extras.ai.copilot' },
+}
+
+for _, entry in ipairs(extras) do
+  table.insert(spec, entry)
+end
+
+table.insert(spec, { import = 'plugins' })
+
 require('lazy').setup({
-  spec = {
-    lazyvim_spec,
-    { import = 'lazyvim.plugins.extras.editor.telescope' },
-    { import = 'lazyvim.plugins.extras.editor.snacks_explorer' },
-    { import = 'lazyvim.plugins.extras.lang.typescript' },
-    { import = 'lazyvim.plugins.extras.lang.json' },
-    { import = 'lazyvim.plugins.extras.lang.yaml' },
-    { import = 'lazyvim.plugins.extras.lang.markdown' },
-    { import = 'lazyvim.plugins.extras.lang.python' },
-    { import = 'lazyvim.plugins.extras.formatting.biome' },
-    { import = 'lazyvim.plugins.extras.formatting.black' },
-    { import = 'lazyvim.plugins.extras.formatting.prettier' },
-    { import = 'lazyvim.plugins.extras.linting.eslint' },
-    { import = 'lazyvim.plugins.extras.lsp.none-ls' },
-    { import = 'lazyvim.plugins.extras.util.project' },
-    { import = 'lazyvim.plugins.extras.ai.copilot' },
-    { import = 'plugins' },
-  },
+  spec = spec,
   defaults = {
     lazy = false,
     version = false,
