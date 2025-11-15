@@ -433,7 +433,7 @@
     repo: git+https://github.com/gatsbyjs/gatsby.git
   typescript-website:
     repo: git+https://github.com/microsoft/TypeScript-Website
-~/study/go/:
+~/study/golang/:
   blackfriday:
     repo: git+https://github.com/russross/blackfriday.git
   docker:
