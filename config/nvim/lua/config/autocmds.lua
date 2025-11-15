@@ -20,8 +20,9 @@ autocmd('QuickFixCmdPost', {
 autocmd('FileType', {
   group = general,
   pattern = 'netrw',
-  callback = function()
+  callback = function(args)
     vim.opt_local.bufhidden = 'delete'
+    vim.keymap.set('n', '<C-l>', '<C-w>l', { buffer = args.buf, silent = true })
   end,
 })
 
