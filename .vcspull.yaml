@@ -465,6 +465,9 @@
     repo: git+https://github.com/robertkrimen/otto
   typescript-go:
     repo: git@github.com:microsoft/typescript-go.git
+~/study/icons/:
+  material-design-icons:
+    repo: https://github.com/google/material-design-icons/
 ~/study/java/:
   elasticsearch:
     repo: git+https://github.com/elastic/elasticsearch.git
