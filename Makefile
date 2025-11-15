@@ -14,6 +14,9 @@ PIP_PACKAGES = python-language-server virtualenv pipenv tmuxp vcspull dotfiles \
 
 NPM_PACKAGES = npm-check-updates gatsby-cli lerna @angular/cli
 
+# Automatically collected Neovim Lua sources (used by fmt_lua target)
+NEOVIM_LUA_FILES := $(shell find config/nvim -type f -name '*.lua')
+
 # Deb/Ubuntu general packages
 DEBIAN_PACKAGES = unzip wget tmux rsync cmake ninja-build cowsay fortune-mod \
                   vim-nox universal-ctags silversearcher-ag git tig most entr \
@@ -44,7 +47,7 @@ SH_FILES := find . \
   | grep -i '.*[.]\(z\)\?sh$$\|[.]zsh.*$$' 2> /dev/null
 
 # .PHONY is crucial so that these targets always run even if a file/folder with same name exists
-.PHONY: help lint fmt install debian_packages debian_packages_x11 debian_pyenv_packages \
+.PHONY: help lint fmt fmt_lua install debian_packages debian_packages_x11 debian_pyenv_packages \
         ubuntu_peek ubuntu_git ubuntu_i3 ubuntu_sway pip_install pip_install_packages \
         pip_uninstall_packages cargo_install fix_linux_time_dualboot vcspull \
         debian_disable_mpd test_fzf_default_command debian_update yarn_set_prefix \
@@ -63,6 +66,7 @@ help:
 	@echo "Available Targets:"
 	@echo "  lint                - Run shellcheck on shell scripts in .shell/"
 	@echo "  fmt                 - Format *.sh/*.zsh files using beautysh"
+	@echo "  fmt_lua             - Format config/nvim Lua files with stylua"
 	@echo "  install             - Symlink dot-config files into \$HOME"
 	@echo "  debian_packages     - Install common Debian/Ubuntu packages"
 	@echo "  debian_packages_x11 - Install extra X11 environment packages"
@@ -85,6 +89,17 @@ fmt:
 	# Using backticks for command substitution in Make can be tricky, so we use a variable.
 	# Also note that $(SH_FILES) is a variable that calls 'find/grep' at runtime.
 	beautysh `$(SH_FILES)`
+
+fmt_lua:
+	@if ! command -v stylua >/dev/null 2>&1; then \
+		echo "stylua not found. Install stylua to format Lua files." >&2; \
+		exit 1; \
+	fi
+	@if [ -z "$(NEOVIM_LUA_FILES)" ]; then \
+		echo "No Lua files found under config/nvim"; \
+		exit 0; \
+	fi
+	stylua $(NEOVIM_LUA_FILES)
 
 install:
 	# Symlink dot-config files into $HOME
