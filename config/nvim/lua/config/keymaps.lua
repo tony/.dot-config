@@ -124,6 +124,7 @@ end, with_desc('Clear highlights and close completion'))
 
 map('v', '<C-r>', [["hy:%s/<C-r>h//gc<Left><Left><Left>]], with_desc('Search & replace selection', { noremap = true }))
 map('v', '<C-s>', [[:s/\%V//g<Left><Left><Left>]], with_desc('Substitute inside selection', { noremap = true }))
+map({ 'x', 's' }, '<C-c>', '<Esc>', with_desc('Cancel selection'))
 
 map('x', '<CR>', [[y:let @/=@"<CR>:set hlsearch<CR>]], with_desc('Search visual selection', { silent = true }))
 map('x', '<BS>', 'c', with_desc('Change selection', { silent = false }))
