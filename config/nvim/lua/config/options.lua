@@ -15,7 +15,6 @@ opt.swapfile = false
 opt.clipboard = vim.fn.has('unnamedplus') == 1 and 'unnamedplus' or 'unnamed'
 opt.termguicolors = true
 opt.autochdir = true
-opt.lazyredraw = true
 opt.timeoutlen = 400
 opt.updatetime = 300
 opt.signcolumn = 'yes'
