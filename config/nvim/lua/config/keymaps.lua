@@ -42,6 +42,17 @@ local function open_explorer()
   end
 end
 
+local function require_lsp(action)
+  return function()
+    local clients = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
+    if #clients == 0 then
+      vim.notify('No LSP attached to current buffer', vim.log.levels.WARN)
+      return
+    end
+    action()
+  end
+end
+
 command('BLines', function()
   local ok, err = pcall(vim.cmd.Telescope, 'current_buffer_fuzzy_find')
   if not ok then
@@ -142,3 +153,27 @@ map('n', '<C-j>', '<C-w>j', with_desc('Move to lower window'))
 map('n', '<C-k>', '<C-w>k', with_desc('Move to upper window'))
 map('n', '<C-l>', '<C-w>l', with_desc('Move to right window'))
 map('n', '<C-=>', '<C-w>=', with_desc('Equalize splits'))
+
+local goto_definition = require_lsp(function()
+  vim.lsp.buf.definition()
+end)
+local goto_type_definition = require_lsp(function()
+  if vim.lsp.buf.type_definition then
+    vim.lsp.buf.type_definition()
+  else
+    vim.lsp.buf.definition()
+  end
+end)
+local goto_implementation = require_lsp(function()
+  vim.lsp.buf.implementation()
+end)
+local goto_references = require_lsp(function()
+  vim.lsp.buf.references()
+end)
+
+map('n', '<leader>g', goto_definition, with_desc('Goto definition (legacy ,g)'))
+map('n', '<leader>G', goto_type_definition, with_desc('Goto type definition (legacy ,G)'))
+map('n', '<C-t>', goto_definition, with_desc('Goto definition (legacy <C-t>)'))
+map('n', '<F12>', goto_definition, with_desc('Goto definition (legacy <F12>)'))
+map('n', '<C-F12>', goto_implementation, with_desc('Goto implementation (legacy <C-F12>)'))
+map('n', '<S-F12>', goto_references, with_desc('Goto references (legacy <S-F12>)'))
