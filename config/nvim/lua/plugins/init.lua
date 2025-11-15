@@ -14,6 +14,19 @@ return {
   { 'cakebaker/scss-syntax.vim', ft = { 'scss' } },
   { 'yasuhiroki/github-actions-yaml.vim', ft = { 'yaml' } },
   { 'vim-python/python-syntax', ft = { 'python' } },
+  {
+    'tpope/vim-fugitive',
+    cmd = { 'Git', 'G', 'Gdiffsplit', 'Gvdiffsplit', 'Gwrite', 'Gread' },
+    keys = {
+      {
+        '<leader>gs',
+        function()
+          vim.cmd('Git')
+        end,
+        desc = 'Git status (Fugitive)',
+      },
+    },
+  },
   { 'kevinhwang91/nvim-bqf', ft = 'qf' },
   { 'HiPhish/rainbow-delimiters.nvim', event = { 'BufReadPost', 'BufNewFile' } },
   { 'gelguy/wilder.nvim', event = 'CmdlineEnter', build = ':UpdateRemotePlugins', config = function() require('config.wilder').setup() end },
