@@ -459,11 +459,10 @@
     repo: git+https://github.com/3ofcoins/jetpack.git
   learn-go-with-tests:
     repo: git+https://github.com/quii/learn-go-with-tests.git
-  otto:
-    repo: git+https://github.com/robertkrimen/otto
-~/study/golang/:
   moby:
     repo: git@github.com:moby/moby.git
+  otto:
+    repo: git+https://github.com/robertkrimen/otto
   typescript-go:
     repo: git@github.com:microsoft/typescript-go.git
 ~/study/java/:
