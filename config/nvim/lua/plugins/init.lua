@@ -1,0 +1,20 @@
+return {
+  { 'folke/tokyonight.nvim', lazy = false, priority = 1000 },
+  { 'catppuccin/nvim', name = 'catppuccin', priority = 999 },
+  { 'sainnhe/everforest' },
+  { 'morhetz/gruvbox' },
+  { 'sainnhe/gruvbox-material' },
+  { 'rainux/vim-desert-warm-256' },
+  { 'sainnhe/sonokai' },
+
+  { 'editorconfig/editorconfig-vim', event = 'VeryLazy' },
+  { 'tpope/vim-eunuch', cmd = { 'Rename', 'Move', 'Delete', 'Chmod', 'Mkdir' } },
+  { 'GutenYe/json5.vim', ft = { 'json', 'json5' } },
+  { 'jparise/vim-graphql', ft = { 'graphql' } },
+  { 'cakebaker/scss-syntax.vim', ft = { 'scss' } },
+  { 'yasuhiroki/github-actions-yaml.vim', ft = { 'yaml' } },
+  { 'vim-python/python-syntax', ft = { 'python' } },
+  { 'kevinhwang91/nvim-bqf', ft = 'qf' },
+  { 'HiPhish/rainbow-delimiters.nvim', event = { 'BufReadPost', 'BufNewFile' } },
+  { 'gelguy/wilder.nvim', event = 'CmdlineEnter', build = ':UpdateRemotePlugins', config = function() require('config.wilder').setup() end },
+}
