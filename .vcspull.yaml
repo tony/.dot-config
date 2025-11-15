@@ -1511,6 +1511,8 @@
     repo: git@github.com:KonghaYao/cn-font-split.git
   commander.js:
     repo: git@github.com:tj/commander.js.git
+  cva:
+    repo: git@github.com:joe-bell/cva.git
   data-forge-ts:
     repo: git+https://github.com/data-forge/data-forge-ts.git
   drizzle-orm:
@@ -1521,6 +1523,8 @@
     repo: git@github.com:martindale/fast-json-patch.git
   floating-ui:
     repo: git@github.com:floating-ui/floating-ui.git
+  get-port:
+    repo: git@github.com:sindresorhus/get-port.git
   happy-dom:
     repo: git@github.com:capricorn86/happy-dom.git
   headlessui:
@@ -1551,6 +1555,8 @@
     repo: git+https://github.com/vercel/next.js.git
   nivo:
     repo: git@github.com:plouc/nivo.git
+  picocolors:
+    repo: git@github.com:alexeyraspopov/picocolors.git
   pino:
     repo: git@github.com:pinojs/pino.git
   pino-pretty:
