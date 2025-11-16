@@ -24,11 +24,50 @@ local biome_configs = {
   'biome.config.mjs',
 }
 
+local ruff_configs = {
+  '.ruff.toml',
+  'ruff.toml',
+  { file = 'pyproject.toml', contains = '[tool.ruff' },
+}
+
+local function file_contains(path, needle)
+  if not needle then
+    return true
+  end
+  local ok, lines = pcall(vim.fn.readfile, path)
+  if not ok then
+    return false
+  end
+  for _, line in ipairs(lines) do
+    if line:find(needle, 1, true) then
+      return true
+    end
+  end
+  return false
+end
+
+local function find_file(path, target)
+  local found = vim.fs.find(target, { upward = true, path = path })[1]
+  return found
+end
+
 local function has_config(path, patterns)
   if not path or path == '' then
     return false
   end
-  return vim.fs.find(patterns, { upward = true, path = path })[1] ~= nil
+  for _, entry in ipairs(patterns) do
+    if type(entry) == 'string' then
+      if find_file(path, entry) then
+        return true
+      end
+    elseif type(entry) == 'table' and entry.file then
+      local found = find_file(path, entry.file)
+      if found and file_contains(found, entry.contains) then
+        return true
+      end
+    end
+  end
+  return false
 end
 
 local function set_formatter_condition(formatters, name, predicate)
@@ -99,12 +138,18 @@ return {
         add_formatter(opts.formatters_by_ft, ft, 'prettier')
       end
 
+      add_formatter(opts.formatters_by_ft, 'python', 'ruff_format')
+
       set_formatter_condition(opts.formatters, 'biome', function(_, ctx)
         return has_config(ctx.dirname, biome_configs)
       end)
 
       set_formatter_condition(opts.formatters, 'prettier', function(_, ctx)
         return has_config(ctx.dirname, prettier_configs)
+      end)
+
+      set_formatter_condition(opts.formatters, 'ruff_format', function(_, ctx)
+        return has_config(ctx.dirname, ruff_configs)
       end)
     end,
   },
@@ -121,7 +166,7 @@ return {
         end
         table.insert(opts.sources, source.with({
           condition = function(utils)
-            return utils.root_has_file(patterns)
+            return has_config(utils.root, patterns)
           end,
         }))
       end
