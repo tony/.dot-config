@@ -38,7 +38,7 @@ return {
     end,
   },
   {
-    dir = vim.fn.expand('~/study/vim/claudecode.nvim'),
+    'coder/claudecode.nvim',
     name = 'claudecode.nvim',
     event = 'VeryLazy',
     dependencies = { 'folke/snacks.nvim' },
