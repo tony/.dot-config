@@ -979,6 +979,8 @@
     remotes:
       tony: git+https://github.com/tony/pip.git
     repo: git+https://github.com/pypa/pip.git
+  playwright-python:
+    repo: git@github.com:microsoft/playwright-python.git
   plop:
     repo: git+https://github.com/bdarnell/plop.git
   poetry:
