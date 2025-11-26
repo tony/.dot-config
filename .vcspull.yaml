@@ -937,6 +937,10 @@
     repo: git+https://github.com/lxml/lxml.git
   magicmethods:
     repo: git+https://github.com/RafeKettler/magicmethods.git
+  matplotlib:
+    repo: git@github.com:matplotlib/matplotlib.git
+  mizani:
+    repo: git@github.com:has2k1/mizani.git
   mock:
     repo: hg+https://code.google.com/p/mock/
   momoko:
@@ -983,6 +987,8 @@
     repo: git@github.com:microsoft/playwright-python.git
   plop:
     repo: git+https://github.com/bdarnell/plop.git
+  plotnine:
+    repo: git@github.com:has2k1/plotnine.git
   poetry:
     remotes:
       tony: git+ssh://git@github.com/tony/poetry.git
@@ -1067,6 +1073,8 @@
     repo: https://github.com/avast/pytest-docker
   pytest-docker-tools:
     repo: git@github.com:Jc2k/pytest-docker-tools.git
+  pytest-env:
+    repo: git@github.com:pytest-dev/pytest-env.git
   pytest-playwright:
     repo: git@github.com:microsoft/playwright-pytest.git
   pytest-splinter:
@@ -1177,6 +1185,8 @@
     remotes:
       tony: git+ssh://git@github.com/tony/sqltap.git
     repo: git+https://github.com/inconshreveable/sqltap.git
+  statsmodels:
+    repo: git@github.com:statsmodels/statsmodels.git
   storm:
     repo: git+https://github.com/emre/storm.git
   strawberry:
