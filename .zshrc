@@ -29,6 +29,7 @@ export PYTHONSTARTUP="${HOME}/.pythonrc"
 
 # Editor
 export EDITOR="vim"
+export GIT_EDITOR="vim"
 
 # If in VSCode/Cursor terminal, use ultra-minimal config.
 # This is detected by checking for environment variables set by VSCode/Cursor
@@ -48,6 +49,7 @@ if [[ "$TERM_PROGRAM" = "vscode" || -n "$VSCODE_CWD" || "$CURSOR_AGENT" = "1" ]]
   # Performance settings for non-interactive use
   export PAGER=cat
   export GIT_PAGER=cat
+  export GIT_EDITOR=true
   export NO_COLOR=1
   export VITEST_REPORTER=dot
 
