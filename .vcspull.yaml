@@ -1077,6 +1077,8 @@
     repo: git@github.com:pytest-dev/pytest-env.git
   pytest-playwright:
     repo: git@github.com:microsoft/playwright-pytest.git
+  pytest-rerunfailures:
+    repo: git@github.com:pytest-dev/pytest-rerunfailures.git
   pytest-splinter:
     remotes:
       tony: git+ssh://git@github.com/tony/pytest-splinter.git
@@ -1085,6 +1087,8 @@
     remotes:
       tony: git+ssh://git@github.com/tony/pytest-textual-snapshot.git
     repo: git+https://github.com/Textualize/pytest-textual-snapshot.git
+  pytest-xdist:
+    repo: git@github.com:pytest-dev/pytest-xdist.git
   pythagora:
     repo: git+https://github.com/tarmack/Pythagora.git
   python-docx:
