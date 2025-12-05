@@ -443,6 +443,8 @@
     repo: git+https://github.com/docker/docker.git
   esbuild:
     repo: git+https://github.com/evanw/esbuild.git
+  fzf:
+    repo: git@github.com:junegunn/fzf.git
   gitea:
     remotes:
       tony: git+ssh://git@github.com/tony/gitea.git
