@@ -1188,6 +1188,8 @@
     remotes:
       tony: git+ssh://git@github.com/tony/sphinx-autoapi.git
     repo: git+https://github.com/readthedocs/sphinx-autoapi.git
+  sphinx-autodoc-typehints:
+    repo: git@github.com:tox-dev/sphinx-autodoc-typehints.git
   sphinx-contrib:
     repo: hg+https://bitbucket.org/birkenfeld/sphinx-contrib
   sphinx-testing:
