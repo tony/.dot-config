@@ -385,32 +385,6 @@
     repo: git+ssh://git@github.com/vcs-python/vcspull.git
   watching-testrunner:
     repo: git+https://github.com/tony/watching-testrunner.git
-~/work/reStructuredText/:
-  docutils:
-    repo: svn+ssh://gitpull@svn.code.sf.net/p/docutils/code
-  sphinx:
-    remotes:
-      develtech: git+ssh://git@github.com/develtech/sphinx.git
-      tony: git+ssh://git@github.com/tony/sphinx.git
-    repo: git+https://github.com/sphinx-doc/sphinx.git
-  sphinx-autoapi:
-    remotes:
-      tony: git+ssh://git@github.com/tony/sphinx-autoapi.git
-    repo: git+https://github.com/readthedocs/sphinx-autoapi.git
-  sphinx-testing:
-    remotes:
-      tony: git+ssh://git@github.com/tony/sphinx-testing.git
-    repo: git+https://github.com/sphinx-doc/sphinx-testing.git
-  sphinxcontrib-github:
-    repo: git+https://github.com/tony/sphinxcontrib-github.git
-  sphinxcontrib-stud:
-    remotes:
-      tony: git+ssh://git@github.com/tony/sphinxcontrib-stud.git
-    repo: git+https://github.com/guibog/stud.git
-  sphinxcontrib-websupport:
-    remotes:
-      develtech: git+ssh://git@github.com/develtech/sphinxcontrib-websupport.git
-    repo: git+https://github.com/sphinx-doc/sphinxcontrib-websupport.git
 ~/work/remark/:
   mdx:
     remotes:

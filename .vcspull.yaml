@@ -731,8 +731,6 @@
 ~/study/python/:
   Flexget:
     repo: git+https://github.com/Flexget/Flexget.git
-  myst-parser:
-    repo: git@github.com:executablebooks/MyST-Parser.git
   RootTheBox:
     repo: git+https://github.com/moloch--/RootTheBox.git
   alembic:
@@ -812,7 +810,7 @@
       tony: git+ssh://git@github.com/tony/djangorestframework-api-key.git
     repo: git+https://github.com/florimondmanca/djangorestframework-api-key.git
   docutils:
-    repo: svn+http://svn.code.sf.net/p/docutils/code/trunk
+    repo: svn+ssh://gitpull@svn.code.sf.net/p/docutils/code
   dotfiles:
     remotes:
       tony: git+ssh://git@github.com/tony/dotfiles.git
@@ -951,6 +949,8 @@
     remotes:
       tony: git+ssh://git@github.com/tony/mypy.git
     repo: git+https://github.com/python/mypy.git
+  myst-parser:
+    repo: git@github.com:executablebooks/MyST-Parser.git
   ncmpy:
     repo: git+https://github.com/cykerway/ncmpy.git
   nltk:
@@ -1177,6 +1177,11 @@
     repo: git+https://github.com/0xPr0xy/soundcloud-cli.git
   spacy:
     repo: git+https://github.com/explosion/spaCy
+  sphinx:
+    remotes:
+      develtech: git+ssh://git@github.com/develtech/sphinx.git
+      tony: git+ssh://git@github.com/tony/sphinx.git
+    repo: git+https://github.com/sphinx-doc/sphinx.git
   sphinx-argparse:
     repo: git@github.com:sphinx-doc/sphinx-argparse.git
   sphinx-autoapi:
@@ -1185,6 +1190,20 @@
     repo: git+https://github.com/readthedocs/sphinx-autoapi.git
   sphinx-contrib:
     repo: hg+https://bitbucket.org/birkenfeld/sphinx-contrib
+  sphinx-testing:
+    remotes:
+      tony: git+ssh://git@github.com/tony/sphinx-testing.git
+    repo: git+https://github.com/sphinx-doc/sphinx-testing.git
+  sphinxcontrib-github:
+    repo: git+https://github.com/tony/sphinxcontrib-github.git
+  sphinxcontrib-stud:
+    remotes:
+      tony: git+ssh://git@github.com/tony/sphinxcontrib-stud.git
+    repo: git+https://github.com/guibog/stud.git
+  sphinxcontrib-websupport:
+    remotes:
+      develtech: git+ssh://git@github.com/develtech/sphinxcontrib-websupport.git
+    repo: git+https://github.com/sphinx-doc/sphinxcontrib-websupport.git
   sqlalchemy:
     repo: git+https://github.com/zzzeek/sqlalchemy.git
   sqltap:
