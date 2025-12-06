@@ -731,6 +731,8 @@
 ~/study/python/:
   Flexget:
     repo: git+https://github.com/Flexget/Flexget.git
+  OpenHands:
+    repo: git@github.com:OpenHands/OpenHands.git
   RootTheBox:
     repo: git+https://github.com/moloch--/RootTheBox.git
   alembic:
@@ -791,6 +793,8 @@
     remotes:
       tony: git+ssh://git@github.com/tony/cldoc.git
     repo: git+https://github.com/jessevdk/cldoc.git
+  cli-agent-orchestrator:
+    repo: git@github.com:awslabs/cli-agent-orchestrator.git
   click:
     repo: git+https://github.com/mitsuhiko/click.git
   cookiecutter:
@@ -875,6 +879,8 @@
     repo: git+https://github.com/kennethreitz/httpbin.git
   hypothesis:
     repo: git+https://github.com/HypothesisWorks/hypothesis.git
+  ii-agent:
+    repo: git@github.com:Intelligent-Internet/ii-agent.git
   install.python-poetry.org:
     remotes:
       tony: git+ssh://git@github.com/tony/install.python-poetry.org.git
@@ -939,6 +945,8 @@
     repo: git+https://github.com/RafeKettler/magicmethods.git
   matplotlib:
     repo: git@github.com:matplotlib/matplotlib.git
+  mcp-claude-code:
+    repo: git@github.com:SDGLBL/mcp-claude-code.git
   mizani:
     repo: git@github.com:has2k1/mizani.git
   mock:
@@ -1173,6 +1181,8 @@
       eduflow: git+https://github.com/eduflow/social-app-django.git
       tony: git+https://github.com/tony/social-app-django.git
     repo: git+https://github.com/python-social-auth/social-app-django.git
+  openhands-software-agent-sdk:
+    repo: git@github.com:OpenHands/software-agent-sdk.git
   soundcloud-cli:
     repo: git+https://github.com/0xPr0xy/soundcloud-cli.git
   spacy:
@@ -1218,6 +1228,8 @@
     repo: git+https://github.com/emre/storm.git
   strawberry:
     repo: git@github.com:strawberry-graphql/strawberry.git
+  strix:
+    repo: git@github.com:usestrix/strix.git
   syrupy:
     remotes:
       tony: git+ssh://git@github.com/tony/syrupy.git
