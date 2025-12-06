@@ -731,7 +731,7 @@
 ~/study/python/:
   Flexget:
     repo: git+https://github.com/Flexget/Flexget.git
-  MyST-Parser:
+  myst-parser:
     repo: git@github.com:executablebooks/MyST-Parser.git
   RootTheBox:
     repo: git+https://github.com/moloch--/RootTheBox.git
