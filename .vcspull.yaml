@@ -795,6 +795,8 @@
     repo: git+https://github.com/jessevdk/cldoc.git
   cli-agent-orchestrator:
     repo: git@github.com:awslabs/cli-agent-orchestrator.git
+    remotes:
+      tony: git@github.com:tony/cli-agent-orchestrator.git
   click:
     repo: git+https://github.com/mitsuhiko/click.git
   cookiecutter:
