@@ -13,7 +13,7 @@ idiomatic_version_file_enable_tools = ["node"]
 # This is the correct place to set MISE_PYTHON_COMPILE
 MISE_PYTHON_COMPILE = "1"
 
-[alias]
+[tool_alias]
 # Add some useful aliases
 py = "python"
 node-lts = "node@lts"
