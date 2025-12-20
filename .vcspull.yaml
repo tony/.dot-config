@@ -794,9 +794,9 @@
       tony: git+ssh://git@github.com/tony/cldoc.git
     repo: git+https://github.com/jessevdk/cldoc.git
   cli-agent-orchestrator:
-    repo: git@github.com:awslabs/cli-agent-orchestrator.git
     remotes:
       tony: git@github.com:tony/cli-agent-orchestrator.git
+    repo: git@github.com:awslabs/cli-agent-orchestrator.git
   click:
     repo: git+https://github.com/mitsuhiko/click.git
   cookiecutter:
@@ -979,6 +979,8 @@
     repo: git+https://github.com/numpy/numpy.git
   objbrowser:
     repo: git+https://github.com/titusjan/objbrowser
+  openhands-software-agent-sdk:
+    repo: git@github.com:OpenHands/software-agent-sdk.git
   oslo.db:
     repo: git+https://github.com/openstack/oslo.db
   otrace:
@@ -1183,8 +1185,6 @@
       eduflow: git+https://github.com/eduflow/social-app-django.git
       tony: git+https://github.com/tony/social-app-django.git
     repo: git+https://github.com/python-social-auth/social-app-django.git
-  openhands-software-agent-sdk:
-    repo: git@github.com:OpenHands/software-agent-sdk.git
   soundcloud-cli:
     repo: git+https://github.com/0xPr0xy/soundcloud-cli.git
   spacy:
@@ -1757,6 +1757,9 @@
     remotes:
       tony: git+ssh://git@github.com/tony/vimtutor-extended.git
     repo: git+https://github.com/superjer/vimtutor-extended.git
+~/study/zig/:
+  zmx:
+    repo: git@github.com:neurosnap/zmx.git
 ~/study/zsh/:
   zsh-autoswitch-virtualenv:
     remotes:
