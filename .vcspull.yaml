@@ -1577,6 +1577,8 @@
     repo: git@github.com:shishkin/astro-pagefind.git
   billboard.js:
     repo: git@github.com:naver/billboard.js.git
+  biome-website:
+    repo: git@github.com:biomejs/website.git
   blueprint:
     repo: git+https://github.com/palantir/blueprint.git
   carbon:
@@ -1605,6 +1607,8 @@
     repo: https://github.com/expressive-code/expressive-code
   fast-json-patch:
     repo: git@github.com:martindale/fast-json-patch.git
+  flag-icons:
+    repo: git@github.com:lipis/flag-icons.git
   floating-ui:
     repo: git@github.com:floating-ui/floating-ui.git
   get-port:
@@ -1621,6 +1625,8 @@
     repo: git@github.com:jsdom/jsdom.git
   ladle:
     repo: git@github.com:tajo/ladle.git
+  lit:
+    repo: git@github.com:lit/lit.git
   memfs:
     repo: git@github.com:streamich/memfs.git
   mobx:
@@ -1649,6 +1655,8 @@
     repo: https://github.com/microsoft/playwright
   plotly.js:
     repo: git@github.com:plotly/plotly.js.git
+  pnpm:
+    repo: git@github.com:pnpm/pnpm.git
   primer-react:
     repo: git@github.com:primer/react.git
   radix-primitives:
