@@ -17,6 +17,10 @@
 ~/study/c++/:
   GeographicLib:
     repo: git+https://git.code.sf.net/p/geographiclib/code
+  SDL:
+    repo: git@github.com:libsdl-org/SDL.git
+  SDL_shadercross:
+    repo: https://github.com/libsdl-org/SDL_shadercross.git
   anax:
     repo: git+https://github.com/miguelmartin75/anax
   benchmark:
@@ -43,10 +47,18 @@
     repo: git+https://github.com/zonyitoo/doubanfm-qt.git
   entityx:
     repo: git+https://github.com/alecthomas/entityx
+  entt:
+    repo: git@github.com:skypjack/entt.git
+  fmt:
+    repo: git@github.com:fmtlib/fmt.git
+  glm:
+    repo: https://github.com/g-truc/glm.git
   gmock:
     repo: git+https://github.com/google/googlemock
   googletest:
     repo: git+https://github.com/google/googletest
+  imgui:
+    repo: git@github.com:ocornut/imgui.git
   jucipp:
     remotes:
       tony: git+ssh://git@github.com/tony/jucipp.git
@@ -119,12 +131,18 @@
     remotes:
       tony: git+ssh://git@github.com/tony/solarus.git
     repo: git+https://github.com/christopho/solarus.git
+  spdlog:
+    repo: git@github.com:gabime/spdlog.git
   tensorflow:
     repo: git+https://github.com/tensorflow/tensorflow.git
   tmux-mem-cpu-load:
     remotes:
       tony: git+ssh://git@github.com/tony/tmux-mem-cpu-load.git
     repo: git+https://github.com/thewtex/tmux-mem-cpu-load.git
+  tomlplusplus:
+    repo: https://github.com/marzer/tomlplusplus.git
+  tracy:
+    repo: git@github.com:wolfpld/tracy.git
   v8:
     remotes:
       tony: git+ssh://git@github.com/tony/v8.git
