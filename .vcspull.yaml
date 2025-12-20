@@ -518,6 +518,8 @@
     repo: git+https://github.com/jquery/jquery.git
   jquery-ui:
     repo: git+https://github.com/jquery/jquery-ui.git
+  json-viewer:
+    repo: git@github.com:andypf/json-viewer.git
   lodash:
     repo: git+https://github.com/bestiejs/lodash.git
   plotly-graphing-library-docs:
