@@ -57,6 +57,10 @@ method = "symlink"
 
 # APT packages for Debian/Ubuntu systems
 [packages.apt]
+# Additional repositories (Ubuntu only)
+ppas = [
+    "ppa:fish-shell/release-4",
+]
 # Base packages - always included in minimal group
 packages = [
     "unzip",
@@ -96,6 +100,7 @@ packages = [
     "automake",
     "autoconf",
     "zsh",
+    "fish",
     "libssl-dev",
     "zlib1g-dev",
     "tk-dev",

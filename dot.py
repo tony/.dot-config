@@ -1257,6 +1257,47 @@ class DotfilesApp:
         )
         return success_count == total_count
 
+    async def _ensure_apt_repositories(
+        self,
+        package_config: dict[str, typing.Any],
+    ) -> bool:
+        """Ensure apt repositories are configured for Ubuntu systems."""
+        if self.platform.info.distro != "ubuntu":
+            return True
+
+        ppas = package_config.get("ppas", [])
+        if isinstance(ppas, str):
+            ppas = [ppas]
+        if not isinstance(ppas, list) or not ppas:
+            return True
+
+        if not shutil.which("add-apt-repository"):
+            logger.info("Installing software-properties-common for add-apt-repository")
+            result = await self.runner.run(
+                "sudo apt-get update && sudo apt-get install -y "
+                "software-properties-common",
+                check=False,
+                capture=True,
+            )
+            if not result.success:
+                logger.error("Failed to install software-properties-common")
+                if result.stderr:
+                    logger.error("Error output:\n%s", result.stderr)
+                return False
+
+        for ppa in ppas:
+            if not isinstance(ppa, str) or not ppa.strip():
+                continue
+            cmd = f"sudo add-apt-repository -y {ppa}"
+            result = await self.runner.run(cmd, check=False, capture=True)
+            if not result.success:
+                logger.error("Failed to add apt repository: %s", ppa)
+                if result.stderr:
+                    logger.error("Error output:\n%s", result.stderr)
+                return False
+
+        return True
+
     async def _install_system_packages(self) -> bool:
         """Install system packages based on platform."""
         pkg_manager = self.platform.get_package_manager()
@@ -1290,6 +1331,9 @@ class DotfilesApp:
         # Build and execute install command based on package manager
         match pkg_manager:
             case "apt":
+                if not await self._ensure_apt_repositories(package_config):
+                    return False
+
                 # Check which packages are already installed
                 logger.debug("Checking installed apt packages...")
                 # Remove :amd64 suffix from package names

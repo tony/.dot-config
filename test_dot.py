@@ -1077,6 +1077,112 @@ packages = ["git", "curl", "build-essential"]
             assert expected_cmd in apt_call[0][0]
 
     @pytest.mark.asyncio
+    async def test_install_system_packages_apt_adds_ppa_for_ubuntu(
+        self,
+        tmp_path: pathlib.Path,
+        temp_home: pathlib.Path,
+    ) -> None:
+        """Test apt adds configured PPAs on Ubuntu."""
+        config_toml = """
+[packages.apt]
+ppas = ["ppa:fish-shell/release-4"]
+packages = ["fish"]
+        """
+        config_path = tmp_path / "dot.toml"
+        config_path.write_text(config_toml)
+
+        app = dot.DotfilesApp(config_path=config_path, dry_run=False)
+        app.platform.info = dot.SystemInfo(
+            os="linux",
+            hostname="test",
+            arch="x86_64",
+            distro="ubuntu",
+            is_linux=True,
+            is_macos=False,
+            is_wsl=False,
+            home=temp_home,
+            user="test",
+        )
+
+        with (
+            patch.object(app.platform, "get_package_manager", return_value="apt"),
+            patch("shutil.which", return_value="/usr/bin/add-apt-repository"),
+            patch.object(
+                app.runner,
+                "run",
+                new_callable=unittest.mock.AsyncMock,
+            ) as mock_run,
+        ):
+            mock_run.side_effect = [
+                dot.CommandResult(success=True),  # add-apt-repository
+                dot.CommandResult(success=True, stdout=""),  # dpkg check
+                dot.CommandResult(success=True),  # apt install
+            ]
+
+            result = await app._install_system_packages()
+
+            assert result is True
+            assert mock_run.call_count == 3
+            assert "add-apt-repository -y ppa:fish-shell/release-4" in (
+                mock_run.call_args_list[0][0][0]
+            )
+            assert "dpkg -l fish" in mock_run.call_args_list[1][0][0]
+            assert (
+                "sudo apt-get update && sudo apt-get install -y fish"
+                in mock_run.call_args_list[2][0][0]
+            )
+
+    @pytest.mark.asyncio
+    async def test_install_system_packages_apt_skips_ppa_on_debian(
+        self,
+        tmp_path: pathlib.Path,
+        temp_home: pathlib.Path,
+    ) -> None:
+        """Test apt skips PPAs on non-Ubuntu distros."""
+        config_toml = """
+[packages.apt]
+ppas = ["ppa:fish-shell/release-4"]
+packages = ["fish"]
+        """
+        config_path = tmp_path / "dot.toml"
+        config_path.write_text(config_toml)
+
+        app = dot.DotfilesApp(config_path=config_path, dry_run=False)
+        app.platform.info = dot.SystemInfo(
+            os="linux",
+            hostname="test",
+            arch="x86_64",
+            distro="debian",
+            is_linux=True,
+            is_macos=False,
+            is_wsl=False,
+            home=temp_home,
+            user="test",
+        )
+
+        with (
+            patch.object(app.platform, "get_package_manager", return_value="apt"),
+            patch.object(
+                app.runner,
+                "run",
+                new_callable=unittest.mock.AsyncMock,
+            ) as mock_run,
+        ):
+            mock_run.side_effect = [
+                dot.CommandResult(success=True, stdout=""),  # dpkg check
+                dot.CommandResult(success=True),  # apt install
+            ]
+
+            result = await app._install_system_packages()
+
+            assert result is True
+            assert mock_run.call_count == 2
+            assert all(
+                "add-apt-repository" not in call.args[0]
+                for call in mock_run.call_args_list
+            )
+
+    @pytest.mark.asyncio
     async def test_apt_package_detection_and_messaging(
         self,
         tmp_path: pathlib.Path,
