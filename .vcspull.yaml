@@ -978,6 +978,8 @@
     repo: git@github.com:celery/kombu.git
   kr-sphinx-themes:
     repo: git+https://github.com/kennethreitz/kr-sphinx-themes.git
+  learning-ai:
+    repo: git@github.com:tony/learning-ai.git
   learning-asyncio:
     repo: git+ssh://git@github.com/tony/learning-asyncio.git
   learning-dsa:
