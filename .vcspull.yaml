@@ -1436,6 +1436,8 @@
 ~/study/rust/:
   alacritty:
     repo: git@github.com:alacritty/alacritty.git
+  close_fds:
+    repo: https://github.com/cptpcrd/close_fds
   codex:
     repo: https://github.com/openai/codex.git
   fish-shell:
@@ -1448,6 +1450,8 @@
     repo: git@github.com:helix-editor/helix.git
   insta:
     repo: git@github.com:mitsuhiko/insta.git
+  just:
+    repo: git@github.com:casey/just.git
   learning-rust:
     repo: git+ssh://git@github.com/tony/learning-rust.git
   learning-rust-nodejs:
@@ -1460,6 +1464,8 @@
     repo: git@github.com:modelcontextprotocol/rust-sdk.git
   mise:
     repo: git@github.com:jdx/mise.git
+  mq:
+    repo: git@github.com:harehare/mq.git
   pagefind:
     repo: git@github.com:Pagefind/pagefind.git
   ratatui:
