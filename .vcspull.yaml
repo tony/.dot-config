@@ -274,6 +274,43 @@
     remotes:
       tony: git+ssh://git@github.com/tony/python-cmake-buildsystem.git
     repo: git+https://github.com/python-cmake-buildsystem/python-cmake-buildsystem.git
+~/study/codemirror/:
+  autocomplete:
+    repo: https://github.com/codemirror/autocomplete
+  basic-setup:
+    repo: https://github.com/codemirror/basic-setup
+  commands:
+    repo: https://github.com/codemirror/commands
+  lang-css:
+    repo: https://github.com/codemirror/lang-css
+  lang-html:
+    repo: https://github.com/codemirror/lang-html
+  lang-javascript:
+    repo: https://github.com/codemirror/lang-javascript
+  lang-json:
+    repo: https://github.com/codemirror/lang-json
+  lang-liquid:
+    repo: https://github.com/codemirror/lang-liquid
+  lang-markdown:
+    repo: https://github.com/codemirror/lang-markdown
+  language:
+    repo: https://github.com/codemirror/language
+  language-data:
+    repo: https://github.com/codemirror/language-data
+  lint:
+    repo: https://github.com/codemirror/lint
+  lsp-client:
+    repo: https://github.com/codemirror/lsp-client
+  merge:
+    repo: https://github.com/codemirror/merge
+  search:
+    repo: https://github.com/codemirror/search
+  state:
+    repo: https://github.com/codemirror/state
+  theme-one-dark:
+    repo: https://github.com/codemirror/theme-one-dark
+  view:
+    repo: https://github.com/codemirror/view
 ~/study/compsci-books/:
   bottomupcs:
     repo: git+https://github.com/ianw/bottomupcs.git
