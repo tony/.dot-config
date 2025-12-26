@@ -57,10 +57,18 @@ method = "symlink"
 
 # APT packages for Debian/Ubuntu systems
 [packages.apt]
-# Additional repositories (Ubuntu only)
+# Additional repositories (Ubuntu only - uses add-apt-repository)
 ppas = [
     "ppa:fish-shell/release-4",
 ]
+
+# GPG-signed apt repositories (works on Ubuntu AND Debian)
+[[packages.apt.repositories]]
+name = "hashicorp"
+gpg_url = "https://apt.releases.hashicorp.com/gpg"
+gpg_keyring = "/usr/share/keyrings/hashicorp-archive-keyring.gpg"
+repo_url = "deb [arch={arch} signed-by={keyring}] https://apt.releases.hashicorp.com {codename} main"
+
 # Base packages - always included in minimal group
 packages = [
     "unzip",
@@ -105,6 +113,7 @@ packages = [
     "zlib1g-dev",
     "tk-dev",
     "liblzma-dev",
+    "terraform",
 ]
 
 # Package groups for apt - additional packages beyond base
@@ -242,11 +251,16 @@ full = [
 
 # Homebrew packages (macOS)
 [packages.brew]
+# Homebrew taps to add before installing packages
+taps = [
+    "hashicorp/tap",
+]
 packages = [
     "tmux",
-    "git", 
+    "git",
     "vim",
     "zsh",
+    "hashicorp/tap/terraform",
 ]
 
 [packages.brew.groups]

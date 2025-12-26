@@ -1123,8 +1123,9 @@ packages = ["fish"]
 
             assert result is True
             assert mock_run.call_count == 3
-            assert "add-apt-repository -y ppa:fish-shell/release-4" in (
-                mock_run.call_args_list[0][0][0]
+            assert (
+                "add-apt-repository -y ppa:fish-shell/release-4"
+                in (mock_run.call_args_list[0][0][0])
             )
             assert "dpkg -l fish" in mock_run.call_args_list[1][0][0]
             assert (
@@ -1181,6 +1182,275 @@ packages = ["fish"]
                 "add-apt-repository" not in call.args[0]
                 for call in mock_run.call_args_list
             )
+
+    @pytest.mark.asyncio
+    async def test_apt_signed_repository_on_ubuntu(
+        self,
+        tmp_path: pathlib.Path,
+        temp_home: pathlib.Path,
+    ) -> None:
+        """Test GPG-signed apt repository installation on Ubuntu."""
+        config_toml = """
+[packages.apt]
+packages = ["terraform"]
+
+[[packages.apt.repositories]]
+name = "hashicorp"
+gpg_url = "https://apt.releases.hashicorp.com/gpg"
+gpg_keyring = "/usr/share/keyrings/hashicorp-keyring.gpg"
+repo_url = "deb [arch={arch} signed-by={keyring}] https://apt.hc.io {codename} main"
+        """
+        config_path = tmp_path / "dot.toml"
+        config_path.write_text(config_toml)
+
+        app = dot.DotfilesApp(config_path=config_path, dry_run=False)
+        app.platform.info = dot.SystemInfo(
+            os="linux",
+            hostname="test",
+            arch="x86_64",
+            distro="ubuntu",
+            is_linux=True,
+            is_macos=False,
+            is_wsl=False,
+            home=temp_home,
+            user="test",
+        )
+
+        with (
+            patch.object(app.platform, "get_package_manager", return_value="apt"),
+            patch.object(pathlib.Path, "exists", return_value=False),
+            patch.object(
+                app.runner,
+                "run",
+                new_callable=unittest.mock.AsyncMock,
+            ) as mock_run,
+        ):
+            mock_run.side_effect = [
+                dot.CommandResult(success=True),  # GPG key download
+                dot.CommandResult(success=True, stdout="amd64"),  # dpkg arch
+                dot.CommandResult(success=True, stdout="jammy"),  # codename
+                dot.CommandResult(success=True),  # add repo
+                dot.CommandResult(success=True),  # apt update
+                dot.CommandResult(success=True, stdout=""),  # dpkg check
+                dot.CommandResult(success=True),  # apt install
+            ]
+
+            result = await app._install_system_packages()
+
+            assert result is True
+            # Verify GPG key was downloaded
+            assert "wget -qO -" in mock_run.call_args_list[0][0][0]
+            assert "hashicorp" in mock_run.call_args_list[0][0][0]
+
+    @pytest.mark.asyncio
+    async def test_apt_signed_repository_on_debian(
+        self,
+        tmp_path: pathlib.Path,
+        temp_home: pathlib.Path,
+    ) -> None:
+        """Test GPG-signed apt repository installation on Debian."""
+        config_toml = """
+[packages.apt]
+packages = ["terraform"]
+
+[[packages.apt.repositories]]
+name = "hashicorp"
+gpg_url = "https://apt.releases.hashicorp.com/gpg"
+gpg_keyring = "/usr/share/keyrings/hashicorp-keyring.gpg"
+repo_url = "deb [arch={arch} signed-by={keyring}] https://apt.hc.io {codename} main"
+        """
+        config_path = tmp_path / "dot.toml"
+        config_path.write_text(config_toml)
+
+        app = dot.DotfilesApp(config_path=config_path, dry_run=False)
+        app.platform.info = dot.SystemInfo(
+            os="linux",
+            hostname="test",
+            arch="x86_64",
+            distro="debian",
+            is_linux=True,
+            is_macos=False,
+            is_wsl=False,
+            home=temp_home,
+            user="test",
+        )
+
+        with (
+            patch.object(app.platform, "get_package_manager", return_value="apt"),
+            patch.object(pathlib.Path, "exists", return_value=False),
+            patch.object(
+                app.runner,
+                "run",
+                new_callable=unittest.mock.AsyncMock,
+            ) as mock_run,
+        ):
+            mock_run.side_effect = [
+                dot.CommandResult(success=True),  # GPG key download
+                dot.CommandResult(success=True, stdout="amd64"),  # dpkg arch
+                dot.CommandResult(success=True, stdout="bookworm"),  # codename
+                dot.CommandResult(success=True),  # add repo
+                dot.CommandResult(success=True),  # apt update
+                dot.CommandResult(success=True, stdout=""),  # dpkg check
+                dot.CommandResult(success=True),  # apt install
+            ]
+
+            result = await app._install_system_packages()
+
+            assert result is True
+            # Verify it works on Debian (not just Ubuntu)
+            assert mock_run.call_count == 7
+
+    @pytest.mark.asyncio
+    async def test_apt_signed_repository_skips_if_exists(
+        self,
+        tmp_path: pathlib.Path,
+        temp_home: pathlib.Path,
+    ) -> None:
+        """Test that existing repositories are skipped."""
+        config_toml = """
+[packages.apt]
+packages = ["terraform"]
+
+[[packages.apt.repositories]]
+name = "hashicorp"
+gpg_url = "https://apt.releases.hashicorp.com/gpg"
+gpg_keyring = "/usr/share/keyrings/hashicorp-keyring.gpg"
+repo_url = "deb [arch={arch} signed-by={keyring}] https://apt.hc.io {codename} main"
+        """
+        config_path = tmp_path / "dot.toml"
+        config_path.write_text(config_toml)
+
+        app = dot.DotfilesApp(config_path=config_path, dry_run=False)
+        app.platform.info = dot.SystemInfo(
+            os="linux",
+            hostname="test",
+            arch="x86_64",
+            distro="ubuntu",
+            is_linux=True,
+            is_macos=False,
+            is_wsl=False,
+            home=temp_home,
+            user="test",
+        )
+
+        with (
+            patch.object(app.platform, "get_package_manager", return_value="apt"),
+            patch.object(pathlib.Path, "exists", return_value=True),  # Repo exists
+            patch.object(
+                app.runner,
+                "run",
+                new_callable=unittest.mock.AsyncMock,
+            ) as mock_run,
+        ):
+            mock_run.side_effect = [
+                dot.CommandResult(success=True, stdout="terraform"),  # dpkg check
+            ]
+
+            result = await app._install_system_packages()
+
+            assert result is True
+            # No GPG key download should occur
+            assert all("gpg" not in str(call) for call in mock_run.call_args_list)
+
+    @pytest.mark.asyncio
+    async def test_brew_tap_installation(
+        self,
+        tmp_path: pathlib.Path,
+        temp_home: pathlib.Path,
+    ) -> None:
+        """Test Homebrew tap installation."""
+        config_toml = """
+[packages.brew]
+taps = ["hashicorp/tap"]
+packages = ["hashicorp/tap/terraform"]
+        """
+        config_path = tmp_path / "dot.toml"
+        config_path.write_text(config_toml)
+
+        app = dot.DotfilesApp(config_path=config_path, dry_run=False)
+        app.platform.info = dot.SystemInfo(
+            os="darwin",
+            hostname="mac",
+            arch="arm64",
+            distro=None,
+            is_linux=False,
+            is_macos=True,
+            is_wsl=False,
+            home=temp_home,
+            user="test",
+        )
+
+        with (
+            patch.object(app.platform, "get_package_manager", return_value="brew"),
+            patch.object(
+                app.runner,
+                "run",
+                new_callable=unittest.mock.AsyncMock,
+            ) as mock_run,
+        ):
+            mock_run.side_effect = [
+                dot.CommandResult(success=True, stdout=""),  # brew tap (empty)
+                dot.CommandResult(success=True),  # brew tap hashicorp/tap
+                dot.CommandResult(success=True, stdout=""),  # brew list
+                dot.CommandResult(success=True),  # brew install
+            ]
+
+            result = await app._install_system_packages()
+
+            assert result is True
+            assert "brew tap hashicorp/tap" in mock_run.call_args_list[1][0][0]
+
+    @pytest.mark.asyncio
+    async def test_brew_tap_skips_existing(
+        self,
+        tmp_path: pathlib.Path,
+        temp_home: pathlib.Path,
+    ) -> None:
+        """Test that existing taps are skipped."""
+        config_toml = """
+[packages.brew]
+taps = ["hashicorp/tap"]
+packages = ["hashicorp/tap/terraform"]
+        """
+        config_path = tmp_path / "dot.toml"
+        config_path.write_text(config_toml)
+
+        app = dot.DotfilesApp(config_path=config_path, dry_run=False)
+        app.platform.info = dot.SystemInfo(
+            os="darwin",
+            hostname="mac",
+            arch="arm64",
+            distro=None,
+            is_linux=False,
+            is_macos=True,
+            is_wsl=False,
+            home=temp_home,
+            user="test",
+        )
+
+        with (
+            patch.object(app.platform, "get_package_manager", return_value="brew"),
+            patch.object(
+                app.runner,
+                "run",
+                new_callable=unittest.mock.AsyncMock,
+            ) as mock_run,
+        ):
+            mock_run.side_effect = [
+                # Tap already exists
+                dot.CommandResult(success=True, stdout="hashicorp/tap\nhomebrew/core"),
+                dot.CommandResult(success=True, stdout=""),  # brew list
+                dot.CommandResult(success=True),  # brew install
+            ]
+
+            result = await app._install_system_packages()
+
+            assert result is True
+            # Should NOT call brew tap hashicorp/tap (already exists)
+            tap_calls = [
+                c for c in mock_run.call_args_list if "brew tap hashicorp" in str(c)
+            ]
+            assert len(tap_calls) == 0
 
     @pytest.mark.asyncio
     async def test_apt_package_detection_and_messaging(

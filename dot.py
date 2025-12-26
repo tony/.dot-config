@@ -1298,6 +1298,150 @@ class DotfilesApp:
 
         return True
 
+    async def _ensure_brew_taps(
+        self,
+        package_config: dict[str, typing.Any],
+    ) -> bool:
+        """Ensure Homebrew taps are configured before package installation."""
+        if not self.platform.info.is_macos:
+            return True
+
+        taps = package_config.get("taps", [])
+        if isinstance(taps, str):
+            taps = [taps]
+        if not isinstance(taps, list) or not taps:
+            return True
+
+        # Get currently tapped repos
+        result = await self.runner.run("brew tap", check=False, capture=True)
+        existing_taps = (
+            set(result.stdout.strip().split("\n"))
+            if result.success and result.stdout
+            else set()
+        )
+
+        for tap in taps:
+            if not isinstance(tap, str) or not tap.strip():
+                continue
+
+            tap = tap.strip()
+            if tap in existing_taps:
+                logger.debug("Tap %s already configured", tap)
+                continue
+
+            logger.info("Adding Homebrew tap: %s", tap)
+            cmd = f"brew tap {tap}"
+            result = await self.runner.run(cmd, check=False, capture=True)
+            if not result.success:
+                logger.error("Failed to add tap: %s", tap)
+                if result.stderr:
+                    logger.error("Error output:\n%s", result.stderr)
+                return False
+
+        return True
+
+    async def _ensure_apt_signed_repositories(
+        self,
+        package_config: dict[str, typing.Any],
+    ) -> bool:
+        """Ensure GPG-signed apt repositories are configured for Debian/Ubuntu.
+
+        Works on both Ubuntu and Debian, unlike PPAs which are Ubuntu-only.
+        Uses the modern signed-by approach for GPG key verification.
+        """
+        if self.platform.info.distro not in ("ubuntu", "debian"):
+            return True
+
+        repositories = package_config.get("repositories", [])
+        if not repositories:
+            return True
+
+        added_repos = False
+        for repo_config in repositories:
+            if not isinstance(repo_config, dict):
+                continue
+
+            name = repo_config.get("name", "unknown")
+            gpg_url = repo_config.get("gpg_url")
+            gpg_keyring = repo_config.get("gpg_keyring")
+            repo_url_template = repo_config.get("repo_url")
+
+            if not all([gpg_url, gpg_keyring, repo_url_template]):
+                logger.warning("Incomplete repository config for %s, skipping", name)
+                continue
+
+            # Type narrowing for mypy after the above check
+            assert gpg_url is not None
+            assert gpg_keyring is not None
+            assert repo_url_template is not None
+
+            # Check if repository is already configured
+            sources_list_path = pathlib.Path(f"/etc/apt/sources.list.d/{name}.list")
+            if sources_list_path.exists():
+                logger.debug("Repository %s already configured", name)
+                continue
+
+            logger.info("Adding GPG-signed apt repository: %s", name)
+
+            # Step 1: Download and install GPG key
+            gpg_cmd = f"wget -qO - {gpg_url} | sudo gpg --dearmor -o {gpg_keyring}"
+            result = await self.runner.run(gpg_cmd, check=False, capture=True)
+            if not result.success:
+                logger.error("Failed to install GPG key for %s", name)
+                if result.stderr:
+                    logger.error("Error output:\n%s", result.stderr)
+                return False
+
+            # Step 2: Determine architecture
+            arch_result = await self.runner.run(
+                "dpkg --print-architecture", check=False, capture=True
+            )
+            arch = arch_result.stdout.strip() if arch_result.success else "amd64"
+
+            # Step 3: Determine codename (try UBUNTU_CODENAME first, then lsb_release)
+            codename_cmd = (
+                "grep -oP '(?<=UBUNTU_CODENAME=).*' /etc/os-release 2>/dev/null || "
+                "lsb_release -cs"
+            )
+            codename_result = await self.runner.run(
+                codename_cmd, check=False, capture=True
+            )
+            codename = (
+                codename_result.stdout.strip()
+                if codename_result.success and codename_result.stdout
+                else "stable"
+            )
+
+            # Step 4: Format and add repository
+            repo_line = repo_url_template.format(
+                arch=arch,
+                keyring=gpg_keyring,
+                codename=codename,
+                distro=self.platform.info.distro,
+            )
+
+            add_repo_cmd = f'echo "{repo_line}" | sudo tee {sources_list_path}'
+            result = await self.runner.run(add_repo_cmd, check=False, capture=True)
+            if not result.success:
+                logger.error("Failed to add repository %s", name)
+                if result.stderr:
+                    logger.error("Error output:\n%s", result.stderr)
+                return False
+
+            logger.info("Successfully added repository: %s", name)
+            added_repos = True
+
+        # Update apt cache after adding repositories
+        if added_repos:
+            logger.info("Updating apt cache after adding repositories...")
+            result = await self.runner.run(
+                "sudo apt-get update", check=False, capture=True
+            )
+            if not result.success:
+                logger.warning("apt-get update had issues, continuing anyway")
+
+        return True
+
     async def _install_system_packages(self) -> bool:
         """Install system packages based on platform."""
         pkg_manager = self.platform.get_package_manager()
@@ -1332,6 +1476,8 @@ class DotfilesApp:
         match pkg_manager:
             case "apt":
                 if not await self._ensure_apt_repositories(package_config):
+                    return False
+                if not await self._ensure_apt_signed_repositories(package_config):
                     return False
 
                 # Check which packages are already installed
@@ -1370,6 +1516,9 @@ class DotfilesApp:
                     f"{' '.join(to_install)}"
                 )
             case "brew":
+                if not await self._ensure_brew_taps(package_config):
+                    return False
+
                 # For brew, we can check installed packages more efficiently
                 logger.debug("Checking installed brew packages...")
                 check_cmd = "brew list --formula"
