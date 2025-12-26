@@ -62,17 +62,10 @@ ppas = [
     "ppa:fish-shell/release-4",
 ]
 
-# GPG-signed apt repositories (works on Ubuntu AND Debian)
-[[packages.apt.repositories]]
-name = "hashicorp"
-gpg_url = "https://apt.releases.hashicorp.com/gpg"
-gpg_keyring = "/usr/share/keyrings/hashicorp-archive-keyring.gpg"
-repo_url = "deb [arch={arch} signed-by={keyring}] https://apt.releases.hashicorp.com {codename} main"
-
 # Base packages - always included in minimal group
 packages = [
     "unzip",
-    "wget", 
+    "wget",
     "tmux",
     "rsync",
     "cmake",
@@ -95,7 +88,7 @@ packages = [
     "libsasl2-dev",
     "libxslt1-dev",
     "libxmlsec1-dev",
-    "libxml2-dev", 
+    "libxml2-dev",
     "libldap2-dev",
     "libffi-dev",
     "libsqlite3-dev",
@@ -115,6 +108,14 @@ packages = [
     "liblzma-dev",
     "terraform",
 ]
+
+# GPG-signed apt repositories (works on Ubuntu AND Debian)
+# NOTE: [[array.of.tables]] must come AFTER regular keys in TOML
+[[packages.apt.repositories]]
+name = "hashicorp"
+gpg_url = "https://apt.releases.hashicorp.com/gpg"
+gpg_keyring = "/usr/share/keyrings/hashicorp-archive-keyring.gpg"
+repo_url = "deb [arch={arch} signed-by={keyring}] https://apt.releases.hashicorp.com {codename} main"
 
 # Package groups for apt - additional packages beyond base
 [packages.apt.groups]
