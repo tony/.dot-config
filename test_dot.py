@@ -2998,15 +2998,14 @@ class TestStatusEdgeCases:
 class TestCLIEdgeCases:
     """Test CLI edge cases."""
 
-    @pytest.mark.asyncio
-    async def test_unknown_command(self, monkeypatch) -> None:
+    def test_unknown_command(self, monkeypatch) -> None:
         """Test handling of unknown commands."""
         test_args = ["dot.py", "unknown-command"]
         monkeypatch.setattr(sys, "argv", test_args)
 
         # argparse exits with code 2 for invalid arguments
         with pytest.raises(SystemExit) as exc_info:
-            await dot.async_main()
+            dot.main()
 
         assert exc_info.value.code == 2
 
@@ -3030,14 +3029,24 @@ class TestCLIEdgeCases:
 
     def test_main_keyboard_interrupt(self) -> None:
         """Test main handles KeyboardInterrupt."""
-        with unittest.mock.patch("asyncio.run", side_effect=KeyboardInterrupt):
+
+        def mock_run(coro):
+            coro.close()  # Close coroutine to prevent "never awaited" warning
+            raise KeyboardInterrupt
+
+        with unittest.mock.patch("asyncio.run", side_effect=mock_run):
             exit_code = dot.main()
 
             assert exit_code == 130  # Standard Unix exit code for SIGINT
 
     def test_main_generic_exception(self) -> None:
         """Test main handles generic exceptions."""
-        with unittest.mock.patch("asyncio.run", side_effect=RuntimeError("Test error")):
+
+        def mock_run(coro):
+            coro.close()  # Close coroutine to prevent "never awaited" warning
+            raise RuntimeError("Test error")
+
+        with unittest.mock.patch("asyncio.run", side_effect=mock_run):
             exit_code = dot.main()
 
             assert exit_code == 1
