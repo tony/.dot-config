@@ -3,7 +3,7 @@ name = "dot"
 version = "0.1.0"
 description = "Dotfiles management automation script"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.14"
 dependencies = []
 
 [dependency-groups]
