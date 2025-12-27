@@ -1607,6 +1607,17 @@
 ~/study/swift/:
   swift:
     repo: git+https://github.com/apple/swift.git
+~/study/terraform/:
+  terraform-provider-aws:
+    repo: https://github.com/hashicorp/terraform-provider-aws.git
+  terraform-provider-cloudflare:
+    repo: https://github.com/cloudflare/terraform-provider-cloudflare.git
+  terraform-provider-github:
+    repo: https://github.com/integrations/terraform-provider-github.git
+  terraform-provider-null:
+    repo: https://github.com/hashicorp/terraform-provider-null.git
+  terraform-provider-random:
+    repo: https://github.com/hashicorp/terraform-provider-random.git
 ~/study/typescript/:
   Babylon.js:
     repo: git@github.com:BabylonJS/Babylon.js.git
