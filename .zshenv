@@ -91,6 +91,15 @@ if [[ -z "$XDG_CONFIG_HOME" ]]; then
 fi
 
 ##################################################
+# Mise Performance Optimization (port from fish config)
+##################################################
+
+# Only run mise hook-env on directory change, not every prompt
+export MISE_HOOK_ENV_CHPWD_ONLY=true
+# Cache filesystem stat checks for 5 seconds (helps on WSL2/NFS)
+export MISE_HOOK_ENV_CACHE_TTL=5s
+
+##################################################
 # Other Environment Variables
 ##################################################
 
@@ -107,10 +116,8 @@ export PYTHONSTARTUP="$HOME/.pythonrc"
 # Prepend personal bin directories
 pathprepend "$HOME/bin" "$HOME/.local/bin"
 
-# If yarn is available, prepend its global bin directory
-if command -v yarn >/dev/null 2>&1; then
-  pathprepend "$(yarn global bin)"
-fi
+# Yarn path handled by corepack (bundled with Node.js via mise)
+# Removed yarn global bin check - it's an expensive subprocess call
 
 ##################################################
 # Optional: Source Cargo if it exists
