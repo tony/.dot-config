@@ -17,6 +17,8 @@ if command -sq mise
 
     # Lazy activation - defer hook-env until command execution
     set -gx mise_fish_mode eval_after_arrow
+    # Only run full config check on directory change, not every prompt
+    set -gx MISE_HOOK_ENV_CHPWD_ONLY true
 
     # Initialize mise
     mise activate fish | source
