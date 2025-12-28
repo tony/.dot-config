@@ -248,9 +248,19 @@ if command -v rustup >/dev/null 2>&1; then
   fi
 fi
 
-# Initialize zsh completions
-autoload -Uz +X compinit
-compinit
+# Initialize zsh completions with daily cache rebuild
+# Only run full compinit once per day, use cache otherwise (~150ms savings)
+# Note: glob qualifiers require array context, not [[ -n ... ]]
+autoload -Uz compinit
+_zcompdump_old=(${ZDOTDIR:-$HOME}/.zcompdump(N.mh+24))
+if (( ${#_zcompdump_old} )); then
+    # .zcompdump is older than 24 hours, rebuild
+    compinit
+else
+    # Use cached completions without security check
+    compinit -C
+fi
+unset _zcompdump_old
 
 # Completion style settings
 zstyle ':completion:*' use-cache on
@@ -313,3 +323,17 @@ source_if_exists "${HOME}/.rye/env"
 
 # GritQL
 source_if_exists "${HOME}/.grit/bin/env"
+
+###############################################################################
+# Compile zsh files for faster loading (~10-30ms savings)
+###############################################################################
+
+# Compile .zshrc to .zwc if source is newer
+if [[ ! -f ~/.zshrc.zwc ]] || [[ ~/.zshrc -nt ~/.zshrc.zwc ]]; then
+    zcompile ~/.zshrc 2>/dev/null
+fi
+
+# Compile .zshenv to .zwc if source is newer
+if [[ ! -f ~/.zshenv.zwc ]] || [[ ~/.zshenv -nt ~/.zshenv.zwc ]]; then
+    zcompile ~/.zshenv 2>/dev/null
+fi

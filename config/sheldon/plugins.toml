@@ -5,8 +5,8 @@ shell = "zsh"
 
 [plugins]
 
-[plugins.compinit]
-inline = 'autoload -Uz compinit && compinit'
+# NOTE: compinit is handled in .zshrc with daily caching optimization
+# Plugins can call compdef before compinit - zsh queues these definitions
 
 [plugins.zsh-defer]
 github = "romkatv/zsh-defer"
@@ -25,10 +25,32 @@ path=($path {{ dir }}/bin(N-/))'''
 fzf-source = "source <(fzf --zsh)"
 
 # -------------------------------------------------------------------
-# starship/starship
+# starship/starship (with evalcache for version-based invalidation)
 # -------------------------------------------------------------------
 [plugins.starship]
-inline = 'eval "$(starship init zsh)"'
+inline = '''
+_starship_init_cached() {
+    local cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+    local cache_file="$cache_dir/starship_init.zsh"
+    local version_file="$cache_dir/starship_init.version"
+    local current_version
+
+    current_version=$(starship --version 2>/dev/null | head -1)
+
+    if [[ -f "$cache_file" && -f "$version_file" ]]; then
+        if [[ "$current_version" == "$(<"$version_file")" ]]; then
+            source "$cache_file"
+            return
+        fi
+    fi
+
+    mkdir -p "$cache_dir"
+    starship init zsh --print-full-init > "$cache_file"
+    print -r -- "$current_version" > "$version_file"
+    source "$cache_file"
+}
+_starship_init_cached
+'''
 
 # -------------------------------------------------------------------
 # mise version manager (https://mise.jdx.dev/)
@@ -57,11 +79,12 @@ use = [
 ]
 
 # -------------------------------------------------------------------
-# zsh-users/zsh-history-substring-search
+# zsh-users/zsh-history-substring-search (deferred)
 # -------------------------------------------------------------------
 [plugins.zsh-history-substring-search]
 github = "zsh-users/zsh-history-substring-search"
 use = ["zsh-history-substring-search.zsh"]
+apply = ["defer"]
 
 # -------------------------------------------------------------------
 # junegunn/fzf pinned to v0.60.3 + separate bin injection
@@ -87,11 +110,12 @@ apply = ["PATH"]
 # apply = ["defer"]
 
 # -------------------------------------------------------------------
-# Aloxaf/fzf-tab
+# Aloxaf/fzf-tab (deferred - loads after first prompt)
 # -------------------------------------------------------------------
 [plugins."fzf-tab"]
 github = "Aloxaf/fzf-tab"
 use = ["fzf-tab.plugin.zsh"]
+apply = ["defer"]
 
 # -------------------------------------------------------------------
 # zdharma-continuum/fast-syntax-highlighting (kind:defer)
@@ -110,8 +134,9 @@ use = ["zsh-autosuggestions.zsh"]
 apply = ["defer"]
 
 # -------------------------------------------------------------------
-# MichaelAquilina/zsh-autoswitch-virtualenv
+# MichaelAquilina/zsh-autoswitch-virtualenv (deferred)
 # -------------------------------------------------------------------
 [plugins."zsh-autoswitch-virtualenv"]
 github = "MichaelAquilina/zsh-autoswitch-virtualenv"
 use = ["autoswitch_virtualenv.plugin.zsh"]
+apply = ["defer"]
