@@ -42,13 +42,5 @@ set -x FZF_CTRL_R_OPTS "
     --color header:italic \
     --header 'Press CTRL-/ to toggle preview, CTRL-Y to copy command'"
 
-# Configure key bindings
-function fish_user_key_bindings
-    # Standard bindings
-    fzf_key_bindings
-
-    # Additional custom bindings can go here
-    bind \ct '__fzf_search_current_dir'
-    bind \cr '__fzf_search_history'
-    bind \ec '__fzf_search_directory'
-end 
+# Key bindings are now configured in functions/fish_user_key_bindings.fish
+# The FZF_USE_ZSH_BINDINGS variable controls whether to use zsh-style bindings

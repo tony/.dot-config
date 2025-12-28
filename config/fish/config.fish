@@ -70,29 +70,11 @@ if status is-interactive
     keychain --eval --agents ssh --quiet -Q id_ed25519 --nogui | source
 end
 
-function fish_user_key_bindings
-    # Execute this once per mode that emacs bindings should be used in
-    fish_default_key_bindings -M insert
-
-    # Then execute the vi-bindings so they take precedence when there's a conflict.
-    # Without --no-erase fish_vi_key_bindings will default to
-    # resetting all bindings.
-    # The argument specifies the initial mode (insert, "default" or visual).
-    fish_vi_key_bindings --no-erase insert
-end
-
 fish_add_path "$HOME/.local/bin"
 fish_add_path "$HOME/.cargo/bin"
 
-function fish_user_key_bindings
-    if type -q fzf_key_bindings
-        fzf_key_bindings
-    end
-
-    bind --user \cx \ce edit_command_buffer
-    bind --user -M insert \cx\ce edit_command_buffer
-    bind --user -M visual \cx\ce edit_command_buffer
-end
+# FZF binding style toggle - set to "0" to use native fzf.fish bindings
+set -gx FZF_USE_ZSH_BINDINGS 1
 
 function ignore_variables
     # Set IGNORE_FILE_EXT as a multi-line variable
@@ -140,6 +122,9 @@ function ignore_variables
 end
 
 ignore_variables
+
+# Starship prompt - suppress warning logs
+set -Ux STARSHIP_LOG error
 
 if type -q starship
     starship init fish | source
