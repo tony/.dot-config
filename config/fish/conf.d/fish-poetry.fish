@@ -1,6 +1,7 @@
-if command -s poetry >/dev/null
+# Poetry environment auto-activation for Poetry 2.0+
+# Uses `poetry env activate` instead of deprecated `poetry shell`
 
-    # complete --command poetry --arguments "(env _POETRY_COMPLETE=complete-fish COMMANDLINE=(commandline -cp) poetry)" -f
+if command -s poetry >/dev/null
 
     # function that loads environment variables from a file
     function posix-source
@@ -12,39 +13,40 @@ if command -s poetry >/dev/null
         end
     end
 
-    function __poetry_shell_activate --on-variable PWD
+    function __poetry_env_activate --on-variable PWD
         if status --is-command-substitution
             return
         end
+
+        # Skip if not in a poetry project
         if not test -e "$PWD/pyproject.toml"
-            if not string match -q "$__poetry_fish_initial_pwd"/'*' "$PWD/"
-                set -U __poetry_fish_final_pwd "$PWD"
-                exit
-            end
             return
         end
 
-        if not test -n "$POETRY_ACTIVE"
-            if poetry env info -p >/dev/null 2>&1
-                set -x __poetry_fish_initial_pwd "$PWD"
-                if test "$FISH_POETRY_LOAD_ENV" -a -e "$PWD/.env"
-                    echo "Setting environment variables..."
-                    posix-source $PWD/.env
-                end
+        # Skip if already in a virtual environment
+        if test -n "$VIRTUAL_ENV"
+            return
+        end
 
-                poetry shell
+        # Check if poetry has an environment for this project
+        if poetry env info -p >/dev/null 2>&1
+            # Load .env file if configured
+            if test "$FISH_POETRY_LOAD_ENV" -a -e "$PWD/.env"
+                echo "Setting environment variables..."
+                posix-source $PWD/.env
+            end
 
-                set -e __poetry_fish_initial_pwd
-                if test -n "$__poetry_fish_final_pwd"
-                    cd "$__poetry_fish_final_pwd"
-                    set -e __poetry_fish_final_pwd
-                end
+            # Activate the poetry environment (Poetry 2.0+ style)
+            # This sources the activate.fish script directly
+            set -l venv_path (poetry env info -p 2>/dev/null)
+            if test -n "$venv_path" -a -f "$venv_path/bin/activate.fish"
+                source "$venv_path/bin/activate.fish"
             end
         end
     end
 
-    # Check if this shell was started in a directory that has a poetry project and directly activate it
-    __poetry_shell_activate
+    # Check if this shell was started in a directory that has a poetry project
+    __poetry_env_activate
 else
     function poetry -d "https://python-poetry.org"
         echo "Install https://python-poetry.org to use this plugin." >/dev/stderr
