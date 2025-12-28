@@ -52,9 +52,7 @@ if not set -q FISH_TEST
     end
 end
 
-if type -q yarn
-    set -U fish_user_paths (yarn global bin) $fish_user_paths
-end
+# Yarn path handled by corepack (bundled with Node.js)
 
 # VSCode/Cursor Configuration
 if test "$TERM_PROGRAM" = "vscode"; or set -q VSCODE_CWD
