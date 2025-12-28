@@ -124,8 +124,34 @@ ignore_variables
 # Starship prompt - suppress warning logs
 set -Ux STARSHIP_LOG error
 
+# Evalcache for starship init - caches generated shell code
+# Invalidates when starship version changes
+# Note: Uses --print-full-init to cache the actual init code (not the stub)
+function _starship_init_cached
+    set -l cache_dir ~/.cache/fish
+    set -l cache_file $cache_dir/starship_init.fish
+    set -l version_file $cache_dir/starship_init.version
+
+    # Get current starship version
+    set -l current_version (starship --version 2>/dev/null | head -1)
+
+    # Check cache validity
+    if test -f "$cache_file" -a -f "$version_file"
+        if test "$current_version" = (cat "$version_file" 2>/dev/null)
+            source "$cache_file"
+            return
+        end
+    end
+
+    # Generate and cache (use --print-full-init for actual code)
+    mkdir -p "$cache_dir"
+    starship init fish --print-full-init > "$cache_file"
+    echo "$current_version" > "$version_file"
+    source "$cache_file"
+end
+
 if type -q starship
-    starship init fish | source
+    _starship_init_cached
 end
 
 # History Configuration
