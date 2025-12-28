@@ -14,7 +14,10 @@ end
 if command -sq mise
     # Add mise to PATH if it's not already there
     fish_add_path ~/.local/bin
-    
+
+    # Lazy activation - defer hook-env until command execution
+    set -gx mise_fish_mode eval_after_arrow
+
     # Initialize mise
     mise activate fish | source
     
