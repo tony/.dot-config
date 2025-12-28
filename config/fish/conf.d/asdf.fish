@@ -19,6 +19,8 @@ if command -sq mise
     set -gx mise_fish_mode eval_after_arrow
     # Only run full config check on directory change, not every prompt
     set -gx MISE_HOOK_ENV_CHPWD_ONLY true
+    # Cache filesystem stat checks for 5 seconds (helps on WSL2/NFS)
+    set -gx MISE_HOOK_ENV_CACHE_TTL 5s
 
     # Evalcache for mise activate - caches generated shell code
     # Invalidates when mise version changes
