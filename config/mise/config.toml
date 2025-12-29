@@ -17,3 +17,6 @@ MISE_PYTHON_COMPILE = "1"
 # Add some useful aliases
 py = "python"
 node-lts = "node@lts"
+
+[tools]
+just = "1.45.0"
