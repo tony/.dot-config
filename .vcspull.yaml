@@ -160,6 +160,8 @@
     repo: hg+https://hg.libsdl.org/SDL
   ck:
     repo: git+https://github.com/concurrencykit/ck.git
+  cmocka:
+    repo: git@github.com:clibs/cmocka.git
   cpython:
     repo: git+https://github.com/python/cpython.git
   craft:
