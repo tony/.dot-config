@@ -896,6 +896,8 @@
     repo: git+https://github.com/rbarrois/factory_boy.git
   fastapi:
     repo: git@github.com:fastapi/fastapi.git
+  filelock:
+    repo: git@github.com:tox-dev/filelock.git
   fn.py:
     repo: git+https://github.com/kachayev/fn.py.git
   ftfy:
@@ -1361,6 +1363,8 @@
     repo: git+https://github.com/mitsuhiko/werkzeug.git
   wtforms:
     repo: git+https://github.com/Khan/wtforms.git
+  xdoctest:
+    repo: git@github.com:Erotemic/xdoctest.git
   youcompleteme:
     repo: git+https://github.com/Valloric/YouCompleteMe.git
   youtube-dl:
