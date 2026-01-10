@@ -1129,7 +1129,9 @@
       tony: git+ssh://git@github.com/tony/pygit2.git
     repo: git+https://github.com/libgit2/pygit2.git
   pygments:
-    repo: hg+https://bitbucket.org/birkenfeld/pygments-main
+    remotes:
+      tony: git+ssh://git@github.com/tony/pygments.git
+    repo: git+https://github.com/pygments/pygments.git
   pyjf3:
     repo: git+https://github.com/atsuoishimoto/pyjf3.git
   pymux:

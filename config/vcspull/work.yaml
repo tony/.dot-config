@@ -305,10 +305,6 @@
     remotes:
       tony: git+ssh://git@github.com/tony/pydoc-markdown.git
     repo: git+https://github.com/NiklasRosenstein/pydoc-markdown.git
-  pygments:
-    remotes:
-      tony: git+ssh://git@github.com/tony/pygments.git
-    repo: git+https://github.com/pygments/pygments.git
   pypdf2:
     remotes:
       eduflow: git+ssh://git@github.com/eduflow/PyPDF2.git
