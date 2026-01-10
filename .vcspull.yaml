@@ -21,6 +21,8 @@
     repo: git@github.com:libsdl-org/SDL.git
   SDL_shadercross:
     repo: https://github.com/libsdl-org/SDL_shadercross.git
+  WSL:
+    repo: git@github.com:microsoft/WSL.git
   anax:
     repo: git+https://github.com/miguelmartin75/anax
   benchmark:
@@ -59,6 +61,8 @@
     repo: git+https://github.com/google/googletest
   imgui:
     repo: git@github.com:ocornut/imgui.git
+  immer:
+    repo: https://github.com/arximboldi/immer
   jucipp:
     remotes:
       tony: git+ssh://git@github.com/tony/jucipp.git
@@ -147,6 +151,8 @@
     remotes:
       tony: git+ssh://git@github.com/tony/v8.git
     repo: git+ssh://github.com/v8/v8.git
+  yoga:
+    repo: git@github.com:facebook/yoga.git
 ~/study/c/:
   SDL2:
     repo: hg+https://hg.libsdl.org/SDL
