@@ -1441,6 +1441,8 @@
     repo: git+https://github.com/pydantic/pydantic-core.git
   pyo3:
     repo: git+https://github.com/PyO3/pyo3.git
+  pyxel:
+    repo: git@github.com:kitao/pyxel.git
   pyxirr:
     repo: git+https://github.com/Anexen/pyxirr.git
   ruff:
