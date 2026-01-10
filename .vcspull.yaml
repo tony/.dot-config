@@ -1450,20 +1450,50 @@
 ~/study/rust/:
   alacritty:
     repo: git@github.com:alacritty/alacritty.git
+  axum:
+    repo: https://github.com/tokio-rs/axum.git
+  backon:
+    repo: git@github.com:Xuanwo/backon.git
+  bacon:
+    repo: git@github.com:Canop/bacon.git
+  chrono:
+    repo: https://github.com/chronotope/chrono.git
+  clap:
+    repo: https://github.com/clap-rs/clap.git
   close_fds:
     repo: https://github.com/cptpcrd/close_fds
   codex:
     repo: https://github.com/openai/codex.git
+  console:
+    repo: git@github.com:tokio-rs/console.git
+  crossbeam:
+    repo: git@github.com:crossbeam-rs/crossbeam.git
+  dashmap:
+    repo: https://github.com/xacrimon/dashmap.git
+  deadpool:
+    repo: git@github.com:deadpool-rs/deadpool.git
+  diesel:
+    repo: https://github.com/diesel-rs/diesel.git
   fish-shell:
     repo: git@github.com:fish-shell/fish-shell.git
+  flume:
+    repo: git@github.com:zesterer/flume.git
+  gitoxide:
+    repo: git@github.com:GitoxideLabs/gitoxide.git
   gitui:
     repo: git+https://github.com/extrawurst/gitui.git
   gpui-component:
     repo: git@github.com:longbridge/gpui-component.git
+  gritql:
+    repo: git@github.com:biomejs/gritql.git
   helix:
     repo: git@github.com:helix-editor/helix.git
   insta:
     repo: git@github.com:mitsuhiko/insta.git
+  jj:
+    repo: git@github.com:jj-vcs/jj.git
+  json:
+    repo: https://github.com/serde-rs/json.git
   just:
     repo: git@github.com:casey/just.git
   learning-rust:
@@ -1474,38 +1504,66 @@
     repo: git+ssh://git@github.com/tony/learning-rust-python.git
   log:
     repo: git@github.com:rust-lang/log.git
+  loom:
+    repo: git@github.com:tokio-rs/loom.git
   mcp-sdk:
     repo: git@github.com:modelcontextprotocol/rust-sdk.git
+  mio:
+    repo: git@github.com:tokio-rs/mio.git
   mise:
     repo: git@github.com:jdx/mise.git
   mq:
     repo: git@github.com:harehare/mq.git
+  notify:
+    repo: git@github.com:notify-rs/notify.git
+  ormlite:
+    repo: https://github.com/kurtbuilds/ormlite.git
   pagefind:
     repo: git@github.com:Pagefind/pagefind.git
   ratatui:
     repo: git@github.com:ratatui/ratatui.git
+  rayon:
+    repo: https://github.com/rayon-rs/rayon.git
+  reqwest:
+    repo: git@github.com:seanmonstar/reqwest.git
   ripgrep:
     repo: git+https://github.com/BurntSushi/ripgrep.git
+  rorm:
+    repo: https://github.com/rorm-orm/rorm.git
   rslint:
     repo: git+https://github.com/rslint/rslint.git
   rust:
     repo: git+https://github.com/rust-lang/rust.git
   rust-sdl2:
     repo: git+https://github.com/Rust-SDL2/rust-sdl2.git
+  rust-url:
+    repo: https://github.com/servo/rust-url.git
   rust-yamux:
     repo: git@github.com:libp2p/rust-yamux.git
   rustlings:
     repo: git+ssh://git@github.com/tony/rustlings.git
   rye:
     repo: git+ssh://git@github.com/astral-sh/uv.git
+  sea-orm:
+    repo: https://github.com/SeaQL/sea-orm.git
+  serde:
+    repo: https://github.com/serde-rs/serde.git
+  sqlx:
+    repo: https://github.com/launchbadge/sqlx.git
   starship:
     repo: git+https://github.com/starship/starship.git
+  time:
+    repo: https://github.com/time-rs/time.git
   tokio:
     repo: git@github.com:tokio-rs/tokio.git
   tracing:
     repo: https://github.com/tokio-rs/tracing
   tui-rs:
     repo: git+https://github.com/fdehau/tui-rs.git
+  uuid:
+    repo: https://github.com/uuid-rs/uuid.git
+  watchexec:
+    repo: git@github.com:watchexec/watchexec.git
   wezterm:
     repo: git@github.com:wezterm/wezterm.git
   zellij:
