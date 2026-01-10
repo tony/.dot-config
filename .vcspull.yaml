@@ -183,6 +183,8 @@
     repo: git+https://github.com/i3/i3.git
   jemalloc:
     repo: git+https://github.com/jemalloc/jemalloc
+  jq:
+    repo: git@github.com:jqlang/jq.git
   klib:
     repo: git+https://github.com/attractivechaos/klib.git
   libevent:
@@ -243,6 +245,8 @@
     remotes:
       tony: git+ssh://git@github.com/tony/the_silver_searcher.git
     repo: git+https://github.com/ggreer/the_silver_searcher.git
+  tig:
+    repo: git@github.com:jonas/tig.git
   tmux:
     remotes:
       tony: git+ssh://git@github.com/tony/tmux.git
