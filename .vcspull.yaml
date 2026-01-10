@@ -1647,6 +1647,8 @@
     repo: git@github.com:withastro/astro.git
   astro-pagefind:
     repo: git@github.com:shishkin/astro-pagefind.git
+  babylon-havok:
+    repo: git@github.com:BabylonJS/havok.git
   billboard.js:
     repo: git@github.com:naver/billboard.js.git
   biome-website:
@@ -1669,10 +1671,14 @@
     repo: git@github.com:KonghaYao/cn-font-split.git
   commander.js:
     repo: git@github.com:tj/commander.js.git
+  core:
+    repo: git@github.com:vuejs/core.git
   cva:
     repo: git@github.com:joe-bell/cva.git
   data-forge-ts:
     repo: git+https://github.com/data-forge/data-forge-ts.git
+  dockview:
+    repo: git@github.com:mathuo/dockview.git
   drizzle-orm:
     repo: git@github.com:drizzle-team/drizzle-orm.git
   expressive-code:
@@ -1689,6 +1695,8 @@
     repo: git@github.com:capricorn86/happy-dom.git
   headlessui:
     repo: git@github.com:tailwindlabs/headlessui.git
+  htm:
+    repo: git@github.com:developit/htm.git
   ink:
     repo: git@github.com:vadimdemedes/ink.git
   ink-testing-library:
@@ -1711,12 +1719,16 @@
     repo: https://github.com/mswjs/msw
   mystmd:
     repo: git@github.com:jupyter-book/mystmd.git
+  nanostores:
+    repo: git@github.com:nanostores/nanostores.git
   next.js:
     remotes:
       tony: git+ssh://git@github.com/tony/next.js.git
     repo: git+https://github.com/vercel/next.js.git
   nivo:
     repo: git@github.com:plouc/nivo.git
+  petite-vue:
+    repo: git@github.com:vuejs/petite-vue.git
   picocolors:
     repo: git@github.com:alexeyraspopov/picocolors.git
   pino:
@@ -1729,6 +1741,8 @@
     repo: git@github.com:plotly/plotly.js.git
   pnpm:
     repo: git@github.com:pnpm/pnpm.git
+  preact:
+    repo: git@github.com:preactjs/preact.git
   primer-react:
     repo: git@github.com:primer/react.git
   radix-primitives:
@@ -1741,6 +1755,8 @@
     repo: git@github.com:pmndrs/react-spring.git
   react-testing-library:
     repo: https://github.com/testing-library/react-testing-library
+  rollup-plugin-visualizer:
+    repo: https://github.com/btd/rollup-plugin-visualizer
   salt-ui:
     repo: git+https://github.com/saltstack/salt-ui.git
   search-input-query:
@@ -1755,6 +1771,8 @@
     repo: git@github.com:storybookjs/storybook.git
   storybook-docs:
     repo: git@github.com:storybookjs/web.git
+  svelte:
+    repo: git@github.com:sveltejs/svelte.git
   tailwindcss:
     repo: https://github.com/tailwindlabs/tailwindcss
   tailwindcss.com:
