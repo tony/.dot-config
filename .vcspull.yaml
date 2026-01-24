@@ -1443,6 +1443,10 @@
     repo: git@github.com:Xuanwo/backon.git
   bacon:
     repo: git@github.com:Canop/bacon.git
+  cargo:
+    repo: git@github.com:rust-lang/cargo.git
+  cargo-xtask:
+    repo: git@github.com:matklad/cargo-xtask.git
   chrono:
     repo: https://github.com/chronotope/chrono.git
   clap:
@@ -1521,6 +1525,8 @@
     repo: git+https://github.com/rslint/rslint.git
   rust:
     repo: git+https://github.com/rust-lang/rust.git
+  rust-analyzer:
+    repo: git@github.com:rust-lang/rust-analyzer.git
   rust-sdl2:
     repo: git+https://github.com/Rust-SDL2/rust-sdl2.git
   rust-url:
@@ -1529,6 +1535,8 @@
     repo: git@github.com:libp2p/rust-yamux.git
   rustlings:
     repo: git+ssh://git@github.com/tony/rustlings.git
+  rustup:
+    repo: git@github.com:rust-lang/rustup.git
   rye:
     repo: git+ssh://git@github.com/astral-sh/uv.git
   sea-orm:
