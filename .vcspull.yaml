@@ -1430,6 +1430,8 @@
     repo: git+https://github.com/Anexen/pyxirr.git
   ruff:
     repo: git+ssh://git@github.com/astral-sh/ruff.git
+  ty:
+    repo: git@github.com:astral-sh/ty.git
   uv:
     repo: git+ssh://git@github.com/astral-sh/uv.git
 ~/study/rust/:
