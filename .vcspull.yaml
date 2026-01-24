@@ -1375,35 +1375,6 @@
     repo: git+https://github.com/Valloric/YouCompleteMe.git
   youtube-dl:
     repo: git+https://github.com/rg3/youtube-dl.git
-~/study/react/:
-  express-react-views:
-    repo: git+https://github.com/reactjs/express-react-views
-  material-ui:
-    remotes:
-      tony: git+ssh://git@github.com/tony/material-ui.git
-    repo: git+https://github.com/callemall/material-ui.git
-  react:
-    repo: git+https://github.com/facebook/react
-  react-autocomplete:
-    repo: git+https://github.com/eliseumds/react-autocomplete.git
-  react-file:
-    repo: git+https://github.com/firebase/reactfire.git
-  react-future:
-    repo: git+https://github.com/reactjs/react-future.git
-  react-intl:
-    repo: git+https://github.com/yahoo/react-intl.git
-  react-magic:
-    repo: git+https://github.com/reactjs/react-magic.git
-  react-page:
-    repo: git+https://github.com/reactjs/react-page.git
-  react-page-middleware:
-    repo: git+https://github.com/reactjs/react-page-middleware.git
-  react-python:
-    repo: git+https://github.com/reactjs/react-python.git
-  react-router:
-    repo: git+https://github.com/rackt/react-router
-  react-tutorial:
-    repo: git+https://github.com/reactjs/react-tutorial.git
 ~/study/ruby/:
   rails:
     repo: git+https://github.com/rails/rails.git
@@ -1747,6 +1718,8 @@
     repo: git@github.com:mathuo/dockview.git
   drizzle-orm:
     repo: git@github.com:drizzle-team/drizzle-orm.git
+  express-react-views:
+    repo: git+https://github.com/reactjs/express-react-views
   expressive-code:
     repo: https://github.com/expressive-code/expressive-code
   fast-json-patch:
@@ -1773,6 +1746,10 @@
     repo: git@github.com:tajo/ladle.git
   lit:
     repo: git@github.com:lit/lit.git
+  material-ui:
+    remotes:
+      tony: git+ssh://git@github.com/tony/material-ui.git
+    repo: git+https://github.com/callemall/material-ui.git
   memfs:
     repo: git@github.com:streamich/memfs.git
   mobx:
@@ -1815,12 +1792,34 @@
     repo: git@github.com:radix-ui/primitives.git
   radix-website:
     repo: git@github.com:radix-ui/website.git
+  react:
+    repo: git+https://github.com/facebook/react
+  react-autocomplete:
+    repo: git+https://github.com/eliseumds/react-autocomplete.git
+  react-file:
+    repo: git+https://github.com/firebase/reactfire.git
+  react-future:
+    repo: git+https://github.com/reactjs/react-future.git
+  react-intl:
+    repo: git+https://github.com/yahoo/react-intl.git
+  react-magic:
+    repo: git+https://github.com/reactjs/react-magic.git
+  react-page:
+    repo: git+https://github.com/reactjs/react-page.git
+  react-page-middleware:
+    repo: git+https://github.com/reactjs/react-page-middleware.git
+  react-python:
+    repo: git+https://github.com/reactjs/react-python.git
+  react-router:
+    repo: git+https://github.com/rackt/react-router
   react-select:
     repo: git@github.com:JedWatson/react-select.git
   react-spring:
     repo: git@github.com:pmndrs/react-spring.git
   react-testing-library:
     repo: https://github.com/testing-library/react-testing-library
+  react-tutorial:
+    repo: git+https://github.com/reactjs/react-tutorial.git
   rollup-plugin-visualizer:
     repo: https://github.com/btd/rollup-plugin-visualizer
   salt-ui:
