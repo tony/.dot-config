@@ -1730,16 +1730,28 @@
     repo: git@github.com:floating-ui/floating-ui.git
   get-port:
     repo: git@github.com:sindresorhus/get-port.git
+  github-slugger:
+    repo: https://github.com/Flet/github-slugger.git
   happy-dom:
     repo: git@github.com:capricorn86/happy-dom.git
+  hast-util-from-html:
+    repo: https://github.com/syntax-tree/hast-util-from-html.git
+  hast-util-to-text:
+    repo: https://github.com/syntax-tree/hast-util-to-text.git
   headlessui:
     repo: git@github.com:tailwindlabs/headlessui.git
   htm:
     repo: git@github.com:developit/htm.git
+  import-meta-resolve:
+    repo: https://github.com/wooorm/import-meta-resolve.git
   ink:
     repo: git@github.com:vadimdemedes/ink.git
   ink-testing-library:
     repo: git@github.com:vadimdemedes/ink-testing-library.git
+  instantsearch:
+    repo: git@github.com:algolia/instantsearch.git
+  js-yaml:
+    repo: https://github.com/nodeca/js-yaml.git
   jsdom:
     repo: git@github.com:jsdom/jsdom.git
   ladle:
@@ -1750,6 +1762,8 @@
     remotes:
       tony: git+ssh://git@github.com/tony/material-ui.git
     repo: git+https://github.com/callemall/material-ui.git
+  mdast-util-definitions:
+    repo: https://github.com/syntax-tree/mdast-util-definitions.git
   memfs:
     repo: git@github.com:streamich/memfs.git
   mobx:
@@ -1820,6 +1834,18 @@
     repo: https://github.com/testing-library/react-testing-library
   react-tutorial:
     repo: git+https://github.com/reactjs/react-tutorial.git
+  rehype:
+    repo: https://github.com/rehypejs/rehype.git
+  rehype-raw:
+    repo: https://github.com/rehypejs/rehype-raw.git
+  remark:
+    repo: https://github.com/remarkjs/remark.git
+  remark-gfm:
+    repo: https://github.com/remarkjs/remark-gfm.git
+  remark-rehype:
+    repo: https://github.com/remarkjs/remark-rehype.git
+  remark-smartypants:
+    repo: https://github.com/silvenon/remark-smartypants.git
   rollup-plugin-visualizer:
     repo: https://github.com/btd/rollup-plugin-visualizer
   salt-ui:
@@ -1828,6 +1854,12 @@
     remotes:
       tony: git+ssh://git@github.com/tony/search-input-query.git
     repo: git+https://github.com/williamcotton/search-input-query.git
+  search-ui:
+    repo: git@github.com:elastic/search-ui.git
+  shiki:
+    repo: https://github.com/shikijs/shiki.git
+  smol-toml:
+    repo: https://github.com/squirrelchat/smol-toml.git
   solid:
     repo: git@github.com:solidjs/solid.git
   starlight:
@@ -1856,12 +1888,24 @@
     repo: https://github.com/tremorlabs/tremor.git
   tremor-blocks:
     repo: https://github.com/tremorlabs/tremor-blocks.git
+  tsgolint:
+    repo: git@github.com:oxc-project/tsgolint.git
   typescript:
     repo: git+https://github.com/Microsoft/TypeScript.git
   typescript-config:
     repo: git@github.com:0x80/typescript-config.git
+  unified:
+    repo: https://github.com/unifiedjs/unified.git
+  unist-util-remove-position:
+    repo: https://github.com/syntax-tree/unist-util-remove-position.git
+  unist-util-visit:
+    repo: https://github.com/syntax-tree/unist-util-visit.git
+  unist-util-visit-parents:
+    repo: https://github.com/syntax-tree/unist-util-visit-parents.git
   vega-lite:
     repo: git@github.com:vega/vega-lite.git
+  vfile:
+    repo: https://github.com/vfile/vfile.git
   victory:
     repo: git@github.com:FormidableLabs/victory.git
   vite:
