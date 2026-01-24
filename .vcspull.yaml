@@ -23,6 +23,8 @@
     repo: git@github.com:libsdl-org/SDL.git
   SDL_shadercross:
     repo: https://github.com/libsdl-org/SDL_shadercross.git
+  UnrealEngine:
+    repo: git@github.com:EpicGames/UnrealEngine.git
   WSL:
     repo: git@github.com:microsoft/WSL.git
   anax:
@@ -119,6 +121,8 @@
     remotes:
       tony: git+ssh://git@github.com/tony/oxygine-framework.git
     repo: git+https://github.com/oxygine/oxygine-framework.git
+  perfetto:
+    repo: git@github.com:google/perfetto.git
   protobuf:
     remotes:
       tony: git+ssh://git@github.com/tony/protobuf.git
@@ -129,6 +133,8 @@
     repo: git+https://github.com/pybind/pybind11.git
   re2:
     repo: git+https://github.com/google/re2.git
+  simdjson:
+    repo: git@github.com:simdjson/simdjson.git
   skia:
     remotes:
       aseprite: git+https://github.com/aseprite/skia
