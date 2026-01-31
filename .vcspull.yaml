@@ -774,6 +774,33 @@
 ~/study/node/:
   express:
     repo: git+https://github.com/visionmedia/express.git
+~/study/otel/:
+  opentelemetry-collector:
+    repo: https://github.com/open-telemetry/opentelemetry-collector
+  opentelemetry-collector-contrib:
+    repo: https://github.com/open-telemetry/opentelemetry-collector-contrib
+  opentelemetry-configuration:
+    repo: git@github.com:open-telemetry/opentelemetry-configuration.git
+  opentelemetry-cpp:
+    repo: https://github.com/open-telemetry/opentelemetry-cpp
+  opentelemetry-cpp-contrib:
+    repo: git@github.com:open-telemetry/opentelemetry-cpp-contrib.git
+  opentelemetry-js:
+    repo: https://github.com/open-telemetry/opentelemetry-js
+  opentelemetry-js-contrib:
+    repo: git@github.com:open-telemetry/opentelemetry-js-contrib.git
+  opentelemetry-proto:
+    repo: git@github.com:open-telemetry/opentelemetry-proto.git
+  opentelemetry-python-contrib:
+    repo: https://github.com/open-telemetry/opentelemetry-python-contrib
+  opentelemetry-rust:
+    repo: git@github.com:open-telemetry/opentelemetry-rust.git
+  opentelemetry-rust-contrib:
+    repo: git@github.com:open-telemetry/opentelemetry-rust-contrib.git
+  opentelemetry-specification:
+    repo: git@github.com:open-telemetry/opentelemetry-specification.git
+  semantic-conventions:
+    repo: https://github.com/open-telemetry/semantic-conventions
 ~/study/php/:
   laravel:
     repo: git+https://github.com/laravel/laravel.git
