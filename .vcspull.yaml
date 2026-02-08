@@ -939,6 +939,8 @@
     repo: git+https://github.com/rbarrois/factory_boy.git
   fastapi:
     repo: git@github.com:fastapi/fastapi.git
+  fawltydeps:
+    repo: https://github.com/tweag/fawltydeps.git
   filelock:
     repo: git@github.com:tox-dev/filelock.git
   fn.py:
@@ -953,6 +955,8 @@
     repo: git+https://github.com/surfly/gevent.git
   gist-api:
     repo: git+https://github.com/kennethreitz/gistapi.py.git
+  git-remote-codecommit:
+    repo: git@github.com:aws/git-remote-codecommit.git
   gitdb:
     remotes:
       tony: git+ssh://git@github.com/tony/gitdb.git
@@ -1171,6 +1175,8 @@
     remotes:
       tony: git+ssh://git@github.com/tony/pygments.git
     repo: git+https://github.com/pygments/pygments.git
+  pyinstaller:
+    repo: git@github.com:pyinstaller/pyinstaller.git
   pyjf3:
     repo: git+https://github.com/atsuoishimoto/pyjf3.git
   pymux:
@@ -1320,6 +1326,8 @@
     repo: git@github.com:tox-dev/sphinx-autodoc-typehints.git
   sphinx-contrib:
     repo: hg+https://bitbucket.org/birkenfeld/sphinx-contrib
+  sphinx-copybutton:
+    repo: git@github.com:executablebooks/sphinx-copybutton.git
   sphinx-testing:
     remotes:
       tony: git+ssh://git@github.com/tony/sphinx-testing.git
