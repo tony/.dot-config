@@ -8,6 +8,8 @@
   gptme:
     repo: https://github.com/gptme/gptme
 ~/study/ai/:
+  claude-plugins-official:
+    repo: git@github.com:anthropics/claude-plugins-official.git
   tiktoken:
     remotes:
       tony: git+ssh://git@github.com/tony/tiktoken.git
