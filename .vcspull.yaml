@@ -10,6 +10,12 @@
 ~/study/ai/:
   claude-plugins-official:
     repo: git@github.com:anthropics/claude-plugins-official.git
+  prompts.chat:
+    repo: git@github.com:f/prompts.chat.git
+  repomix:
+    repo: git@github.com:yamadashy/repomix.git
+  superpowers:
+    repo: git@github.com:obra/superpowers.git
   tiktoken:
     remotes:
       tony: git+ssh://git@github.com/tony/tiktoken.git
