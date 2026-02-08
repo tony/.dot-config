@@ -2033,3 +2033,6 @@
     remotes:
       tony: git+ssh://git@github.com/tony/zsh-autoswitch-virtualenv.git
     repo: git+https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git
+~/work/ai/:
+  claude-plugins:
+    repo: git@github.com:tony/claude-plugins.git
