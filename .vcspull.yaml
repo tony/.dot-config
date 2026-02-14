@@ -1841,6 +1841,8 @@
     repo: git@github.com:xaviergonz/mobx-keystone.git
   mobx-state-tree:
     repo: git@github.com:mobxjs/mobx-state-tree.git
+  model-viewer:
+    repo: git@github.com:google/model-viewer.git
   msw:
     repo: https://github.com/mswjs/msw
   mystmd:
@@ -1953,6 +1955,8 @@
     repo: git@github.com:TanStack/table.git
   tanstack-virtual:
     repo: git@github.com:TanStack/virtual.git
+  three.js:
+    repo: git@github.com:mrdoob/three.js.git
   tremor:
     repo: https://github.com/tremorlabs/tremor.git
   tremor-blocks:
