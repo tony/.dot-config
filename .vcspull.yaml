@@ -5,12 +5,24 @@
     repo: git@github.com:anthropics/claude-code.git
   codex:
     repo: org-14957082@github.com:openai/codex.git
+  deepagents:
+    repo: git@github.com:langchain-ai/deepagents.git
   gemini-cli:
     repo: git@github.com:google-gemini/gemini-cli.git
   google-adk-python:
     repo: git@github.com:google/adk-python.git
   gptme:
     repo: https://github.com/gptme/gptme
+  langchain:
+    repo: git@github.com:langchain-ai/langchain.git
+  langgraph:
+    repo: git@github.com:langchain-ai/langgraph.git
+  local-deep-researcher:
+    repo: git@github.com:langchain-ai/local-deep-researcher.git
+  open-swe:
+    repo: git@github.com:langchain-ai/open-swe.git
+  open_deep_research:
+    repo: git@github.com:langchain-ai/open_deep_research.git
   openai-cookbook:
     repo: org-14957082@github.com:openai/openai-cookbook.git
   openskills:
