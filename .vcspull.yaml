@@ -548,6 +548,8 @@
     repo: git+https://github.com/cdarwin/go-koans.git
   go-python:
     repo: git+https://github.com/sbinet/go-python
+  jaeger:
+    repo: git@github.com:jaegertracing/jaeger.git
   jetpack:
     repo: git+https://github.com/3ofcoins/jetpack.git
   learn-go-with-tests:
