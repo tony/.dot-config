@@ -3,10 +3,20 @@
     repo: git@github.com:Aider-AI/aider.git
   claude-code:
     repo: git@github.com:anthropics/claude-code.git
+  codex:
+    repo: org-14957082@github.com:openai/codex.git
   gemini-cli:
     repo: git@github.com:google-gemini/gemini-cli.git
+  google-adk-python:
+    repo: git@github.com:google/adk-python.git
   gptme:
     repo: https://github.com/gptme/gptme
+  openai-cookbook:
+    repo: org-14957082@github.com:openai/openai-cookbook.git
+  openskills:
+    repo: git@github.com:numman-ali/openskills.git
+  vercel-skills:
+    repo: git@github.com:vercel-labs/skills.git
 ~/study/ai/:
   claude-plugins-official:
     repo: git@github.com:anthropics/claude-plugins-official.git
