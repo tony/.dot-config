@@ -1931,6 +1931,8 @@
     repo: https://github.com/remarkjs/remark-rehype.git
   remark-smartypants:
     repo: https://github.com/silvenon/remark-smartypants.git
+  rollup:
+    repo: git@github.com:rollup/rollup.git
   rollup-plugin-visualizer:
     repo: https://github.com/btd/rollup-plugin-visualizer
   salt-ui:
