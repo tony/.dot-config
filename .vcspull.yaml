@@ -1231,6 +1231,10 @@
     repo: git+https://github.com/pytest-dev/pytest.git
   pytest-asyncio:
     repo: git@github.com:pytest-dev/pytest-asyncio.git
+  pytest-django:
+    remotes:
+      develtech: git+ssh://git@github.com/develtech/pytest-django.git
+    repo: git+https://github.com/pytest-dev/pytest-django.git
   pytest-docker:
     repo: https://github.com/avast/pytest-docker
   pytest-docker-tools:
@@ -1292,6 +1296,10 @@
     repo: git+ssh://git@github.com/tony/reenvisioning-django.git
   requests:
     repo: git+https://github.com/kennethreitz/requests.git
+  responses:
+    remotes:
+      tony: git+ssh://git@github.com/tony/responses.git
+    repo: git+https://github.com/getsentry/responses.git
   rich:
     remotes:
       tony: git+ssh://git@github.com/tony/rich.git

@@ -310,10 +310,6 @@
       eduflow: git+ssh://git@github.com/eduflow/PyPDF2.git
       tony: git+ssh://git@github.com/tony/PyPDF2.git
     repo: git+https://github.com/mstamy2/PyPDF2.git
-  pytest-django:
-    remotes:
-      develtech: git+ssh://git@github.com/develtech/pytest-django.git
-    repo: git+https://github.com/pytest-dev/pytest-django.git
   pytest-sphinx:
     remotes:
       tony: git+ssh://git@github.com/tony/pytest-sphinx.git
