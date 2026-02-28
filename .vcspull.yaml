@@ -932,6 +932,10 @@
     repo: git+https://github.com/jazzband/django-silk.git
   django-storages:
     repo: git+https://github.com/jschneier/django-storages.git
+  django-tasks:
+    repo: git+https://github.com/RealOrangeOne/django-tasks.git
+  django-tasks-db:
+    repo: git+https://github.com/RealOrangeOne/django-tasks-db.git
   django-stubs:
     remotes:
       tony: git+ssh://git@github.com/tony/django-stubs.git
