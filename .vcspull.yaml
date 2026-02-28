@@ -399,69 +399,6 @@
 ~/study/devops-books/:
   github-cheat-sheet:
     repo: git+https://github.com/tiimgreen/github-cheat-sheet.git
-~/study/django/:
-  aldjemy:
-    repo: git+https://github.com/Deepwalker/aldjemy.git
-  coffin:
-    repo: git+https://github.com/coffin/coffin.git
-  dj-stripe:
-    remotes:
-      tony: git+https://github.com/tony/dj-stripe
-    repo: git+https://github.com/pydanny/dj-stripe
-  django:
-    remotes:
-      tony: git+ssh://git@github.com/tony/django.git
-    repo: git+https://github.com/django/django.git
-  django-activeurl:
-    remotes:
-      develtech: git+ssh://git@github.com/develtech/django-activeurl.git
-    repo: git+https://github.com/hellysmile/django-activeurl.git
-  django-basic-apps:
-    repo: git+https://github.com/nathanborror/django-basic-apps.git
-  django-celery:
-    repo: git+https://github.com/celery/django-celery.git
-  django-cities:
-    repo: git+https://github.com/coderholic/django-cities.git
-  django-cms:
-    remotes:
-      tony: git+ssh://git@github.com/tony/django-cms.git
-    repo: git+https://github.com/divio/django-cms.git
-  django-crispy-forms:
-    repo: git+https://github.com/maraujop/django-crispy-forms.git
-  django-debug-toolbar:
-    repo: git+https://github.com/django-debug-toolbar/django-debug-toolbar.git
-  django-extensions:
-    remotes:
-      tony: git+https://github.com/tony/django-extensions.git
-    repo: git+https://github.com/django-extensions/django-extensions.git
-  django-filter:
-    remotes:
-      develtech: git+https://github.com/develtech/django-filter.git
-    repo: git+https://github.com/carltongibson/django-filter.git
-  django-mptt:
-    repo: git+https://github.com/django-mptt/django-mptt.git
-  django-pg-zero-downtime-migrations:
-    remotes:
-      eduflow: git+ssh://git@github.com/eduflow/django-pg-zero-downtime-migrations.git
-      tony: git+ssh://git@github.com/tony/django-pg-zero-downtime-migrations.git
-    repo: git+https://github.com/tbicr/django-pg-zero-downtime-migrations.git
-  django-silk:
-    remotes:
-      eduflow: git+ssh://git@github.com/eduflow/django-silk.git
-      tony: git+ssh://git@github.com/tony/django-silk.git
-    repo: git+https://github.com/jazzband/django-silk.git
-  django-storages:
-    repo: git+https://github.com/jschneier/django-storages.git
-  django-taggit:
-    repo: git+https://github.com/alex/django-taggit.git
-  django-treebeard:
-    remotes:
-      tony: git+https://github.com/tony/django-treebeard
-    repo: git+https://github.com/tabo/django-treebeard
-  wagtail:
-    remotes:
-      tony: git+ssh://git@github.com/tony/wagtail.git
-    repo: git+https://github.com/torchbox/wagtail.git
 ~/study/dotnet/:
   coreclr:
     remotes:
@@ -871,6 +808,8 @@
     repo: git@github.com:OpenHands/OpenHands.git
   RootTheBox:
     repo: git+https://github.com/moloch--/RootTheBox.git
+  aldjemy:
+    repo: git+https://github.com/Deepwalker/aldjemy.git
   alembic:
     repo: git+https://github.com/zzzeek/alembic.git
   ansible:
@@ -935,6 +874,8 @@
     repo: git@github.com:awslabs/cli-agent-orchestrator.git
   click:
     repo: git+https://github.com/mitsuhiko/click.git
+  coffin:
+    repo: git+https://github.com/coffin/coffin.git
   cookiecutter:
     remotes:
       tony: git+https://github.com/tony/cookiecutter.git
@@ -943,10 +884,64 @@
     repo: git+https://github.com/atsuoishimoto/python.curses_ex.git
   cython-book:
     repo: git+https://github.com/redbrain/cython-book.git
+  dj-stripe:
+    remotes:
+      tony: git+https://github.com/tony/dj-stripe
+    repo: git+https://github.com/pydanny/dj-stripe
+  django:
+    remotes:
+      tony: git+ssh://git@github.com/tony/django.git
+    repo: git+https://github.com/django/django.git
+  django-activeurl:
+    remotes:
+      develtech: git+ssh://git@github.com/develtech/django-activeurl.git
+    repo: git+https://github.com/hellysmile/django-activeurl.git
+  django-basic-apps:
+    repo: git+https://github.com/nathanborror/django-basic-apps.git
+  django-celery:
+    repo: git+https://github.com/celery/django-celery.git
+  django-cities:
+    repo: git+https://github.com/coderholic/django-cities.git
+  django-cms:
+    remotes:
+      tony: git+ssh://git@github.com/tony/django-cms.git
+    repo: git+https://github.com/divio/django-cms.git
+  django-crispy-forms:
+    repo: git+https://github.com/maraujop/django-crispy-forms.git
+  django-debug-toolbar:
+    repo: git+https://github.com/django-debug-toolbar/django-debug-toolbar.git
+  django-extensions:
+    remotes:
+      tony: git+https://github.com/tony/django-extensions.git
+    repo: git+https://github.com/django-extensions/django-extensions.git
+  django-filter:
+    remotes:
+      develtech: git+https://github.com/develtech/django-filter.git
+    repo: git+https://github.com/carltongibson/django-filter.git
+  django-mptt:
+    repo: git+https://github.com/django-mptt/django-mptt.git
+  django-pg-zero-downtime-migrations:
+    remotes:
+      eduflow: git+ssh://git@github.com/eduflow/django-pg-zero-downtime-migrations.git
+      tony: git+ssh://git@github.com/tony/django-pg-zero-downtime-migrations.git
+    repo: git+https://github.com/tbicr/django-pg-zero-downtime-migrations.git
+  django-silk:
+    remotes:
+      eduflow: git+ssh://git@github.com/eduflow/django-silk.git
+      tony: git+ssh://git@github.com/tony/django-silk.git
+    repo: git+https://github.com/jazzband/django-silk.git
+  django-storages:
+    repo: git+https://github.com/jschneier/django-storages.git
   django-stubs:
     remotes:
       tony: git+ssh://git@github.com/tony/django-stubs.git
     repo: git+https://github.com/typeddjango/django-stubs.git
+  django-taggit:
+    repo: git+https://github.com/alex/django-taggit.git
+  django-treebeard:
+    remotes:
+      tony: git+https://github.com/tony/django-treebeard
+    repo: git+https://github.com/tabo/django-treebeard
   djangorestframework-api-key:
     remotes:
       tony: git+ssh://git@github.com/tony/djangorestframework-api-key.git
@@ -1438,6 +1433,10 @@
     repo: git+https://github.com/snarez/voltron.git
   w3lib:
     repo: git+https://github.com/scrapy/w3lib
+  wagtail:
+    remotes:
+      tony: git+ssh://git@github.com/tony/wagtail.git
+    repo: git+https://github.com/torchbox/wagtail.git
   warehouse:
     remotes:
       tony: git+https://github.com/tony/warehouse.git
