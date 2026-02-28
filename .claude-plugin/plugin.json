@@ -1,0 +1,9 @@
+{
+  "name": "mise-bump",
+  "description": "Bump tool versions in .tool-versions with changelog-enriched commits",
+  "version": "0.1.0",
+  "author": {
+    "name": "Tony Narlock",
+    "email": "tony@git-pull.com"
+  }
+}
