@@ -936,6 +936,10 @@
     repo: git+https://github.com/RealOrangeOne/django-tasks.git
   django-tasks-db:
     repo: git+https://github.com/RealOrangeOne/django-tasks-db.git
+  django-tasks-local:
+    remotes:
+      tony: git+ssh://git@github.com/tony/django-tasks-local.git
+    repo: git+https://github.com/lincolnloop/django-tasks-local.git
   django-stubs:
     remotes:
       tony: git+ssh://git@github.com/tony/django-stubs.git
