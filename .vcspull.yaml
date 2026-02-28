@@ -1778,6 +1778,8 @@
     remotes:
       tony: git+ssh://git@github.com/tony/akita.git
     repo: git+https://github.com/datorama/akita.git
+  assistant-ui:
+    repo: git@github.com:assistant-ui/assistant-ui.git
   astro:
     repo: git@github.com:withastro/astro.git
   astro-pagefind:
@@ -1902,6 +1904,8 @@
     repo: git@github.com:preactjs/preact.git
   primer-react:
     repo: git@github.com:primer/react.git
+  prompt-kit:
+    repo: git@github.com:ibelick/prompt-kit.git
   radix-primitives:
     repo: git@github.com:radix-ui/primitives.git
   radix-website:
@@ -1958,6 +1962,8 @@
     repo: git+https://github.com/williamcotton/search-input-query.git
   search-ui:
     repo: git@github.com:elastic/search-ui.git
+  shadcn-ui:
+    repo: git@github.com:shadcn-ui/ui.git
   shiki:
     repo: https://github.com/shikijs/shiki.git
   smol-toml:
