@@ -64,7 +64,7 @@ end
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
-    set -lx SHELL fish
+    set -gx SHELL (status fish-path)
 
     # keychain can be expensive on startup; only run it when the current
     # SSH agent socket is missing or invalid.
