@@ -21,20 +21,45 @@ defer = '''
 {% endfor %}{{ hooks?.post | nl }}'''
 
 # -------------------------------------------------------------------
-# starship/starship (with evalcache for version-based invalidation)
+# starship/starship (signature-based cache invalidation + fast profile)
 # -------------------------------------------------------------------
 [plugins.starship]
 inline = '''
+_starship_file_signature() {
+    local file="$1"
+    local sig
+
+    [[ -n "$file" && -e "$file" ]] || return 1
+    sig="$(stat -Lc '%Y:%s' "$file" 2>/dev/null)" || sig="$(stat -f '%m:%z' "$file" 2>/dev/null)" || return 1
+    print -r -- "$file:$sig"
+}
+
 _starship_init_cached() {
     local cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
     local cache_file="$cache_dir/starship_init.zsh"
-    local version_file="$cache_dir/starship_init.version"
-    local current_version
+    local signature_file="$cache_dir/starship_init.signature"
+    local profile="${STARSHIP_PROFILE:-default}"
+    local config_home="${XDG_CONFIG_HOME:-$HOME/.config}"
+    local default_config="$config_home/starship.toml"
+    local fast_config="$config_home/starship-fast.toml"
+    local config_file="${STARSHIP_CONFIG:-$default_config}"
+    local current_signature
+    local starship_bin
 
-    current_version=$(starship --version 2>/dev/null | head -1)
+    if [[ "$profile" == "fast" && -z "${STARSHIP_CONFIG:-}" && -r "$fast_config" ]]; then
+        config_file="$fast_config"
+    fi
 
-    if [[ -f "$cache_file" && -f "$version_file" ]]; then
-        if [[ "$current_version" == "$(<"$version_file")" ]]; then
+    if [[ -r "$config_file" ]]; then
+        export STARSHIP_CONFIG="$config_file"
+    fi
+
+    starship_bin="$(command -v starship 2>/dev/null)" || return
+    current_signature="$(_starship_file_signature "$starship_bin")" || return
+    current_signature="${current_signature}|profile=${profile}"
+
+    if [[ -f "$cache_file" && -f "$signature_file" ]]; then
+        if [[ "$current_signature" == "$(<"$signature_file")" ]]; then
             source "$cache_file"
             return
         fi
@@ -42,10 +67,11 @@ _starship_init_cached() {
 
     mkdir -p "$cache_dir"
     starship init zsh --print-full-init > "$cache_file"
-    print -r -- "$current_version" > "$version_file"
+    print -r -- "$current_signature" > "$signature_file"
     source "$cache_file"
 }
 _starship_init_cached
+unset -f _starship_file_signature _starship_init_cached
 '''
 
 # -------------------------------------------------------------------

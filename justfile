@@ -63,6 +63,7 @@ _install-ssh-config:
 _install-xdg-config:
     mkdir -p ~/.config
     ln -si {{ dot_config_dir }}/config/starship.toml ~/.config/starship.toml
+    ln -si {{ dot_config_dir }}/config/starship-fast.toml ~/.config/starship-fast.toml
     ln -si {{ dot_config_dir }}/config/sheldon/ ~/.config/sheldon
 
 # ══════════════════════════════════════════════════════
