@@ -13,6 +13,45 @@
 
 # Global flag to track if we're in the middle of handling venv
 set -g __VENV_HANDLING 0
+# Cache last resolved project directory to avoid repeated git probes.
+set -g __AUTO_VENV_LAST_PWD ""
+set -g __AUTO_VENV_LAST_DIR ""
+set -g __AUTO_VENV_REPO_ROOT ""
+
+function __resolve_venv_search_dir --description "Resolve venv search dir with git root caching"
+    set -l pwd_real (pwd -P)
+
+    if test "$pwd_real" = "$__AUTO_VENV_LAST_PWD" -a -n "$__AUTO_VENV_LAST_DIR"
+        echo "$__AUTO_VENV_LAST_DIR"
+        return
+    end
+
+    if test -n "$__AUTO_VENV_REPO_ROOT"
+        set -l repo_root_regex (string escape --style=regex -- "$__AUTO_VENV_REPO_ROOT")
+        if string match -qr "^"$repo_root_regex"(/|\$)" -- "$pwd_real"
+            set -g __AUTO_VENV_LAST_PWD "$pwd_real"
+            set -g __AUTO_VENV_LAST_DIR "$__AUTO_VENV_REPO_ROOT"
+            echo "$__AUTO_VENV_REPO_ROOT"
+            return
+        end
+    end
+
+    set -l repo_root (git rev-parse --show-toplevel 2>/dev/null)
+    if test -n "$repo_root"
+        set -l resolved_repo_root (realpath "$repo_root" 2>/dev/null)
+        if test -z "$resolved_repo_root"
+            set resolved_repo_root "$repo_root"
+        end
+        set -g __AUTO_VENV_REPO_ROOT "$resolved_repo_root"
+        set -g __AUTO_VENV_LAST_DIR "$resolved_repo_root"
+    else
+        set -g __AUTO_VENV_REPO_ROOT ""
+        set -g __AUTO_VENV_LAST_DIR "$pwd_real"
+    end
+
+    set -g __AUTO_VENV_LAST_PWD "$pwd_real"
+    echo "$__AUTO_VENV_LAST_DIR"
+end
 
 function __safe_activate_venv
     # Save current state
@@ -40,13 +79,7 @@ function __auto_source_venv --on-variable PWD --description "Activate/Deactivate
     
     set -g __VENV_HANDLING 1
 
-    # Check if we are inside a git repository (single probe).
-    set -l repo_root (git rev-parse --show-toplevel 2>/dev/null)
-    if test -n "$repo_root"
-        set dir (realpath "$repo_root")
-    else
-        set dir (pwd -P)
-    end
+    set dir (__resolve_venv_search_dir)
 
     # Find a virtual environment in the directory
     set -l VENV_DIR_NAMES env .env venv .venv
