@@ -36,7 +36,7 @@ Environment:
 
 Notes:
   - Artifacts are written under .artifacts/shell-perf by default.
-  - Set MISE_STARTUP_MODE=fast to benchmark opt-in fast-mode startup behavior.
+  - Set MISE_STARTUP_MODE=fast and STARSHIP_PROFILE=fast to benchmark opt-in fast-mode startup behavior.
 USAGE
 }
 
@@ -187,7 +187,7 @@ cmd_bench() {
 
   if (( with_fast_mode )); then
     names+=("zsh-startup-fast" "fish-startup-fast")
-    commands+=("MISE_STARTUP_MODE=fast zsh -i -c exit" "MISE_STARTUP_MODE=fast fish -i -c exit")
+    commands+=("MISE_STARTUP_MODE=fast STARSHIP_PROFILE=fast zsh -i -c exit" "MISE_STARTUP_MODE=fast STARSHIP_PROFILE=fast fish -i -c exit")
   fi
 
   local -a hf_args=(
@@ -260,13 +260,23 @@ cmd_bench_components() {
 
   local -a names=()
   local -a commands=()
+  local fzf_completion="${XDG_DATA_HOME:-$HOME/.local/share}/sheldon/repos/github.com/junegunn/fzf/shell/completion.zsh"
+  local fzf_bindings="${XDG_DATA_HOME:-$HOME/.local/share}/sheldon/repos/github.com/junegunn/fzf/shell/key-bindings.zsh"
+  local starship_fast_config="${XDG_CONFIG_HOME:-$HOME/.config}/starship-fast.toml"
+
+  if [[ ! -r "$starship_fast_config" && -r "$ROOT_DIR/config/starship-fast.toml" ]]; then
+    starship_fast_config="$ROOT_DIR/config/starship-fast.toml"
+  fi
 
   if command -v sheldon >/dev/null 2>&1; then
     names+=("component-sheldon-source")
     commands+=("sheldon source >/dev/null")
   fi
 
-  if command -v fzf >/dev/null 2>&1; then
+  if [[ -r "$fzf_completion" && -r "$fzf_bindings" ]]; then
+    names+=("component-fzf-static-scripts")
+    commands+=("zsh -fc 'source \"$fzf_completion\"; source \"$fzf_bindings\"' >/dev/null")
+  elif command -v fzf >/dev/null 2>&1; then
     names+=("component-fzf-zsh-script")
     commands+=("fzf --zsh >/dev/null")
   fi
@@ -274,6 +284,10 @@ cmd_bench_components() {
   if command -v starship >/dev/null 2>&1; then
     names+=("component-starship-prompt" "component-starship-right-prompt")
     commands+=("starship prompt >/dev/null" "starship prompt --right >/dev/null")
+    if [[ -r "$starship_fast_config" ]]; then
+      names+=("component-starship-prompt-fast")
+      commands+=("STARSHIP_PROFILE=fast STARSHIP_CONFIG=\"$starship_fast_config\" starship prompt >/dev/null")
+    fi
   fi
 
   if command -v mise >/dev/null 2>&1; then
@@ -431,15 +445,19 @@ cmd_report() {
   local zsh_fast_ms=""
   local fish_fast_ms=""
   local comp_sheldon=""
+  local comp_fzf_static=""
   local comp_fzf_zsh=""
   local comp_starship=""
   local comp_starship_right=""
+  local comp_starship_fast=""
   local comp_mise_hook_zsh=""
   local comp_mise_hook_fish=""
   local comp_sheldon_ms=""
+  local comp_fzf_static_ms=""
   local comp_fzf_zsh_ms=""
   local comp_starship_ms=""
   local comp_starship_right_ms=""
+  local comp_starship_fast_ms=""
   local comp_mise_hook_zsh_ms=""
   local comp_mise_hook_fish_ms=""
 
@@ -456,15 +474,19 @@ cmd_report() {
 
   if [[ -f "$components_txt" ]]; then
     comp_sheldon="$(extract_hyperfine_mean "$components_txt" "component-sheldon-source" || true)"
+    comp_fzf_static="$(extract_hyperfine_mean "$components_txt" "component-fzf-static-scripts" || true)"
     comp_fzf_zsh="$(extract_hyperfine_mean "$components_txt" "component-fzf-zsh-script" || true)"
     comp_starship="$(extract_hyperfine_mean "$components_txt" "component-starship-prompt" || true)"
     comp_starship_right="$(extract_hyperfine_mean "$components_txt" "component-starship-right-prompt" || true)"
+    comp_starship_fast="$(extract_hyperfine_mean "$components_txt" "component-starship-prompt-fast" || true)"
     comp_mise_hook_zsh="$(extract_hyperfine_mean "$components_txt" "component-mise-hook-env-zsh" || true)"
     comp_mise_hook_fish="$(extract_hyperfine_mean "$components_txt" "component-mise-hook-env-fish" || true)"
     [[ -n "$comp_sheldon" ]] && comp_sheldon_ms="$(to_ms "$comp_sheldon")"
+    [[ -n "$comp_fzf_static" ]] && comp_fzf_static_ms="$(to_ms "$comp_fzf_static")"
     [[ -n "$comp_fzf_zsh" ]] && comp_fzf_zsh_ms="$(to_ms "$comp_fzf_zsh")"
     [[ -n "$comp_starship" ]] && comp_starship_ms="$(to_ms "$comp_starship")"
     [[ -n "$comp_starship_right" ]] && comp_starship_right_ms="$(to_ms "$comp_starship_right")"
+    [[ -n "$comp_starship_fast" ]] && comp_starship_fast_ms="$(to_ms "$comp_starship_fast")"
     [[ -n "$comp_mise_hook_zsh" ]] && comp_mise_hook_zsh_ms="$(to_ms "$comp_mise_hook_zsh")"
     [[ -n "$comp_mise_hook_fish" ]] && comp_mise_hook_fish_ms="$(to_ms "$comp_mise_hook_fish")"
   fi
@@ -492,9 +514,11 @@ cmd_report() {
       printf '| Component | Mean | Mean (ms) |\n'
       printf '|---|---:|---:|\n'
       [[ -n "$comp_sheldon" ]] && printf '| component-sheldon-source | %s | %s |\n' "$comp_sheldon" "$comp_sheldon_ms"
+      [[ -n "$comp_fzf_static" ]] && printf '| component-fzf-static-scripts | %s | %s |\n' "$comp_fzf_static" "$comp_fzf_static_ms"
       [[ -n "$comp_fzf_zsh" ]] && printf '| component-fzf-zsh-script | %s | %s |\n' "$comp_fzf_zsh" "$comp_fzf_zsh_ms"
       [[ -n "$comp_starship" ]] && printf '| component-starship-prompt | %s | %s |\n' "$comp_starship" "$comp_starship_ms"
       [[ -n "$comp_starship_right" ]] && printf '| component-starship-right-prompt | %s | %s |\n' "$comp_starship_right" "$comp_starship_right_ms"
+      [[ -n "$comp_starship_fast" ]] && printf '| component-starship-prompt-fast | %s | %s |\n' "$comp_starship_fast" "$comp_starship_fast_ms"
       [[ -n "$comp_mise_hook_zsh" ]] && printf '| component-mise-hook-env-zsh | %s | %s |\n' "$comp_mise_hook_zsh" "$comp_mise_hook_zsh_ms"
       [[ -n "$comp_mise_hook_fish" ]] && printf '| component-mise-hook-env-fish | %s | %s |\n' "$comp_mise_hook_fish" "$comp_mise_hook_fish_ms"
       printf '\n'
@@ -583,6 +607,15 @@ cmd_report() {
       any=1
       printf '%s\n' '- starship prompt rendering is a significant startup component in repository paths.'
       printf '%s\n' '- Improvement: keep default prompt, and use optional fast prompt profile that disables heavy modules (for example `git_status`) when needed.'
+    fi
+
+    if [[ -n "$comp_starship_ms" && -n "$comp_starship_fast_ms" ]]; then
+      local starship_fast_delta starship_fast_pct
+      starship_fast_delta="$(awk -v d="$comp_starship_ms" -v f="$comp_starship_fast_ms" 'BEGIN { printf "%.3f", d - f }')"
+      starship_fast_pct="$(awk -v d="$comp_starship_ms" -v f="$comp_starship_fast_ms" 'BEGIN { if (d == 0) print "0.0"; else printf "%.1f", ((d - f) / d) * 100 }')"
+      any=1
+      printf '%s\n' "- measured starship fast profile gain: ${starship_fast_delta} ms (${starship_fast_pct}%) for \`starship prompt\`."
+      printf '%s\n' '- Improvement: set `STARSHIP_PROFILE=fast` in latency-sensitive shells; default profile remains unchanged.'
     fi
 
     if [[ -n "$comp_mise_hook_fish_ms" ]] && awk -v ms="$comp_mise_hook_fish_ms" 'BEGIN {exit !(ms >= 20)}'; then
