@@ -94,6 +94,9 @@ fi
 # If ZDOTDIR isn't already set, default it to $HOME.
 ZDOTDIR="${ZDOTDIR:-$HOME}"
 
+# Keep PATH stable and deduplicated during this shell session.
+typeset -gU path PATH
+
 ###############################################################################
 # Helper Functions
 ###############################################################################

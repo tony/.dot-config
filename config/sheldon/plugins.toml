@@ -19,10 +19,6 @@ rev = "3153dcd77a2c93aa8fdf5d17cece7edb1aa3e040"
 defer = '''
 {{ hooks?.pre | nl }}{% for file in files %}zsh-defer source "{{ file }}"
 {% endfor %}{{ hooks?.post | nl }}'''
-fzf-install = '''
-# Keep startup side effects low; avoid running fzf installer on every shell launch.
-path=($path {{ dir }}/bin(N-/))'''
-fzf-source = "source <(fzf --zsh)"
 
 # -------------------------------------------------------------------
 # starship/starship (with evalcache for version-based invalidation)
@@ -91,14 +87,14 @@ use = ["zsh-history-substring-search.zsh"]
 apply = ["defer"]
 
 # -------------------------------------------------------------------
-# junegunn/fzf pinned to v0.70.0 + separate bin injection
+# junegunn/fzf pinned to v0.70.0
 # -------------------------------------------------------------------
-# 1) Main clone (sources, scripts, etc.)
+# Keep a single integration strategy: source static scripts from /shell
+# and inject PATH once via the dedicated bin plugin.
 [plugins."fzf-clone"]
 github = "junegunn/fzf"
 tag = "v0.70.0"
-use = ["shell/completion.zsh", "shell/key-bindings.zsh", "install"]
-apply = ['fzf-install', 'fzf-source']
+use = ["shell/completion.zsh", "shell/key-bindings.zsh"]
 
 [plugins."fzf-bin"]
 github = "junegunn/fzf"
