@@ -227,7 +227,7 @@ fi
 # sheldon
 if command -v sheldon >/dev/null 2>&1; then
   if [[ ! -f "${HOME}/.zfunc/_sheldon" ]]; then
-    sheldon completions --shell zsh > "${HOME}/.zfunc/_shelldon"
+    sheldon completions --shell zsh > "${HOME}/.zfunc/_sheldon"
   fi
 fi
 
@@ -249,18 +249,32 @@ if command -v rustup >/dev/null 2>&1; then
 fi
 
 # Initialize zsh completions with daily cache rebuild
-# Only run full compinit once per day, use cache otherwise (~150ms savings)
-# Note: glob qualifiers require array context, not [[ -n ... ]]
+# Run full compinit once per day and use compinit -C otherwise.
+# This avoids paying the full compinit/compdump cost on every startup.
 autoload -Uz compinit
-_zcompdump_old=(${ZDOTDIR:-$HOME}/.zcompdump(N.mh+24))
-if (( ${#_zcompdump_old} )); then
-    # .zcompdump is older than 24 hours, rebuild
-    compinit
-else
-    # Use cached completions without security check
-    compinit -C
+make_dir_if_missing "${ZSH_CACHE_DIR}"
+_zcompdump_file="${ZDOTDIR:-$HOME}/.zcompdump"
+_zcompinit_stamp="${ZSH_CACHE_DIR}/compinit.last_run"
+typeset -i _zcompinit_interval=86400
+typeset -i _zcompinit_now=${EPOCHSECONDS:-0}
+typeset -i _zcompinit_last=0
+
+if [[ -r "${_zcompinit_stamp}" ]]; then
+  read -r _zcompinit_last < "${_zcompinit_stamp}"
 fi
-unset _zcompdump_old
+
+if [[ ! "${_zcompinit_last}" =~ ^[0-9]+$ ]]; then
+  _zcompinit_last=0
+fi
+
+if [[ ! -f "${_zcompdump_file}" ]] || (( _zcompinit_now <= 0 )) || (( _zcompinit_last <= 0 )) || (( _zcompinit_now - _zcompinit_last >= _zcompinit_interval )); then
+  compinit
+  print -r -- "${_zcompinit_now}" >| "${_zcompinit_stamp}"
+else
+  compinit -C
+fi
+
+unset _zcompdump_file _zcompinit_stamp _zcompinit_interval _zcompinit_now _zcompinit_last
 
 # Completion style settings
 zstyle ':completion:*' use-cache on

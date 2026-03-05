@@ -20,7 +20,7 @@ defer = '''
 {{ hooks?.pre | nl }}{% for file in files %}zsh-defer source "{{ file }}"
 {% endfor %}{{ hooks?.post | nl }}'''
 fzf-install = '''
-{{ dir }}/install --bin > /dev/null 
+# Keep startup side effects low; avoid running fzf installer on every shell launch.
 path=($path {{ dir }}/bin(N-/))'''
 fzf-source = "source <(fzf --zsh)"
 
@@ -64,7 +64,11 @@ if ! command -v mise >/dev/null 2>&1; then
 fi
 # Eager activation - use evalcache for performance
 if command -v mise >/dev/null 2>&1; then
-  _evalcache mise activate zsh
+  if [[ "${MISE_STARTUP_MODE:-default}" == "fast" ]]; then
+    _evalcache mise activate zsh --no-hook-env
+  else
+    _evalcache mise activate zsh
+  fi
 fi
 '''
 
