@@ -585,10 +585,32 @@ cmd_report() {
       printf '%s\n' '- Improvement: keep default behavior, and benchmark optional `MISE_STARTUP_MODE=fast` (`--no-hook-env`) for opt-in speed mode.'
     fi
 
+    if [[ -f "$zprof_txt" ]] && grep -Eq '_evalcache' "$zprof_txt"; then
+      any=1
+      printf '%s\n' '- zsh startup still shows `_evalcache` wrapper overhead.'
+      printf '%s\n' '- Improvement: prefer direct signature-cached init for deterministic activation code paths.'
+    elif [[ -f "$zprof_txt" ]] && grep -Eq '_mise_hook' "$zprof_txt"; then
+      any=1
+      printf '%s\n' '- zsh startup no longer shows `_evalcache`; remaining mise cost is now concentrated in `_mise_hook`.'
+      printf '%s\n' '- Improvement: keep current cache path and tune hook frequency (`MISE_HOOK_ENV_*`) for additional wins.'
+    fi
+
     if [[ -f "$fish_prof_sorted" ]] && grep -Eq 'mise hook-env|command mise|mise activate fish' "$fish_prof_sorted"; then
       any=1
       printf '%s\n' '- fish mise activation/hook environment updates are a primary startup bottleneck.'
       printf '%s\n' '- Improvement: keep defaults, and use opt-in `MISE_STARTUP_MODE=fast` in latency-sensitive contexts.'
+    fi
+
+    if [[ -f "$fish_prof_sorted" ]] && grep -Eq 'git rev-parse --show-toplevel|__auto_source_venv' "$fish_prof_sorted"; then
+      any=1
+      printf '%s\n' '- fish virtualenv auto-detection does git-root probing on startup.'
+      printf '%s\n' '- Improvement: use a single git root probe per hook invocation and avoid repeated repository resolution.'
+    fi
+
+    if [[ -f "$zprof_txt" ]] && grep -Eq '_add_identities' "$zprof_txt"; then
+      any=1
+      printf '%s\n' '- zsh ssh-agent identity loading appears in startup hotspots (`_add_identities`).'
+      printf '%s\n' '- Improvement: constrain startup identities via `zstyle :omz:plugins:ssh-agent identities ...`.'
     fi
 
     if [[ -f "$fish_prof_sorted" ]] && grep -Eq 'keychain --eval' "$fish_prof_sorted"; then
