@@ -11,10 +11,6 @@ shell = "zsh"
 [plugins.zsh-defer]
 github = "romkatv/zsh-defer"
 
-[plugins.evalcache]
-github = "mroth/evalcache"
-rev = "3153dcd77a2c93aa8fdf5d17cece7edb1aa3e040"
-
 [templates]
 defer = '''
 {{ hooks?.pre | nl }}{% for file in files %}zsh-defer source "{{ file }}"
@@ -79,19 +75,53 @@ unset -f _starship_file_signature _starship_init_cached
 # -------------------------------------------------------------------
 [plugins.mise]
 inline = '''
+_mise_file_signature() {
+  local file="$1"
+  local sig
+
+  [[ -n "$file" && -e "$file" ]] || return 1
+  sig="$(stat -Lc '%Y:%s' "$file" 2>/dev/null)" || sig="$(stat -f '%m:%z' "$file" 2>/dev/null)" || return 1
+  print -r -- "$file:$sig"
+}
+
+_mise_activate_cached() {
+  local cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+  local startup_mode="${MISE_STARTUP_MODE:-default}"
+  local cache_file="$cache_dir/mise_activate_${startup_mode}.zsh"
+  local signature_file="$cache_dir/mise_activate_${startup_mode}.signature"
+  local mise_bin
+  local current_signature
+
+  mise_bin="$(command -v mise 2>/dev/null)" || return
+  current_signature="$(_mise_file_signature "$mise_bin")|mode=${startup_mode}" || return
+
+  if [[ -f "$cache_file" && -f "$signature_file" ]]; then
+    if [[ "$current_signature" == "$(<"$signature_file")" ]]; then
+      source "$cache_file"
+      return
+    fi
+  fi
+
+  mkdir -p "$cache_dir"
+  if [[ "$startup_mode" == "fast" ]]; then
+    mise activate zsh --no-hook-env > "$cache_file"
+  else
+    mise activate zsh > "$cache_file"
+  fi
+  print -r -- "$current_signature" > "$signature_file"
+  source "$cache_file"
+}
+
 if ! command -v mise >/dev/null 2>&1; then
   echo "mise not found, installing..."
   curl -fsSL https://mise.run | sh
   export PATH="$HOME/.local/bin:$PATH"
 fi
-# Eager activation - use evalcache for performance
+# Eager activation with local signature-based cache
 if command -v mise >/dev/null 2>&1; then
-  if [[ "${MISE_STARTUP_MODE:-default}" == "fast" ]]; then
-    _evalcache mise activate zsh --no-hook-env
-  else
-    _evalcache mise activate zsh
-  fi
+  _mise_activate_cached
 fi
+unset -f _mise_file_signature _mise_activate_cached
 '''
 
 # -------------------------------------------------------------------
