@@ -200,6 +200,12 @@ alias git_branch_history_diff='git diff --patch "$(
 #
 # By default, Sheldon writes the locked file to ~/.local/share/sheldon/plugins.zsh
 # (You can customize that path with `sheldon lock --output <path>`).
+#
+# Limit startup identity scanning in oh-my-zsh ssh-agent plugin.
+# Override with e.g.:
+#   export ZSH_SSH_AGENT_IDENTITIES="id_ed25519 id_rsa_work"
+: "${ZSH_SSH_AGENT_IDENTITIES:=id_ed25519}"
+zstyle ':omz:plugins:ssh-agent' identities ${=ZSH_SSH_AGENT_IDENTITIES}
 
 if command -v sheldon >/dev/null 2>&1; then
   # Optionally auto-lock each time you start a shell (slower):
