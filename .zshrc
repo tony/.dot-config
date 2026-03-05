@@ -11,6 +11,9 @@ export MISE_CARGO_DEFAULT_PACKAGES_FILE="${ZDOTDIR}/.default-cargo-crates"
 export MISE_PYTHON_DEFAULT_PACKAGES_FILE="${ZDOTDIR}/.default-python-packages"
 export MISE_NODE_DEFAULT_PACKAGES_FILE="${ZDOTDIR}/.default-npm-packages"
 export MISE_ASDF_COMPAT=true
+# Match fish behavior: avoid per-prompt hook-env recomputation where possible.
+export MISE_HOOK_ENV_CHPWD_ONLY=true
+export MISE_HOOK_ENV_CACHE_TTL=5s
 
 # Node.js
 export COREPACK_ENABLE_STRICT=0  # Silence corepack warnings
