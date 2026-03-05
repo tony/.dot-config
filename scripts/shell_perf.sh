@@ -421,9 +421,15 @@ cmd_bench_components() {
   run_dir="$(normalize_run_dir "$run_dir")"
   local out_txt="$run_dir/components-hyperfine.txt"
   local out_json="$run_dir/components-hyperfine.json"
+  local direct_txt="$run_dir/components-direct-hyperfine.txt"
+  local shell_txt="$run_dir/components-shell-hyperfine.txt"
+  local direct_json="$run_dir/components-direct-hyperfine.json"
+  local shell_json="$run_dir/components-shell-hyperfine.json"
 
-  local -a names=()
-  local -a commands=()
+  local -a direct_names=()
+  local -a direct_commands=()
+  local -a shell_names=()
+  local -a shell_commands=()
   local fzf_completion="${XDG_DATA_HOME:-$HOME/.local/share}/sheldon/repos/github.com/junegunn/fzf/shell/completion.zsh"
   local fzf_bindings="${XDG_DATA_HOME:-$HOME/.local/share}/sheldon/repos/github.com/junegunn/fzf/shell/key-bindings.zsh"
   local starship_fast_config="${XDG_CONFIG_HOME:-$HOME/.config}/starship-fast.toml"
@@ -433,51 +439,99 @@ cmd_bench_components() {
   fi
 
   if command -v sheldon >/dev/null 2>&1; then
-    names+=("component-sheldon-source")
-    commands+=("sheldon source >/dev/null")
+    direct_names+=("component-sheldon-source")
+    direct_commands+=("sheldon source")
   fi
 
   if [[ -r "$fzf_completion" && -r "$fzf_bindings" ]]; then
-    names+=("component-fzf-static-scripts")
-    commands+=("zsh -fc 'source \"$fzf_completion\"; source \"$fzf_bindings\"' >/dev/null")
+    shell_names+=("component-fzf-static-scripts")
+    shell_commands+=("zsh -fc 'source \"$fzf_completion\"; source \"$fzf_bindings\"'")
   elif command -v fzf >/dev/null 2>&1; then
-    names+=("component-fzf-zsh-script")
-    commands+=("fzf --zsh >/dev/null")
+    direct_names+=("component-fzf-zsh-script")
+    direct_commands+=("fzf --zsh")
   fi
 
   if command -v starship >/dev/null 2>&1; then
-    names+=("component-starship-prompt" "component-starship-right-prompt")
-    commands+=("starship prompt >/dev/null" "starship prompt --right >/dev/null")
+    direct_names+=("component-starship-prompt" "component-starship-right-prompt")
+    direct_commands+=("starship prompt" "starship prompt --right")
     if [[ -r "$starship_fast_config" ]]; then
-      names+=("component-starship-prompt-fast")
-      commands+=("STARSHIP_PROFILE=fast STARSHIP_CONFIG=\"$starship_fast_config\" starship prompt >/dev/null")
+      local starship_fast_config_q
+      printf -v starship_fast_config_q '%q' "$starship_fast_config"
+      direct_names+=("component-starship-prompt-fast")
+      direct_commands+=("env STARSHIP_PROFILE=fast STARSHIP_CONFIG=$starship_fast_config_q starship prompt")
     fi
   fi
 
   if command -v mise >/dev/null 2>&1; then
-    names+=("component-mise-hook-env-zsh" "component-mise-hook-env-fish")
-    commands+=("mise hook-env -s zsh >/dev/null" "mise hook-env -s fish >/dev/null")
+    direct_names+=("component-mise-hook-env-zsh" "component-mise-hook-env-fish")
+    direct_commands+=("mise hook-env -s zsh" "mise hook-env -s fish")
   fi
 
-  (( ${#names[@]} > 0 )) || die "No component benchmarks available in current PATH"
+  (( ${#direct_names[@]} > 0 || ${#shell_names[@]} > 0 )) || die "No component benchmarks available in current PATH"
 
-  local -a hf_args=(
-    --style basic
-    --warmup "$warmup"
-    --runs "$runs"
-    --export-json "$out_json"
-  )
+  : > "$out_txt"
+  local ran_direct=0
+  local ran_shell=0
 
-  local name
-  for name in "${names[@]}"; do
-    hf_args+=(--command-name "$name")
-  done
+  if (( ${#direct_names[@]} > 0 )); then
+    local -a hf_args_direct=(
+      --style basic
+      --warmup "$warmup"
+      --runs "$runs"
+      --shell none
+      --export-json "$direct_json"
+    )
 
-  log "Running component benchmarks (runs=$runs warmup=$warmup, cwd=$cwd)"
-  (
-    cd "$cwd"
-    hyperfine "${hf_args[@]}" "${commands[@]}"
-  ) | tee "$out_txt"
+    local name
+    for name in "${direct_names[@]}"; do
+      hf_args_direct+=(--command-name "$name")
+    done
+
+    log "Running direct component benchmarks (runs=$runs warmup=$warmup, cwd=$cwd, shell=none)"
+    (
+      cd "$cwd"
+      hyperfine "${hf_args_direct[@]}" "${direct_commands[@]}"
+    ) | tee "$direct_txt"
+
+    cat "$direct_txt" >> "$out_txt"
+    ran_direct=1
+  fi
+
+  if (( ${#shell_names[@]} > 0 )); then
+    local -a hf_args_shell=(
+      --style basic
+      --warmup "$warmup"
+      --runs "$runs"
+      --export-json "$shell_json"
+    )
+
+    local name
+    for name in "${shell_names[@]}"; do
+      hf_args_shell+=(--command-name "$name")
+    done
+
+    log "Running shell component benchmarks (runs=$runs warmup=$warmup, cwd=$cwd, shell=default)"
+    (
+      cd "$cwd"
+      hyperfine "${hf_args_shell[@]}" "${shell_commands[@]}"
+    ) | tee "$shell_txt"
+
+    if [[ -s "$out_txt" ]]; then
+      printf '\n' >> "$out_txt"
+    fi
+    cat "$shell_txt" >> "$out_txt"
+    ran_shell=1
+  fi
+
+  if (( ran_direct == 1 && ran_shell == 0 )); then
+    cp "$direct_json" "$out_json"
+  elif (( ran_direct == 0 && ran_shell == 1 )); then
+    cp "$shell_json" "$out_json"
+  else
+    cat > "$out_json" <<JSON
+{"direct_json":"$(basename "$direct_json")","shell_json":"$(basename "$shell_json")"}
+JSON
+  fi
 
   if command -v starship >/dev/null 2>&1; then
     (
@@ -632,6 +686,14 @@ cmd_report() {
   local comp_starship_fast=""
   local comp_mise_hook_zsh=""
   local comp_mise_hook_fish=""
+  local comp_sheldon_std=""
+  local comp_fzf_static_std=""
+  local comp_fzf_zsh_std=""
+  local comp_starship_std=""
+  local comp_starship_right_std=""
+  local comp_starship_fast_std=""
+  local comp_mise_hook_zsh_std=""
+  local comp_mise_hook_fish_std=""
   local comp_sheldon_ms=""
   local comp_fzf_static_ms=""
   local comp_fzf_zsh_ms=""
@@ -640,6 +702,30 @@ cmd_report() {
   local comp_starship_fast_ms=""
   local comp_mise_hook_zsh_ms=""
   local comp_mise_hook_fish_ms=""
+  local comp_sheldon_std_ms=""
+  local comp_fzf_static_std_ms=""
+  local comp_fzf_zsh_std_ms=""
+  local comp_starship_std_ms=""
+  local comp_starship_right_std_ms=""
+  local comp_starship_fast_std_ms=""
+  local comp_mise_hook_zsh_std_ms=""
+  local comp_mise_hook_fish_std_ms=""
+  local comp_sheldon_cv=""
+  local comp_fzf_static_cv=""
+  local comp_fzf_zsh_cv=""
+  local comp_starship_cv=""
+  local comp_starship_right_cv=""
+  local comp_starship_fast_cv=""
+  local comp_mise_hook_zsh_cv=""
+  local comp_mise_hook_fish_cv=""
+  local comp_sheldon_stability=""
+  local comp_fzf_static_stability=""
+  local comp_fzf_zsh_stability=""
+  local comp_starship_stability=""
+  local comp_starship_right_stability=""
+  local comp_starship_fast_stability=""
+  local comp_mise_hook_zsh_stability=""
+  local comp_mise_hook_fish_stability=""
 
   if [[ -f "$hyperfine_txt" ]]; then
     zsh_default="$(extract_hyperfine_mean "$hyperfine_txt" "zsh-startup" || true)"
@@ -677,6 +763,14 @@ cmd_report() {
     comp_starship_fast="$(extract_hyperfine_mean "$components_txt" "component-starship-prompt-fast" || true)"
     comp_mise_hook_zsh="$(extract_hyperfine_mean "$components_txt" "component-mise-hook-env-zsh" || true)"
     comp_mise_hook_fish="$(extract_hyperfine_mean "$components_txt" "component-mise-hook-env-fish" || true)"
+    comp_sheldon_std="$(extract_hyperfine_stddev "$components_txt" "component-sheldon-source" || true)"
+    comp_fzf_static_std="$(extract_hyperfine_stddev "$components_txt" "component-fzf-static-scripts" || true)"
+    comp_fzf_zsh_std="$(extract_hyperfine_stddev "$components_txt" "component-fzf-zsh-script" || true)"
+    comp_starship_std="$(extract_hyperfine_stddev "$components_txt" "component-starship-prompt" || true)"
+    comp_starship_right_std="$(extract_hyperfine_stddev "$components_txt" "component-starship-right-prompt" || true)"
+    comp_starship_fast_std="$(extract_hyperfine_stddev "$components_txt" "component-starship-prompt-fast" || true)"
+    comp_mise_hook_zsh_std="$(extract_hyperfine_stddev "$components_txt" "component-mise-hook-env-zsh" || true)"
+    comp_mise_hook_fish_std="$(extract_hyperfine_stddev "$components_txt" "component-mise-hook-env-fish" || true)"
     [[ -n "$comp_sheldon" ]] && comp_sheldon_ms="$(to_ms "$comp_sheldon")"
     [[ -n "$comp_fzf_static" ]] && comp_fzf_static_ms="$(to_ms "$comp_fzf_static")"
     [[ -n "$comp_fzf_zsh" ]] && comp_fzf_zsh_ms="$(to_ms "$comp_fzf_zsh")"
@@ -685,6 +779,30 @@ cmd_report() {
     [[ -n "$comp_starship_fast" ]] && comp_starship_fast_ms="$(to_ms "$comp_starship_fast")"
     [[ -n "$comp_mise_hook_zsh" ]] && comp_mise_hook_zsh_ms="$(to_ms "$comp_mise_hook_zsh")"
     [[ -n "$comp_mise_hook_fish" ]] && comp_mise_hook_fish_ms="$(to_ms "$comp_mise_hook_fish")"
+    [[ -n "$comp_sheldon_std" ]] && comp_sheldon_std_ms="$(to_ms "$comp_sheldon_std")"
+    [[ -n "$comp_fzf_static_std" ]] && comp_fzf_static_std_ms="$(to_ms "$comp_fzf_static_std")"
+    [[ -n "$comp_fzf_zsh_std" ]] && comp_fzf_zsh_std_ms="$(to_ms "$comp_fzf_zsh_std")"
+    [[ -n "$comp_starship_std" ]] && comp_starship_std_ms="$(to_ms "$comp_starship_std")"
+    [[ -n "$comp_starship_right_std" ]] && comp_starship_right_std_ms="$(to_ms "$comp_starship_right_std")"
+    [[ -n "$comp_starship_fast_std" ]] && comp_starship_fast_std_ms="$(to_ms "$comp_starship_fast_std")"
+    [[ -n "$comp_mise_hook_zsh_std" ]] && comp_mise_hook_zsh_std_ms="$(to_ms "$comp_mise_hook_zsh_std")"
+    [[ -n "$comp_mise_hook_fish_std" ]] && comp_mise_hook_fish_std_ms="$(to_ms "$comp_mise_hook_fish_std")"
+    [[ -n "$comp_sheldon_ms" && -n "$comp_sheldon_std_ms" ]] && comp_sheldon_cv="$(calc_cv_pct "$comp_sheldon_ms" "$comp_sheldon_std_ms")"
+    [[ -n "$comp_fzf_static_ms" && -n "$comp_fzf_static_std_ms" ]] && comp_fzf_static_cv="$(calc_cv_pct "$comp_fzf_static_ms" "$comp_fzf_static_std_ms")"
+    [[ -n "$comp_fzf_zsh_ms" && -n "$comp_fzf_zsh_std_ms" ]] && comp_fzf_zsh_cv="$(calc_cv_pct "$comp_fzf_zsh_ms" "$comp_fzf_zsh_std_ms")"
+    [[ -n "$comp_starship_ms" && -n "$comp_starship_std_ms" ]] && comp_starship_cv="$(calc_cv_pct "$comp_starship_ms" "$comp_starship_std_ms")"
+    [[ -n "$comp_starship_right_ms" && -n "$comp_starship_right_std_ms" ]] && comp_starship_right_cv="$(calc_cv_pct "$comp_starship_right_ms" "$comp_starship_right_std_ms")"
+    [[ -n "$comp_starship_fast_ms" && -n "$comp_starship_fast_std_ms" ]] && comp_starship_fast_cv="$(calc_cv_pct "$comp_starship_fast_ms" "$comp_starship_fast_std_ms")"
+    [[ -n "$comp_mise_hook_zsh_ms" && -n "$comp_mise_hook_zsh_std_ms" ]] && comp_mise_hook_zsh_cv="$(calc_cv_pct "$comp_mise_hook_zsh_ms" "$comp_mise_hook_zsh_std_ms")"
+    [[ -n "$comp_mise_hook_fish_ms" && -n "$comp_mise_hook_fish_std_ms" ]] && comp_mise_hook_fish_cv="$(calc_cv_pct "$comp_mise_hook_fish_ms" "$comp_mise_hook_fish_std_ms")"
+    [[ -n "$comp_sheldon_cv" ]] && comp_sheldon_stability="$(stability_band "$comp_sheldon_cv")"
+    [[ -n "$comp_fzf_static_cv" ]] && comp_fzf_static_stability="$(stability_band "$comp_fzf_static_cv")"
+    [[ -n "$comp_fzf_zsh_cv" ]] && comp_fzf_zsh_stability="$(stability_band "$comp_fzf_zsh_cv")"
+    [[ -n "$comp_starship_cv" ]] && comp_starship_stability="$(stability_band "$comp_starship_cv")"
+    [[ -n "$comp_starship_right_cv" ]] && comp_starship_right_stability="$(stability_band "$comp_starship_right_cv")"
+    [[ -n "$comp_starship_fast_cv" ]] && comp_starship_fast_stability="$(stability_band "$comp_starship_fast_cv")"
+    [[ -n "$comp_mise_hook_zsh_cv" ]] && comp_mise_hook_zsh_stability="$(stability_band "$comp_mise_hook_zsh_cv")"
+    [[ -n "$comp_mise_hook_fish_cv" ]] && comp_mise_hook_fish_stability="$(stability_band "$comp_mise_hook_fish_cv")"
   fi
 
   {
@@ -707,16 +825,17 @@ cmd_report() {
 
     printf '## Component Benchmarks\n\n'
     if [[ -f "$components_txt" ]]; then
-      printf '| Component | Mean | Mean (ms) |\n'
-      printf '|---|---:|---:|\n'
-      [[ -n "$comp_sheldon" ]] && printf '| component-sheldon-source | %s | %s |\n' "$comp_sheldon" "$comp_sheldon_ms"
-      [[ -n "$comp_fzf_static" ]] && printf '| component-fzf-static-scripts | %s | %s |\n' "$comp_fzf_static" "$comp_fzf_static_ms"
-      [[ -n "$comp_fzf_zsh" ]] && printf '| component-fzf-zsh-script | %s | %s |\n' "$comp_fzf_zsh" "$comp_fzf_zsh_ms"
-      [[ -n "$comp_starship" ]] && printf '| component-starship-prompt | %s | %s |\n' "$comp_starship" "$comp_starship_ms"
-      [[ -n "$comp_starship_right" ]] && printf '| component-starship-right-prompt | %s | %s |\n' "$comp_starship_right" "$comp_starship_right_ms"
-      [[ -n "$comp_starship_fast" ]] && printf '| component-starship-prompt-fast | %s | %s |\n' "$comp_starship_fast" "$comp_starship_fast_ms"
-      [[ -n "$comp_mise_hook_zsh" ]] && printf '| component-mise-hook-env-zsh | %s | %s |\n' "$comp_mise_hook_zsh" "$comp_mise_hook_zsh_ms"
-      [[ -n "$comp_mise_hook_fish" ]] && printf '| component-mise-hook-env-fish | %s | %s |\n' "$comp_mise_hook_fish" "$comp_mise_hook_fish_ms"
+      printf '_Direct commands are measured with `hyperfine --shell=none` where possible to reduce shell wrapper noise._\n\n'
+      printf '| Component | Mean | Mean (ms) | Stddev (ms) | CV (%%) | Stability |\n'
+      printf '|---|---:|---:|---:|---:|---|\n'
+      [[ -n "$comp_sheldon" ]] && printf '| component-sheldon-source | %s | %s | %s | %s | %s |\n' "$comp_sheldon" "$comp_sheldon_ms" "$comp_sheldon_std_ms" "$comp_sheldon_cv" "$comp_sheldon_stability"
+      [[ -n "$comp_fzf_static" ]] && printf '| component-fzf-static-scripts | %s | %s | %s | %s | %s |\n' "$comp_fzf_static" "$comp_fzf_static_ms" "$comp_fzf_static_std_ms" "$comp_fzf_static_cv" "$comp_fzf_static_stability"
+      [[ -n "$comp_fzf_zsh" ]] && printf '| component-fzf-zsh-script | %s | %s | %s | %s | %s |\n' "$comp_fzf_zsh" "$comp_fzf_zsh_ms" "$comp_fzf_zsh_std_ms" "$comp_fzf_zsh_cv" "$comp_fzf_zsh_stability"
+      [[ -n "$comp_starship" ]] && printf '| component-starship-prompt | %s | %s | %s | %s | %s |\n' "$comp_starship" "$comp_starship_ms" "$comp_starship_std_ms" "$comp_starship_cv" "$comp_starship_stability"
+      [[ -n "$comp_starship_right" ]] && printf '| component-starship-right-prompt | %s | %s | %s | %s | %s |\n' "$comp_starship_right" "$comp_starship_right_ms" "$comp_starship_right_std_ms" "$comp_starship_right_cv" "$comp_starship_right_stability"
+      [[ -n "$comp_starship_fast" ]] && printf '| component-starship-prompt-fast | %s | %s | %s | %s | %s |\n' "$comp_starship_fast" "$comp_starship_fast_ms" "$comp_starship_fast_std_ms" "$comp_starship_fast_cv" "$comp_starship_fast_stability"
+      [[ -n "$comp_mise_hook_zsh" ]] && printf '| component-mise-hook-env-zsh | %s | %s | %s | %s | %s |\n' "$comp_mise_hook_zsh" "$comp_mise_hook_zsh_ms" "$comp_mise_hook_zsh_std_ms" "$comp_mise_hook_zsh_cv" "$comp_mise_hook_zsh_stability"
+      [[ -n "$comp_mise_hook_fish" ]] && printf '| component-mise-hook-env-fish | %s | %s | %s | %s | %s |\n' "$comp_mise_hook_fish" "$comp_mise_hook_fish_ms" "$comp_mise_hook_fish_std_ms" "$comp_mise_hook_fish_cv" "$comp_mise_hook_fish_stability"
       printf '\n'
     else
       printf '_No component benchmark output found in this run._\n\n'
