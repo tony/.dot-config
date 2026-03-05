@@ -23,6 +23,7 @@ usage() {
   cat <<'USAGE'
 Usage:
   shell_perf.sh bench [--run-dir DIR] [--runs N] [--warmup N] [--cwd DIR] [--with-fast-mode]
+  shell_perf.sh matrix [--run-dir DIR] [--runs N] [--warmup N] [--cwd DIR]
   shell_perf.sh bench-components [--run-dir DIR] [--runs N] [--warmup N] [--cwd DIR]
   shell_perf.sh profile [--run-dir DIR] [--zsh-mode warm|cold]
   shell_perf.sh report [--run-dir DIR]
@@ -93,6 +94,23 @@ extract_hyperfine_mean() {
   ' "$hyperfine_txt"
 }
 
+extract_hyperfine_stddev() {
+  local hyperfine_txt="$1"
+  local bench_name="$2"
+  awk -v bench_name="$bench_name" '
+    /^Benchmark [0-9]+:/ {
+      in_block = index($0, bench_name) > 0
+      next
+    }
+    in_block && /Time \(mean/ {
+      if (match($0, /([0-9.]+)[[:space:]]*(us|µs|ms|s)[[:space:]]*±[[:space:]]*([0-9.]+)[[:space:]]*(us|µs|ms|s)/, m)) {
+        print m[3] " " m[4]
+        exit
+      }
+    }
+  ' "$hyperfine_txt"
+}
+
 to_ms() {
   local raw="$1"
   local value unit
@@ -112,6 +130,41 @@ to_ms() {
       printf ''
       ;;
   esac
+}
+
+calc_delta_ms() {
+  local before_ms="$1"
+  local after_ms="$2"
+  awk -v b="$before_ms" -v a="$after_ms" 'BEGIN { printf "%.3f", a - b }'
+}
+
+calc_delta_pct() {
+  local before_ms="$1"
+  local after_ms="$2"
+  awk -v b="$before_ms" -v a="$after_ms" 'BEGIN { if (b == 0) print "0.0"; else printf "%.1f", ((a - b) / b) * 100 }'
+}
+
+calc_cv_pct() {
+  local mean_ms="$1"
+  local stddev_ms="$2"
+  awk -v mean="$mean_ms" -v stddev="$stddev_ms" 'BEGIN { if (mean == 0) print "0.0"; else printf "%.2f", (stddev / mean) * 100 }'
+}
+
+stability_band() {
+  local cv_pct="$1"
+  awk -v cv="$cv_pct" '
+    BEGIN {
+      if (cv < 3.0) {
+        print "excellent"
+      } else if (cv < 6.0) {
+        print "good"
+      } else if (cv < 10.0) {
+        print "fair"
+      } else {
+        print "noisy"
+      }
+    }
+  '
 }
 
 write_meta() {
@@ -216,6 +269,117 @@ cmd_bench() {
   write_latest "$run_dir"
 
   log "Benchmark artifacts written to: $run_dir"
+}
+
+cmd_matrix() {
+  local run_dir=""
+  local runs="$DEFAULT_RUNS"
+  local warmup="$DEFAULT_WARMUP"
+  local cwd="$ROOT_DIR"
+
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --run-dir)
+        run_dir="$2"
+        shift 2
+        ;;
+      --runs)
+        runs="$2"
+        shift 2
+        ;;
+      --warmup)
+        warmup="$2"
+        shift 2
+        ;;
+      --cwd)
+        cwd="$2"
+        shift 2
+        ;;
+      -h|--help)
+        usage
+        return 0
+        ;;
+      *)
+        die "Unknown matrix option: $1"
+        ;;
+    esac
+  done
+
+  run_dir="$(normalize_run_dir "$run_dir")"
+  cmd_bench --run-dir "$run_dir" --runs "$runs" --warmup "$warmup" --cwd "$cwd" --with-fast-mode
+
+  local hyperfine_txt="$run_dir/hyperfine.txt"
+  [[ -f "$hyperfine_txt" ]] || die "Expected startup benchmark output at $hyperfine_txt"
+  local matrix_md="$run_dir/matrix.md"
+
+  local zsh_default="" fish_default="" zsh_fast="" fish_fast=""
+  local zsh_default_std="" fish_default_std="" zsh_fast_std="" fish_fast_std=""
+  local zsh_default_ms="" fish_default_ms="" zsh_fast_ms="" fish_fast_ms=""
+  local zsh_default_std_ms="" fish_default_std_ms="" zsh_fast_std_ms="" fish_fast_std_ms=""
+  local zsh_default_cv="" fish_default_cv="" zsh_fast_cv="" fish_fast_cv=""
+  local zsh_default_band="" fish_default_band="" zsh_fast_band="" fish_fast_band=""
+
+  zsh_default="$(extract_hyperfine_mean "$hyperfine_txt" "zsh-startup" || true)"
+  fish_default="$(extract_hyperfine_mean "$hyperfine_txt" "fish-startup" || true)"
+  zsh_fast="$(extract_hyperfine_mean "$hyperfine_txt" "zsh-startup-fast" || true)"
+  fish_fast="$(extract_hyperfine_mean "$hyperfine_txt" "fish-startup-fast" || true)"
+
+  zsh_default_std="$(extract_hyperfine_stddev "$hyperfine_txt" "zsh-startup" || true)"
+  fish_default_std="$(extract_hyperfine_stddev "$hyperfine_txt" "fish-startup" || true)"
+  zsh_fast_std="$(extract_hyperfine_stddev "$hyperfine_txt" "zsh-startup-fast" || true)"
+  fish_fast_std="$(extract_hyperfine_stddev "$hyperfine_txt" "fish-startup-fast" || true)"
+
+  [[ -n "$zsh_default" ]] && zsh_default_ms="$(to_ms "$zsh_default")"
+  [[ -n "$fish_default" ]] && fish_default_ms="$(to_ms "$fish_default")"
+  [[ -n "$zsh_fast" ]] && zsh_fast_ms="$(to_ms "$zsh_fast")"
+  [[ -n "$fish_fast" ]] && fish_fast_ms="$(to_ms "$fish_fast")"
+
+  [[ -n "$zsh_default_std" ]] && zsh_default_std_ms="$(to_ms "$zsh_default_std")"
+  [[ -n "$fish_default_std" ]] && fish_default_std_ms="$(to_ms "$fish_default_std")"
+  [[ -n "$zsh_fast_std" ]] && zsh_fast_std_ms="$(to_ms "$zsh_fast_std")"
+  [[ -n "$fish_fast_std" ]] && fish_fast_std_ms="$(to_ms "$fish_fast_std")"
+
+  [[ -n "$zsh_default_ms" && -n "$zsh_default_std_ms" ]] && zsh_default_cv="$(calc_cv_pct "$zsh_default_ms" "$zsh_default_std_ms")"
+  [[ -n "$fish_default_ms" && -n "$fish_default_std_ms" ]] && fish_default_cv="$(calc_cv_pct "$fish_default_ms" "$fish_default_std_ms")"
+  [[ -n "$zsh_fast_ms" && -n "$zsh_fast_std_ms" ]] && zsh_fast_cv="$(calc_cv_pct "$zsh_fast_ms" "$zsh_fast_std_ms")"
+  [[ -n "$fish_fast_ms" && -n "$fish_fast_std_ms" ]] && fish_fast_cv="$(calc_cv_pct "$fish_fast_ms" "$fish_fast_std_ms")"
+
+  [[ -n "$zsh_default_cv" ]] && zsh_default_band="$(stability_band "$zsh_default_cv")"
+  [[ -n "$fish_default_cv" ]] && fish_default_band="$(stability_band "$fish_default_cv")"
+  [[ -n "$zsh_fast_cv" ]] && zsh_fast_band="$(stability_band "$zsh_fast_cv")"
+  [[ -n "$fish_fast_cv" ]] && fish_fast_band="$(stability_band "$fish_fast_cv")"
+
+  local zsh_gain_ms="" zsh_gain_pct="" fish_gain_ms="" fish_gain_pct=""
+  if [[ -n "$zsh_default_ms" && -n "$zsh_fast_ms" ]]; then
+    zsh_gain_ms="$(awk -v d="$zsh_default_ms" -v f="$zsh_fast_ms" 'BEGIN { printf "%.3f", d - f }')"
+    zsh_gain_pct="$(awk -v d="$zsh_default_ms" -v f="$zsh_fast_ms" 'BEGIN { if (d == 0) print "0.0"; else printf "%.1f", ((d - f) / d) * 100 }')"
+  fi
+  if [[ -n "$fish_default_ms" && -n "$fish_fast_ms" ]]; then
+    fish_gain_ms="$(awk -v d="$fish_default_ms" -v f="$fish_fast_ms" 'BEGIN { printf "%.3f", d - f }')"
+    fish_gain_pct="$(awk -v d="$fish_default_ms" -v f="$fish_fast_ms" 'BEGIN { if (d == 0) print "0.0"; else printf "%.1f", ((d - f) / d) * 100 }')"
+  fi
+
+  {
+    printf '# Startup Mode Matrix\n\n'
+    printf 'Run directory: `%s`\n\n' "$run_dir"
+    printf 'Generated: `%s`\n\n' "$(date -Is)"
+    printf '## Startup Stability\n\n'
+    printf '| Benchmark | Mean (ms) | Stddev (ms) | CV (%%) | Stability |\n'
+    printf '|---|---:|---:|---:|---|\n'
+    [[ -n "$zsh_default_ms" ]] && printf '| zsh-startup | %s | %s | %s | %s |\n' "$zsh_default_ms" "$zsh_default_std_ms" "$zsh_default_cv" "$zsh_default_band"
+    [[ -n "$fish_default_ms" ]] && printf '| fish-startup | %s | %s | %s | %s |\n' "$fish_default_ms" "$fish_default_std_ms" "$fish_default_cv" "$fish_default_band"
+    [[ -n "$zsh_fast_ms" ]] && printf '| zsh-startup-fast | %s | %s | %s | %s |\n' "$zsh_fast_ms" "$zsh_fast_std_ms" "$zsh_fast_cv" "$zsh_fast_band"
+    [[ -n "$fish_fast_ms" ]] && printf '| fish-startup-fast | %s | %s | %s | %s |\n' "$fish_fast_ms" "$fish_fast_std_ms" "$fish_fast_cv" "$fish_fast_band"
+    printf '\n'
+    printf '## Fast Mode Gains\n\n'
+    printf '| Shell | Default (ms) | Fast (ms) | Gain (ms) | Gain (%%) |\n'
+    printf '|---|---:|---:|---:|---:|\n'
+    [[ -n "$zsh_gain_ms" ]] && printf '| zsh | %s | %s | %s | %s%% |\n' "$zsh_default_ms" "$zsh_fast_ms" "$zsh_gain_ms" "$zsh_gain_pct"
+    [[ -n "$fish_gain_ms" ]] && printf '| fish | %s | %s | %s | %s%% |\n' "$fish_default_ms" "$fish_fast_ms" "$fish_gain_ms" "$fish_gain_pct"
+  } > "$matrix_md"
+
+  log "Startup matrix written to: $matrix_md"
+  cat "$matrix_md"
 }
 
 cmd_bench_components() {
@@ -440,10 +604,26 @@ cmd_report() {
   local fish_default=""
   local zsh_fast=""
   local fish_fast=""
+  local zsh_default_std=""
+  local fish_default_std=""
+  local zsh_fast_std=""
+  local fish_fast_std=""
   local zsh_default_ms=""
   local fish_default_ms=""
   local zsh_fast_ms=""
   local fish_fast_ms=""
+  local zsh_default_std_ms=""
+  local fish_default_std_ms=""
+  local zsh_fast_std_ms=""
+  local fish_fast_std_ms=""
+  local zsh_default_cv=""
+  local fish_default_cv=""
+  local zsh_fast_cv=""
+  local fish_fast_cv=""
+  local zsh_default_stability=""
+  local fish_default_stability=""
+  local zsh_fast_stability=""
+  local fish_fast_stability=""
   local comp_sheldon=""
   local comp_fzf_static=""
   local comp_fzf_zsh=""
@@ -466,10 +646,26 @@ cmd_report() {
     fish_default="$(extract_hyperfine_mean "$hyperfine_txt" "fish-startup" || true)"
     zsh_fast="$(extract_hyperfine_mean "$hyperfine_txt" "zsh-startup-fast" || true)"
     fish_fast="$(extract_hyperfine_mean "$hyperfine_txt" "fish-startup-fast" || true)"
+    zsh_default_std="$(extract_hyperfine_stddev "$hyperfine_txt" "zsh-startup" || true)"
+    fish_default_std="$(extract_hyperfine_stddev "$hyperfine_txt" "fish-startup" || true)"
+    zsh_fast_std="$(extract_hyperfine_stddev "$hyperfine_txt" "zsh-startup-fast" || true)"
+    fish_fast_std="$(extract_hyperfine_stddev "$hyperfine_txt" "fish-startup-fast" || true)"
     [[ -n "$zsh_default" ]] && zsh_default_ms="$(to_ms "$zsh_default")"
     [[ -n "$fish_default" ]] && fish_default_ms="$(to_ms "$fish_default")"
     [[ -n "$zsh_fast" ]] && zsh_fast_ms="$(to_ms "$zsh_fast")"
     [[ -n "$fish_fast" ]] && fish_fast_ms="$(to_ms "$fish_fast")"
+    [[ -n "$zsh_default_std" ]] && zsh_default_std_ms="$(to_ms "$zsh_default_std")"
+    [[ -n "$fish_default_std" ]] && fish_default_std_ms="$(to_ms "$fish_default_std")"
+    [[ -n "$zsh_fast_std" ]] && zsh_fast_std_ms="$(to_ms "$zsh_fast_std")"
+    [[ -n "$fish_fast_std" ]] && fish_fast_std_ms="$(to_ms "$fish_fast_std")"
+    [[ -n "$zsh_default_ms" && -n "$zsh_default_std_ms" ]] && zsh_default_cv="$(calc_cv_pct "$zsh_default_ms" "$zsh_default_std_ms")"
+    [[ -n "$fish_default_ms" && -n "$fish_default_std_ms" ]] && fish_default_cv="$(calc_cv_pct "$fish_default_ms" "$fish_default_std_ms")"
+    [[ -n "$zsh_fast_ms" && -n "$zsh_fast_std_ms" ]] && zsh_fast_cv="$(calc_cv_pct "$zsh_fast_ms" "$zsh_fast_std_ms")"
+    [[ -n "$fish_fast_ms" && -n "$fish_fast_std_ms" ]] && fish_fast_cv="$(calc_cv_pct "$fish_fast_ms" "$fish_fast_std_ms")"
+    [[ -n "$zsh_default_cv" ]] && zsh_default_stability="$(stability_band "$zsh_default_cv")"
+    [[ -n "$fish_default_cv" ]] && fish_default_stability="$(stability_band "$fish_default_cv")"
+    [[ -n "$zsh_fast_cv" ]] && zsh_fast_stability="$(stability_band "$zsh_fast_cv")"
+    [[ -n "$fish_fast_cv" ]] && fish_fast_stability="$(stability_band "$fish_fast_cv")"
   fi
 
   if [[ -f "$components_txt" ]]; then
@@ -498,12 +694,12 @@ cmd_report() {
 
     printf '## Startup Benchmarks\n\n'
     if [[ -f "$hyperfine_txt" ]]; then
-      printf '| Benchmark | Mean | Mean (ms) |\n'
-      printf '|---|---:|---:|\n'
-      [[ -n "$zsh_default" ]] && printf '| zsh-startup | %s | %s |\n' "$zsh_default" "$zsh_default_ms"
-      [[ -n "$fish_default" ]] && printf '| fish-startup | %s | %s |\n' "$fish_default" "$fish_default_ms"
-      [[ -n "$zsh_fast" ]] && printf '| zsh-startup-fast | %s | %s |\n' "$zsh_fast" "$zsh_fast_ms"
-      [[ -n "$fish_fast" ]] && printf '| fish-startup-fast | %s | %s |\n' "$fish_fast" "$fish_fast_ms"
+      printf '| Benchmark | Mean | Mean (ms) | Stddev (ms) | CV (%%) | Stability |\n'
+      printf '|---|---:|---:|---:|---:|---|\n'
+      [[ -n "$zsh_default" ]] && printf '| zsh-startup | %s | %s | %s | %s | %s |\n' "$zsh_default" "$zsh_default_ms" "$zsh_default_std_ms" "$zsh_default_cv" "$zsh_default_stability"
+      [[ -n "$fish_default" ]] && printf '| fish-startup | %s | %s | %s | %s | %s |\n' "$fish_default" "$fish_default_ms" "$fish_default_std_ms" "$fish_default_cv" "$fish_default_stability"
+      [[ -n "$zsh_fast" ]] && printf '| zsh-startup-fast | %s | %s | %s | %s | %s |\n' "$zsh_fast" "$zsh_fast_ms" "$zsh_fast_std_ms" "$zsh_fast_cv" "$zsh_fast_stability"
+      [[ -n "$fish_fast" ]] && printf '| fish-startup-fast | %s | %s | %s | %s | %s |\n' "$fish_fast" "$fish_fast_ms" "$fish_fast_std_ms" "$fish_fast_cv" "$fish_fast_stability"
       printf '\n'
     else
       printf '_No hyperfine output found in this run._\n\n'
@@ -783,6 +979,9 @@ main() {
   case "$cmd" in
     bench)
       cmd_bench "$@"
+      ;;
+    matrix)
+      cmd_matrix "$@"
       ;;
     bench-components)
       cmd_bench_components "$@"

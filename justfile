@@ -267,6 +267,10 @@ cargo-install:
 shell-perf-bench:
     ./scripts/shell_perf.sh bench
 
+# Benchmark startup matrix (default + fast mode) with stability scoring
+shell-perf-matrix:
+    ./scripts/shell_perf.sh matrix
+
 # Benchmark shell startup components (sheldon/fzf/starship/mise hooks)
 shell-perf-components:
     ./scripts/shell_perf.sh bench-components
