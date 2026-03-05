@@ -180,7 +180,7 @@ end
 # Skip fzf setup in test mode
 if not set -q FISH_TEST
     # Pin fzf version
-    set -gx FZF_VERSION "v0.60.2"
+    set -gx FZF_VERSION "v0.70.0"
 
     # Ensure fzf is installed with the correct version
     if not command -q fzf; or test "$FZF_AUTO_UPDATE" = "true"
