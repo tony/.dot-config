@@ -40,9 +40,10 @@ function __auto_source_venv --on-variable PWD --description "Activate/Deactivate
     
     set -g __VENV_HANDLING 1
 
-    # Check if we are inside a git repository
-    if git rev-parse --show-toplevel &>/dev/null
-        set dir (realpath (git rev-parse --show-toplevel))
+    # Check if we are inside a git repository (single probe).
+    set -l repo_root (git rev-parse --show-toplevel 2>/dev/null)
+    if test -n "$repo_root"
+        set dir (realpath "$repo_root")
     else
         set dir (pwd -P)
     end
