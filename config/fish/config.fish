@@ -65,7 +65,21 @@ end
 if status is-interactive
     # Commands to run in interactive sessions can go here
     set -lx SHELL fish
-    keychain --eval --agents ssh --quiet -Q id_ed25519 --nogui | source
+
+    # keychain can be expensive on startup; only run it when the current
+    # SSH agent socket is missing or invalid.
+    if command -sq keychain
+        set -l should_run_keychain 0
+        if not set -q SSH_AUTH_SOCK
+            set should_run_keychain 1
+        else if not test -S "$SSH_AUTH_SOCK"
+            set should_run_keychain 1
+        end
+
+        if test "$should_run_keychain" -eq 1
+            keychain --eval --agents ssh --quiet -Q id_ed25519 --nogui | source
+        end
+    end
 end
 
 fish_add_path "$HOME/.local/bin"

@@ -15,6 +15,11 @@ if command -sq mise
     # Add mise to PATH if it's not already there
     fish_add_path ~/.local/bin
 
+    # Startup mode:
+    # - default: full behavior
+    # - fast: opt-in lower-latency mode (skips hook bootstrap at activate time)
+    set -q MISE_STARTUP_MODE; or set -g MISE_STARTUP_MODE default
+
     # Lazy activation - defer hook-env until command execution
     set -gx mise_fish_mode eval_after_arrow
     # Only run full config check on directory change, not every prompt
@@ -28,14 +33,16 @@ if command -sq mise
         set -l cache_dir ~/.cache/fish
         set -l cache_file $cache_dir/mise_activate.fish
         set -l version_file $cache_dir/mise_activate.version
+        set -l startup_mode $MISE_STARTUP_MODE
 
         # Get current mise version (fast - reads from binary)
         set -l current_version (mise --version 2>/dev/null | string split ' ')[2]
+        set -l current_signature "$current_version:$startup_mode"
 
         # Check cache validity
         if test -f "$cache_file" -a -f "$version_file"
-            set -l cached_version (cat "$version_file" 2>/dev/null)
-            if test "$current_version" = "$cached_version"
+            set -l cached_signature (cat "$version_file" 2>/dev/null)
+            if test "$current_signature" = "$cached_signature"
                 source "$cache_file"
                 return
             end
@@ -43,8 +50,12 @@ if command -sq mise
 
         # Generate and cache
         mkdir -p "$cache_dir"
-        mise activate fish > "$cache_file"
-        echo "$current_version" > "$version_file"
+        if test "$startup_mode" = "fast"
+            mise activate fish --no-hook-env > "$cache_file"
+        else
+            mise activate fish > "$cache_file"
+        end
+        echo "$current_signature" > "$version_file"
         source "$cache_file"
     end
 
