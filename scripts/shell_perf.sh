@@ -23,7 +23,8 @@ usage() {
   cat <<'USAGE'
 Usage:
   shell_perf.sh bench [--run-dir DIR] [--runs N] [--warmup N] [--cwd DIR] [--with-fast-mode]
-  shell_perf.sh profile [--run-dir DIR]
+  shell_perf.sh bench-components [--run-dir DIR] [--runs N] [--warmup N] [--cwd DIR]
+  shell_perf.sh profile [--run-dir DIR] [--zsh-mode warm|cold]
   shell_perf.sh report [--run-dir DIR]
   shell_perf.sh deep [--run-dir DIR] [--runs N] [--warmup N] [--cwd DIR] [--with-fast-mode]
   shell_perf.sh compare --before DIR --after DIR
@@ -66,6 +67,13 @@ normalize_run_dir() {
   fi
   mkdir -p "$run_dir"
   printf '%s\n' "$run_dir"
+}
+
+read_meta_value() {
+  local meta_file="$1"
+  local key="$2"
+  [[ -f "$meta_file" ]] || return 0
+  awk -F= -v key="$key" '$1 == key { print $2; exit }' "$meta_file"
 }
 
 extract_hyperfine_mean() {
@@ -210,13 +218,113 @@ cmd_bench() {
   log "Benchmark artifacts written to: $run_dir"
 }
 
-cmd_profile() {
+cmd_bench_components() {
   local run_dir=""
+  local runs="$DEFAULT_RUNS"
+  local warmup="$DEFAULT_WARMUP"
+  local cwd="$ROOT_DIR"
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
       --run-dir)
         run_dir="$2"
+        shift 2
+        ;;
+      --runs)
+        runs="$2"
+        shift 2
+        ;;
+      --warmup)
+        warmup="$2"
+        shift 2
+        ;;
+      --cwd)
+        cwd="$2"
+        shift 2
+        ;;
+      -h|--help)
+        usage
+        return 0
+        ;;
+      *)
+        die "Unknown bench-components option: $1"
+        ;;
+    esac
+  done
+
+  ensure_cmd hyperfine
+
+  run_dir="$(normalize_run_dir "$run_dir")"
+  local out_txt="$run_dir/components-hyperfine.txt"
+  local out_json="$run_dir/components-hyperfine.json"
+
+  local -a names=()
+  local -a commands=()
+
+  if command -v sheldon >/dev/null 2>&1; then
+    names+=("component-sheldon-source")
+    commands+=("sheldon source >/dev/null")
+  fi
+
+  if command -v fzf >/dev/null 2>&1; then
+    names+=("component-fzf-zsh-script")
+    commands+=("fzf --zsh >/dev/null")
+  fi
+
+  if command -v starship >/dev/null 2>&1; then
+    names+=("component-starship-prompt" "component-starship-right-prompt")
+    commands+=("starship prompt >/dev/null" "starship prompt --right >/dev/null")
+  fi
+
+  if command -v mise >/dev/null 2>&1; then
+    names+=("component-mise-hook-env-zsh" "component-mise-hook-env-fish")
+    commands+=("mise hook-env -s zsh >/dev/null" "mise hook-env -s fish >/dev/null")
+  fi
+
+  (( ${#names[@]} > 0 )) || die "No component benchmarks available in current PATH"
+
+  local -a hf_args=(
+    --style basic
+    --warmup "$warmup"
+    --runs "$runs"
+    --export-json "$out_json"
+  )
+
+  local name
+  for name in "${names[@]}"; do
+    hf_args+=(--command-name "$name")
+  done
+
+  log "Running component benchmarks (runs=$runs warmup=$warmup, cwd=$cwd)"
+  (
+    cd "$cwd"
+    hyperfine "${hf_args[@]}" "${commands[@]}"
+  ) | tee "$out_txt"
+
+  if command -v starship >/dev/null 2>&1; then
+    (
+      cd "$cwd"
+      STARSHIP_LOG=trace starship timings
+    ) > "$run_dir/starship-timings.txt" 2>&1 || true
+  fi
+
+  write_meta "$run_dir" "bench-components" "$runs" "$warmup" "$cwd"
+  write_latest "$run_dir"
+  log "Component benchmark artifacts written to: $run_dir"
+}
+
+cmd_profile() {
+  local run_dir=""
+  local zsh_mode="warm"
+
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --run-dir)
+        run_dir="$2"
+        shift 2
+        ;;
+      --zsh-mode)
+        zsh_mode="$2"
         shift 2
         ;;
       -h|--help)
@@ -228,6 +336,14 @@ cmd_profile() {
         ;;
     esac
   done
+
+  case "$zsh_mode" in
+    warm|cold)
+      ;;
+    *)
+      die "Invalid --zsh-mode: $zsh_mode (expected warm or cold)"
+      ;;
+  esac
 
   ensure_cmd fish
   ensure_cmd zsh
@@ -253,10 +369,21 @@ zmodload zsh/zprof
 source "$ROOT_DIR/.zshrc"
 zprof
 ZSHRC
+
+  if [[ "$zsh_mode" == "warm" ]]; then
+    local source_zcompdump="${HOME}/.zcompdump"
+    if [[ -f "$source_zcompdump" ]]; then
+      cp "$source_zcompdump" "$tmpdir/.zcompdump"
+    else
+      log "Warm zsh profile requested but $source_zcompdump was not found; falling back to cold behavior"
+    fi
+  fi
+
   ZDOTDIR="$tmpdir" zsh -i -c exit > "$zprof_txt" 2>&1 || true
   rm -rf "$tmpdir"
 
   write_meta "$run_dir" "profile" "$DEFAULT_RUNS" "$DEFAULT_WARMUP" "$ROOT_DIR"
+  printf 'ZSH_PROFILE_MODE=%s\n' "$zsh_mode" >> "$run_dir/meta.env"
   write_latest "$run_dir"
   log "Profile artifacts written to: $run_dir"
 }
@@ -287,8 +414,13 @@ cmd_report() {
 
   local report_md="$run_dir/report.md"
   local hyperfine_txt="$run_dir/hyperfine.txt"
+  local components_txt="$run_dir/components-hyperfine.txt"
   local fish_prof_sorted="$run_dir/fish-startup.sorted.prof"
   local zprof_txt="$run_dir/zsh-zprof.txt"
+  local starship_timings_txt="$run_dir/starship-timings.txt"
+  local meta_file="$run_dir/meta.env"
+  local zsh_profile_mode
+  zsh_profile_mode="$(read_meta_value "$meta_file" "ZSH_PROFILE_MODE")"
 
   local zsh_default=""
   local fish_default=""
@@ -298,6 +430,18 @@ cmd_report() {
   local fish_default_ms=""
   local zsh_fast_ms=""
   local fish_fast_ms=""
+  local comp_sheldon=""
+  local comp_fzf_zsh=""
+  local comp_starship=""
+  local comp_starship_right=""
+  local comp_mise_hook_zsh=""
+  local comp_mise_hook_fish=""
+  local comp_sheldon_ms=""
+  local comp_fzf_zsh_ms=""
+  local comp_starship_ms=""
+  local comp_starship_right_ms=""
+  local comp_mise_hook_zsh_ms=""
+  local comp_mise_hook_fish_ms=""
 
   if [[ -f "$hyperfine_txt" ]]; then
     zsh_default="$(extract_hyperfine_mean "$hyperfine_txt" "zsh-startup" || true)"
@@ -308,6 +452,21 @@ cmd_report() {
     [[ -n "$fish_default" ]] && fish_default_ms="$(to_ms "$fish_default")"
     [[ -n "$zsh_fast" ]] && zsh_fast_ms="$(to_ms "$zsh_fast")"
     [[ -n "$fish_fast" ]] && fish_fast_ms="$(to_ms "$fish_fast")"
+  fi
+
+  if [[ -f "$components_txt" ]]; then
+    comp_sheldon="$(extract_hyperfine_mean "$components_txt" "component-sheldon-source" || true)"
+    comp_fzf_zsh="$(extract_hyperfine_mean "$components_txt" "component-fzf-zsh-script" || true)"
+    comp_starship="$(extract_hyperfine_mean "$components_txt" "component-starship-prompt" || true)"
+    comp_starship_right="$(extract_hyperfine_mean "$components_txt" "component-starship-right-prompt" || true)"
+    comp_mise_hook_zsh="$(extract_hyperfine_mean "$components_txt" "component-mise-hook-env-zsh" || true)"
+    comp_mise_hook_fish="$(extract_hyperfine_mean "$components_txt" "component-mise-hook-env-fish" || true)"
+    [[ -n "$comp_sheldon" ]] && comp_sheldon_ms="$(to_ms "$comp_sheldon")"
+    [[ -n "$comp_fzf_zsh" ]] && comp_fzf_zsh_ms="$(to_ms "$comp_fzf_zsh")"
+    [[ -n "$comp_starship" ]] && comp_starship_ms="$(to_ms "$comp_starship")"
+    [[ -n "$comp_starship_right" ]] && comp_starship_right_ms="$(to_ms "$comp_starship_right")"
+    [[ -n "$comp_mise_hook_zsh" ]] && comp_mise_hook_zsh_ms="$(to_ms "$comp_mise_hook_zsh")"
+    [[ -n "$comp_mise_hook_fish" ]] && comp_mise_hook_fish_ms="$(to_ms "$comp_mise_hook_fish")"
   fi
 
   {
@@ -328,6 +487,21 @@ cmd_report() {
       printf '_No hyperfine output found in this run._\n\n'
     fi
 
+    printf '## Component Benchmarks\n\n'
+    if [[ -f "$components_txt" ]]; then
+      printf '| Component | Mean | Mean (ms) |\n'
+      printf '|---|---:|---:|\n'
+      [[ -n "$comp_sheldon" ]] && printf '| component-sheldon-source | %s | %s |\n' "$comp_sheldon" "$comp_sheldon_ms"
+      [[ -n "$comp_fzf_zsh" ]] && printf '| component-fzf-zsh-script | %s | %s |\n' "$comp_fzf_zsh" "$comp_fzf_zsh_ms"
+      [[ -n "$comp_starship" ]] && printf '| component-starship-prompt | %s | %s |\n' "$comp_starship" "$comp_starship_ms"
+      [[ -n "$comp_starship_right" ]] && printf '| component-starship-right-prompt | %s | %s |\n' "$comp_starship_right" "$comp_starship_right_ms"
+      [[ -n "$comp_mise_hook_zsh" ]] && printf '| component-mise-hook-env-zsh | %s | %s |\n' "$comp_mise_hook_zsh" "$comp_mise_hook_zsh_ms"
+      [[ -n "$comp_mise_hook_fish" ]] && printf '| component-mise-hook-env-fish | %s | %s |\n' "$comp_mise_hook_fish" "$comp_mise_hook_fish_ms"
+      printf '\n'
+    else
+      printf '_No component benchmark output found in this run._\n\n'
+    fi
+
     printf '## Top Fish Startup Hotspots\n\n'
     if [[ -f "$fish_prof_sorted" ]]; then
       printf '```text\n'
@@ -346,6 +520,9 @@ cmd_report() {
     fi
 
     printf '## Top Zsh Hotspots (zprof)\n\n'
+    if [[ -n "$zsh_profile_mode" ]]; then
+      printf 'zsh profile mode: `%s`\n\n' "$zsh_profile_mode"
+    fi
     if [[ -f "$zprof_txt" ]]; then
       printf '```text\n'
       awk '
@@ -358,6 +535,15 @@ cmd_report() {
       printf '```\n\n'
     else
       printf '_No zprof output found in this run._\n\n'
+    fi
+
+    printf '## Starship Timings (Ownership)\n\n'
+    if [[ -f "$starship_timings_txt" ]]; then
+      printf '```text\n'
+      awk '/^[[:space:]]*[a-z0-9_:-]+[[:space:]]+-[[:space:]]+[0-9]+/ {print; if (++c >= 8) exit}' "$starship_timings_txt"
+      printf '```\n\n'
+    else
+      printf '_No starship timings output found in this run._\n\n'
     fi
 
     printf '## Bottlenecks and Improvements\n\n'
@@ -391,6 +577,18 @@ cmd_report() {
       any=1
       printf '%s\n' '- poetry detection/activation checks appear in fish startup hotspots.'
       printf '%s\n' '- Improvement: avoid global startup command lookups; perform poetry checks only in poetry project contexts.'
+    fi
+
+    if [[ -n "$comp_starship_ms" ]] && awk -v ms="$comp_starship_ms" 'BEGIN {exit !(ms >= 10)}'; then
+      any=1
+      printf '%s\n' '- starship prompt rendering is a significant startup component in repository paths.'
+      printf '%s\n' '- Improvement: keep default prompt, and use optional fast prompt profile that disables heavy modules (for example `git_status`) when needed.'
+    fi
+
+    if [[ -n "$comp_mise_hook_fish_ms" ]] && awk -v ms="$comp_mise_hook_fish_ms" 'BEGIN {exit !(ms >= 20)}'; then
+      any=1
+      printf '%s\n' '- fish `mise hook-env` is a major startup cost center under current configuration.'
+      printf '%s\n' '- Improvement: keep default behavior and use opt-in fast mode (`MISE_STARTUP_MODE=fast`) for latency-sensitive workflows.'
     fi
 
     if (( any == 0 )); then
@@ -454,6 +652,7 @@ cmd_deep() {
   fi
 
   cmd_bench "${bench_args[@]}"
+  cmd_bench_components --run-dir "$run_dir" --runs "$runs" --warmup "$warmup" --cwd "$cwd"
   cmd_profile --run-dir "$run_dir"
   cmd_report --run-dir "$run_dir"
 }
@@ -529,6 +728,9 @@ main() {
   case "$cmd" in
     bench)
       cmd_bench "$@"
+      ;;
+    bench-components)
+      cmd_bench_components "$@"
       ;;
     profile)
       cmd_profile "$@"

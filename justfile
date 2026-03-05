@@ -266,6 +266,10 @@ cargo-install:
 shell-perf-bench:
     ./scripts/shell_perf.sh bench
 
+# Benchmark shell startup components (sheldon/fzf/starship/mise hooks)
+shell-perf-components:
+    ./scripts/shell_perf.sh bench-components
+
 # Capture native shell startup profiles (fish --profile-startup + zprof)
 shell-perf-profile:
     ./scripts/shell_perf.sh profile
