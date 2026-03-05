@@ -27,24 +27,34 @@ if command -sq mise
     # Cache filesystem stat checks for 5 seconds (helps on WSL2/NFS)
     set -gx MISE_HOOK_ENV_CACHE_TTL 5s
 
-    # Evalcache for mise activate - caches generated shell code
-    # Invalidates when mise version changes
+    # Cache mise activate output; invalidate on binary signature + mode change.
     function _mise_activate_cached
-        set -l cache_dir ~/.cache/fish
+        set -l cache_dir "$XDG_CACHE_HOME/fish"
         set -l cache_file $cache_dir/mise_activate.fish
-        set -l version_file $cache_dir/mise_activate.version
+        set -l signature_file $cache_dir/mise_activate.signature
         set -l startup_mode $MISE_STARTUP_MODE
 
-        # Get current mise version (fast - reads from binary)
-        set -l current_version (mise --version 2>/dev/null | string split ' ')[2]
-        set -l current_signature "$current_version:$startup_mode"
+        set -l mise_bin (command -s mise)
+        set -l mise_sig (command stat -Lc '%Y:%s' "$mise_bin" 2>/dev/null)
+        if test -z "$mise_sig"
+            set mise_sig (command stat -Lf '%m:%z' "$mise_bin" 2>/dev/null)
+        end
+        set -l current_signature ""
+        if test -n "$mise_sig"
+            set current_signature "$mise_bin:$mise_sig:$startup_mode"
+        else
+            # Fallback keeps functionality even if stat is unavailable.
+            set current_signature "$mise_bin:unknown:$startup_mode"
+        end
 
         # Check cache validity
-        if test -f "$cache_file" -a -f "$version_file"
-            set -l cached_signature (cat "$version_file" 2>/dev/null)
-            if test "$current_signature" = "$cached_signature"
-                source "$cache_file"
-                return
+        if test -f "$cache_file" -a -f "$signature_file"
+            set -l cached_signature ""
+            if read -l cached_signature < "$signature_file"
+                if test "$current_signature" = "$cached_signature"
+                    source "$cache_file"
+                    return
+                end
             end
         end
 
@@ -55,7 +65,7 @@ if command -sq mise
         else
             mise activate fish > "$cache_file"
         end
-        echo "$current_signature" > "$version_file"
+        echo "$current_signature" > "$signature_file"
         source "$cache_file"
     end
 
