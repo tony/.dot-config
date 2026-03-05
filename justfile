@@ -259,6 +259,30 @@ cargo-install:
     cargo install gitui hyperfine dprint
 
 # ══════════════════════════════════════════════════════
+# shell performance group
+# ══════════════════════════════════════════════════════
+
+# Benchmark zsh/fish startup latency (hyperfine + quick facilities output)
+shell-perf-bench:
+    ./scripts/shell_perf.sh bench
+
+# Capture native shell startup profiles (fish --profile-startup + zprof)
+shell-perf-profile:
+    ./scripts/shell_perf.sh profile
+
+# Render markdown report from the latest shell perf run
+shell-perf-report:
+    ./scripts/shell_perf.sh report
+
+# Run full suite: benchmark + profile + report, including fast-mode comparison
+shell-perf-deep:
+    ./scripts/shell_perf.sh deep --with-fast-mode
+
+# Compare two run directories and emit markdown delta report
+shell-perf-compare before after:
+    ./scripts/shell_perf.sh compare --before {{ before }} --after {{ after }}
+
+# ══════════════════════════════════════════════════════
 # wsl group
 # ══════════════════════════════════════════════════════
 

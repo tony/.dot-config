@@ -92,3 +92,6 @@ config/fish/fish_variables
 # Python
 .coverage
 .coverage/
+
+# Shell performance artifacts
+.artifacts/
