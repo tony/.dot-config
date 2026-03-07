@@ -263,6 +263,7 @@ fi
 # Initialize zsh completions with daily cache rebuild
 # Run full compinit once per day and use compinit -C otherwise.
 # This avoids paying the full compinit/compdump cost on every startup.
+zmodload -F zsh/datetime p:EPOCHSECONDS
 autoload -Uz compinit
 make_dir_if_missing "${ZSH_CACHE_DIR}"
 _zcompdump_file="${ZDOTDIR:-$HOME}/.zcompdump"
