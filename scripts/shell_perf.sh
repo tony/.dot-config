@@ -85,8 +85,12 @@ extract_hyperfine_mean() {
       in_block = index($0, bench_name) > 0
       next
     }
-    in_block && /Time \(mean/ {
+    in_block && /Time \((mean|abs)/ {
       if (match($0, /([0-9.]+)[[:space:]]*(us|µs|ms|s)[[:space:]]*±/, m)) {
+        print m[1] " " m[2]
+        exit
+      }
+      if (match($0, /([0-9.]+)[[:space:]]*(us|µs|ms|s)/, m)) {
         print m[1] " " m[2]
         exit
       }
@@ -102,7 +106,7 @@ extract_hyperfine_stddev() {
       in_block = index($0, bench_name) > 0
       next
     }
-    in_block && /Time \(mean/ {
+    in_block && /Time \((mean|abs)/ {
       if (match($0, /([0-9.]+)[[:space:]]*(us|µs|ms|s)[[:space:]]*±[[:space:]]*([0-9.]+)[[:space:]]*(us|µs|ms|s)/, m)) {
         print m[3] " " m[4]
         exit
