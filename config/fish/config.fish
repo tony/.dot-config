@@ -74,6 +74,8 @@ if status is-interactive
             set should_run_keychain 1
         else if not test -S "$SSH_AUTH_SOCK"
             set should_run_keychain 1
+        else if not ssh-add -l >/dev/null 2>&1
+            set should_run_keychain 1
         end
 
         if test "$should_run_keychain" -eq 1
