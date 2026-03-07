@@ -29,7 +29,7 @@ if command -sq mise
 
     # Cache mise activate output; invalidate on binary signature + mode change.
     function _mise_activate_cached
-        set -l cache_dir "$XDG_CACHE_HOME/fish"
+        set -l cache_dir (set -q XDG_CACHE_HOME; and echo "$XDG_CACHE_HOME/fish"; or echo "$HOME/.cache/fish")
         set -l cache_file $cache_dir/mise_activate.fish
         set -l signature_file $cache_dir/mise_activate.signature
         set -l startup_mode $MISE_STARTUP_MODE
