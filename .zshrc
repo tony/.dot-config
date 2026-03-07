@@ -11,6 +11,9 @@ export MISE_CARGO_DEFAULT_PACKAGES_FILE="${ZDOTDIR}/.default-cargo-crates"
 export MISE_PYTHON_DEFAULT_PACKAGES_FILE="${ZDOTDIR}/.default-python-packages"
 export MISE_NODE_DEFAULT_PACKAGES_FILE="${ZDOTDIR}/.default-npm-packages"
 export MISE_ASDF_COMPAT=true
+# Match fish behavior: avoid per-prompt hook-env recomputation where possible.
+export MISE_HOOK_ENV_CHPWD_ONLY=true
+export MISE_HOOK_ENV_CACHE_TTL=5s
 
 # Node.js
 export COREPACK_ENABLE_STRICT=0  # Silence corepack warnings
@@ -93,6 +96,9 @@ fi
 # Regular shell configuration continues below for non-VSCode sessions
 # If ZDOTDIR isn't already set, default it to $HOME.
 ZDOTDIR="${ZDOTDIR:-$HOME}"
+
+# Keep PATH stable and deduplicated during this shell session.
+typeset -gU path PATH
 
 ###############################################################################
 # Helper Functions
@@ -194,6 +200,12 @@ alias git_branch_history_diff='git diff --patch "$(
 #
 # By default, Sheldon writes the locked file to ~/.local/share/sheldon/plugins.zsh
 # (You can customize that path with `sheldon lock --output <path>`).
+#
+# Limit startup identity scanning in oh-my-zsh ssh-agent plugin.
+# Override with e.g.:
+#   export ZSH_SSH_AGENT_IDENTITIES="id_ed25519 id_rsa_work"
+: "${ZSH_SSH_AGENT_IDENTITIES:=id_ed25519}"
+zstyle ':omz:plugins:ssh-agent' identities ${=ZSH_SSH_AGENT_IDENTITIES}
 
 if command -v sheldon >/dev/null 2>&1; then
   # Optionally auto-lock each time you start a shell (slower):
@@ -227,7 +239,7 @@ fi
 # sheldon
 if command -v sheldon >/dev/null 2>&1; then
   if [[ ! -f "${HOME}/.zfunc/_sheldon" ]]; then
-    sheldon completions --shell zsh > "${HOME}/.zfunc/_shelldon"
+    sheldon completions --shell zsh > "${HOME}/.zfunc/_sheldon"
   fi
 fi
 
@@ -249,18 +261,33 @@ if command -v rustup >/dev/null 2>&1; then
 fi
 
 # Initialize zsh completions with daily cache rebuild
-# Only run full compinit once per day, use cache otherwise (~150ms savings)
-# Note: glob qualifiers require array context, not [[ -n ... ]]
+# Run full compinit once per day and use compinit -C otherwise.
+# This avoids paying the full compinit/compdump cost on every startup.
+zmodload -F zsh/datetime p:EPOCHSECONDS
 autoload -Uz compinit
-_zcompdump_old=(${ZDOTDIR:-$HOME}/.zcompdump(N.mh+24))
-if (( ${#_zcompdump_old} )); then
-    # .zcompdump is older than 24 hours, rebuild
-    compinit
-else
-    # Use cached completions without security check
-    compinit -C
+make_dir_if_missing "${ZSH_CACHE_DIR}"
+_zcompdump_file="${ZDOTDIR:-$HOME}/.zcompdump"
+_zcompinit_stamp="${ZSH_CACHE_DIR}/compinit.last_run"
+typeset -i _zcompinit_interval=86400
+typeset -i _zcompinit_now=${EPOCHSECONDS:-0}
+typeset -i _zcompinit_last=0
+
+if [[ -r "${_zcompinit_stamp}" ]]; then
+  read -r _zcompinit_last < "${_zcompinit_stamp}"
 fi
-unset _zcompdump_old
+
+if [[ ! "${_zcompinit_last}" =~ ^[0-9]+$ ]]; then
+  _zcompinit_last=0
+fi
+
+if [[ ! -f "${_zcompdump_file}" ]] || (( _zcompinit_now <= 0 )) || (( _zcompinit_last <= 0 )) || (( _zcompinit_now - _zcompinit_last >= _zcompinit_interval )); then
+  compinit
+  print -r -- "${_zcompinit_now}" >| "${_zcompinit_stamp}"
+else
+  compinit -C
+fi
+
+unset _zcompdump_file _zcompinit_stamp _zcompinit_interval _zcompinit_now _zcompinit_last
 
 # Completion style settings
 zstyle ':completion:*' use-cache on

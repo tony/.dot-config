@@ -8,6 +8,9 @@ legacy_version_file = true
 # Automatically install missing plugins
 experimental = true
 idiomatic_version_file_enable_tools = ["node"]
+# Cache hook-env results to reduce repeated startup overhead.
+env_cache = true
+env_cache_ttl = "1h"
 
 [env]
 # This is the correct place to set MISE_PYTHON_COMPILE

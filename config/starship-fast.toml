@@ -1,0 +1,22 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+# Opt-in low-latency profile. Enable with: STARSHIP_PROFILE=fast
+add_newline = false
+command_timeout = 120
+scan_timeout = 8
+format = "$directory$git_branch$character"
+
+[line_break]
+disabled = true
+
+[git_status]
+disabled = true
+
+[git_state]
+disabled = true
+
+[git_metrics]
+disabled = true
+
+[cmd_duration]
+disabled = true

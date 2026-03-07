@@ -18,6 +18,7 @@ function setup
     
     # Create test project structure
     mkdir -p $test_temp_dir/{project1,project2}
+    mkdir -p $test_temp_dir/project1/src
     mkdir -p $test_temp_dir/project1/.venv/bin
     mkdir -p $test_temp_dir/project2/venv/bin
     mkdir -p $test_temp_dir/poetry_project/.venv/bin
@@ -50,6 +51,21 @@ function setup
     echo '        source $test_temp_dir/poetry_project/.venv/bin/activate.fish' >> $test_temp_dir/bin/poetry
     echo 'end' >> $test_temp_dir/bin/poetry
     chmod +x $test_temp_dir/bin/poetry
+
+    # Create mock git binary for repo-root cache tests
+    echo '#!/usr/bin/env fish' > $test_temp_dir/bin/git
+    echo 'if test "$argv[1]" = "rev-parse"; and test "$argv[2]" = "--show-toplevel"' >> $test_temp_dir/bin/git
+    echo "    echo 1 >> \"$test_temp_dir/git-rev-parse.calls\"" >> $test_temp_dir/bin/git
+    echo "    set -l root \"$test_temp_dir/project1\"" >> $test_temp_dir/bin/git
+    echo '    set -l root_regex (string escape --style=regex -- "$root")' >> $test_temp_dir/bin/git
+    echo '    if string match -qr "^"$root_regex"(/|\$)" -- "$PWD"' >> $test_temp_dir/bin/git
+    echo '        echo "$root"' >> $test_temp_dir/bin/git
+    echo '        exit 0' >> $test_temp_dir/bin/git
+    echo '    end' >> $test_temp_dir/bin/git
+    echo '    exit 1' >> $test_temp_dir/bin/git
+    echo 'end' >> $test_temp_dir/bin/git
+    echo 'exit 1' >> $test_temp_dir/bin/git
+    chmod +x $test_temp_dir/bin/git
     
     # Save original environment
     set -g original_virtual_env $VIRTUAL_ENV
@@ -79,6 +95,9 @@ function teardown
     
     # Reset handling flag
     set -g __VENV_HANDLING 0
+    set -e __AUTO_VENV_LAST_PWD
+    set -e __AUTO_VENV_LAST_DIR
+    set -e __AUTO_VENV_REPO_ROOT
     echo "Test environment cleanup complete" >&2
 end
 
@@ -190,6 +209,26 @@ function test_safe_activation
     test -n "$VIRTUAL_ENV"; and test "$PATH" != "$old_path"
 end
 
+# Test git-root cache avoids repeated probes in the same repository
+function test_git_repo_root_cache
+    set -l git_calls_file "$test_temp_dir/git-rev-parse.calls"
+    rm -f "$git_calls_file"
+
+    cd $test_temp_dir/project1
+    __auto_source_venv
+    cd $test_temp_dir/project1/src
+    __auto_source_venv
+    cd $test_temp_dir/project1
+    __auto_source_venv
+
+    set -l call_count 0
+    if test -f "$git_calls_file"
+        set call_count (count (cat "$git_calls_file"))
+    end
+
+    test "$call_count" -eq 1
+end
+
 # Run all tests
 echo "Running fish_venv tests..."
 echo "=========================="
@@ -197,12 +236,12 @@ echo "=========================="
 set -l failed_tests 0
 
 # Run tests
-for test_name in venv_activation venv_deactivation venv_switching poetry_activation recursive_handling safe_activation
+for test_name in venv_activation venv_deactivation venv_switching poetry_activation recursive_handling safe_activation git_repo_root_cache
     run_test $test_name test_$test_name
     set failed_tests (math $failed_tests + $status)
 end
 
 echo "=========================="
-echo "Test summary: "(math 6 - $failed_tests)" passed, $failed_tests failed"
+echo "Test summary: "(math 7 - $failed_tests)" passed, $failed_tests failed"
 
 exit $failed_tests 

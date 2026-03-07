@@ -63,6 +63,7 @@ _install-ssh-config:
 _install-xdg-config:
     mkdir -p ~/.config
     ln -si {{ dot_config_dir }}/config/starship.toml ~/.config/starship.toml
+    ln -si {{ dot_config_dir }}/config/starship-fast.toml ~/.config/starship-fast.toml
     ln -si {{ dot_config_dir }}/config/sheldon/ ~/.config/sheldon
 
 # ══════════════════════════════════════════════════════
@@ -257,6 +258,38 @@ npm-uninstall-packages:
 # Install Rust CLI tools via cargo
 cargo-install:
     cargo install gitui hyperfine dprint
+
+# ══════════════════════════════════════════════════════
+# shell performance group
+# ══════════════════════════════════════════════════════
+
+# Benchmark zsh/fish startup latency (hyperfine + quick facilities output)
+shell-perf-bench:
+    ./scripts/shell_perf.sh bench
+
+# Benchmark startup matrix (default + fast mode) with stability scoring
+shell-perf-matrix:
+    ./scripts/shell_perf.sh matrix
+
+# Benchmark shell startup components (sheldon/fzf/starship/mise hooks)
+shell-perf-components:
+    ./scripts/shell_perf.sh bench-components
+
+# Capture native shell startup profiles (fish --profile-startup + zprof)
+shell-perf-profile:
+    ./scripts/shell_perf.sh profile
+
+# Render markdown report from the latest shell perf run
+shell-perf-report:
+    ./scripts/shell_perf.sh report
+
+# Run full suite: benchmark + profile + report, including fast-mode comparison
+shell-perf-deep:
+    ./scripts/shell_perf.sh deep --with-fast-mode
+
+# Compare two run directories and emit markdown delta report
+shell-perf-compare before after:
+    ./scripts/shell_perf.sh compare --before {{ before }} --after {{ after }}
 
 # ══════════════════════════════════════════════════════
 # wsl group

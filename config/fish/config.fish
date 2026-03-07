@@ -64,8 +64,24 @@ end
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
-    set -lx SHELL fish
-    keychain --eval --agents ssh --quiet -Q id_ed25519 --nogui | source
+    set -gx SHELL (status fish-path)
+
+    # keychain can be expensive on startup; only run it when the current
+    # SSH agent socket is missing or invalid.
+    if command -sq keychain
+        set -l should_run_keychain 0
+        if not set -q SSH_AUTH_SOCK
+            set should_run_keychain 1
+        else if not test -S "$SSH_AUTH_SOCK"
+            set should_run_keychain 1
+        else if not ssh-add -l >/dev/null 2>&1
+            set should_run_keychain 1
+        end
+
+        if test "$should_run_keychain" -eq 1
+            keychain --eval --agents ssh --quiet -Q id_ed25519 --nogui | source
+        end
+    end
 end
 
 fish_add_path "$HOME/.local/bin"
@@ -124,29 +140,67 @@ ignore_variables
 # Starship prompt - suppress warning logs
 set -Ux STARSHIP_LOG error
 
-# Evalcache for starship init - caches generated shell code
-# Invalidates when starship version changes
-# Note: Uses --print-full-init to cache the actual init code (not the stub)
+# Cache helper for generated shell init code (signature-based invalidation)
+function __cache_file_signature --argument-names file
+    test -n "$file"; or return 1
+    test -e "$file"; or return 1
+
+    set -l sig (command stat -Lc '%Y:%s' "$file" 2>/dev/null)
+    if test -z "$sig"
+        set sig (command stat -Lf '%m:%z' "$file" 2>/dev/null)
+    end
+    test -n "$sig"; or return 1
+
+    echo "$file:$sig"
+end
+
+# Cache starship init output and invalidate when binary signature and profile changes.
+# Note: Uses --print-full-init to cache the actual init code (not the stub).
 function _starship_init_cached
-    set -l cache_dir ~/.cache/fish
+    set -l cache_dir "$XDG_CACHE_HOME/fish"
     set -l cache_file $cache_dir/starship_init.fish
-    set -l version_file $cache_dir/starship_init.version
+    set -l signature_file $cache_dir/starship_init.signature
+    set -l profile default
+    set -q STARSHIP_PROFILE; and set profile "$STARSHIP_PROFILE"
 
-    # Get current starship version
-    set -l current_version (starship --version 2>/dev/null | head -1)
+    set -l config_home "$XDG_CONFIG_HOME"
+    set -l fast_config "$config_home/starship-fast.toml"
+    set -l default_config "$config_home/starship.toml"
+    set -l config_file ""
 
-    # Check cache validity
-    if test -f "$cache_file" -a -f "$version_file"
-        if test "$current_version" = (cat "$version_file" 2>/dev/null)
-            source "$cache_file"
-            return
+    if set -q STARSHIP_CONFIG
+        set config_file "$STARSHIP_CONFIG"
+    else if test "$profile" = "fast"; and test -r "$fast_config"
+        set config_file "$fast_config"
+    else if test -r "$default_config"
+        set config_file "$default_config"
+    end
+
+    if test -n "$config_file"
+        set -gx STARSHIP_CONFIG "$config_file"
+    end
+
+    set -l starship_bin (command -s starship)
+    set -l current_signature (__cache_file_signature "$starship_bin")
+    test -n "$current_signature"; or return
+
+    set current_signature "$current_signature|profile=$profile"
+
+    # Check cache validity.
+    if test -f "$cache_file" -a -f "$signature_file"
+        set -l cached_signature ""
+        if read -l cached_signature < "$signature_file"
+            if test "$current_signature" = "$cached_signature"
+                source "$cache_file"
+                return
+            end
         end
     end
 
-    # Generate and cache (use --print-full-init for actual code)
+    # Generate and cache (use --print-full-init for actual code).
     mkdir -p "$cache_dir"
     starship init fish --print-full-init > "$cache_file"
-    echo "$current_version" > "$version_file"
+    echo "$current_signature" > "$signature_file"
     source "$cache_file"
 end
 
