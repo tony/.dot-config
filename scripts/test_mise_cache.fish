@@ -99,6 +99,8 @@ function _source_asdf_isolated
             echo MISE_DIFF_SET=(set -q __MISE_DIFF; and echo yes; or echo no)
             echo MISE_SESSION_SET=(set -q __MISE_SESSION; and echo yes; or echo no)
             echo GOROOT_SET=(test -n \"\$GOROOT\"; and echo yes; or echo no)
+            echo HOOK_ENV_EVAL=(functions -q __mise_env_eval; and echo yes; or echo no)
+            echo HOOK_PREEXEC=(functions -q __mise_env_eval_2; and echo yes; or echo no)
         " 2>/dev/null
 end
 
@@ -132,10 +134,13 @@ set -l activate_content (cat "$test_cache/mise_activate.fish" 2>/dev/null)
 _assert_contains "$activate_content" "function mise" "activate content"
 and _test_ok
 
-_test_begin "warm cache: activate uses --no-hook-env (no direct eval)"
-# The cached activate should NOT contain __mise_env_eval direct call
-if string match -q "*__mise_env_eval" "$activate_content"
-    _test_fail "activate cache contains __mise_env_eval (should use --no-hook-env)"
+_test_begin "warm cache: activate has hook functions (not --no-hook-env)"
+# The cached activate SHOULD contain __mise_env_eval function definition
+# (needed for cd-time tool switching) but NOT a bare __mise_env_eval call
+if not string match -q "*function __mise_env_eval*" "$activate_content"
+    _test_fail "activate cache missing __mise_env_eval function (hooks not registered)"
+else if string match -qr '^\s*__mise_env_eval\s*;?\s*$' "$activate_content"
+    _test_fail "activate cache contains bare __mise_env_eval call (should be stripped)"
 else
     _test_ok
 end
@@ -157,6 +162,8 @@ set -l state_lines (string split \n -- (_source_asdf_isolated default))
 set -l path_has_mise ""
 set -l diff_set ""
 set -l session_set ""
+set -l hook_env_eval ""
+set -l hook_preexec ""
 for line in $state_lines
     if string match -q 'PATH_HAS_MISE=*' "$line"
         set path_has_mise (string replace 'PATH_HAS_MISE=' '' "$line")
@@ -164,6 +171,10 @@ for line in $state_lines
         set diff_set (string replace 'MISE_DIFF_SET=' '' "$line")
     else if string match -q 'MISE_SESSION_SET=*' "$line"
         set session_set (string replace 'MISE_SESSION_SET=' '' "$line")
+    else if string match -q 'HOOK_ENV_EVAL=*' "$line"
+        set hook_env_eval (string replace 'HOOK_ENV_EVAL=' '' "$line")
+    else if string match -q 'HOOK_PREEXEC=*' "$line"
+        set hook_preexec (string replace 'HOOK_PREEXEC=' '' "$line")
     end
 end
 _assert_eq "$path_has_mise" "yes" "PATH has mise tools"
@@ -175,6 +186,17 @@ and _test_ok
 
 _test_begin "tools: __MISE_SESSION is set after startup"
 _assert_eq "$session_set" "yes" "__MISE_SESSION"
+and _test_ok
+
+# -----------------------------------------------------------------------
+# Test 3b: Hook registration — hooks are present for cd-time switching
+# -----------------------------------------------------------------------
+_test_begin "hooks: __mise_env_eval is registered (fish_prompt)"
+_assert_eq "$hook_env_eval" "yes" "__mise_env_eval function"
+and _test_ok
+
+_test_begin "hooks: __mise_env_eval_2 is registered (fish_preexec)"
+_assert_eq "$hook_preexec" "yes" "__mise_env_eval_2 function"
 and _test_ok
 
 # -----------------------------------------------------------------------

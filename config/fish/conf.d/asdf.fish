@@ -38,9 +38,10 @@ if command -sq mise
     #   of all configured tools, taking ~190ms on systems with many runtimes.
     #
     # Solution:
-    #   Layer 1 — Cache the `mise activate fish --no-hook-env` output.
-    #             This provides the mise wrapper function, event hooks, and
-    #             base env setup (~2ms to source from cache).
+    #   Layer 1 — Cache the `mise activate fish` output (with hooks, but
+    #             with the direct __mise_env_eval call stripped).
+    #             This provides the mise wrapper function, event hooks for
+    #             cd-time tool switching, and base env setup (~2ms from cache).
     #
     #   Layer 2 — Cache the `mise hook-env -s fish` output separately.
     #             This provides the resolved tool paths (PATH, GOROOT, etc.)
@@ -100,11 +101,15 @@ if command -sq mise
         string join "|" $parts
     end
 
-    # _mise_activate_cached — Layer 1: cache mise activate --no-hook-env output
+    # _mise_activate_cached — Layer 1: cache mise activate output (with hooks)
     #
-    # Always uses --no-hook-env regardless of MISE_STARTUP_MODE. The hook-env
-    # result is handled separately by Layer 2 (_mise_hookenv_cached).
-    # This avoids spawning a mise process when the cache is valid.
+    # Uses `mise activate fish` WITH hooks so that __mise_env_eval (fish_prompt),
+    # __mise_env_eval_2 (fish_preexec), and __mise_cd_hook (PWD) are registered.
+    # These hooks are essential for dynamic tool switching on `cd`.
+    #
+    # The direct `__mise_env_eval` invocation at the end of activate output is
+    # stripped before caching — Layer 2 (_mise_hookenv_cached) handles the
+    # initial tool resolution from its own cache instead.
     #
     # Cache files:
     #   $cache_dir/mise_activate.fish       — the cached activate script
@@ -129,9 +134,11 @@ if command -sq mise
         end
 
         # Cache miss — generate and store.
-        # Always use --no-hook-env: Layer 2 handles tool resolution.
+        # Use full activate (WITH hooks) but strip the direct __mise_env_eval
+        # call. This preserves hook function definitions for cd-time tool
+        # switching while deferring initial resolution to Layer 2.
         mkdir -p "$cache_dir"
-        mise activate fish --no-hook-env > "$cache_file"
+        mise activate fish | string match -rv '^\s*__mise_env_eval\s*;?\s*$' > "$cache_file"
         echo "$current_signature" > "$signature_file"
         source "$cache_file"
     end
