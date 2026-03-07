@@ -5,7 +5,7 @@
 # inside potential poetry projects to keep startup overhead low.
 
 # function that loads environment variables from a file
-function posix-source
+function __poetry_posix_source
     for i in (cat $argv)
         if test (echo $i | sed -E 's/^[[:space:]]*(.).+$/\\1/g') != "#" && test -n $i
             set arr (string split -m1 = $i)
@@ -40,7 +40,7 @@ function __poetry_env_activate --on-variable PWD
     if test -n "$venv_path" -a -f "$venv_path/bin/activate.fish"
         # Load .env file if configured
         if test "$FISH_POETRY_LOAD_ENV" -a -e "$PWD/.env"
-            posix-source "$PWD/.env"
+            __poetry_posix_source "$PWD/.env"
         end
 
         source "$venv_path/bin/activate.fish"
