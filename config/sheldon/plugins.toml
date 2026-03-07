@@ -26,7 +26,7 @@ _starship_file_signature() {
     local sig
 
     [[ -n "$file" && -e "$file" ]] || return 1
-    sig="$(stat -Lc '%Y:%s' "$file" 2>/dev/null)" || sig="$(stat -f '%m:%z' "$file" 2>/dev/null)" || return 1
+    sig="$(stat -Lc '%Y:%s' "$file" 2>/dev/null)" || sig="$(stat -Lf '%m:%z' "$file" 2>/dev/null)" || return 1
     print -r -- "$file:$sig"
 }
 
@@ -80,7 +80,7 @@ _mise_file_signature() {
   local sig
 
   [[ -n "$file" && -e "$file" ]] || return 1
-  sig="$(stat -Lc '%Y:%s' "$file" 2>/dev/null)" || sig="$(stat -f '%m:%z' "$file" 2>/dev/null)" || return 1
+  sig="$(stat -Lc '%Y:%s' "$file" 2>/dev/null)" || sig="$(stat -Lf '%m:%z' "$file" 2>/dev/null)" || return 1
   print -r -- "$file:$sig"
 }
 
