@@ -154,7 +154,7 @@ function __cache_file_signature --argument-names file
     echo "$file:$sig"
 end
 
-# Cache starship init output and invalidate when binary/config/profile changes.
+# Cache starship init output and invalidate when binary signature and profile changes.
 # Note: Uses --print-full-init to cache the actual init code (not the stub).
 function _starship_init_cached
     set -l cache_dir "$XDG_CACHE_HOME/fish"
