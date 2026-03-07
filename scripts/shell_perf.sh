@@ -80,7 +80,7 @@ read_meta_value() {
 extract_hyperfine_mean() {
   local hyperfine_txt="$1"
   local bench_name="$2"
-  awk -v bench_name="$bench_name" '
+  gawk -v bench_name="$bench_name" '
     /^Benchmark [0-9]+:/ {
       in_block = index($0, bench_name) > 0
       next
@@ -97,7 +97,7 @@ extract_hyperfine_mean() {
 extract_hyperfine_stddev() {
   local hyperfine_txt="$1"
   local bench_name="$2"
-  awk -v bench_name="$bench_name" '
+  gawk -v bench_name="$bench_name" '
     /^Benchmark [0-9]+:/ {
       in_block = index($0, bench_name) > 0
       next
@@ -304,6 +304,8 @@ cmd_matrix() {
         ;;
     esac
   done
+
+  ensure_cmd gawk
 
   run_dir="$(normalize_run_dir "$run_dir")"
   cmd_bench --run-dir "$run_dir" --runs "$runs" --warmup "$warmup" --cwd "$cwd" --with-fast-mode
@@ -638,6 +640,8 @@ cmd_report() {
         ;;
     esac
   done
+
+  ensure_cmd gawk
 
   if [[ -z "$run_dir" ]]; then
     run_dir="$(read_latest)"
@@ -1051,6 +1055,7 @@ cmd_compare() {
     esac
   done
 
+  ensure_cmd gawk
   [[ -n "$before" && -n "$after" ]] || die "compare requires --before DIR and --after DIR"
 
   local before_txt="$before/hyperfine.txt"
