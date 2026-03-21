@@ -1830,6 +1830,11 @@
     repo: git@github.com:sindresorhus/get-port.git
   github-slugger:
     repo: https://github.com/Flet/github-slugger.git
+  graphql-ws:
+    repo: https://github.com/enisdenjo/graphql-ws.git
+    worktrees:
+      - dir: graphql-transport-ws-1.14.0
+        tag: v1.14.0
   happy-dom:
     repo: git@github.com:capricorn86/happy-dom.git
   hast-util-from-html:
