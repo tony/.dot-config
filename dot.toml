@@ -11,6 +11,16 @@ backup = true
 
 [home]
 method = "symlink"
+protected = [
+    ".claude",
+    ".cursor",
+    ".codex",
+    ".gemini",
+    ".config/cursor",
+    ".config/claude",
+    ".config/gemini",
+    ".config/codex",
+]
 
 [home.files]
 ".gitconfig" = ".gitconfig"
@@ -50,6 +60,7 @@ method = "symlink"
 ".config/ptpython" = "config/ptpython"
 ".config/sway" = "config/sway"
 ".config/vcspull" = "config/vcspull"
+".config/zellij" = "config/zellij"
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # PACKAGE LISTS WITH GROUPS

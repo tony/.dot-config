@@ -88,6 +88,17 @@ class ShellStage(enum.Enum):
     LATE = 9  # Heavy tools, prompt, plugins (100ms)
 
 
+class SymlinkAction(enum.Enum):
+    """Possible outcomes for a symlink operation."""
+
+    OK = "ok"
+    CREATE = "create"
+    REPLACE = "replace"
+    DELETING = "deleting"
+    PROTECTED = "protected"
+    SKIP = "skip"
+
+
 # TypedDict for TOML parsing with strict types
 class ProvisionerDict(typing.TypedDict):
     """TOML representation of a provisioner."""
@@ -213,6 +224,16 @@ class TemplateDef:
     mode: str | None = None
 
 
+@dataclasses.dataclass(slots=True)
+class SymlinkPlan:
+    """Planned action for a single symlink."""
+
+    source: pathlib.Path
+    dest: pathlib.Path
+    action: SymlinkAction
+    is_dir: bool = False
+
+
 # ═══════════════════════════════════════════════════════════════════════════════
 # CONFIGURATION - Modern structure
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -238,6 +259,9 @@ class DotfilesConfig:
     provisioners: dict[str, Provisioner] = dataclasses.field(default_factory=dict)
     enhancements: dict[str, Provisioner] = dataclasses.field(default_factory=dict)
     packages: dict[str, typing.Any] = dataclasses.field(default_factory=dict)
+
+    # Protected directories (never wiped by shutil.rmtree)
+    protected: list[pathlib.Path] = dataclasses.field(default_factory=list)
 
     # Shell integration
     shell_snippets: list[ShellSnippet] = dataclasses.field(default_factory=list)
@@ -723,6 +747,10 @@ class ConfigLoader:
                         pathlib.Path(source),
                     )
 
+            # Protected directories
+            if protected_data := home_data.get("protected"):
+                config.protected = [pathlib.Path(p) for p in protected_data]
+
         # Parse provisioner architecture
         config.foundation = self._parse_foundation(data.get("foundation", {}))
         config.provisioners = self._parse_provisioners(data.get("provisioners", {}))
@@ -1160,9 +1188,11 @@ class DotfilesApp:
         self,
         config_path: pathlib.Path | None = None,
         dry_run: bool = False,
+        force: bool = False,
     ) -> None:
         """Initialize application with config and options."""
         self.dry_run = dry_run
+        self.force = force
         self.platform = Platform()
         self.runner = AsyncCommandRunner(dry_run=dry_run)
         self.config_loader = ConfigLoader(config_path)
@@ -1177,54 +1207,169 @@ class DotfilesApp:
             self.platform,
         )
 
-    async def install_dotfiles(self) -> bool:
-        """Install dotfiles symlinks."""
-        logger.info("Installing dotfiles...")
-        success = True
+    def _classify_action(
+        self,
+        source: pathlib.Path,
+        dest: pathlib.Path,
+    ) -> SymlinkAction:
+        """Classify what action is needed for a single symlink."""
+        if not source.exists():
+            return SymlinkAction.SKIP
 
-        # Install file symlinks
+        if dest.is_symlink() and dest.resolve() == source.resolve():
+            return SymlinkAction.OK
+
+        if dest.exists() or dest.is_symlink():
+            if dest.is_dir() and not dest.is_symlink():
+                try:
+                    rel = dest.relative_to(self.platform.info.home)
+                except ValueError:
+                    return SymlinkAction.DELETING
+                if rel in self.config.protected:
+                    return SymlinkAction.PROTECTED
+                return SymlinkAction.DELETING
+            return SymlinkAction.REPLACE
+
+        return SymlinkAction.CREATE
+
+    def _build_changeset(self) -> list[SymlinkPlan]:
+        """Build a changeset of planned symlink operations."""
+        plans: list[SymlinkPlan] = []
+
         for dest_path, template_def in self.config.files.items():
             source = self.config.source / template_def.source
             dest = self.platform.info.home / dest_path
+            action = self._classify_action(source, dest)
+            plans.append(SymlinkPlan(source=source, dest=dest, action=action))
 
-            if not await self._create_symlink(source, dest):
-                success = False
-
-        # Install directory symlinks
         for dest_path, source_path in self.config.dirs.items():
             source = self.config.source / source_path
             dest = self.platform.info.home / dest_path
+            action = self._classify_action(source, dest)
+            plans.append(
+                SymlinkPlan(source=source, dest=dest, action=action, is_dir=True),
+            )
 
-            if not await self._create_symlink(source, dest):
+        return plans
+
+    def _display_changeset(self, plans: list[SymlinkPlan]) -> None:
+        """Display changeset using rich table."""
+        from rich.console import Console
+        from rich.table import Table
+        from rich.text import Text
+
+        console = Console()
+        table = Table(title="Dotfiles Install Plan", show_lines=False)
+        table.add_column("Status", width=12)
+        table.add_column("Type", width=5)
+        table.add_column("Destination")
+        table.add_column("Source")
+
+        action_styles: dict[SymlinkAction, tuple[str, str]] = {
+            SymlinkAction.OK: ("[OK]", "green"),
+            SymlinkAction.CREATE: ("[CREATE]", "blue"),
+            SymlinkAction.REPLACE: ("[REPLACE]", "yellow"),
+            SymlinkAction.DELETING: ("[DELETING]", "bold red"),
+            SymlinkAction.PROTECTED: ("[PROTECTED]", "white on red"),
+            SymlinkAction.SKIP: ("[SKIP]", "dim"),
+        }
+
+        for plan in sorted(plans, key=lambda p: (p.action.value, str(p.dest))):
+            label, style = action_styles[plan.action]
+            home = self.platform.info.home
+            try:
+                dest_display = str(plan.dest.relative_to(home))
+            except ValueError:
+                dest_display = str(plan.dest)
+            table.add_row(
+                Text(label, style=style),
+                "dir" if plan.is_dir else "file",
+                dest_display,
+                str(plan.source),
+            )
+
+        console.print(table)
+
+    async def install_dotfiles(self) -> bool:
+        """Install dotfiles symlinks with changeset preview."""
+        logger.info("Installing dotfiles...")
+
+        plans = self._build_changeset()
+        self._display_changeset(plans)
+
+        protected = [p for p in plans if p.action == SymlinkAction.PROTECTED]
+        if protected:
+            from rich.console import Console
+
+            console = Console()
+            console.print(
+                f"\n[white on red]BLOCKED:[/] {len(protected)} protected "
+                "directory(ies) would be deleted. "
+                "Manually move or remove them first.",
+            )
+            return False
+
+        deleting = [p for p in plans if p.action == SymlinkAction.DELETING]
+        if deleting and not self.force and not self.dry_run:
+            from rich.console import Console
+
+            console = Console()
+            console.print(
+                f"\n[bold red]WARNING:[/] {len(deleting)} real directory(ies) "
+                "will be permanently deleted.",
+            )
+            confirm = console.input(
+                "[bold]Type 'yes' to proceed, or use --force to skip this prompt: [/]",
+            )
+            if confirm.strip().lower() != "yes":
+                logger.info("Aborted by user.")
+                return False
+
+        if self.dry_run:
+            logger.info("[DRY RUN] No changes made.")
+            return True
+
+        success = True
+        for plan in plans:
+            if plan.action in (
+                SymlinkAction.OK,
+                SymlinkAction.SKIP,
+                SymlinkAction.PROTECTED,
+            ):
+                continue
+            if not await self._create_symlink(plan.source, plan.dest):
                 success = False
 
         return success
 
     async def _create_symlink(self, source: pathlib.Path, dest: pathlib.Path) -> bool:
         """Create a symlink with error handling."""
-        if self.dry_run:
-            logger.info("[DRY RUN] Would symlink: %s -> %s", dest, source)
-            return True
-
         try:
-            # Ensure parent directory exists
             dest.parent.mkdir(parents=True, exist_ok=True)
 
-            # Check if symlink already exists and is correct
             if dest.is_symlink() and dest.resolve() == source.resolve():
                 logger.debug("Symlink already correct: %s", dest)
                 return True
 
-            # Remove existing file/symlink
             if dest.exists() or dest.is_symlink():
                 if dest.is_dir() and not dest.is_symlink():
+                    # Defense-in-depth: refuse to delete protected directories
+                    try:
+                        rel = dest.relative_to(pathlib.Path.home())
+                        if rel in self.config.protected:
+                            logger.error(
+                                "REFUSED to delete protected directory: %s",
+                                dest,
+                            )
+                            return False
+                    except ValueError:
+                        pass
                     import shutil
 
                     shutil.rmtree(dest)
                 else:
                     dest.unlink()
 
-            # Create symlink
             dest.symlink_to(source)
             logger.info("Created symlink: %s -> %s", dest, source)
         except OSError:
@@ -1681,7 +1826,12 @@ Examples:
     subparsers = parser.add_subparsers(dest="command", help="Commands")
 
     # install command
-    subparsers.add_parser("install", help="Install dotfiles symlinks")
+    install_parser = subparsers.add_parser("install", help="Install dotfiles symlinks")
+    install_parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Skip confirmation for destructive directory deletions",
+    )
 
     # provision command
     provision_parser = subparsers.add_parser(
@@ -1724,7 +1874,11 @@ Examples:
         logging.getLogger().setLevel(logging.DEBUG)
 
     # Create app instance
-    app = DotfilesApp(config_path=args.config, dry_run=args.dry_run)
+    app = DotfilesApp(
+        config_path=args.config,
+        dry_run=args.dry_run,
+        force=getattr(args, "force", False),
+    )
 
     # Route commands
     success = True

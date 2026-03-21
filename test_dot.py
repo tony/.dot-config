@@ -58,6 +58,9 @@ backup = true
 email = "test@example.com"
 work_machine = true
 
+[home]
+protected = [".claude"]
+
 [home.files]
 ".gitconfig" = ".gitconfig"
 ".zshrc" = ".zshrc"
@@ -3950,6 +3953,392 @@ source = "~/.dot-config"
 
         # Fixed: status should report "ok" now that paths are expanded
         assert status["dotfiles"][".gitconfig"] == "ok"
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# PROTECTED DIRECTORIES & CHANGESET TESTS
+# ═══════════════════════════════════════════════════════════════════════════════
+
+
+class TestConfigProtectedParsing:
+    """Test parsing protected list from TOML."""
+
+    def test_parse_protected_list(self, tmp_path):
+        """Protected dirs parsed from TOML."""
+        config_content = """
+[home]
+protected = [".claude", ".cursor", ".config/codex"]
+
+[home.files]
+".gitconfig" = ".gitconfig"
+"""
+        config_file = tmp_path / "dot.toml"
+        config_file.write_text(config_content)
+
+        loader = dot.ConfigLoader(config_file)
+        config = loader.load()
+
+        assert len(config.protected) == 3
+        assert pathlib.Path(".claude") in config.protected
+        assert pathlib.Path(".cursor") in config.protected
+        assert pathlib.Path(".config/codex") in config.protected
+
+    def test_parse_no_protected(self, tmp_path):
+        """Missing protected key defaults to empty list."""
+        config_content = """
+[home.files]
+".gitconfig" = ".gitconfig"
+"""
+        config_file = tmp_path / "dot.toml"
+        config_file.write_text(config_content)
+
+        loader = dot.ConfigLoader(config_file)
+        config = loader.load()
+
+        assert config.protected == []
+
+
+class TestSymlinkClassification:
+    """Test _classify_action for all SymlinkAction variants."""
+
+    @pytest.mark.asyncio
+    async def test_classify_ok(self, temp_home):
+        """Correct symlink -> OK."""
+        source = temp_home / "source"
+        source.mkdir()
+        dest = temp_home / "dest"
+        dest.symlink_to(source)
+
+        app = dot.DotfilesApp(dry_run=False)
+        assert app._classify_action(source, dest) == dot.SymlinkAction.OK
+
+    @pytest.mark.asyncio
+    async def test_classify_create(self, temp_home):
+        """No dest -> CREATE."""
+        source = temp_home / "source"
+        source.mkdir()
+        dest = temp_home / "dest"
+
+        app = dot.DotfilesApp(dry_run=False)
+        assert app._classify_action(source, dest) == dot.SymlinkAction.CREATE
+
+    @pytest.mark.asyncio
+    async def test_classify_replace_file(self, temp_home):
+        """Existing regular file -> REPLACE."""
+        source = temp_home / "source.txt"
+        source.write_text("content")
+        dest = temp_home / "dest.txt"
+        dest.write_text("old")
+
+        app = dot.DotfilesApp(dry_run=False)
+        assert app._classify_action(source, dest) == dot.SymlinkAction.REPLACE
+
+    @pytest.mark.asyncio
+    async def test_classify_replace_wrong_symlink(self, temp_home):
+        """Symlink to wrong target -> REPLACE."""
+        source = temp_home / "source"
+        source.mkdir()
+        wrong = temp_home / "wrong"
+        wrong.mkdir()
+        dest = temp_home / "dest"
+        dest.symlink_to(wrong)
+
+        app = dot.DotfilesApp(dry_run=False)
+        assert app._classify_action(source, dest) == dot.SymlinkAction.REPLACE
+
+    @pytest.mark.asyncio
+    async def test_classify_deleting(self, temp_home):
+        """Real directory (not protected) -> DELETING."""
+        source = temp_home / "source"
+        source.mkdir()
+        dest = temp_home / "dest"
+        dest.mkdir()
+        (dest / "file.txt").write_text("data")
+
+        app = dot.DotfilesApp(dry_run=False)
+        assert app._classify_action(source, dest) == dot.SymlinkAction.DELETING
+
+    @pytest.mark.asyncio
+    async def test_classify_protected(self, temp_home):
+        """Real directory that's protected -> PROTECTED."""
+        source = temp_home / "source"
+        source.mkdir()
+        dest = temp_home / ".claude"
+        dest.mkdir()
+        (dest / "history.jsonl").write_text("precious data")
+
+        app = dot.DotfilesApp(dry_run=False)
+        app.config.protected = [pathlib.Path(".claude")]
+        assert app._classify_action(source, dest) == dot.SymlinkAction.PROTECTED
+
+    @pytest.mark.asyncio
+    async def test_classify_skip(self, temp_home):
+        """Source doesn't exist -> SKIP."""
+        source = temp_home / "nonexistent"
+        dest = temp_home / "dest"
+
+        app = dot.DotfilesApp(dry_run=False)
+        assert app._classify_action(source, dest) == dot.SymlinkAction.SKIP
+
+    @pytest.mark.asyncio
+    async def test_build_changeset_mixed(self, temp_home):
+        """Integration test building changeset with multiple action types."""
+        dot_config = temp_home / "dot-config"
+        dot_config.mkdir()
+        (dot_config / ".gitconfig").write_text("git config")
+        # .zshrc source missing -> SKIP
+
+        config_content = f"""
+[config]
+source = "{dot_config}"
+
+[home]
+protected = [".claude"]
+
+[home.files]
+".gitconfig" = ".gitconfig"
+".zshrc" = ".zshrc"
+"""
+        config_path = temp_home / "dot.toml"
+        config_path.write_text(config_content)
+
+        app = dot.DotfilesApp(config_path=config_path, dry_run=False)
+
+        plans = app._build_changeset()
+        actions = {p.action for p in plans}
+        assert dot.SymlinkAction.CREATE in actions  # .gitconfig
+        assert dot.SymlinkAction.SKIP in actions  # .zshrc (no source)
+
+
+class TestProtectedDirectories:
+    """Test protected directory feature."""
+
+    @pytest.mark.asyncio
+    async def test_protected_dir_blocks_install(self, temp_home):
+        """Protected real directory blocks install."""
+        dot_config = temp_home / "dot-config"
+        dot_config.mkdir()
+        (dot_config / "claude").mkdir()
+
+        # Create real .claude dir with content
+        real_claude = temp_home / ".claude"
+        real_claude.mkdir()
+        (real_claude / "history.jsonl").write_text("precious sessions")
+
+        config_content = f"""
+[config]
+source = "{dot_config}"
+
+[home]
+protected = [".claude"]
+
+[home.dirs]
+".claude" = "claude"
+"""
+        config_path = temp_home / "dot.toml"
+        config_path.write_text(config_content)
+
+        app = dot.DotfilesApp(config_path=config_path, dry_run=False)
+        success = await app.install_dotfiles()
+
+        assert success is False
+        # Directory should still exist with content intact
+        assert real_claude.is_dir()
+        assert not real_claude.is_symlink()
+        assert (real_claude / "history.jsonl").read_text() == "precious sessions"
+
+    @pytest.mark.asyncio
+    async def test_protected_symlink_ok(self, temp_home):
+        """Protected path that's already a correct symlink is fine."""
+        dot_config = temp_home / "dot-config"
+        dot_config.mkdir()
+        source = dot_config / "claude"
+        source.mkdir()
+
+        dest = temp_home / ".claude"
+        dest.symlink_to(source)
+
+        config_content = f"""
+[config]
+source = "{dot_config}"
+
+[home]
+protected = [".claude"]
+
+[home.dirs]
+".claude" = "claude"
+"""
+        config_path = temp_home / "dot.toml"
+        config_path.write_text(config_content)
+
+        app = dot.DotfilesApp(config_path=config_path, dry_run=False)
+        success = await app.install_dotfiles()
+
+        assert success is True
+        assert dest.is_symlink()
+
+    @pytest.mark.asyncio
+    async def test_unprotected_dir_deleted_with_force(self, temp_home):
+        """Non-protected real directory can be deleted with --force."""
+        dot_config = temp_home / "dot-config"
+        dot_config.mkdir()
+        source = dot_config / "somedir"
+        source.mkdir()
+
+        dest = temp_home / ".somedir"
+        dest.mkdir()
+        (dest / "old.txt").write_text("old data")
+
+        config_content = f"""
+[config]
+source = "{dot_config}"
+
+[home.dirs]
+".somedir" = "somedir"
+"""
+        config_path = temp_home / "dot.toml"
+        config_path.write_text(config_content)
+
+        app = dot.DotfilesApp(config_path=config_path, dry_run=False, force=True)
+        success = await app.install_dotfiles()
+
+        assert success is True
+        assert dest.is_symlink()
+        assert dest.resolve() == source.resolve()
+
+    @pytest.mark.asyncio
+    async def test_create_symlink_defense_in_depth(self, temp_home):
+        """_create_symlink itself refuses to delete protected dir."""
+        source = temp_home / "source"
+        source.mkdir()
+        dest = temp_home / ".claude"
+        dest.mkdir()
+        (dest / "sessions").mkdir()
+
+        app = dot.DotfilesApp(dry_run=False)
+        app.config.protected = [pathlib.Path(".claude")]
+
+        success = await app._create_symlink(source, dest)
+
+        assert success is False
+        assert dest.is_dir()
+        assert not dest.is_symlink()
+
+
+class TestInstallChangeset:
+    """Test install flow with changeset and confirmation."""
+
+    @pytest.mark.asyncio
+    async def test_dry_run_no_changes(self, temp_home):
+        """--dry-run displays changeset but makes no filesystem changes."""
+        dot_config = temp_home / "dot-config"
+        dot_config.mkdir()
+        (dot_config / ".gitconfig").write_text("git config")
+
+        config_content = f"""
+[config]
+source = "{dot_config}"
+
+[home.files]
+".gitconfig" = ".gitconfig"
+"""
+        config_path = temp_home / "dot.toml"
+        config_path.write_text(config_content)
+
+        app = dot.DotfilesApp(config_path=config_path, dry_run=True)
+        success = await app.install_dotfiles()
+
+        assert success is True
+        assert not (temp_home / ".gitconfig").exists()
+
+    @pytest.mark.asyncio
+    async def test_force_skips_confirmation(self, temp_home):
+        """--force skips interactive prompt for DELETING."""
+        dot_config = temp_home / "dot-config"
+        dot_config.mkdir()
+        source = dot_config / "mydir"
+        source.mkdir()
+
+        dest = temp_home / ".mydir"
+        dest.mkdir()
+        (dest / "file.txt").write_text("old")
+
+        config_content = f"""
+[config]
+source = "{dot_config}"
+
+[home.dirs]
+".mydir" = "mydir"
+"""
+        config_path = temp_home / "dot.toml"
+        config_path.write_text(config_content)
+
+        app = dot.DotfilesApp(config_path=config_path, dry_run=False, force=True)
+        success = await app.install_dotfiles()
+
+        assert success is True
+        assert dest.is_symlink()
+
+    @pytest.mark.asyncio
+    async def test_force_cannot_bypass_protected(self, temp_home):
+        """--force does NOT bypass PROTECTED."""
+        dot_config = temp_home / "dot-config"
+        dot_config.mkdir()
+        (dot_config / "claude").mkdir()
+
+        dest = temp_home / ".claude"
+        dest.mkdir()
+        (dest / "data").write_text("precious")
+
+        config_content = f"""
+[config]
+source = "{dot_config}"
+
+[home]
+protected = [".claude"]
+
+[home.dirs]
+".claude" = "claude"
+"""
+        config_path = temp_home / "dot.toml"
+        config_path.write_text(config_content)
+
+        app = dot.DotfilesApp(config_path=config_path, dry_run=False, force=True)
+        success = await app.install_dotfiles()
+
+        assert success is False
+        assert dest.is_dir()
+        assert not dest.is_symlink()
+
+    @pytest.mark.asyncio
+    async def test_user_declines_aborts(self, temp_home):
+        """User typing 'no' at prompt aborts install."""
+        dot_config = temp_home / "dot-config"
+        dot_config.mkdir()
+        source = dot_config / "mydir"
+        source.mkdir()
+
+        dest = temp_home / ".mydir"
+        dest.mkdir()
+
+        config_content = f"""
+[config]
+source = "{dot_config}"
+
+[home.dirs]
+".mydir" = "mydir"
+"""
+        config_path = temp_home / "dot.toml"
+        config_path.write_text(config_content)
+
+        app = dot.DotfilesApp(config_path=config_path, dry_run=False)
+
+        with unittest.mock.patch("rich.console.Console.input", return_value="no"):
+            success = await app.install_dotfiles()
+
+        assert success is False
+        assert dest.is_dir()
+        assert not dest.is_symlink()
 
 
 if __name__ == "__main__":
