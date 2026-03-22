@@ -234,6 +234,69 @@ class SymlinkPlan:
     is_dir: bool = False
 
 
+@dataclasses.dataclass(slots=True)
+class Result:
+    """Base result for any operation that can succeed or fail."""
+
+    success: bool
+    error: str = ""
+
+    def __bool__(self) -> bool:
+        """Allow Result to be used in boolean context."""
+        return self.success
+
+    @classmethod
+    def ok(cls, **kwargs: typing.Any) -> typing.Self:
+        """Create a successful result."""
+        return cls(success=True, **kwargs)
+
+    @classmethod
+    def fail(cls, error: str, **kwargs: typing.Any) -> typing.Self:
+        """Create a failed result."""
+        return cls(success=False, error=error, **kwargs)
+
+
+@dataclasses.dataclass(slots=True)
+class SymlinkResult(Result):
+    """Result of a single symlink creation."""
+
+    source: pathlib.Path = dataclasses.field(default_factory=lambda: pathlib.Path())
+    dest: pathlib.Path = dataclasses.field(default_factory=lambda: pathlib.Path())
+    action: SymlinkAction = SymlinkAction.SKIP
+
+
+@dataclasses.dataclass(slots=True)
+class InstallResult(Result):
+    """Result of install_dotfiles — aggregates per-symlink results."""
+
+    items: list[SymlinkResult] = dataclasses.field(default_factory=list)
+
+    @property
+    def failed(self) -> list[SymlinkResult]:
+        """Return failed symlink results."""
+        return [r for r in self.items if not r.success]
+
+
+@dataclasses.dataclass(slots=True)
+class ProvisionResult(Result):
+    """Result of provision — aggregates per-provisioner results."""
+
+    results: dict[str, Result] = dataclasses.field(default_factory=dict)
+
+    @property
+    def failed_names(self) -> list[str]:
+        """Return names of failed provisioners."""
+        return [name for name, r in self.results.items() if not r.success]
+
+
+@dataclasses.dataclass(slots=True)
+class CleanupResult(Result):
+    """Result of cleanup — tracks removed paths and errors."""
+
+    removed: list[pathlib.Path] = dataclasses.field(default_factory=list)
+    errors: list[tuple[str, str]] = dataclasses.field(default_factory=list)
+
+
 # ═══════════════════════════════════════════════════════════════════════════════
 # CONFIGURATION - Modern structure
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -882,7 +945,7 @@ class ProvisionerManager:
         self,
         filter_type: ProvisionerType | None = None,
         dry_run: bool = False,
-    ) -> dict[str, bool]:
+    ) -> dict[str, Result]:
         """Provision all or filtered provisioners."""
         install_order = self.resolver.get_install_order()
 
@@ -897,14 +960,14 @@ class ProvisionerManager:
         env = os.environ.copy()
         current_path = env.get("PATH", "").split(os.pathsep)
 
-        results = {}
+        results: dict[str, Result] = {}
         for name in install_order:
             provisioner = self.provisioners[name]
 
             # Check if already installed
             if await self._is_installed(provisioner, env):
                 logger.info("✅ %s already installed", name)
-                results[name] = True
+                results[name] = Result.ok()
 
                 # Still need to update PATH for already installed tools
                 if not dry_run:
@@ -920,15 +983,17 @@ class ProvisionerManager:
             can_install, missing = self.resolver.check_requirements(provisioner)
             if not can_install:
                 logger.error("❌ %s missing requirements: %s", name, missing)
-                results[name] = False
+                results[name] = Result.fail(
+                    error=f"Missing requirements: {', '.join(missing)}",
+                )
                 continue
 
             # Install provisioner
             logger.info("🔧 Installing %s: %s", name, provisioner.description)
-            success = await self._install_provisioner(provisioner, dry_run, env)
-            results[name] = success
+            result = await self._install_provisioner(provisioner, dry_run, env)
+            results[name] = result
 
-            if success:
+            if result:
                 logger.info("✅ %s installed successfully", name)
 
                 # Update PATH for subsequent installations
@@ -1038,7 +1103,7 @@ class ProvisionerManager:
         provisioner: Provisioner,
         dry_run: bool = False,
         env: dict[str, str] | None = None,
-    ) -> bool:
+    ) -> Result:
         """Install a single provisioner."""
         match provisioner.install_method:
             case InstallMethod.SCRIPT:
@@ -1053,11 +1118,12 @@ class ProvisionerManager:
         provisioner: Provisioner,
         dry_run: bool = False,
         env: dict[str, str] | None = None,
-    ) -> bool:
+    ) -> Result:
         """Install via shell script."""
         if not provisioner.install_script:
-            logger.error("No install script for %s", provisioner.name)
-            return False
+            msg = f"No install script for {provisioner.name}"
+            logger.error(msg)
+            return Result.fail(error=msg)
 
         try:
             result = await self.runner.run(
@@ -1072,23 +1138,27 @@ class ProvisionerManager:
                     logger.error("Error output:\n%s", result.stderr)
                 if result.stdout:
                     logger.debug("Standard output:\n%s", result.stdout)
-        except Exception:
+                return Result.fail(
+                    error=result.stderr or f"Script failed for {provisioner.name}",
+                )
+        except Exception as e:
             logger.exception("Failed to install %s", provisioner.name)
-            return False
+            return Result.fail(error=str(e))
         else:
-            return result.success
+            return Result.ok()
 
     async def _install_via_package(
         self,
         provisioner: Provisioner,
         dry_run: bool = False,
         env: dict[str, str] | None = None,
-    ) -> bool:
+    ) -> Result:
         """Install via package manager."""
         pkg_manager = self.platform.get_package_manager()
         if not pkg_manager:
-            logger.error("No package manager available for %s", provisioner.name)
-            return False
+            msg = f"No package manager available for {provisioner.name}"
+            logger.error(msg)
+            return Result.fail(error=msg)
 
         pkg_name = provisioner.package_name or provisioner.name
 
@@ -1102,8 +1172,9 @@ class ProvisionerManager:
             case "pacman":
                 cmd = f"sudo pacman -S --noconfirm {pkg_name}"
             case _:
-                logger.error("Unsupported package manager: %s", pkg_manager)
-                return False
+                msg = f"Unsupported package manager: {pkg_manager}"
+                logger.error(msg)
+                return Result.fail(error=msg)
 
         try:
             result = await self.runner.run(cmd, env=env, check=False, capture=True)
@@ -1113,22 +1184,27 @@ class ProvisionerManager:
                 )
                 if result.stderr:
                     logger.error("Error output:\n%s", result.stderr)
-        except Exception:
+                return Result.fail(
+                    error=result.stderr
+                    or f"Failed to install {provisioner.name} via {pkg_manager}",
+                )
+        except Exception as e:
             logger.exception("Failed to install %s", provisioner.name)
-            return False
+            return Result.fail(error=str(e))
         else:
-            return result.success
+            return Result.ok()
 
     async def _install_via_binary(
         self,
         provisioner: Provisioner,
         dry_run: bool = False,
         env: dict[str, str] | None = None,
-    ) -> bool:
+    ) -> Result:
         """Install via direct binary download."""
         if not provisioner.binary_url:
-            logger.error("No binary URL for %s", provisioner.name)
-            return False
+            msg = f"No binary URL for {provisioner.name}"
+            logger.error(msg)
+            return Result.fail(error=msg)
 
         try:
             # Download binary
@@ -1139,10 +1215,11 @@ class ProvisionerManager:
                 capture=True,
             )
             if not result.success:
-                logger.error("Failed to download %s", provisioner.name)
+                msg = f"Failed to download {provisioner.name}"
+                logger.error(msg)
                 if result.stderr:
                     logger.error("Error output:\n%s", result.stderr)
-                return False
+                return Result.fail(error=result.stderr or msg)
 
             # Make executable
             result = await self.runner.run(
@@ -1152,10 +1229,11 @@ class ProvisionerManager:
                 capture=True,
             )
             if not result.success:
-                logger.error("Failed to make %s executable", provisioner.name)
+                msg = f"Failed to make {provisioner.name} executable"
+                logger.error(msg)
                 if result.stderr:
                     logger.error("Error output:\n%s", result.stderr)
-                return False
+                return Result.fail(error=result.stderr or msg)
 
             # Move to PATH
             result = await self.runner.run(
@@ -1165,15 +1243,16 @@ class ProvisionerManager:
                 capture=True,
             )
             if not result.success:
-                logger.error("Failed to move %s to /usr/local/bin/", provisioner.name)
+                msg = f"Failed to move {provisioner.name} to /usr/local/bin/"
+                logger.error(msg)
                 if result.stderr:
                     logger.error("Error output:\n%s", result.stderr)
-                return False
-        except Exception:
+                return Result.fail(error=result.stderr or msg)
+        except Exception as e:
             logger.exception("Failed to install %s", provisioner.name)
-            return False
+            return Result.fail(error=str(e))
         else:
-            return True
+            return Result.ok()
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -1290,7 +1369,7 @@ class DotfilesApp:
 
         console.print(table)
 
-    async def install_dotfiles(self) -> bool:
+    async def install_dotfiles(self) -> InstallResult:
         """Install dotfiles symlinks with changeset preview."""
         logger.info("Installing dotfiles...")
 
@@ -1307,7 +1386,18 @@ class DotfilesApp:
                 "directory(ies) would be deleted. "
                 "Manually move or remove them first.",
             )
-            return False
+            return InstallResult.fail(
+                error=f"{len(protected)} protected directory(ies) would be deleted",
+                items=[
+                    SymlinkResult.fail(
+                        error="Protected directory",
+                        source=p.source,
+                        dest=p.dest,
+                        action=p.action,
+                    )
+                    for p in protected
+                ],
+            )
 
         deleting = [p for p in plans if p.action == SymlinkAction.DELETING]
         if deleting and not self.force and not self.dry_run:
@@ -1323,45 +1413,76 @@ class DotfilesApp:
             )
             if confirm.strip().lower() != "yes":
                 logger.info("Aborted by user.")
-                return False
+                return InstallResult.fail(error="Aborted by user")
 
         if self.dry_run:
             logger.info("[DRY RUN] No changes made.")
-            return True
+            return InstallResult.ok()
 
-        success = True
+        items: list[SymlinkResult] = []
         for plan in plans:
             if plan.action in (
                 SymlinkAction.OK,
                 SymlinkAction.SKIP,
                 SymlinkAction.PROTECTED,
             ):
+                items.append(
+                    SymlinkResult.ok(
+                        source=plan.source,
+                        dest=plan.dest,
+                        action=plan.action,
+                    ),
+                )
                 continue
-            if not await self._create_symlink(plan.source, plan.dest):
-                success = False
+            result = await self._create_symlink(plan.source, plan.dest)
+            items.append(result)
 
-        return success
+        all_ok = all(r.success for r in items)
+        failed = [r for r in items if not r.success]
+        return InstallResult(
+            success=all_ok,
+            error=f"{len(failed)} symlink(s) failed" if failed else "",
+            items=items,
+        )
 
-    async def _create_symlink(self, source: pathlib.Path, dest: pathlib.Path) -> bool:
+    async def _create_symlink(
+        self,
+        source: pathlib.Path,
+        dest: pathlib.Path,
+    ) -> SymlinkResult:
         """Create a symlink with error handling."""
         try:
             dest.parent.mkdir(parents=True, exist_ok=True)
 
             if dest.is_symlink() and dest.resolve() == source.resolve():
                 logger.debug("Symlink already correct: %s", dest)
-                return True
+                return SymlinkResult.ok(
+                    source=source,
+                    dest=dest,
+                    action=SymlinkAction.OK,
+                )
+
+            action = (
+                SymlinkAction.REPLACE
+                if (dest.exists() or dest.is_symlink())
+                else SymlinkAction.CREATE
+            )
 
             if dest.exists() or dest.is_symlink():
                 if dest.is_dir() and not dest.is_symlink():
+                    action = SymlinkAction.DELETING
                     # Defense-in-depth: refuse to delete protected directories
                     try:
                         rel = dest.relative_to(pathlib.Path.home())
                         if rel in self.config.protected:
-                            logger.error(
-                                "REFUSED to delete protected directory: %s",
-                                dest,
+                            msg = f"REFUSED to delete protected directory: {dest}"
+                            logger.error(msg)
+                            return SymlinkResult.fail(
+                                error=msg,
+                                source=source,
+                                dest=dest,
+                                action=SymlinkAction.PROTECTED,
                             )
-                            return False
                     except ValueError:
                         pass
                     import shutil
@@ -1372,49 +1493,63 @@ class DotfilesApp:
 
             dest.symlink_to(source)
             logger.info("Created symlink: %s -> %s", dest, source)
-        except OSError:
+            return SymlinkResult.ok(source=source, dest=dest, action=action)
+        except OSError as e:
             logger.exception("Failed to create symlink %s -> %s", dest, source)
-            return False
-        else:
-            return True
+            return SymlinkResult.fail(
+                error=f"{type(e).__name__}: {e}",
+                source=source,
+                dest=dest,
+            )
 
-    async def provision(self, filter_type: ProvisionerType | None = None) -> bool:
+    async def provision(
+        self,
+        filter_type: ProvisionerType | None = None,
+    ) -> ProvisionResult:
         """Provision development environment."""
         logger.info("Provisioning development environment...")
 
         # Install system packages first
-        if (
-            not filter_type or filter_type == ProvisionerType.FOUNDATION
-        ) and not await self._install_system_packages():
-            logger.error("Failed to install system packages")
-            return False
+        if not filter_type or filter_type == ProvisionerType.FOUNDATION:
+            sys_result = await self._install_system_packages()
+            if not sys_result:
+                logger.error("Failed to install system packages")
+                return ProvisionResult.fail(
+                    error=f"System packages failed: {sys_result.error}",
+                )
 
         results = await self.provisioner_manager.provision_all(
             filter_type,
             self.dry_run,
         )
 
-        success_count = sum(1 for success in results.values() if success)
+        success_count = sum(1 for r in results.values() if r)
         total_count = len(results)
 
         logger.info(
             "Provisioning complete: %s/%s successful", success_count, total_count
         )
-        return success_count == total_count
+        all_ok = success_count == total_count
+        failed = [n for n, r in results.items() if not r]
+        return ProvisionResult(
+            success=all_ok,
+            error=f"Failed: {', '.join(failed)}" if failed else "",
+            results=results,
+        )
 
     async def _ensure_apt_repositories(
         self,
         package_config: dict[str, typing.Any],
-    ) -> bool:
+    ) -> Result:
         """Ensure apt repositories are configured for Ubuntu systems."""
         if self.platform.info.distro != "ubuntu":
-            return True
+            return Result.ok()
 
         ppas = package_config.get("ppas", [])
         if isinstance(ppas, str):
             ppas = [ppas]
         if not isinstance(ppas, list) or not ppas:
-            return True
+            return Result.ok()
 
         if not shutil.which("add-apt-repository"):
             logger.info("Installing software-properties-common for add-apt-repository")
@@ -1428,7 +1563,10 @@ class DotfilesApp:
                 logger.error("Failed to install software-properties-common")
                 if result.stderr:
                     logger.error("Error output:\n%s", result.stderr)
-                return False
+                return Result.fail(
+                    error=result.stderr
+                    or "Failed to install software-properties-common",
+                )
 
         for ppa in ppas:
             if not isinstance(ppa, str) or not ppa.strip():
@@ -1439,23 +1577,23 @@ class DotfilesApp:
                 logger.error("Failed to add apt repository: %s", ppa)
                 if result.stderr:
                     logger.error("Error output:\n%s", result.stderr)
-                return False
+                return Result.fail(error=result.stderr or f"Failed to add PPA: {ppa}")
 
-        return True
+        return Result.ok()
 
     async def _ensure_brew_taps(
         self,
         package_config: dict[str, typing.Any],
-    ) -> bool:
+    ) -> Result:
         """Ensure Homebrew taps are configured before package installation."""
         if not self.platform.info.is_macos:
-            return True
+            return Result.ok()
 
         taps = package_config.get("taps", [])
         if isinstance(taps, str):
             taps = [taps]
         if not isinstance(taps, list) or not taps:
-            return True
+            return Result.ok()
 
         # Get currently tapped repos
         result = await self.runner.run("brew tap", check=False, capture=True)
@@ -1481,25 +1619,25 @@ class DotfilesApp:
                 logger.error("Failed to add tap: %s", tap)
                 if result.stderr:
                     logger.error("Error output:\n%s", result.stderr)
-                return False
+                return Result.fail(error=result.stderr or f"Failed to add tap: {tap}")
 
-        return True
+        return Result.ok()
 
     async def _ensure_apt_signed_repositories(
         self,
         package_config: dict[str, typing.Any],
-    ) -> bool:
+    ) -> Result:
         """Ensure GPG-signed apt repositories are configured for Debian/Ubuntu.
 
         Works on both Ubuntu and Debian, unlike PPAs which are Ubuntu-only.
         Uses the modern signed-by approach for GPG key verification.
         """
         if self.platform.info.distro not in ("ubuntu", "debian"):
-            return True
+            return Result.ok()
 
         repositories = package_config.get("repositories", [])
         if not repositories:
-            return True
+            return Result.ok()
 
         added_repos = False
         for repo_config in repositories:
@@ -1535,7 +1673,9 @@ class DotfilesApp:
                 logger.error("Failed to install GPG key for %s", name)
                 if result.stderr:
                     logger.error("Error output:\n%s", result.stderr)
-                return False
+                return Result.fail(
+                    error=result.stderr or f"GPG key install failed for {name}",
+                )
 
             # Step 2: Determine architecture
             arch_result = await self.runner.run(
@@ -1571,7 +1711,9 @@ class DotfilesApp:
                 logger.error("Failed to add repository %s", name)
                 if result.stderr:
                     logger.error("Error output:\n%s", result.stderr)
-                return False
+                return Result.fail(
+                    error=result.stderr or f"Failed to add repository {name}",
+                )
 
             logger.info("Successfully added repository: %s", name)
             added_repos = True
@@ -1585,9 +1727,9 @@ class DotfilesApp:
             if not result.success:
                 logger.warning("apt-get update had issues, continuing anyway")
 
-        return True
+        return Result.ok()
 
-    async def _install_system_packages(self) -> bool:
+    async def _install_system_packages(self) -> Result:
         """Install system packages based on platform."""
         pkg_manager = self.platform.get_package_manager()
         if not pkg_manager or pkg_manager not in self.config.packages:
@@ -1595,17 +1737,17 @@ class DotfilesApp:
                 "No packages configured for %s package manager",
                 pkg_manager or "unknown",
             )
-            return True
+            return Result.ok()
 
         package_config = self.config.packages[pkg_manager]
         if not isinstance(package_config, dict):
             logger.warning("Invalid package configuration for %s", pkg_manager)
-            return True
+            return Result.ok()
 
         packages = package_config.get("packages", [])
         if not packages:
             logger.debug("No base packages configured for %s", pkg_manager)
-            return True
+            return Result.ok()
 
         logger.info(
             "Ensuring %d %s packages are installed...", len(packages), pkg_manager
@@ -1615,15 +1757,19 @@ class DotfilesApp:
             logger.info(
                 "[DRY RUN] Would check/install packages: %s", ", ".join(packages)
             )
-            return True
+            return Result.ok()
 
         # Build and execute install command based on package manager
         match pkg_manager:
             case "apt":
-                if not await self._ensure_apt_repositories(package_config):
-                    return False
-                if not await self._ensure_apt_signed_repositories(package_config):
-                    return False
+                repo_result = await self._ensure_apt_repositories(package_config)
+                if not repo_result:
+                    return repo_result
+                signed_result = await self._ensure_apt_signed_repositories(
+                    package_config,
+                )
+                if not signed_result:
+                    return signed_result
 
                 # Check which packages are already installed
                 logger.debug("Checking installed apt packages...")
@@ -1649,7 +1795,7 @@ class DotfilesApp:
                     logger.info(
                         "✅ All %d apt packages are already installed", len(packages)
                     )
-                    return True
+                    return Result.ok()
 
                 logger.info(
                     "📦 Need to install %d apt packages: %s",
@@ -1661,8 +1807,9 @@ class DotfilesApp:
                     f"{' '.join(to_install)}"
                 )
             case "brew":
-                if not await self._ensure_brew_taps(package_config):
-                    return False
+                tap_result = await self._ensure_brew_taps(package_config)
+                if not tap_result:
+                    return tap_result
 
                 # For brew, we can check installed packages more efficiently
                 logger.debug("Checking installed brew packages...")
@@ -1677,7 +1824,7 @@ class DotfilesApp:
                     logger.info(
                         "✅ All %d brew packages are already installed", len(packages)
                     )
-                    return True
+                    return Result.ok()
 
                 logger.info(
                     "📦 Need to install %d brew packages: %s",
@@ -1690,15 +1837,19 @@ class DotfilesApp:
             case "pacman":
                 cmd = f"sudo pacman -S --noconfirm --needed {' '.join(packages)}"
             case _:
-                logger.error("Unsupported package manager: %s", pkg_manager)
-                return False
+                msg = f"Unsupported package manager: {pkg_manager}"
+                logger.error(msg)
+                return Result.fail(error=msg)
 
         result = await self.runner.run(cmd, check=False, capture=True)
         if not result.success:
             logger.error("Failed to install %s packages", pkg_manager)
             if result.stderr:
                 logger.error("Error output:\n%s", result.stderr)
-        return result.success
+            return Result.fail(
+                error=result.stderr or f"Failed to install {pkg_manager} packages",
+            )
+        return Result.ok()
 
     def generate_shell_init(
         self,
@@ -1753,15 +1904,16 @@ class DotfilesApp:
 
         return status
 
-    async def cleanup(self, patterns: list[str] | None = None) -> bool:
+    async def cleanup(self, patterns: list[str] | None = None) -> CleanupResult:
         """Clean up unwanted files from home directory."""
         cleanup_patterns = patterns or self.config.cleanup_patterns
         if not cleanup_patterns:
             logger.info("No cleanup patterns configured")
-            return True
+            return CleanupResult.ok()
 
         logger.info("Cleaning up unwanted files...")
-        success = True
+        removed: list[pathlib.Path] = []
+        errors: list[tuple[str, str]] = []
 
         for pattern in cleanup_patterns:
             try:
@@ -1777,11 +1929,17 @@ class DotfilesApp:
                             shutil.rmtree(match_path)
                         else:
                             match_path.unlink()
-            except Exception:
+                        removed.append(match_path)
+            except Exception as e:
                 logger.exception("Failed to clean pattern %s", pattern)
-                success = False
+                errors.append((pattern, str(e)))
 
-        return success
+        return CleanupResult(
+            success=not errors,
+            error=f"{len(errors)} pattern(s) failed" if errors else "",
+            removed=removed,
+            errors=errors,
+        )
 
 
 async def async_main() -> int:
@@ -1885,7 +2043,11 @@ Examples:
 
     match args.command:
         case "install":
-            success = await app.install_dotfiles()
+            result = await app.install_dotfiles()
+            if not result and result.failed:
+                for item in result.failed:
+                    logger.error("  Failed: %s — %s", item.dest, item.error)
+            success = bool(result)
 
         case "provision":
             filter_type = None
@@ -1897,7 +2059,11 @@ Examples:
                         filter_type = ProvisionerType.PROVISIONER
                     case "enhancement":
                         filter_type = ProvisionerType.ENHANCEMENT
-            success = await app.provision(filter_type)
+            prov_result = await app.provision(filter_type)
+            if not prov_result and prov_result.failed_names:
+                for name in prov_result.failed_names:
+                    logger.error("  Failed: %s", name)
+            success = bool(prov_result)
 
         case "shell":
             shell_init = app.generate_shell_init(args.shell, args.stage)
@@ -1915,7 +2081,7 @@ Examples:
             sys.stdout.write("\n")
 
         case "cleanup":
-            success = await app.cleanup(args.patterns)
+            success = bool(await app.cleanup(args.patterns))
 
         case None:
             parser.print_help()

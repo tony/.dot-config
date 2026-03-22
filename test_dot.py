@@ -870,7 +870,7 @@ class TestProvisionerManager:
 
             success = await manager._install_via_script(rust)
 
-            assert success is True
+            assert success
             mock_run.assert_called_once_with(
                 "curl https://sh.rustup.rs | sh",
                 env=None,
@@ -952,7 +952,7 @@ class TestDotfilesApp:
 
         success = await app.install_dotfiles()
 
-        assert success is True
+        assert success
         assert (temp_home / ".gitconfig").is_symlink()
         assert (temp_home / ".zshrc").is_symlink()
         assert (temp_home / ".vim").is_symlink()
@@ -982,11 +982,11 @@ class TestDotfilesApp:
             "provision_all",
             new_callable=unittest.mock.AsyncMock,
         ) as mock_provision:
-            mock_provision.return_value = {"rust": True}
+            mock_provision.return_value = {"rust": dot.Result.ok()}
 
             success = await app.provision(filter_type=dot.ProvisionerType.PROVISIONER)
 
-            assert success is True
+            assert success
             mock_provision.assert_called_once_with(
                 dot.ProvisionerType.PROVISIONER,
                 True,
@@ -1064,7 +1064,7 @@ packages = ["git", "curl", "build-essential"]
 
             result = await app._install_system_packages()
 
-            assert result is True
+            assert result
             assert mock_run.call_count == 2
 
             # Check that dpkg was called to check installed packages
@@ -1124,7 +1124,7 @@ packages = ["fish"]
 
             result = await app._install_system_packages()
 
-            assert result is True
+            assert result
             assert mock_run.call_count == 3
             assert (
                 "add-apt-repository -y ppa:fish-shell/release-4"
@@ -1179,7 +1179,7 @@ packages = ["fish"]
 
             result = await app._install_system_packages()
 
-            assert result is True
+            assert result
             assert mock_run.call_count == 2
             assert all(
                 "add-apt-repository" not in call.args[0]
@@ -1240,7 +1240,7 @@ repo_url = "deb [arch={arch} signed-by={keyring}] https://apt.hc.io {codename} m
 
             result = await app._install_system_packages()
 
-            assert result is True
+            assert result
             # Verify GPG key was downloaded
             assert "wget -qO -" in mock_run.call_args_list[0][0][0]
             assert "hashicorp" in mock_run.call_args_list[0][0][0]
@@ -1299,7 +1299,7 @@ repo_url = "deb [arch={arch} signed-by={keyring}] https://apt.hc.io {codename} m
 
             result = await app._install_system_packages()
 
-            assert result is True
+            assert result
             # Verify it works on Debian (not just Ubuntu)
             assert mock_run.call_count == 7
 
@@ -1351,7 +1351,7 @@ repo_url = "deb [arch={arch} signed-by={keyring}] https://apt.hc.io {codename} m
 
             result = await app._install_system_packages()
 
-            assert result is True
+            assert result
             # No GPG key download should occur
             assert all("gpg" not in str(call) for call in mock_run.call_args_list)
 
@@ -1400,7 +1400,7 @@ packages = ["hashicorp/tap/terraform"]
 
             result = await app._install_system_packages()
 
-            assert result is True
+            assert result
             assert "brew tap hashicorp/tap" in mock_run.call_args_list[1][0][0]
 
     @pytest.mark.asyncio
@@ -1448,7 +1448,7 @@ packages = ["hashicorp/tap/terraform"]
 
             result = await app._install_system_packages()
 
-            assert result is True
+            assert result
             # Should NOT call brew tap hashicorp/tap (already exists)
             tap_calls = [
                 c for c in mock_run.call_args_list if "brew tap hashicorp" in str(c)
@@ -1490,7 +1490,7 @@ packages = ["git", "curl", "build-essential", "vim", "wget"]
             with caplog.at_level(logging.INFO):
                 result = await app._install_system_packages()
 
-            assert result is True
+            assert result
 
             # Verify correct messaging appears in logs
             log_messages = [record.message for record in caplog.records]
@@ -1547,7 +1547,7 @@ packages = ["git", "curl", "vim"]
             with caplog.at_level(logging.INFO):
                 result = await app._install_system_packages()
 
-            assert result is True
+            assert result
             assert mock_run.call_count == 1  # Only dpkg check, no install
 
             # Verify correct messaging appears in logs
@@ -1605,7 +1605,7 @@ packages = ["pkg1", "pkg2", "pkg3", "pkg4", "pkg5", "pkg6", "pkg7", "pkg8"]
             with caplog.at_level(logging.INFO):
                 result = await app._install_system_packages()
 
-            assert result is True
+            assert result
 
             # Verify correct messaging appears in logs
             log_messages = [record.message for record in caplog.records]
@@ -1654,7 +1654,7 @@ packages = ["git", "curl", "cmake"]
 
             result = await app._install_system_packages()
 
-            assert result is True
+            assert result
             assert mock_run.call_count == 2
 
             # Check that brew list was called
@@ -1688,7 +1688,7 @@ packages = ["git", "curl"]
         ):
             result = await app._install_system_packages()
 
-            assert result is True
+            assert result
             mock_run.assert_not_called()
 
     @pytest.mark.asyncio
@@ -1733,12 +1733,15 @@ packages = ["git", "curl"]
             install_patch as mock_install_packages,
             provision_patch as mock_provision,
         ):
-            mock_install_packages.return_value = True
-            mock_provision.return_value = {"rust": True, "starship": True}
+            mock_install_packages.return_value = dot.Result.ok()
+            mock_provision.return_value = {
+                "rust": dot.Result.ok(),
+                "starship": dot.Result.ok(),
+            }
 
             result = await app.provision()
 
-            assert result is True
+            assert result
             mock_install_packages.assert_called_once()
             mock_provision.assert_called_once()
 
@@ -1774,7 +1777,7 @@ class TestCLI:
             "install_dotfiles",
             new_callable=unittest.mock.AsyncMock,
         ) as mock_install:
-            mock_install.return_value = True
+            mock_install.return_value = dot.InstallResult.ok()
 
             result = await dot.async_main()
 
@@ -1810,7 +1813,7 @@ class TestCLI:
             "provision",
             new_callable=unittest.mock.AsyncMock,
         ) as mock_provision:
-            mock_provision.return_value = True
+            mock_provision.return_value = dot.ProvisionResult.ok()
 
             result = await dot.async_main()
 
@@ -1957,7 +1960,7 @@ default = "export CARGO_HOME=~/.cargo"
 
         # 1. Install dotfiles
         install_success = await app.install_dotfiles()
-        assert install_success is True
+        assert install_success
         assert (temp_home / ".gitconfig").exists()
         assert (temp_home / ".config" / "starship.toml").exists()
 
@@ -1975,7 +1978,7 @@ default = "export CARGO_HOME=~/.cargo"
         # 4. Test dry-run provisioning
         app_dry = dot.DotfilesApp(config_path=config_path, dry_run=True)
         provision_results = await app_dry.provision()
-        assert provision_results is True  # Should succeed in dry-run
+        assert provision_results  # Should succeed in dry-run
 
     def test_pattern_matching_usage(self) -> None:
         """Test that our pattern matching features work correctly."""
@@ -2288,7 +2291,7 @@ class TestPackageManagerInstallation:
 
             success = await manager._install_via_package(prov)
 
-            assert success is True
+            assert success
             mock_run.assert_called_once_with(
                 "sudo apt-get update && sudo apt-get install -y test-package",
                 env=None,
@@ -2340,7 +2343,7 @@ class TestPackageManagerInstallation:
 
             success = await manager._install_via_package(prov)
 
-            assert success is True
+            assert success
             mock_run.assert_called_once_with(
                 "brew install test-package",
                 env=None,
@@ -2388,7 +2391,7 @@ class TestPackageManagerInstallation:
 
             success = await manager._install_via_package(prov)
 
-            assert success is True
+            assert success
             # When no package_name, it uses the provisioner name
             mock_run.assert_called_once_with(
                 "sudo dnf install -y test-pkg",
@@ -2437,7 +2440,7 @@ class TestPackageManagerInstallation:
 
             success = await manager._install_via_package(prov)
 
-            assert success is True
+            assert success
             mock_run.assert_called_once_with(
                 "sudo pacman -S --noconfirm test-pkg",
                 env=None,
@@ -2464,7 +2467,7 @@ class TestPackageManagerInstallation:
 
         with patch.object(platform_obj, "get_package_manager", return_value=None):
             success = await manager._install_via_package(prov)
-            assert success is False
+            assert not success
 
     @pytest.mark.asyncio
     async def test_install_via_package_unsupported_manager(self) -> None:
@@ -2485,7 +2488,7 @@ class TestPackageManagerInstallation:
 
         with patch.object(platform_obj, "get_package_manager", return_value="zypper"):
             success = await manager._install_via_package(prov)
-            assert success is False
+            assert not success
 
 
 class TestBinaryInstallation:
@@ -2519,7 +2522,7 @@ class TestBinaryInstallation:
 
             success = await manager._install_via_binary(prov)
 
-            assert success is True
+            assert success
             assert mock_run.call_count == 3
             mock_run.assert_any_call(
                 "curl -L https://example.com/test-bin -o /tmp/test-bin",
@@ -2559,7 +2562,7 @@ class TestBinaryInstallation:
         manager = dot.ProvisionerManager({"test-bin": prov}, runner, platform_obj)
 
         success = await manager._install_via_binary(prov)
-        assert success is False
+        assert not success
 
     @pytest.mark.asyncio
     async def test_install_via_binary_download_fails(self) -> None:
@@ -2589,7 +2592,7 @@ class TestBinaryInstallation:
 
             success = await manager._install_via_binary(prov)
 
-            assert success is False
+            assert not success
             mock_run.assert_called_once()  # Only the download attempt
 
     @pytest.mark.asyncio
@@ -2623,7 +2626,7 @@ class TestBinaryInstallation:
 
             success = await manager._install_via_binary(prov)
 
-            assert success is False
+            assert not success
             assert mock_run.call_count == 2
 
 
@@ -2804,7 +2807,7 @@ class TestCleanupFunctionality:
         # Run cleanup with patterns
         success = await app.cleanup(["*.tmp", "test_dir"])
 
-        assert success is True
+        assert success
         assert not test_file.exists()
         assert not test_dir.exists()
 
@@ -2816,7 +2819,7 @@ class TestCleanupFunctionality:
 
         success = await app.cleanup()
 
-        assert success is True  # Should succeed with no patterns
+        assert success  # Should succeed with no patterns
 
     @pytest.mark.asyncio
     async def test_cleanup_dry_run(self, temp_home) -> None:
@@ -2839,7 +2842,7 @@ class TestCleanupFunctionality:
 
         success = await app.cleanup(["*.tmp"])
 
-        assert success is True
+        assert success
         assert test_file.exists()  # Should not be removed in dry run
 
     @pytest.mark.asyncio
@@ -2864,7 +2867,7 @@ class TestCleanupFunctionality:
         ):
             success = await app.cleanup(["*.tmp"])
 
-            assert success is False  # Should fail on error
+            assert not success  # Should fail on error
 
 
 class TestSymlinkEdgeCases:
@@ -2883,7 +2886,7 @@ class TestSymlinkEdgeCases:
         # Should succeed without modification
         success = await app._create_symlink(source, dest)
 
-        assert success is True
+        assert success
         assert dest.is_symlink()
         assert dest.resolve() == source.resolve()
 
@@ -2902,7 +2905,7 @@ class TestSymlinkEdgeCases:
 
         success = await app._create_symlink(source, dest)
 
-        assert success is True
+        assert success
         assert dest.is_symlink()
         assert dest.resolve() == source.resolve()
 
@@ -2921,7 +2924,7 @@ class TestSymlinkEdgeCases:
         ):
             success = await app._create_symlink(source, dest)
 
-            assert success is False
+            assert not success
 
 
 class TestStatusEdgeCases:
@@ -3023,7 +3026,7 @@ class TestCLIEdgeCases:
             "cleanup",
             new_callable=unittest.mock.AsyncMock,
         ) as mock_cleanup:
-            mock_cleanup.return_value = True
+            mock_cleanup.return_value = dot.CleanupResult.ok()
 
             exit_code = await dot.async_main()
 
@@ -3090,7 +3093,7 @@ class TestProvisionerInstallErrors:
         manager = dot.ProvisionerManager({"no-script": prov}, runner, platform_obj)
 
         success = await manager._install_via_script(prov)
-        assert success is False
+        assert not success
 
     @pytest.mark.asyncio
     async def test_provision_missing_requirements(
@@ -3118,7 +3121,7 @@ class TestProvisionerInstallErrors:
             # Should return dict of results with rust failed
             assert isinstance(results, dict)
             assert "rust" in results
-            assert results["rust"] is False
+            assert not results["rust"]
 
 
 class TestProvisionerDependencies:
@@ -3296,11 +3299,8 @@ class TestProvisionerDependencies:
             results = await manager.provision_all()
 
         # All should succeed in the right order
-        assert results == {
-            "build_essential": True,
-            "rust": True,
-            "sheldon": True,
-        }
+        assert all(r.success for r in results.values())
+        assert set(results.keys()) == {"build_essential", "rust", "sheldon"}
 
         # Verify installation order
         assert install_order == ["build_essential", "rust", "sheldon"]
@@ -3388,8 +3388,8 @@ class TestProvisionerPathHandling:
             results = await manager.provision_all()
 
         # Both should succeed if PATH handling works
-        assert results["rust"] is True
-        assert results["sheldon"] is True
+        assert results["rust"]
+        assert results["sheldon"]
 
     @pytest.mark.asyncio
     async def test_environment_passed_to_install_commands(self) -> None:
@@ -3513,7 +3513,7 @@ class TestProvisionerPathHandling:
             results = await manager.provision_all(dry_run=True)
 
         # Should succeed but not call path detection in dry run
-        assert results["test"] is True
+        assert results["test"]
         assert not detect_called
 
     @pytest.mark.asyncio
@@ -3576,7 +3576,7 @@ class TestErrorOutputCapture:
         with caplog.at_level(logging.ERROR):
             success = await manager._install_via_script(prov)
 
-        assert success is False
+        assert not success
         assert "Failed to install test-fail" in caplog.text
         assert "Error output:" in caplog.text
         assert "Error: Missing dependency" in caplog.text
@@ -3607,7 +3607,7 @@ class TestErrorOutputCapture:
         with caplog.at_level(logging.DEBUG):
             success = await manager._install_via_script(prov)
 
-        assert success is False
+        assert not success
         assert "Standard output:" in caplog.text
         assert "Starting installation..." in caplog.text
 
@@ -3653,7 +3653,7 @@ class TestErrorOutputCapture:
 
             success = await manager._install_via_package(prov)
 
-        assert success is False
+        assert not success
         assert "Failed to install nonexistent-pkg via apt" in caplog.text
         assert "Error output:" in caplog.text
         assert "Unable to locate package nonexistent-pkg" in caplog.text
@@ -3696,7 +3696,7 @@ class TestErrorOutputCapture:
 
             success = await manager._install_via_binary(prov)
 
-        assert success is False
+        assert not success
         assert "Failed to download test-bin" in caplog.text
         assert "Error output:" in caplog.text
         assert "Could not resolve host" in caplog.text
@@ -3746,7 +3746,7 @@ class TestErrorOutputCapture:
 
             success = await manager._install_via_binary(prov)
 
-        assert success is False
+        assert not success
         assert "Failed to move test-bin to /usr/local/bin/" in caplog.text
         assert "Error output:" in caplog.text
         assert "Permission denied" in caplog.text
@@ -3775,7 +3775,7 @@ class TestErrorOutputCapture:
         ):
             success = await manager._install_via_script(prov)
 
-        assert success is False
+        assert not success
         assert "Failed to install test-exception" in caplog.text
         # logger.exception includes traceback info
 
@@ -3800,7 +3800,7 @@ class TestErrorOutputCapture:
         with caplog.at_level(logging.ERROR):
             success = await manager._install_via_script(prov)
 
-        assert success is False
+        assert not success
         assert "Failed to install test-real" in caplog.text
         assert "Error output:" in caplog.text
         # The actual error message varies by system but should mention the directory
@@ -3871,7 +3871,7 @@ source = "{dot_config}"
 
         success = await app.install_dotfiles()
 
-        assert success is True
+        assert success
 
         # The symlink should exist in the home directory
         home_link = temp_home / ".zshrc"
@@ -3953,6 +3953,100 @@ source = "~/.dot-config"
 
         # Fixed: status should report "ok" now that paths are expanded
         assert status["dotfiles"][".gitconfig"] == "ok"
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# RESULT DATACLASS TESTS
+# ═══════════════════════════════════════════════════════════════════════════════
+
+
+class TestResultDataclasses:
+    """Test Result hierarchy behavior."""
+
+    def test_result_bool_true(self):
+        """Successful Result is truthy."""
+        r = dot.Result(success=True)
+        assert r
+        assert bool(r) is True
+
+    def test_result_bool_false(self):
+        """Failed Result is falsy and carries error."""
+        r = dot.Result(success=False, error="something broke")
+        assert not r
+        assert bool(r) is False
+        assert r.error == "something broke"
+
+    def test_result_ok_factory(self):
+        """Result.ok() creates successful result."""
+        r = dot.Result.ok()
+        assert r.success is True
+        assert r.error == ""
+
+    def test_result_fail_factory(self):
+        """Result.fail() creates failed result with error."""
+        r = dot.Result.fail(error="disk full")
+        assert r.success is False
+        assert r.error == "disk full"
+
+    def test_symlink_result_inherits_bool(self):
+        """SymlinkResult inherits __bool__ and carries action."""
+        ok = dot.SymlinkResult.ok(
+            source=pathlib.Path("/a"),
+            dest=pathlib.Path("/b"),
+            action=dot.SymlinkAction.CREATE,
+        )
+        assert ok
+        assert ok.action == dot.SymlinkAction.CREATE
+
+        fail = dot.SymlinkResult.fail(
+            error="perm denied",
+            source=pathlib.Path("/a"),
+            dest=pathlib.Path("/b"),
+        )
+        assert not fail
+        assert "perm denied" in fail.error
+
+    def test_install_result_failed_property(self):
+        """InstallResult.failed returns only failed items."""
+        items = [
+            dot.SymlinkResult.ok(
+                source=pathlib.Path("/a"),
+                dest=pathlib.Path("/b"),
+                action=dot.SymlinkAction.CREATE,
+            ),
+            dot.SymlinkResult.fail(
+                error="err",
+                source=pathlib.Path("/c"),
+                dest=pathlib.Path("/d"),
+            ),
+        ]
+        r = dot.InstallResult(success=False, error="1 failed", items=items)
+        assert len(r.failed) == 1
+        assert r.failed[0].dest == pathlib.Path("/d")
+
+    def test_provision_result_failed_names(self):
+        """ProvisionResult.failed_names returns names of failed provisioners."""
+        r = dot.ProvisionResult(
+            success=False,
+            error="failed",
+            results={
+                "rust": dot.Result.ok(),
+                "sheldon": dot.Result.fail(error="missing cargo"),
+            },
+        )
+        assert r.failed_names == ["sheldon"]
+
+    def test_cleanup_result_fields(self):
+        """CleanupResult tracks removed paths and errors."""
+        r = dot.CleanupResult(
+            success=False,
+            error="1 pattern(s) failed",
+            removed=[pathlib.Path("/tmp/foo")],
+            errors=[("*.bak", "permission denied")],
+        )
+        assert not r
+        assert len(r.removed) == 1
+        assert len(r.errors) == 1
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -4141,7 +4235,7 @@ protected = [".claude"]
         app = dot.DotfilesApp(config_path=config_path, dry_run=False)
         success = await app.install_dotfiles()
 
-        assert success is False
+        assert not success
         # Directory should still exist with content intact
         assert real_claude.is_dir()
         assert not real_claude.is_symlink()
@@ -4174,7 +4268,7 @@ protected = [".claude"]
         app = dot.DotfilesApp(config_path=config_path, dry_run=False)
         success = await app.install_dotfiles()
 
-        assert success is True
+        assert success
         assert dest.is_symlink()
 
     @pytest.mark.asyncio
@@ -4202,7 +4296,7 @@ source = "{dot_config}"
         app = dot.DotfilesApp(config_path=config_path, dry_run=False, force=True)
         success = await app.install_dotfiles()
 
-        assert success is True
+        assert success
         assert dest.is_symlink()
         assert dest.resolve() == source.resolve()
 
@@ -4220,7 +4314,7 @@ source = "{dot_config}"
 
         success = await app._create_symlink(source, dest)
 
-        assert success is False
+        assert not success
         assert dest.is_dir()
         assert not dest.is_symlink()
 
@@ -4248,7 +4342,7 @@ source = "{dot_config}"
         app = dot.DotfilesApp(config_path=config_path, dry_run=True)
         success = await app.install_dotfiles()
 
-        assert success is True
+        assert success
         assert not (temp_home / ".gitconfig").exists()
 
     @pytest.mark.asyncio
@@ -4276,7 +4370,7 @@ source = "{dot_config}"
         app = dot.DotfilesApp(config_path=config_path, dry_run=False, force=True)
         success = await app.install_dotfiles()
 
-        assert success is True
+        assert success
         assert dest.is_symlink()
 
     @pytest.mark.asyncio
@@ -4306,7 +4400,7 @@ protected = [".claude"]
         app = dot.DotfilesApp(config_path=config_path, dry_run=False, force=True)
         success = await app.install_dotfiles()
 
-        assert success is False
+        assert not success
         assert dest.is_dir()
         assert not dest.is_symlink()
 
@@ -4336,7 +4430,7 @@ source = "{dot_config}"
         with unittest.mock.patch("rich.console.Console.input", return_value="no"):
             success = await app.install_dotfiles()
 
-        assert success is False
+        assert not success
         assert dest.is_dir()
         assert not dest.is_symlink()
 
