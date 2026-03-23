@@ -30,6 +30,7 @@
   rebase = merges
 [rebase]
   rebaseMerges = true
+  autoStash = true
 # [blame]
 #   ignoreRevsFile = .git-blame-ignore-revs
 [init]
