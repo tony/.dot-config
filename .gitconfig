@@ -27,7 +27,7 @@
 #[url "ssh://git@bitbucket.org/"]
 #  insteadOf = https://bitbucket.org/
 [pull]
-  rebase = false
+  rebase = merges
 # [blame]
 #   ignoreRevsFile = .git-blame-ignore-revs
 [init]
