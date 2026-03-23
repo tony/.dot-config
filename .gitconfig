@@ -28,6 +28,8 @@
 #  insteadOf = https://bitbucket.org/
 [pull]
   rebase = merges
+[rebase]
+  rebaseMerges = true
 # [blame]
 #   ignoreRevsFile = .git-blame-ignore-revs
 [init]
