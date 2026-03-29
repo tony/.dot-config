@@ -1591,6 +1591,8 @@
     repo: https://github.com/serde-rs/json.git
   just:
     repo: git@github.com:casey/just.git
+  keifu:
+    repo: git@github.com:trasta298/keifu.git
   learning-rust:
     repo: git+ssh://git@github.com/tony/learning-rust.git
   learning-rust-nodejs:
@@ -1611,6 +1613,8 @@
     repo: git@github.com:harehare/mq.git
   notify:
     repo: git@github.com:notify-rs/notify.git
+  nucleo:
+    repo: https://github.com/helix-editor/nucleo.git
   ormlite:
     repo: https://github.com/kurtbuilds/ormlite.git
   pagefind:
@@ -1647,6 +1651,10 @@
     repo: https://github.com/SeaQL/sea-orm.git
   serde:
     repo: https://github.com/serde-rs/serde.git
+  sheldon:
+    repo: git@github.com:rossmacarthur/sheldon.git
+  skim:
+    repo: https://github.com/lotabout/skim.git
   sqlx:
     repo: https://github.com/launchbadge/sqlx.git
   starship:
