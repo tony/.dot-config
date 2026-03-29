@@ -473,6 +473,11 @@
     repo: git+https://github.com/gatsbyjs/gatsby.git
   typescript-website:
     repo: git+https://github.com/microsoft/TypeScript-Website
+~/study/github-actions/:
+  gh-action-pypi-publish:
+    repo: git@github.com:pypa/gh-action-pypi-publish.git
+  setup-uv:
+    repo: git@github.com:astral-sh/setup-uv.git
 ~/study/golang/:
   blackfriday:
     repo: git+https://github.com/russross/blackfriday.git
