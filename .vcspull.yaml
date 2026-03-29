@@ -930,6 +930,12 @@
     repo: git+https://github.com/jazzband/django-silk.git
   django-storages:
     repo: git+https://github.com/jschneier/django-storages.git
+  django-stubs:
+    remotes:
+      tony: git+ssh://git@github.com/tony/django-stubs.git
+    repo: git+https://github.com/typeddjango/django-stubs.git
+  django-taggit:
+    repo: git+https://github.com/alex/django-taggit.git
   django-tasks:
     repo: git+https://github.com/RealOrangeOne/django-tasks.git
   django-tasks-db:
@@ -938,12 +944,6 @@
     remotes:
       tony: git+ssh://git@github.com/tony/django-tasks-local.git
     repo: git+https://github.com/lincolnloop/django-tasks-local.git
-  django-stubs:
-    remotes:
-      tony: git+ssh://git@github.com/tony/django-stubs.git
-    repo: git+https://github.com/typeddjango/django-stubs.git
-  django-taggit:
-    repo: git+https://github.com/alex/django-taggit.git
   django-treebeard:
     remotes:
       tony: git+https://github.com/tony/django-treebeard
@@ -1467,16 +1467,38 @@
   rails:
     repo: git+https://github.com/rails/rails.git
 ~/study/rust-node/:
+  aria-query:
+    repo: git@github.com:oxc-project/aria-query.git
   biome:
     remotes:
       tony: git+ssh://git@github.com/tony/biome.git
     repo: git+https://github.com/biomejs/biome.git
+  fast-glob:
+    repo: git@github.com:oxc-project/fast-glob.git
+  javascript-globals:
+    repo: git@github.com:oxc-project/javascript-globals.git
+  json-strip-comments:
+    repo: git@github.com:oxc-project/json-strip-comments.git
   neon:
     repo: git+https://github.com/neon-bindings/neon.git
+  oxc:
+    repo: git@github.com:oxc-project/oxc.git
+  oxc-browserslist:
+    repo: git@github.com:oxc-project/oxc-browserslist.git
+  oxc-node:
+    repo: git@github.com:oxc-project/oxc-node.git
+  oxc-resolver:
+    repo: git@github.com:oxc-project/oxc-resolver.git
+  oxc-sourcemap:
+    repo: git@github.com:oxc-project/oxc-sourcemap.git
+  oxc-zed:
+    repo: git@github.com:oxc-project/oxc-zed.git
   rolldown:
     remotes:
       tony: git+ssh://github.com/tony/rolldown.git
     repo: git+https://github.com/rolldown/rolldown.git
+  sort-package-json:
+    repo: git@github.com:oxc-project/sort-package-json.git
   swc:
     remotes:
       tony: git+ssh://git@github.com/tony/swc.git
@@ -1486,6 +1508,8 @@
     repo: git+https://github.com/fastuuid/fastuuid.git
   maturin:
     repo: git+https://github.com/PyO3/maturin.git
+  maturin-import-hook:
+    repo: git+https://github.com/PyO3/maturin-import-hook.git
   napi-rs:
     repo: git+https://github.com/napi-rs/napi-rs.git
   orjson:
@@ -1502,6 +1526,8 @@
     repo: git+https://github.com/pydantic/pydantic-core.git
   pyo3:
     repo: git+https://github.com/PyO3/pyo3.git
+  pyo3-async-runtimes:
+    repo: git+https://github.com/PyO3/pyo3-async-runtimes.git
   pyxel:
     repo: git@github.com:kitao/pyxel.git
   pyxirr:
@@ -1512,10 +1538,6 @@
     repo: git@github.com:astral-sh/ty.git
   uv:
     repo: git+ssh://git@github.com/astral-sh/uv.git
-  pyo3-async-runtimes:
-    repo: git+https://github.com/PyO3/pyo3-async-runtimes.git
-  maturin-import-hook:
-    repo: git+https://github.com/PyO3/maturin-import-hook.git
 ~/study/rust/:
   alacritty:
     repo: git@github.com:alacritty/alacritty.git
@@ -1768,10 +1790,6 @@
   terraform-provider-random:
     repo: https://github.com/hashicorp/terraform-provider-random.git
 ~/study/typescript/:
-  relay:
-    remotes:
-      tony: git+ssh://git@github.com/tony/relay.git
-    repo: git+https://github.com/facebook/relay.git
   Babylon.js:
     repo: git@github.com:BabylonJS/Babylon.js.git
   DefinitelyTyped:
@@ -1839,8 +1857,8 @@
   graphql-ws:
     repo: https://github.com/enisdenjo/graphql-ws.git
     worktrees:
-      - dir: graphql-transport-ws-1.14.0
-        tag: v1.14.0
+    - dir: graphql-transport-ws-1.14.0
+      tag: v1.14.0
   happy-dom:
     repo: git@github.com:capricorn86/happy-dom.git
   hast-util-from-html:
@@ -1951,6 +1969,10 @@
     repo: https://github.com/rehypejs/rehype.git
   rehype-raw:
     repo: https://github.com/rehypejs/rehype-raw.git
+  relay:
+    remotes:
+      tony: git+ssh://git@github.com/tony/relay.git
+    repo: git+https://github.com/facebook/relay.git
   remark:
     repo: https://github.com/remarkjs/remark.git
   remark-gfm:
