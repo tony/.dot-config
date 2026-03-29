@@ -1254,6 +1254,8 @@
     remotes:
       tony: git+ssh://git@github.com/tony/pytest-textual-snapshot.git
     repo: git+https://github.com/Textualize/pytest-textual-snapshot.git
+  pytest-timeout:
+    repo: git+https://github.com/pytest-dev/pytest-timeout.git
   pytest-xdist:
     repo: git@github.com:pytest-dev/pytest-xdist.git
   pythagora:
@@ -1510,6 +1512,10 @@
     repo: git@github.com:astral-sh/ty.git
   uv:
     repo: git+ssh://git@github.com/astral-sh/uv.git
+  pyo3-async-runtimes:
+    repo: git+https://github.com/PyO3/pyo3-async-runtimes.git
+  maturin-import-hook:
+    repo: git+https://github.com/PyO3/maturin-import-hook.git
 ~/study/rust/:
   alacritty:
     repo: git@github.com:alacritty/alacritty.git
